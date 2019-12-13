@@ -41,14 +41,14 @@ class PokerTracker
         // Set configuration.
         var connectionConfiguration = PostgresClientKit.ConnectionConfiguration()
         connectionConfiguration.host = configuration.host
-        connectionConfiguration.database = configuration.database
+        connectionConfiguration.database = configuration.database + " Snapshot"
         connectionConfiguration.port = configuration.port
         connectionConfiguration.user = configuration.user
         connectionConfiguration.ssl = configuration.ssl
         connectionConfiguration.credential = .md5Password(password: configuration.password)
         
         // Log.
-        Postgres.logger.level = .all
+        // Postgres.logger.level = .all
 
         // Connect.
         do

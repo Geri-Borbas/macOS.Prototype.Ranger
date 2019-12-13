@@ -18,7 +18,7 @@ class LiveTourneyTableCollection: Collection
     var rows: [LiveTourneyTable]
     
     var queryString: String
-    { return "SELECT * FROM public.live_tourney_table" }
+    { return "SELECT * FROM public.live_tourney_table ORDER BY live_tourney_table.id_live_table ASC" }
     
     
     init()

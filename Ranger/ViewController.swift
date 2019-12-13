@@ -10,10 +10,13 @@ import Cocoa
 import CoreGraphics
 
 
-class ViewController: NSViewController, NSControlTextEditingDelegate
+class ViewController: NSViewController, NSComboBoxDelegate
 {
 
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var tableComboBox: NSComboBox!
     @IBOutlet weak var levelLabel: NSTextField!
     @IBOutlet weak var stacksLabel: NSTextField!
     
@@ -21,58 +24,79 @@ class ViewController: NSViewController, NSControlTextEditingDelegate
     lazy var sharkScope: SharkScope = SharkScope()
     
     
+    // MARK: - Events
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        // startLiveTableMonitoring()
+        // Schedule timer.
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
+        { _ in self.tick() }
         
         sharkScope.test()
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-    func startLiveTableMonitoring()
+    
+    func comboBoxSelectionDidChange(_ notification: Notification)
     {
-        // Schedule polling.
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
-        { _ in
-            print("Tick.")
-            try? self.pokerTracker.fetchLiveTourneyTableCollection()
-            self.layout()
-        }
+        guard let comboBox: NSComboBox = (notification.object as? NSComboBox)
+        else { return }
         
-        layout()
+        print(comboBox.indexOfSelectedItem)
     }
     
-    @IBAction func buttonDidClick(_ sender: Any)
+    func tick()
     {
-        // https://developer.apple.com/documentation/coregraphics/1454852-cgwindowlistcreateimage?language=objc
-        // https://stackoverflow.com/questions/21947646/take-screenshots-of-specific-application-window-on-mac
+        // Fetch live table data.
+        try? self.pokerTracker.fetchLiveTourneyTableCollection()
         
-        print("Capture window content")
-        
-        // let screenShot:CGImage? = CGWindowListCreateImage(
-        //     CGRect.null,
-        //     CGWindowListOption.optionAll, // CGWindowListOption.optionIncludingWindow,
-        //     CGWindowID(NSApplication.shared.mainWindow!.windowNumber),
-        //     CGWindowImageOption.bestResolution)
-        
-        // optionAll: CGWindowListOption
-        // optionOnScreenOnly: CGWindowListOption
-        // optionOnScreenAboveWindow: CGWindowListOption
-        // optionOnScreenBelowWindow: CGWindowListOption
-        // optionIncludingWindow: CGWindowListOption
-        // excludeDesktopElements: CGWindowListOption
-        
-        // let image = NSImage(cgImage: cgImage!, size: window.frame.size)
+        // Layout.
+        layoutTableSelector()
+        layoutTableSummary()
     }
     
-    func layout()
+    
+    // MARK: - Layout
+    
+    func layoutTableSelector()
+    {
+        // Empty.
+        var items: [String] = []
+        
+        // Lookup data.
+        guard let liveTourneyTableCollection = pokerTracker.liveTourneyTableCollection, liveTourneyTableCollection.rows.count > 0
+        else
+        {
+            // Empty state otherwise.
+            tableComboBox.removeAllItems()
+            print("No live tables found.")
+            return
+        }
+        
+        // Format.
+        items = liveTourneyTableCollection.rows.map(
+        {
+            (eachTable: LiveTourneyTable) -> String in
+            String(format: "Table %d - %.0f/%.0f Ante %.0f (%d players)",
+                   eachTable.id_live_table,
+                   eachTable.amt_sb,
+                   eachTable.amt_bb,
+                   eachTable.amt_ante,
+                   eachTable.cnt_players
+            )
+        })
+        
+        // Only if changed.
+        if items.elementsEqual(tableComboBox.objectValues as! [String])
+        { return }
+        
+        // Add tables.
+        tableComboBox.removeAllItems()
+        tableComboBox.addItems(withObjectValues: items)
+        tableComboBox.selectItem(at: 0)
+    }
+    
+    func layoutTableSummary()
     {
         // Variables.
         var smallBlind:Double = 0
@@ -80,16 +104,23 @@ class ViewController: NSViewController, NSControlTextEditingDelegate
         var ante:Double = 0
         var players:Double = 0
         
-        // Fetch data from first live table.
-        if (pokerTracker.liveTourneyTableCollection?.rows.count ?? 0 > 0)
-        {
-            smallBlind = pokerTracker.liveTourneyTableCollection?.rows[0].amt_sb ?? 0
-            bigBlind = pokerTracker.liveTourneyTableCollection?.rows[0].amt_bb ?? 0
-            ante = pokerTracker.liveTourneyTableCollection?.rows[0].amt_ante ?? 0
-            players = Double(pokerTracker.liveTourneyTableCollection?.rows[0].cnt_players ?? 0)
-        }
+        // Check data.
+        guard let liveTourneyTableCollection = pokerTracker.liveTourneyTableCollection, liveTourneyTableCollection.rows.count > 0
         else
-        { print("No live tables found.") }
+        {
+            // Empty state otherwise.
+            levelLabel.attributedStringValue = NSMutableAttributedString(string: "")
+            stacksLabel.attributedStringValue = NSMutableAttributedString(string: "")
+            print("No live tables found.")
+            return
+        }
+        
+        // Fetch data from first live table.
+        let selectedLiveTourneyTable = liveTourneyTableCollection.rows[tableComboBox.indexOfSelectedItem]
+        smallBlind = selectedLiveTourneyTable.amt_sb
+        bigBlind = selectedLiveTourneyTable.amt_bb
+        ante = selectedLiveTourneyTable.amt_ante
+        players = Double(selectedLiveTourneyTable.cnt_players)
         
         // Model.
         let M:Double = smallBlind + bigBlind + 9 * ante

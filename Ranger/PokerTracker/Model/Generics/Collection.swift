@@ -20,8 +20,7 @@ protocol Collection
     var queryString: String { get }
     var rows: [RowType] { get set }
     
-    
-    
+        
     mutating func fetch(connection: Connection?) throws
     func log()
 }

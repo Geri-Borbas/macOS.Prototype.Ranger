@@ -3,8 +3,12 @@
 * Doing
 
     + Model some more JSON
-    + Lookup Live Tables / Table Selector / Loader
     + Create Player Table
+
+* 0.2.8
+
+    + Added Table Selector
+    + Layout refactors
 
 * 0.2.5
 

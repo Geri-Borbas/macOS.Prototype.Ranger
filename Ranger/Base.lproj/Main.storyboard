@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -685,8 +685,8 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Ranger" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -706,22 +706,24 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="331" height="142"/>
+                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="331" height="171"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="line" cornerRadius="5" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="WhD-gG-Ky5">
-                                <rect key="frame" x="0.0" y="0.0" width="331" height="142"/>
-                                <view key="contentView" id="Cnr-to-bc9">
-                                    <rect key="frame" x="1" y="1" width="329" height="140"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="borderColor" red="0.0" green="0.0" blue="0.0" alpha="0.80126284246575341" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.80126284250000002" colorSpace="custom" customColorSpace="sRGB"/>
-                            </box>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="20" width="291" height="102"/>
+                                <rect key="frame" x="20" y="20" width="291" height="131"/>
                                 <subviews>
+                                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xcz-5J-GVb">
+                                        <rect key="frame" x="0.0" y="108" width="294" height="25"/>
+                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="No Live Tables" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="kN1-gp-UNS">
+                                            <font key="font" metaFont="titleBar"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </comboBoxCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="XfG-lQ-9wD" id="Do6-Xg-V4q"/>
+                                        </connections>
+                                    </comboBox>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-bY-dqi">
                                         <rect key="frame" x="-2" y="79" width="295" height="23"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10 / 20 Ante 3 (9 players)" allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
@@ -746,13 +748,18 @@
                                     <constraint firstAttribute="trailing" secondItem="Mbr-bY-dqi" secondAttribute="trailing" id="3AC-ye-BBl"/>
                                     <constraint firstAttribute="trailing" secondItem="y83-4P-VCO" secondAttribute="trailing" id="7XQ-r7-agh"/>
                                     <constraint firstItem="y83-4P-VCO" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="JoP-nq-Aw2"/>
+                                    <constraint firstItem="Xcz-5J-GVb" firstAttribute="top" secondItem="sU5-ho-3Vw" secondAttribute="top" id="aWJ-Nx-Tlb"/>
                                     <constraint firstItem="Mbr-bY-dqi" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="adZ-w2-LHw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xcz-5J-GVb" secondAttribute="trailing" id="gmP-oU-z4a"/>
+                                    <constraint firstItem="Xcz-5J-GVb" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="iq3-1B-pt9"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -760,10 +767,6 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="sU5-ho-3Vw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="82Q-Vl-thB"/>
-                            <constraint firstAttribute="trailing" secondItem="WhD-gG-Ky5" secondAttribute="trailing" id="GR4-Hy-Nsa"/>
-                            <constraint firstItem="WhD-gG-Ky5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="MG3-Aa-mRc"/>
-                            <constraint firstItem="WhD-gG-Ky5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="PET-9l-ktc"/>
-                            <constraint firstAttribute="bottom" secondItem="WhD-gG-Ky5" secondAttribute="bottom" id="R4P-cN-ziu"/>
                             <constraint firstAttribute="trailing" secondItem="sU5-ho-3Vw" secondAttribute="trailing" constant="20" id="Y5n-sp-s26"/>
                             <constraint firstAttribute="bottom" secondItem="sU5-ho-3Vw" secondAttribute="bottom" constant="20" id="w7H-xE-O3y"/>
                             <constraint firstItem="sU5-ho-3Vw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="x8J-V8-nyV"/>
@@ -772,6 +775,7 @@
                     <connections>
                         <outlet property="levelLabel" destination="Mbr-bY-dqi" id="1tN-eF-3Rh"/>
                         <outlet property="stacksLabel" destination="y83-4P-VCO" id="biR-dg-fxc"/>
+                        <outlet property="tableComboBox" destination="Xcz-5J-GVb" id="WE7-gk-QcW"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
