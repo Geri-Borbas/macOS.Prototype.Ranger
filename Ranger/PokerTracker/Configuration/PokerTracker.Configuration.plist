@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>host</key>
+	<string>&lt;HOST&gt;</string>
+	<key>port</key>
+	<integer>0</integer>
+	<key>user</key>
+	<string>&lt;USER&gt;</string>
+	<key>password</key>
+	<string>&lt;PASSWORD&gt;</string>
+	<key>ssl</key>
+	<false/>
+	<key>database</key>
+	<string>&lt;DATABASE&gt;</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Response metadataHash="aef83e3d1f034d04321d61099076ef00" timestamp="1575939201" success="false">
+    <ErrorResponse>
+        <Error id="200016">Valid download types are ‘installer’ and ‘updater’.</Error>
+    </ErrorResponse>
+    <UserInfo hasFacebook="false" hasTwitter="false" loggedIn="false">
+        <Country>HU</Country>
+        <Regions code="All" name="International"/>
+        <Regions code="NonUS" name="Non US"/>
+        <Currency>USD</Currency>
+        <RemainingSearches>0</RemainingSearches>
+        <RequestLanguages>en-us</RequestLanguages>
+        <Subscriptions freeSearchesRemaining="0" totalSearchesRemaining="0"/>
+        <AuthorizedNetworks/>
+    </UserInfo>
+</Response>
