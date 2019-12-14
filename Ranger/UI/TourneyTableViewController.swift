@@ -51,7 +51,8 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         // Select model.
         viewModel.selectedTableIndex = comboBox.indexOfSelectedItem
         
-        print(comboBox.indexOfSelectedItem)
+        // Log.
+        print("comboBox.indexOfSelectedItem: \(comboBox.indexOfSelectedItem)")
     }
     
     
@@ -68,7 +69,6 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     func layoutTableSummary()
     {
         let tableSummary = viewModel.tableSummary(for: tableComboBox.indexOfSelectedItem, font: levelLabel.font!)
-        print("tableSummary \(tableSummary)")
         levelLabel.attributedStringValue = tableSummary.blinds
         stacksLabel.attributedStringValue = tableSummary.stacks
     }

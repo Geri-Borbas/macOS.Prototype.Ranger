@@ -4,8 +4,11 @@
 * Doing
 
     + Move Table Selector Model to ViewModel as well
-    + Get player names (before statistics any)
     + Model some more JSON
+
+* 0.3.6
+
+    + Hooked up player names
 
 * 0.3.5
 
@@ -16,7 +19,6 @@
         + Cleaned up ViewController (only hooks to ViewModel and Outlets)
         + ViewModel does all the data fetching / formatting / event handling
     
-
 * 0.3.1
 
     + Combine multiple query results prototype

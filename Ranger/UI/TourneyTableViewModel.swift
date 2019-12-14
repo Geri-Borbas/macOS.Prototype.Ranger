@@ -107,6 +107,8 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
             )
         })
         
+        print("tables: \(tables)")
+        
         // Collect `id_player` for live players.
         let liveTourneyPlayerIDs = liveTourneyPlayers
         .map{ eachLiveTourneyPlayer in eachLiveTourneyPlayer.id_player }
@@ -129,10 +131,11 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
             // let eachLiveTourneyPlayerStatistics = playerStatistics.filter{ eachPlayerStatistics in eachPlayerStatistics.id_player == eachLiveTourneyPlayer.id_player }.first
             let eachPlayer = playerNames.filter{ eachPlayer in eachPlayer.id_player == eachLiveTourneyPlayer.id_player }.first
-            print(eachPlayer?.id_player as Any)
-            print(eachPlayer?.player_name as Any)
+            let eachPlayerName = eachPlayer?.player_name ?? ""
+            // print(eachPlayer?.id_player as Any)
+            // print(eachPlayer?.player_name as Any)
             return [
-                "Player" : "\(eachLiveTourneyPlayer.id_player) at \(eachLiveTourneyPlayer.id_live_table)",
+                "Player" : "\(eachPlayerName) at \(eachLiveTourneyPlayer.id_live_table)",
                 "Stack" : String(eachLiveTourneyPlayer.amt_stack)
             ]
         }
