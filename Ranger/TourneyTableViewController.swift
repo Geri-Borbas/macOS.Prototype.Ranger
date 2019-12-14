@@ -8,20 +8,23 @@
 
 import Cocoa
 import CoreGraphics
+// import SwiftUI
 
 
-class ViewController: NSViewController, NSComboBoxDelegate
+class TourneyTableViewController: NSViewController, NSComboBoxDelegate
 {
 
     
-    // MARK: - Outlets
+    // MARK: - UI Outlets
     
     @IBOutlet weak var tableComboBox: NSComboBox!
     @IBOutlet weak var levelLabel: NSTextField!
     @IBOutlet weak var stacksLabel: NSTextField!
+    @IBOutlet weak var playersTableView: NSTableView!
     
-    lazy var pokerTracker: PokerTracker = PokerTracker()
-    lazy var sharkScope: SharkScope = SharkScope()
+    // MARK: - Model Outlets
+    
+    @IBOutlet weak var viewModel: TourneyTableViewModel!
     
     
     // MARK: - Events
@@ -34,7 +37,8 @@ class ViewController: NSViewController, NSComboBoxDelegate
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
         { _ in self.tick() }
         
-        sharkScope.test()
+        viewModel.sharkScope.test()
+        playersTableView.reloadData()
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)
@@ -48,7 +52,7 @@ class ViewController: NSViewController, NSComboBoxDelegate
     func tick()
     {
         // Fetch live table data.
-        try? self.pokerTracker.fetchLiveTourneyTableCollection()
+        try? viewModel.pokerTracker.fetchLiveTourneyTableCollection()
         
         // Layout.
         layoutTableSelector()
@@ -64,7 +68,7 @@ class ViewController: NSViewController, NSComboBoxDelegate
         var items: [String] = []
         
         // Lookup data.
-        guard let liveTourneyTableCollection = pokerTracker.liveTourneyTableCollection, liveTourneyTableCollection.rows.count > 0
+        guard let liveTourneyTableCollection = viewModel.pokerTracker.liveTourneyTableCollection, liveTourneyTableCollection.rows.count > 0
         else
         {
             // Empty state otherwise.
@@ -105,7 +109,7 @@ class ViewController: NSViewController, NSComboBoxDelegate
         var players:Double = 0
         
         // Check data.
-        guard let liveTourneyTableCollection = pokerTracker.liveTourneyTableCollection, liveTourneyTableCollection.rows.count > 0
+        guard let liveTourneyTableCollection = viewModel.pokerTracker.liveTourneyTableCollection, liveTourneyTableCollection.rows.count > 0
         else
         {
             // Empty state otherwise.
@@ -134,8 +138,30 @@ class ViewController: NSViewController, NSComboBoxDelegate
         
         // Format.
         let font = levelLabel.font!
-        let lightAttribute = [NSAttributedString.Key.font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.light)]
-        let boldAttribute = [NSAttributedString.Key.font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.heavy)]
+        
+        let lightAttribute: [NSAttributedString.Key: Any] = [
+            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.light),
+            .foregroundColor : NSColor.systemGray
+        ]
+        
+        let boldAttribute: [NSAttributedString.Key: Any]  = [
+            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold)
+        ]
+        
+        let redAttribute: [NSAttributedString.Key: Any] = [
+            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold),
+            .foregroundColor : NSColor.systemRed
+        ]
+        
+        let orangeAttribute: [NSAttributedString.Key: Any] = [
+            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold),
+            .foregroundColor : NSColor.systemOrange
+            ]
+        
+        let yellowAttribute: [NSAttributedString.Key: Any] = [
+            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold),
+            .foregroundColor : NSColor.systemYellow
+            ]
         
         let levelString = NSMutableAttributedString(string: "")
             levelString.append(NSMutableAttributedString(string: String(format: "%.0f/%.0f", smallBlind, bigBlind), attributes:boldAttribute))
@@ -145,19 +171,19 @@ class ViewController: NSViewController, NSComboBoxDelegate
         
             // M.
             stackString.append(NSMutableAttributedString(string: "1M ", attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_Rounded), attributes:boldAttribute))
+            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_Rounded), attributes:redAttribute))
             stackString.append(NSMutableAttributedString(string: String(format: "/ %.0f BB (%.0f hands)", M / bigBlind, players), attributes:lightAttribute))
             stackString.append(NSMutableAttributedString(string: "\n", attributes:lightAttribute))
         
             // 5M.
             stackString.append(NSMutableAttributedString(string: "5M ", attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_5_Rounded), attributes:boldAttribute))
+            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_5_Rounded), attributes:orangeAttribute))
             stackString.append(NSMutableAttributedString(string: String(format: "/ %.0f BB (%.0f hands)", M_5 / bigBlind, 5 * players), attributes:lightAttribute))
             stackString.append(NSMutableAttributedString(string: "\n", attributes:lightAttribute))
         
             // 10M.
             stackString.append(NSMutableAttributedString(string: "10M ", attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_10_Rounded), attributes:boldAttribute))
+            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_10_Rounded), attributes:yellowAttribute))
             stackString.append(NSMutableAttributedString(string: String(format: "/ %.0f BB (%.0f hands)", M_10 / bigBlind, 10 * players), attributes:lightAttribute))
         
         // Set.

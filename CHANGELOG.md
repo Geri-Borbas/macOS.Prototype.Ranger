@@ -1,9 +1,15 @@
 # Changelog
 
+
 * Doing
 
     + Model some more JSON
-    + Create Player Table
+
+* 0.2.9
+
+    + Created Players `TableView`
+        + Extracted data bindings to `TourneyTableViewModel` (started to move down data)
+    + Further Layout refinements
 
 * 0.2.8
 
