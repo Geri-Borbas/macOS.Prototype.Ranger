@@ -10,7 +10,7 @@ import Foundation
 import PostgresClientKit
 
 
-protocol RowInitable: CustomStringConvertible
+protocol Entry: CustomStringConvertible
 {
         
     

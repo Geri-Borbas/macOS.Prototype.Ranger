@@ -10,7 +10,7 @@ import Foundation
 import PostgresClientKit
 
 
-class LiveTourneyTable: RowInitable
+class LiveTourneyTable: Entry
 {
 
     let id_live_table: Int

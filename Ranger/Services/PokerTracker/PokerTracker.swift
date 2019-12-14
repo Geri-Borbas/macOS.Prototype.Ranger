@@ -12,6 +12,12 @@ import PostgresClientKit
 
 // https://codewinsdotcom.github.io/PostgresClientKit/Docs/API/index.html
 
+enum PokerTrackerError: Error
+{
+    case databaseNotConnected
+    case rowIsMissing
+}
+
 
 class PokerTracker
 {
@@ -19,21 +25,9 @@ class PokerTracker
     
     var connection:Connection?
     
-    var liveTourneyTableCollection:LiveTourneyTableCollection?
-    var liveTourneyPlayerCollection:LiveTourneyPlayerCollection?
-    var basicPlayerStatisticsCollection:BasicPlayerStatisticsCollection?
-    var playerCollection:PlayerCollection?
-    
 
     init()
-    {
-        liveTourneyPlayerCollection = LiveTourneyPlayerCollection()
-        liveTourneyTableCollection = LiveTourneyTableCollection()
-        basicPlayerStatisticsCollection = BasicPlayerStatisticsCollection()
-        playerCollection = PlayerCollection()
-        
-        connect()
-    }
+    { connect() }
     
     func connect()
     {
@@ -50,14 +44,12 @@ class PokerTracker
         connectionConfiguration.credential = .md5Password(password: configuration.password)
         
         // Log.
-        Postgres.logger.level = .all
+        // Postgres.logger.level = .all
 
         // Connect.
         do
-        {
-            connection = try PostgresClientKit.Connection(configuration: connectionConfiguration)
-        }
-        catch let error as NSError
+        { connection = try PostgresClientKit.Connection(configuration: connectionConfiguration) }
+        catch
         {
             print("Connection error: \(error)")
             connection?.close()
@@ -66,30 +58,45 @@ class PokerTracker
         print("Connected to database.")
     }
     
-    func fetchLiveData() throws
+    func fetch<QueryType: Query>(_ query: QueryType) throws -> [QueryType.EntryType]
     {
-        try liveTourneyPlayerCollection?.fetch(connection:connection)
-        try liveTourneyTableCollection?.fetch(connection:connection)
-        try basicPlayerStatisticsCollection?.fetch(connection:connection)
-    }
-    
-    func fetchLiveTourneyPlayerCollection() throws
-    { try liveTourneyPlayerCollection?.fetch(connection:connection) }
-    
-    func fetchLiveTourneyTableCollection() throws
-    { try liveTourneyTableCollection?.fetch(connection:connection) }
-    
-    func fetchBasicPlayerStatisticsCollection() throws
-    { try basicPlayerStatisticsCollection?.fetch(connection:connection) }
-    
-    func fetchPlayerCollection(for playerIDs: [Int]) throws
-    { try playerCollection?.fetch(for: playerIDs, connection:connection) }
-    
-    func log()
-    {
-        liveTourneyPlayerCollection?.log()
-        liveTourneyTableCollection?.log()
-        basicPlayerStatisticsCollection?.log()
+        // Only having connection.
+        guard let connection = connection else
+        { throw PokerTrackerError.databaseNotConnected }
+        
+        // Prepare.
+        let query = try connection.prepareStatement(text: query.string)
+        defer { query.close() }
+        
+        // Execute.
+        let cursor = try query.execute(parameterValues: [])
+        defer { cursor.close() }
+        
+        // Flush data.
+        var rows: [QueryType.EntryType] = []
+        
+        // Iterate rows.
+        for eachResult in cursor
+        {
+            // Get.
+            guard let eachRow = try? eachResult.get() else
+            {
+                print("Row is missing.")
+                continue
+            }
+           
+            // Parse.
+            guard let eachRowInitable = try? QueryType.EntryType.init(row:eachRow) else
+            {
+                print("Could not parse RowInitable from row.")
+                continue
+            }
+            
+            // Collect.
+            rows.append(eachRowInitable)
+        }
+        
+        return rows
     }
 }
 

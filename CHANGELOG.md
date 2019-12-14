@@ -3,12 +3,19 @@
 
 * Doing
 
-
-    + Refactor PokerTracker 
-        + Fetch Queries that return Collections (those are value)
     + Move Table Selector Model to ViewModel as well
     + Get player names (before statistics any)
     + Model some more JSON
+
+* 0.3.5
+
+    + PokerTracker refactor
+        + Models are pure values (`Entry` and `Query`)
+        + `PokerTracker.fetch` does the only Postgres communication (using Generics)
+    + UI refactor
+        + Cleaned up ViewController (only hooks to ViewModel and Outlets)
+        + ViewModel does all the data fetching / formatting / event handling
+    
 
 * 0.3.1
 

@@ -10,7 +10,7 @@ import Foundation
 import PostgresClientKit
 
 
-class Player: RowInitable
+class Player: Entry
 {
     
     
