@@ -22,6 +22,7 @@ class PokerTracker
     var liveTourneyTableCollection:LiveTourneyTableCollection?
     var liveTourneyPlayerCollection:LiveTourneyPlayerCollection?
     var basicPlayerStatisticsCollection:BasicPlayerStatisticsCollection?
+    var playerCollection:PlayerCollection?
     
 
     init()
@@ -29,6 +30,7 @@ class PokerTracker
         liveTourneyPlayerCollection = LiveTourneyPlayerCollection()
         liveTourneyTableCollection = LiveTourneyTableCollection()
         basicPlayerStatisticsCollection = BasicPlayerStatisticsCollection()
+        playerCollection = PlayerCollection()
         
         connect()
     }
@@ -48,7 +50,7 @@ class PokerTracker
         connectionConfiguration.credential = .md5Password(password: configuration.password)
         
         // Log.
-        // Postgres.logger.level = .all
+        Postgres.logger.level = .all
 
         // Connect.
         do
@@ -79,6 +81,9 @@ class PokerTracker
     
     func fetchBasicPlayerStatisticsCollection() throws
     { try basicPlayerStatisticsCollection?.fetch(connection:connection) }
+    
+    func fetchPlayerCollection(for playerIDs: [Int]) throws
+    { try playerCollection?.fetch(for: playerIDs, connection:connection) }
     
     func log()
     {

@@ -72,12 +72,16 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     
     func tick()
     {
-        try? pokerTracker.fetchLiveData()
         processLiveData()
     }
     
     func processLiveData()
     {
+        // Fetch.
+        try? pokerTracker.fetchLiveTourneyPlayerCollection()
+        try? pokerTracker.fetchLiveTourneyTableCollection()
+        // try? pokerTracker.fetchBasicPlayerStatisticsCollection()
+        
         // Check data.
         guard let liveTourneyPlayerCollection = pokerTracker.liveTourneyPlayerCollection, liveTourneyPlayerCollection.rows.count > 0
         else
@@ -86,28 +90,42 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
             return
         }
         
+        /*
         guard let basicPlayerStatisticsCollection = pokerTracker.basicPlayerStatisticsCollection, basicPlayerStatisticsCollection.rows.count > 0
         else
         {
             print("No player statistics found.")
             return
         }
+        */
         
         // Collect `id_player` for live players.
         let liveTourneyPlayerIDs = liveTourneyPlayerCollection.rows
         .map{ eachLiveTourneyPlayer in eachLiveTourneyPlayer.id_player }
-        .reduce([], { playerIDs, eachPlayerID in playerIDs.contains(eachPlayerID) ? playerIDs : playerIDs + [eachPlayerID] })
         
         // Log.
-        // print("liveTourneyPlayerIDs: \(liveTourneyPlayerIDs)")
+        print("liveTourneyPlayerIDs: \(liveTourneyPlayerIDs)")
+        
+        // Collect names.
+        try? pokerTracker.fetchPlayerCollection(for: liveTourneyPlayerIDs)
+        
+        // Check data.
+        guard let playerCollection = pokerTracker.playerCollection, playerCollection.rows.count > 0
+        else
+        {
+            print("No players found.")
+            return
+        }
         
         // Collect statistics for live players.
+        /*
         let playerStatistics = basicPlayerStatisticsCollection.rows
         .filter
         {
             eachBasicPlayerStatistics in
             liveTourneyPlayerIDs.contains(eachBasicPlayerStatistics.id_player)
         }
+        */
         
         // Log.
         // print("basicPlayerStatisticsCollection.rows \(basicPlayerStatisticsCollection.rows)")
@@ -125,7 +143,10 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         .map
         {
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
-            // let eachLiveTourneyPlayerStatistics = playerStatistics.filter{ eachPlayerStatistics in eachPlayerStatistics.id_player == eachLiveTourneyPlayer.id_player }.first!
+            // let eachLiveTourneyPlayerStatistics = playerStatistics.filter{ eachPlayerStatistics in eachPlayerStatistics.id_player == eachLiveTourneyPlayer.id_player }.first
+            let eachPlayer = playerCollection.rows.filter{ eachPlayer in eachPlayer.id_player == eachLiveTourneyPlayer.id_player }.first
+            print(eachPlayer?.id_player as Any)
+            print(eachPlayer?.player_name as Any)
             return [
                 "Player" : "\(eachLiveTourneyPlayer.id_player) at \(eachLiveTourneyPlayer.id_live_table)",
                 "Stack" : String(eachLiveTourneyPlayer.amt_stack)

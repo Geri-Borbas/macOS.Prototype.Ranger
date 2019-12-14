@@ -3,13 +3,20 @@
 
 * Doing
 
+
+    + Refactor PokerTracker 
+        + Fetch Queries that return Collections (those are value)
     + Move Table Selector Model to ViewModel as well
     + Get player names (before statistics any)
     + Model some more JSON
 
+* 0.3.1
+
+    + Combine multiple query results prototype
+
 * 0.3.0
 
-    + Hooked up actual player list
+    + Hooked up actual player list from Poker Tracker
 
 * 0.2.9
 

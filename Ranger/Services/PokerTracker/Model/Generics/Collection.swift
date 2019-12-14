@@ -10,7 +10,7 @@ import Foundation
 import PostgresClientKit
 
 
-protocol Collection
+protocol Collection: class
 {
     
     
@@ -20,8 +20,8 @@ protocol Collection
     var queryString: String { get }
     var rows: [RowType] { get set }
     
-        
-    mutating func fetch(connection: Connection?) throws
+    
+    func fetch(connection: Connection?, queryParameters: [String]) throws
     func log()
 }
 
@@ -30,7 +30,7 @@ extension Collection
 {
     
     
-    mutating func fetch(connection: Connection?) throws
+    func fetch(connection: Connection?, queryParameters: [String] = []) throws
     {
         // Only having connection.
         guard let connection = connection else
@@ -43,8 +43,11 @@ extension Collection
         let query = try connection.prepareStatement(text: queryString)
         defer { query.close() }
 
+        print(queryString)
+        print(queryParameters)
+        
         // Execute.
-        let cursor = try query.execute(parameterValues: [])
+        let cursor = try query.execute(parameterValues: queryParameters)
         defer { cursor.close() }
         
         // Flush data.
