@@ -3,7 +3,13 @@
 
 * Doing
 
+    + Move Table Selector Model to ViewModel as well
+    + Get player names (before statistics any)
     + Model some more JSON
+
+* 0.3.0
+
+    + Hooked up actual player list
 
 * 0.2.9
 

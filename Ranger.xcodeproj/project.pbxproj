@@ -90,6 +90,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5508E3FE23A4754B00FFB173 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55B229BB239E9617003EA63B /* SharkScope */,
+				5521A555239DD5C4000D1AD1 /* PokerTracker */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5508E3FF23A4756200FFB173 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
+				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		5509600123A30A64006358EF /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,12 +221,10 @@
 		55C1868D239583DA0081B6B7 /* Ranger */ = {
 			isa = PBXGroup;
 			children = (
+				5508E3FF23A4756200FFB173 /* UI */,
 				55C8498423A3307D00452F2F /* Notes */,
-				55B229BB239E9617003EA63B /* SharkScope */,
-				5521A555239DD5C4000D1AD1 /* PokerTracker */,
+				5508E3FE23A4754B00FFB173 /* Services */,
 				55C1868E239583DA0081B6B7 /* AppDelegate.swift */,
-				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
-				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
 				55C18692239583DC0081B6B7 /* Assets.xcassets */,
 				55C18694239583DD0081B6B7 /* Main.storyboard */,
 				55C18697239583DD0081B6B7 /* Info.plist */,

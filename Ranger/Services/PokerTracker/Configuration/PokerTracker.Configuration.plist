@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>host</key>
-	<string>&lt;HOST&gt;</string>
+	<string>localhost</string>
 	<key>port</key>
-	<integer>0</integer>
+	<integer>5432</integer>
 	<key>user</key>
-	<string>&lt;USER&gt;</string>
+	<string>postgres</string>
 	<key>password</key>
-	<string>&lt;PASSWORD&gt;</string>
+	<string>dbpass</string>
 	<key>ssl</key>
 	<false/>
 	<key>database</key>
-	<string>&lt;DATABASE&gt;</string>
+	<string>PT4 DB</string>
 </dict>
 </plist>

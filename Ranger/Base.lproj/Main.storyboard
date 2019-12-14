@@ -848,10 +848,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Mbr-bY-dqi" secondAttribute="trailing" id="3AC-ye-BBl"/>
                                     <constraint firstAttribute="trailing" secondItem="y83-4P-VCO" secondAttribute="trailing" id="7XQ-r7-agh"/>
                                     <constraint firstItem="y83-4P-VCO" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="JoP-nq-Aw2"/>
+                                    <constraint firstAttribute="trailing" secondItem="pMx-ys-oxY" secondAttribute="trailing" id="LAM-rb-OFX"/>
+                                    <constraint firstItem="pMx-ys-oxY" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="URT-uB-Axs"/>
                                     <constraint firstItem="Xcz-5J-GVb" firstAttribute="top" secondItem="sU5-ho-3Vw" secondAttribute="top" id="aWJ-Nx-Tlb"/>
                                     <constraint firstItem="Mbr-bY-dqi" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="adZ-w2-LHw"/>
                                     <constraint firstAttribute="trailing" secondItem="Xcz-5J-GVb" secondAttribute="trailing" id="gmP-oU-z4a"/>
                                     <constraint firstItem="Xcz-5J-GVb" firstAttribute="leading" secondItem="sU5-ho-3Vw" secondAttribute="leading" id="iq3-1B-pt9"/>
+                                    <constraint firstAttribute="bottom" secondItem="pMx-ys-oxY" secondAttribute="bottom" id="sXn-HW-XTG"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>

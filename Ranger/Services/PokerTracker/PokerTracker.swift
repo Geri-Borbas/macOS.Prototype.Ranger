@@ -64,7 +64,7 @@ class PokerTracker
         print("Connected to database.")
     }
     
-    func fetch() throws
+    func fetchLiveData() throws
     {
         try liveTourneyPlayerCollection?.fetch(connection:connection)
         try liveTourneyTableCollection?.fetch(connection:connection)

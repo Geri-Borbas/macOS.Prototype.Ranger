@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Username</key>
-	<string>&lt;USERNAME&gt;</string>
+	<string>__USERNAME__</string>
 	<key>Password</key>
-	<string>&lt;PASSWORD&gt;</string>
+	<string>__PASSWORD__</string>
 	<key>User-Agent</key>
-	<string>&lt;USER_AGENT&gt;</string>
+	<string>Searcher/1.0.0 (Macintosh; Intel Mac OS X 10_14_6)</string>
 </dict>
 </plist>

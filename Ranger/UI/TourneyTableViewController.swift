@@ -22,6 +22,7 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     @IBOutlet weak var stacksLabel: NSTextField!
     @IBOutlet weak var playersTableView: NSTableView!
     
+    
     // MARK: - Model Outlets
     
     @IBOutlet weak var viewModel: TourneyTableViewModel!
@@ -33,12 +34,13 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     {
         super.viewDidLoad()
         
-        // Schedule timer.
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
-        { _ in self.tick() }
-        
-        viewModel.sharkScope.test()
-        playersTableView.reloadData()
+        // Kick off updates.
+        viewModel.start(onTick:
+        {
+            self.layoutTableSelector()
+            self.layoutTableSummary()
+            self.playersTableView.reloadData()
+        })
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)
@@ -46,17 +48,10 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         guard let comboBox: NSComboBox = (notification.object as? NSComboBox)
         else { return }
         
-        print(comboBox.indexOfSelectedItem)
-    }
-    
-    func tick()
-    {
-        // Fetch live table data.
-        try? viewModel.pokerTracker.fetchLiveTourneyTableCollection()
+        // Select model.
+        viewModel.selectedTableIndex = comboBox.indexOfSelectedItem
         
-        // Layout.
-        layoutTableSelector()
-        layoutTableSummary()
+        print(comboBox.indexOfSelectedItem)
     }
     
     
