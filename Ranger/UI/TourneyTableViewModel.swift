@@ -68,7 +68,9 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     // MARK: - Lifecycle
     
     func start(onChange: (() -> Void)?)
-    {        
+    {
+        print("TourneyTableViewModel.start()")
+        
         // Retain.
         self.onChange = onChange
         

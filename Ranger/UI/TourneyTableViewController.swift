@@ -17,8 +17,8 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     
     // MARK: - UI Outlets
     
-    @IBOutlet weak var tableComboBox: NSComboBox!
-    @IBOutlet weak var levelLabel: NSTextField!
+    @IBOutlet weak var tablesComboBox: NSComboBox!
+    @IBOutlet weak var blindsLabel: NSTextField!
     @IBOutlet weak var stacksLabel: NSTextField!
     @IBOutlet weak var playersTableView: NSTableView!
     
@@ -61,15 +61,15 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     func layoutTableSelector()
     {
         // Add tables (move down to ViewModel using ComboBoxDataSource delegates).
-        tableComboBox.removeAllItems()
-        tableComboBox.addItems(withObjectValues: viewModel.tables)
-        tableComboBox.selectItem(at: 0)
+        tablesComboBox.removeAllItems()
+        tablesComboBox.addItems(withObjectValues: viewModel.tables)
+        tablesComboBox.selectItem(at: 0)
     }
     
     func layoutTableSummary()
     {
-        let tableSummary = viewModel.tableSummary(for: tableComboBox.indexOfSelectedItem, font: levelLabel.font!)
-        levelLabel.attributedStringValue = tableSummary.blinds
+        let tableSummary = viewModel.tableSummary(for: tablesComboBox.indexOfSelectedItem, font: blindsLabel.font!)
+        blindsLabel.attributedStringValue = tableSummary.blinds
         stacksLabel.attributedStringValue = tableSummary.stacks
     }
 }

@@ -6,6 +6,10 @@
     + Move Table Selector Model to ViewModel as well
     + Model some more JSON
 
+* 0.3.61
+
+    + Some renamings
+
 * 0.3.6
 
     + Hooked up player names

@@ -878,10 +878,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="levelLabel" destination="Mbr-bY-dqi" id="1tN-eF-3Rh"/>
+                        <outlet property="blindsLabel" destination="Mbr-bY-dqi" id="1tN-eF-3Rh"/>
                         <outlet property="playersTableView" destination="cPg-rX-oTq" id="Z6M-vX-ji6"/>
                         <outlet property="stacksLabel" destination="y83-4P-VCO" id="biR-dg-fxc"/>
-                        <outlet property="tableComboBox" destination="Xcz-5J-GVb" id="WE7-gk-QcW"/>
+                        <outlet property="tablesComboBox" destination="Xcz-5J-GVb" id="WE7-gk-QcW"/>
                         <outlet property="viewModel" destination="1rj-Mk-7PR" id="DCk-m6-sYe"/>
                     </connections>
                 </viewController>
