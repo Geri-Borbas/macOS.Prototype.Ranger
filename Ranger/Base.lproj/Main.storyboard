@@ -715,12 +715,13 @@
                                 <subviews>
                                     <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xcz-5J-GVb">
                                         <rect key="frame" x="0.0" y="253" width="294" height="25"/>
-                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="No Live Tables" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="kN1-gp-UNS">
+                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="No Live Tables" drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="kN1-gp-UNS">
                                             <font key="font" metaFont="titleBar"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </comboBoxCell>
                                         <connections>
+                                            <outlet property="dataSource" destination="1rj-Mk-7PR" id="6OI-zI-C01"/>
                                             <outlet property="delegate" destination="XfG-lQ-9wD" id="Do6-Xg-V4q"/>
                                         </connections>
                                     </comboBox>

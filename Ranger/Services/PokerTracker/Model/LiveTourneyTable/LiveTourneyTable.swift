@@ -12,6 +12,7 @@ import PostgresClientKit
 
 class LiveTourneyTable: Entry
 {
+    
 
     let id_live_table: Int
     let amt_ante: Double
@@ -79,6 +80,15 @@ class LiveTourneyTable: Entry
         amt_sb = try row.columns[2].double()
         amt_bb = try row.columns[3].double()
         cnt_players = try row.columns[8].int()
+    }  
+}
+
+
+extension LiveTourneyTable: Equatable
+{
+    static func == (lhs: LiveTourneyTable, rhs: LiveTourneyTable) -> Bool
+    {
+        return lhs.id_live_table == rhs.id_live_table
     }
 }
 

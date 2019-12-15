@@ -10,7 +10,10 @@ import Foundation
 import SwiftUI
 
 
-class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSource
+class TourneyTableViewModel: NSObject,
+    NSTableViewDelegate,
+    NSTableViewDataSource,
+    NSComboBoxDataSource
 {
     
     
@@ -42,17 +45,19 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         }
     }
     
-    var selectedTableIndex: Int = 0
+    var selectedTable: String = ""
     {
         didSet
         {
             // Look for changes.
-            if selectedTableIndex != oldValue
+            if selectedTable != oldValue
             {
                 try? processData() // May invoke `players.didSet` above
             }
         }
     }
+    
+    var selectedTableIndex: Int { tables.firstIndex(of: selectedTable) ?? 0 }
     
     
     // MARK: - Data
@@ -83,7 +88,7 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     }
     
     
-    // MARK: - Fetch
+    // MARK: - Process
     
     func tick()
     {
@@ -94,6 +99,15 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     {
         // Fetch data.
         liveTourneyTables = try pokerTracker.fetch(LiveTourneyTableQuery())
+        
+        // Only if any.
+        guard liveTourneyTables.count > 0
+        else
+        {
+            print("No live tables found.")
+            return
+        }
+        
         let liveTourneyPlayers = try pokerTracker.fetch(LiveTourneyPlayerQuery())
         
         // Format tables (may invoke `players.didSet`).
@@ -109,7 +123,11 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
             )
         })
         
-        print("tables: \(tables)")
+        // print("tables: \(tables)")
+        
+        // Select first table by default.
+        if (selectedTable == "")
+        { selectedTable = tables.first ?? "" }
         
         // Collect `id_player` for live players.
         let liveTourneyPlayerIDs = liveTourneyPlayers
@@ -126,7 +144,7 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         .filter
         {
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
-            eachLiveTourneyPlayer.id_live_table == selectedTableIndex + 1 // Get rid of this after hooking up `NSComboBoxDataSource`
+            eachLiveTourneyPlayer.id_live_table == (tables.firstIndex(of: selectedTable) ?? 0) + 1
         }
         .map
         {
@@ -234,7 +252,7 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
     }
     
     
-    // MARK: - TableView Data Hooks
+    // MARK: - TableView Data
 
     func numberOfRows(in tableView: NSTableView) -> Int
     { return players.count }
@@ -253,6 +271,15 @@ class TourneyTableViewModel: NSObject, NSTableViewDelegate, NSTableViewDataSourc
         
         return cellView
     }
+    
+    
+    // MARK: - ComboBox Data
+    
+    func numberOfItems(in comboBox: NSComboBox) -> Int
+    { return tables.count }
+
+    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any?
+    { return tables[index] }
     
     
 }

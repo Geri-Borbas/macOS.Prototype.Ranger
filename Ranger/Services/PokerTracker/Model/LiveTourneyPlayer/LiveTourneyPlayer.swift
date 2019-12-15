@@ -43,6 +43,15 @@ class LiveTourneyPlayer: Entry
 }
 
 
+extension LiveTourneyPlayer: Equatable
+{
+    static func == (lhs: LiveTourneyPlayer, rhs: LiveTourneyPlayer) -> Bool
+    {
+        return lhs.id_player == rhs.id_player
+    }
+}
+
+
 extension LiveTourneyPlayer: CustomStringConvertible
 {
     var description: String

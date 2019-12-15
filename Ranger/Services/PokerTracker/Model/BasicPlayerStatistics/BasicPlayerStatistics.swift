@@ -45,6 +45,19 @@ class BasicPlayerStatistics: Entry
 }
 
 
+extension BasicPlayerStatistics: Equatable
+{
+    static func == (lhs: BasicPlayerStatistics, rhs: BasicPlayerStatistics) -> Bool
+    {
+        return (
+            lhs.id_player == rhs.id_player &&
+            lhs.VPIP == rhs.VPIP &&
+            lhs.PFR == rhs.PFR
+        )
+    }
+}
+
+
 extension BasicPlayerStatistics: CustomStringConvertible
 {
     var description: String

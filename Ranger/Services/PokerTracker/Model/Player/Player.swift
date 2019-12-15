@@ -26,6 +26,15 @@ class Player: Entry
 }
 
 
+extension Player: Equatable
+{
+    static func == (lhs: Player, rhs: Player) -> Bool
+    {
+        return lhs.id_player == rhs.id_player
+    }
+}
+
+
 extension Player: CustomStringConvertible
 {
     var description: String

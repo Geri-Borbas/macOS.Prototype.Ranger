@@ -35,42 +35,36 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         super.viewDidLoad()
         
         // Kick off updates.
-        viewModel.start(onChange:
-        {
-            self.layoutTableSelector()
-            self.layoutTableSummary()
-            self.playersTableView.reloadData()
-        })
+        viewModel.start(onChange: layout)
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)
     {
+        // Unwrap sender.
         guard let comboBox: NSComboBox = (notification.object as? NSComboBox)
         else { return }
         
         // Select model.
-        viewModel.selectedTableIndex = comboBox.indexOfSelectedItem
+        viewModel.selectedTable = comboBox.stringValue
         
         // Log.
+        print("comboBox.stringValue: \(comboBox.stringValue)")
         print("comboBox.indexOfSelectedItem: \(comboBox.indexOfSelectedItem)")
     }
     
     
     // MARK: - Layout
     
-    func layoutTableSelector()
+    func layout()
     {
-        // Add tables (move down to ViewModel using ComboBoxDataSource delegates).
-        tablesComboBox.removeAllItems()
-        tablesComboBox.addItems(withObjectValues: viewModel.tables)
-        tablesComboBox.selectItem(at: 0)
-    }
-    
-    func layoutTableSummary()
-    {
-        let tableSummary = viewModel.tableSummary(for: tablesComboBox.indexOfSelectedItem, font: blindsLabel.font!)
+        tablesComboBox.reloadData()
+        tablesComboBox.selectItem(at: viewModel.selectedTableIndex)
+        
+        let tableSummary = viewModel.tableSummary(for: viewModel.selectedTableIndex, font: blindsLabel.font!)
         blindsLabel.attributedStringValue = tableSummary.blinds
         stacksLabel.attributedStringValue = tableSummary.stacks
+        
+        playersTableView.reloadData()
     }
 }
 
