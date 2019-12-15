@@ -19,17 +19,23 @@ class TourneyTableViewModel: NSObject,
     
     // MARK: - Services
     
-    lazy var pokerTracker: PokerTracker = PokerTracker()
-    lazy var sharkScope: SharkScope = SharkScope()
+    private lazy var pokerTracker: PokerTracker = PokerTracker()
+    private lazy var sharkScope: SharkScope = SharkScope()
     
     
     // MARK: - Data
     
-    var changed: Bool = false
-    func markAsChanged() { changed = true }
-    func markAsUnchanged() { changed = false }
+    /// Indicator of data change.
+    private var changed: Bool = false
+    
+    /// Indicate data change.
+    private func markAsChanged() { changed = true }
+    
+    /// Reset indicator of data change.
+    private func markAsUnchanged() { changed = false }
         
-    var liveTourneyTables: [LiveTourneyTable] = []
+    /// PokerTracker data from `live_tourney_table`. Can indicate change upon set.
+    private var liveTourneyTables: [LiveTourneyTable] = []
     {
         didSet
         {
@@ -38,7 +44,8 @@ class TourneyTableViewModel: NSObject,
         }
     }
     
-    var selectedLiveTourneyTable: LiveTourneyTable?
+    /// Selected table for this view. Can invoke `onChange()` upon set.
+    private var selectedLiveTourneyTable: LiveTourneyTable?
     {
         didSet
         {
@@ -48,7 +55,8 @@ class TourneyTableViewModel: NSObject,
         }
     }
     
-    var selectedLiveTourneyTableIndex: Int
+    /// Index of the currently selected table for this view (in `liveTourneyTables`).
+    public var selectedLiveTourneyTableIndex: Int
     {
         get
         {
@@ -67,7 +75,8 @@ class TourneyTableViewModel: NSObject,
         }
     }
     
-    var liveTourneyPlayersAtSelectedTable: [LiveTourneyPlayer] = []
+    /// Players seated at selected table (`selectedLiveTourneyTable`). Can indicate change upon set.
+    private var liveTourneyPlayersAtSelectedTable: [LiveTourneyPlayer] = []
     {
         didSet
         {
@@ -76,17 +85,18 @@ class TourneyTableViewModel: NSObject,
         }
     }
     
-    var playersAtSelectedTable: [Player] = []
+    /// PokerTracker `Player` entries for players at selected table.
+    private var playersAtSelectedTable: [Player] = []
     
     
     // MARK: - Binds
     
-    var onChange: (() -> Void)?
+    private var onChange: (() -> Void)?
     
     
     // MARK: - Lifecycle
     
-    func start(onChange: (() -> Void)?)
+    public func start(onChange: (() -> Void)?)
     {
         print("TourneyTableViewModel.start()")
         
@@ -104,12 +114,12 @@ class TourneyTableViewModel: NSObject,
     
     // MARK: - Process
     
-    func tick()
+    private func tick()
     {
         try? processData()
     }
     
-    func processData() throws
+    private func processData() throws
     {
         // Get tables (may invoke `markAsChanged`).
         liveTourneyTables = try pokerTracker.fetch(LiveTourneyTableQuery())
@@ -148,7 +158,7 @@ class TourneyTableViewModel: NSObject,
         invokeOnChangedIfNeeded()
     }
     
-    func invokeOnChangedIfNeeded()
+    private func invokeOnChangedIfNeeded()
     {
         if (changed)
         {
@@ -161,7 +171,7 @@ class TourneyTableViewModel: NSObject,
     
     // MARK: - Table Summary Data
     
-    func tableSummary(for index: Int, font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
+    public func tableSummary(for index: Int, font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
     {
         // Variables.
         var smallBlind:Double = 0

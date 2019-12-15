@@ -5,6 +5,10 @@
 
     + Model some more JSON
 
+* 0.3.81
+
+    + Some comments / access level adjustments
+
 * 0.3.8
 
     + Removed retaining any display data
