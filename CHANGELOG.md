@@ -5,6 +5,11 @@
 
     + Model some more JSON
 
+* 0.4.0
+
+    + Added statistics to players table
+    + `BasicPlayerStatistics`  can be filtered for `id_player` list
+
 * 0.3.81
 
     + Some comments / access level adjustments

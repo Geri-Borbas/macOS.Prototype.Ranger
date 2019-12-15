@@ -88,6 +88,9 @@ class TourneyTableViewModel: NSObject,
     /// PokerTracker `Player` entries for players at selected table.
     private var playersAtSelectedTable: [Player] = []
     
+    /// PokerTracker `BasicPlayerStatistics` entries for players at selected table.
+    private var playerStatisticsAtSelectedTable: [BasicPlayerStatistics] = []
+    
     
     // MARK: - Binds
     
@@ -153,6 +156,9 @@ class TourneyTableViewModel: NSObject,
         
         // Fetch player names.
         playersAtSelectedTable = try pokerTracker.fetch(PlayerQuery(playerIDs: playerIDs))
+        
+        // Fetch player statistics.
+        playerStatisticsAtSelectedTable = try pokerTracker.fetch(BasicPlayerStatisticsQuery(playerIDs: playerIDs))
         
         // Look for changes.
         invokeOnChangedIfNeeded()
@@ -275,14 +281,26 @@ class TourneyTableViewModel: NSObject,
         // Data.
         let liveTourneyPlayer = liveTourneyPlayersAtSelectedTable[row]
         let player = playersAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
+        let statistics = playerStatisticsAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
         
         // Display data.
         let playerName = player?.player_name ?? ""
-        let stack = String(liveTourneyPlayer.amt_stack)
+        let stack = String(format: "%.0f", liveTourneyPlayer.amt_stack)
+        var VPIP = "-"
+        var PFR = "-"
+        if let statistics = statistics
+        {
+            VPIP = String(format: "%.0f", statistics.VPIP * 100)
+            PFR = String(format: "%.0f", statistics.PFR * 100)
+        }
+        
+        // Into columns.
         let stringsForColumnTitles =
         [
             "Player" : playerName,
-            "Stack" : stack
+            "Stack" : stack,
+            "VPIP" : VPIP,
+            "PFR" : PFR
         ]
         
         // Cell view.

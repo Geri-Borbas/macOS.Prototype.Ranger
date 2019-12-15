@@ -16,11 +16,24 @@ struct BasicPlayerStatisticsQuery: Query
     typealias EntryType = BasicPlayerStatistics
     
     
+    let playerIDs: [Int]
     var string: String
     {
         let queryFilePath = Bundle.main.path(forResource: "BasicPlayerStatisticsQuery", ofType: "sql")
-        guard let queryString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
+        guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
         else { return "" }
+        
+        let stringPlayerIDs = playerIDs.map{ eachPlayerID in String(eachPlayerID) }
+        let joinedPlayerIDs = stringPlayerIDs.joined(separator: ",")
+        let whereCondition = "player.id_player IN(\(joinedPlayerIDs))"
+        let queryString = queryTemplateString.replacingOccurrences(of: "$WHERE_CONDITION", with: whereCondition)
+        
         return queryString
+    }
+    
+    
+    init(playerIDs: [Int])
+    {
+        self.playerIDs = playerIDs
     }
 }

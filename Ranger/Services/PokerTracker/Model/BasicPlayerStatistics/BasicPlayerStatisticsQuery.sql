@@ -106,6 +106,9 @@ WHERE
       )
     )
   )
+  AND (
+    $WHERE_CONDITION
+  )
 GROUP BY
   (
     tourney_hand_player_statistics.id_player

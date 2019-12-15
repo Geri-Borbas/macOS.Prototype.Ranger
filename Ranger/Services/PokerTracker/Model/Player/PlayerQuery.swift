@@ -21,7 +21,7 @@ struct PlayerQuery: Query
     {
         let stringPlayerIDs = playerIDs.map{ eachPlayerID in String(eachPlayerID) }
         let joinedPlayerIDs = stringPlayerIDs.joined(separator: ",")
-        return "SELECT id_player, player_name FROM player WHERE id_player IN(\(joinedPlayerIDs))"
+        return "SELECT player.id_player, player.player_name FROM player WHERE player.id_player IN(\(joinedPlayerIDs))"
     }
     
     
