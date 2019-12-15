@@ -23,17 +23,11 @@ class TourneyTableViewModel: NSObject,
     lazy var sharkScope: SharkScope = SharkScope()
     
     
-    // MARK: - Display Data
+    // MARK: - Data
     
-    var tables:[String] = []
-    {
-        didSet
-        {
-            // Look for changes.
-            if tables.elementsEqual(oldValue) == false
-            { onChange?() }
-        }
-    }
+    var changed: Bool = false
+    func markAsChanged() { changed = true }
+    func markAsUnchanged() { changed = false }
     
     var players:[[String: String]] = [[:]]
     {
@@ -44,25 +38,44 @@ class TourneyTableViewModel: NSObject,
             { onChange?() }
         }
     }
+        
+    var liveTourneyTables: [LiveTourneyTable] = []
+    {
+        didSet
+        {
+            if liveTourneyTables.elementsEqual(oldValue) == false
+            { markAsChanged() }
+        }
+    }
     
-    var selectedTable: String = ""
+    var selectedLiveTourneyTable: LiveTourneyTable?
     {
         didSet
         {
             // Look for changes.
-            if selectedTable != oldValue
-            {
-                try? processData() // May invoke `players.didSet` above
-            }
+            if selectedLiveTourneyTable != oldValue
+            { try? processData() }
         }
     }
     
-    var selectedTableIndex: Int { tables.firstIndex(of: selectedTable) ?? 0 }
-    
-    
-    // MARK: - Data
-    
-    var liveTourneyTables: [LiveTourneyTable] = []
+    var selectedLiveTourneyTableIndex: Int
+    {
+        get
+        {
+            // -1 if no tables selected.
+            guard let selectedLiveTourneyTable = selectedLiveTourneyTable
+            else { return -1 }
+            return liveTourneyTables.firstIndex(of: selectedLiveTourneyTable)!
+        }
+        set
+        {
+            // Select last table if index is greater than available tables (or `nil` if no tables at all).
+            guard liveTourneyTables.count > newValue
+            else { return selectedLiveTourneyTable = liveTourneyTables.last ?? nil }
+            // Or just select table at index.
+            selectedLiveTourneyTable = liveTourneyTables[newValue]
+        }
+    }
     
     
     // MARK: - Binds
@@ -97,54 +110,38 @@ class TourneyTableViewModel: NSObject,
     
     func processData() throws
     {
-        // Fetch data.
+        // Get tables (may invoke `markAsChanged`).
         liveTourneyTables = try pokerTracker.fetch(LiveTourneyTableQuery())
         
-        // Only if any.
+        // Only if tables any.
         guard liveTourneyTables.count > 0
         else
         {
             print("No live tables found.")
+            invokeOnChangedIfNeeded()
             return
         }
         
+        // Get players (may invoke `markAsChanged`).
         let liveTourneyPlayers = try pokerTracker.fetch(LiveTourneyPlayerQuery())
-        
-        // Format tables (may invoke `players.didSet`).
-        tables = liveTourneyTables.map(
-        {
-            (eachTable: LiveTourneyTable) -> String in
-            String(format: "Table %d - %.0f/%.0f Ante %.0f (%d players)",
-                   eachTable.id_live_table,
-                   eachTable.amt_sb,
-                   eachTable.amt_bb,
-                   eachTable.amt_ante,
-                   eachTable.cnt_players
-            )
-        })
-        
-        // print("tables: \(tables)")
-        
+                
         // Select first table by default.
-        if (selectedTable == "")
-        { selectedTable = tables.first ?? "" }
+        if (selectedLiveTourneyTable == nil)
+        { selectedLiveTourneyTable = liveTourneyTables.first! }
         
         // Collect `id_player` for live players.
         let liveTourneyPlayerIDs = liveTourneyPlayers
         .map{ eachLiveTourneyPlayer in eachLiveTourneyPlayer.id_player }
         
-        // Log.
-        // print("liveTourneyPlayerIDs: \(liveTourneyPlayerIDs)")
-        
         // Fetch player names.
         let playerNames = try pokerTracker.fetch(PlayerQuery(playerIDs: liveTourneyPlayerIDs))
-        
+                
         // Crunch data for UI (may invoke `players.didSet`).
         players = liveTourneyPlayers
         .filter
         {
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
-            eachLiveTourneyPlayer.id_live_table == (tables.firstIndex(of: selectedTable) ?? 0) + 1
+            eachLiveTourneyPlayer.id_live_table == selectedLiveTourneyTableIndex + 1
         }
         .map
         {
@@ -159,6 +156,19 @@ class TourneyTableViewModel: NSObject,
                 "Stack" : String(eachLiveTourneyPlayer.amt_stack)
             ]
         }
+        
+        // Look for changes.
+        invokeOnChangedIfNeeded()
+    }
+    
+    func invokeOnChangedIfNeeded()
+    {
+        if (changed)
+        {
+            print("TourneyTableViewModel.invokeOnChangedIfNeeded.onChange?()")
+            onChange?()
+            markAsUnchanged()
+        }
     }
     
     func tableSummary(for index: Int, font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
@@ -170,7 +180,7 @@ class TourneyTableViewModel: NSObject,
         var players:Double = 0
         
         // Check data.
-        if (tables.count == 0)
+        if (liveTourneyTables.count == 0)
         {
             // Empty state.
             return (
@@ -276,10 +286,17 @@ class TourneyTableViewModel: NSObject,
     // MARK: - ComboBox Data
     
     func numberOfItems(in comboBox: NSComboBox) -> Int
-    { return tables.count }
+    { return liveTourneyTables.count }
 
     func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any?
-    { return tables[index] }
-    
-    
+    {
+        let table = liveTourneyTables[index]
+        return String(format: "Table %d - %.0f/%.0f Ante %.0f (%d players)",
+                      table.id_live_table,
+                      table.amt_sb,
+                      table.amt_bb,
+                      table.amt_ante,
+                      table.cnt_players
+        )
+    }
 }

@@ -3,8 +3,13 @@
 
 * Doing
 
-    + Move Table Selector Model to ViewModel as well
     + Model some more JSON
+
++ 0.3.7
+
+    + Moved Table Selector Model to ViewModel as well
+    + ViewModel holds actual model data instead of display data
+    + Cleaned ViewModel `changed` lookup 
 
 * 0.3.62
 

@@ -45,11 +45,7 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         else { return }
         
         // Select model.
-        viewModel.selectedTable = comboBox.stringValue
-        
-        // Log.
-        print("comboBox.stringValue: \(comboBox.stringValue)")
-        print("comboBox.indexOfSelectedItem: \(comboBox.indexOfSelectedItem)")
+        viewModel.selectedLiveTourneyTableIndex = comboBox.indexOfSelectedItem
     }
     
     
@@ -57,10 +53,12 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     
     func layout()
     {
-        tablesComboBox.reloadData()
-        tablesComboBox.selectItem(at: viewModel.selectedTableIndex)
+        print("TourneyTableViewController.layout()")
         
-        let tableSummary = viewModel.tableSummary(for: viewModel.selectedTableIndex, font: blindsLabel.font!)
+        tablesComboBox.reloadData()
+        tablesComboBox.selectItem(at: viewModel.selectedLiveTourneyTableIndex)
+        
+        let tableSummary = viewModel.tableSummary(for: viewModel.selectedLiveTourneyTableIndex, font: blindsLabel.font!)
         blindsLabel.attributedStringValue = tableSummary.blinds
         stacksLabel.attributedStringValue = tableSummary.stacks
         
