@@ -20,22 +20,36 @@ struct Window
 }
 
 
-class Watcher
+class WindowTracker
 {
     
     
     var running: Bool = true
     var windows: [Window] = []
+    var activityToken: NSObjectProtocol?
     
     
     func start()
     {
+        // ProcessInfo.processInfo.disableAutomaticTermination("Align overlay windows")
+        
+        activityToken = ProcessInfo.processInfo.beginActivity(
+            options: [
+                .automaticTerminationDisabled,
+                .suddenTerminationDisabled,
+                .idleSystemSleepDisabled,
+                .idleDisplaySleepDisabled,
+                .background,
+                .latencyCritical
+            ],
+            reason: "Overlay window align"
+        )
+
         // let interval = 2.0 // 1.0 / 60.0
         // let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         // RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
-       
-        let queue = DispatchQueue.global(qos: .background) // (label: "loop")   
-        // queue.qos = .bac
+        
+        let queue = DispatchQueue(label: "Overlay window align loop")
         queue.async
         {
             while self.running
@@ -48,7 +62,7 @@ class Watcher
     }
     
     // @objc
-    func tick()
+    @objc func tick()
     {
         updateWindows()
         
@@ -77,9 +91,9 @@ class Watcher
         {
             (eachWindowInfo: [String:Any]) in
             (
-                eachWindowInfo["kCGWindowOwnerName"] as! String == "PokerStarsEU" &&
-                (eachWindowInfo["kCGWindowName"] as! String).contains("Tournament") &&
-                (eachWindowInfo["kCGWindowName"] as! String).contains("Lobby")
+                (eachWindowInfo["kCGWindowOwnerName"] as? String) == "PokerStarsEU" &&
+                (eachWindowInfo["kCGWindowName"] as? String)?.contains("Tournament") ?? false &&
+                (eachWindowInfo["kCGWindowName"] as? String)?.contains("Lobby") ?? false
             )
         }
         .map

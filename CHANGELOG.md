@@ -5,6 +5,11 @@
 
     + Model some more JSON
 
+* 0.4.4
+
+    + SharkScope refactor (being more value / protocol / generic oriented)
+        + Same structure like PokerTracker (except async `Result`)
+
 * 0.4.2
 
     + Window tracking prototype

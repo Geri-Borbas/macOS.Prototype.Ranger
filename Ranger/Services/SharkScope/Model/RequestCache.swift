@@ -9,12 +9,12 @@
 import Foundation
 
 
-class Cache
+class RequestCache
 {
     
     
-    func cachedResponse(for path: String,
-                        parameters: [String: String]) -> Response?
+    func cachedResponse<ResponseType: Decodable>(for path: String,
+                                                 parameters: [String: String]) -> ResponseType?
     {
         // Resolve file name.
         guard let cacheFileURL = cacheFileURL(for: path, parameters: parameters)
@@ -24,7 +24,7 @@ class Cache
         do
         {
             let data = try Data(contentsOf: cacheFileURL)
-            let response = try JSONDecoder().decode(Response.self, from: data)
+            let response = try JSONDecoder().decode(ResponseType.self, from: data)
             return response
         }
         catch

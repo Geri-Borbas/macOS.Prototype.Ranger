@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Response: Decodable
+struct Metadata: Decodable
 {
     
     

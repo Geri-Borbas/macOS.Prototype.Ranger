@@ -38,7 +38,7 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         viewModel.start(onChange: layout)
         
         // Test.
-        Watcher().start()
+        // WindowTracker().start()
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)
