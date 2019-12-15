@@ -5,7 +5,13 @@
 
     + Model some more JSON
 
-+ 0.3.7
+* 0.3.8
+
+    + Removed retaining any display data
+        + Only retain actual models
+        + Display data created on demand
+
+* 0.3.7
 
     + Moved Table Selector Model to ViewModel as well
     + ViewModel holds actual model data instead of display data

@@ -28,16 +28,6 @@ class TourneyTableViewModel: NSObject,
     var changed: Bool = false
     func markAsChanged() { changed = true }
     func markAsUnchanged() { changed = false }
-    
-    var players:[[String: String]] = [[:]]
-    {
-        didSet
-        {
-            // Look for changes.
-            if players.elementsEqual(oldValue) == false
-            { onChange?() }
-        }
-    }
         
     var liveTourneyTables: [LiveTourneyTable] = []
     {
@@ -76,6 +66,17 @@ class TourneyTableViewModel: NSObject,
             selectedLiveTourneyTable = liveTourneyTables[newValue]
         }
     }
+    
+    var liveTourneyPlayersAtSelectedTable: [LiveTourneyPlayer] = []
+    {
+        didSet
+        {
+            if liveTourneyPlayersAtSelectedTable.elementsEqual(oldValue) == false
+            { markAsChanged() }
+        }
+    }
+    
+    var playersAtSelectedTable: [Player] = []
     
     
     // MARK: - Binds
@@ -129,33 +130,19 @@ class TourneyTableViewModel: NSObject,
         if (selectedLiveTourneyTable == nil)
         { selectedLiveTourneyTable = liveTourneyTables.first! }
         
-        // Collect `id_player` for live players.
-        let liveTourneyPlayerIDs = liveTourneyPlayers
-        .map{ eachLiveTourneyPlayer in eachLiveTourneyPlayer.id_player }
-        
-        // Fetch player names.
-        let playerNames = try pokerTracker.fetch(PlayerQuery(playerIDs: liveTourneyPlayerIDs))
-                
-        // Crunch data for UI (may invoke `players.didSet`).
-        players = liveTourneyPlayers
-        .filter
+        // Crunch data for UI (may invoke `markAsChanged`).
+        liveTourneyPlayersAtSelectedTable = liveTourneyPlayers.filter
         {
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
             eachLiveTourneyPlayer.id_live_table == selectedLiveTourneyTableIndex + 1
         }
-        .map
-        {
-            (eachLiveTourneyPlayer: LiveTourneyPlayer) in
-            // let eachLiveTourneyPlayerStatistics = playerStatistics.filter{ eachPlayerStatistics in eachPlayerStatistics.id_player == eachLiveTourneyPlayer.id_player }.first
-            let eachPlayer = playerNames.filter{ eachPlayer in eachPlayer.id_player == eachLiveTourneyPlayer.id_player }.first
-            let eachPlayerName = eachPlayer?.player_name ?? ""
-            // print(eachPlayer?.id_player as Any)
-            // print(eachPlayer?.player_name as Any)
-            return [
-                "Player" : "\(eachPlayerName) at \(eachLiveTourneyPlayer.id_live_table)",
-                "Stack" : String(eachLiveTourneyPlayer.amt_stack)
-            ]
-        }
+                
+        // Collect `id_player` for live players.
+        let playerIDs = liveTourneyPlayersAtSelectedTable
+        .map{ eachPlayer in eachPlayer.id_player }
+        
+        // Fetch player names.
+        playersAtSelectedTable = try pokerTracker.fetch(PlayerQuery(playerIDs: playerIDs))
         
         // Look for changes.
         invokeOnChangedIfNeeded()
@@ -170,6 +157,9 @@ class TourneyTableViewModel: NSObject,
             markAsUnchanged()
         }
     }
+    
+    
+    // MARK: - Table Summary Data
     
     func tableSummary(for index: Int, font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
     {
@@ -265,7 +255,7 @@ class TourneyTableViewModel: NSObject,
     // MARK: - TableView Data
 
     func numberOfRows(in tableView: NSTableView) -> Int
-    { return players.count }
+    { return liveTourneyPlayersAtSelectedTable.count }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
     {
@@ -273,11 +263,21 @@ class TourneyTableViewModel: NSObject,
         guard let column = tableColumn else { return nil }
         
         // Data.
-        let player = players[row]
+        let liveTourneyPlayer = liveTourneyPlayersAtSelectedTable[row]
+        let player = playersAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
+        
+        // Display data.
+        let playerName = player?.player_name ?? ""
+        let stack = String(liveTourneyPlayer.amt_stack)
+        let stringsForColumnTitles =
+        [
+            "Player" : playerName,
+            "Stack" : stack
+        ]
         
         // Cell view.
         guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? NSTableCellView else { return nil }
-        cellView.textField?.stringValue = player[column.title] ?? ""
+        cellView.textField?.stringValue = stringsForColumnTitles[column.title] ?? ""
         
         return cellView
     }
