@@ -5,6 +5,10 @@
 
     + Model some more JSON
 
+* 0.4.2
+
+    + Window tracking prototype
+
 * 0.4.1
 
     + `LiveTourneyPlayer: Equatable` tweaks  

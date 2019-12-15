@@ -25,6 +25,7 @@
 		558D35E2239F3C58006C710D /* MetadataResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* MetadataResponse.json */; };
 		558D35E5239F42AE006C710D /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* Response.json */; };
 		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
+		55AE8F7F23A5F305006BF2B9 /* Watcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* Watcher.swift */; };
 		55B229BD239E96A2003EA63B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B229BC239E96A2003EA63B /* Request.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
 		55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		558D35E1239F3C58006C710D /* MetadataResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MetadataResponse.json; sourceTree = "<group>"; };
 		558D35E4239F42AE006C710D /* Response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
 		55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasicPlayerStatisticsQuery.sql; sourceTree = "<group>"; };
+		55AE8F7E23A5F305006BF2B9 /* Watcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watcher.swift; sourceTree = "<group>"; };
 		55B229BC239E96A2003EA63B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		55C1868B239583DA0081B6B7 /* Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C1868E239583DA0081B6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		5508E3FE23A4754B00FFB173 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				55AE8F7D23A5F2DD006BF2B9 /* Watcher */,
 				55B229BB239E9617003EA63B /* SharkScope */,
 				5521A555239DD5C4000D1AD1 /* PokerTracker */,
 			);
@@ -176,6 +179,14 @@
 				558D35E4239F42AE006C710D /* Response.json */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		55AE8F7D23A5F2DD006BF2B9 /* Watcher */ = {
+			isa = PBXGroup;
+			children = (
+				55AE8F7E23A5F305006BF2B9 /* Watcher.swift */,
+			);
+			path = Watcher;
 			sourceTree = "<group>";
 		};
 		55B229BB239E9617003EA63B /* SharkScope */ = {
@@ -380,6 +391,7 @@
 				5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */,
 				5521A554239DD170000D1AD1 /* SharkScope.swift in Sources */,
 				555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */,
+				55AE8F7F23A5F305006BF2B9 /* Watcher.swift in Sources */,
 				55ED3CD423A54B0C00754763 /* Query.swift in Sources */,
 				5521A55F239DF408000D1AD1 /* Entry.swift in Sources */,
 				5508E3FD23A4656000FFB173 /* TourneyTableViewModel.swift in Sources */,

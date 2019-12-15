@@ -138,7 +138,6 @@ class TourneyTableViewModel: NSObject,
         guard liveTourneyTables.count > 0
         else
         {
-            print("No live tables found.")
             invokeOnChangedIfNeeded()
             return
         }
