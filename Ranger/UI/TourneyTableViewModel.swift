@@ -88,8 +88,15 @@ class TourneyTableViewModel: NSObject,
     /// PokerTracker `Player` entries for players at selected table.
     private var playersAtSelectedTable: [Player] = []
     
-    /// PokerTracker `BasicPlayerStatistics` entries for players at selected table.
+    /// PokerTracker `BasicPlayerStatistics` entries for players at selected table. Can indicate change upon set.
     private var playerStatisticsAtSelectedTable: [BasicPlayerStatistics] = []
+    {
+        didSet
+        {
+            if playerStatisticsAtSelectedTable.elementsEqual(oldValue) == false
+            { markAsChanged() }
+        }
+    }
     
     
     // MARK: - Binds
@@ -168,7 +175,6 @@ class TourneyTableViewModel: NSObject,
     {
         if (changed)
         {
-            print("TourneyTableViewModel.invokeOnChangedIfNeeded.onChange?()")
             onChange?()
             markAsUnchanged()
         }

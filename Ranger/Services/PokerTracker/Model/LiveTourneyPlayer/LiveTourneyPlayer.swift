@@ -47,7 +47,11 @@ extension LiveTourneyPlayer: Equatable
 {
     static func == (lhs: LiveTourneyPlayer, rhs: LiveTourneyPlayer) -> Bool
     {
-        return lhs.id_player == rhs.id_player
+        return (
+            lhs.id_player == rhs.id_player &&
+            lhs.id_live_table == rhs.id_live_table &&
+            lhs.amt_stack == rhs.amt_stack
+        )
     }
 }
 

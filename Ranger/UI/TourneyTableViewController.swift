@@ -53,8 +53,6 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     
     func layout()
     {
-        print("TourneyTableViewController.layout()")
-        
         tablesComboBox.reloadData()
         tablesComboBox.selectItem(at: viewModel.selectedLiveTourneyTableIndex)
         

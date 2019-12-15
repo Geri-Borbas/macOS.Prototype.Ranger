@@ -100,11 +100,11 @@ WHERE
     (
       tourney_hand_player_statistics.id_gametype = 1
     )
-    AND (
-      (
-        tourney_table_type.description LIKE 'MTT %'
-      )
-    )
+    -- AND (
+    --   (
+    --     tourney_table_type.description LIKE 'MTT %'
+    --   )
+    -- )
   )
   AND (
     $WHERE_CONDITION

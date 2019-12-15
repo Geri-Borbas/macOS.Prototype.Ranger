@@ -5,6 +5,12 @@
 
     + Model some more JSON
 
+* 0.4.1
+
+    + `LiveTourneyPlayer: Equatable` tweaks  
+    + Removed `MTT` filter from `BasicPlayerStatistics`
+    + `playerStatisticsAtSelectedTable` set can also indicate change
+
 * 0.4.0
 
     + Added statistics to players table
