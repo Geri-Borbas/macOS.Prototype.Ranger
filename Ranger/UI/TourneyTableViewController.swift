@@ -8,7 +8,6 @@
 
 import Cocoa
 import CoreGraphics
-// import SwiftUI
 
 
 class TourneyTableViewController: NSViewController, NSComboBoxDelegate
@@ -21,11 +20,17 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     @IBOutlet weak var blindsLabel: NSTextField!
     @IBOutlet weak var stacksLabel: NSTextField!
     @IBOutlet weak var playersTableView: NSTableView!
+    @IBOutlet weak var statusLabel: NSTextField!
     
     
     // MARK: - Model Outlets
     
     @IBOutlet weak var viewModel: TourneyTableViewModel!
+    
+    
+    // MARK: - Services
+    
+    private lazy var windowTracker: WindowTracker = WindowTracker()
     
     
     // MARK: - Events
@@ -38,7 +43,17 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         viewModel.start(onChange: layout)
         
         // Test.
-        // WindowTracker().start()
+        windowTracker.start(onTick: tick)
+    }
+    
+    func tick()
+    {
+        var status: String = "No Tourney window found."
+        if let trackedWindow = windowTracker.firstTourneyLobbyWindowInfo
+        { status = "Tracking window: \(trackedWindow.name)" }
+        
+        // Set.
+        self.statusLabel.stringValue = status
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)

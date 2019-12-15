@@ -10,13 +10,13 @@ import Foundation
 import SwiftUI
 
 
-struct Window
+struct WindowInfo
 {
     
     
-    let name: String
-    let number: Int
-    let bounds: CGRect
+    var name: String
+    var number: Int
+    var bounds: CGRect
 }
 
 
@@ -24,70 +24,43 @@ class WindowTracker
 {
     
     
-    var running: Bool = true
-    var windows: [Window] = []
-    var activityToken: NSObjectProtocol?
+    public var tickCount: Int = 0
+    public var firstTourneyLobbyWindowInfo: WindowInfo?
+    private var appWindow: NSWindow = NSWindow()
     
     
-    func start()
+    // MARK: - Binds
+    
+    private var onTick: (() -> Void)?
+    
+    
+    func start(onTick: @escaping (() -> Void))
     {
-        // ProcessInfo.processInfo.disableAutomaticTermination("Align overlay windows")
+        // Retain.
+        self.onTick = onTick
         
-        activityToken = ProcessInfo.processInfo.beginActivity(
-            options: [
-                .automaticTerminationDisabled,
-                .suddenTerminationDisabled,
-                .idleSystemSleepDisabled,
-                .idleDisplaySleepDisabled,
-                .background,
-                .latencyCritical
-            ],
-            reason: "Overlay window align"
-        )
-
-        // let interval = 2.0 // 1.0 / 60.0
-        // let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
-        // RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
+        // Get app window.
+        self.appWindow = NSApplication.shared.windows.first!
         
-        let queue = DispatchQueue(label: "Overlay window align loop")
-        queue.async
-        {
-            while self.running
-            {
-                Thread.sleep(forTimeInterval: 1.0 / 60.0)
-                DispatchQueue.main.async()
-                { self.tick() }
-            }
-        }
+        // Kickoff timer.
+        let interval = 1.0 / 60.0
+        let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
     }
     
-    // @objc
-    @objc func tick()
-    {
-        updateWindows()
-        
-        // Only with Tournament Lobby Window.
-        guard let tournamentLobbyWindow = windows.first else
-        { return }
-                
-        // Align.
-        let alignedBounds = CGRect.init(
-            x: tournamentLobbyWindow.bounds.minX,
-            y: NSScreen.main!.frame.size.height - tournamentLobbyWindow.bounds.minY - tournamentLobbyWindow.bounds.size.height,
-            width: tournamentLobbyWindow.bounds.size.width,
-            height: tournamentLobbyWindow.bounds.size.height
-        )
-        
-        NSApplication.shared.mainWindow?.setFrameTopLeftPoint(alignedBounds.origin)
-    }
     
-    func updateWindows()
+    // MARK: - Window lookup
+    
+    func searchFirstTourneyLobbyWindowInfo() -> WindowInfo?
     {
         // Get windows.
-        let windowInfoList = CGWindowListCopyWindowInfo(CGWindowListOption(arrayLiteral: .excludeDesktopElements, .optionOnScreenOnly), kCGNullWindowID) as! [[String:Any]]
+        let windowInfoList = CGWindowListCopyWindowInfo(
+            CGWindowListOption(arrayLiteral: .excludeDesktopElements, .optionOnScreenOnly),
+            kCGNullWindowID
+        ) as! [[String:Any]]
         
         // Filter PokerStars Tournament Lobby windows.
-        windows = windowInfoList.filter
+        let tourneyLobbyWindows = windowInfoList.filter
         {
             (eachWindowInfo: [String:Any]) in
             (
@@ -99,32 +72,60 @@ class WindowTracker
         .map
         {
             eachPokerStarsWindowInfo in
-            Window(
+            WindowInfo(
                 name: eachPokerStarsWindowInfo["kCGWindowName"] as! String,
                 number: eachPokerStarsWindowInfo["kCGWindowNumber"] as! Int,
                 bounds: CGRect.init(dictionaryRepresentation:(eachPokerStarsWindowInfo["kCGWindowBounds"] as! CFDictionary)) ?? CGRect()
             )
         }
+        
+        // Only with Tournament Lobby Window.
+        guard let firstTourneyLobbyInfo = tourneyLobbyWindows.first
+        else { return nil }
+        
+        return firstTourneyLobbyInfo
+    }
+    
+    
+    // MARK: - Window align
+    
+    @objc func tick()
+    {
+        firstTourneyLobbyWindowInfo = searchFirstTourneyLobbyWindowInfo()
+        
+        // Align App Window if Lobby Window any.
+        if let lobbyWindowInfo = firstTourneyLobbyWindowInfo
+        {
+            let convertedBounds = CGRect.init(
+                x: lobbyWindowInfo.bounds.minX,
+                y: NSScreen.main!.frame.size.height - lobbyWindowInfo.bounds.minY - lobbyWindowInfo.bounds.size.height,
+                width: lobbyWindowInfo.bounds.size.width,
+                height: lobbyWindowInfo.bounds.size.height
+            )
+            
+            appWindow.setFrame(
+                NSRect(
+                    x: convertedBounds.origin.x,
+                    y: convertedBounds.origin.y - appWindow.frame.size.height,
+                    width: convertedBounds.size.width,
+                    height: appWindow.frame.size.height
+                ),
+                display: true
+            )
+            
+            // Put above.
+            appWindow.order(NSWindow.OrderingMode.above, relativeTo: lobbyWindowInfo.number)
+            
+            // Prevent dragging.
+            appWindow.isMovable = false
+        }
+        else
+        {
+            // Enable dragging.
+            appWindow.isMovable = true
+        }
+        
+        // Callback.
+        onTick?()
     }
 }
-
-//    [
-//        "kCGWindowMemoryUsage": 1248,
-//        "kCGWindowAlpha": 1,
-//        "kCGWindowIsOnscreen": 1,
-//        "kCGWindowSharingState": 1,
-//        "kCGWindowStoreType": 1,
-//        "kCGWindowName": PokerStars Lobby,
-//        "kCGWindowOwnerPID": 63403,
-//        "kCGWindowNumber": 3929,
-//        "kCGWindowOwnerName": PokerStarsEU,
-//        "kCGWindowLayer": 0,
-//        "kCGWindowBounds":
-//        {
-//            Height = 869;
-//            Width = 1110;
-//            X = 75;
-//            Y = 46;
-//        }
-//    ]
-//

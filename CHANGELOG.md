@@ -5,6 +5,10 @@
 
     + Model some more JSON
 
+* 0.4.8
+
+    + Window tracking prototype (nicely tracks Tourney Lobby windows)
+
 * 0.4.4
 
     + SharkScope refactor (being more value / protocol / generic oriented)

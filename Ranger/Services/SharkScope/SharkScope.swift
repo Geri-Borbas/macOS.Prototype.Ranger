@@ -136,6 +136,11 @@ class SharkScope
     
     public func test()
     {
+        
+    }
+    
+    func testRequest()
+    {
         let request = MetadataRequest()
         fetch(request_: request, completion:
         {
