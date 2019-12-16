@@ -5,6 +5,10 @@
 
     + Model some more JSON
 
+* 0.5.0
+
+    + Constraint fixes
+
 * 0.4.9
 
     + Minor fix in `SharkScope.Configuration.plist`

@@ -710,11 +710,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="537" height="342"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="22" width="497" height="300"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
+                                <rect key="frame" x="20" y="20" width="497" height="302"/>
                                 <subviews>
-                                    <comboBox verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xcz-5J-GVb">
-                                        <rect key="frame" x="0.0" y="277" width="500" height="25"/>
+                                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xcz-5J-GVb">
+                                        <rect key="frame" x="0.0" y="279" width="500" height="25"/>
                                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="No Live Tables" drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="kN1-gp-UNS">
                                             <font key="font" metaFont="titleBar"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -725,16 +725,16 @@
                                             <outlet property="delegate" destination="XfG-lQ-9wD" id="Do6-Xg-V4q"/>
                                         </connections>
                                     </comboBox>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-oU-NxL">
-                                        <rect key="frame" x="-2" y="255" width="158" height="16"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-oU-NxL">
+                                        <rect key="frame" x="-2" y="257" width="158" height="16"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10 / 20 Ante 3 (9 players)" allowsEditingTextAttributes="YES" id="2vb-2k-CjU">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y83-4P-VCO">
-                                        <rect key="frame" x="-2" y="203" width="501" height="42"/>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y83-4P-VCO">
+                                        <rect key="frame" x="-2" y="205" width="501" height="42"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" allowsEditingTextAttributes="YES" id="ygX-OG-ieV">
                                             <font key="font" metaFont="smallSystem"/>
                                             <string key="title">1M 285 / 3 BB (9 hands)
@@ -744,14 +744,14 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <scrollView ambiguous="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
-                                        <rect key="frame" x="0.0" y="24" width="497" height="169"/>
-                                        <clipView key="contentView" ambiguous="YES" id="3s2-if-0UA">
-                                            <rect key="frame" x="1" y="0.0" width="495" height="168"/>
+                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
+                                        <rect key="frame" x="0.0" y="24" width="497" height="171"/>
+                                        <clipView key="contentView" id="3s2-if-0UA">
+                                            <rect key="frame" x="1" y="0.0" width="495" height="170"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="495" height="143"/>
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="16" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="495" height="145"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -924,6 +924,8 @@
                                     <constraint firstAttribute="trailing" secondItem="y83-4P-VCO" secondAttribute="trailing" id="7XQ-r7-agh"/>
                                     <constraint firstAttribute="trailing" secondItem="pMx-ys-oxY" secondAttribute="trailing" id="LAM-rb-OFX"/>
                                     <constraint firstAttribute="trailing" secondItem="Xcz-5J-GVb" secondAttribute="trailing" id="gmP-oU-z4a"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mbr-bY-dqi" secondAttribute="bottom" id="k8l-0Y-BOm"/>
+                                    <constraint firstItem="Mbr-bY-dqi" firstAttribute="top" secondItem="pMx-ys-oxY" secondAttribute="bottom" constant="10" id="vZe-kg-Aks"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -943,8 +945,12 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="sU5-ho-3Vw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="82Q-Vl-thB"/>
+                            <constraint firstItem="sU5-ho-3Vw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="NCL-bI-r1J"/>
+                            <constraint firstAttribute="trailing" secondItem="sU5-ho-3Vw" secondAttribute="trailing" constant="20" id="T9C-CX-PKu"/>
+                            <constraint firstItem="sU5-ho-3Vw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="V9K-32-UcK"/>
                             <constraint firstAttribute="trailing" secondItem="sU5-ho-3Vw" secondAttribute="trailing" constant="20" id="Y5n-sp-s26"/>
                             <constraint firstItem="sU5-ho-3Vw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="x8J-V8-nyV"/>
+                            <constraint firstAttribute="bottom" secondItem="sU5-ho-3Vw" secondAttribute="bottom" constant="20" id="yBf-Ae-yHB"/>
                         </constraints>
                     </view>
                     <connections>
