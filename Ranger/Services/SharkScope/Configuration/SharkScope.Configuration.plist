@@ -6,7 +6,7 @@
 	<string>__USERNAME__</string>
 	<key>Password</key>
 	<string>__PASSWORD__</string>
-	<key>User-Agent</key>
+	<key>UserAgent</key>
 	<string>Searcher/1.0.0 (Macintosh; Intel Mac OS X 10_14_6)</string>
 </dict>
 </plist>

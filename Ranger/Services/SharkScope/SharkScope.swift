@@ -28,7 +28,7 @@ class SharkScope
 {
     
     
-    static var log: Bool = true
+    static var log: Bool = false
     
     
     public func fetch<RequestType: Request>(request_: RequestType,
@@ -136,7 +136,7 @@ class SharkScope
     
     public func test()
     {
-        
+        testRequest()
     }
     
     func testRequest()

@@ -108,8 +108,6 @@ class TourneyTableViewModel: NSObject,
     
     public func start(onChange: (() -> Void)?)
     {
-        print("TourneyTableViewModel.start()")
-        
         // Retain.
         self.onChange = onChange
         

@@ -5,6 +5,10 @@
 
     + Model some more JSON
 
+* 0.4.9
+
+    + Minor fix in `SharkScope.Configuration.plist`
+
 * 0.4.8
 
     + Window tracking prototype (nicely tracks Tourney Lobby windows)

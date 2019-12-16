@@ -913,7 +913,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-bY-dqi">
                                         <rect key="frame" x="-2" y="0.0" width="501" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
-                                            <font key="font" metaFont="system" size="11"/>
+                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -948,6 +948,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blindsLabel" destination="NrT-oU-NxL" id="JPI-I5-FOt"/>
                         <outlet property="playersTableView" destination="cPg-rX-oTq" id="Z6M-vX-ji6"/>
                         <outlet property="stacksLabel" destination="y83-4P-VCO" id="biR-dg-fxc"/>
                         <outlet property="statusLabel" destination="Mbr-bY-dqi" id="eDL-2k-wv5"/>
