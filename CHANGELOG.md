@@ -3,7 +3,13 @@
 
 * Doing
 
-    + Model some more JSON
+    + Model `PlayerSummary`
+
+* 0.5.1
+
+    + Added custom key decoding strategy
+        + Convert XML specific JSON keys (`@` and `$`)
+        + No need for specify each `CodingKey` manually
 
 * 0.5.0
 

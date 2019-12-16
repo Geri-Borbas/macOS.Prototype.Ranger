@@ -119,7 +119,12 @@ class SharkScope
             
             // Decode.
             var _decodedResponse: RequestType.ResponseType?
-            do { _decodedResponse = try JSONDecoder().decode(RequestType.ResponseType.self, from: data) }
+            do
+            {
+                let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSharkScopeJSON
+                _decodedResponse = try decoder.decode(RequestType.ResponseType.self, from: data)
+            }
             catch { return completion(.failure(RequestError.jsonDecodingError(error))) }
             
             // Only with JSON data.

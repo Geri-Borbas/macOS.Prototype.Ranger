@@ -24,7 +24,9 @@ class RequestCache
         do
         {
             let data = try Data(contentsOf: cacheFileURL)
-            let response = try JSONDecoder().decode(ResponseType.self, from: data)
+            let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSharkScopeJSON
+            let response = try decoder.decode(ResponseType.self, from: data)
             return response
         }
         catch

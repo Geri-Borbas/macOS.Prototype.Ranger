@@ -9,17 +9,13 @@
 import Foundation
 
 
-struct Metadata: Decodable
+struct PlayerSummaryRequest: Request
 {
     
     
-    let Response: Response
+    typealias ResponseType = Metadata
     
     
-    struct Response: Decodable
-    {
-        
-        
-        let metadataHash: String
-    }
+    var path: String { "metadata" }
+    var parameters:  [String: String] { [:] }
 }

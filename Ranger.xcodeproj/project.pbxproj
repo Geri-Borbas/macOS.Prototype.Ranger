@@ -15,15 +15,13 @@
 		5521A55F239DF408000D1AD1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A55E239DF408000D1AD1 /* Entry.swift */; };
 		5521A565239DF933000D1AD1 /* BasicPlayerStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* BasicPlayerStatistics.swift */; };
 		555585DC23A2999500B603C1 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555585DB23A2999500B603C1 /* Metadata.swift */; };
+		555D217123A84AE6006E7708 /* KeyDecodingStrategy+SharkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D217023A84AE6006E7708 /* KeyDecodingStrategy+SharkScope.swift */; };
 		555EA850239D3A62000B5B62 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 555EA84F239D3A62000B5B62 /* PostgresClientKit */; };
 		555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* PokerTracker.swift */; };
 		5574DAC823A68E8700569790 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574DAC723A68E8700569790 /* Request.swift */; };
 		5574DACA23A6933F00569790 /* MetadataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574DAC923A6933F00569790 /* MetadataRequest.swift */; };
 		5587DB4423A497740079BB30 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* Player.swift */; };
 		558D35D6239F28F6006C710D /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 558D35D5239F28F6006C710D /* XMLCoder */; };
-		558D35DA239F2AC3006C710D /* VersionCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D35D9239F2AC3006C710D /* VersionCheckResponse.swift */; };
-		558D35DC239F2AEF006C710D /* VersionCheckResponse.xml in Resources */ = {isa = PBXBuildFile; fileRef = 558D35DB239F2AEF006C710D /* VersionCheckResponse.xml */; };
-		558D35DF239F3B33006C710D /* VersionCheckResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35DE239F3B33006C710D /* VersionCheckResponse.json */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
@@ -37,6 +35,8 @@
 		55DB43E523A2DB4D00A7F37F /* RequestCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E423A2DB4D00A7F37F /* RequestCache.swift */; };
 		55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */; };
 		55DB43E923A2E62000A7F37F /* SharkScope.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */; };
+		55E4D43823A7FAD600F33066 /* PlayerSummaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4D43723A7FAD600F33066 /* PlayerSummaryRequest.swift */; };
+		55E4D43A23A7FC0F00F33066 /* PlayerSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E4D43923A7FC0F00F33066 /* PlayerSummary.swift */; };
 		55ED3CD423A54B0C00754763 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD323A54B0C00754763 /* Query.swift */; };
 		55ED3CD623A551E100754763 /* LiveTourneyTableQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD523A551E100754763 /* LiveTourneyTableQuery.swift */; };
 		55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */; };
@@ -55,14 +55,12 @@
 		5521A564239DF933000D1AD1 /* BasicPlayerStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPlayerStatistics.swift; sourceTree = "<group>"; };
 		555585DB23A2999500B603C1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		555585DD23A2A22600B603C1 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		555D217023A84AE6006E7708 /* KeyDecodingStrategy+SharkScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyDecodingStrategy+SharkScope.swift"; sourceTree = "<group>"; usesTabs = 0; };
 		555EA851239D609E000B5B62 /* PokerTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.swift; sourceTree = "<group>"; };
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5574DAC723A68E8700569790 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		5574DAC923A6933F00569790 /* MetadataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataRequest.swift; sourceTree = "<group>"; };
 		5587DB4323A497740079BB30 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		558D35D9239F2AC3006C710D /* VersionCheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckResponse.swift; sourceTree = "<group>"; };
-		558D35DB239F2AEF006C710D /* VersionCheckResponse.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VersionCheckResponse.xml; sourceTree = "<group>"; };
-		558D35DE239F3B33006C710D /* VersionCheckResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VersionCheckResponse.json; sourceTree = "<group>"; };
 		558D35E1239F3C58006C710D /* Metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
 		558D35E4239F42AE006C710D /* PlayerSummary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlayerSummary.json; sourceTree = "<group>"; };
 		55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasicPlayerStatisticsQuery.sql; sourceTree = "<group>"; };
@@ -78,6 +76,8 @@
 		55DB43E423A2DB4D00A7F37F /* RequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
 		55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.Configuration.swift; sourceTree = "<group>"; };
+		55E4D43723A7FAD600F33066 /* PlayerSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummaryRequest.swift; sourceTree = "<group>"; };
+		55E4D43923A7FC0F00F33066 /* PlayerSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummary.swift; sourceTree = "<group>"; };
 		55ED3CD323A54B0C00754763 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		55ED3CD523A551E100754763 /* LiveTourneyTableQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTableQuery.swift; sourceTree = "<group>"; };
 		55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayerQuery.swift; sourceTree = "<group>"; };
@@ -154,26 +154,17 @@
 			children = (
 				5574DAC723A68E8700569790 /* Request.swift */,
 				55DB43E423A2DB4D00A7F37F /* RequestCache.swift */,
+				555D217023A84AE6006E7708 /* KeyDecodingStrategy+SharkScope.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		558D35D7239F2946006C710D /* VersionCheck */ = {
-			isa = PBXGroup;
-			children = (
-				558D35D9239F2AC3006C710D /* VersionCheckResponse.swift */,
-				558D35DB239F2AEF006C710D /* VersionCheckResponse.xml */,
-				558D35DE239F3B33006C710D /* VersionCheckResponse.json */,
-			);
-			path = VersionCheck;
 			sourceTree = "<group>";
 		};
 		558D35E0239F3C45006C710D /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				558D35E1239F3C58006C710D /* Metadata.json */,
 				555585DB23A2999500B603C1 /* Metadata.swift */,
 				5574DAC923A6933F00569790 /* MetadataRequest.swift */,
-				558D35E1239F3C58006C710D /* Metadata.json */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -182,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				558D35E4239F42AE006C710D /* PlayerSummary.json */,
+				55E4D43923A7FC0F00F33066 /* PlayerSummary.swift */,
+				55E4D43723A7FAD600F33066 /* PlayerSummaryRequest.swift */,
 			);
 			path = PlayerSummary;
 			sourceTree = "<group>";
@@ -202,7 +195,6 @@
 				5574DAC623A68DD400569790 /* Model */,
 				558D35E3239F4299006C710D /* PlayerSummary */,
 				558D35E0239F3C45006C710D /* Metadata */,
-				558D35D7239F2946006C710D /* VersionCheck */,
 			);
 			path = SharkScope;
 			sourceTree = "<group>";
@@ -361,10 +353,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558D35DF239F3B33006C710D /* VersionCheckResponse.json in Resources */,
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
-				558D35DC239F2AEF006C710D /* VersionCheckResponse.xml in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
 				55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */,
 				55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */,
@@ -380,12 +370,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558D35DA239F2AC3006C710D /* VersionCheckResponse.swift in Sources */,
 				5574DAC823A68E8700569790 /* Request.swift in Sources */,
 				55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */,
 				55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */,
 				55ED3CD623A551E100754763 /* LiveTourneyTableQuery.swift in Sources */,
+				55E4D43823A7FAD600F33066 /* PlayerSummaryRequest.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
+				55E4D43A23A7FC0F00F33066 /* PlayerSummary.swift in Sources */,
 				5521A565239DF933000D1AD1 /* BasicPlayerStatistics.swift in Sources */,
 				5574DACA23A6933F00569790 /* MetadataRequest.swift in Sources */,
 				5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */,
@@ -403,6 +394,7 @@
 				5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */,
 				55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */,
 				555585DC23A2999500B603C1 /* Metadata.swift in Sources */,
+				555D217123A84AE6006E7708 /* KeyDecodingStrategy+SharkScope.swift in Sources */,
 				5587DB4423A497740079BB30 /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
