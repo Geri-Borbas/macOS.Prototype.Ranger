@@ -25,7 +25,8 @@ class RequestCache
         {
             let data = try Data(contentsOf: cacheFileURL)
             let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSharkScopeJSON
+                decoder.keyDecodingStrategy = .convertFromBadgerFish
+                decoder.dateDecodingStrategy = .millisecondsSince1970
             let response = try decoder.decode(ResponseType.self, from: data)
             return response
         }

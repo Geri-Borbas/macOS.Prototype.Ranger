@@ -13,9 +13,10 @@ struct MetadataRequest: Request
 {
     
     
-    typealias ResponseType = Metadata
+    typealias RootResponseType = Metadata
     
     
     var path: String { "metadata" }
     var parameters:  [String: String] { [:] }
+    var useCache: Bool = true
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct PlayerSummary: RootResponse
-{ let Response: PlayerSummaryResponse }
+struct Timeline: RootResponse
+{ let Response: TimelineResponse }
 
 
-struct PlayerSummaryResponse: Response
+struct TimelineResponse: Response
 {
 
 

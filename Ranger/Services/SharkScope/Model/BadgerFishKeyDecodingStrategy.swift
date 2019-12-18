@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SharkScopeCodingKey: CodingKey
+struct BadgerFishCodingKey: CodingKey
 {
   
     
@@ -18,7 +18,6 @@ struct SharkScopeCodingKey: CodingKey
     init?(stringValue: String)
     { self.stringValue = stringValue }
 
-    
     var intValue: Int?
     { return nil }
 
@@ -27,11 +26,12 @@ struct SharkScopeCodingKey: CodingKey
 }
 
 
+
 extension JSONDecoder.KeyDecodingStrategy
 {
 
-
-    static var convertFromSharkScopeJSON: JSONDecoder.KeyDecodingStrategy
+    /// See more at http://www.sklar.com/badgerfish/
+    static var convertFromBadgerFish: JSONDecoder.KeyDecodingStrategy
     {
         return .custom
         {
@@ -40,14 +40,18 @@ extension JSONDecoder.KeyDecodingStrategy
             // Get last key.
             let key = codingKeys.last!
             
+            // Special case for `class` (as it is reserved).
+            if key.stringValue == "@class"
+            { return BadgerFishCodingKey(stringValue: "_class")! }
+            
             // Lookup first letter.
             let firstLetter = key.stringValue.prefix(1).lowercased()
             
             if firstLetter == "@"
-            { return SharkScopeCodingKey(stringValue: String(key.stringValue.dropFirst()))! }
+            { return BadgerFishCodingKey(stringValue: String(key.stringValue.dropFirst()))! }
             
             if firstLetter == "$"
-            { return SharkScopeCodingKey(stringValue: "value")! }
+            { return BadgerFishCodingKey(stringValue: "value")! }
                         
             return key
         }

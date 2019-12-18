@@ -2,9 +2,22 @@
 
 
 * Doing
+    
+    + Model `PlayerSummary.Response.PlayerResponse`
 
-    + Model `PlayerSummary`
+* 0.6.0
 
+    + A lot
+    + SharkScope Model improvements
+        + Added `StringRepresentable` and `StringRepresenting`
+            + Can decode string-wrapped JSON values while preserving auto-Codable (!!!)
+        + Added Generic Protocols for Response
+            + `RootResponse`, `Response`, `UserInfo`
+        + New models (`PlayerSummary`, `Timeline`, `Metadata`)
+        + Requests
+            + Added `useCache` property
+                + Can opt-out using `withoutCache()`
+                
 * 0.5.1
 
     + Added custom key decoding strategy

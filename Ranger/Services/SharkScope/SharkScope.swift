@@ -29,25 +29,30 @@ class SharkScope
     
     
     static var log: Bool = false
+    public var user: UserInfo?
     
     
-    public func fetch<RequestType: Request>(request_: RequestType,
-                                            completion: @escaping (Result<RequestType.ResponseType, RequestError>) -> Void)
+    public func fetch<RequestType: Request>(_ request: RequestType,
+                                            completion: @escaping (Result<RequestType.RootResponseType, RequestError>) -> Void) where RequestType.RootResponseType: RootResponse
     {
         // Lookup cache first.
         let cache = RequestCache()
-        if let cachedResponse: RequestType.ResponseType = cache.cachedResponse(for: request_.path, parameters: request_.parameters)
+        if let cachedResponse: RequestType.RootResponseType = cache.cachedResponse(for: request.path, parameters: request.parameters), request.useCache
         {
             print("Found JSON cache, skip request.")
             return completion(.success(cachedResponse))
+        }
+        else
+        {
+            print("Don't use JSON cache.")
         }
         
         // Create URL Components.
         var urlComponents = URLComponents()
             urlComponents.scheme = "https"
             urlComponents.host = "sharkscope.com"
-            urlComponents.path = "/api/searcher/" + request_.path
-            urlComponents.queryItems = request_.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+            urlComponents.path = "/api/searcher/" + request.path
+            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
         
         // Create URL.
         guard let url: URL = urlComponents.url
@@ -65,6 +70,13 @@ class SharkScope
         urlRequest.setValue(configuration.Username, forHTTPHeaderField: "Username")
         urlRequest.setValue(configuration.Password, forHTTPHeaderField: "Password")
         urlRequest.setValue(configuration.UserAgent, forHTTPHeaderField: "User-Agent")
+
+                   
+        // Log.
+        if (SharkScope.log)
+        {
+            print("urlRequest.url: \(urlRequest.url!)")
+        }
         
         // Create task.
         let task = URLSession.shared.dataTask(with: urlRequest)
@@ -86,7 +98,14 @@ class SharkScope
             // Only with string data.
             guard let dataString = String(data: data, encoding: .utf8)
             else { return completion(.failure(RequestError.noStringData)) }
-                        
+                       
+            // Log.
+            if (SharkScope.log)
+            {
+                print("statusCode: \(response.statusCode)")
+                print("dataString: \(dataString)")
+            }
+            
             // JSON.
             var JSON: Dictionary<String, AnyObject> = [:]
             do { JSON = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, AnyObject> }
@@ -95,13 +114,11 @@ class SharkScope
             // Log.
             if (SharkScope.log)
             {
-                print("statusCode: \(response.statusCode)")
-                print("dataString: \(dataString)")
                 print("JSON: \(JSON)")
             }
 
             // Cache.
-            if let cacheFileURL = cache.cacheFileURL(for: request_.path, parameters: request_.parameters)
+            if let cacheFileURL = cache.cacheFileURL(for: request.path, parameters: request.parameters)
             {
                 // Create pretty JSON.
                 var _JSONdata: Data?
@@ -118,12 +135,13 @@ class SharkScope
             }
             
             // Decode.
-            var _decodedResponse: RequestType.ResponseType?
+            var _decodedResponse: RequestType.RootResponseType?
             do
             {
                 let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSharkScopeJSON
-                _decodedResponse = try decoder.decode(RequestType.ResponseType.self, from: data)
+                    decoder.keyDecodingStrategy = .convertFromBadgerFish
+                    decoder.dateDecodingStrategy = .millisecondsSince1970
+                _decodedResponse = try decoder.decode(RequestType.RootResponseType.self, from: data)
             }
             catch { return completion(.failure(RequestError.jsonDecodingError(error))) }
             
@@ -131,9 +149,14 @@ class SharkScope
             guard let decodedResponse = _decodedResponse
             else { return completion(.failure(RequestError.noJSONData)) }
             
+            // Retain latest `UserInfo`.
+            self.user = decodedResponse.Response.UserInfo
+            
             // Return on the main thread.
             DispatchQueue.main.async()
-            { completion(.success(decodedResponse)) }
+            {
+                completion(.success(decodedResponse))
+            }
         }
 
         task.resume()
@@ -146,8 +169,8 @@ class SharkScope
     
     func testRequest()
     {
-        let request = MetadataRequest()
-        fetch(request_: request, completion:
+        let request = PlayerSummaryRequest(network: "PokerStars", player: "Borbas.Geri")
+        fetch(request, completion:
         {
             result in
             
@@ -156,6 +179,11 @@ class SharkScope
                 case .success(let response):
                     
                     print("response.Response.metadataHash: \(response.Response.metadataHash)")
+                    print("response.Response.UserInfo.Username: \(response.Response.UserInfo.Username)")
+                    print("response.Response.UserInfo.Subscriptions.freeSearchesRemaining: \(response.Response.UserInfo.Subscriptions.freeSearchesRemaining)")
+                    print("response.Response.UserInfo.Subscriptions.totalSearchesRemaining: \(response.Response.UserInfo.Subscriptions.totalSearchesRemaining)")
+                    print("response.Response.UserInfo.Subscriptions.Subscription.expirationDate: \(response.Response.UserInfo.Subscriptions.Subscription.expirationDate)")
+                    print("response.Response.UserInfo.Regions.first?.name: \(String(describing: response.Response.UserInfo.Regions.first?.name))")
                     break
                 
                 case .failure(let error):

@@ -13,9 +13,12 @@ struct PlayerSummaryRequest: Request
 {
     
     
-    typealias ResponseType = Metadata
+    typealias RootResponseType = PlayerSummary
     
     
-    var path: String { "metadata" }
+    let network: String
+    let player: String
+    var path: String { "networks/\(network)/players/\(player)" }
     var parameters:  [String: String] { [:] }
+    var useCache: Bool = true
 }

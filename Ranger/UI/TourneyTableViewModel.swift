@@ -115,8 +115,44 @@ class TourneyTableViewModel: NSObject,
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
         { _ in self.tick() }
         
-        // Test.
-        sharkScope.test()
+        // Ping to SharkScope.
+        sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
+                         completion:
+        {
+            (result: Result<Timeline, RequestError>) in
+            switch result
+            {
+                case .success(let lastActivity):
+                    print("SharkScope logged in as \(lastActivity.Response.UserInfo.Username). \(lastActivity.Response.UserInfo.RemainingSearches) search remaining.")
+                    break
+                
+                case .failure(let error):
+                    print("error: \(error)")
+                    break
+            }
+        })
+    }
+    
+    // MARK: - SharkScope
+    
+    func fetchSharkScopeStatus(completion: @escaping (_ status: String) -> Void)
+    {
+        // Ping to SharkScope.
+        sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
+                        completion:
+        {
+           (result: Result<Timeline, RequestError>) in
+           switch result
+           {
+               case .success(let lastActivity):
+                   completion("\(lastActivity.Response.UserInfo.RemainingSearches) search remaining (logged in as \(lastActivity.Response.UserInfo.Username)).")
+                   break
+               
+               case .failure(let error):
+                   completion("SharkScope error: \(error)")
+                   break
+           }
+        })
     }
     
     

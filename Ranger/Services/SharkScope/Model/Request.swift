@@ -13,9 +13,24 @@ protocol Request
 {
     
     
-    associatedtype ResponseType where ResponseType: Decodable
+    associatedtype RootResponseType where RootResponseType: Decodable
     
     
     var path: String { get }
     var parameters:  [String: String] { get }
+    var useCache: Bool { get set }
+}
+
+
+extension Request
+{
+
+    
+    func withoutCache() -> Self
+    {
+        var copy = self
+        copy.useCache = false
+        return copy
+    }
+    
 }

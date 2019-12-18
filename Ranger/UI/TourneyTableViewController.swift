@@ -21,6 +21,7 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     @IBOutlet weak var stacksLabel: NSTextField!
     @IBOutlet weak var playersTableView: NSTableView!
     @IBOutlet weak var statusLabel: NSTextField!
+    @IBOutlet weak var sharkScopeStatusLabel: NSTextField!
     
     
     // MARK: - Model Outlets
@@ -39,11 +40,18 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     {
         super.viewDidLoad()
         
-        // Kick off updates.
+        // Kick off PokerTracker updates.
         viewModel.start(onChange: layout)
         
         // Test.
         windowTracker.start(onTick: tick)
+        
+        // SharkScope.
+        viewModel.fetchSharkScopeStatus
+        {
+            status in
+            self.sharkScopeStatusLabel.stringValue = status
+        }
     }
     
     func tick()
