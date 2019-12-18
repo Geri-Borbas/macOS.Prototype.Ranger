@@ -3,7 +3,17 @@
 
 * Doing
     
-    + Model `PlayerSummary.Response.PlayerResponse`
+    + Query SharkScope statistics for player list
+    + Create Basic SharkScope table
+    + Create SharkScope table design
+    + Track Tournament Window
+
+* 0.7.0
+
+    + Gently modeled `PlayerSummary.Response.PlayerResponse.PlayerView.Player.Statistics`
+    + Created key index for statistics (see `Statistics.init(from:)`)
+        + Added `Accessors` extension (see tests)
+        + Added (some) custom computed statistics 
 
 * 0.6.0
 

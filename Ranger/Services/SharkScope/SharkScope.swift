@@ -178,17 +178,69 @@ class SharkScope
             {
                 case .success(let response):
                     
-                    print("response.Response.metadataHash: \(response.Response.metadataHash)")
-                    print("response.Response.UserInfo.Username: \(response.Response.UserInfo.Username)")
-                    print("response.Response.UserInfo.Subscriptions.freeSearchesRemaining: \(response.Response.UserInfo.Subscriptions.freeSearchesRemaining)")
-                    print("response.Response.UserInfo.Subscriptions.totalSearchesRemaining: \(response.Response.UserInfo.Subscriptions.totalSearchesRemaining)")
-                    print("response.Response.UserInfo.Subscriptions.Subscription.expirationDate: \(response.Response.UserInfo.Subscriptions.Subscription.expirationDate)")
-                    print("response.Response.UserInfo.Regions.first?.name: \(String(describing: response.Response.UserInfo.Regions.first?.name))")
+                    let playerSummaryResponse = response.Response
+                    let statistics = playerSummaryResponse.PlayerResponse.PlayerView.Player.Statistics
+                    
+                    // Player.
+                    print("metadataHash: \(playerSummaryResponse.metadataHash)")
+                    print("Username: \(playerSummaryResponse.UserInfo.Username)")
+                    print("freeSearchesRemaining: \(playerSummaryResponse.UserInfo.Subscriptions.freeSearchesRemaining.value)")
+                    print("totalSearchesRemaining: \(playerSummaryResponse.UserInfo.Subscriptions.totalSearchesRemaining.value)")
+                    print("expirationDate: \(playerSummaryResponse.UserInfo.Subscriptions.Subscription.expirationDate.value)")
+                    print("Regions.first.name: \(playerSummaryResponse.UserInfo.Regions.first?.name ?? "")")
+                    
+                    // Statistics.
+                    print("Ability: \(statistics.Ability)")
+                    print("AchievementPoints: \(statistics.AchievementPoints)")
+                    print("ActiveDayCount: \(statistics.ActiveDayCount)")
+                    print("AvEntrants: \(statistics.AvEntrants)")
+                    print("AvGameDuration: \(statistics.AvGameDuration)")
+                    print("AvGamesPerDay: \(statistics.AvGamesPerDay)")
+                    print("AvProfit: \(statistics.AvProfit)")
+                    print("AvROI: \(statistics.AvROI)")
+                    print("AvStake: \(statistics.AvStake)")
+                    print("Bankroll: \(statistics.Bankroll)")
+                    print("Best100StreakAvProfit: \(statistics.Best100StreakAvProfit)")
+                    print("Best500StreakAvProfit: \(statistics.Best500StreakAvProfit)")
+                    print("BreakEvenDays: \(statistics.BreakEvenDays)")
+                    print("Cashes: \(statistics.Cashes)")
+                    print("Count: \(statistics.Count)")
+                    print("FinshesEarly: \(statistics.FinshesEarly)")
+                    print("FinshesEarlyMiddle: \(statistics.FinshesEarlyMiddle)")
+                    print("FinshesLate: \(statistics.FinshesLate)")
+                    print("FinshesMiddle: \(statistics.FinshesMiddle)")
+                    print("FinshesMiddleLate: \(statistics.FinshesMiddleLate)")
+                    print("FirstGameDate: \(statistics.FirstGameDate)")
+                    print("ITM: \(statistics.ITM)")
+                    print("LastGameDate: \(statistics.LastGameDate)")
+                    print("LosingDays: \(statistics.LosingDays)")
+                    print("MaxCashingStreak: \(statistics.MaxCashingStreak)")
+                    print("MaxLosingStreak: \(statistics.MaxLosingStreak)")
+                    print("MaxWinningStreak: \(statistics.MaxWinningStreak)")
+                    print("MostGamesInDay: \(statistics.MostGamesInDay)")
+                    print("PTLBPoints: \(statistics.PTLBPoints)")
+                    print("PercentFieldBeaten: \(statistics.PercentFieldBeaten)")
+                    print("Profit: \(statistics.Profit)")
+                    print("Rake: \(statistics.Rake)")
+                    print("Stake: \(statistics.Stake)")
+                    print("TotalROI: \(statistics.TotalROI)")
+                    print("Stake: \(statistics.Stake)")
+                    print("TournamentWins: \(statistics.TournamentWins)")
+                    print("TurboRatio: \(statistics.TurboRatio)")
+                    print("UserNote: \(statistics.UserNote)")
+                    print("WinningDays: \(statistics.WinningDays)")
+                    print("Worst100StreakAvProfit: \(statistics.Worst100StreakAvProfit)")
+                    
+                    // Computed statistics.
+                    print("EstimatedStake: \(statistics.EstimatedStake)")
+                    print("AvHoursPerDay: \(statistics.AvHoursPerDay)")
+                    
                     break
                 
                 case .failure(let error):
                 
                     print("error: \(error)")
+                    
                     break
             }
         })

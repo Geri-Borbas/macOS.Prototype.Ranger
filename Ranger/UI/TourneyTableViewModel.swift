@@ -116,6 +116,7 @@ class TourneyTableViewModel: NSObject,
         { _ in self.tick() }
         
         // Ping to SharkScope.
+        sharkScope.test()
         sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
                          completion:
         {

@@ -21,6 +21,6 @@ struct PlayerSummaryResponse: Response
     let timestamp: StringFor<Date>
     let success: StringFor<Bool>
 
-    // let PlayerResponse: Any
+    let PlayerResponse: PlayerResponse
     let UserInfo: UserInfo
 }
