@@ -8,6 +8,10 @@
     + Create SharkScope table design
     + Track Tournament Window
 
+* 0.7.1
+
+    + Added more custom computed statistics
+
 * 0.7.0
 
     + Gently modeled `PlayerSummary.Response.PlayerResponse.PlayerView.Player.Statistics`

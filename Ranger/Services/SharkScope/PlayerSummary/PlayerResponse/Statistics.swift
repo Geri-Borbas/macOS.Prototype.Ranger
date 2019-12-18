@@ -47,7 +47,7 @@ struct Statistics: Decodable
 }
 
 
-// MARK: - Accessors
+// MARK: - Statistics Accessors
 
 extension Statistics
 {
@@ -187,9 +187,39 @@ extension Statistics
 extension Statistics
 {
         
+    
+    // MARK: - Tables
+    
     /// Estimated staked amount (`Count * AvStake`).
     var EstimatedStake: Float { Count * AvStake }
     
-    /// Average hours played per dat (`AvGameDuration * AvGamesPerDay / 3600`).
+    /// Average hours played per day (`AvGameDuration * AvGamesPerDay / 3600`).
     var AvHoursPerDay: Float { AvGameDuration * AvGamesPerDay / 3600.0 }
+    
+    /// Average tables played simultaneously considering 8 hour session per day (`floor(AvHoursPerDay / 8)`).
+    var AvMinSimultaneousTables: Float { floor(AvHoursPerDay / 8.0) }
+    
+    /// Average tables played simultaneously considering 4 hour session per day (`ceil(AvHoursPerDay / 4)`).
+    var AvMaxSimultaneousTables: Float { ceil(AvHoursPerDay / 4.0) }
+    
+    
+    // MARK: - Times
+    
+    /// Days played so far (calendar days from `FirstGameDate` to `LastGameDate`).
+    var DaysPlayed: Int { Calendar.current.dateComponents([.day], from: FirstGameDate, to: LastGameDate).day ?? 0 }
+    
+    /// Years played so far (`Days / 365.2425`).
+    var YearsPlayed: Float { Float(DaysPlayed) / 365.2425 }
+    
+    /// Average days elapsed between plays (`DaysPlayed / ActiveDayCount`).
+    var DaysBetweenPlays: Float { Float(DaysPlayed) / ActiveDayCount }
+    
+    /// Losing days percentage of active days (`LosingDays / ActiveDayCount`).
+    var LosingDaysPercentage: Float { LosingDays / ActiveDayCount }
+    
+    /// Break even days percentage of active days (`BreakEvenDays / ActiveDayCount`).
+    var BreakEvenDaysPercentage: Float { BreakEvenDays / ActiveDayCount }
+    
+    /// Winning days percentage of active days (`WinningDays / ActiveDayCount`).
+    var WinningDaysPercentage: Float { WinningDays / ActiveDayCount }
 }
