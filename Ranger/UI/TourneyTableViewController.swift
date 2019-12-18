@@ -46,7 +46,7 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         // Test.
         windowTracker.start(onTick: tick)
         
-        // SharkScope.
+        // Fetch SharkScope status at start.
         viewModel.fetchSharkScopeStatus
         {
             status in

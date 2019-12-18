@@ -8,6 +8,11 @@
     + Create SharkScope table design
     + Track Tournament Window
 
+* 0.7.2
+
+    + Implemented `ActiveTournaments` query
+    + Implemented `Error` response type
+
 * 0.7.1
 
     + Added more custom computed statistics

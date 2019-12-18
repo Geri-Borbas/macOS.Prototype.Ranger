@@ -169,8 +169,14 @@ class SharkScope
     
     func testRequest()
     {
-        let request = PlayerSummaryRequest(network: "PokerStars", player: "Borbas.Geri")
-        fetch(request, completion:
+        let network = "PokerStars"
+        // let playerName = "quAAsar"
+        let playerName = "g1anfar"
+        // let playerName = "Eset93"
+        // let playerName = "ScauHades"
+        // let playerName = "Borbas.Geri"
+        
+        fetch(PlayerSummaryRequest(network: network, player: playerName), completion:
         {
             result in
             
@@ -234,6 +240,34 @@ class SharkScope
                     // Computed statistics.
                     print("EstimatedStake: \(statistics.EstimatedStake)")
                     print("AvHoursPerDay: \(statistics.AvHoursPerDay)")
+                    
+                    self.fetch(ActiveTournamentsRequest(network: network, player: playerName), completion:
+                    {
+                        result in
+                        
+                        switch result
+                        {
+                            case .success(let response):
+                                
+                                let ActiveTournamentsResponse = response.Response
+                                
+                                // Player.
+                                print("metadataHash: \(ActiveTournamentsResponse.metadataHash)")
+                                print("Username: \(ActiveTournamentsResponse.UserInfo.Username)")
+                                print("freeSearchesRemaining: \(ActiveTournamentsResponse.UserInfo.Subscriptions.freeSearchesRemaining.value)")
+                                print("totalSearchesRemaining: \(ActiveTournamentsResponse.UserInfo.Subscriptions.totalSearchesRemaining.value)")
+                                print("expirationDate: \(ActiveTournamentsResponse.UserInfo.Subscriptions.Subscription.expirationDate.value)")
+                                print("Regions.first.name: \(ActiveTournamentsResponse.UserInfo.Regions.first?.name ?? "")")
+                                
+                                break
+                            
+                            case .failure(let error):
+                            
+                                print("error: \(error)")
+                                
+                                break
+                        }
+                    })
                     
                     break
                 

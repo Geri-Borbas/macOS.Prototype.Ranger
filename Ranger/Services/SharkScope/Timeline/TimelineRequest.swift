@@ -9,10 +9,8 @@
 import Foundation
 
 
-/// 3.3.13. LAST ACTIVITY
-/// The request retrieves the last activity timestamp of the player or
-/// group. If the last activity is unknown the request returns 0. Only
-/// valid for registered users with an active subscription.
+/// 3.3.14. TIMELINE
+/// The request retrieves the player’s timeline with all events.
 struct TimelineRequest: Request
 {
     

@@ -117,21 +117,6 @@ class TourneyTableViewModel: NSObject,
         
         // Ping to SharkScope.
         sharkScope.test()
-        sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
-                         completion:
-        {
-            (result: Result<Timeline, RequestError>) in
-            switch result
-            {
-                case .success(let lastActivity):
-                    print("SharkScope logged in as \(lastActivity.Response.UserInfo.Username). \(lastActivity.Response.UserInfo.RemainingSearches) search remaining.")
-                    break
-                
-                case .failure(let error):
-                    print("error: \(error)")
-                    break
-            }
-        })
     }
     
     // MARK: - SharkScope
