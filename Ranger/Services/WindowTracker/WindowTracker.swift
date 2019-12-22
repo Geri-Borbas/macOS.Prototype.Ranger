@@ -59,14 +59,15 @@ class WindowTracker
             kCGNullWindowID
         ) as! [[String:Any]]
         
-        // Filter PokerStars Tournament Lobby windows.
+        // Filter PokerStars Tournament Table windows.
         let tourneyLobbyWindows = windowInfoList.filter
         {
             (eachWindowInfo: [String:Any]) in
             (
                 (eachWindowInfo["kCGWindowOwnerName"] as? String) == "PokerStarsEU" &&
                 (eachWindowInfo["kCGWindowName"] as? String)?.contains("Tournament") ?? false &&
-                (eachWindowInfo["kCGWindowName"] as? String)?.contains("Lobby") ?? false
+                (eachWindowInfo["kCGWindowName"] as? String)?.contains("Table") ?? false &&
+                (eachWindowInfo["kCGWindowName"] as? String)?.contains("Logged In") ?? false
             )
         }
         .map

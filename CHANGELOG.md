@@ -2,11 +2,20 @@
 
 
 * Doing
+
+    + SharpScope
+        + Resolve cache filenames with URL paramenters (can cache `activeTournaments.json`
+        + Implement `ApiError` in `SharkScope.fetch()` 
     
-    + Query SharkScope statistics for player list
-    + Create Basic SharkScope table
-    + Create SharkScope table design
-    + Track Tournament Window
+    + App
+        + Query SharkScope statistics for player list
+        + Create SharkScope table
+        + Track Tournament Window
+
+* 0.7.3
+
+    + Minor UI tweaks
+    + Created `SharkScope.fetch(player:)`
 
 * 0.7.2
 

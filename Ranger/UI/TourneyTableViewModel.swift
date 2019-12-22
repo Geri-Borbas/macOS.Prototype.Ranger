@@ -173,7 +173,11 @@ class TourneyTableViewModel: NSObject,
         liveTourneyPlayersAtSelectedTable = liveTourneyPlayers.filter
         {
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
-            eachLiveTourneyPlayer.id_live_table == selectedLiveTourneyTableIndex + 1
+            (
+                // Filter players at the selected table with non-zero stack.
+                eachLiveTourneyPlayer.id_live_table == selectedLiveTourneyTableIndex + 1 &&
+                eachLiveTourneyPlayer.amt_stack > 0
+            )
         }
                 
         // Collect `id_player` for live players.
@@ -351,5 +355,43 @@ class TourneyTableViewModel: NSObject,
                       table.amt_ante,
                       table.cnt_players
         )
+    }
+    
+    
+    // MARK: - TableView Events
+    
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
+    {
+        // Data.
+        let liveTourneyPlayer = liveTourneyPlayersAtSelectedTable[row]
+        let player = playersAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
+        
+        // Only with data.
+        guard let playerName = player?.player_name
+        else { return true }
+        
+        // Copy name to clipboard.
+        NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+        NSPasteboard.general.setString(playerName, forType: NSPasteboard.PasteboardType.string)
+        
+        // Fetch summary.
+        sharkScope.fetch(player: playerName,
+                        completion:
+        {
+            (result: Result<(summary: PlayerSummary, tables: Int), RequestError>) in
+            
+            switch result
+            {
+                case .success(let tuple):
+                    print("\(tuple.summary.Response.PlayerResponse.PlayerView.Player.name) playing \(tuple.tables) tables.")
+                    break
+            
+                case .failure(let error):
+                    print(error)
+                    break
+           }
+        })
+        
+        return true
     }
 }

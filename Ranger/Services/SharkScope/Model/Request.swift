@@ -26,6 +26,13 @@ extension Request
 {
 
     
+    func usingCache() -> Self
+    {
+        var copy = self
+        copy.useCache = true
+        return copy
+    }
+    
     func withoutCache() -> Self
     {
         var copy = self

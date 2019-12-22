@@ -68,7 +68,6 @@
 		554E018923AA828100CF2971 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
 		555585DB23A2999500B603C1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		555585DD23A2A22600B603C1 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgerFishKeyDecodingStrategy.swift; sourceTree = "<group>"; usesTabs = 0; };
 		555EA851239D609E000B5B62 /* PokerTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.swift; sourceTree = "<group>"; };
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -273,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				555EA853239D6F19000B5B62 /* CHANGELOG.md */,
-				555585DD23A2A22600B603C1 /* TODO.md */,
 				55C1868D239583DA0081B6B7 /* Ranger */,
 				55C1868C239583DA0081B6B7 /* Products */,
 			);
