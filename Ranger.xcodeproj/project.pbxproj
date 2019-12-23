@@ -22,7 +22,6 @@
 		555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* PokerTracker.swift */; };
 		55698B9B23AAE0020065125C /* ActiveTournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55698B9A23AAE0020065125C /* ActiveTournamentsRequest.swift */; };
 		55698B9D23AAE27E0065125C /* ActiveTournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55698B9C23AAE27E0065125C /* ActiveTournaments.swift */; };
-		55698BA023AAF0140065125C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55698B9F23AAF0140065125C /* ApiError.swift */; };
 		556CAE1F23A9CB5700BBBEB4 /* TimelineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592684623A9CA1500045F89 /* TimelineRequest.swift */; };
 		556CAE2023A9CB5900BBBEB4 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592684823A9CA1500045F89 /* Timeline.swift */; };
 		5574DAC823A68E8700569790 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574DAC723A68E8700569790 /* Request.swift */; };
@@ -38,6 +37,7 @@
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
 		55AE8F7F23A5F305006BF2B9 /* WindowTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* WindowTracker.swift */; };
+		55B3CD6123B069CF00DDE6AF /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E406D23B065F600678BCD /* ApiError.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
 		55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */; };
 		55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C18692239583DC0081B6B7 /* Assets.xcassets */; };
@@ -60,6 +60,7 @@
 		5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableViewModel.swift; sourceTree = "<group>"; };
 		55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Configuration.swift; sourceTree = "<group>"; };
 		5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PokerTracker.Configuration.plist; sourceTree = "<group>"; };
+		550E406D23B065F600678BCD /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* SharkScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		55698B9A23AAE0020065125C /* ActiveTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournamentsRequest.swift; sourceTree = "<group>"; };
 		55698B9C23AAE27E0065125C /* ActiveTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournaments.swift; sourceTree = "<group>"; };
-		55698B9F23AAF0140065125C /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		5574DAC723A68E8700569790 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		5574DAC923A6933F00569790 /* MetadataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataRequest.swift; sourceTree = "<group>"; };
 		55840BF423A9B55D000B06FF /* StringRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRepresentable.swift; sourceTree = "<group>"; };
@@ -150,6 +150,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		550E406C23B065E100678BCD /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				550E406D23B065F600678BCD /* ApiError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		5521A555239DD5C4000D1AD1 /* PokerTracker */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +208,6 @@
 				55840BF623A9BA0B000B06FF /* StringRepresenting.swift */,
 				555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */,
 				554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */,
-				55698B9F23AAF0140065125C /* ApiError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +264,7 @@
 		55B229BB239E9617003EA63B /* SharkScope */ = {
 			isa = PBXGroup;
 			children = (
+				550E406C23B065E100678BCD /* Error */,
 				5521A553239DD170000D1AD1 /* SharkScope.swift */,
 				55DB43EA23A2E6ED00A7F37F /* Configuration */,
 				5574DAC623A68DD400569790 /* Model */,
@@ -456,7 +464,6 @@
 				55ED3CDD23A553EC00754763 /* BasicPlayerStatisticsQuery.swift in Sources */,
 				55DB43E923A2E62000A7F37F /* SharkScope.Configuration.swift in Sources */,
 				55DB43E523A2DB4D00A7F37F /* RequestCache.swift in Sources */,
-				55698BA023AAF0140065125C /* ApiError.swift in Sources */,
 				5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */,
 				5521A554239DD170000D1AD1 /* SharkScope.swift in Sources */,
 				555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */,
@@ -470,6 +477,7 @@
 				5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */,
 				554E018A23AA828100CF2971 /* Statistics.swift in Sources */,
 				55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */,
+				55B3CD6123B069CF00DDE6AF /* ApiError.swift in Sources */,
 				555585DC23A2999500B603C1 /* Metadata.swift in Sources */,
 				55698B9D23AAE27E0065125C /* ActiveTournaments.swift in Sources */,
 				555D217123A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift in Sources */,

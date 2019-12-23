@@ -376,12 +376,12 @@ class TourneyTableViewModel: NSObject,
         // let fetchPlayerName = "quAAsar"
         // let fetchPlayerName = "rybluk"
         // let fetchPlayerName = "perst777" // Blocked
-        let fetchPlayerName = "wASH1K"
+        // let fetchPlayerName = "wASH1K"
         // let fetchPlayerName = "Taren Tano" // With space
         // let fetchPlayerName = "Brier Rose" // Full Tilt (Closed)
         // let fetchPlayerName = "NNiubility"
         // let fetchPlayerName = "dontumove" // One table
-        // let fetchPlayerName = playerName
+        let fetchPlayerName = playerName
         sharkScope.fetch(player: fetchPlayerName,
                         completion:
         {

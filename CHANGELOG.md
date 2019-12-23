@@ -3,12 +3,14 @@
 
 * Doing
 
-    + SharkScope   
-        + Implement `ApiError` in `SharkScope.fetch()`
     + App
         + SharkScope query UX
         + SharkScope table 
         + Track Tournament Window
+
+* 0.8.0
+
+    + Implemented `ApiError` modeling SharkScope API errors / added to `SharkScope.fetch()`
 
 * 0.7.8
 

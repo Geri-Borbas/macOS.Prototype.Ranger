@@ -28,11 +28,10 @@ class SharkScope
 {
     
     
-    
+    static var errorDomain: String = "SharkScope"
     static var basePath: String = "/api/searcher/"
     static var log: Bool = false
     public var user: UserInfo?
-    
     
     
     // MARK: - Networking
@@ -128,7 +127,21 @@ class SharkScope
             {
                 print("JSON: \(JSON)")
             }
-
+            
+            // Create JSON decoder.
+            let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromBadgerFish
+                decoder.dateDecodingStrategy = .millisecondsSince1970
+            
+            // Try to decode error response if any.
+            if let decodedErrorResponse = try? decoder.decode(ApiError.self, from: data)
+            {
+                // Return error on the main thread.
+                DispatchQueue.main.async()
+                { completion(.failure(RequestError.apiError(decodedErrorResponse.NSError(domain: SharkScope.errorDomain)))) }
+                return
+            }
+            
             // Cache.
             if let cacheFileURL = cache.cacheFileURL(for: urlComponents)
             {
@@ -149,12 +162,7 @@ class SharkScope
             // Decode.
             var _decodedResponse: RequestType.RootResponseType?
             do
-            {
-                let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromBadgerFish
-                    decoder.dateDecodingStrategy = .millisecondsSince1970
-                _decodedResponse = try decoder.decode(RequestType.RootResponseType.self, from: data)
-            }
+            { _decodedResponse = try decoder.decode(RequestType.RootResponseType.self, from: data) }
             catch { return completion(.failure(RequestError.jsonDecodingError(error))) }
             
             // Only with JSON data.
