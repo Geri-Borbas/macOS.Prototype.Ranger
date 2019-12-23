@@ -3,10 +3,14 @@
 
 * Doing
 
-    + App
-        + SharkScope query UX
-        + SharkScope table 
-        + Track Tournament Window
+    + Create `PlayerViewModel` for `ViewModel` (factor every data into)
+    + SharkScope query UX
+    + SharkScope table 
+    + Track Tournament Window
+
+* 0.8.1
+
+    + Added table count query flow prototype
 
 * 0.8.0
 

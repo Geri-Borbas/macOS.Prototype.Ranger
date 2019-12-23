@@ -47,12 +47,6 @@ class SharkScope
             urlComponents.path = SharkScope.basePath + request.path
             urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
         
-        print(String(describing: urlComponents.percentEncodedPath))
-        print(String(describing: urlComponents.percentEncodedQuery))
-        print(String(describing: urlComponents.query))
-        print(String(describing: urlComponents.queryItems))
-        print(String(describing: request.parameters))
-        
         // Lookup cache first.
         let cache = RequestCache()
         if let cachedResponse: RequestType.RootResponseType = cache.cachedResponse(for: urlComponents), request.useCache

@@ -98,6 +98,9 @@ class TourneyTableViewModel: NSObject,
         }
     }
     
+    /// SharkScope `Data`
+    private var playerTableCountsForPlayerNames: [String:Int] = [:]
+    
     
     // MARK: - Binds
     
@@ -187,6 +190,8 @@ class TourneyTableViewModel: NSObject,
         
         // Fetch player statistics.
         playerStatisticsAtSelectedTable = try pokerTracker.fetch(BasicPlayerStatisticsQuery(playerIDs: playerIDs))
+        
+        //
         
         // Look for changes.
         invokeOnChangedIfNeeded()
@@ -320,6 +325,8 @@ class TourneyTableViewModel: NSObject,
             VPIP = String(format: "%.0f", statistics.VPIP * 100)
             PFR = String(format: "%.0f", statistics.PFR * 100)
         }
+        let tableCount = playerTableCountsForPlayerNames[playerName] ?? -1
+        let tables = (tableCount >= 0) ? String(tableCount) : "-"
         
         // Into columns.
         let stringsForColumnTitles =
@@ -327,7 +334,8 @@ class TourneyTableViewModel: NSObject,
             "Player" : playerName,
             "Stack" : stack,
             "VPIP" : VPIP,
-            "PFR" : PFR
+            "PFR" : PFR,
+            "Tables" : tables,
         ]
         
         // Cell view.
@@ -402,9 +410,13 @@ class TourneyTableViewModel: NSObject,
                     print("\(responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name) playing \(tables) tables.")
                     if let activeTournaments = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
                     { print(activeTournaments) }
+                    print(self.sharkScope.status)
+                    
+                    // Retain data.
+                    self.playerTableCountsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = tables
                     
                     // Update UI.
-                    print(self.sharkScope.status)
+                    self.markAsChanged()
                     
                     break
             
