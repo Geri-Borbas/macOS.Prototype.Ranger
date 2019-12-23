@@ -376,9 +376,11 @@ class TourneyTableViewModel: NSObject,
         // let fetchPlayerName = "quAAsar"
         // let fetchPlayerName = "rybluk"
         // let fetchPlayerName = "perst777" // Blocked
-        // let fetchPlayerName = "wASH1K"
+        let fetchPlayerName = "wASH1K"
+        // let fetchPlayerName = "Taren Tano" // With space
         // let fetchPlayerName = "Brier Rose" // Full Tilt (Closed)
-        let fetchPlayerName = "Taren Tano"
+        // let fetchPlayerName = "NNiubility"
+        // let fetchPlayerName = "dontumove" // One table
         // let fetchPlayerName = playerName
         sharkScope.fetch(player: fetchPlayerName,
                         completion:
@@ -390,13 +392,16 @@ class TourneyTableViewModel: NSObject,
                 case .success(let responses):
                     
                     // Count only running (or late registration) tables.
-                    let tables = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments.Tournament.reduce(0)
+                    let tables: Int = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments?.Tournament.reduce(0)
                     {
                         count, eachTournament in
                         count + (eachTournament.state != "Registering" ? 1 : 0)
-                    }
+                    } ?? 0
                     
+                    // Logs.
                     print("\(responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name) playing \(tables) tables.")
+                    if let activeTournaments = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
+                    { print(activeTournaments) }
                     
                     // Update UI.
                     print(self.sharkScope.status)

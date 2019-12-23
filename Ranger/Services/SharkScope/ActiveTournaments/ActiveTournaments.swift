@@ -49,17 +49,17 @@ struct ActiveTournamentsResponse: Response
                 let lastActivity: StringFor<Date>
                 let name: String
                 let network: String
-                let ActiveTournaments: ActiveTournaments
+                var ActiveTournaments: ActiveTournaments?
                 
                 
-                struct ActiveTournaments: Decodable
+                struct ActiveTournaments: Decodable, CustomStringConvertible
                 {
+                 
+                    
+                    var Tournament: [Tournament]
                     
                     
-                    let Tournament: [Tournament]
-                    
-                    
-                    struct Tournament: Decodable
+                    struct Tournament: Decodable, CustomStringConvertible
                     {
                         
 
@@ -69,7 +69,7 @@ struct ActiveTournamentsResponse: Response
                         // let gameClass: String
                         let id: StringFor<Int>
                         // let lateRegEndDate: StringFor<Date>
-                        // let name: String
+                        let name: String
                         let state: String
                         let totalEntrants: StringFor<Int>
                         // let overlay: String
@@ -82,7 +82,40 @@ struct ActiveTournamentsResponse: Response
                         // let structure: String
                         // let network: String
                         // let playersPerTable: StringFor<Int>
+                        
+                        
+                        var description: String
+                        { return String(format: "%@ - Entrants %d/%d", name, currentEntrants.value, totalEntrants.value) }
                     }
+                    
+                    init(from decoder: Decoder) throws
+                    {
+                        // Default(ish) implementation.
+                        let container = try decoder.container(keyedBy: DynamicCodingKey.self)
+                        
+                        // Try to decode one tournament first.
+                        var Tournament: [Tournament] = []
+                        if let oneTournament = try? container.decode(ActiveTournaments.Tournament.self, forKey: DynamicCodingKey(stringValue: "Tournament")!)
+                        { Tournament = [oneTournament] }
+                        // Decode tournament list after.
+                        else
+                        { Tournament = try container.decode([ActiveTournaments.Tournament].self, forKey: DynamicCodingKey(stringValue: "Tournament")!) }
+                        
+                        // Assign.
+                        self.Tournament = Tournament
+                    }
+                    
+                    
+                    var description: String
+                    {
+                        return "[\n" + self.Tournament.reduce("")
+                        {
+                            description, eachTournament in
+                            description + "\t" + eachTournament.description + "\n"
+                        } + "]"
+                    }
+                    
+                    
                 }
             }
         }

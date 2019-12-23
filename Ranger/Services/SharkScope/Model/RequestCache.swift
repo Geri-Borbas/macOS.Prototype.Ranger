@@ -45,7 +45,7 @@ class RequestCache
         
         
         // Parse subfolder (or fallback to no subfolder) without api path components.
-        let pathURL = URL(string: urlComponents.percentEncodedPath.replacingOccurrences(of: "/api/searcher/", with: "")) ?? URL(string: "")!
+        let pathURL = URL(string: urlComponents.percentEncodedPath.replacingOccurrences(of: SharkScope.basePath, with: "")) ?? URL(string: "")!
         let pathFolder = pathURL.deletingLastPathComponent()
         let cacheFolderURL = documentsDirectory.appendingPathComponent(pathFolder.path, isDirectory: true)
         
@@ -64,10 +64,14 @@ class RequestCache
         
         // Parse file name.
         let pathURL = URL(string: urlComponents.percentEncodedPath) ?? URL(string: "")!
-        let pathFileName = pathURL.lastPathComponent + "?" + (urlComponents.percentEncodedQuery ?? "")
+        
+        // Append query if any.
+        var querySuffix = ""
+        if urlComponents.percentEncodedQuery != ""
+        { querySuffix = "?" + (urlComponents.percentEncodedQuery ?? "") }
         
         // Assemble file name.
-        let cacheFileURL = cacheFolderURL.appendingPathComponent(pathFileName).appendingPathExtension("json")
+        let cacheFileURL = cacheFolderURL.appendingPathComponent(pathURL.lastPathComponent + querySuffix).appendingPathExtension("json")
         
         return cacheFileURL
     }

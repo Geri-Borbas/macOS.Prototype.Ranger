@@ -28,6 +28,8 @@ class SharkScope
 {
     
     
+    
+    static var basePath: String = "/api/searcher/"
     static var log: Bool = false
     public var user: UserInfo?
     
@@ -43,8 +45,9 @@ class SharkScope
         var urlComponents = URLComponents()
             urlComponents.scheme = "https"
             urlComponents.host = "sharkscope.com"
-            urlComponents.path = "/api/searcher/" + request.path
-            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+            urlComponents.path = SharkScope.basePath + request.path
+            let sortedParameters = [String:String](uniqueKeysWithValues: request.parameters.sorted{ $0.key > $1.key })
+            urlComponents.queryItems = sortedParameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
         
         print(String(describing: urlComponents.percentEncodedPath))
         print(String(describing: urlComponents.percentEncodedQuery))
