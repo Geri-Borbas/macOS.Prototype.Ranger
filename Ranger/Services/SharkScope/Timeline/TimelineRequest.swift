@@ -21,6 +21,6 @@ struct TimelineRequest: Request
     let network: String
     let player: String
     var path: String { "networks/\(network)/players/\(player)/timeline" }
-    var parameters:  [String: String] { [:] }
+    var parameters: KeyValuePairs<String, String> { [:] }
     var useCache: Bool = true
 }

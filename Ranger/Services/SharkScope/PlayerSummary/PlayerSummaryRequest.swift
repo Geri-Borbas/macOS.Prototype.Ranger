@@ -23,6 +23,6 @@ struct PlayerSummaryRequest: Request
     let network: String
     let player: String
     var path: String { "networks/\(network)/players/\(player)" }
-    var parameters:  [String: String] { [:] }
+    var parameters: KeyValuePairs<String, String> { [:] }
     var useCache: Bool = true
 }

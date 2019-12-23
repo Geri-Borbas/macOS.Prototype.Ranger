@@ -23,6 +23,6 @@ struct MetadataRequest: Request
     
     
     var path: String { "metadata" }
-    var parameters:  [String: String] { [:] }
+    var parameters: KeyValuePairs<String, String> { [:] }
     var useCache: Bool = true
 }

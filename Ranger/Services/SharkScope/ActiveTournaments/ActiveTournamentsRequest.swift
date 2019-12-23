@@ -27,7 +27,7 @@ struct ActiveTournamentsRequest: Request
     let network: String
     let player: String
     var path: String { "activeTournaments" }
-    var parameters:  [String: String]
+    var parameters: KeyValuePairs<String, String>
     {
         [
             "network1" : network,

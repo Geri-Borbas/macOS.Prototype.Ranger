@@ -17,7 +17,7 @@ protocol Request
     
     
     var path: String { get }
-    var parameters:  [String: String] { get }
+    var parameters: KeyValuePairs<String, String> { get }
     var useCache: Bool { get set }
 }
 

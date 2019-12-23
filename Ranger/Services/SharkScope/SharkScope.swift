@@ -46,8 +46,7 @@ class SharkScope
             urlComponents.scheme = "https"
             urlComponents.host = "sharkscope.com"
             urlComponents.path = SharkScope.basePath + request.path
-            let sortedParameters = [String:String](uniqueKeysWithValues: request.parameters.sorted{ $0.key > $1.key })
-            urlComponents.queryItems = sortedParameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
         
         print(String(describing: urlComponents.percentEncodedPath))
         print(String(describing: urlComponents.percentEncodedQuery))

@@ -4,12 +4,15 @@
 * Doing
 
     + SharkScope   
-        + Implement `ApiError` in `SharkScope.fetch()` 
-        + Preserve request parameters order (tuples)
+        + Implement `ApiError` in `SharkScope.fetch()`
     + App
-        + Query SharkScope statistics for player list
-        + Create SharkScope table
+        + SharkScope query UX
+        + SharkScope table 
         + Track Tournament Window
+
+* 0.7.8
+
+    + Preserve `Request.parameters` order (using `KeyValuePairs`)
 
 * 0.7.7
 
