@@ -1,3 +1,4 @@
+
 //
 //  Statistics.swift
 //  Ranger
@@ -31,12 +32,27 @@ struct Statistics: Decodable
 
         let id: String
         let value: String
+        
+        
+        init(from decoder: Decoder) throws
+        {
+            // Decode `id`.
+            let container = try decoder.container(keyedBy: DynamicCodingKey.self)
+            self.id = try container.decode(String.self, forKey: DynamicCodingKey(stringValue: "id")!)
+            
+            // Decode value (if authorized).
+            let authorized = try container.decodeIfPresent(String.self, forKey: DynamicCodingKey(stringValue: "authorized")!) ?? ""
+            if (authorized == "false")
+            { self.value = "-" }
+            else
+            { self.value = try container.decode(String.self, forKey: DynamicCodingKey(stringValue: "value")!) }
+        }
     }
     
     
     init(from decoder: Decoder) throws
     {
-        // Default implementation.
+        // Default(ish) implementation.
         let container = try decoder.container(keyedBy: DynamicCodingKey.self)
         self.displayCurrency = try container.decode(String.self, forKey: DynamicCodingKey(stringValue: "displayCurrency")!)
         self.Statistic = try container.decode([StatisticType].self, forKey: DynamicCodingKey(stringValue: "Statistic")!)

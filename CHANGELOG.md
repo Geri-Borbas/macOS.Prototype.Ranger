@@ -4,14 +4,21 @@
 * Doing
 
     + SharpScope
-        + Resolve cache filenames with URL paramenters (can cache `activeTournaments.json`
+        + Resolve cache filenames with URL paramenters (can cache `activeTournaments.json`)
         + Implement `ApiError` in `SharkScope.fetch()` 
+        + Implement `Decodable.init` for `ActiveTournaments` (when no tables playing)
     
     + App
         + Query SharkScope statistics for player list
         + Create SharkScope table
         + Track Tournament Window
 
+* 0.7.4
+
+    + Refactored `SharkScope.fetch(player:)` response.
+    + `Statistics` can be decoded nicely with unauthorized statistics as well 
+    + Narrowed down `Tournament` implementation (easy fix to deal with optional values)
+    
 * 0.7.3
 
     + Minor UI tweaks

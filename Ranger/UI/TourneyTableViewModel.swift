@@ -115,8 +115,6 @@ class TourneyTableViewModel: NSObject,
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
         { _ in self.tick() }
         
-        // Ping to SharkScope.
-        sharkScope.test()
     }
     
     // MARK: - SharkScope
@@ -375,19 +373,40 @@ class TourneyTableViewModel: NSObject,
         NSPasteboard.general.setString(playerName, forType: NSPasteboard.PasteboardType.string)
         
         // Fetch summary.
-        sharkScope.fetch(player: playerName,
+        let fetchPlayerName = "quAAsar"
+        // let fetchPlayerName = "rybluk"
+        // let fetchPlayerName = "perst777"
+        // let fetchPlayerName = playerName
+        sharkScope.fetch(player: fetchPlayerName,
                         completion:
         {
-            (result: Result<(summary: PlayerSummary, tables: Int), RequestError>) in
+            (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) in
             
             switch result
             {
-                case .success(let tuple):
-                    print("\(tuple.summary.Response.PlayerResponse.PlayerView.Player.name) playing \(tuple.tables) tables.")
+                case .success(let responses):
+                    
+                    // Count only running (or late registration) tables.
+                    let tables = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments.Tournament.reduce(0)
+                    {
+                        count, eachTournament in
+                        count + (eachTournament.state != "Registering" ? 1 : 0)
+                    }
+                    
+                    print("\(responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name) playing \(tables) tables.")
+                    
+                    // Update UI.
+                    print(self.sharkScope.status)
+                    
                     break
             
                 case .failure(let error):
+                    
                     print(error)
+                    
+                    // Update UI.
+                    print(self.sharkScope.status)
+                    
                     break
            }
         })

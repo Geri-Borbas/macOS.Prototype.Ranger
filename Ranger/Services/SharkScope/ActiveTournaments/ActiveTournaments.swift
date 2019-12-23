@@ -64,24 +64,24 @@ struct ActiveTournamentsResponse: Response
                         
 
                         // let guarantee: StringFor<Float>
-                        let rake: StringFor<Float>
-                        let currency: String
-                        let gameClass: String
+                        // let rake: StringFor<Float>
+                        // let currency: String
+                        // let gameClass: String
                         let id: StringFor<Int>
                         // let lateRegEndDate: StringFor<Date>
-                        let name: String
+                        // let name: String
                         let state: String
                         let totalEntrants: StringFor<Int>
-                        let overlay: String
-                        let lastUpdateTime: StringFor<Date>
-                        let game: String
+                        // let overlay: String
+                        // let lastUpdateTime: StringFor<Date>
+                        // let game: String
                         let stake: StringFor<Float>
                         let currentEntrants: StringFor<Int>
                         // let scheduledStartDate: StringFor<Date>
-                        let flags: String
-                        let structure: String
-                        let network: String
-                        let playersPerTable: StringFor<Int>
+                        // let flags: String
+                        // let structure: String
+                        // let network: String
+                        // let playersPerTable: StringFor<Int>
                     }
                 }
             }

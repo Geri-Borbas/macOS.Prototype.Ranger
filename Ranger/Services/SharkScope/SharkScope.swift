@@ -32,6 +32,9 @@ class SharkScope
     public var user: UserInfo?
     
     
+    
+    // MARK: - Networking
+    
     public func fetch<RequestType: Request>(_ request: RequestType,
                                             completion: @escaping (Result<RequestType.RootResponseType, RequestError>) -> Void) where RequestType.RootResponseType: RootResponse
     {
@@ -162,13 +165,11 @@ class SharkScope
         task.resume()
     }
     
-    public func test()
-    {
-        // testRequest()
-    }
+    
+    // MARK: - Requests
     
     func fetch(player playerName: String,
-               completion: @escaping (Result<(summary: PlayerSummary, tables: Int), RequestError>) -> Void)
+               completion: @escaping (Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) -> Void)
     {
         let network = "PokerStars"
         // let playerName = "quAAsar"
@@ -183,7 +184,7 @@ class SharkScope
             
             switch result
             {
-                case .success(let response):
+                case .success(let playerSummary):
                     
                     self.fetch(ActiveTournamentsRequest(network: network, player: playerName), completion:
                     {
@@ -191,23 +192,20 @@ class SharkScope
                         
                         switch result
                         {
-                            case .success(let response):
+                            case .success(let activeTournaments):
                                 
-                                let ActiveTournamentsResponse = response.Response
-                                
-                                // Player.
-                                print("metadataHash: \(ActiveTournamentsResponse.metadataHash)")
-                                print("Username: \(ActiveTournamentsResponse.UserInfo.Username)")
-                                print("freeSearchesRemaining: \(ActiveTournamentsResponse.UserInfo.Subscriptions.freeSearchesRemaining.value)")
-                                print("totalSearchesRemaining: \(ActiveTournamentsResponse.UserInfo.Subscriptions.totalSearchesRemaining.value)")
-                                print("expirationDate: \(ActiveTournamentsResponse.UserInfo.Subscriptions.Subscription.expirationDate.value)")
-                                print("Regions.first.name: \(ActiveTournamentsResponse.UserInfo.Regions.first?.name ?? "")")
+                                // Completion.
+                                completion(.success((
+                                    playerSummary: playerSummary,
+                                    activeTournaments: activeTournaments
+                                )))
                                 
                                 break
                             
                             case .failure(let error):
                             
-                                print("error: \(error)")
+                                // Error.
+                                completion(.failure(error))
                                 
                                 break
                         }
@@ -217,10 +215,22 @@ class SharkScope
                 
                 case .failure(let error):
                 
-                    print("error: \(error)")
+                    // Error.
+                    completion(.failure(error))
                     
                     break
             }
         })
+    }
+    
+    
+    // MARK: - UI
+    
+    var status: String
+    {
+        guard let user = user
+        else { return "Not logged in." }
+        
+        return String(format: "%d search remaining (logged in as %@).", user.RemainingSearches, user.Username)
     }
 }
