@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct PlayerSummary: RootResponse
+struct PlayerSummary: RootResponse, Equatable
 { let Response: PlayerSummaryResponse }
 
 
-struct PlayerSummaryResponse: Response
+struct PlayerSummaryResponse: Response, Equatable
 {
 
 
@@ -25,14 +25,14 @@ struct PlayerSummaryResponse: Response
     let UserInfo: UserInfo
     
     
-    struct PlayerResponse: Decodable
+    struct PlayerResponse: Decodable, Equatable
     {
 
 
         let PlayerView: PlayerView
 
 
-        struct PlayerView: Decodable
+        struct PlayerView: Decodable, Equatable
         {
 
 
@@ -40,7 +40,7 @@ struct PlayerSummaryResponse: Response
             let Player: Player
             
 
-            struct Player: Decodable
+            struct Player: Decodable, Equatable
             {
 
 

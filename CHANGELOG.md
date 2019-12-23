@@ -3,14 +3,19 @@
 
 * Doing
 
-    + Create `PlayerViewModel` for `ViewModel` (factor every data into)
+    + Recreate players if new table has selected
     + SharkScope query UX
     + SharkScope table 
     + Track Tournament Window
 
+* 0.8.4
+
+    + Created `PlayerViewModel` for `ViewModel` (factored every data into)
+    + SharkScope models are `Equatable` as well (for detecting changes later)
+
 * 0.8.2
 
-    + Created SharkScope table prototype
+    + Created SharkScope table prototypes
 
 * 0.8.1
 

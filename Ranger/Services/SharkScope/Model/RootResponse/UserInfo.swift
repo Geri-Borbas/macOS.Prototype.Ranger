@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct UserInfo: Decodable
+public struct UserInfo: Decodable, Equatable
 {
 
 
@@ -28,7 +28,7 @@ public struct UserInfo: Decodable
     // let AuthorizedNetworks: [Any]
 
 
-    struct Region: Decodable
+    struct Region: Decodable, Equatable
     {
 
 
@@ -37,7 +37,7 @@ public struct UserInfo: Decodable
     }
 
 
-    struct Subscriptions: Decodable
+    struct Subscriptions: Decodable, Equatable
     {
 
 
@@ -46,7 +46,7 @@ public struct UserInfo: Decodable
         let Subscription: Subscription
 
 
-        struct Subscription: Decodable
+        struct Subscription: Decodable, Equatable
         {
 
 

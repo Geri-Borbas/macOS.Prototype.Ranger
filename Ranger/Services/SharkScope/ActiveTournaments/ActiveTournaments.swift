@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct ActiveTournaments: RootResponse
+struct ActiveTournaments: RootResponse, Equatable
 { let Response: ActiveTournamentsResponse }
 
 
-struct ActiveTournamentsResponse: Response
+struct ActiveTournamentsResponse: Response, Equatable
 {
 
 
@@ -25,14 +25,14 @@ struct ActiveTournamentsResponse: Response
     let UserInfo: UserInfo
     
     
-    struct PlayerResponse: Decodable
+    struct PlayerResponse: Decodable, Equatable
     {
 
 
         let PlayerView: PlayerView
 
 
-        struct PlayerView: Decodable
+        struct PlayerView: Decodable, Equatable
         {
 
 
@@ -40,7 +40,7 @@ struct ActiveTournamentsResponse: Response
             let Player: Player
             
 
-            struct Player: Decodable
+            struct Player: Decodable, Equatable
             {
 
 
@@ -52,14 +52,14 @@ struct ActiveTournamentsResponse: Response
                 var ActiveTournaments: ActiveTournaments?
                 
                 
-                struct ActiveTournaments: Decodable, CustomStringConvertible
+                struct ActiveTournaments: Decodable, CustomStringConvertible, Equatable
                 {
                  
                     
                     var Tournament: [Tournament]
                     
                     
-                    struct Tournament: Decodable, CustomStringConvertible
+                    struct Tournament: Decodable, CustomStringConvertible, Equatable
                     {
                         
 

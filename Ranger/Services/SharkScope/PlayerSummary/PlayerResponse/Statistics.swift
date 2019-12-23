@@ -10,7 +10,7 @@
 import Foundation
 
 
-struct Statistics: Decodable
+struct Statistics: Decodable, Equatable
 {
 
     
@@ -26,7 +26,7 @@ struct Statistics: Decodable
     private let statisticValuesByIds: [String:String]
 
     
-    struct Statistic: Decodable
+    struct Statistic: Decodable, Equatable
     {
 
 

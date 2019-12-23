@@ -9,7 +9,7 @@
 import Foundation
 
 
-public protocol StringRepresentable: CustomStringConvertible
+public protocol StringRepresentable: CustomStringConvertible, Equatable
 {
     
     

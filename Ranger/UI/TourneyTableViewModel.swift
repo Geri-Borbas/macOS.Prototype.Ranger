@@ -75,28 +75,8 @@ class TourneyTableViewModel: NSObject,
         }
     }
     
-    /// Players seated at selected table (`selectedLiveTourneyTable`). Can indicate change upon set.
-    private var liveTourneyPlayersAtSelectedTable: [LiveTourneyPlayer] = []
-    {
-        didSet
-        {
-            if liveTourneyPlayersAtSelectedTable.elementsEqual(oldValue) == false
-            { markAsChanged() }
-        }
-    }
-    
-    /// PokerTracker `Player` entries for players at selected table.
-    private var playersAtSelectedTable: [Player] = []
-    
-    /// PokerTracker `BasicPlayerStatistics` entries for players at selected table. Can indicate change upon set.
-    private var playerStatisticsAtSelectedTable: [BasicPlayerStatistics] = []
-    {
-        didSet
-        {
-            if playerStatisticsAtSelectedTable.elementsEqual(oldValue) == false
-            { markAsChanged() }
-        }
-    }
+    /// ViewModels for players seated at selected table (`selectedLiveTourneyTable`).
+    private var playerViewModels: [PlayerViewModel] = []
     
     /// SharkScope `Data`
     private var playerStatisticsForPlayerNames: [String:Statistics] = [:]
@@ -116,7 +96,7 @@ class TourneyTableViewModel: NSObject,
         self.onChange = onChange
         
         // Schedule timer.
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true)
         { _ in self.tick() }
         
     }
@@ -153,7 +133,7 @@ class TourneyTableViewModel: NSObject,
     
     private func processData() throws
     {
-        // Get tables (may invoke `markAsChanged`).
+        // Get current tables (may invoke `markAsChanged`).
         liveTourneyTables = try pokerTracker.fetch(LiveTourneyTableQuery())
         
         // Only if tables any.
@@ -164,35 +144,61 @@ class TourneyTableViewModel: NSObject,
             return
         }
         
-        // Get players (may invoke `markAsChanged`).
+        // Get current players (may invoke `markAsChanged`).
         let liveTourneyPlayers = try pokerTracker.fetch(LiveTourneyPlayerQuery())
                 
-        // Select first table by default.
+        // Select first table by default if needed.
         if (selectedLiveTourneyTable == nil)
         { selectedLiveTourneyTable = liveTourneyTables.first! }
         
-        // Crunch data for UI (may invoke `markAsChanged`).
-        liveTourneyPlayersAtSelectedTable = liveTourneyPlayers.filter
+        // Filter current players at the selected table (with non-zero stack).
+        let liveTourneyPlayersAtSelectedTable = liveTourneyPlayers.filter
         {
             (eachLiveTourneyPlayer: LiveTourneyPlayer) in
             (
-                // Filter players at the selected table with non-zero stack.
                 eachLiveTourneyPlayer.id_live_table == selectedLiveTourneyTableIndex + 1 &&
                 eachLiveTourneyPlayer.amt_stack > 0
             )
         }
-                
-        // Collect `id_player` for live players.
-        let playerIDs = liveTourneyPlayersAtSelectedTable
+        
+        // Collect `id_player` for current players.
+        let currentPlayerIDs = liveTourneyPlayersAtSelectedTable
         .map{ eachPlayer in eachPlayer.id_player }
+
+        // Colelct `id_player` for view model players.
+        var viewModelPlayerIDs: [Int] = playerViewModels.map
+        {
+            eachPlayerViewModel in
+            eachPlayerViewModel.pokerTracker.liveTourneyPlayer.id_player
+        }
+
+        // Collect removable players.
+        var removablePlayerIDs: [Int] = []
+        viewModelPlayerIDs.forEach
+        {
+            eachViewModelPlayerID in
+            if (currentPlayerIDs.contains(eachViewModelPlayerID) == false)
+            { removablePlayerIDs.append(eachViewModelPlayerID) }
+        }
         
-        // Fetch player names.
-        playersAtSelectedTable = try pokerTracker.fetch(PlayerQuery(playerIDs: playerIDs))
-        
-        // Fetch player statistics.
-        playerStatisticsAtSelectedTable = try pokerTracker.fetch(BasicPlayerStatisticsQuery(playerIDs: playerIDs))
-        
-        //
+        // Remove removable players.
+        removablePlayerIDs.forEach
+        {
+            eachRemovablePlayerID in
+            if let indexOfRemovablePlayer = viewModelPlayerIDs.firstIndex(of: eachRemovablePlayerID)
+            { viewModelPlayerIDs.remove(at: indexOfRemovablePlayer) }
+        }
+
+        // Create / Collect new players if needed.
+        currentPlayerIDs.forEach
+        {
+            eachCurrentPlayerID in
+            if (viewModelPlayerIDs.contains(eachCurrentPlayerID) == false)
+            {
+                let eachIndex = currentPlayerIDs.firstIndex(of: eachCurrentPlayerID)!
+                playerViewModels.append(PlayerViewModel(with: liveTourneyPlayersAtSelectedTable[eachIndex]))
+            }
+        }
         
         // Look for changes.
         invokeOnChangedIfNeeded()
@@ -304,7 +310,7 @@ class TourneyTableViewModel: NSObject,
     // MARK: - TableView Data
 
     func numberOfRows(in tableView: NSTableView) -> Int
-    { return liveTourneyPlayersAtSelectedTable.count }
+    { return playerViewModels.count }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
     {
@@ -312,9 +318,10 @@ class TourneyTableViewModel: NSObject,
         guard let column = tableColumn else { return nil }
         
         // Data.
-        let liveTourneyPlayer = liveTourneyPlayersAtSelectedTable[row]
-        let player = playersAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
-        let statistics = playerStatisticsAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
+        let playerViewModel = playerViewModels[row]
+        let liveTourneyPlayer = playerViewModel.pokerTracker.liveTourneyPlayer
+        let player = playerViewModel.pokerTracker.player
+        let statistics = playerViewModel.pokerTracker.statistics
         
         // Display data.
         let playerName = player?.player_name ?? ""
@@ -393,8 +400,8 @@ class TourneyTableViewModel: NSObject,
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
     {
         // Data.
-        let liveTourneyPlayer = liveTourneyPlayersAtSelectedTable[row]
-        let player = playersAtSelectedTable.filter{ eachPlayer in eachPlayer.id_player == liveTourneyPlayer.id_player }.first
+        let playerViewModel = playerViewModels[row]
+        let player = playerViewModel.pokerTracker.player
         
         // Only with data.
         guard let playerName = player?.player_name

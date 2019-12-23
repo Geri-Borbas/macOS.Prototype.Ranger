@@ -12,7 +12,7 @@ import Foundation
 public typealias StringFor<Type> = StringRepresenting<Type> where Type: StringRepresentable
 
 
-public struct StringRepresenting<RepresentedType: StringRepresentable>: Decodable
+public struct StringRepresenting<RepresentedType: StringRepresentable>: Decodable, Equatable
 {
     
     
@@ -37,6 +37,9 @@ public struct StringRepresenting<RepresentedType: StringRepresentable>: Decodabl
         // Set.
         self.value = value
     }
+    
+    public static func == (lhs: StringRepresenting<RepresentedType>, rhs: StringRepresenting<RepresentedType>) -> Bool
+    { lhs.value == rhs.value }
 }
 
 
