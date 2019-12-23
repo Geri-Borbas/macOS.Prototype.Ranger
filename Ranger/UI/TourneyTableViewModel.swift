@@ -99,6 +99,7 @@ class TourneyTableViewModel: NSObject,
     }
     
     /// SharkScope `Data`
+    private var playerStatisticsForPlayerNames: [String:Statistics] = [:]
     private var playerTableCountsForPlayerNames: [String:Int] = [:]
     
     
@@ -318,6 +319,8 @@ class TourneyTableViewModel: NSObject,
         // Display data.
         let playerName = player?.player_name ?? ""
         let stack = String(format: "%.0f", liveTourneyPlayer.amt_stack)
+        
+        // PokerTracker.
         var VPIP = "-"
         var PFR = "-"
         if let statistics = statistics
@@ -325,8 +328,25 @@ class TourneyTableViewModel: NSObject,
             VPIP = String(format: "%.0f", statistics.VPIP * 100)
             PFR = String(format: "%.0f", statistics.PFR * 100)
         }
-        let tableCount = playerTableCountsForPlayerNames[playerName] ?? -1
-        let tables = (tableCount >= 0) ? String(tableCount) : "-"
+        
+        var tables = "-"
+        var count = "-"
+        var ROI = "-"
+        var early = "-"
+        var late = "-"
+        
+        // Table count.
+        if let tableCount = playerTableCountsForPlayerNames[playerName]
+        { tables = String(tableCount) }
+        
+        // SharkScope.
+        if let statistics = playerStatisticsForPlayerNames[playerName]
+        {
+            count = String(format: "%.0f", statistics.Count)
+            ROI = String(format: "%.1f%%", statistics.AvROI)
+            early = String(format: "%.1f%%", statistics.FinshesEarly)
+            late = String(format: "%.1f%%", statistics.FinshesLate)
+        }
         
         // Into columns.
         let stringsForColumnTitles =
@@ -336,6 +356,10 @@ class TourneyTableViewModel: NSObject,
             "VPIP" : VPIP,
             "PFR" : PFR,
             "Tables" : tables,
+            "Count" : count,
+            "ROI" : ROI,
+            "Early" : early,
+            "Late" : late,
         ]
         
         // Cell view.
@@ -413,6 +437,7 @@ class TourneyTableViewModel: NSObject,
                     print(self.sharkScope.status)
                     
                     // Retain data.
+                    self.playerStatisticsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = responses.playerSummary.Response.PlayerResponse.PlayerView.Player.Statistics
                     self.playerTableCountsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = tables
                     
                     // Update UI.

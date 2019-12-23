@@ -8,6 +8,10 @@
     + SharkScope table 
     + Track Tournament Window
 
+* 0.8.2
+
+    + Created SharkScope table prototype
+
 * 0.8.1
 
     + Added table count query flow prototype
