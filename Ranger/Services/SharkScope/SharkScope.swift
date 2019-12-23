@@ -38,9 +38,23 @@ class SharkScope
     public func fetch<RequestType: Request>(_ request: RequestType,
                                             completion: @escaping (Result<RequestType.RootResponseType, RequestError>) -> Void) where RequestType.RootResponseType: RootResponse
     {
+        
+        // Create URL Components.
+        var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "sharkscope.com"
+            urlComponents.path = "/api/searcher/" + request.path
+            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+        
+        print(String(describing: urlComponents.percentEncodedPath))
+        print(String(describing: urlComponents.percentEncodedQuery))
+        print(String(describing: urlComponents.query))
+        print(String(describing: urlComponents.queryItems))
+        print(String(describing: request.parameters))
+        
         // Lookup cache first.
         let cache = RequestCache()
-        if let cachedResponse: RequestType.RootResponseType = cache.cachedResponse(for: request.path, parameters: request.parameters), request.useCache
+        if let cachedResponse: RequestType.RootResponseType = cache.cachedResponse(for: urlComponents), request.useCache
         {
             print("Found JSON cache, skip request.")
             return completion(.success(cachedResponse))
@@ -49,13 +63,6 @@ class SharkScope
         {
             print("Don't use JSON cache.")
         }
-        
-        // Create URL Components.
-        var urlComponents = URLComponents()
-            urlComponents.scheme = "https"
-            urlComponents.host = "sharkscope.com"
-            urlComponents.path = "/api/searcher/" + request.path
-            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
         
         // Create URL.
         guard let url: URL = urlComponents.url
@@ -121,7 +128,7 @@ class SharkScope
             }
 
             // Cache.
-            if let cacheFileURL = cache.cacheFileURL(for: request.path, parameters: request.parameters)
+            if let cacheFileURL = cache.cacheFileURL(for: urlComponents)
             {
                 // Create pretty JSON.
                 var _JSONdata: Data?
@@ -186,7 +193,7 @@ class SharkScope
             {
                 case .success(let playerSummary):
                     
-                    self.fetch(ActiveTournamentsRequest(network: network, player: playerName), completion:
+                    self.fetch(ActiveTournamentsRequest(network: network, player: playerName).usingCache(), completion:
                     {
                         result in
                         

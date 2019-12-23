@@ -13,11 +13,10 @@ class RequestCache
 {
     
     
-    func cachedResponse<ResponseType: Decodable>(for path: String,
-                                                 parameters: [String: String]) -> ResponseType?
+    func cachedResponse<ResponseType: Decodable>(for urlComponents: URLComponents) -> ResponseType?
     {
         // Resolve file name.
-        guard let cacheFileURL = cacheFileURL(for: path, parameters: parameters)
+        guard let cacheFileURL = cacheFileURL(for: urlComponents)
         else { return nil }
         
         // Load / Decode JSON.
@@ -37,15 +36,16 @@ class RequestCache
         }
     }
     
-    func cacheFolderURL(for path: String,
-                        parameters: [String: String]) -> URL?
+    func cacheFolderURL(for urlComponents: URLComponents) -> URL?
     {
         // Resolve Documents directory.
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             else { return nil }
         
-        // Parse subfolder (or fallback to no subfolder).
-        let pathURL = URL(string: path) ?? URL(string: "")!
+        
+        
+        // Parse subfolder (or fallback to no subfolder) without api path components.
+        let pathURL = URL(string: urlComponents.percentEncodedPath.replacingOccurrences(of: "/api/searcher/", with: "")) ?? URL(string: "")!
         let pathFolder = pathURL.deletingLastPathComponent()
         let cacheFolderURL = documentsDirectory.appendingPathComponent(pathFolder.path, isDirectory: true)
         
@@ -56,16 +56,15 @@ class RequestCache
         return cacheFolderURL
     }
     
-    func cacheFileURL(for path: String,
-                      parameters: [String: String]) -> URL?
+    func cacheFileURL(for urlComponents: URLComponents) -> URL?
     {
         // Try to resolve folder.
-        guard let cacheFolderURL = cacheFolderURL(for: path, parameters: parameters)
+        guard let cacheFolderURL = cacheFolderURL(for: urlComponents)
         else { return nil }
         
         // Parse file name.
-        let pathURL = URL(string: path) ?? URL(string: "")!
-        let pathFileName = pathURL.lastPathComponent
+        let pathURL = URL(string: urlComponents.percentEncodedPath) ?? URL(string: "")!
+        let pathFileName = pathURL.lastPathComponent + "?" + (urlComponents.percentEncodedQuery ?? "")
         
         // Assemble file name.
         let cacheFileURL = cacheFolderURL.appendingPathComponent(pathFileName).appendingPathExtension("json")

@@ -373,9 +373,12 @@ class TourneyTableViewModel: NSObject,
         NSPasteboard.general.setString(playerName, forType: NSPasteboard.PasteboardType.string)
         
         // Fetch summary.
-        let fetchPlayerName = "quAAsar"
+        // let fetchPlayerName = "quAAsar"
         // let fetchPlayerName = "rybluk"
-        // let fetchPlayerName = "perst777"
+        // let fetchPlayerName = "perst777" // Blocked
+        // let fetchPlayerName = "wASH1K"
+        // let fetchPlayerName = "Brier Rose" // Full Tilt (Closed)
+        let fetchPlayerName = "Taren Tano"
         // let fetchPlayerName = playerName
         sharkScope.fetch(player: fetchPlayerName,
                         completion:

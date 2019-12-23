@@ -3,17 +3,23 @@
 
 * Doing
 
-    + SharpScope
-        + Resolve cache filenames with URL paramenters (can cache `activeTournaments.json`)
+    + SharpScope       
         + Implement `ApiError` in `SharkScope.fetch()` 
-        + Implement `Decodable.init` for `ActiveTournaments` (when no tables playing)
+        + Implement `Decodable.init` for `ActiveTournaments`
+            + When no tables playing (key missing)
+            + When one table playing (key contains dictionary)
     
     + App
         + Query SharkScope statistics for player list
         + Create SharkScope table
         + Track Tournament Window
 
-* 0.7.4
+* 0.7.6
+
+    + Resolve cache filenames with URL paramenters
+    + Can cache `activeTournaments.json` like `activeTournaments?network1=PokerStars&player1=Taren%20Tano.json`
+
+* 0.7.5
 
     + Refactored `SharkScope.fetch(player:)` response.
     + `Statistics` can be decoded nicely with unauthorized statistics as well 
