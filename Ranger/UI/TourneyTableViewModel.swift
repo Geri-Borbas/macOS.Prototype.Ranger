@@ -347,7 +347,7 @@ extension TourneyTableViewModel: NSTableViewDataSource
         
         // Display data.
         let playerName = player?.player_name ?? ""
-        let stack = String(format: "%.0f", liveTourneyPlayer.amt_stack)
+        let stack = liveTourneyPlayer.amt_stack
         
         // PokerTracker.
         var VPIP = "-"
@@ -359,10 +359,13 @@ extension TourneyTableViewModel: NSTableViewDataSource
         }
         
         var tables = "-"
-        var count = "-"
+        var count: Float?
+        var profit: Float?
         var ROI = "-"
         var early = "-"
         var late = "-"
+        var years: Float?
+        var freq: Float?
         
         // Table count.
         if let tableCount = playerTableCountsForPlayerNames[playerName]
@@ -371,29 +374,36 @@ extension TourneyTableViewModel: NSTableViewDataSource
         // SharkScope.
         if let statistics = playerStatisticsForPlayerNames[playerName]
         {
-            count = String(format: "%.0f", statistics.Count)
+            count = statistics.Count
+            profit = statistics.isAuthorized(statistic: "Profit") ? statistics.Profit : nil
             ROI = statistics.isAuthorized(statistic: "AvROI") ? String(format: "%.1f%%", statistics.AvROI) : "-"
             early = String(format: "%.1f%%", statistics.FinshesEarly)
             late = String(format: "%.1f%%", statistics.FinshesLate)
+            years = statistics.YearsPlayed
+            freq = statistics.DaysBetweenPlays
         }
         
-        // Into columns.
-        let stringsForColumnTitles =
-            [
-                "Player" : playerName,
-                "Stack" : stack,
-                "VPIP" : VPIP,
-                "PFR" : PFR,
-                "Tables" : tables,
-                "Count" : count,
-                "ROI" : ROI,
-                "Early" : early,
-                "Late" : late,
+        let cellDecoratorsForTitles: [String:((NSTextField?) -> Void)] =
+        [
+            "Player" : { $0?.stringValue = playerName },
+            "Stack" : { $0?.doubleValue = stack },
+            "VPIP" : { $0?.stringValue = VPIP },
+            "PFR" : { $0?.stringValue = PFR },
+            "Tables" : { $0?.stringValue = tables },
+            "Count" : { if let count = count { $0?.floatValue = count } },
+            "Profit" : { if let profit = profit { $0?.floatValue = profit } },
+            "ROI" : { $0?.stringValue = ROI },
+            "Early" : { $0?.stringValue = early },
+            "Late" : { $0?.stringValue = late },
+            "Years" : { if let years = years { $0?.floatValue = years } },
+            "Freq." : { if let freq = freq { $0?.floatValue = freq } }
         ]
         
-        // Cell view.
+        // Create cell view.
         guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? NSTableCellView else { return nil }
-        cellView.textField?.stringValue = stringsForColumnTitles[column.title] ?? ""
+        
+        // Apply decorator.
+        cellDecoratorsForTitles[column.title]!(cellView.textField)
         
         return cellView
     }

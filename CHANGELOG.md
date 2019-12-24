@@ -3,10 +3,15 @@
 
 * Doing
 
-    + SharkScope query UX
-    + SharkScope table 
+    + SharkScope query UX 
     + Implement `Future` based view model bindings
     + Track Tournament Window
+
+* 0.8.6
+
+    + SharkScope table
+        + Added more statistics
+        + Number formatting is done in interface builder
 
 * 0.8.5
 
