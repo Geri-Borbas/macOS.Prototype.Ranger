@@ -54,8 +54,6 @@ class PokerTracker
             print("Connection error: \(error)")
             connection?.close()
         }
-        
-        print("Connected to database.")
     }
     
     func fetch<QueryType: Query>(_ query: QueryType) throws -> [QueryType.EntryType]

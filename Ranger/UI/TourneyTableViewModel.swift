@@ -10,10 +10,8 @@ import Foundation
 import SwiftUI
 
 
-class TourneyTableViewModel: NSObject,
-    NSTableViewDelegate,
-    NSTableViewDataSource,
-    NSComboBoxDataSource
+class TourneyTableViewModel: NSObject
+    
 {
     
     
@@ -67,11 +65,21 @@ class TourneyTableViewModel: NSObject,
         }
         set
         {
+            var _selectedLiveTourneyTable: LiveTourneyTable?
+            
             // Select last table if index is greater than available tables (or `nil` if no tables at all).
-            guard liveTourneyTables.count > newValue
-            else { return selectedLiveTourneyTable = liveTourneyTables.last ?? nil }
+            if liveTourneyTables.count < newValue
+            { _selectedLiveTourneyTable = liveTourneyTables.last ?? nil }
             // Or just select table at index.
-            selectedLiveTourneyTable = liveTourneyTables[newValue]
+            else
+            { _selectedLiveTourneyTable = liveTourneyTables[newValue] }
+            
+            // Set only if changed.
+            if (selectedLiveTourneyTable != _selectedLiveTourneyTable)
+            {
+                selectedLiveTourneyTable = _selectedLiveTourneyTable
+                onSelectedTableDidChange()
+            }
         }
     }
     
@@ -87,6 +95,14 @@ class TourneyTableViewModel: NSObject,
     
     private var onChange: (() -> Void)?
     
+    private func onSelectedTableDidChange()
+    {
+        // Update player list.
+        markAsChanged()
+        playerViewModels.removeAll()
+        try? processData()
+    }
+    
     
     // MARK: - Lifecycle
     
@@ -96,7 +112,7 @@ class TourneyTableViewModel: NSObject,
         self.onChange = onChange
         
         // Schedule timer.
-        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true)
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
         { _ in self.tick() }
         
     }
@@ -124,7 +140,7 @@ class TourneyTableViewModel: NSObject,
     }
     
     
-    // MARK: - Process
+    // MARK: - Process Data
     
     private func tick()
     {
@@ -305,10 +321,15 @@ class TourneyTableViewModel: NSObject,
             stackString
         )
     }
-    
-    
-    // MARK: - TableView Data
+}
 
+
+// MARK: - TableView Data
+
+extension TourneyTableViewModel: NSTableViewDataSource
+{
+    
+    
     func numberOfRows(in tableView: NSTableView) -> Int
     { return playerViewModels.count }
     
@@ -316,6 +337,7 @@ class TourneyTableViewModel: NSObject,
     {
         // Checks.
         guard let column = tableColumn else { return nil }
+        guard playerViewModels.count > row else { return nil }
         
         // Data.
         let playerViewModel = playerViewModels[row]
@@ -350,23 +372,23 @@ class TourneyTableViewModel: NSObject,
         if let statistics = playerStatisticsForPlayerNames[playerName]
         {
             count = String(format: "%.0f", statistics.Count)
-            ROI = String(format: "%.1f%%", statistics.AvROI)
+            ROI = statistics.isAuthorized(statistic: "AvROI") ? String(format: "%.1f%%", statistics.AvROI) : "-"
             early = String(format: "%.1f%%", statistics.FinshesEarly)
             late = String(format: "%.1f%%", statistics.FinshesLate)
         }
         
         // Into columns.
         let stringsForColumnTitles =
-        [
-            "Player" : playerName,
-            "Stack" : stack,
-            "VPIP" : VPIP,
-            "PFR" : PFR,
-            "Tables" : tables,
-            "Count" : count,
-            "ROI" : ROI,
-            "Early" : early,
-            "Late" : late,
+            [
+                "Player" : playerName,
+                "Stack" : stack,
+                "VPIP" : VPIP,
+                "PFR" : PFR,
+                "Tables" : tables,
+                "Count" : count,
+                "ROI" : ROI,
+                "Early" : early,
+                "Late" : late,
         ]
         
         // Cell view.
@@ -375,13 +397,18 @@ class TourneyTableViewModel: NSObject,
         
         return cellView
     }
+}
+
+
+// MARK: - ComboBox Data
+
+extension TourneyTableViewModel: NSComboBoxDataSource
+{
     
-    
-    // MARK: - ComboBox Data
     
     func numberOfItems(in comboBox: NSComboBox) -> Int
     { return liveTourneyTables.count }
-
+    
     func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any?
     {
         let table = liveTourneyTables[index]
@@ -393,19 +420,27 @@ class TourneyTableViewModel: NSObject,
                       table.cnt_players
         )
     }
+}
+
+
+// MARK: - TableView Events
+
+extension TourneyTableViewModel: NSTableViewDelegate
+{
     
-    
-    // MARK: - TableView Events
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
     {
+        // Checks.
+        guard playerViewModels.count > row else { return false }
+        
         // Data.
         let playerViewModel = playerViewModels[row]
         let player = playerViewModel.pokerTracker.player
         
         // Only with data.
         guard let playerName = player?.player_name
-        else { return true }
+            else { return true }
         
         // Copy name to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
@@ -422,12 +457,12 @@ class TourneyTableViewModel: NSObject,
         // let fetchPlayerName = "dontumove" // One table
         let fetchPlayerName = playerName
         sharkScope.fetch(player: fetchPlayerName,
-                        completion:
-        {
-            (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) in
-            
-            switch result
+                         completion:
             {
+                (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) in
+                
+                switch result
+                {
                 case .success(let responses):
                     
                     // Count only running (or late registration) tables.
@@ -435,7 +470,7 @@ class TourneyTableViewModel: NSObject,
                     {
                         count, eachTournament in
                         count + (eachTournament.state != "Registering" ? 1 : 0)
-                    } ?? 0
+                        } ?? 0
                     
                     // Logs.
                     print("\(responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name) playing \(tables) tables.")
@@ -451,7 +486,7 @@ class TourneyTableViewModel: NSObject,
                     self.markAsChanged()
                     
                     break
-            
+                    
                 case .failure(let error):
                     
                     print(error)
@@ -460,7 +495,7 @@ class TourneyTableViewModel: NSObject,
                     print(self.sharkScope.status)
                     
                     break
-           }
+                }
         })
         
         return true

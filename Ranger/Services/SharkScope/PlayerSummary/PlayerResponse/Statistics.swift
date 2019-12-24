@@ -22,8 +22,9 @@ struct Statistics: Decodable, Equatable
     // StatisticalDataSet
     // Timeline
     
-    /// `Statistic.value` index keyed by `Statistic.id`.
+    /// `Statistic.value` / `Statistic.authorized` index keyed by `Statistic.id`.
     private let statisticValuesByIds: [String:String]
+    private let statisticAuthorizationByIds: [String:Bool]
 
     
     struct Statistic: Decodable, Equatable
@@ -32,7 +33,7 @@ struct Statistics: Decodable, Equatable
 
         let id: String
         let value: String
-        
+        var authorized: StringFor<Bool>?
         
         init(from decoder: Decoder) throws
         {
@@ -41,9 +42,9 @@ struct Statistics: Decodable, Equatable
             self.id = try container.decode(String.self, forKey: DynamicCodingKey(stringValue: "id")!)
             
             // Decode value (if authorized).
-            let authorized = try container.decodeIfPresent(String.self, forKey: DynamicCodingKey(stringValue: "authorized")!) ?? ""
-            if (authorized == "false")
-            { self.value = "-" }
+            self.authorized = try container.decodeIfPresent(StringFor<Bool>.self, forKey: DynamicCodingKey(stringValue: "authorized")!)
+            if (self.authorized?.value == false)
+            { self.value = "" }
             else
             { self.value = try container.decode(String.self, forKey: DynamicCodingKey(stringValue: "value")!) }
         }
@@ -59,6 +60,15 @@ struct Statistics: Decodable, Equatable
         
         // Create index for Statistics Accessors below.
         statisticValuesByIds = Dictionary(uniqueKeysWithValues: self.Statistic.map{ ($0.id, $0.value) })
+        statisticAuthorizationByIds = Dictionary(uniqueKeysWithValues: self.Statistic.map{ ($0.id, $0.authorized?.value ?? true) })
+    }
+    
+    public func isAuthorized(statistic: String) -> Bool
+    {
+        guard statisticAuthorizationByIds.keys.contains(statistic)
+        else { return false }
+        
+        return statisticAuthorizationByIds[statistic]!
     }
 }
 

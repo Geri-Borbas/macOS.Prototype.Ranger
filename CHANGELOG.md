@@ -3,10 +3,16 @@
 
 * Doing
 
-    + Recreate players if new table has selected
     + SharkScope query UX
     + SharkScope table 
+    + Implement `Future` based view model bindings
     + Track Tournament Window
+
+* 0.8.5
+
+    + Indicate opted-out statistics on UI
+    + Table selection now reset player collection
+    + Minor refactors
 
 * 0.8.4
 
