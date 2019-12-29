@@ -3,9 +3,18 @@
 
 * Doing
 
+    + Update stats / stack when new hand available for tourney
     + SharkScope query UX 
     + Implement `Future` based view model bindings
     + Track Tournament Window
+
+* 0.9.0
+
+    + Refactorings
+        + `App`
+        + `TablesStatusBarItem`
+        + Table tracking extracted to `TableTracker` 
+    + Table name parsing (see `TableWindowInfo`)
 
 * 0.8.6
 

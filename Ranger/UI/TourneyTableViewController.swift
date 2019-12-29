@@ -29,11 +29,6 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     @IBOutlet weak var viewModel: TourneyTableViewModel!
     
     
-    // MARK: - Services
-    
-    private lazy var windowTracker: WindowTracker = WindowTracker()
-    
-    
     // MARK: - Events
     
     override func viewDidLoad()
@@ -43,25 +38,12 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         // Kick off PokerTracker updates.
         viewModel.start(onChange: layout)
         
-        // Test.
-        windowTracker.start(onTick: tick)
-        
         // Fetch SharkScope status at start.
         viewModel.fetchSharkScopeStatus
         {
             status in
             self.sharkScopeStatusLabel.stringValue = status
         }
-    }
-    
-    func tick()
-    {
-        var status: String = "No Tourney window found."
-        if let trackedWindow = windowTracker.firstTourneyLobbyWindowInfo
-        { status = "Tracking window: \(trackedWindow.name)" }
-        
-        // Set.
-        self.statusLabel.stringValue = status
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)

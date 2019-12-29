@@ -13,8 +13,13 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate
 {
 
+    
+    var app: App = App()
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification)
-    { }
+    {
+        app.start()
+    }
 }
 
