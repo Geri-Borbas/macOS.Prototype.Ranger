@@ -23,6 +23,7 @@ class BasicPlayerStatistics: Entry
     let cnt_pfr: Int
     let cnt_pfr_opp: Int
     
+    // Calculations.
     let VPIP: Double
     let PFR: Double
     

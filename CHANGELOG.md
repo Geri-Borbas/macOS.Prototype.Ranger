@@ -4,8 +4,14 @@
 * Doing
 
     + Update stats / stack when new hand available for tourney
-    + SharkScope query UX 
+    + Update tourney summary when new blind level is available (from table tracker) 
+    + SharkScope query UX
 
+* 0.9.5
+
+    + Created `TourneyTablePlayer` entity / query
+        + Fetches latest hand info for a given tourney number
+        + More robust substitute for `LiveTourneyTable`
 
 * 0.9.2
 

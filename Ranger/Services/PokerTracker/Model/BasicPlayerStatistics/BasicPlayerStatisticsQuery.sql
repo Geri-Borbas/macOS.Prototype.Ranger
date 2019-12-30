@@ -107,7 +107,7 @@ WHERE
     -- )
   )
   AND (
-    $WHERE_CONDITION
+    $_WHERE_CONDITION
   )
 GROUP BY
   (
