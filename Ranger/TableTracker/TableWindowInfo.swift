@@ -42,7 +42,7 @@ struct TableWindowInfo: Equatable
         var tableName: String { "\(tournamentID) \(tableNumber)" }
     }
     
-    private var tableInfo: TableInfo?
+    var tableInfo: TableInfo?
     {
         var tournamentID: String
         var tableNumber: Int

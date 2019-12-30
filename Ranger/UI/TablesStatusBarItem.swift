@@ -27,12 +27,13 @@ class TablesStatusBarItem
         statusBarItem.button?.title = icon
         statusBarItem.menu = menu
         
+        // Default state.
+        stopIndicateTracking()
     }
     
     func indicateTracking(windowTitle: String)
     {
         menu.removeAllItems()
-        
         addItemForTable(windowTitle)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Tracking PokerStarsEU...", action: nil, keyEquivalent: ""))
@@ -52,7 +53,6 @@ class TablesStatusBarItem
     func stopIndicateTracking()
     {
         menu.removeAllItems()
-        
         menu.addItem(NSMenuItem(title: "No windows to track.", action: nil, keyEquivalent: ""))
     }
 

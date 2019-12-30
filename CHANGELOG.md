@@ -5,9 +5,15 @@
 
     + Update stats / stack when new hand available for tourney
     + SharkScope query UX 
-    + Implement `Future` based view model bindings
-    + Track Tournament Window
 
+
+* 0.9.2
+
+    + Screen Recording permission
+    + Table tracking
+        + Instantiate new window every time
+        + Data bindings
+    
 * 0.9.0
 
     + Refactorings

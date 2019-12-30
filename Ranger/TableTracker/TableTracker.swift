@@ -47,7 +47,10 @@ class TableTracker
     // MARK: - Lifecycle
         
     func start()
-    {        
+    {
+        // Invoke Screen Recording Privacy dialog.
+        CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution)
+        
         // Kickoff timer.
         let interval = 1.0 / 60.0
         let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
@@ -66,7 +69,7 @@ class TableTracker
         ) as! [[String:Any]]
         
         // Filter PokerStars Tournament Table windows.
-        let tourneyLobbyWindows = windowInfoList.filter
+        let tourneyWindows = windowInfoList.filter
         {
             (eachWindowInfo: [String:Any]) in
             isLobbyWindowInfo(eachWindowInfo)
@@ -82,10 +85,10 @@ class TableTracker
         }
         
         // Only with Tournament Table Window.
-        guard let firstTourneyLobbyInfo = tourneyLobbyWindows.first
+        guard let firstWindowInfo = tourneyWindows.first
         else { return nil }
         
-        return firstTourneyLobbyInfo
+        return firstWindowInfo
     }
     
     func isLobbyWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool

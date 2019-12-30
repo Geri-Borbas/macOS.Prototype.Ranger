@@ -37,6 +37,7 @@
 		558D35D6239F28F6006C710D /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 558D35D5239F28F6006C710D /* XMLCoder */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
+		5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */; };
 		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
 		55B03CD523B104F700F153B5 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* PlayerViewModel.swift */; };
@@ -90,6 +91,7 @@
 		5587DB4323A497740079BB30 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		558D35E1239F3C58006C710D /* Metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
 		558D35E4239F42AE006C710D /* PlayerSummary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlayerSummary.json; sourceTree = "<group>"; };
+		5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableWindowController.swift; sourceTree = "<group>"; };
 		5592684623A9CA1500045F89 /* TimelineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRequest.swift; sourceTree = "<group>"; };
 		5592684723A9CA1500045F89 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
@@ -133,7 +135,6 @@
 		5508E3FE23A4754B00FFB173 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				55AE8F7D23A5F2DD006BF2B9 /* TableTracker */,
 				55B229BB239E9617003EA63B /* SharkScope */,
 				5521A555239DD5C4000D1AD1 /* PokerTracker */,
 			);
@@ -143,10 +144,8 @@
 		5508E3FF23A4756200FFB173 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
-				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
-				55B03CD423B104F700F153B5 /* PlayerViewModel.swift */,
 				5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */,
+				5590DD8223B982F6006BE806 /* TourneyTable */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -253,6 +252,17 @@
 			path = PlayerSummary;
 			sourceTree = "<group>";
 		};
+		5590DD8223B982F6006BE806 /* TourneyTable */ = {
+			isa = PBXGroup;
+			children = (
+				5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */,
+				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
+				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
+				55B03CD423B104F700F153B5 /* PlayerViewModel.swift */,
+			);
+			path = TourneyTable;
+			sourceTree = "<group>";
+		};
 		5592684523A9CA0900045F89 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 			children = (
 				55C1868E239583DA0081B6B7 /* AppDelegate.swift */,
 				5509C4B823B92CAE00C6608D /* App.swift */,
+				55AE8F7D23A5F2DD006BF2B9 /* TableTracker */,
 				5508E3FF23A4756200FFB173 /* UI */,
 				55C8498423A3307D00452F2F /* Notes */,
 				5508E3FE23A4754B00FFB173 /* Services */,
@@ -499,6 +510,7 @@
 				555D217123A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift in Sources */,
 				55840BF723A9BA0B000B06FF /* StringRepresenting.swift in Sources */,
 				556CAE1F23A9CB5700BBBEB4 /* TimelineRequest.swift in Sources */,
+				5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */,
 				5587DB4423A497740079BB30 /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +658,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.Ranger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -666,6 +679,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.Ranger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

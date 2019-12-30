@@ -14,7 +14,7 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
 {
 
     
-    // MARK: - UI Outlets
+    // MARK: - UI
     
     @IBOutlet weak var tablesComboBox: NSComboBox!
     @IBOutlet weak var blindsLabel: NSTextField!
@@ -24,12 +24,12 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     @IBOutlet weak var sharkScopeStatusLabel: NSTextField!
     
     
-    // MARK: - Model Outlets
+    // MARK: - Model
     
     @IBOutlet weak var viewModel: TourneyTableViewModel!
     
     
-    // MARK: - Events
+    // MARK: - Lifecycle
     
     override func viewDidLoad()
     {
@@ -44,6 +44,36 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
             status in
             self.sharkScopeStatusLabel.stringValue = status
         }
+    }
+    
+    func track(_ tableWindowInfo: TableWindowInfo)
+    {
+        // Setup for table info.
+        self.view.window?.title = tableWindowInfo.name
+    }
+    
+    func update(with tableWindowInfo: TableWindowInfo)
+    {
+        // Only if any.
+        guard let window = self.view.window
+        else { return }
+        
+        // Align.
+        window.setFrame(
+            NSRect(
+                x: tableWindowInfo.UIKitBounds.origin.x,
+                y: tableWindowInfo.UIKitBounds.origin.y - window.frame.size.height,
+                width: tableWindowInfo.UIKitBounds.size.width,
+                height: window.frame.size.height
+            ),
+            display: true
+        )
+         
+        // Put above.
+        window.order(NSWindow.OrderingMode.above, relativeTo: tableWindowInfo.number)
+        
+        // Disable drag.
+        window.isMovable = false
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification)
