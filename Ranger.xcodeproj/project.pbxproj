@@ -11,8 +11,8 @@
 		5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */; };
 		5509C4B723B9254600C6608D /* TablesStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */; };
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
-		5518D63723BA8E0500EFFBC0 /* TourneyTablePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63623BA8E0500EFFBC0 /* TourneyTablePlayer.swift */; };
-		5518D63A23BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63923BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift */; };
+		5518D63723BA8E0500EFFBC0 /* LatestHandPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63623BA8E0500EFFBC0 /* LatestHandPlayer.swift */; };
+		5518D63A23BA951F00EFFBC0 /* LatestHandPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */; };
 		5521A554239DD170000D1AD1 /* SharkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A553239DD170000D1AD1 /* SharkScope.swift */; };
 		5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */; };
 		5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */; };
@@ -63,7 +63,7 @@
 		55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */; };
 		55ED3CDD23A553EC00754763 /* BasicPlayerStatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* BasicPlayerStatisticsQuery.swift */; };
 		55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
-		55F8124823BAE48D005F0EF6 /* TourneyTablePlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* TourneyTablePlayerQuery.sql */; };
+		55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,9 +73,9 @@
 		5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesStatusBarItem.swift; sourceTree = "<group>"; };
 		5509C4B823B92CAE00C6608D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		550E406D23B065F600678BCD /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		5518D63623BA8E0500EFFBC0 /* TourneyTablePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTablePlayer.swift; sourceTree = "<group>"; };
-		5518D63823BA94C000EFFBC0 /* TourneyTablePlayerQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourneyTablePlayerQuery.sql; sourceTree = "<group>"; };
-		5518D63923BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTablePlayerQuery.swift; sourceTree = "<group>"; };
+		5518D63623BA8E0500EFFBC0 /* LatestHandPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayer.swift; sourceTree = "<group>"; };
+		5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LatestHandPlayerQuery.sql; sourceTree = "<group>"; };
+		5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayerQuery.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* SharkScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
@@ -177,14 +177,14 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		5518D63523BA8D9300EFFBC0 /* LatestTourneyHand */ = {
+		5518D63523BA8D9300EFFBC0 /* LatestHandPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				5518D63623BA8E0500EFFBC0 /* TourneyTablePlayer.swift */,
-				5518D63923BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift */,
-				5518D63823BA94C000EFFBC0 /* TourneyTablePlayerQuery.sql */,
+				5518D63623BA8E0500EFFBC0 /* LatestHandPlayer.swift */,
+				5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */,
+				5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */,
 			);
-			path = LatestTourneyHand;
+			path = LatestHandPlayer;
 			sourceTree = "<group>";
 		};
 		5521A555239DD5C4000D1AD1 /* PokerTracker */ = {
@@ -204,7 +204,7 @@
 				55ED3CDB23A553E600754763 /* BasicPlayerStatistics */,
 				55ED3CD823A5538E00754763 /* LiveTourneyPlayer */,
 				55ED3CD723A5537700754763 /* LiveTourneyTable */,
-				5518D63523BA8D9300EFFBC0 /* LatestTourneyHand */,
+				5518D63523BA8D9300EFFBC0 /* LatestHandPlayer */,
 				5521A55E239DF408000D1AD1 /* Entry.swift */,
 				55ED3CD323A54B0C00754763 /* Query.swift */,
 			);
@@ -487,7 +487,7 @@
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
-				55F8124823BAE48D005F0EF6 /* TourneyTablePlayerQuery.sql in Resources */,
+				55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */,
 				55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */,
 				55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
@@ -533,7 +533,7 @@
 				55C8498623A3309F00452F2F /* Notes.swift in Sources */,
 				554E018C23AAB31900CF2971 /* DynamicCodingKey.swift in Sources */,
 				5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */,
-				5518D63723BA8E0500EFFBC0 /* TourneyTablePlayer.swift in Sources */,
+				5518D63723BA8E0500EFFBC0 /* LatestHandPlayer.swift in Sources */,
 				554E018A23AA828100CF2971 /* Statistics.swift in Sources */,
 				55B03CD523B104F700F153B5 /* PlayerViewModel.swift in Sources */,
 				55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */,
@@ -543,7 +543,7 @@
 				55698B9D23AAE27E0065125C /* ActiveTournaments.swift in Sources */,
 				55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */,
 				555D217123A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift in Sources */,
-				5518D63A23BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift in Sources */,
+				5518D63A23BA951F00EFFBC0 /* LatestHandPlayerQuery.swift in Sources */,
 				55840BF723A9BA0B000B06FF /* StringRepresenting.swift in Sources */,
 				556CAE1F23A9CB5700BBBEB4 /* TimelineRequest.swift in Sources */,
 				5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */,

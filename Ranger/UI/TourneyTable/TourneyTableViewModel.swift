@@ -115,7 +115,7 @@ class TourneyTableViewModel: NSObject
             handOffset = max(handOffset, 0)
         
         // Get players of the latest hand tracked by PokerTracker.
-        let latestHandPlayers = try pokerTracker.fetch(TourneyTablePlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
+        let latestHandPlayers = try pokerTracker.fetch(LatestHandPlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
         
         // Only if new hands any.
         guard
@@ -125,7 +125,7 @@ class TourneyTableViewModel: NSObject
         { return }
         
         // Track.
-        latestProcessedHandNumber = firstPlayer.hand_noa
+        latestProcessedHandNumber = firstPlayer.hand_no
         
         // Collect `id_player` for current players.
         let latestHandPlayerIDs = latestHandPlayers

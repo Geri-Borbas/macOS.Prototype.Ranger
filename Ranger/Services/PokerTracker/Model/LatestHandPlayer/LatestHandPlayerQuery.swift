@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct TourneyTablePlayerQuery: Query
+struct LatestHandPlayerQuery: Query
 {
     
     
-    typealias EntryType = TourneyTablePlayer
+    typealias EntryType = LatestHandPlayer
     
     
     let tourneyNumber: String
@@ -21,7 +21,7 @@ struct TourneyTablePlayerQuery: Query
     var string: String
     {
         // Load query file.
-        let queryFilePath = Bundle.main.path(forResource: "TourneyTablePlayerQuery", ofType: "sql")
+        let queryFilePath = Bundle.main.path(forResource: "LatestHandPlayerQuery", ofType: "sql")
         guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
         else { return "" }
         

@@ -3,10 +3,13 @@
 
 * Doing
 
-    + Rename `TourneyTablePlayer` to `LatestHandPlayers` (or `LatestTourneyHandPlayers`)
     + Fix Player model collection updating
-    + Update tourney summary when new blind level is available (from table tracker) 
     + Move SharkScope queries into `PlayerViewModel`
+    + Update tourney summary when new blind level is available (from table tracker) 
+    
+* 0.9.81
+
+    + Rename `TourneyTablePlayer` to `LatestHandPlayers` (or `LatestTourneyHandPlayers`)
     
 * 0.9.8
 

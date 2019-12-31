@@ -10,7 +10,7 @@ import Foundation
 import PostgresClientKit
 
 
-class TourneyTablePlayer: Entry
+class LatestHandPlayer: Entry
 {
     
     
@@ -60,9 +60,9 @@ class TourneyTablePlayer: Entry
 }
 
 
-extension TourneyTablePlayer: Equatable
+extension LatestHandPlayer: Equatable
 {
-    static func == (lhs: TourneyTablePlayer, rhs: TourneyTablePlayer) -> Bool
+    static func == (lhs: LatestHandPlayer, rhs: LatestHandPlayer) -> Bool
     {
         return (
             lhs.id_hand == rhs.id_hand
@@ -71,7 +71,7 @@ extension TourneyTablePlayer: Equatable
 }
 
 
-extension TourneyTablePlayer: CustomStringConvertible
+extension LatestHandPlayer: CustomStringConvertible
 {
     var description: String
     {

@@ -22,14 +22,14 @@ struct PlayerViewModel: Equatable
         
         
         // Data.
-        let latestHandPlayer: TourneyTablePlayer
+        let latestHandPlayer: LatestHandPlayer
         var statistics: BasicPlayerStatistics?
         
         // Service.
         private lazy var service: Ranger.PokerTracker = Ranger.PokerTracker()
         
         
-        init(with latestHandPlayer: TourneyTablePlayer)
+        init(with latestHandPlayer: LatestHandPlayer)
         {
             self.latestHandPlayer = latestHandPlayer
             
@@ -53,7 +53,7 @@ struct PlayerViewModel: Equatable
     }
     
     
-    init(with latestHandPlayer: TourneyTablePlayer)
+    init(with latestHandPlayer: LatestHandPlayer)
     {
         self.pokerTracker = PokerTracker(with: latestHandPlayer)
         self.sharkScope = SharkScope()
