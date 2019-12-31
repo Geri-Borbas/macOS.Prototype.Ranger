@@ -21,7 +21,7 @@ struct TourneyTablePlayerQuery: Query
     var string: String
     {
         // Load query file.
-        let queryFilePath = Bundle.main.path(forResource: "TourneyTablePlayer", ofType: "sql")
+        let queryFilePath = Bundle.main.path(forResource: "TourneyTablePlayerQuery", ofType: "sql")
         guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
         else { return "" }
         

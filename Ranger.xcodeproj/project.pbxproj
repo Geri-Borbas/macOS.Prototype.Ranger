@@ -63,6 +63,7 @@
 		55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */; };
 		55ED3CDD23A553EC00754763 /* BasicPlayerStatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* BasicPlayerStatisticsQuery.swift */; };
 		55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
+		55F8124823BAE48D005F0EF6 /* TourneyTablePlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* TourneyTablePlayerQuery.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +74,7 @@
 		5509C4B823B92CAE00C6608D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		550E406D23B065F600678BCD /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		5518D63623BA8E0500EFFBC0 /* TourneyTablePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTablePlayer.swift; sourceTree = "<group>"; };
-		5518D63823BA94C000EFFBC0 /* TourneyTablePlayer.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourneyTablePlayer.sql; sourceTree = "<group>"; };
+		5518D63823BA94C000EFFBC0 /* TourneyTablePlayerQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourneyTablePlayerQuery.sql; sourceTree = "<group>"; };
 		5518D63923BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTablePlayerQuery.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* SharkScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
@@ -181,7 +182,7 @@
 			children = (
 				5518D63623BA8E0500EFFBC0 /* TourneyTablePlayer.swift */,
 				5518D63923BA951F00EFFBC0 /* TourneyTablePlayerQuery.swift */,
-				5518D63823BA94C000EFFBC0 /* TourneyTablePlayer.sql */,
+				5518D63823BA94C000EFFBC0 /* TourneyTablePlayerQuery.sql */,
 			);
 			path = LatestTourneyHand;
 			sourceTree = "<group>";
@@ -486,6 +487,7 @@
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
+				55F8124823BAE48D005F0EF6 /* TourneyTablePlayerQuery.sql in Resources */,
 				55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */,
 				55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,

@@ -10,13 +10,12 @@ import Cocoa
 import CoreGraphics
 
 
-class TourneyTableViewController: NSViewController, NSComboBoxDelegate
+class TourneyTableViewController: NSViewController
 {
 
     
     // MARK: - UI
     
-    @IBOutlet weak var tablesComboBox: NSComboBox!
     @IBOutlet weak var blindsLabel: NSTextField!
     @IBOutlet weak var stacksLabel: NSTextField!
     @IBOutlet weak var playersTableView: NSTableView!
@@ -35,9 +34,6 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     {
         super.viewDidLoad()
         
-        // Kick off PokerTracker updates.
-        viewModel.start(onChange: layout)
-        
         // Fetch SharkScope status at start.
         viewModel.fetchSharkScopeStatus
         {
@@ -50,17 +46,19 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     {
         // Setup for table info.
         self.view.window?.title = tableWindowInfo.name
+        
+        // Inject into view model.
+        viewModel.track(tableWindowInfo, onChange: layout)
+        
     }
     
     func update(with tableWindowInfo: TableWindowInfo)
     {
-        // Get live blind levels.
-        // tableWindowInfo.tableInfo?.smallBlind
-        // tableWindowInfo.tableInfo?.bigBlind
-        // tableWindowInfo.tableInfo?.ante
+        // Inject into view model (may push back changes if any).
+        viewModel.update(with: tableWindowInfo)
         
         // UI.
-        if (App.configuration.isSimulationMode == false)
+        if (App.configuration.isLiveMode)
         { alignWindow(to: tableWindowInfo) }
     }
     
@@ -88,29 +86,21 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
         window.isMovable = false
     }
     
-    func comboBoxSelectionDidChange(_ notification: Notification)
-    {
-        // Unwrap sender.
-        guard let comboBox: NSComboBox = (notification.object as? NSComboBox)
-        else { return }
-        
-        // Select model.
-        viewModel.selectedLiveTourneyTableIndex = comboBox.indexOfSelectedItem
-    }
-    
     
     // MARK: - Layout
     
     func layout()
     {
-        tablesComboBox.reloadData()
-        tablesComboBox.selectItem(at: viewModel.selectedLiveTourneyTableIndex)
+        // Summary.
+        let summary = viewModel.summary(with: blindsLabel.font!)
+        blindsLabel.attributedStringValue = summary.blinds
+        stacksLabel.attributedStringValue = summary.stacks
         
-        let tableSummary = viewModel.tableSummary(for: viewModel.selectedLiveTourneyTableIndex, font: blindsLabel.font!)
-        blindsLabel.attributedStringValue = tableSummary.blinds
-        stacksLabel.attributedStringValue = tableSummary.stacks
-        
+        // Players.
         playersTableView.reloadData()
+        
+        // Status.
+        statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed."
     }
 }
 

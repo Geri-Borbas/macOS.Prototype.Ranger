@@ -20,6 +20,7 @@ class TourneyTablePlayer: Entry
     
     let player_name: String
     let player_name_search: String
+    let hand_no: String
     let flg_hero: Bool
     
     let position: Int
@@ -42,15 +43,16 @@ class TourneyTablePlayer: Entry
         
         player_name = try row.columns[3].string()
         player_name_search = try row.columns[4].string()
-        flg_hero = try row.columns[5].bool()
+        hand_no = try row.columns[5].string()
+        flg_hero = try row.columns[6].bool()
         
-        position = try row.columns[6].int()
-        seat = try row.columns[7].int()
+        position = try row.columns[7].int()
+        seat = try row.columns[8].int()
         
-        amt_before = try row.columns[8].double()
-        amt_blind = try row.columns[9].double()
-        amt_ante = try row.columns[10].double()
-        amt_won = try row.columns[11].double()
+        amt_before = try row.columns[9].double()
+        amt_blind = try row.columns[10].double()
+        amt_ante = try row.columns[11].double()
+        amt_won = try row.columns[12].double()
         
         // Calculations.
         stack = amt_before + amt_won

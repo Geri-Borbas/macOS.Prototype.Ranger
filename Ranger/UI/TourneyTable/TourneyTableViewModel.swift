@@ -23,98 +23,53 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Data
     
-    /// Indicator of data change.
-    private var changed: Bool = false
+    /// The poker table this instance is tracking.
+    private var tableWindowInfo: TableWindowInfo?
+    private var tickCount: Int = 0
     
-    /// Indicate data change.
-    private func markAsChanged() { changed = true }
-    
-    /// Reset indicator of data change.
-    private func markAsUnchanged() { changed = false }
-        
-    /// PokerTracker data from `live_tourney_table`. Can indicate change upon set.
-    private var liveTourneyTables: [LiveTourneyTable] = []
-    {
-        didSet
-        {
-            if liveTourneyTables.elementsEqual(oldValue) == false
-            { markAsChanged() }
-        }
-    }
-    
-    /// Selected table for this view. Can invoke `onChange()` upon set.
-    private var selectedLiveTourneyTable: LiveTourneyTable?
-    {
-        didSet
-        {
-            // Look for changes.
-            if selectedLiveTourneyTable != oldValue
-            { try? processData() }
-        }
-    }
-    
-    /// Index of the currently selected table for this view (in `liveTourneyTables`).
-    public var selectedLiveTourneyTableIndex: Int
-    {
-        get
-        {
-            // -1 if no tables selected.
-            guard let selectedLiveTourneyTable = selectedLiveTourneyTable
-            else { return -1 }
-            return liveTourneyTables.firstIndex(of: selectedLiveTourneyTable)!
-        }
-        set
-        {
-            var _selectedLiveTourneyTable: LiveTourneyTable?
-            
-            // Select last table if index is greater than available tables (or `nil` if no tables at all).
-            if liveTourneyTables.count < newValue
-            { _selectedLiveTourneyTable = liveTourneyTables.last ?? nil }
-            // Or just select table at index.
-            else
-            { _selectedLiveTourneyTable = liveTourneyTables[newValue] }
-            
-            // Set only if changed.
-            if (selectedLiveTourneyTable != _selectedLiveTourneyTable)
-            {
-                selectedLiveTourneyTable = _selectedLiveTourneyTable
-                onSelectedTableDidChange()
-            }
-        }
-    }
-    
-    /// ViewModels for players seated at selected table (`selectedLiveTourneyTable`).
+    /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
     
-    /// SharkScope `Data`
+    /// SharkScope `Data`.
+    // TODO: Move to `PlayerViewModel` later on.
     private var playerStatisticsForPlayerNames: [String:Statistics] = [:]
     private var playerTableCountsForPlayerNames: [String:Int] = [:]
+    
+    
+    // MARK: - UI Data
+    
+    public var latestProcessedHandNumber: String = ""
     
     
     // MARK: - Binds
     
     private var onChange: (() -> Void)?
     
-    private func onSelectedTableDidChange()
-    {
-        // Update player list.
-        markAsChanged()
-        playerViewModels.removeAll()
-        try? processData()
-    }
-    
     
     // MARK: - Lifecycle
     
-    public func start(onChange: (() -> Void)?)
+    public func track(_ tableWindowInfo: TableWindowInfo, onChange: (() -> Void)?)
     {
         // Retain.
+        self.tableWindowInfo = tableWindowInfo
         self.onChange = onChange
         
         // Schedule timer.
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
         { _ in self.tick() }
+    }
+    
+    public func update(with tableWindowInfo: TableWindowInfo)
+    {
+        // Only if changed.
+        guard self.tableWindowInfo != tableWindowInfo
+        else { return }
         
+        // Set.
+        self.tableWindowInfo = tableWindowInfo
+        
+        // TODO: Indicate force change regardless of unchanged hand history.
+        try? processData()
     }
     
     // MARK: - SharkScope
@@ -144,48 +99,43 @@ class TourneyTableViewModel: NSObject
     
     private func tick()
     {
+        tickCount += 1
         try? processData()
     }
     
     private func processData() throws
     {
-        // Get current tables (may invoke `markAsChanged`).
-        liveTourneyTables = try pokerTracker.fetch(LiveTourneyTableQuery())
+        // Only if table info is set (and parsed).
+        guard let tableInfo = tableWindowInfo?.tableInfo
+        else { return }
         
-        // Only if tables any.
-        guard liveTourneyTables.count > 0
+        // May offset hands in simulation mode.
+        var handOffset = App.configuration.isSimulationMode ? App.configuration.simulation.handOffset : 0
+            handOffset -= tickCount
+            handOffset = max(handOffset, 0)
+        
+        // Get players of the latest hand tracked by PokerTracker.
+        let latestHandPlayers = try pokerTracker.fetch(TourneyTablePlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
+        
+        // Only if new hands any.
+        guard
+            let firstPlayer = latestHandPlayers.first,
+                firstPlayer.hand_no != latestProcessedHandNumber
         else
-        {
-            invokeOnChangedIfNeeded()
-            return
-        }
+        { return }
         
-        // Get current players (may invoke `markAsChanged`).
-        let liveTourneyPlayers = try pokerTracker.fetch(LiveTourneyPlayerQuery())
-                
-        // Select first table by default if needed.
-        if (selectedLiveTourneyTable == nil)
-        { selectedLiveTourneyTable = liveTourneyTables.first! }
-        
-        // Filter current players at the selected table (with non-zero stack).
-        let liveTourneyPlayersAtSelectedTable = liveTourneyPlayers.filter
-        {
-            (eachLiveTourneyPlayer: LiveTourneyPlayer) in
-            (
-                eachLiveTourneyPlayer.id_live_table == selectedLiveTourneyTableIndex + 1 &&
-                eachLiveTourneyPlayer.amt_stack > 0
-            )
-        }
+        // Track.
+        latestProcessedHandNumber = firstPlayer.hand_noa
         
         // Collect `id_player` for current players.
-        let currentPlayerIDs = liveTourneyPlayersAtSelectedTable
+        let latestHandPlayerIDs = latestHandPlayers
         .map{ eachPlayer in eachPlayer.id_player }
 
-        // Colelct `id_player` for view model players.
+        // Collect `id_player` for view model players.
         var viewModelPlayerIDs: [Int] = playerViewModels.map
         {
             eachPlayerViewModel in
-            eachPlayerViewModel.pokerTracker.liveTourneyPlayer.id_player
+            eachPlayerViewModel.pokerTracker.latestHandPlayer.id_player
         }
 
         // Collect removable players.
@@ -193,7 +143,7 @@ class TourneyTableViewModel: NSObject
         viewModelPlayerIDs.forEach
         {
             eachViewModelPlayerID in
-            if (currentPlayerIDs.contains(eachViewModelPlayerID) == false)
+            if (latestHandPlayerIDs.contains(eachViewModelPlayerID) == false)
             { removablePlayerIDs.append(eachViewModelPlayerID) }
         }
         
@@ -206,33 +156,24 @@ class TourneyTableViewModel: NSObject
         }
 
         // Create / Collect new players if needed.
-        currentPlayerIDs.forEach
+        latestHandPlayerIDs.forEach
         {
             eachCurrentPlayerID in
             if (viewModelPlayerIDs.contains(eachCurrentPlayerID) == false)
             {
-                let eachIndex = currentPlayerIDs.firstIndex(of: eachCurrentPlayerID)!
-                playerViewModels.append(PlayerViewModel(with: liveTourneyPlayersAtSelectedTable[eachIndex]))
+                let eachIndex = latestHandPlayerIDs.firstIndex(of: eachCurrentPlayerID)!
+                playerViewModels.append(PlayerViewModel(with: latestHandPlayers[eachIndex]))
             }
         }
         
-        // Look for changes.
-        invokeOnChangedIfNeeded()
-    }
-    
-    private func invokeOnChangedIfNeeded()
-    {
-        if (changed)
-        {
-            onChange?()
-            markAsUnchanged()
-        }
+        // Invoke callback.
+        onChange?()
     }
     
     
-    // MARK: - Table Summary Data
+    // MARK: - Summary Data
     
-    public func tableSummary(for index: Int, font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
+    public func summary(with font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
     {
         // Variables.
         var smallBlind:Double = 0
@@ -241,7 +182,8 @@ class TourneyTableViewModel: NSObject
         var players:Double = 0
         
         // Check data.
-        if (liveTourneyTables.count == 0)
+        guard let tableInfo = tableWindowInfo?.tableInfo
+        else
         {
             // Empty state.
             return (
@@ -251,11 +193,10 @@ class TourneyTableViewModel: NSObject
         }
         
         // Fetch data from first live table.
-        let selectedLiveTourneyTable = liveTourneyTables[index]
-        smallBlind = selectedLiveTourneyTable.amt_sb
-        bigBlind = selectedLiveTourneyTable.amt_bb
-        ante = selectedLiveTourneyTable.amt_ante
-        players = Double(selectedLiveTourneyTable.cnt_players)
+        smallBlind = Double(tableInfo.smallBlind)
+        bigBlind = Double(tableInfo.bigBlind)
+        ante = Double(tableInfo.ante)
+        players = Double(playerViewModels.count)
         
         // Model.
         let M:Double = smallBlind + bigBlind + 9 * ante
@@ -341,13 +282,12 @@ extension TourneyTableViewModel: NSTableViewDataSource
         
         // Data.
         let playerViewModel = playerViewModels[row]
-        let liveTourneyPlayer = playerViewModel.pokerTracker.liveTourneyPlayer
-        let player = playerViewModel.pokerTracker.player
+        let latestHandPlayer = playerViewModel.pokerTracker.latestHandPlayer
         let statistics = playerViewModel.pokerTracker.statistics
         
         // Display data.
-        let playerName = player?.player_name ?? ""
-        let stack = liveTourneyPlayer.amt_stack
+        let playerName = latestHandPlayer.player_name
+        let stack = latestHandPlayer.stack
         
         // PokerTracker.
         var VPIP = "-"
@@ -410,29 +350,6 @@ extension TourneyTableViewModel: NSTableViewDataSource
 }
 
 
-// MARK: - ComboBox Data
-
-extension TourneyTableViewModel: NSComboBoxDataSource
-{
-    
-    
-    func numberOfItems(in comboBox: NSComboBox) -> Int
-    { return liveTourneyTables.count }
-    
-    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any?
-    {
-        let table = liveTourneyTables[index]
-        return String(format: "Table %d - %.0f/%.0f Ante %.0f (%d players)",
-                      table.id_live_table,
-                      table.amt_sb,
-                      table.amt_bb,
-                      table.amt_ante,
-                      table.cnt_players
-        )
-    }
-}
-
-
 // MARK: - TableView Events
 
 extension TourneyTableViewModel: NSTableViewDelegate
@@ -446,11 +363,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         
         // Data.
         let playerViewModel = playerViewModels[row]
-        let player = playerViewModel.pokerTracker.player
-        
-        // Only with data.
-        guard let playerName = player?.player_name
-            else { return true }
+        let playerName = playerViewModel.pokerTracker.latestHandPlayer.player_name
         
         // Copy name to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
@@ -492,8 +405,8 @@ extension TourneyTableViewModel: NSTableViewDelegate
                     self.playerStatisticsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = responses.playerSummary.Response.PlayerResponse.PlayerView.Player.Statistics
                     self.playerTableCountsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = tables
                     
-                    // Update UI.
-                    self.markAsChanged()
+                    // Invoke callback.
+                    self.onChange?()
                     
                     break
                     

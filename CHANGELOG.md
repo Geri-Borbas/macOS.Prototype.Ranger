@@ -3,9 +3,15 @@
 
 * Doing
 
-    + Update stats / stack when new hand available for tourney
+    + Rename `TourneyTablePlayer` to `LatestHandPlayers` (or `LatestTourneyHandPlayers`)
+    + Fix Player model collection updating
     + Update tourney summary when new blind level is available (from table tracker) 
-    + SharkScope query UX
+    + Move SharkScope queries into `PlayerViewModel`
+    
+* 0.9.8
+
+    + Refactored / cleaned up view models to use `TourneyTablePlayer` only
+    + Update stats / stack when new hand available for tourney
 
 * 0.9.6
 

@@ -34,26 +34,24 @@ struct TableWindowInfo: Equatable
     {
         
         
-        let tournamentID: String
+        let tournamentNumber: String
         let tableNumber: Int
         let smallBlind: Int
         let bigBlind: Int
         let ante: Int
-        var tableName: String { "\(tournamentID) \(tableNumber)" }
+        var tableName: String { "\(tournamentNumber) \(tableNumber)" }
     }
     
     var tableInfo: TableInfo?
     {
-        var tournamentID: String
+        var tournamentNumber: String
         var tableNumber: Int
         var smallBlind: Int
         var bigBlind: Int
         var ante: Int = 0
         
-        let name = "$3.50 NL Hold'em [18 Players, Turbo] - 400/800 ante 50 - Tournament 2770350462 Table 2 - Logged in as Borbas.Geri"
-        let components = name.components(separatedBy: " - ")
-        
         // Only with 4 components.
+        let components = name.components(separatedBy: " - ")
         guard components.count == 4
         else { return nil }
         
@@ -79,16 +77,16 @@ struct TableWindowInfo: Equatable
         guard tournamentTableNameComponents.count == 4
         else { return nil }
         
-        tournamentID = tournamentTableNameComponents[1]
+        tournamentNumber = tournamentTableNameComponents[1]
         tableNumber = Int(tournamentTableNameComponents[3]) ?? -1
         
         // Only numbers.
-        guard NumberFormatter().number(from: tournamentID) != nil, tableNumber != -1
+        guard NumberFormatter().number(from: tournamentNumber) != nil, tableNumber != -1
         else { return nil }
         
         // Return.
         return TableInfo(
-            tournamentID: tournamentID,
+            tournamentNumber: tournamentNumber,
             tableNumber: tableNumber,
             smallBlind: smallBlind,
             bigBlind: bigBlind,

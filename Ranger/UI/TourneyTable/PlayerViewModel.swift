@@ -22,26 +22,24 @@ struct PlayerViewModel: Equatable
         
         
         // Data.
-        let liveTourneyPlayer: LiveTourneyPlayer
-        var player: Player?
+        let latestHandPlayer: TourneyTablePlayer
         var statistics: BasicPlayerStatistics?
         
         // Service.
         private lazy var service: Ranger.PokerTracker = Ranger.PokerTracker()
         
         
-        init(with liveTourneyPlayer: LiveTourneyPlayer)
+        init(with latestHandPlayer: TourneyTablePlayer)
         {
-            self.liveTourneyPlayer = liveTourneyPlayer
+            self.latestHandPlayer = latestHandPlayer
             
-            // Query rest of the data.
-            self.player = try? service.fetch(PlayerQuery(playerIDs: [liveTourneyPlayer.id_player])).first
-            self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [liveTourneyPlayer.id_player])).first
+            // Query latest statistics.
+            self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [latestHandPlayer.id_player])).first
         }
         
         public mutating func updateStatistics()
         {
-            self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [liveTourneyPlayer.id_player])).first
+            self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [latestHandPlayer.id_player])).first
         }
     }
     
@@ -55,15 +53,15 @@ struct PlayerViewModel: Equatable
     }
     
     
-    init(with liveTourneyPlayer: LiveTourneyPlayer)
+    init(with latestHandPlayer: TourneyTablePlayer)
     {
-        self.pokerTracker = PokerTracker(with: liveTourneyPlayer)
+        self.pokerTracker = PokerTracker(with: latestHandPlayer)
         self.sharkScope = SharkScope()
     }
     
-    /// PokerTracked `id_player` equality makes unique view models.
+    /// PokerTracker `id_player` makes unique view models.
     static func == (lhs: PlayerViewModel, rhs: PlayerViewModel) -> Bool
-    { lhs.pokerTracker.liveTourneyPlayer.id_player == rhs.pokerTracker.liveTourneyPlayer.id_player }
+    { lhs.pokerTracker.latestHandPlayer.id_player == rhs.pokerTracker.latestHandPlayer.id_player }
 }
 
 

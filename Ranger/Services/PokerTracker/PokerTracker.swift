@@ -37,7 +37,7 @@ class PokerTracker
         // Set configuration.
         var connectionConfiguration = PostgresClientKit.ConnectionConfiguration()
         connectionConfiguration.host = configuration.host
-        connectionConfiguration.database = configuration.database // + " Snapshot"
+        connectionConfiguration.database = configuration.database
         connectionConfiguration.port = configuration.port
         connectionConfiguration.user = configuration.user
         connectionConfiguration.ssl = configuration.ssl
@@ -84,9 +84,12 @@ class PokerTracker
             }
            
             // Parse.
-            guard let eachRowInitable = try? QueryType.EntryType.init(row:eachRow) else
+            var eachRowInitable: QueryType.EntryType
+            do
+            { eachRowInitable = try QueryType.EntryType.init(row:eachRow) }
+            catch
             {
-                print("Could not parse RowInitable from row.")
+                print("Could not parse Entry from row. \(error)")
                 continue
             }
             
