@@ -17,6 +17,7 @@ struct TourneyTablePlayerQuery: Query
     
     
     let tourneyNumber: String
+    let handOffset: Int
     var string: String
     {
         // Load query file.
@@ -25,14 +26,22 @@ struct TourneyTablePlayerQuery: Query
         else { return "" }
         
         // Inject parameter.
-        let queryString = queryTemplateString.replacingOccurrences(of: "$_TOURNEY_NUMBER", with: tourneyNumber)
+        let queryString = queryTemplateString
+            .replacingOccurrences(
+                of: "$_TOURNEY_NUMBER",
+                with: tourneyNumber)
+            .replacingOccurrences(
+                of: "$_OFFSET",
+                with: String(handOffset)
+        )
         
         return queryString
     }
     
     
-    init(tourneyNumber: String)
+    init(tourneyNumber: String, handOffset: Int = 0)
     {
         self.tourneyNumber = tourneyNumber
+        self.handOffset = handOffset
     }
 }

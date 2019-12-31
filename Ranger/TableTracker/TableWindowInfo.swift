@@ -96,3 +96,18 @@ struct TableWindowInfo: Equatable
         )
     }
 }
+
+
+extension TableWindowInfo
+{
+    
+    
+    static var simulatedTableWindowInfo: TableWindowInfo
+    {
+        TableWindowInfo(
+            name: "$3.50 NL Hold'em [18 Players, Turbo] - \(App.configuration.simulation.smallBlind)/\(App.configuration.simulation.bigBlind) ante \(App.configuration.simulation.ante) - Tournament \(App.configuration.simulation.tournamentNumber) Table 2 - Logged in as Borbas.Geri",
+            number: 0,
+            bounds: CGRect()
+        )
+    }
+}

@@ -54,6 +54,18 @@ class TourneyTableViewController: NSViewController, NSComboBoxDelegate
     
     func update(with tableWindowInfo: TableWindowInfo)
     {
+        // Get live blind levels.
+        // tableWindowInfo.tableInfo?.smallBlind
+        // tableWindowInfo.tableInfo?.bigBlind
+        // tableWindowInfo.tableInfo?.ante
+        
+        // UI.
+        if (App.configuration.isSimulationMode == false)
+        { alignWindow(to: tableWindowInfo) }
+    }
+    
+    func alignWindow(to tableWindowInfo: TableWindowInfo)
+    {
         // Only if any.
         guard let window = self.view.window
         else { return }

@@ -48,8 +48,9 @@ class TableTracker
         
     func start()
     {
-        // Invoke Screen Recording Privacy dialog.
-        CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution)
+        // Invoke Screen Recording Privacy dialog (if not bypassed by simulation mode).
+        if (App.configuration.isLiveMode)
+        { CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution) }
         
         // Kickoff timer.
         let interval = 1.0 / 60.0
@@ -112,8 +113,12 @@ class TableTracker
     
     @objc func tick()
     {
-        // Set (invoke `didSet`).
-        firstTableWindowInfo = searchFirstTableWindowInfo()
+        // Set either real or simulated (will invoke `didSet`).
+        if (App.configuration.isSimulationMode)
+        { firstTableWindowInfo = TableWindowInfo.simulatedTableWindowInfo }
+        
+        if (App.configuration.isLiveMode)
+        { firstTableWindowInfo = searchFirstTableWindowInfo() }
         
         // Update if any
         if let tableWindowInfo = firstTableWindowInfo

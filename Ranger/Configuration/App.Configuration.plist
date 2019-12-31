@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>isSimulationMode</key>
+	<true/>
+	<key>simulation</key>
+	<dict>
+		<key>tournamentNumber</key>
+		<string>2770568108</string>
+		<key>handOffset</key>
+		<integer>135</integer>
+		<key>smallBlind</key>
+		<integer>10</integer>
+		<key>bigBlind</key>
+		<integer>20</integer>
+		<key>ante</key>
+		<integer>3</integer>
+	</dict>
+</dict>
+</plist>

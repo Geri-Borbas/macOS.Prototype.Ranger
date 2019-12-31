@@ -18,6 +18,8 @@ class App: TableTrackerDelegate
     private var windowTracker: TableTracker = TableTracker()
     private var tableWindowController: TourneyTableWindowController?
     
+    static var configuration: App.Configuration = App.Configuration.load()
+    
     
     func start()
     {

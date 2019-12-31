@@ -7,6 +7,14 @@
     + Update tourney summary when new blind level is available (from table tracker) 
     + SharkScope query UX
 
+* 0.9.6
+
+    + Added `App.Configuration`
+        + Live table tracking can be simulated
+            + Using real (past) PokerTracker data
+            + Queries / models works entirely the same 
+            + See `App.Configuration` docs for more
+
 * 0.9.5
 
     + Created `TourneyTablePlayer` entity / query

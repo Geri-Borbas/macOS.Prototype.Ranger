@@ -42,8 +42,9 @@ WHERE
                   )
 
             ORDER BY
-                  tourney_hand_summary.date_played ASC
+                  tourney_hand_summary.date_played DESC
             LIMIT 1
+            OFFSET $_OFFSET
         )
     )
 AND
