@@ -40,6 +40,9 @@ class TourneyTableViewController: NSViewController
             status in
             self.sharkScopeStatusLabel.stringValue = status
         }
+        
+        // Double click.
+        playersTableView.doubleAction = #selector(tableDidDoubleClick)
     }
     
     func track(_ tableWindowInfo: TableWindowInfo)
@@ -48,7 +51,7 @@ class TourneyTableViewController: NSViewController
         self.view.window?.title = tableWindowInfo.name
         
         // Inject into view model.
-        viewModel.track(tableWindowInfo, onChange: layout)
+        viewModel.track(tableWindowInfo, onChange: viewModelDidChange)
         
     }
     
@@ -87,9 +90,17 @@ class TourneyTableViewController: NSViewController
     }
     
     
+    // MARK: - Events
+    
+    @objc func tableDidDoubleClick()
+    {
+        // Fetch SharkScope (gonna push changes back).
+        viewModel.fetchSharkScopeStatisticsForPlayer(inRow: playersTableView.clickedRow)
+    }
+    
     // MARK: - Layout
     
-    func layout()
+    func viewModelDidChange()
     {
         // Summary.
         let summary = viewModel.summary(with: blindsLabel.font!)

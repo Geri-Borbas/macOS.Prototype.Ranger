@@ -52,6 +52,7 @@
 		55C18696239583DD0081B6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C18694239583DD0081B6B7 /* Main.storyboard */; };
 		55C8498623A3309F00452F2F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8498523A3309F00452F2F /* Notes.swift */; };
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
+		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
 		55DB43E523A2DB4D00A7F37F /* RequestCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E423A2DB4D00A7F37F /* RequestCache.swift */; };
 		55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */; };
 		55DB43E923A2E62000A7F37F /* SharkScope.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */; };
@@ -116,6 +117,7 @@
 		55C18697239583DD0081B6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C18698239583DD0081B6B7 /* Ranger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ranger.entitlements; sourceTree = "<group>"; };
 		55C8498523A3309F00452F2F /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		55D4CADD23BB0394001E07E5 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
 		55DB43E423A2DB4D00A7F37F /* RequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
 		55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.Configuration.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
 				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
 				55B03CD423B104F700F153B5 /* PlayerViewModel.swift */,
+				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
 			);
 			path = TourneyTable;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */,
 				55B3CD6123B069CF00DDE6AF /* ApiError.swift in Sources */,
 				555585DC23A2999500B603C1 /* Metadata.swift in Sources */,
+				55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */,
 				55698B9D23AAE27E0065125C /* ActiveTournaments.swift in Sources */,
 				55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */,
 				555D217123A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift in Sources */,

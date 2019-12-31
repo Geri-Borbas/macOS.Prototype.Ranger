@@ -724,7 +724,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y83-4P-VCO">
                                         <rect key="frame" x="-2" y="258" width="975" height="42"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" allowsEditingTextAttributes="YES" id="ygX-OG-ieV">
-                                            <font key="font" metaFont="menu" size="11"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <string key="title">1M 285 / 3 BB (9 hands)
 5M 285 / 14 BB (45 hands)
 10M 570 / 28 BB (90 hands)</string>
@@ -745,9 +745,9 @@
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="100" minWidth="100" maxWidth="1000" id="hNh-fL-1Th">
+                                                        <tableColumn identifier="Player" width="100" minWidth="100" maxWidth="1000" id="hNh-fL-1Th">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -765,7 +765,7 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hj-n3-QpE">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Borbas.Geri" id="Nsd-Pb-SZ2">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="-" id="Nsd-Pb-SZ2">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -778,9 +778,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="100" minWidth="100" maxWidth="1000" id="BuG-wr-mpc">
+                                                        <tableColumn identifier="Stack" width="100" minWidth="100" maxWidth="1000" id="BuG-wr-mpc">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -798,7 +798,7 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-Mp-84r">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="9430" id="xih-95-LRF">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="-" id="xih-95-LRF">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -814,9 +814,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="40" minWidth="40" maxWidth="40" id="Mw5-rR-equ">
+                                                        <tableColumn identifier="VPIP" width="40" minWidth="40" maxWidth="40" id="Mw5-rR-equ">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="VPIP">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -834,11 +834,14 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-ke-mHL">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="18" drawsBackground="YES" id="XhQ-49-VZv">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="-" drawsBackground="YES" id="XhQ-49-VZv">
                                                                                 <font key="font" metaFont="systemBold"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <outlet property="formatter" destination="413-eU-RPa" id="lBk-1T-XdL"/>
+                                                                            </connections>
                                                                         </textField>
                                                                     </subviews>
                                                                     <connections>
@@ -847,9 +850,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="40" minWidth="40" maxWidth="40" id="UEG-og-uli">
+                                                        <tableColumn identifier="PFR" width="40" minWidth="40" maxWidth="40" id="UEG-og-uli">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="PFR">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -867,11 +870,14 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1L-Kt-lKV">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="16" drawsBackground="YES" id="sxl-E2-ecc">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="-" drawsBackground="YES" id="sxl-E2-ecc">
                                                                                 <font key="font" metaFont="systemBold"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <outlet property="formatter" destination="413-eU-RPa" id="2yC-Ou-uBF"/>
+                                                                            </connections>
                                                                         </textField>
                                                                     </subviews>
                                                                     <connections>
@@ -880,9 +886,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="50" minWidth="50" maxWidth="50" id="l4P-fA-aQs">
+                                                        <tableColumn identifier="Tables" width="50" minWidth="50" maxWidth="50" id="l4P-fA-aQs">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Tables">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -900,7 +906,7 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CK7-Fy-At5">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="12" id="Mxu-iU-aeX">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="-" id="Mxu-iU-aeX">
                                                                                 <font key="font" metaFont="systemThin" size="13"/>
                                                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -913,9 +919,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="70" minWidth="70" maxWidth="100" id="67M-x2-pNO">
+                                                        <tableColumn identifier="Count" width="70" minWidth="70" maxWidth="100" id="67M-x2-pNO">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Count">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -949,9 +955,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="70" minWidth="70" maxWidth="100" id="fHs-Fm-rAk">
+                                                        <tableColumn identifier="Profit" width="70" minWidth="70" maxWidth="100" id="fHs-Fm-rAk">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Profit">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -985,9 +991,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="50" minWidth="50" maxWidth="100" id="Hga-Ad-dlW">
+                                                        <tableColumn identifier="ROI" width="50" minWidth="50" maxWidth="100" id="Hga-Ad-dlW">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="ROI">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -1010,6 +1016,9 @@
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <outlet property="formatter" destination="NNm-aM-jTw" id="gWJ-xS-Lib"/>
+                                                                            </connections>
                                                                         </textField>
                                                                     </subviews>
                                                                     <connections>
@@ -1018,9 +1027,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="50" minWidth="50" maxWidth="100" id="ILS-gj-yP2">
+                                                        <tableColumn identifier="Early" width="50" minWidth="50" maxWidth="100" id="ILS-gj-yP2">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Early">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -1043,6 +1052,9 @@
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <outlet property="formatter" destination="NNm-aM-jTw" id="3JQ-2r-A0B"/>
+                                                                            </connections>
                                                                         </textField>
                                                                     </subviews>
                                                                     <connections>
@@ -1051,9 +1063,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="50" minWidth="50" maxWidth="100" id="euL-fO-CRQ">
+                                                        <tableColumn identifier="Late" width="50" minWidth="50" maxWidth="100" id="euL-fO-CRQ">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Late">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -1076,6 +1088,9 @@
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <outlet property="formatter" destination="NNm-aM-jTw" id="bf7-Cc-z8w"/>
+                                                                            </connections>
                                                                         </textField>
                                                                     </subviews>
                                                                     <connections>
@@ -1084,9 +1099,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="50" minWidth="50" maxWidth="100" id="emc-bp-wsD">
+                                                        <tableColumn identifier="Years" width="50" minWidth="50" maxWidth="100" id="emc-bp-wsD">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Years">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -1120,9 +1135,9 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="wuv-lN-FEE" userLabel="Freq.">
+                                                        <tableColumn identifier="Freq." width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="wuv-lN-FEE" userLabel="Freq.">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Freq.">
-                                                                <font key="font" metaFont="menu" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -1180,7 +1195,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-bY-dqi">
                                         <rect key="frame" x="-2" y="24" width="975" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
-                                            <font key="font" metaFont="menu" size="11"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1188,7 +1203,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8hF-g3-DU4">
                                         <rect key="frame" x="-2" y="0.0" width="162" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fetching SharkScope status..." allowsEditingTextAttributes="YES" id="iYH-8W-oOy">
-                                            <font key="font" metaFont="menu" size="11"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1238,24 +1253,30 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="1rj-Mk-7PR" customClass="TourneyTableViewModel" customModule="Ranger" customModuleProvider="target"/>
-                <numberFormatter formatterBehavior="custom10_4" lenient="YES" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," nilSymbol="-" id="ADi-UA-EbU" userLabel="Stack Number Formatter">
+                <numberFormatter formatterBehavior="custom10_4" lenient="YES" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," nilSymbol="-" id="ADi-UA-EbU" userLabel="###,###,### Number Formatter">
                     <real key="minimum" value="0.0"/>
                 </numberFormatter>
-                <numberFormatter formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="OLQ-kV-9Os" userLabel="Count Number Formatter"/>
-                <numberFormatter formatterBehavior="custom10_4" minimumIntegerDigits="0" maximumIntegerDigits="42" groupingSeparator="," nilSymbol="-" positivePrefix="$" id="CWv-Ve-z76" userLabel="Profit Number Formatter">
+                <numberFormatter formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="OLQ-kV-9Os" userLabel="### ###,### Number Formatter"/>
+                <numberFormatter formatterBehavior="custom10_4" minimumIntegerDigits="0" maximumIntegerDigits="42" groupingSeparator=" " nilSymbol="-" positivePrefix="$" negativePrefix="-$" id="CWv-Ve-z76" userLabel="$### ### ### Number Formatter">
                     <nil key="negativeInfinitySymbol"/>
                     <nil key="positiveInfinitySymbol"/>
                     <real key="minimum" value="0.0"/>
                 </numberFormatter>
-                <numberFormatter formatterBehavior="custom10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" groupingSeparator=" " nilSymbol="-" positiveSuffix=" y" id="DQT-g0-AX8" userLabel="Years Number Formatter">
+                <numberFormatter formatterBehavior="custom10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" groupingSeparator=" " nilSymbol="-" positiveSuffix=" y" id="DQT-g0-AX8" userLabel="######### y Number Formatter">
                     <nil key="negativeInfinitySymbol"/>
                     <nil key="positiveInfinitySymbol"/>
                     <real key="minimum" value="0.0"/>
                 </numberFormatter>
-                <numberFormatter formatterBehavior="custom10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="42" maximumFractionDigits="1" groupingSeparator=" " nilSymbol="-" positiveSuffix=" d" id="kO1-79-s6w" userLabel="Freq. Number Formatter">
+                <numberFormatter formatterBehavior="custom10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="42" maximumFractionDigits="1" groupingSeparator=" " nilSymbol="-" positiveSuffix=" d" id="kO1-79-s6w" userLabel="########,# d Number Formatter">
                     <nil key="negativeInfinitySymbol"/>
                     <nil key="positiveInfinitySymbol"/>
                     <real key="minimum" value="0.0"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" minimumFractionDigits="1" maximumFractionDigits="1" id="NNm-aM-jTw" userLabel="##,#% Number Formatter">
+                    <integer key="multiplier" value="1"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="413-eU-RPa" userLabel="## (%) Number Formatter">
+                    <integer key="multiplier" value="100"/>
                 </numberFormatter>
             </objects>
             <point key="canvasLocation" x="76" y="672"/>

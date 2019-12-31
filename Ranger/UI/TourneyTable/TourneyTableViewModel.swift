@@ -17,8 +17,8 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Services
     
-    private lazy var pokerTracker: PokerTracker = PokerTracker()
-    private lazy var sharkScope: SharkScope = SharkScope()
+    private var pokerTracker: PokerTracker = PokerTracker()
+    private var sharkScope: SharkScope = SharkScope()
     
     
     // MARK: - Data
@@ -29,11 +29,6 @@ class TourneyTableViewModel: NSObject
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
-    
-    /// SharkScope `Data`.
-    // TODO: Move to `PlayerViewModel` later on.
-    private var playerStatisticsForPlayerNames: [String:Statistics] = [:]
-    private var playerTableCountsForPlayerNames: [String:Int] = [:]
     
     
     // MARK: - UI Data
@@ -111,7 +106,7 @@ class TourneyTableViewModel: NSObject
         
         // May offset hands in simulation mode.
         var handOffset = App.configuration.isSimulationMode ? App.configuration.simulation.handOffset : 0
-            handOffset -= tickCount
+            // handOffset -= tickCount
             handOffset = max(handOffset, 0)
         
         // Get players of the latest hand tracked by PokerTracker.
@@ -280,70 +275,17 @@ extension TourneyTableViewModel: NSTableViewDataSource
         guard let column = tableColumn else { return nil }
         guard playerViewModels.count > row else { return nil }
         
-        // Data.
+        // Get data.
         let playerViewModel = playerViewModels[row]
-        let latestHandPlayer = playerViewModel.pokerTracker.latestHandPlayer
-        let statistics = playerViewModel.pokerTracker.statistics
         
-        // Display data.
-        let playerName = latestHandPlayer.player_name
-        let stack = latestHandPlayer.stack
-        
-        // PokerTracker.
-        var VPIP = "-"
-        var PFR = "-"
-        if let statistics = statistics
-        {
-            VPIP = String(format: "%.0f", statistics.VPIP * 100)
-            PFR = String(format: "%.0f", statistics.PFR * 100)
-        }
-        
-        var tables = "-"
-        var count: Float?
-        var profit: Float?
-        var ROI = "-"
-        var early = "-"
-        var late = "-"
-        var years: Float?
-        var freq: Float?
-        
-        // Table count.
-        if let tableCount = playerTableCountsForPlayerNames[playerName]
-        { tables = String(tableCount) }
-        
-        // SharkScope.
-        if let statistics = playerStatisticsForPlayerNames[playerName]
-        {
-            count = statistics.Count
-            profit = statistics.isAuthorized(statistic: "Profit") ? statistics.Profit : nil
-            ROI = statistics.isAuthorized(statistic: "AvROI") ? String(format: "%.1f%%", statistics.AvROI) : "-"
-            early = String(format: "%.1f%%", statistics.FinshesEarly)
-            late = String(format: "%.1f%%", statistics.FinshesLate)
-            years = statistics.YearsPlayed
-            freq = statistics.DaysBetweenPlays
-        }
-        
-        let cellDecoratorsForTitles: [String:((NSTextField?) -> Void)] =
-        [
-            "Player" : { $0?.stringValue = playerName },
-            "Stack" : { $0?.doubleValue = stack },
-            "VPIP" : { $0?.stringValue = VPIP },
-            "PFR" : { $0?.stringValue = PFR },
-            "Tables" : { $0?.stringValue = tables },
-            "Count" : { if let count = count { $0?.floatValue = count } },
-            "Profit" : { if let profit = profit { $0?.floatValue = profit } },
-            "ROI" : { $0?.stringValue = ROI },
-            "Early" : { $0?.stringValue = early },
-            "Late" : { $0?.stringValue = late },
-            "Years" : { if let years = years { $0?.floatValue = years } },
-            "Freq." : { if let freq = freq { $0?.floatValue = freq } }
-        ]
-        
-        // Create cell view.
+        // Create / Reuse cell view.
         guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? NSTableCellView else { return nil }
         
-        // Apply decorator.
-        cellDecoratorsForTitles[column.title]!(cellView.textField)
+        print("tableView(viewFor tableColumn: \(column.identifier), row: \(row)")
+        
+        // Apply data.
+        if let textField = cellView.textField
+        { playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!.apply(to: textField) }
         
         return cellView
     }
@@ -356,19 +298,24 @@ extension TourneyTableViewModel: NSTableViewDelegate
 {
     
     
-    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
+    // func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
+    // { true }
+    
+    public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)
     {
+        print("TourneyTableViewModel.fetchSharkScopeStatisticsForPlayer(inRow: \(row))")
+        
         // Checks.
-        guard playerViewModels.count > row else { return false }
+        guard playerViewModels.count > row else { return }
         
         // Data.
-        let playerViewModel = playerViewModels[row]
+        var playerViewModel = playerViewModels[row]
         let playerName = playerViewModel.pokerTracker.latestHandPlayer.player_name
         
         // Copy name to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
         NSPasteboard.general.setString(playerName, forType: NSPasteboard.PasteboardType.string)
-        
+
         // Fetch summary.
         // let fetchPlayerName = "quAAsar"
         // let fetchPlayerName = "rybluk"
@@ -378,49 +325,36 @@ extension TourneyTableViewModel: NSTableViewDelegate
         // let fetchPlayerName = "Brier Rose" // Full Tilt (Closed)
         // let fetchPlayerName = "NNiubility"
         // let fetchPlayerName = "dontumove" // One table
-        let fetchPlayerName = playerName
-        sharkScope.fetch(player: fetchPlayerName,
+        // let fetchPlayerName = playerName
+        sharkScope.fetch(player: playerName,
                          completion:
             {
                 (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) in
+                       
+                print("sharkScope.fetch.completion()")
                 
                 switch result
                 {
-                case .success(let responses):
-                    
-                    // Count only running (or late registration) tables.
-                    let tables: Int = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments?.Tournament.reduce(0)
-                    {
-                        count, eachTournament in
-                        count + (eachTournament.state != "Registering" ? 1 : 0)
-                        } ?? 0
-                    
-                    // Logs.
-                    print("\(responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name) playing \(tables) tables.")
-                    if let activeTournaments = responses.activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
-                    { print(activeTournaments) }
-                    print(self.sharkScope.status)
-                    
-                    // Retain data.
-                    self.playerStatisticsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = responses.playerSummary.Response.PlayerResponse.PlayerView.Player.Statistics
-                    self.playerTableCountsForPlayerNames[responses.playerSummary.Response.PlayerResponse.PlayerView.Player.name] = tables
-                    
-                    // Invoke callback.
-                    self.onChange?()
-                    
-                    break
-                    
-                case .failure(let error):
-                    
-                    print(error)
-                    
-                    // Update UI.
-                    print(self.sharkScope.status)
-                    
+                    case .success(let responses):
+
+                        // Retain.
+                        playerViewModel.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
+                        
+                        // Write.
+                        self.playerViewModels[row] = playerViewModel
+                        
+                        // Invoke callback.
+                        self.onChange?()
+
+                        break
+
+                    case .failure(let error):
+
+                        // Fail silently for now.
+                        print(error)
+
                     break
                 }
-        })
-        
-        return true
+           })
     }
 }

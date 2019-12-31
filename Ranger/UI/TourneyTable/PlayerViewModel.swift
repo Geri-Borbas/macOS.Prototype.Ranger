@@ -9,14 +9,14 @@
 import Foundation
 
 
-struct PlayerViewModel: Equatable
+struct PlayerViewModel
 {
 
     
     var pokerTracker: PokerTracker
     var sharkScope: SharkScope
     
-
+       
     struct PokerTracker: Equatable
     {
         
@@ -48,16 +48,50 @@ struct PlayerViewModel: Equatable
     {
         
         
+        let playerName: String
         var summary: PlayerSummary?
         var activeTournaments: ActiveTournaments?
+        var tables: Int?
+        var statistics: Statistics? { summary?.Response.PlayerResponse.PlayerView.Player.Statistics }
+        
+        
+        init(with playerName: String)
+        {
+            self.playerName = playerName
+        }
+        
+        public mutating func update(withSummary summary: PlayerSummary, activeTournaments: ActiveTournaments)
+        {
+            print("PlayerViewModel.SharkScope.update()")
+            
+            self.summary = summary
+            self.activeTournaments = activeTournaments
+            
+            // Count only running (or late registration) tables.
+            self.tables = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments?.Tournament.reduce(0)
+            {
+                count, eachTournament in
+                count + (eachTournament.state != "Registering" ? 1 : 0)
+            } ?? 0
+
+            // Logs.
+            if let activeTournaments = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
+            { print(activeTournaments) }
+        }
     }
     
     
     init(with latestHandPlayer: LatestHandPlayer)
     {
         self.pokerTracker = PokerTracker(with: latestHandPlayer)
-        self.sharkScope = SharkScope()
+        self.sharkScope = SharkScope(with: latestHandPlayer.player_name)
     }
+}
+
+
+extension PlayerViewModel: Equatable
+{
+    
     
     /// PokerTracker `id_player` makes unique view models.
     static func == (lhs: PlayerViewModel, rhs: PlayerViewModel) -> Bool
@@ -65,8 +99,31 @@ struct PlayerViewModel: Equatable
 }
 
 
+// MARK: - Column Data
+
 extension PlayerViewModel
 {
     
     
+    var textFieldDataForColumnIdentifiers: [String:TextFieldData]
+    {
+        
+        let dict: [String:TextFieldData] =
+        [
+            "Player" : TextFieldStringData(value: pokerTracker.latestHandPlayer.player_name),
+            "Stack" : TextFieldDoubleData(value: pokerTracker.latestHandPlayer.stack),
+            "VPIP" : TextFieldDoubleData(value: pokerTracker.statistics?.VPIP),
+            "PFR" : TextFieldDoubleData(value: pokerTracker.statistics?.PFR),
+            "Tables" : TextFieldIntData(value: sharkScope.tables),
+            "Count" : TextFieldFloatData(value: sharkScope.statistics?.Count),
+            "Profit" : TextFieldFloatData(value: sharkScope.statistics?.Profit),
+            "ROI" : TextFieldFloatData(value: sharkScope.statistics?.AvROI),
+            "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
+            "Late" : TextFieldFloatData(value: sharkScope.statistics?.FinshesLate),
+            "Years" : TextFieldFloatData(value: sharkScope.statistics?.YearsPlayed),
+            "Freq." : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays)
+            ]
+        return dict
+    }
 }
+

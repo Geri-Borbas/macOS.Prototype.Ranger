@@ -3,9 +3,16 @@
 
 * Doing
 
+    
     + Fix Player model collection updating
-    + Move SharkScope queries into `PlayerViewModel`
     + Update tourney summary when new blind level is available (from table tracker) 
+    
+* 0.9.9
+
+    + `PlayerViewModel`
+        + Moved SharkScope queries into 
+        + Create column data on the fly (see `textFieldDataForColumnIdentifiers`)
+        + Created boxed value holders for text fields (see `TextFieldData`)      
     
 * 0.9.81
 
