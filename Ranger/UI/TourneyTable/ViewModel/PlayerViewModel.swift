@@ -104,7 +104,6 @@ extension PlayerViewModel
     
     var textFieldDataForColumnIdentifiers: [String:TextFieldData]
     {
-        
         let dict: [String:TextFieldData] =
         [
             "Player" : TextFieldStringData(value: pokerTracker.latestHandPlayer.player_name),
@@ -114,12 +113,20 @@ extension PlayerViewModel
             "Tables" : TextFieldIntData(value: sharkScope.tables),
             "Count" : TextFieldFloatData(value: sharkScope.statistics?.Count),
             "Profit" : TextFieldFloatData(value: sharkScope.statistics?.Profit),
+            "Stake" : TextFieldFloatData(value: sharkScope.statistics?.AvStake),
             "ROI" : TextFieldFloatData(value: sharkScope.statistics?.AvROI),
+            "ITM" : TextFieldFloatData(value: sharkScope.statistics?.ITM),
             "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
             "Late" : TextFieldFloatData(value: sharkScope.statistics?.FinshesLate),
+            "Field Beaten" : TextFieldFloatData(value: sharkScope.statistics?.PercentFieldBeaten),
             "Years" : TextFieldFloatData(value: sharkScope.statistics?.YearsPlayed),
-            "Freq." : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays)
-            ]
+            "Freq." : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays),
+            "Entrants" : TextFieldFloatData(value: sharkScope.statistics?.AvEntrants),
+            "Games/Day" : TextFieldFloatData(value: sharkScope.statistics?.AvGamesPerDay),
+            "Ability" : TextFieldFloatData(value: sharkScope.statistics?.Ability),
+            "Losing" : TextFieldFloatData(value: sharkScope.statistics?.LosingDaysWithBreakEvenPercentage),
+            "Winning" : TextFieldFloatData(value: sharkScope.statistics?.WinningDaysWithBreakEvenPercentage),
+        ]
         return dict
     }
 }

@@ -3,7 +3,13 @@
 
 * Doing
 
-    + Update tourney summary when new blind level is available (from table tracker) 
+    + Sorting
+    + Update tourney summary when new blind level is available (from table tracker)
+    + Design (table row / cells / color ranges / graphs)
+
+* 1.0.1
+
+    + Added more SharkScope statistics
 
 * 1.0.0
 

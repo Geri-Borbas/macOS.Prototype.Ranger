@@ -73,7 +73,7 @@ class TableTracker
         let tourneyWindows = windowInfoList.filter
         {
             (eachWindowInfo: [String:Any]) in
-            isLobbyWindowInfo(eachWindowInfo)
+            isTableWindowInfo(eachWindowInfo)
         }
         .map
         {

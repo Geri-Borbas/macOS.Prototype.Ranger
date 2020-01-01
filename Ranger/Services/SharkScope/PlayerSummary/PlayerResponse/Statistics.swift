@@ -248,4 +248,10 @@ extension Statistics
     
     /// Winning days percentage of active days (`WinningDays / ActiveDayCount`).
     var WinningDaysPercentage: Float { WinningDays / ActiveDayCount }
+    
+    /// Losing days percentage of active days containing half of break even days (`LosingDaysPercentage + BreakEvenDaysPercentage / 2`).
+    var LosingDaysWithBreakEvenPercentage: Float { LosingDaysPercentage + BreakEvenDaysPercentage / 2 }
+    
+    /// Winning days percentage of active days containing half of break even days (`WinningDaysPercentage + BreakEvenDaysPercentage / 2`).
+    var WinningDaysWithBreakEvenPercentage: Float { WinningDaysPercentage + BreakEvenDaysPercentage / 2 }
 }
