@@ -289,9 +289,7 @@
 			children = (
 				5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */,
 				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
-				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
-				55B03CD423B104F700F153B5 /* PlayerViewModel.swift */,
-				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
+				559646B223BC145700A5207F /* ViewModel */,
 			);
 			path = TourneyTable;
 			sourceTree = "<group>";
@@ -304,6 +302,16 @@
 				5592684623A9CA1500045F89 /* TimelineRequest.swift */,
 			);
 			path = Timeline;
+			sourceTree = "<group>";
+		};
+		559646B223BC145700A5207F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */,
+				55B03CD423B104F700F153B5 /* PlayerViewModel.swift */,
+				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55AE8F7D23A5F2DD006BF2B9 /* TableTracker */ = {

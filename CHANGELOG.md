@@ -3,10 +3,14 @@
 
 * Doing
 
-    
-    + Fix Player model collection updating
     + Update tourney summary when new blind level is available (from table tracker) 
-    
+
+* 1.0.0
+
+    + Fixed Player model collection updating
+        + Create new models for each hand
+        + Preserve SharkScope data if any
+
 * 0.9.9
 
     + `PlayerViewModel`

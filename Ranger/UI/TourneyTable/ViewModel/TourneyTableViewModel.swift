@@ -106,7 +106,7 @@ class TourneyTableViewModel: NSObject
         
         // May offset hands in simulation mode.
         var handOffset = App.configuration.isSimulationMode ? App.configuration.simulation.handOffset : 0
-            // handOffset -= tickCount
+            handOffset -= tickCount
             handOffset = max(handOffset, 0)
         
         // Get players of the latest hand tracked by PokerTracker.
@@ -122,44 +122,30 @@ class TourneyTableViewModel: NSObject
         // Track.
         latestProcessedHandNumber = firstPlayer.hand_no
         
-        // Collect `id_player` for current players.
-        let latestHandPlayerIDs = latestHandPlayers
-        .map{ eachPlayer in eachPlayer.id_player }
+        // Create new view models for latest players.
+        var latestHandPlayerViewModels = latestHandPlayers.map
+        {
+            eachLatestHandPlayer in
+            PlayerViewModel(with: eachLatestHandPlayer)
+        }
 
-        // Collect `id_player` for view model players.
-        var viewModelPlayerIDs: [Int] = playerViewModels.map
+        // Save any SharkScope statistics if any.
+        playerViewModels.forEach
         {
             eachPlayerViewModel in
-            eachPlayerViewModel.pokerTracker.latestHandPlayer.id_player
-        }
-
-        // Collect removable players.
-        var removablePlayerIDs: [Int] = []
-        viewModelPlayerIDs.forEach
-        {
-            eachViewModelPlayerID in
-            if (latestHandPlayerIDs.contains(eachViewModelPlayerID) == false)
-            { removablePlayerIDs.append(eachViewModelPlayerID) }
-        }
-        
-        // Remove removable players.
-        removablePlayerIDs.forEach
-        {
-            eachRemovablePlayerID in
-            if let indexOfRemovablePlayer = viewModelPlayerIDs.firstIndex(of: eachRemovablePlayerID)
-            { viewModelPlayerIDs.remove(at: indexOfRemovablePlayer) }
-        }
-
-        // Create / Collect new players if needed.
-        latestHandPlayerIDs.forEach
-        {
-            eachCurrentPlayerID in
-            if (viewModelPlayerIDs.contains(eachCurrentPlayerID) == false)
+            if (latestHandPlayerViewModels.contains(eachPlayerViewModel))
             {
-                let eachIndex = latestHandPlayerIDs.firstIndex(of: eachCurrentPlayerID)!
-                playerViewModels.append(PlayerViewModel(with: latestHandPlayers[eachIndex]))
+                let index = latestHandPlayerViewModels.firstIndex(of: eachPlayerViewModel)!
+                latestHandPlayerViewModels[index].sharkScope = eachPlayerViewModel.sharkScope
             }
         }
+        
+        // And just use the new collection.
+        playerViewModels = latestHandPlayerViewModels
+        
+        // Get latest PokerTracker statistics.
+        for eachIndex in playerViewModels.indices
+        { playerViewModels[eachIndex].pokerTracker.update() }
         
         // Invoke callback.
         onChange?()
@@ -280,8 +266,6 @@ extension TourneyTableViewModel: NSTableViewDataSource
         
         // Create / Reuse cell view.
         guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? NSTableCellView else { return nil }
-        
-        print("tableView(viewFor tableColumn: \(column.identifier), row: \(row)")
         
         // Apply data.
         if let textField = cellView.textField

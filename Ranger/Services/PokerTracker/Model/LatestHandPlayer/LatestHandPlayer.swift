@@ -32,7 +32,7 @@ class LatestHandPlayer: Entry
     let amt_won: Double
     
     // Calculations.
-    let stack: Double
+    var stack: Double { amt_before + amt_won }
     
     
     required init(row: Row) throws
@@ -53,9 +53,6 @@ class LatestHandPlayer: Entry
         amt_blind = try row.columns[10].double()
         amt_ante = try row.columns[11].double()
         amt_won = try row.columns[12].double()
-        
-        // Calculations.
-        stack = amt_before + amt_won
     }
 }
 

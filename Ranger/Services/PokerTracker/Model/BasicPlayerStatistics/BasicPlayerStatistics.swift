@@ -24,8 +24,8 @@ class BasicPlayerStatistics: Entry
     let cnt_pfr_opp: Int
     
     // Calculations.
-    let VPIP: Double
-    let PFR: Double
+    var VPIP: Double { Double(cnt_vpip) / Double(cnt_hands - cnt_walks) }
+    var PFR: Double { Double(cnt_pfr) / Double(cnt_pfr_opp) }
     
     
     required init(row: Row) throws
@@ -38,10 +38,6 @@ class BasicPlayerStatistics: Entry
         cnt_walks = try row.columns[5].int()
         cnt_pfr = try row.columns[6].int()
         cnt_pfr_opp = try row.columns[7].int()
-        
-        // Calculations.
-        VPIP = Double(cnt_vpip) / Double(cnt_hands - cnt_walks)
-        PFR = Double(cnt_pfr) / Double(cnt_pfr_opp)
     }
 }
 

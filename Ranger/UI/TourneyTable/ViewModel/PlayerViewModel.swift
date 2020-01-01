@@ -32,12 +32,9 @@ struct PlayerViewModel
         init(with latestHandPlayer: LatestHandPlayer)
         {
             self.latestHandPlayer = latestHandPlayer
-            
-            // Query latest statistics.
-            self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [latestHandPlayer.id_player])).first
         }
         
-        public mutating func updateStatistics()
+        public mutating func update()
         {
             self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [latestHandPlayer.id_player])).first
         }
