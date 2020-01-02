@@ -172,9 +172,6 @@ class TourneyTableViewModel: NSObject
         // Retain.
         self.sortDescriptors = sortDescriptors
         
-        // Log.
-        print(sortDescriptors)
-        
         // Sort in place.
         playerViewModels = playerViewModels.sorted
         {

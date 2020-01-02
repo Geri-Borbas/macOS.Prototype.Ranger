@@ -33,5 +33,9 @@ class PercentBarCellView: PlayerViewModelCellView
         
         // Layout.
         boxWidthConstraint.constant = self.frame.width * CGFloat(textFieldFloatData.floatValue ?? 1.0)
+        
+        // Don't clip.
+        textField.wantsLayer = true
+        textField.layer?.masksToBounds = false
     }
 }

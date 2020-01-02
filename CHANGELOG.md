@@ -5,6 +5,10 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.2.7
+
+    + Tweaked percentage layout constraint
+
 * 1.2.6
 
     + Created percentage cell design
