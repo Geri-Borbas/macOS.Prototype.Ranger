@@ -67,7 +67,7 @@ struct TableWindowInfo: Equatable
         else { return nil }
         
         // Parse ante if any.
-        if blindLevelComponents.count == 3
+        if blindLevelComponents.count > 1
         { ante = Int(blindLevelComponents[2]) ?? 0 }
         
         // Parse tourney.

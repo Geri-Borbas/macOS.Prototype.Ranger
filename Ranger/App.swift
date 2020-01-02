@@ -54,6 +54,10 @@ class App: TableTrackerDelegate
         // UI.
         tablesStatusBarItem.stopIndicateTracking()
         
+        // Turn back dragging.
+        if let tableWindow = tableWindowController?.window
+        { tableWindow.isMovable = true }
+        
         // Close window if any (if opted-in).
         if let tableWindowController = tableWindowController, App.configuration.autoCloseTableWindow
         { tableWindowController.close() }

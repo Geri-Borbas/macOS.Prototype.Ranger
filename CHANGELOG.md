@@ -5,6 +5,12 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.2.41
+
+    + Minor fixes
+        + Ante parsing
+        + Turn back window drag after tourney
+
 * 1.2.4
 
     + Update summary / table when blinds change
