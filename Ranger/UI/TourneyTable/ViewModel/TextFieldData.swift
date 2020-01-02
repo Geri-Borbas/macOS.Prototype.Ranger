@@ -24,7 +24,6 @@ struct TextFieldStringData: TextFieldData
     
     var value: String?
     
-    
     init(value: String?)
     { self.value = value }
     
@@ -38,7 +37,9 @@ struct TextFieldFloatData: TextFieldData
     
     var value: Float?
     
-    
+    var floatValue: Float?
+    { Float(value ?? 0) }
+        
     init(value: Float?)
     { self.value = value }
         

@@ -25,8 +25,8 @@ class TourneyTableViewModel: NSObject
     /// The poker table this instance is tracking.
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
-    private var tickTime = 0.5 // 1.0
-    private var handUpdateTickFrequency = 1
+    private var tickTime = 1.0
+    private var handUpdateTickFrequency = 10
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
@@ -297,11 +297,10 @@ extension TourneyTableViewModel: NSTableViewDataSource
         let playerViewModel = playerViewModels[row]
         
         // Create / Reuse cell view.
-        guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? NSTableCellView else { return nil }
+        guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? PlayerViewModelCellView else { return nil }
         
         // Apply data.
-        if let textField = cellView.textField
-        { playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!.apply(to: textField) }
+        cellView.setup(with: playerViewModel, in: tableColumn)
         
         // Select row if was selected before.
         if (self.selectedPlayerViewModel == playerViewModel)

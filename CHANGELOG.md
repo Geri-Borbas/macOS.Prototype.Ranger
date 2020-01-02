@@ -5,6 +5,13 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.2.6
+
+    + Created percentage cell design
+        + Cell base class `PlayerViewModelCellView` (cleaned up cell creation call site)
+        + Cell subclass for percentage display `PercentBarCellView`
+        + Constraint based layout (data driven constraints can be hooked up via `@IBOutlet`) 
+
 * 1.2.41
 
     + Minor fixes

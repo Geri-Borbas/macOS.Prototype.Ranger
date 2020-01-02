@@ -732,7 +732,7 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
+                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
                                         <rect key="frame" x="0.0" y="48" width="1408" height="200"/>
                                         <clipView key="contentView" id="3s2-if-0UA">
                                             <rect key="frame" x="1" y="0.0" width="1406" height="199"/>
@@ -741,7 +741,7 @@
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq">
                                                     <rect key="frame" x="0.0" y="0.0" width="1406" height="174"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <size key="intercellSpacing" width="3" height="2"/>
+                                                    <size key="intercellSpacing" width="1" height="1"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
@@ -759,8 +759,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Seat"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="lLX-mA-8SO">
-                                                                    <rect key="frame" x="1" y="1" width="40" height="17"/>
+                                                                <tableCellView id="lLX-mA-8SO" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADB-0G-uFe">
@@ -795,8 +795,8 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="IQJ-ox-WLM">
-                                                                    <rect key="frame" x="44" y="1" width="100" height="17"/>
+                                                                <tableCellView id="IQJ-ox-WLM" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="41" y="0.0" width="100" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hj-n3-QpE">
@@ -829,8 +829,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Stack"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="RRc-o0-KE9">
-                                                                    <rect key="frame" x="147" y="1" width="100" height="17"/>
+                                                                <tableCellView id="RRc-o0-KE9" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="142" y="0.0" width="100" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-Mp-84r">
@@ -866,8 +866,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="VPIP"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="AAb-HK-hP8">
-                                                                    <rect key="frame" x="250" y="1" width="40" height="17"/>
+                                                                <tableCellView id="AAb-HK-hP8" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="243" y="0.0" width="40" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-ke-mHL">
@@ -903,8 +903,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="PFR"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="amb-P7-8n8">
-                                                                    <rect key="frame" x="293" y="1" width="40" height="17"/>
+                                                                <tableCellView id="amb-P7-8n8" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="284" y="0.0" width="40" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1L-Kt-lKV">
@@ -940,8 +940,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Tables"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="LZP-ln-GKe">
-                                                                    <rect key="frame" x="336" y="1" width="50" height="17"/>
+                                                                <tableCellView id="LZP-ln-GKe" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="325" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CK7-Fy-At5">
@@ -974,8 +974,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Count"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="oZf-Xk-Aok">
-                                                                    <rect key="frame" x="389" y="1" width="70" height="17"/>
+                                                                <tableCellView id="oZf-Xk-Aok" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="376" y="0.0" width="70" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-sD-fOy">
@@ -1011,8 +1011,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Profit"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="py3-m2-eTy">
-                                                                    <rect key="frame" x="462" y="1" width="70" height="17"/>
+                                                                <tableCellView id="py3-m2-eTy" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="447" y="0.0" width="70" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1E4-oU-bUj">
@@ -1048,8 +1048,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Stake"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="IUd-eR-hh2">
-                                                                    <rect key="frame" x="535" y="1" width="50" height="17"/>
+                                                                <tableCellView id="IUd-eR-hh2" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="518" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-rV-f5a">
@@ -1085,8 +1085,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="ROI"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="drt-ya-61r">
-                                                                    <rect key="frame" x="588" y="1" width="50" height="17"/>
+                                                                <tableCellView id="drt-ya-61r" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="569" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-XX-Air">
@@ -1122,8 +1122,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="ITM"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="KvU-kw-sp9">
-                                                                    <rect key="frame" x="641" y="1" width="50" height="17"/>
+                                                                <tableCellView id="KvU-kw-sp9" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="620" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField identifier="ITM" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-QX-GIu">
@@ -1159,8 +1159,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Early"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="GFV-U0-Z0i">
-                                                                    <rect key="frame" x="694" y="1" width="50" height="17"/>
+                                                                <tableCellView id="GFV-U0-Z0i" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="671" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59K-vc-27N">
@@ -1196,8 +1196,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Late"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="dgN-zc-sli">
-                                                                    <rect key="frame" x="747" y="1" width="50" height="17"/>
+                                                                <tableCellView id="dgN-zc-sli" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="722" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2n-vc-36t">
@@ -1233,8 +1233,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Field Beaten"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="Dsp-2D-cj8">
-                                                                    <rect key="frame" x="800" y="1" width="50" height="17"/>
+                                                                <tableCellView id="Dsp-2D-cj8" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="773" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-Hx-TfG">
@@ -1270,8 +1270,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Years"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="bp5-Pr-vtn">
-                                                                    <rect key="frame" x="853" y="1" width="50" height="17"/>
+                                                                <tableCellView id="bp5-Pr-vtn" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="824" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-Be-KRK">
@@ -1307,8 +1307,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Frequency"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="2l3-uU-wxW">
-                                                                    <rect key="frame" x="906" y="1" width="60" height="17"/>
+                                                                <tableCellView id="2l3-uU-wxW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="875" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hd-at-Yw5">
@@ -1344,8 +1344,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Entrants"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="mom-yd-SdW">
-                                                                    <rect key="frame" x="969" y="1" width="60" height="17"/>
+                                                                <tableCellView id="mom-yd-SdW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="936" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRE-sn-jEF">
@@ -1381,8 +1381,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Games/Day"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="59i-oi-97B">
-                                                                    <rect key="frame" x="1032" y="1" width="50" height="17"/>
+                                                                <tableCellView id="59i-oi-97B" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="997" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uK5-Gc-FcV">
@@ -1404,7 +1404,7 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="Losing" width="50" minWidth="50" maxWidth="100" id="VWW-CI-BqF">
+                                                        <tableColumn identifier="Losing" width="80" minWidth="50" maxWidth="100" id="VWW-CI-BqF">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Losing">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1418,30 +1418,50 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Losing"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="90L-30-1ry">
-                                                                    <rect key="frame" x="1085" y="1" width="50" height="17"/>
+                                                                <tableCellView id="90L-30-1ry" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="1048" y="0.0" width="80" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWr-dK-2Eg">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="-" id="cua-DF-Pus">
-                                                                                <font key="font" metaFont="system"/>
-                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                            <connections>
-                                                                                <outlet property="formatter" destination="vOy-eN-cD7" id="vrE-5E-470"/>
-                                                                            </connections>
-                                                                        </textField>
+                                                                        <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-QZ-jAj">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                                            <view key="contentView" id="rY2-0c-ZFg">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                <subviews>
+                                                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="AZb-pJ-M9Y">
+                                                                                        <rect key="frame" x="0.0" y="3" width="80" height="11"/>
+                                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                        <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="50﹪" usesSingleLineMode="YES" id="Ky1-OJ-JZn">
+                                                                                            <font key="font" metaFont="systemBold" size="9"/>
+                                                                                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                        <connections>
+                                                                                            <outlet property="formatter" destination="aU5-at-Lan" id="UT5-KM-gm4"/>
+                                                                                        </connections>
+                                                                                    </textField>
+                                                                                </subviews>
+                                                                            </view>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="80" id="Lba-Vc-kal"/>
+                                                                            </constraints>
+                                                                            <color key="fillColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                                        </box>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="UZF-QZ-jAj" firstAttribute="top" secondItem="90L-30-1ry" secondAttribute="top" id="Ahy-A4-BjN"/>
+                                                                        <constraint firstItem="UZF-QZ-jAj" firstAttribute="trailing" secondItem="90L-30-1ry" secondAttribute="trailing" id="Peu-Dm-NFV"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="UZF-QZ-jAj" secondAttribute="bottom" id="aOq-cV-jUy"/>
+                                                                    </constraints>
                                                                     <connections>
-                                                                        <outlet property="textField" destination="yWr-dK-2Eg" id="k56-NC-0Ms"/>
+                                                                        <outlet property="box" destination="UZF-QZ-jAj" id="WQ6-oO-1mt"/>
+                                                                        <outlet property="boxWidthConstraint" destination="Lba-Vc-kal" id="a4n-Vg-3V3"/>
+                                                                        <outlet property="textField" destination="AZb-pJ-M9Y" id="Ioe-hU-NBr"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="Winning" width="50" minWidth="50" maxWidth="100" id="p5x-cA-cJe">
+                                                        <tableColumn identifier="Winning" width="80" minWidth="50" maxWidth="100" id="p5x-cA-cJe">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Winning">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1455,24 +1475,44 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Winning"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="c5m-ev-Mi8">
-                                                                    <rect key="frame" x="1138" y="1" width="50" height="17"/>
+                                                                <tableCellView id="c5m-ev-Mi8" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="1129" y="0.0" width="80" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jsx-JO-w7W">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="-" id="gG9-7G-F2w">
-                                                                                <font key="font" metaFont="system"/>
-                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                            <connections>
-                                                                                <outlet property="formatter" destination="vOy-eN-cD7" id="Xbc-ZK-LeN"/>
-                                                                            </connections>
-                                                                        </textField>
+                                                                        <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aHL-gI-q1l">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                                            <view key="contentView" id="YSz-2M-2LV">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                <subviews>
+                                                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="Jsx-JO-w7W">
+                                                                                        <rect key="frame" x="0.0" y="3" width="80" height="11"/>
+                                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                        <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="50﹪" usesSingleLineMode="YES" id="gG9-7G-F2w">
+                                                                                            <font key="font" metaFont="systemBold" size="9"/>
+                                                                                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                        <connections>
+                                                                                            <outlet property="formatter" destination="aU5-at-Lan" id="M77-cf-m8x"/>
+                                                                                        </connections>
+                                                                                    </textField>
+                                                                                </subviews>
+                                                                            </view>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="80" id="R9F-lJ-P1n"/>
+                                                                            </constraints>
+                                                                            <color key="fillColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                                        </box>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="aHL-gI-q1l" firstAttribute="leading" secondItem="c5m-ev-Mi8" secondAttribute="leading" id="J7F-ql-97w"/>
+                                                                        <constraint firstItem="aHL-gI-q1l" firstAttribute="top" secondItem="c5m-ev-Mi8" secondAttribute="top" id="MVg-QW-MF6"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="aHL-gI-q1l" secondAttribute="bottom" id="PHl-C2-3kE"/>
+                                                                    </constraints>
                                                                     <connections>
+                                                                        <outlet property="box" destination="aHL-gI-q1l" id="6uI-gD-13U"/>
+                                                                        <outlet property="boxWidthConstraint" destination="R9F-lJ-P1n" id="CW5-zc-V2E"/>
                                                                         <outlet property="textField" destination="Jsx-JO-w7W" id="am5-TG-mhk"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -1492,8 +1532,8 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Ability"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="59T-6A-mL7">
-                                                                    <rect key="frame" x="1191" y="1" width="100" height="17"/>
+                                                                <tableCellView id="59T-6A-mL7" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="1210" y="0.0" width="100" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-Bm-R8h">
@@ -1621,6 +1661,9 @@
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" minimumFractionDigits="1" maximumFractionDigits="1" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="NNm-aM-jTw" userLabel="##,#﹪ Number Formatter">
                     <integer key="multiplier" value="1"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" maximumFractionDigits="-1" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="aU5-at-Lan" userLabel="##﹪ (x100) Number Formatter">
+                    <integer key="multiplier" value="100"/>
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" minimumFractionDigits="1" maximumFractionDigits="1" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="vOy-eN-cD7" userLabel="##,#﹪ (x100) Number Formatter">
                     <integer key="multiplier" value="100"/>
