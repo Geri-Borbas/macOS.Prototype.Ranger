@@ -25,7 +25,7 @@ class TourneyTableViewModel: NSObject
     /// The poker table this instance is tracking.
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
-    private var handUpdateTickFrequency = 5
+    private var handUpdateTickFrequency = 2
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
@@ -35,6 +35,7 @@ class TourneyTableViewModel: NSObject
     
     public var latestProcessedHandNumber: String = ""
     private var sortDescriptors: [NSSortDescriptor]?
+    private var selectedPlayerViewModel: PlayerViewModel?
     
     
     // MARK: - Binds
@@ -295,6 +296,10 @@ extension TourneyTableViewModel: NSTableViewDataSource
         if let textField = cellView.textField
         { playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!.apply(to: textField) }
         
+        // Select row if was selected before.
+        if (self.selectedPlayerViewModel == playerViewModel)
+        { tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false) }
+        
         return cellView
     }
     
@@ -313,8 +318,19 @@ extension TourneyTableViewModel: NSTableViewDelegate
 {
     
     
-    // func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
-    // { true }
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
+    {
+        // Checks.
+        guard playerViewModels.count > row else { return false }
+        
+        // Get data.
+        let playerViewModel = playerViewModels[row]
+        
+        // Retain selection.
+        self.selectedPlayerViewModel = playerViewModel
+        
+        return true
+    }
     
     public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)
     {

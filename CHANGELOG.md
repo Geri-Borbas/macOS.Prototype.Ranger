@@ -4,11 +4,14 @@
 * Doing
 
     + Tiny fixes
-        + Maintain selection after table has reloaded (view model should hold a reference)
         + Window should stay open (to be closed manually)   
         + Update window title
     + Update tourney summary when new blind level is available (from table tracker)
     + Design (table row / cells / color ranges / graphs)
+
+* 1.2.2
+
+    + Player Table retains row selection 
 
 * 1.2.1
 
