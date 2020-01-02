@@ -90,9 +90,28 @@ extension PlayerViewModel: Equatable
 {
     
     
-    /// PokerTracker `id_player` makes unique view models.
+    /// PokerTracker `id_player` makes unique view models (used for manage collections).
     static func == (lhs: PlayerViewModel, rhs: PlayerViewModel) -> Bool
     { lhs.pokerTracker.latestHandPlayer.id_player == rhs.pokerTracker.latestHandPlayer.id_player }
+}
+
+
+// MARK: - Description
+
+extension PlayerViewModel: CustomStringConvertible
+{
+    
+    
+    var description: String
+    {
+        String(format:
+            "\n%.0f\t%.0f\t%.0f\t%@",
+            pokerTracker.latestHandPlayer.stack,
+            (pokerTracker.statistics?.VPIP ?? 0) * 100,
+            (pokerTracker.statistics?.PFR ?? 0) * 100,
+            pokerTracker.latestHandPlayer.player_name
+        )
+    }
 }
 
 
@@ -106,6 +125,7 @@ extension PlayerViewModel
     {
         let dict: [String:TextFieldData] =
         [
+            "Seat" : TextFieldIntData(value: pokerTracker.latestHandPlayer.seat),
             "Player" : TextFieldStringData(value: pokerTracker.latestHandPlayer.player_name),
             "Stack" : TextFieldDoubleData(value: pokerTracker.latestHandPlayer.stack),
             "VPIP" : TextFieldDoubleData(value: pokerTracker.statistics?.VPIP),
@@ -120,7 +140,7 @@ extension PlayerViewModel
             "Late" : TextFieldFloatData(value: sharkScope.statistics?.FinshesLate),
             "Field Beaten" : TextFieldFloatData(value: sharkScope.statistics?.PercentFieldBeaten),
             "Years" : TextFieldFloatData(value: sharkScope.statistics?.YearsPlayed),
-            "Freq." : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays),
+            "Frequency" : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays),
             "Entrants" : TextFieldFloatData(value: sharkScope.statistics?.AvEntrants),
             "Games/Day" : TextFieldFloatData(value: sharkScope.statistics?.AvGamesPerDay),
             "Ability" : TextFieldFloatData(value: sharkScope.statistics?.Ability),
@@ -146,6 +166,11 @@ extension PlayerViewModel
         // Convert for (hardcoded but) swifty sort descriptors (named order descriptors).
         let orderDescriptorsForSortDescriptorKeys: [String:(ascending: (PlayerViewModel, PlayerViewModel) -> Bool, descending: (PlayerViewModel, PlayerViewModel) -> Bool)] =
         [
+            "Seat" :
+            (
+                ascending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.seat < rhs.pokerTracker.latestHandPlayer.seat },
+                descending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.seat >= rhs.pokerTracker.latestHandPlayer.seat }
+            ),
             "Stack" :
             (
                 ascending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.stack < rhs.pokerTracker.latestHandPlayer.stack },
@@ -166,6 +191,81 @@ extension PlayerViewModel
                 ascending: { lhs, rhs in lhs.sharkScope.tables ?? 0 < rhs.sharkScope.tables ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.tables ?? 0 >= rhs.sharkScope.tables ?? 0 }
             ),
+            "Count" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Count ?? 0 < rhs.sharkScope.statistics?.Count ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Count ?? 0 >= rhs.sharkScope.statistics?.Count ?? 0 }
+            ),
+            "Profit" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Profit ?? 0 < rhs.sharkScope.statistics?.Profit ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Profit ?? 0 >= rhs.sharkScope.statistics?.Profit ?? 0 }
+            ),
+            "Stake" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Stake ?? 0 < rhs.sharkScope.statistics?.Stake ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Stake ?? 0 >= rhs.sharkScope.statistics?.Stake ?? 0 }
+            ),
+            "ROI" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvROI ?? 0 < rhs.sharkScope.statistics?.AvROI ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvROI ?? 0 >= rhs.sharkScope.statistics?.AvROI ?? 0 }
+            ),
+            "ITM" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.ITM ?? 0 < rhs.sharkScope.statistics?.ITM ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.ITM ?? 0 >= rhs.sharkScope.statistics?.ITM ?? 0 }
+            ),
+            "Early" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.FinshesEarly ?? 0 < rhs.sharkScope.statistics?.FinshesEarly ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.FinshesEarly ?? 0 >= rhs.sharkScope.statistics?.FinshesEarly ?? 0 }
+            ),
+            "Late" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.FinshesLate ?? 0 < rhs.sharkScope.statistics?.FinshesLate ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.FinshesLate ?? 0 >= rhs.sharkScope.statistics?.FinshesLate ?? 0 }
+            ),
+            "Field Beaten" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 < rhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 >= rhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 }
+            ),
+            "Years" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.YearsPlayed ?? 0 < rhs.sharkScope.statistics?.YearsPlayed ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.YearsPlayed ?? 0 >= rhs.sharkScope.statistics?.YearsPlayed ?? 0 }
+            ),
+            "Frequency" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 < rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 >= rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 }
+            ),
+            "Entrants" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 < rhs.sharkScope.statistics?.AvEntrants ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 >= rhs.sharkScope.statistics?.AvEntrants ?? 0 }
+            ),
+            "Games/Day" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 < rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 >= rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 }
+            ),
+            "Losing" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0 < rhs.sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0 >= rhs.sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0 }
+            ),
+            "Winning" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 < rhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 >= rhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 }
+            ),
+            "Ability" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Ability ?? 0 < rhs.sharkScope.statistics?.Ability ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Ability ?? 0 >= rhs.sharkScope.statistics?.Ability ?? 0 }
+            )
         ]
         
         // Use only the first sort descriptor (for now).
@@ -181,24 +281,5 @@ extension PlayerViewModel
         
         // Determine order.
         return selectedOrderDescriptor(lhs, rhs)
-    }
-}
-
-
-// MARK: - Description
-
-extension PlayerViewModel: CustomStringConvertible
-{
-    
-    
-    var description: String
-    {
-        String(format:
-            "\n%.0f\t%.0f\t%.0f\t%@",
-            pokerTracker.latestHandPlayer.stack,
-            (pokerTracker.statistics?.VPIP ?? 0) * 100,
-            (pokerTracker.statistics?.PFR ?? 0) * 100,
-            pokerTracker.latestHandPlayer.player_name
-        )
     }
 }
