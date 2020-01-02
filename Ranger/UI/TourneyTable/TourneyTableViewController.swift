@@ -94,6 +94,9 @@ class TourneyTableViewController: NSViewController
     
     @objc func tableDidDoubleClick()
     {
+        // Skip header row double click.
+        guard playersTableView.clickedRow > -1 else { return }
+        
         // Fetch SharkScope (gonna push changes back).
         viewModel.fetchSharkScopeStatisticsForPlayer(inRow: playersTableView.clickedRow)
     }

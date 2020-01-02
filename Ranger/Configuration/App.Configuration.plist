@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>isSimulationMode</key>
-	<false/>
+	<true/>
 	<key>simulation</key>
 	<dict>
 		<key>tournamentNumber</key>

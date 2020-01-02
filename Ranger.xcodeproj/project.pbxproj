@@ -50,6 +50,7 @@
 		55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */; };
 		55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C18692239583DC0081B6B7 /* Assets.xcassets */; };
 		55C18696239583DD0081B6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C18694239583DD0081B6B7 /* Main.storyboard */; };
+		55C529E723BD3F1500A6975A /* RangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C529E623BD3F1400A6975A /* RangerTests.swift */; };
 		55C8498623A3309F00452F2F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8498523A3309F00452F2F /* Notes.swift */; };
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
 		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
@@ -66,6 +67,16 @@
 		55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
 		55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55C529E923BD3F1500A6975A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C18683239583D90081B6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55C1868A239583DA0081B6B7;
+			remoteInfo = Ranger;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +127,9 @@
 		55C18695239583DD0081B6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55C18697239583DD0081B6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C18698239583DD0081B6B7 /* Ranger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ranger.entitlements; sourceTree = "<group>"; };
+		55C529E423BD3F1400A6975A /* RangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C529E623BD3F1400A6975A /* RangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerTests.swift; sourceTree = "<group>"; };
+		55C529E823BD3F1500A6975A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C8498523A3309F00452F2F /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		55D4CADD23BB0394001E07E5 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
 		55DB43E423A2DB4D00A7F37F /* RequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCache.swift; sourceTree = "<group>"; };
@@ -138,6 +152,13 @@
 			files = (
 				558D35D6239F28F6006C710D /* XMLCoder in Frameworks */,
 				555EA850239D3A62000B5B62 /* PostgresClientKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C529E123BD3F1400A6975A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +364,7 @@
 			children = (
 				555EA853239D6F19000B5B62 /* CHANGELOG.md */,
 				55C1868D239583DA0081B6B7 /* Ranger */,
+				55C529E523BD3F1400A6975A /* RangerTests */,
 				55C1868C239583DA0081B6B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -351,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				55C1868B239583DA0081B6B7 /* Ranger.app */,
+				55C529E423BD3F1400A6975A /* RangerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,6 +394,15 @@
 				55C18698239583DD0081B6B7 /* Ranger.entitlements */,
 			);
 			path = Ranger;
+			sourceTree = "<group>";
+		};
+		55C529E523BD3F1400A6975A /* RangerTests */ = {
+			isa = PBXGroup;
+			children = (
+				55C529E623BD3F1400A6975A /* RangerTests.swift */,
+				55C529E823BD3F1500A6975A /* Info.plist */,
+			);
+			path = RangerTests;
 			sourceTree = "<group>";
 		};
 		55C8498423A3307D00452F2F /* Notes */ = {
@@ -451,19 +483,41 @@
 			productReference = 55C1868B239583DA0081B6B7 /* Ranger.app */;
 			productType = "com.apple.product-type.application";
 		};
+		55C529E323BD3F1400A6975A /* RangerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C529ED23BD3F1500A6975A /* Build configuration list for PBXNativeTarget "RangerTests" */;
+			buildPhases = (
+				55C529E023BD3F1400A6975A /* Sources */,
+				55C529E123BD3F1400A6975A /* Frameworks */,
+				55C529E223BD3F1400A6975A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55C529EA23BD3F1500A6975A /* PBXTargetDependency */,
+			);
+			name = RangerTests;
+			productName = RangerTests;
+			productReference = 55C529E423BD3F1400A6975A /* RangerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		55C18683239583D90081B6B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Geri Borbás";
 				TargetAttributes = {
 					55C1868A239583DA0081B6B7 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1130;
+					};
+					55C529E323BD3F1400A6975A = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 55C1868A239583DA0081B6B7;
 					};
 				};
 			};
@@ -485,6 +539,7 @@
 			projectRoot = "";
 			targets = (
 				55C1868A239583DA0081B6B7 /* Ranger */,
+				55C529E323BD3F1400A6975A /* RangerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -503,6 +558,13 @@
 				55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C529E223BD3F1400A6975A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +625,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55C529E023BD3F1400A6975A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C529E723BD3F1500A6975A /* RangerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55C529EA23BD3F1500A6975A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55C1868A239583DA0081B6B7 /* Ranger */;
+			targetProxy = 55C529E923BD3F1500A6975A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		55C18694239583DD0081B6B7 /* Main.storyboard */ = {
@@ -697,7 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ranger/Ranger.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = NG36MJV4JP;
@@ -718,7 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ranger/Ranger.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = NG36MJV4JP;
@@ -731,6 +809,55 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.Ranger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		55C529EB23BD3F1500A6975A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NG36MJV4JP;
+				INFOPLIST_FILE = RangerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.RangerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ranger.app/Contents/MacOS/Ranger";
+			};
+			name = Debug;
+		};
+		55C529EC23BD3F1500A6975A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NG36MJV4JP;
+				INFOPLIST_FILE = RangerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.RangerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ranger.app/Contents/MacOS/Ranger";
 			};
 			name = Release;
 		};
@@ -751,6 +878,15 @@
 			buildConfigurations = (
 				55C1869C239583DD0081B6B7 /* Debug */,
 				55C1869D239583DD0081B6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55C529ED23BD3F1500A6975A /* Build configuration list for PBXNativeTarget "RangerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C529EB23BD3F1500A6975A /* Debug */,
+				55C529EC23BD3F1500A6975A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

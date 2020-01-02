@@ -131,3 +131,74 @@ extension PlayerViewModel
     }
 }
 
+
+// MARK: - Sorting
+
+extension PlayerViewModel
+{
+    
+    
+    func isInIncreasingOrder(to rhs: PlayerViewModel, using sortDescriptors: [NSSortDescriptor]) -> Bool
+    {
+        // Shortcut.
+        let lhs = self
+        
+        // Convert for (hardcoded but) swifty sort descriptors (named order descriptors).
+        let orderDescriptorsForSortDescriptorKeys: [String:(ascending: (PlayerViewModel, PlayerViewModel) -> Bool, descending: (PlayerViewModel, PlayerViewModel) -> Bool)] =
+        [
+            "Stack" :
+            (
+                ascending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.stack < rhs.pokerTracker.latestHandPlayer.stack },
+                descending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.stack >= rhs.pokerTracker.latestHandPlayer.stack }
+            ),
+            "VPIP" :
+            (
+                ascending: { lhs, rhs in lhs.pokerTracker.statistics?.VPIP ?? 0 < rhs.pokerTracker.statistics?.VPIP ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker.statistics?.VPIP ?? 0 >= rhs.pokerTracker.statistics?.VPIP ?? 0 }
+            ),
+            "PFR" :
+            (
+            ascending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 < rhs.pokerTracker.statistics?.PFR ?? 0 },
+            descending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 >= rhs.pokerTracker.statistics?.PFR ?? 0 }
+            ),
+            "Tables" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.tables ?? 0 < rhs.sharkScope.tables ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.tables ?? 0 >= rhs.sharkScope.tables ?? 0 }
+            ),
+        ]
+        
+        // Use only the first sort descriptor (for now).
+        guard let firstSortDescriptor = sortDescriptors.first
+        else { return false }
+        
+        // Lookup corresponding order descriptor.
+        guard let eachOrderDescriptor = orderDescriptorsForSortDescriptorKeys[firstSortDescriptor.key ?? ""]
+        else { return false }
+        
+        // Select direction.
+        let selectedOrderDescriptor = firstSortDescriptor.ascending ? eachOrderDescriptor.ascending : eachOrderDescriptor.descending
+        
+        // Determine order.
+        return selectedOrderDescriptor(lhs, rhs)
+    }
+}
+
+
+// MARK: - Description
+
+extension PlayerViewModel: CustomStringConvertible
+{
+    
+    
+    var description: String
+    {
+        String(format:
+            "\n%.0f\t%.0f\t%.0f\t%@",
+            pokerTracker.latestHandPlayer.stack,
+            (pokerTracker.statistics?.VPIP ?? 0) * 100,
+            (pokerTracker.statistics?.PFR ?? 0) * 100,
+            pokerTracker.latestHandPlayer.player_name
+        )
+    }
+}

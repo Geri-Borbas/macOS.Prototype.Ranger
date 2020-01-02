@@ -3,9 +3,21 @@
 
 * Doing
 
-    + Sorting
+    + Tiny fixes
+        + Window should stay open (to be closed manually)   
+        + Update window title
     + Update tourney summary when new blind level is available (from table tracker)
     + Design (table row / cells / color ranges / graphs)
+
+* 1.2.0
+
+    + Sorting
+        + Defined in Interface Builder for actual Table Column
+            + Key only used for identification (not actual keypath of anything)
+            + Actual comparison behaviour is implemented right on `PlayerViewModel.isInIncreasingOrder` (naming will change probably)
+            + Sort after process any new data / also when clicked
+        + Implemented for `Stack`, `VPIP`, `PFR` and `Tables`
+    + Added a test suite target (only for some sorting prototype work for now)
 
 * 1.0.1
 

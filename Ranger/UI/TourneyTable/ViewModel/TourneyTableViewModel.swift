@@ -11,9 +11,8 @@ import SwiftUI
 
 
 class TourneyTableViewModel: NSObject
-    
 {
-    
+ 
     
     // MARK: - Services
     
@@ -26,6 +25,7 @@ class TourneyTableViewModel: NSObject
     /// The poker table this instance is tracking.
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
+    private var handUpdateTickFrequency = 5
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
@@ -34,6 +34,7 @@ class TourneyTableViewModel: NSObject
     // MARK: - UI Data
     
     public var latestProcessedHandNumber: String = ""
+    private var sortDescriptors: [NSSortDescriptor]?
     
     
     // MARK: - Binds
@@ -106,7 +107,7 @@ class TourneyTableViewModel: NSObject
         
         // May offset hands in simulation mode.
         var handOffset = App.configuration.isSimulationMode ? App.configuration.simulation.handOffset : 0
-            handOffset -= tickCount
+            handOffset -= tickCount / handUpdateTickFrequency
             handOffset = max(handOffset, 0)
         
         // Get players of the latest hand tracked by PokerTracker.
@@ -147,8 +148,31 @@ class TourneyTableViewModel: NSObject
         for eachIndex in playerViewModels.indices
         { playerViewModels[eachIndex].pokerTracker.update() }
         
+        // Sort view model using retained sort descriptors (if any).
+        sort(using: self.sortDescriptors)
+        
         // Invoke callback.
         onChange?()
+    }
+    
+    func sort(using sortDescriptors: [NSSortDescriptor]?)
+    {
+        // Only if any (from table descriptors or from previously retained descriptors).
+        guard let sortDescriptors = sortDescriptors
+        else { return }
+        
+        // Retain.
+        self.sortDescriptors = sortDescriptors
+        
+        // Log.
+        print(sortDescriptors)
+        
+        // Sort in place.
+        playerViewModels = playerViewModels.sorted
+        {
+            lhs, rhs -> Bool in
+            lhs.isInIncreasingOrder(to: rhs, using: sortDescriptors)
+        }
     }
     
     
@@ -272,6 +296,13 @@ extension TourneyTableViewModel: NSTableViewDataSource
         { playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!.apply(to: textField) }
         
         return cellView
+    }
+    
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor])
+    {
+        // Sort view model using table sort descriptors.
+        sort(using: tableView.sortDescriptors)
+        tableView.reloadData()
     }
 }
 
