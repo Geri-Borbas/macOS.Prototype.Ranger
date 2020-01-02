@@ -54,8 +54,8 @@ class App: TableTrackerDelegate
         // UI.
         tablesStatusBarItem.stopIndicateTracking()
         
-        // Close window if any.
-        if let tableWindowController = tableWindowController
+        // Close window if any (if opted-in).
+        if let tableWindowController = tableWindowController, App.configuration.autoCloseTableWindow
         { tableWindowController.close() }
     }
     

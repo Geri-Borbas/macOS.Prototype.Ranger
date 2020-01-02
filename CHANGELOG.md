@@ -3,11 +3,17 @@
 
 * Doing
 
-    + Tiny fixes
-        + Window should stay open (to be closed manually)   
-        + Update window title
-    + Update tourney summary when new blind level is available (from table tracker)
     + Design (table row / cells / color ranges / graphs)
+
+* 1.2.4
+
+    + Update summary / table when blinds change
+    + Update window title along table info
+    + Some design (Font size / color)
+
+* 1.2.3
+
+    + Automatic closing of window is disabled by default (can be opted-in via configuration)   
 
 * 1.2.2
 

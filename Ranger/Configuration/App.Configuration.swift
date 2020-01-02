@@ -30,6 +30,10 @@ extension App
         /// hands in time instead of using the latest hand of the tourney by default.
         var simulation: Simulation
         
+        /// Automatically close table window once the tourney is over.
+        /// Opted-out by default, window has to be closed manually.
+        var autoCloseTableWindow: Bool = false
+        
         
         struct Simulation: Decodable
         {

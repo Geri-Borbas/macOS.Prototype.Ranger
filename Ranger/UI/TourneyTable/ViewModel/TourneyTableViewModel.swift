@@ -25,7 +25,8 @@ class TourneyTableViewModel: NSObject
     /// The poker table this instance is tracking.
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
-    private var handUpdateTickFrequency = 2
+    private var tickTime = 0.5 // 1.0
+    private var handUpdateTickFrequency = 1
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
@@ -34,6 +35,7 @@ class TourneyTableViewModel: NSObject
     // MARK: - UI Data
     
     public var latestProcessedHandNumber: String = ""
+    public var latestBigBlind: Int = 0
     private var sortDescriptors: [NSSortDescriptor]?
     private var selectedPlayerViewModel: PlayerViewModel?
     
@@ -52,7 +54,7 @@ class TourneyTableViewModel: NSObject
         self.onChange = onChange
         
         // Schedule timer.
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
+        Timer.scheduledTimer(withTimeInterval: tickTime, repeats: true)
         { _ in self.tick() }
     }
     
@@ -114,12 +116,17 @@ class TourneyTableViewModel: NSObject
         // Get players of the latest hand tracked by PokerTracker.
         let latestHandPlayers = try pokerTracker.fetch(LatestHandPlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
         
-        // Only if new hands any.
-        guard
-            let firstPlayer = latestHandPlayers.first,
-                firstPlayer.hand_no != latestProcessedHandNumber
-        else
-        { return }
+        // Only if players any.
+        guard let firstPlayer = latestHandPlayers.first
+        else { return }
+        
+        // Look for changes.
+        let isNewHand = firstPlayer.hand_no != latestProcessedHandNumber
+        let isNewBlindLevel = tableInfo.bigBlind != latestBigBlind
+        let isSomethingChanged = isNewHand || isNewBlindLevel
+        
+        // Only on change.
+        guard isSomethingChanged else { return }
         
         // Track.
         latestProcessedHandNumber = firstPlayer.hand_no

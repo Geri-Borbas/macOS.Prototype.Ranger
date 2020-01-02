@@ -71,6 +71,9 @@ class TourneyTableViewController: NSViewController
         guard let window = self.view.window
         else { return }
         
+        // Update blinds.
+        window.title = tableWindowInfo.name
+        
         // Align.
         window.setFrame(
             NSRect(

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>isSimulationMode</key>
-	<true/>
+	<false/>
 	<key>simulation</key>
 	<dict>
 		<key>tournamentNumber</key>
@@ -17,5 +17,7 @@
 		<key>ante</key>
 		<integer>3</integer>
 	</dict>
+	<key>autoCloseTableWindow</key>
+	<false/>
 </dict>
 </plist>
