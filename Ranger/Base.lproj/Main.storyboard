@@ -845,12 +845,12 @@
                                                                             </connections>
                                                                         </textField>
                                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="2X6-WL-6u3">
-                                                                            <rect key="frame" x="40" y="0.0" width="60" height="17"/>
+                                                                            <rect key="frame" x="40" y="0.0" width="55" height="17"/>
                                                                             <subviews>
-                                                                                <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="z2e-UI-lND">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="4"/>
+                                                                                <box misplaced="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="z2e-UI-lND">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="4"/>
                                                                                     <view key="contentView" id="CNf-hf-GYm">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="4"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="4"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     </view>
                                                                                     <constraints>
@@ -885,14 +885,14 @@
                                                                         <constraint firstItem="2X6-WL-6u3" firstAttribute="top" secondItem="w0g-sY-g4u" secondAttribute="top" id="d0B-x6-9Pt"/>
                                                                         <constraint firstAttribute="trailing" secondItem="QUF-nx-nd9" secondAttribute="trailing" constant="2" id="d68-Zc-vfT"/>
                                                                         <constraint firstItem="QUF-nx-nd9" firstAttribute="top" secondItem="w0g-sY-g4u" secondAttribute="top" constant="1" id="kSj-ZD-Qkc"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="2X6-WL-6u3" secondAttribute="trailing" id="kmA-nc-PeF"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="2X6-WL-6u3" secondAttribute="trailing" constant="5" id="kmA-nc-PeF"/>
                                                                         <constraint firstAttribute="bottom" secondItem="2X6-WL-6u3" secondAttribute="bottom" id="pzj-4v-Lx3"/>
                                                                         <constraint firstItem="2X6-WL-6u3" firstAttribute="leading" secondItem="6Kb-mA-crY" secondAttribute="trailing" id="tA6-dr-SNi"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="box" destination="z2e-UI-lND" id="0w6-Xd-ejs"/>
                                                                         <outlet property="boxWidthConstraint" destination="REc-hE-KwE" id="7Yg-79-uA5"/>
                                                                         <outlet property="layoutParameters" destination="ras-3K-Q2y" id="F5T-vh-sbn"/>
+                                                                        <outlet property="percentBar" destination="z2e-UI-lND" id="0w6-Xd-ejs"/>
                                                                         <outlet property="textField" destination="QUF-nx-nd9" id="DAc-N4-DgY"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -1242,9 +1242,9 @@
                                                                         <constraint firstItem="huW-cI-xR9" firstAttribute="top" secondItem="ari-l1-KgD" secondAttribute="bottom" constant="1" id="vwi-vM-2Tm"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="box" destination="huW-cI-xR9" id="aVg-hR-QjC"/>
                                                                         <outlet property="boxWidthConstraint" destination="n0C-OU-IjQ" id="yXX-iu-v0g"/>
                                                                         <outlet property="layoutParameters" destination="nED-fw-zp8" id="qfE-NJ-Sbf"/>
+                                                                        <outlet property="percentBar" destination="huW-cI-xR9" id="aVg-hR-QjC"/>
                                                                         <outlet property="textField" destination="ari-l1-KgD" id="MiP-gj-daN"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -1301,9 +1301,9 @@
                                                                         <constraint firstItem="Dcm-Wk-dys" firstAttribute="top" secondItem="4wj-z5-XnX" secondAttribute="bottom" constant="1" id="wcL-tu-iEb"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="box" destination="Dcm-Wk-dys" id="Ah1-IB-aKR"/>
                                                                         <outlet property="boxWidthConstraint" destination="3Mi-XO-5SU" id="LXC-J4-jma"/>
                                                                         <outlet property="layoutParameters" destination="nED-fw-zp8" id="kuJ-JY-ktt"/>
+                                                                        <outlet property="percentBar" destination="Dcm-Wk-dys" id="Ah1-IB-aKR"/>
                                                                         <outlet property="textField" destination="4wj-z5-XnX" id="Xur-Lv-5Ui"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -1360,9 +1360,9 @@
                                                                         <constraint firstItem="bWZ-Ie-bJC" firstAttribute="leading" secondItem="Rsf-gQ-Xqd" secondAttribute="leading" constant="2" id="u1h-LA-der"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="box" destination="hyu-eL-dD2" id="tRX-8C-AjN"/>
                                                                         <outlet property="boxWidthConstraint" destination="l0F-ZB-w0Z" id="g86-3B-yqz"/>
                                                                         <outlet property="layoutParameters" destination="bV3-5y-jn6" id="Y6b-LX-97i"/>
+                                                                        <outlet property="percentBar" destination="hyu-eL-dD2" id="tRX-8C-AjN"/>
                                                                         <outlet property="textField" destination="bWZ-Ie-bJC" id="L5O-7b-R1Y"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -1568,9 +1568,9 @@
                                                                         <constraint firstItem="AZb-pJ-M9Y" firstAttribute="centerY" secondItem="90L-30-1ry" secondAttribute="centerY" id="dgx-fb-ngi"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="box" destination="UZF-QZ-jAj" id="WQ6-oO-1mt"/>
                                                                         <outlet property="boxWidthConstraint" destination="Lba-Vc-kal" id="a4n-Vg-3V3"/>
                                                                         <outlet property="layoutParameters" destination="nED-fw-zp8" id="xQc-uR-kkl"/>
+                                                                        <outlet property="percentBar" destination="UZF-QZ-jAj" id="WQ6-oO-1mt"/>
                                                                         <outlet property="textField" destination="AZb-pJ-M9Y" id="Ioe-hU-NBr"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -1628,9 +1628,9 @@
                                                                         <constraint firstItem="aHL-gI-q1l" firstAttribute="leading" secondItem="c5m-ev-Mi8" secondAttribute="leading" id="v5j-G3-CuM"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="box" destination="aHL-gI-q1l" id="6uI-gD-13U"/>
                                                                         <outlet property="boxWidthConstraint" destination="Q1P-iW-F0C" id="Lt4-fq-qvt"/>
                                                                         <outlet property="layoutParameters" destination="nED-fw-zp8" id="hKr-Vw-W6j"/>
+                                                                        <outlet property="percentBar" destination="aHL-gI-q1l" id="6uI-gD-13U"/>
                                                                         <outlet property="textField" destination="Jsx-JO-w7W" id="am5-TG-mhk"/>
                                                                     </connections>
                                                                 </tableCellView>

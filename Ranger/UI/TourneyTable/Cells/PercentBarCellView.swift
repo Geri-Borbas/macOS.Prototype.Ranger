@@ -14,7 +14,7 @@ class PercentBarCellView: PlayerViewModelCellView
 {
 
     
-    @IBOutlet weak var box: NSBox!
+    @IBOutlet weak var percentBar: NSBox!
     @IBOutlet weak var boxWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var layoutParameters: LayoutParameters?
     
@@ -31,6 +31,22 @@ class PercentBarCellView: PlayerViewModelCellView
         // Apply text.
         textFieldData.apply(to: textField)
         
+        // Percent bar.
+        layoutPercentBar()
+        
+        // Don't clip text field.
+        textField.wantsLayer = true
+        textField.layer?.masksToBounds = false
+    }
+    
+    override func layout()
+    {
+        super.layout()
+        layoutPercentBar()
+    }
+    
+    func layoutPercentBar()
+    {
         // Get metrics.
         var percent: Float = 1.0
         if let parameters = layoutParameters
@@ -53,12 +69,6 @@ class PercentBarCellView: PlayerViewModelCellView
         }
                 
         // Layout.
-        let boxParent: NSView = self
-        // if (box.superview != self) { boxParent = box.superview! }
-        boxWidthConstraint.constant = boxParent.frame.width * CGFloat(percent)
-        
-        // Don't clip.
-        textField.wantsLayer = true
-        textField.layer?.masksToBounds = false
+        boxWidthConstraint.constant = (percentBar.superview?.frame.width ?? 0) * CGFloat(percent)
     }
 }
