@@ -42,6 +42,7 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Binds
     
+    @IBOutlet weak var stackLayoutPatameters: LayoutParameters!
     private var onChange: (() -> Void)?
     
     
@@ -155,6 +156,9 @@ class TourneyTableViewModel: NSObject
         // Get latest PokerTracker statistics.
         for eachIndex in playerViewModels.indices
         { playerViewModels[eachIndex].pokerTracker.update() }
+        
+        // Track largest stack.
+        stackLayoutPatameters.maximum = NSNumber(value: playerViewModels.reduce(0, { max($0, $1.pokerTracker.latestHandPlayer.stack) }))
         
         // Sort view model using retained sort descriptors (if any).
         sort(using: self.sortDescriptors)
@@ -303,6 +307,9 @@ extension TourneyTableViewModel: NSTableViewDataSource
         if (self.selectedPlayerViewModel == playerViewModel)
         { tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false) }
         
+        // Gray selection.
+        tableView.rowView(atRow: row, makeIfNecessary: false)?.isEmphasized = false
+        
         return cellView
     }
     
@@ -333,8 +340,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         self.selectedPlayerViewModel = playerViewModel
         
         // Gray selection.
-        var rowView = tableView.rowView(atRow: row, makeIfNecessary: false)
-            rowView?.isEmphasized = false
+        tableView.rowView(atRow: row, makeIfNecessary: false)?.isEmphasized = false
         
         return true
     }

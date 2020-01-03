@@ -5,6 +5,11 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.3.2
+
+    + Row Selection color
+    + Hook up dynamic Stack Layout Properties maximum
+
 * 1.3.1
 
     + Window title parsing / Table row selection tweaks
