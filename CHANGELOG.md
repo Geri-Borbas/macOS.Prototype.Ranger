@@ -5,6 +5,11 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.2.8
+
+    + Added `LayoutParameters` to manage bar percentage values
+    + More cell design
+
 * 1.2.7
 
     + Tweaked percentage layout constraint

@@ -42,6 +42,7 @@
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */; };
+		559F5F3623BEBA060070F2D6 /* LayoutParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* LayoutParameters.swift */; };
 		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
 		55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */; };
 		55A9AC5A23BE159A00179FA0 /* PlayerViewModelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */; };
@@ -119,6 +120,7 @@
 		5592684623A9CA1500045F89 /* TimelineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRequest.swift; sourceTree = "<group>"; };
 		5592684723A9CA1500045F89 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		559F5F3523BEBA060070F2D6 /* LayoutParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutParameters.swift; sourceTree = "<group>"; };
 		55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasicPlayerStatisticsQuery.sql; sourceTree = "<group>"; };
 		55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentBarCellView.swift; sourceTree = "<group>"; };
 		55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModelCellView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			children = (
 				55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */,
 				55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */,
+				559F5F3523BEBA060070F2D6 /* LayoutParameters.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				5521A554239DD170000D1AD1 /* SharkScope.swift in Sources */,
 				555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */,
 				55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */,
+				559F5F3623BEBA060070F2D6 /* LayoutParameters.swift in Sources */,
 				55ED3CD423A54B0C00754763 /* Query.swift in Sources */,
 				5521A55F239DF408000D1AD1 /* Entry.swift in Sources */,
 				55840BFF23A9C082000B06FF /* RootResponse.swift in Sources */,

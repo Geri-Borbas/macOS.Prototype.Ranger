@@ -26,7 +26,7 @@ class TourneyTableViewModel: NSObject
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
     private var tickTime = 1.0
-    private var handUpdateTickFrequency = 10
+    private var handUpdateTickFrequency = 100
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
