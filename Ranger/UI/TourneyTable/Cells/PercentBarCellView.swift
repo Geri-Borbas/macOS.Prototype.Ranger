@@ -32,28 +32,30 @@ class PercentBarCellView: PlayerViewModelCellView
         textFieldData.apply(to: textField)
         
         // Get metrics.
-        var adjustedPercent: Float = 0.0
+        var percent: Float = 1.0
         if let parameters = layoutParameters
         {
+            var value: Float = 0.0
+            
             // Float.
             if let textFieldFloatData = self.textFieldData as? TextFieldFloatData
-            { adjustedPercent = textFieldFloatData.floatValue ?? 0.0 }
+            { value = textFieldFloatData.floatValue ?? 0.0 }
             
             // Int.
             if let textFieldIntData = self.textFieldData as? TextFieldIntData
-            { adjustedPercent = Float(textFieldIntData.intValue ?? 0) }
+            { value = Float(textFieldIntData.intValue ?? 0) }
             
-            // Int.
+            // Double.
             if let textFieldDoubleData = self.textFieldData as? TextFieldDoubleData
-            { adjustedPercent = Float(textFieldDoubleData.doubleValue ?? 0) }
+            { value = Float(textFieldDoubleData.doubleValue ?? 0) }
             
-            adjustedPercent = parameters.adjusted(value: adjustedPercent)
+            percent = parameters.percent(value: value)
         }
                 
         // Layout.
-        var boxParent: NSView = self
+        let boxParent: NSView = self
         // if (box.superview != self) { boxParent = box.superview! }
-        boxWidthConstraint.constant = boxParent.frame.width * CGFloat(adjustedPercent)
+        boxWidthConstraint.constant = boxParent.frame.width * CGFloat(percent)
         
         // Don't clip.
         textField.wantsLayer = true

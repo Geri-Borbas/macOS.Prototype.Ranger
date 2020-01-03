@@ -1754,37 +1754,9 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="nED-fw-zp8" userLabel="Losing / Winning LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="multiplier">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <integer key="value" value="100"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
-                <customObject id="bV3-5y-jn6" userLabel="Field Beaten LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="multiplier">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <integer key="value" value="35"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <integer key="value" value="65"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
+                <customObject id="1rj-Mk-7PR" customClass="TourneyTableViewModel" customModule="Ranger" customModuleProvider="target"/>
                 <customObject id="ras-3K-Q2y" userLabel="Stack LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="multiplier">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
                             <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
@@ -1793,7 +1765,36 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="1rj-Mk-7PR" customClass="TourneyTableViewModel" customModule="Ranger" customModuleProvider="target"/>
+                <customObject id="pYp-v7-s61" userLabel="Early / Late LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="bV3-5y-jn6" userLabel="Field Beaten LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <integer key="value" value="35"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <integer key="value" value="65"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="nED-fw-zp8" userLabel="Losing / Winning LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
                 <numberFormatter formatterBehavior="custom10_4" lenient="YES" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," nilSymbol="-" id="ADi-UA-EbU" userLabel="###,###,### Number Formatter">
                     <real key="minimum" value="0.0"/>
                 </numberFormatter>
@@ -1828,19 +1829,6 @@
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="413-eU-RPa" userLabel="## (%) Number Formatter">
                     <integer key="multiplier" value="100"/>
                 </numberFormatter>
-                <customObject id="pYp-v7-s61" userLabel="Early / Late LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="multiplier">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <integer key="value" value="30"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="294" y="671.5"/>
         </scene>

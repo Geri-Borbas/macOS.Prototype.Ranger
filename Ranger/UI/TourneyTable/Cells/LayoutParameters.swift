@@ -13,35 +13,37 @@ class LayoutParameters: NSObject
 {
     
     
-    @objc dynamic var multiplier: NSNumber = 1.0 // 1
-    @objc dynamic var minimum: NSNumber = 0.0 // 0
-    @objc dynamic var maximum: NSNumber = 1.0 // 1500
+    @objc dynamic var minimum: NSNumber = 0.0
+    @objc dynamic var maximum: NSNumber = 0.0
+    
+    private let log: Bool = false
     
     
-    func adjusted(value: Float) -> Float
+    func percent(value: Float) -> Float
     {
         // Only if adjustments any.
         if (
-            multiplier == 1.0 &&
             minimum == 0.0 &&
-            maximum == 1.0
+            maximum == 0.0
             )
         { return value }
         
-        // 1100
-        let multipliedValue = (value * multiplier.floatValue) // 1100
-        let size = maximum.floatValue - minimum.floatValue // 1500
-        let offsetMultipliedValue = max(multipliedValue - minimum.floatValue, 0.0) // 1100
-        let adjustedValue = offsetMultipliedValue / size // 1100 / 1500
-        let cappedValue = min(adjustedValue, 1.0) // 0.7333333333
+        // Calculate.
+        let size = maximum.floatValue - minimum.floatValue
+        let offsetValue = value - minimum.floatValue
+        let percent = offsetValue / size
+        let cappedPercent = max(min(percent, 1.0), 0.0)
         
-//        print("value: \(value)")
-//        print("multipliedValue: \(multipliedValue)")
-//        print("size: \(size)")
-//        print("offsetMultipliedValue: \(offsetMultipliedValue)")
-//        print("adjustedValue: \(adjustedValue)")
-//        print("cappedValue =: \(cappedValue)")
+        // Log.
+        if (log)
+        {
+            print("value: \(value)")
+            print("size: \(size)")
+            print("offsetValue: \(offsetValue)")
+            print("percent: \(percent)")
+            print("cappedPercent: \(cappedPercent)")
+        }
         
-        return cappedValue // 0.25
+        return cappedPercent
     }
 }
