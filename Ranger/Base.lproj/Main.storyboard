@@ -1209,8 +1209,9 @@
                                                                     <rect key="frame" x="671" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ari-l1-KgD">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="ari-l1-KgD">
                                                                             <rect key="frame" x="0.0" y="5" width="50" height="11"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="10,2﹪" usesSingleLineMode="YES" id="IfH-vf-WcK">
                                                                                 <font key="font" metaFont="miniSystemBold"/>
                                                                                 <color key="textColor" red="1" green="0.62352941176470589" blue="0.039215686274509803" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1234,16 +1235,12 @@
                                                                         </box>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="ari-l1-KgD" firstAttribute="leading" secondItem="7of-yl-RT7" secondAttribute="leading" constant="2" id="1cI-Lt-tQU"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="huW-cI-xR9" secondAttribute="bottom" id="FLN-wc-StK"/>
-                                                                        <constraint firstItem="huW-cI-xR9" firstAttribute="trailing" secondItem="7of-yl-RT7" secondAttribute="trailing" id="Pdu-nM-kaD"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="ari-l1-KgD" secondAttribute="trailing" constant="2" id="Xge-uE-3lW"/>
-                                                                        <constraint firstItem="ari-l1-KgD" firstAttribute="top" secondItem="7of-yl-RT7" secondAttribute="top" constant="1" id="e4y-xk-6X0"/>
-                                                                        <constraint firstItem="huW-cI-xR9" firstAttribute="top" secondItem="ari-l1-KgD" secondAttribute="bottom" constant="1" id="vwi-vM-2Tm"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="huW-cI-xR9" secondAttribute="trailing" id="QY7-GH-msN"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="huW-cI-xR9" secondAttribute="bottom" id="U8g-Nt-FzE"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="boxWidthConstraint" destination="n0C-OU-IjQ" id="yXX-iu-v0g"/>
-                                                                        <outlet property="layoutParameters" destination="nED-fw-zp8" id="qfE-NJ-Sbf"/>
+                                                                        <outlet property="layoutParameters" destination="pYp-v7-s61" id="FlZ-Lg-Kht"/>
                                                                         <outlet property="percentBar" destination="huW-cI-xR9" id="aVg-hR-QjC"/>
                                                                         <outlet property="textField" destination="ari-l1-KgD" id="MiP-gj-daN"/>
                                                                     </connections>
@@ -1268,8 +1265,9 @@
                                                                     <rect key="frame" x="722" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4wj-z5-XnX">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="4wj-z5-XnX">
                                                                             <rect key="frame" x="0.0" y="5" width="50" height="11"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="15,4﹪" usesSingleLineMode="YES" id="vFs-3w-U5Y">
                                                                                 <font key="font" metaFont="miniSystemBold"/>
                                                                                 <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1293,16 +1291,12 @@
                                                                         </box>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="4wj-z5-XnX" secondAttribute="trailing" constant="2" id="Dsq-en-wTu"/>
-                                                                        <constraint firstItem="4wj-z5-XnX" firstAttribute="leading" secondItem="oQv-EC-S3L" secondAttribute="leading" constant="2" id="GI3-t3-ZEU"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="Dcm-Wk-dys" secondAttribute="bottom" id="PnY-eI-UDz"/>
-                                                                        <constraint firstItem="Dcm-Wk-dys" firstAttribute="leading" secondItem="oQv-EC-S3L" secondAttribute="leading" id="sdY-hb-I2R"/>
-                                                                        <constraint firstItem="4wj-z5-XnX" firstAttribute="top" secondItem="oQv-EC-S3L" secondAttribute="top" constant="1" id="t54-Lg-Vlu"/>
-                                                                        <constraint firstItem="Dcm-Wk-dys" firstAttribute="top" secondItem="4wj-z5-XnX" secondAttribute="bottom" constant="1" id="wcL-tu-iEb"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Dcm-Wk-dys" secondAttribute="bottom" id="CVq-Rf-RHh"/>
+                                                                        <constraint firstItem="Dcm-Wk-dys" firstAttribute="leading" secondItem="oQv-EC-S3L" secondAttribute="leading" id="Zp8-4L-HYo"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="boxWidthConstraint" destination="3Mi-XO-5SU" id="LXC-J4-jma"/>
-                                                                        <outlet property="layoutParameters" destination="nED-fw-zp8" id="kuJ-JY-ktt"/>
+                                                                        <outlet property="layoutParameters" destination="pYp-v7-s61" id="vuK-8H-Z4t"/>
                                                                         <outlet property="percentBar" destination="Dcm-Wk-dys" id="Ah1-IB-aKR"/>
                                                                         <outlet property="textField" destination="4wj-z5-XnX" id="Xur-Lv-5Ui"/>
                                                                     </connections>
