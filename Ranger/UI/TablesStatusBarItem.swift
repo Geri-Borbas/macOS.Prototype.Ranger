@@ -53,7 +53,7 @@ class TablesStatusBarItem
     func stopIndicateTracking()
     {
         menu.removeAllItems()
-        menu.addItem(NSMenuItem(title: "No windows to track.", action: nil, keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "No tables to track", action: nil, keyEquivalent: ""))
     }
 
     @objc func menuItemDidClick(menuItem: NSMenuItem)

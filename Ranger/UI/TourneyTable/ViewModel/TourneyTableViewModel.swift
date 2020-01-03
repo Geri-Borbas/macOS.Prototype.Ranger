@@ -332,6 +332,10 @@ extension TourneyTableViewModel: NSTableViewDelegate
         // Retain selection.
         self.selectedPlayerViewModel = playerViewModel
         
+        // Gray selection.
+        var rowView = tableView.rowView(atRow: row, makeIfNecessary: false)
+            rowView?.isEmphasized = false
+        
         return true
     }
     

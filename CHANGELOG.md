@@ -5,6 +5,10 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.3.1
+
+    + Window title parsing / Table row selection tweaks
+
 * 1.3.0
 
     + Cell desig for major statistics / Layout constraint cleanup
