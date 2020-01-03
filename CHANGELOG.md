@@ -5,6 +5,10 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.3.0
+
+    + Cell desig for major statistics / Layout constraint cleanup
+
 * 1.2.8 - 1.2.83
 
     + Added `LayoutParameters` to manage bar percentage values
