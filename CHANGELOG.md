@@ -3,11 +3,13 @@
 
 * Doing
 
+    + SharkScope
+        + Field beaten graph (model JSON, custom drawing)
+
 * Features
 
     + SharkScope
         + Clear tables cache / Clear sharkscope cache
-        + Field beaten graph (model JSON, custom drawing)
         + Profit graph (?)
     + PokerTracker
         + Session stats / Lifetime stats

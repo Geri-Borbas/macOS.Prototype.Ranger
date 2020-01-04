@@ -19,12 +19,13 @@ struct Statistics: Decodable, Equatable
 
     let displayCurrency: String
     let Statistic: [Statistic]
-    // StatisticalDataSet
+    let StatisticalDataSet: [StatisticalDataSet]
     // Timeline
     
     /// `Statistic.value` / `Statistic.authorized` index keyed by `Statistic.id`.
     private let statisticValuesByIds: [String:String]
     private let statisticAuthorizationByIds: [String:Bool]
+    private let byPositionPercentage: GraphData
 
     
     struct Statistic: Decodable, Equatable
@@ -51,16 +52,75 @@ struct Statistics: Decodable, Equatable
     }
     
     
+    struct StatisticalDataSet: Decodable, Equatable
+    {
+
+
+        let id: String
+        let Data: [Data]
+        
+        
+        struct Data: Decodable, Equatable
+        {
+
+
+            let x: String
+            let Y: [Y]
+            
+            
+            struct Y: Decodable, Equatable
+            {
+
+
+                let id: String
+                let value: String
+            }
+        }
+    }
+    
+    
+
+    struct GraphData: Decodable, Equatable
+    {
+                
+        
+        let dataPoints: [DataPoint]
+        
+        
+        struct DataPoint: Decodable, Equatable
+        {
+            
+            
+            let x: Double
+            let y: Double
+        }
+        
+        init(from statisticalDataSet: StatisticalDataSet?)
+        {
+            dataPoints = []
+            
+            guard let statisticalDataSet = statisticalDataSet
+            else { return }
+        }
+    }
+    
+    
+    
     init(from decoder: Decoder) throws
     {
         // Default(ish) implementation.
         let container = try decoder.container(keyedBy: DynamicCodingKey.self)
         self.displayCurrency = try container.decode(String.self, forKey: DynamicCodingKey(stringValue: "displayCurrency")!)
         self.Statistic = try container.decode([StatisticType].self, forKey: DynamicCodingKey(stringValue: "Statistic")!)
+        self.StatisticalDataSet = try container.decode([Statistics.StatisticalDataSet].self, forKey: DynamicCodingKey(stringValue: "StatisticalDataSet")!)
         
         // Create index for Statistics Accessors below.
-        statisticValuesByIds = Dictionary(uniqueKeysWithValues: self.Statistic.map{ ($0.id, $0.value) })
-        statisticAuthorizationByIds = Dictionary(uniqueKeysWithValues: self.Statistic.map{ ($0.id, $0.authorized?.value ?? true) })
+        self.statisticValuesByIds = Dictionary(uniqueKeysWithValues: self.Statistic.map{ ($0.id, $0.value) })
+        self.statisticAuthorizationByIds = Dictionary(uniqueKeysWithValues: self.Statistic.map{ ($0.id, $0.authorized?.value ?? true) })
+        
+        // Extract "ByPositionPercentage".
+        let byPositionPercentageDataSet = self.StatisticalDataSet.filter{ $0.id == "ByPositionPercentage" }.first
+        self.byPositionPercentage = GraphData(from: byPositionPercentageDataSet)
     }
     
     public func isAuthorized(statistic: String) -> Bool
