@@ -36,7 +36,7 @@ struct PlayerSummaryResponse: Response, Equatable
         {
 
 
-            let Filter: String
+            // let Filter: String
             let Player: Player
             
 

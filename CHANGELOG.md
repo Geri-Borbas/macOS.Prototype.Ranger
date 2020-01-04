@@ -3,12 +3,28 @@
 
 * Doing
 
-    + Design (color ranges / graphs)
+    + VPIP / PFR
+
+* Features
+
+    + SharkScope
+        + Clear tables cache / Clear sharkscope cache
+        + Profit / Finish positions graph (?)
+    + PokerTracker
+        + Session stats / Lifetime stats
+    + Filters
+        + Last one year
+        + Only sit and gos
+        + Only this type of tourney (entrants, stake) 
+
+* 1.3.5
+
+    + Cell design / `ColorRanges`
 
 * 1.3.4
 
     + More cell design
-    + Fade row is stack is zero
+    + Fade row when stack is zero
 
 * 1.3.3
 

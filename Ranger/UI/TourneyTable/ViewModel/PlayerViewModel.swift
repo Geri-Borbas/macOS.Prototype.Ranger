@@ -131,9 +131,6 @@ extension PlayerViewModel
             "VPIP" : TextFieldDoubleData(value: pokerTracker.statistics?.VPIP),
             "PFR" : TextFieldDoubleData(value: pokerTracker.statistics?.PFR),
             "Tables" : TextFieldIntData(value: sharkScope.tables),
-            "Count" : TextFieldFloatData(value: sharkScope.statistics?.Count),
-            "Profit" : TextFieldFloatData(value: sharkScope.statistics?.Profit),
-            "Stake" : TextFieldFloatData(value: sharkScope.statistics?.AvStake),
             "ROI" : TextFieldFloatData(value: sharkScope.statistics?.AvROI),
             "ITM" : TextFieldFloatData(value: sharkScope.statistics?.ITM),
             "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
@@ -141,11 +138,14 @@ extension PlayerViewModel
             "Field Beaten" : TextFieldFloatData(value: sharkScope.statistics?.PercentFieldBeaten),
             "Years" : TextFieldFloatData(value: sharkScope.statistics?.YearsPlayed),
             "Frequency" : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays),
-            "Entrants" : TextFieldFloatData(value: sharkScope.statistics?.AvEntrants),
             "Games/Day" : TextFieldFloatData(value: sharkScope.statistics?.AvGamesPerDay),
-            "Ability" : TextFieldFloatData(value: sharkScope.statistics?.Ability),
             "Losing" : TextFieldFloatData(value: sharkScope.statistics?.LosingDaysWithBreakEvenPercentage),
             "Winning" : TextFieldFloatData(value: sharkScope.statistics?.WinningDaysWithBreakEvenPercentage),
+            "Count" : TextFieldFloatData(value: sharkScope.statistics?.Count),
+            "Profit" : TextFieldFloatData(value: sharkScope.statistics?.Profit),
+            "Stake" : TextFieldFloatData(value: sharkScope.statistics?.AvStake),
+            "Entrants" : TextFieldFloatData(value: sharkScope.statistics?.AvEntrants),
+            "Ability" : TextFieldFloatData(value: sharkScope.statistics?.Ability),
         ]
         return dict
     }
@@ -191,21 +191,6 @@ extension PlayerViewModel
                 ascending: { lhs, rhs in lhs.sharkScope.tables ?? 0 < rhs.sharkScope.tables ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.tables ?? 0 >= rhs.sharkScope.tables ?? 0 }
             ),
-            "Count" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Count ?? 0 < rhs.sharkScope.statistics?.Count ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.Count ?? 0 >= rhs.sharkScope.statistics?.Count ?? 0 }
-            ),
-            "Profit" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Profit ?? 0 < rhs.sharkScope.statistics?.Profit ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.Profit ?? 0 >= rhs.sharkScope.statistics?.Profit ?? 0 }
-            ),
-            "Stake" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Stake ?? 0 < rhs.sharkScope.statistics?.Stake ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.Stake ?? 0 >= rhs.sharkScope.statistics?.Stake ?? 0 }
-            ),
             "ROI" :
             (
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvROI ?? 0 < rhs.sharkScope.statistics?.AvROI ?? 0 },
@@ -241,11 +226,6 @@ extension PlayerViewModel
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 < rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 >= rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 }
             ),
-            "Entrants" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 < rhs.sharkScope.statistics?.AvEntrants ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 >= rhs.sharkScope.statistics?.AvEntrants ?? 0 }
-            ),
             "Games/Day" :
             (
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 < rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 },
@@ -260,6 +240,26 @@ extension PlayerViewModel
             (
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 < rhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 >= rhs.sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0 }
+            ),
+            "Count" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Count ?? 0 < rhs.sharkScope.statistics?.Count ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Count ?? 0 >= rhs.sharkScope.statistics?.Count ?? 0 }
+            ),
+            "Profit" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Profit ?? 0 < rhs.sharkScope.statistics?.Profit ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Profit ?? 0 >= rhs.sharkScope.statistics?.Profit ?? 0 }
+            ),
+            "Stake" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.Stake ?? 0 < rhs.sharkScope.statistics?.Stake ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.Stake ?? 0 >= rhs.sharkScope.statistics?.Stake ?? 0 }
+            ),
+            "Entrants" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 < rhs.sharkScope.statistics?.AvEntrants ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 >= rhs.sharkScope.statistics?.AvEntrants ?? 0 }
             ),
             "Ability" :
             (

@@ -42,7 +42,7 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Binds
     
-    @IBOutlet weak var stackLayoutParameters: LayoutParameters!
+    @IBOutlet weak var stackLayoutParameters: PercentProvider!
     private var onChange: (() -> Void)?
     
     

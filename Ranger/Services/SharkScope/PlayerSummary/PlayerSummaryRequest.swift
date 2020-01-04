@@ -23,6 +23,10 @@ struct PlayerSummaryRequest: Request
     let network: String
     let player: String
     var path: String { "networks/\(network)/players/\(player)" }
-    var parameters: KeyValuePairs<String, String> { [:] }
+    var parameters: KeyValuePairs<String, String>
+    {
+        // TODO: Persist filter settings per player.
+        (player == "Borbas.Geri") ? [ "filter" : "Date:1Y" ] : [:]
+    }
     var useCache: Bool = true
 }

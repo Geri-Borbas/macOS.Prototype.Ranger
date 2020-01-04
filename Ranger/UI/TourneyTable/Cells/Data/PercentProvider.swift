@@ -9,7 +9,7 @@
 import Cocoa
 
 
-class LayoutParameters: NSObject
+class PercentProvider: NSObject
 {
     
     
