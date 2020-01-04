@@ -7,13 +7,20 @@
 
     + SharkScope
         + Clear tables cache / Clear sharkscope cache
-        + Profit / Finish positions graph (?)
+        + Field beaten graph (model JSON, custom drawing)
+        + Profit graph (?)
     + PokerTracker
         + Session stats / Lifetime stats
+    + ICM Equities
+        + Track Tourney Lobby / Chat Summary (?)
     + Filters
         + Last one year
         + Only sit and gos
         + Only this type of tourney (entrants, stake) 
+
+* 1.3.7
+
+    + Added linear regression prototype (test only yet)
 
 * 1.3.5 - 1.3.6
 
