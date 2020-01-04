@@ -3,8 +3,6 @@
 
 * Doing
 
-    + VPIP / PFR
-
 * Features
 
     + SharkScope
@@ -16,6 +14,10 @@
         + Last one year
         + Only sit and gos
         + Only this type of tourney (entrants, stake) 
+
+* 1.3.5 - 1.3.6
+
+    + Cell design 
 
 * 1.3.5
 

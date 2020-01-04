@@ -377,8 +377,6 @@ extension TourneyTableViewModel: NSTableViewDelegate
             {
                 (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) in
                        
-                print("sharkScope.fetch.completion()")
-                
                 switch result
                 {
                     case .success(let responses):
