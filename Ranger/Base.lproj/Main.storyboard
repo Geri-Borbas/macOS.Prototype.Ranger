@@ -843,29 +843,17 @@
                                                                     <rect key="frame" x="142" y="0.0" width="100" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-mA-crY">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="22" height="17"/>
-                                                                            <view key="contentView" id="7fl-O9-jly">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="22" height="17"/>
-                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                            </view>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="22" id="vfc-eH-qBn"/>
-                                                                            </constraints>
-                                                                            <color key="borderColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <color key="fillColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </box>
                                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="2X6-WL-6u3" userLabel="Percent Bar Wrapper">
-                                                                            <rect key="frame" x="18" y="0.0" width="77" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="95" height="17"/>
                                                                             <subviews>
                                                                                 <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="z2e-UI-lND">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="17"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
                                                                                     <view key="contentView" id="CNf-hf-GYm">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="17"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     </view>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="30" id="REc-hE-KwE"/>
+                                                                                        <constraint firstAttribute="width" constant="60" id="REc-hE-KwE"/>
                                                                                     </constraints>
                                                                                     <color key="borderColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <color key="fillColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -891,13 +879,10 @@
                                                                         </textField>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="6Kb-mA-crY" secondAttribute="bottom" id="3LS-xF-d6a"/>
-                                                                        <constraint firstItem="6Kb-mA-crY" firstAttribute="top" secondItem="w0g-sY-g4u" secondAttribute="top" id="6b2-qn-sYr"/>
                                                                         <constraint firstAttribute="trailing" secondItem="2X6-WL-6u3" secondAttribute="trailing" constant="5" id="R27-8P-T5E"/>
                                                                         <constraint firstAttribute="bottom" secondItem="2X6-WL-6u3" secondAttribute="bottom" id="SBO-DN-bhf"/>
                                                                         <constraint firstItem="2X6-WL-6u3" firstAttribute="top" secondItem="w0g-sY-g4u" secondAttribute="top" id="XDd-kC-KZd"/>
-                                                                        <constraint firstItem="2X6-WL-6u3" firstAttribute="leading" secondItem="w0g-sY-g4u" secondAttribute="leading" constant="18" id="m9G-a4-EVt"/>
-                                                                        <constraint firstItem="6Kb-mA-crY" firstAttribute="leading" secondItem="w0g-sY-g4u" secondAttribute="leading" id="r8K-Gt-i5q"/>
+                                                                        <constraint firstItem="2X6-WL-6u3" firstAttribute="leading" secondItem="w0g-sY-g4u" secondAttribute="leading" id="m9G-a4-EVt"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="boxWidthConstraint" destination="REc-hE-KwE" id="7Yg-79-uA5"/>
@@ -1762,7 +1747,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="1rj-Mk-7PR" customClass="TourneyTableViewModel" customModule="Ranger" customModuleProvider="target">
                     <connections>
-                        <outlet property="stackLayoutPatameters" destination="ras-3K-Q2y" id="fW0-KQ-44P"/>
+                        <outlet property="stackLayoutParameters" destination="ras-3K-Q2y" id="fW0-KQ-44P"/>
                     </connections>
                 </customObject>
                 <customObject id="ras-3K-Q2y" userLabel="Stack LayoutParameters" customClass="LayoutParameters" customModule="Ranger" customModuleProvider="target">
@@ -1772,6 +1757,10 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximum">
                             <integer key="value" value="1500"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.29999999999999999"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>

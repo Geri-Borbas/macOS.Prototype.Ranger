@@ -26,7 +26,7 @@ class TourneyTableViewModel: NSObject
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
     private var tickTime = 1.0
-    private var handUpdateTickFrequency = 100
+    private var handUpdateTickFrequency = 2
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
@@ -42,7 +42,7 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Binds
     
-    @IBOutlet weak var stackLayoutPatameters: LayoutParameters!
+    @IBOutlet weak var stackLayoutParameters: LayoutParameters!
     private var onChange: (() -> Void)?
     
     
@@ -156,8 +156,9 @@ class TourneyTableViewModel: NSObject
         for eachIndex in playerViewModels.indices
         { playerViewModels[eachIndex].pokerTracker.update() }
         
-        // Track largest stack.
-        stackLayoutPatameters.maximum = NSNumber(value: playerViewModels.reduce(0, { max($0, $1.pokerTracker.latestHandPlayer.stack) }))
+        // Track stack extremes.
+        stackLayoutParameters.maximum = NSNumber(value: playerViewModels.reduce(0, { max($0, $1.pokerTracker.latestHandPlayer.stack) }))
+        stackLayoutParameters.minimum = NSNumber(value: playerViewModels.reduce(Double(stackLayoutParameters.maximum), { min($0, $1.pokerTracker.latestHandPlayer.stack) }))
         
         // Sort view model using retained sort descriptors (if any).
         sort(using: self.sortDescriptors)
@@ -305,6 +306,12 @@ extension TourneyTableViewModel: NSTableViewDataSource
         // Select row if was selected before.
         if (self.selectedPlayerViewModel == playerViewModel)
         { tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false) }
+        
+        // Fade if no stack (yet hardcoded).
+        if
+            let rowView = tableView.rowView(atRow: row, makeIfNecessary: false),
+            playerViewModel.pokerTracker.latestHandPlayer.stack <= 0
+        { rowView.alphaValue = 0.4 }
         
         return cellView
     }

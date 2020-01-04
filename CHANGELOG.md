@@ -3,15 +3,19 @@
 
 * Doing
 
-    + Design (table row / cells / color ranges / graphs)
+    + Design (color ranges / graphs)
+
+* 1.3.4
+
+    + More cell design
+    + Fade row is stack is zero
 
 * 1.3.3
 
     + More cell design
     + `SharkScope.fetch()` thread fixes
-    + Added easing to `LayoutParameters
+    + Added easing to `LayoutParameters`
     + Custom drawn row selection
-    
 
 * 1.3.2
 
