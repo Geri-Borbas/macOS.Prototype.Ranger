@@ -114,7 +114,14 @@ class SharkScope
             // JSON.
             var JSON: Dictionary<String, AnyObject> = [:]
             do { JSON = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, AnyObject> }
-            catch { return completion(.failure(RequestError.jsonSerializationError(error))) }
+            catch
+            {
+                // Return on the main thread.
+                DispatchQueue.main.async()
+                { completion(.failure(RequestError.jsonSerializationError(error))) }
+                
+                return
+            }
             
             // Log.
             if (SharkScope.log)
@@ -168,9 +175,7 @@ class SharkScope
             
             // Return on the main thread.
             DispatchQueue.main.async()
-            {
-                completion(.success(decodedResponse))
-            }
+            { completion(.success(decodedResponse)) }
         }
 
         task.resume()

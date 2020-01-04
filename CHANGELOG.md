@@ -5,6 +5,14 @@
 
     + Design (table row / cells / color ranges / graphs)
 
+* 1.3.3
+
+    + More cell design
+    + `SharkScope.fetch()` thread fixes
+    + Added easing to `LayoutParameters
+    + Custom drawn row selection
+    
+
 * 1.3.2
 
     + Row Selection color

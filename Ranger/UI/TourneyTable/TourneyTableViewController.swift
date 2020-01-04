@@ -95,6 +95,13 @@ class TourneyTableViewController: NSViewController
     
     // MARK: - Events
     
+    @IBAction func fetchAllDidClick(_ sender: AnyObject)
+    {
+        // Fetch SharkScope for all (gonna push changes back each).
+        for eachRow in 0...playersTableView.numberOfRows
+        { viewModel.fetchSharkScopeStatisticsForPlayer(inRow: eachRow) }
+    }
+    
     @objc func tableDidDoubleClick()
     {
         // Skip header row double click.

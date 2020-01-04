@@ -80,17 +80,16 @@ class TourneyTableViewModel: NSObject
         sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
                         completion:
         {
-           (result: Result<Timeline, RequestError>) in
-           switch result
-           {
-               case .success(let lastActivity):
-                   completion("\(lastActivity.Response.UserInfo.RemainingSearches) search remaining (logged in as \(lastActivity.Response.UserInfo.Username)).")
-                   break
-               
-               case .failure(let error):
-                   completion("SharkScope error: \(error)")
-                   break
-           }
+            (result: Result<Timeline, RequestError>) in
+            switch result
+            {
+                case .success(let lastActivity):
+                    completion("\(lastActivity.Response.UserInfo.RemainingSearches) search remaining (logged in as \(lastActivity.Response.UserInfo.Username)).")
+                    break
+                case .failure(let error):                    
+                    completion("SharkScope error: \(error)")
+                    break
+            }
         })
     }
     
@@ -307,9 +306,6 @@ extension TourneyTableViewModel: NSTableViewDataSource
         if (self.selectedPlayerViewModel == playerViewModel)
         { tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false) }
         
-        // Gray selection.
-        tableView.rowView(atRow: row, makeIfNecessary: false)?.isEmphasized = false
-        
         return cellView
     }
     
@@ -327,7 +323,11 @@ extension TourneyTableViewModel: NSTableViewDataSource
 extension TourneyTableViewModel: NSTableViewDelegate
 {
     
+    // Plug custom row view.
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView?
+    { return RowView() }
     
+    // Save selection.
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
     {
         // Checks.
@@ -338,9 +338,6 @@ extension TourneyTableViewModel: NSTableViewDelegate
         
         // Retain selection.
         self.selectedPlayerViewModel = playerViewModel
-        
-        // Gray selection.
-        tableView.rowView(atRow: row, makeIfNecessary: false)?.isEmphasized = false
         
         return true
     }

@@ -21,8 +21,8 @@ public struct UserInfo: Decodable, Equatable
     let Country: String
     let Regions: [Region]
     let Currency: String
-    let RemainingSearches: Int // This are not wrapped, fun
-    let ExpirationDate: Date // Nor this
+    let RemainingSearches: Int // This is not wrapped, fun
+    let ExpirationDate: Date? // Nor this
     let RequestLanguages: String
     let Subscriptions: Subscriptions
     // let AuthorizedNetworks: [Any]
@@ -43,7 +43,7 @@ public struct UserInfo: Decodable, Equatable
 
         let freeSearchesRemaining: StringFor<Int>
         let totalSearchesRemaining: StringFor<Int>
-        let Subscription: Subscription
+        let Subscription: Subscription?
 
 
         struct Subscription: Decodable, Equatable

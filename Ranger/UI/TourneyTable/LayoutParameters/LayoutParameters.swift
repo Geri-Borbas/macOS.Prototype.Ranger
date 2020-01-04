@@ -15,6 +15,8 @@ class LayoutParameters: NSObject
     
     @objc dynamic var minimum: NSNumber = 0.0
     @objc dynamic var maximum: NSNumber = 0.0
+    @objc dynamic var easing: String = "linear"
+    
     
     private let log: Bool = false
     
@@ -33,6 +35,7 @@ class LayoutParameters: NSObject
         let offsetValue = value - minimum.floatValue
         let percent = offsetValue / size
         let cappedPercent = max(min(percent, 1.0), 0.0)
+        let easedPercent = cappedPercent.ease(name: easing)
         
         // Log.
         if (log)
@@ -42,8 +45,9 @@ class LayoutParameters: NSObject
             print("offsetValue: \(offsetValue)")
             print("percent: \(percent)")
             print("cappedPercent: \(cappedPercent)")
+            print("easedPercent: \(easedPercent)")
         }
         
-        return cappedPercent
+        return easedPercent
     }
 }
