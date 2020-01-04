@@ -707,20 +707,20 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TourneyTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1448" height="247"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1448" height="268"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="20" width="1408" height="258"/>
+                                <rect key="frame" x="20" y="20" width="1408" height="228"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
-                                        <rect key="frame" x="0.0" y="157" width="1408" height="101"/>
+                                        <rect key="frame" x="0.0" y="157" width="1408" height="71"/>
                                         <clipView key="contentView" id="3s2-if-0UA">
-                                            <rect key="frame" x="1" y="0.0" width="1406" height="100"/>
+                                            <rect key="frame" x="1" y="0.0" width="1406" height="70"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1406" height="75"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1406" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="1" height="1"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -749,7 +749,7 @@
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="-" id="9RJ-gC-FH1">
                                                                                 <font key="font" metaFont="system"/>
-                                                                                <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" white="0.29999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
@@ -827,7 +827,7 @@
                                                                                         <constraint firstAttribute="width" constant="60" id="REc-hE-KwE"/>
                                                                                     </constraints>
                                                                                     <color key="borderColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <color key="fillColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="fillColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </box>
                                                                             </subviews>
                                                                             <constraints>
@@ -840,7 +840,7 @@
                                                                             <rect key="frame" x="2" y="2" width="93" height="13"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="1,500" usesSingleLineMode="YES" id="0UB-G1-NCK">
-                                                                                <font key="font" metaFont="smallSystemBold"/>
+                                                                                <font key="font" metaFont="systemBold" size="11"/>
                                                                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
@@ -864,7 +864,7 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="VPIP" width="40" minWidth="40" maxWidth="40" id="Mw5-rR-equ">
+                                                        <tableColumn identifier="VPIP" width="50" minWidth="50" maxWidth="100" id="Mw5-rR-equ">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="VPIP">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -878,30 +878,49 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="VPIP"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="AAb-HK-hP8" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="243" y="0.0" width="40" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <tableCellView translatesAutoresizingMaskIntoConstraints="NO" id="l7C-Qz-Vx7" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-ke-mHL">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="100" drawsBackground="YES" id="XhQ-49-VZv">
+                                                                        <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="NLE-gz-sfR">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                                            <view key="contentView" id="Tb8-jb-APz">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            </view>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="17" id="Gyh-bm-gWa"/>
+                                                                                <constraint firstAttribute="width" constant="50" id="vS4-8F-5QS"/>
+                                                                            </constraints>
+                                                                            <color key="fillColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </box>
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="X2d-IE-R7H">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="10" usesSingleLineMode="YES" id="X3u-o3-INF">
                                                                                 <font key="font" metaFont="systemBold"/>
-                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
-                                                                                <outlet property="formatter" destination="413-eU-RPa" id="lBk-1T-XdL"/>
+                                                                                <outlet property="formatter" destination="413-eU-RPa" id="P9K-rc-mjQ"/>
                                                                             </connections>
                                                                         </textField>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="NLE-gz-sfR" firstAttribute="top" secondItem="l7C-Qz-Vx7" secondAttribute="top" id="9hr-tf-JAa"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="NLE-gz-sfR" secondAttribute="trailing" id="MtC-br-AiM"/>
+                                                                    </constraints>
                                                                     <connections>
-                                                                        <outlet property="textField" destination="WuT-ke-mHL" id="FGd-kM-W48"/>
+                                                                        <outlet property="bar" destination="NLE-gz-sfR" id="F9B-LP-SGd"/>
+                                                                        <outlet property="barColorRanges" destination="Cof-6d-iqK" id="khr-2P-D5B"/>
+                                                                        <outlet property="barWidthConstraint" destination="vS4-8F-5QS" id="ywg-iA-QI6"/>
+                                                                        <outlet property="percentProvider" destination="7lI-17-6wc" id="Dux-lw-cyt"/>
+                                                                        <outlet property="textField" destination="X2d-IE-R7H" id="C9I-EQ-AmU"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="PFR" width="40" minWidth="40" maxWidth="40" id="UEG-og-uli">
+                                                        <tableColumn identifier="PFR" width="50" minWidth="50" maxWidth="100" id="UEG-og-uli">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="PFR">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -915,25 +934,42 @@
                                                             <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="PFR"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="amb-P7-8n8" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="284" y="0.0" width="40" height="17"/>
+                                                                <tableCellView id="S99-n5-jyV" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
+                                                                    <rect key="frame" x="294" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O1L-Kt-lKV">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="89" drawsBackground="YES" id="sxl-E2-ecc">
+                                                                        <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="uw8-RG-scY">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                                            <view key="contentView" id="QtF-al-zDC">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            </view>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="50" id="25X-UK-8Ph"/>
+                                                                                <constraint firstAttribute="height" constant="17" id="F7f-JU-wXk"/>
+                                                                            </constraints>
+                                                                            <color key="fillColor" red="0.52156490089999996" green="0.52156507969999999" blue="0.52156412600000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </box>
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="SPr-R0-s7N">
+                                                                            <rect key="frame" x="2" y="0.0" width="48" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="8" usesSingleLineMode="YES" id="bmd-qO-hUI">
                                                                                 <font key="font" metaFont="systemBold"/>
-                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
-                                                                                <outlet property="formatter" destination="413-eU-RPa" id="2yC-Ou-uBF"/>
+                                                                                <outlet property="formatter" destination="413-eU-RPa" id="OPH-tO-iFz"/>
                                                                             </connections>
                                                                         </textField>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="uw8-RG-scY" secondAttribute="bottom" id="AdB-VA-KMN"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="uw8-RG-scY" secondAttribute="trailing" id="rf7-b7-V4B"/>
+                                                                    </constraints>
                                                                     <connections>
-                                                                        <outlet property="textField" destination="O1L-Kt-lKV" id="sXc-1o-7MS"/>
+                                                                        <outlet property="bar" destination="uw8-RG-scY" id="XFt-Ak-LOj"/>
+                                                                        <outlet property="textField" destination="SPr-R0-s7N" id="mcy-6A-P8y"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
@@ -953,7 +989,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="LZP-ln-GKe" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="325" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="345" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CK7-Fy-At5">
@@ -987,7 +1023,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="drt-ya-61r" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="376" y="0.0" width="52" height="17"/>
+                                                                    <rect key="frame" x="396" y="0.0" width="52" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-XX-Air">
@@ -1024,7 +1060,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="KvU-kw-sp9" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="429" y="0.0" width="52" height="17"/>
+                                                                    <rect key="frame" x="449" y="0.0" width="52" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField identifier="ITM" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-QX-GIu">
@@ -1061,7 +1097,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="7of-yl-RT7" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="482" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="502" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="huW-cI-xR9">
@@ -1118,7 +1154,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="oQv-EC-S3L" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="533" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="553" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dcm-Wk-dys">
@@ -1174,7 +1210,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="Rsf-gQ-Xqd" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="584" y="0.0" width="80" height="17"/>
+                                                                    <rect key="frame" x="604" y="0.0" width="80" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bWZ-Ie-bJC">
@@ -1235,7 +1271,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="bp5-Pr-vtn" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="665" y="0.0" width="40" height="17"/>
+                                                                    <rect key="frame" x="685" y="0.0" width="40" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-Be-KRK">
@@ -1272,7 +1308,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="2l3-uU-wxW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="706" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="726" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hd-at-Yw5">
@@ -1309,7 +1345,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="59i-oi-97B" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="757" y="0.0" width="40" height="17"/>
+                                                                    <rect key="frame" x="777" y="0.0" width="40" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uK5-Gc-FcV">
@@ -1346,7 +1382,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="90L-30-1ry" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="798" y="0.0" width="80" height="17"/>
+                                                                    <rect key="frame" x="818" y="0.0" width="80" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-QZ-jAj">
@@ -1406,7 +1442,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="c5m-ev-Mi8" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="879" y="0.0" width="80" height="17"/>
+                                                                    <rect key="frame" x="899" y="0.0" width="80" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aHL-gI-q1l">
@@ -1466,7 +1502,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="oZf-Xk-Aok" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="960" y="0.0" width="60" height="17"/>
+                                                                    <rect key="frame" x="980" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-sD-fOy">
@@ -1503,7 +1539,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="py3-m2-eTy" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1021" y="0.0" width="60" height="17"/>
+                                                                    <rect key="frame" x="1041" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1E4-oU-bUj">
@@ -1540,7 +1576,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="IUd-eR-hh2" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1082" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="1102" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-rV-f5a">
@@ -1577,7 +1613,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="mom-yd-SdW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1133" y="0.0" width="60" height="17"/>
+                                                                    <rect key="frame" x="1153" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRE-sn-jEF">
@@ -1614,7 +1650,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="59T-6A-mL7" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1194" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="1214" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-Bm-R8h">
@@ -1648,7 +1684,7 @@
                                             <rect key="frame" x="1" y="184" width="1228" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ctz-tj-roT">
+                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ctz-tj-roT">
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -1768,6 +1804,48 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
+                <customObject id="7lI-17-6wc" userLabel="VPIP PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="Cof-6d-iqK" userLabel="VPIP ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value_1">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color_1">
+                            <color key="value" red="0.99610751870000003" green="0.69792670010000002" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value_2">
+                            <real key="value" value="0.155"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color_2">
+                            <color key="value" red="0.99610751870000003" green="0.98826545480000005" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value_3">
+                            <real key="value" value="0.35499999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color_3">
+                            <color key="value" red="0.69792670010000002" green="0.99610751870000003" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value_4">
+                            <real key="value" value="0.505"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color_4">
+                            <color key="value" red="0.54785913528500008" green="0.99610751870000003" blue="0.6972752630900001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
                 <customObject id="pYp-v7-s61" userLabel="Early / Late PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
@@ -1777,27 +1855,6 @@
                             <integer key="value" value="30"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut"/>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
-                <customObject id="bV3-5y-jn6" userLabel="Field Beaten PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <integer key="value" value="35"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <integer key="value" value="60"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeIn"/>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
-                <customObject id="nED-fw-zp8" userLabel="Losing / Winning PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
                 <customObject id="vjn-nh-3yQ" userLabel="Early ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
@@ -1828,6 +1885,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
+                <customObject id="bV3-5y-jn6" userLabel="Field Beaten PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <integer key="value" value="35"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <integer key="value" value="60"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeIn"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
                 <customObject id="2TL-UB-7Hk" userLabel="Field Beaten ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
@@ -1853,6 +1921,16 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="color_4">
                             <color key="value" red="0.99610751870000003" green="0.69792670010000002" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="nED-fw-zp8" userLabel="Losing / Winning PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <integer key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
@@ -1884,7 +1962,7 @@
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="nv7-hl-6jx" userLabel="##﹪ Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
-                <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" maximumFractionDigits="-1" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="aU5-at-Lan" userLabel="##﹪ (x100) Number Formatter">
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="aU5-at-Lan" userLabel="##﹪ (x100) Number Formatter">
                     <integer key="multiplier" value="100"/>
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" minimumFractionDigits="1" maximumFractionDigits="1" percentSymbol="﹪" positiveSuffix="﹪" negativeSuffix="﹪" id="vOy-eN-cD7" userLabel="##,#﹪ (x100) Number Formatter">
@@ -1897,7 +1975,7 @@
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
             </objects>
-            <point key="canvasLocation" x="294" y="811"/>
+            <point key="canvasLocation" x="294" y="871"/>
         </scene>
     </scenes>
 </document>
