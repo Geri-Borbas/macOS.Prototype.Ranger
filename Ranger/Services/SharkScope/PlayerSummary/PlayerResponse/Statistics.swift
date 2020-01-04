@@ -56,8 +56,10 @@ struct Statistics: Decodable, Equatable
     {
 
 
+        
         let id: String
-        let Data: [Data]
+        let Data: [Data]?
+        let authorized: StringFor<Bool>?
         
         
         struct Data: Decodable, Equatable
@@ -77,33 +79,6 @@ struct Statistics: Decodable, Equatable
             }
         }
     }
-    
-    
-
-    struct GraphData: Decodable, Equatable
-    {
-                
-        
-        let dataPoints: [DataPoint]
-        
-        
-        struct DataPoint: Decodable, Equatable
-        {
-            
-            
-            let x: Double
-            let y: Double
-        }
-        
-        init(from statisticalDataSet: StatisticalDataSet?)
-        {
-            dataPoints = []
-            
-            guard let statisticalDataSet = statisticalDataSet
-            else { return }
-        }
-    }
-    
     
     
     init(from decoder: Decoder) throws

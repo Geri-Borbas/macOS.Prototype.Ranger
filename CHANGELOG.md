@@ -4,7 +4,7 @@
 * Doing
 
     + SharkScope
-        + Field beaten graph (model JSON, custom drawing)
+        + Field beaten graph (custom drawing)
 
 * Features
 
@@ -19,6 +19,14 @@
         + Last one year
         + Only sit and gos
         + Only this type of tourney (entrants, stake) 
+
+* 1.4.0
+
+    + Modeled JSON (with `Decodable` / `Equatable` implementation) for field beaten graph
+
+* 1.3.8
+
+    + Started to model "ByPositionPercentage" statistical dataset
 
 * 1.3.7
 
