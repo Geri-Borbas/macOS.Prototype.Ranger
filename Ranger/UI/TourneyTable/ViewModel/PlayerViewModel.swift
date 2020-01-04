@@ -59,8 +59,6 @@ struct PlayerViewModel
         
         public mutating func update(withSummary summary: PlayerSummary, activeTournaments: ActiveTournaments)
         {
-            print("PlayerViewModel.SharkScope.update()")
-            
             self.summary = summary
             self.activeTournaments = activeTournaments
             

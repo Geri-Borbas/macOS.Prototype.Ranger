@@ -51,12 +51,12 @@ class SharkScope
         let cache = RequestCache()
         if let cachedResponse: RequestType.RootResponseType = cache.cachedResponse(for: urlComponents), request.useCache
         {
-            print("Found JSON cache, skip request.")
+            // print("Found JSON cache, skip request.")
             return completion(.success(cachedResponse))
         }
         else
         {
-            print("Don't use JSON cache.")
+            // print("Don't use JSON cache.")
         }
         
         // Create URL.

@@ -351,8 +351,6 @@ extension TourneyTableViewModel: NSTableViewDelegate
     
     public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)
     {
-        print("TourneyTableViewModel.fetchSharkScopeStatisticsForPlayer(inRow: \(row))")
-        
         // Checks.
         guard playerViewModels.count > row else { return }
         

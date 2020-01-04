@@ -706,50 +706,21 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TourneyTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1448" height="297"/>
+                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="1448" height="247"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="20" width="1408" height="257"/>
+                                <rect key="frame" x="20" y="20" width="1408" height="258"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-oU-NxL">
-                                        <rect key="frame" x="-2" y="241" width="158" height="16"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10 / 20 Ante 3 (9 players)" allowsEditingTextAttributes="YES" id="2vb-2k-CjU">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-O1-p9y">
-                                        <rect key="frame" x="-6" y="203" width="93" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Fetch All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Hu-4x-kR5">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="fetchAllDidClick:" target="XfG-lQ-9wD" id="JME-Y9-XCb"/>
-                                        </connections>
-                                    </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y83-4P-VCO">
-                                        <rect key="frame" x="-2" y="158" width="1412" height="42"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" allowsEditingTextAttributes="YES" id="ygX-OG-ieV">
-                                            <font key="font" metaFont="message" size="11"/>
-                                            <string key="title">1M 285 / 3 BB (9 hands)
-5M 285 / 14 BB (45 hands)
-10M 570 / 28 BB (90 hands)</string>
-                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
-                                        <rect key="frame" x="0.0" y="48" width="1408" height="100"/>
+                                        <rect key="frame" x="0.0" y="157" width="1408" height="101"/>
                                         <clipView key="contentView" id="3s2-if-0UA">
-                                            <rect key="frame" x="1" y="0.0" width="1406" height="99"/>
+                                            <rect key="frame" x="1" y="0.0" width="1406" height="100"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1406" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1406" height="75"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="1" height="1"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1686,9 +1657,41 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-O1-p9y">
+                                        <rect key="frame" x="1302" y="119" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="BeH-Sg-cgv"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Fetch All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Hu-4x-kR5">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="fetchAllDidClick:" target="XfG-lQ-9wD" id="JME-Y9-XCb"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-oU-NxL">
+                                        <rect key="frame" x="-2" y="100" width="158" height="16"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="10 / 20 Ante 3 (9 players)" allowsEditingTextAttributes="YES" id="2vb-2k-CjU">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y83-4P-VCO">
+                                        <rect key="frame" x="-2" y="48" width="152" height="42"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" allowsEditingTextAttributes="YES" id="ygX-OG-ieV">
+                                            <font key="font" metaFont="message" size="11"/>
+                                            <string key="title">1M 285 / 3 BB (9 hands)
+5M 285 / 14 BB (45 hands)
+10M 570 / 28 BB (90 hands)</string>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-bY-dqi">
-                                        <rect key="frame" x="-2" y="24" width="1412" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
+                                        <rect key="frame" x="-2" y="24" width="41" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
                                             <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1696,7 +1699,7 @@
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8hF-g3-DU4">
                                         <rect key="frame" x="-2" y="0.0" width="162" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fetching SharkScope status..." allowsEditingTextAttributes="YES" id="iYH-8W-oOy">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Fetching SharkScope status..." allowsEditingTextAttributes="YES" id="iYH-8W-oOy">
                                             <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1704,11 +1707,9 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Mbr-bY-dqi" secondAttribute="trailing" id="3AC-ye-BBl"/>
-                                    <constraint firstAttribute="trailing" secondItem="y83-4P-VCO" secondAttribute="trailing" id="7XQ-r7-agh"/>
                                     <constraint firstAttribute="trailing" secondItem="pMx-ys-oxY" secondAttribute="trailing" id="LAM-rb-OFX"/>
-                                    <constraint firstAttribute="bottom" secondItem="8hF-g3-DU4" secondAttribute="bottom" id="bMZ-dI-pyY"/>
-                                    <constraint firstItem="Mbr-bY-dqi" firstAttribute="top" secondItem="pMx-ys-oxY" secondAttribute="bottom" constant="10" id="vZe-kg-Aks"/>
+                                    <constraint firstItem="iS1-O1-p9y" firstAttribute="top" secondItem="pMx-ys-oxY" secondAttribute="bottom" constant="10" id="USU-21-Ug5"/>
+                                    <constraint firstAttribute="trailing" secondItem="iS1-O1-p9y" secondAttribute="trailing" id="qoS-he-fDS"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -1896,7 +1897,7 @@
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
             </objects>
-            <point key="canvasLocation" x="294" y="811.5"/>
+            <point key="canvasLocation" x="294" y="811"/>
         </scene>
     </scenes>
 </document>
