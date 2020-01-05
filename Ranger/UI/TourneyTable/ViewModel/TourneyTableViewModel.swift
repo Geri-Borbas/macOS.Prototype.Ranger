@@ -363,6 +363,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         NSPasteboard.general.setString(playerName, forType: NSPasteboard.PasteboardType.string)
 
         // Fetch summary.
+        // let fetchPlayerName = "Oliana88" // Pro
         // let fetchPlayerName = "quAAsar"
         // let fetchPlayerName = "rybluk"
         // let fetchPlayerName = "perst777" // Blocked

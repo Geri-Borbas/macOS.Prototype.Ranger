@@ -14,7 +14,6 @@ class PlayerViewModelCellView: NSTableCellView
     
     
     var textFieldData: TextFieldData!
-    var textFieldObjectValue: NSObject!
     
     
     func setup(with playerViewModel: PlayerViewModel, in tableColumn: NSTableColumn?)

@@ -29,7 +29,7 @@ class PercentBarCellView: PlayerViewModelCellView
         guard let textField = self.textField else { return }
         
         // Retain data.
-        self.textFieldData = playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]! // as? TextFieldData
+        self.textFieldData = playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
         
         // Apply text.
         textFieldData.apply(to: textField)

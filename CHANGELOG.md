@@ -3,9 +3,6 @@
 
 * Doing
 
-    + SharkScope
-        + Field beaten graph (custom drawing)
-
 * Features
 
     + SharkScope
@@ -19,6 +16,12 @@
         + Last one year
         + Only sit and gos
         + Only this type of tourney (entrants, stake) 
+
+* 1.5.0
+
+    + SharkScope Finishes graph cell (custom drawing)
+        + Extracted `LinearRegression` calculations
+        + `GraphData` uses index for `x` value
 
 * 1.4.1
 

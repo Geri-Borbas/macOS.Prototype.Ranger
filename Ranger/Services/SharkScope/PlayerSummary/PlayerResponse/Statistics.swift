@@ -25,7 +25,9 @@ struct Statistics: Decodable, Equatable
     /// `Statistic.value` / `Statistic.authorized` index keyed by `Statistic.id`.
     private let statisticValuesByIds: [String:String]
     private let statisticAuthorizationByIds: [String:Bool]
-    private let byPositionPercentage: GraphData
+    
+    // Data sets.
+    let byPositionPercentage: GraphData
 
     
     struct Statistic: Decodable, Equatable
@@ -96,8 +98,6 @@ struct Statistics: Decodable, Equatable
         // Extract "ByPositionPercentage".
         let byPositionPercentageDataSet = self.StatisticalDataSet.filter{ $0.id == "ByPositionPercentage" }.first
         self.byPositionPercentage = GraphData(from: byPositionPercentageDataSet)
-        
-        print("self.byPositionPercentage.dataPoints.count: \(self.byPositionPercentage.dataPoints.count)")
     }
     
     public func isAuthorized(statistic: String) -> Bool

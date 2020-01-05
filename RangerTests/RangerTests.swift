@@ -70,6 +70,15 @@ class RangerTests: XCTestCase
         XCTAssertTrue(
             linearRegression(x, y) == (slope: -0.008937293729372906, intercept: 1.4473333333333314)
         )
+        
+        XCTAssertTrue(
+            LinearRegression(x: x, y: y).slope == -0.008937293729372906
+        )
+        
+        XCTAssertTrue(
+            LinearRegression(x: x, y: y).offset ==  1.4473333333333314
+        )
+        
     }
     
     func testObjectSortDescriptors()

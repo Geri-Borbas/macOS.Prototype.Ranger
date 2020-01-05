@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226323C16A240040A3DE /* FinishesGraphCellView.swift */; };
+		5504226823C18DAB0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
+		5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
 		5508E3FD23A4656000FFB173 /* TourneyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */; };
 		5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */; };
 		5509C4B723B9254600C6608D /* TablesStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */; };
@@ -86,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5504226323C16A240040A3DE /* FinishesGraphCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishesGraphCellView.swift; sourceTree = "<group>"; };
+		5504226723C18DAB0040A3DE /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableViewModel.swift; sourceTree = "<group>"; };
 		55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Configuration.swift; sourceTree = "<group>"; };
 		5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PokerTracker.Configuration.plist; sourceTree = "<group>"; };
@@ -253,6 +258,7 @@
 			children = (
 				554E018923AA828100CF2971 /* Statistics.swift */,
 				555A867823C131B30051D996 /* GraphData.swift */,
+				5504226723C18DAB0040A3DE /* LinearRegression.swift */,
 			);
 			path = PlayerResponse;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				55E7E71823C019D7000388FD /* Data */,
 				55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */,
 				55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */,
+				5504226323C16A240040A3DE /* FinishesGraphCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -643,6 +650,7 @@
 				55DB43E923A2E62000A7F37F /* SharkScope.Configuration.swift in Sources */,
 				55DB43E523A2DB4D00A7F37F /* RequestCache.swift in Sources */,
 				5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */,
+				5504226823C18DAB0040A3DE /* LinearRegression.swift in Sources */,
 				55E7E71A23C019EE000388FD /* Easing.swift in Sources */,
 				5521A554239DD170000D1AD1 /* SharkScope.swift in Sources */,
 				555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */,
@@ -655,6 +663,7 @@
 				55A9AC5A23BE159A00179FA0 /* PlayerViewModelCellView.swift in Sources */,
 				55C8498623A3309F00452F2F /* Notes.swift in Sources */,
 				554E018C23AAB31900CF2971 /* DynamicCodingKey.swift in Sources */,
+				5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */,
 				5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */,
 				5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */,
 				5518D63723BA8E0500EFFBC0 /* LatestHandPlayer.swift in Sources */,
@@ -682,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C529E723BD3F1500A6975A /* RangerTests.swift in Sources */,
+				5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

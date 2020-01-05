@@ -134,6 +134,7 @@ extension PlayerViewModel
             "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
             "Late" : TextFieldFloatData(value: sharkScope.statistics?.FinshesLate),
             "Field Beaten" : TextFieldFloatData(value: sharkScope.statistics?.PercentFieldBeaten),
+            "Finishes" : TextFieldDoubleData(value: sharkScope.statistics?.byPositionPercentage.trendLine.slope),
             "Losing" : TextFieldFloatData(value: sharkScope.statistics?.LosingDaysWithBreakEvenPercentage),
             "Winning" : TextFieldFloatData(value: sharkScope.statistics?.WinningDaysWithBreakEvenPercentage),
             "Count" : TextFieldFloatData(value: sharkScope.statistics?.Count),
@@ -214,6 +215,11 @@ extension PlayerViewModel
             (
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 < rhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 >= rhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 }
+            ),
+            "Finishes" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.byPositionPercentage.trendLine.slope ?? 0 < rhs.sharkScope.statistics?.byPositionPercentage.trendLine.slope ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.byPositionPercentage.trendLine.slope ?? 0 >= rhs.sharkScope.statistics?.byPositionPercentage.trendLine.slope ?? 0 }
             ),
             "Losing" :
             (
