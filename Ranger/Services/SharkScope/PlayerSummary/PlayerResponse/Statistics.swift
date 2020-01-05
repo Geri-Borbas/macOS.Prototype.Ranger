@@ -96,6 +96,8 @@ struct Statistics: Decodable, Equatable
         // Extract "ByPositionPercentage".
         let byPositionPercentageDataSet = self.StatisticalDataSet.filter{ $0.id == "ByPositionPercentage" }.first
         self.byPositionPercentage = GraphData(from: byPositionPercentageDataSet)
+        
+        print("self.byPositionPercentage.dataPoints.count: \(self.byPositionPercentage.dataPoints.count)")
     }
     
     public func isAuthorized(statistic: String) -> Bool
@@ -135,7 +137,7 @@ extension Statistics
     var AvGamesPerDay: Float { Float(self.statisticValuesByIds["AvGamesPerDay"] ?? "0") ?? 0 }
     
     /// The average profit including rake.
-    var AvProfit: Float { Float(self.statisticValuesByIds["AvProfit"] ?? "0") ?? 0 }
+    var AvProfit: Float? { isAuthorized(statistic: "AvProfit") ? Float(self.statisticValuesByIds["AvProfit"] ?? "0") ?? 0 : nil }
     
     /// Average ROI is the average Return On Investment. It is calculated as the average of each
     /// ((payout-(stake+rake))*100)/(stake+rake). So it will be -100% for a player that loses
@@ -145,7 +147,7 @@ extension Statistics
     /// (In The Money percentage) weighted to the actual payouts relative to the stake. Please
     /// note that this figure is the average of the ROIs which is different from Total ROI which
     /// is the ROI of the averages.
-    var AvROI: Float { Float(self.statisticValuesByIds["AvROI"] ?? "0") ?? 0 }
+    var AvROI: Float? { isAuthorized(statistic: "AvROI") ? Float(self.statisticValuesByIds["AvROI"] ?? "0") ?? 0 : nil }
     
     /// The average stake of the tournaments played.
     var AvStake: Float { Float(self.statisticValuesByIds["AvStake"] ?? "0") ?? 0 }
@@ -215,7 +217,7 @@ extension Statistics
     var PercentFieldBeaten: Float { Float(self.statisticValuesByIds["PercentFieldBeaten"] ?? "0") ?? 0 }
     
     /// The total profit including rake.
-    var Profit: Float { Float(self.statisticValuesByIds["Profit"] ?? "0") ?? 0 }
+    var Profit: Float? { isAuthorized(statistic: "Profit") ? Float(self.statisticValuesByIds["Profit"] ?? "0") ?? 0 : nil }
     
     /// The sum of all rake paid by the player.
     var Rake: Float { Float(self.statisticValuesByIds["Rake"] ?? "0") ?? 0 }
@@ -224,7 +226,7 @@ extension Statistics
     var Stake: Float { Float(self.statisticValuesByIds["Stake"] ?? "0") ?? 0 }
     
     /// The total ROI (Return on Investment).
-    var TotalROI: Float { Float(self.statisticValuesByIds["TotalROI"] ?? "0") ?? 0 }
+    var TotalROI: Float? { isAuthorized(statistic: "TotalROI") ? Float(self.statisticValuesByIds["TotalROI"] ?? "0") ?? 0 : nil }
     
     /// The total numbers of 1st place tournament finishes.
     var TournamentWins: Float { Float(self.statisticValuesByIds["TournamentWins"] ?? "0") ?? 0 }

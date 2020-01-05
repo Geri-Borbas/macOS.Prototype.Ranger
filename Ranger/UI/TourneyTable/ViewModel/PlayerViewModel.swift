@@ -121,7 +121,7 @@ extension PlayerViewModel
     
     var textFieldDataForColumnIdentifiers: [String:TextFieldData]
     {
-        let dict: [String:TextFieldData] =
+        let dictionary: [String:TextFieldData] =
         [
             "Seat" : TextFieldIntData(value: pokerTracker.latestHandPlayer.seat),
             "Player" : TextFieldStringData(value: pokerTracker.latestHandPlayer.player_name),
@@ -134,19 +134,20 @@ extension PlayerViewModel
             "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
             "Late" : TextFieldFloatData(value: sharkScope.statistics?.FinshesLate),
             "Field Beaten" : TextFieldFloatData(value: sharkScope.statistics?.PercentFieldBeaten),
-            "Years" : TextFieldFloatData(value: sharkScope.statistics?.YearsPlayed),
-            "Frequency" : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays),
-            "Games/Day" : TextFieldFloatData(value: sharkScope.statistics?.AvGamesPerDay),
             "Losing" : TextFieldFloatData(value: sharkScope.statistics?.LosingDaysWithBreakEvenPercentage),
             "Winning" : TextFieldFloatData(value: sharkScope.statistics?.WinningDaysWithBreakEvenPercentage),
             "Count" : TextFieldFloatData(value: sharkScope.statistics?.Count),
             "Profit" : TextFieldFloatData(value: sharkScope.statistics?.Profit),
             "Stake" : TextFieldFloatData(value: sharkScope.statistics?.AvStake),
             "Entrants" : TextFieldFloatData(value: sharkScope.statistics?.AvEntrants),
+            "Years" : TextFieldFloatData(value: sharkScope.statistics?.YearsPlayed),
+            "Frequency" : TextFieldFloatData(value: sharkScope.statistics?.DaysBetweenPlays),
+            "Games/Day" : TextFieldFloatData(value: sharkScope.statistics?.AvGamesPerDay),
             "Ability" : TextFieldFloatData(value: sharkScope.statistics?.Ability),
         ]
-        return dict
+        return dictionary
     }
+    
 }
 
 
@@ -214,21 +215,6 @@ extension PlayerViewModel
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 < rhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 >= rhs.sharkScope.statistics?.PercentFieldBeaten ?? 0 }
             ),
-            "Years" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.YearsPlayed ?? 0 < rhs.sharkScope.statistics?.YearsPlayed ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.YearsPlayed ?? 0 >= rhs.sharkScope.statistics?.YearsPlayed ?? 0 }
-            ),
-            "Frequency" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 < rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 >= rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 }
-            ),
-            "Games/Day" :
-            (
-                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 < rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 },
-                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 >= rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 }
-            ),
             "Losing" :
             (
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0 < rhs.sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0 },
@@ -258,6 +244,21 @@ extension PlayerViewModel
             (
                 ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 < rhs.sharkScope.statistics?.AvEntrants ?? 0 },
                 descending: { lhs, rhs in lhs.sharkScope.statistics?.AvEntrants ?? 0 >= rhs.sharkScope.statistics?.AvEntrants ?? 0 }
+            ),
+            "Years" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.YearsPlayed ?? 0 < rhs.sharkScope.statistics?.YearsPlayed ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.YearsPlayed ?? 0 >= rhs.sharkScope.statistics?.YearsPlayed ?? 0 }
+            ),
+            "Frequency" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 < rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 >= rhs.sharkScope.statistics?.DaysBetweenPlays ?? 0 }
+            ),
+            "Games/Day" :
+            (
+                ascending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 < rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 },
+                descending: { lhs, rhs in lhs.sharkScope.statistics?.AvGamesPerDay ?? 0 >= rhs.sharkScope.statistics?.AvGamesPerDay ?? 0 }
             ),
             "Ability" :
             (

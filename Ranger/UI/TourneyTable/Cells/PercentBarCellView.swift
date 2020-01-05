@@ -51,19 +51,7 @@ class PercentBarCellView: PlayerViewModelCellView
     func layoutPercentBar()
     {
         // Get value.
-        var value: Float = 0.0
-        
-        // Float.
-        if let textFieldFloatData = self.textFieldData as? TextFieldFloatData
-        { value = textFieldFloatData.floatValue ?? 0.0 }
-        
-        // Int.
-        if let textFieldIntData = self.textFieldData as? TextFieldIntData
-        { value = Float(textFieldIntData.intValue ?? 0) }
-        
-        // Double.
-        if let textFieldDoubleData = self.textFieldData as? TextFieldDoubleData
-        { value = Float(textFieldDoubleData.doubleValue ?? 0) }
+        let value: Float = self.textFieldData.floatValue ?? 0
         
         // Get percent.
         var percent: Float = 1.0

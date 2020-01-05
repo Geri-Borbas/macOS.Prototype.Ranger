@@ -15,6 +15,9 @@ protocol TextFieldData
 {
     
     
+    var floatValue: Float? { get }
+    
+    
     func apply(to textField: NSTextField)
 }
 
@@ -23,6 +26,7 @@ struct TextFieldStringData: TextFieldData
     
     
     var value: String?
+    var floatValue: Float? { nil }
     
     
     init(value: String?)
@@ -37,9 +41,7 @@ struct TextFieldFloatData: TextFieldData
     
     
     var value: Float?
-    
-    var floatValue: Float?
-    { Float(value ?? 0) }
+    var floatValue: Float? { Float(value ?? 0) }
         
     
     init(value: Float?)
@@ -54,9 +56,7 @@ struct TextFieldDoubleData: TextFieldData
     
     
     var value: Double?
-    
-    var doubleValue: Double?
-    { Double(value ?? 0) }
+    var floatValue: Float? { Float(value ?? 0) }
     
     
     init(value: Double?)
@@ -71,9 +71,7 @@ struct TextFieldIntData: TextFieldData
     
     
     var value: Int?
-    
-    var intValue: Int?
-    { Int(value ?? 0) }
+    var floatValue: Float? { Float(value ?? 0) }
     
     
     init(value: Int?)

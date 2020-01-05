@@ -20,6 +20,11 @@
         + Only sit and gos
         + Only this type of tourney (entrants, stake) 
 
+* 1.4.1
+
+    + Trial and error tweaks on nil value displaying
+    + Opt-In statistics became optionals
+
 * 1.4.0
 
     + Modeled JSON (with `Decodable` / `Equatable` implementation) for field beaten graph
