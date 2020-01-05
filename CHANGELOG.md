@@ -3,19 +3,19 @@
 
 * Doing
 
-* Features
-
     + SharkScope
         + Clear tables cache / Clear sharkscope cache
-        + Profit graph (?)
-    + PokerTracker
-        + Session stats / Lifetime stats
+        + Filters
+            + Last one year
+            + Only sit and gos
+            + Only this type of tourney (entrants, stake) 
+
+* Features
+
+    + SharkScope Profit graph (?)
+    + PokerTracker Session stats / Lifetime stats
     + ICM Equities
         + Track Tourney Lobby / Chat Summary (?)
-    + Filters
-        + Last one year
-        + Only sit and gos
-        + Only this type of tourney (entrants, stake) 
 
 * 1.5.0
 
