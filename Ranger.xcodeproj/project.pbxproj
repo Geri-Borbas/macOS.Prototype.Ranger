@@ -52,6 +52,7 @@
 		5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */; };
 		559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* PercentProvider.swift */; };
 		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
+		55A7FAA823C3CC68007BEA05 /* TourneyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7FAA723C3CC68007BEA05 /* TourneyTableView.swift */; };
 		55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */; };
 		55A9AC5A23BE159A00179FA0 /* PlayerViewModelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
@@ -139,6 +140,7 @@
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		559F5F3523BEBA060070F2D6 /* PercentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentProvider.swift; sourceTree = "<group>"; };
 		55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasicPlayerStatisticsQuery.sql; sourceTree = "<group>"; };
+		55A7FAA723C3CC68007BEA05 /* TourneyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableView.swift; sourceTree = "<group>"; };
 		55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentBarCellView.swift; sourceTree = "<group>"; };
 		55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModelCellView.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
@@ -261,14 +263,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5536B0FC23C2BF2F0067E7F2 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		554E018823AA826C00CF2971 /* PlayerResponse */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,8 +339,7 @@
 		5590DD8223B982F6006BE806 /* TourneyTable */ = {
 			isa = PBXGroup;
 			children = (
-				5536B0FC23C2BF2F0067E7F2 /* Header */,
-				55E7E71523C0094E000388FD /* Rows */,
+				55A7FAA923C3CC70007BEA05 /* TourneyTableView */,
 				55A9AC5623BE0E1A00179FA0 /* Cells */,
 				5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */,
 				55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */,
@@ -373,6 +366,16 @@
 				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55A7FAA923C3CC70007BEA05 /* TourneyTableView */ = {
+			isa = PBXGroup;
+			children = (
+				55A7FAA723C3CC68007BEA05 /* TourneyTableView.swift */,
+				5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */,
+				55E7E71623C00983000388FD /* TourneyTableRowView.swift */,
+			);
+			path = TourneyTableView;
 			sourceTree = "<group>";
 		};
 		55A9AC5623BE0E1A00179FA0 /* Cells */ = {
@@ -471,14 +474,6 @@
 				55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */,
 			);
 			path = Configuration;
-			sourceTree = "<group>";
-		};
-		55E7E71523C0094E000388FD /* Rows */ = {
-			isa = PBXGroup;
-			children = (
-				55E7E71623C00983000388FD /* TourneyTableRowView.swift */,
-			);
-			path = Rows;
 			sourceTree = "<group>";
 		};
 		55E7E71823C019D7000388FD /* Data */ = {
@@ -648,6 +643,7 @@
 				55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */,
+				55A7FAA823C3CC68007BEA05 /* TourneyTableView.swift in Sources */,
 				55ED3CD623A551E100754763 /* LiveTourneyTableQuery.swift in Sources */,
 				55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */,
 				55840BFC23A9BF94000B06FF /* Response.swift in Sources */,

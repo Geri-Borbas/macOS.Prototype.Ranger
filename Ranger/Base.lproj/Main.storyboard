@@ -719,7 +719,7 @@
                                             <rect key="frame" x="1" y="0.0" width="1406" height="49"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq">
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq" customClass="TourneyTableView" customModule="Ranger" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="1406" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="1" height="1"/>
@@ -780,10 +780,10 @@
                                                                     <rect key="frame" x="41" y="0.0" width="100" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hj-n3-QpE">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hj-n3-QpE" customClass="ClickThroughTextField" customModule="Ranger" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="-" id="Nsd-Pb-SZ2">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" title="-" id="Nsd-Pb-SZ2">
                                                                                 <font key="font" metaFont="systemSemibold" size="13"/>
                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -879,7 +879,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView translatesAutoresizingMaskIntoConstraints="NO" id="l7C-Qz-Vx7" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="243" y="0.0" width="50" height="17"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="NLE-gz-sfR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>

@@ -288,3 +288,68 @@ extension PlayerViewModel
         return selectedOrderDescriptor(lhs, rhs)
     }
 }
+
+
+// MARK: - Strings
+
+extension PlayerViewModel
+{
+    
+    
+    var playerName: String
+    { pokerTracker.latestHandPlayer.player_name }
+    
+    var statisticsSummary: String
+    {
+        String(format:
+            """
+            Early Finish: %.0f
+            Late Finish: %.0f
+            Field Beaten: %.0f
+            Finishes: %.f
+            Losing/Winning: %.f/%.f
+
+            ITM: %.0f%%
+            Count: %@
+
+            ROI: %.f%%
+            Profit: $%@
+            """,
+               sharkScope.statistics?.FinshesEarly ?? 0,
+               sharkScope.statistics?.FinshesLate ?? 0,
+               sharkScope.statistics?.PercentFieldBeaten ?? 0,
+               ((sharkScope.statistics?.byPositionPercentage.trendLine.slope ?? 0) * -10000.0),
+               (sharkScope.statistics?.LosingDaysWithBreakEvenPercentage ?? 0) * 100.0,
+               (sharkScope.statistics?.WinningDaysWithBreakEvenPercentage ?? 0) * 100.0,
+               
+               sharkScope.statistics?.ITM ?? 0,
+               (sharkScope.statistics?.Count ?? 0).formattedWithSeparator,
+               
+               sharkScope.statistics?.AvROI ?? 0,
+               (sharkScope.statistics?.AvProfit ?? 0).formattedWithSeparator
+        )
+    }
+}
+
+
+extension Formatter
+{
+    
+    
+    static let withSeparator: NumberFormatter =
+    {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = " "
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+}
+
+
+extension Numeric
+{
+    
+    
+    var formattedWithSeparator: String
+    { return Formatter.withSeparator.string(for: self) ?? "" }
+}

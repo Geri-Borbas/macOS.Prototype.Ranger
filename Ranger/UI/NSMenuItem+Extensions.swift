@@ -19,4 +19,11 @@ extension NSMenuItem
         self.target = target
         return self
     }
+    
+    func with(representedObject: Any?, target: AnyObject?) -> NSMenuItem
+    {
+        self.representedObject = representedObject
+        self.target = target
+        return self
+    }
 }
