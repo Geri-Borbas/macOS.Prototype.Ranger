@@ -8,9 +8,12 @@
 
 import Cocoa
 
-class RowView: NSTableRowView
+
+class TourneyTableRowView: NSTableRowView
 {
 
+    
+    // MARK: - Custom drawing
     
     override func draw(_ dirtyRect: NSRect)
     {

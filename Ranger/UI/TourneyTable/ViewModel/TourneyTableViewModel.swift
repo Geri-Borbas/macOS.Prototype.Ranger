@@ -38,6 +38,7 @@ class TourneyTableViewModel: NSObject
     public var latestBigBlind: Int = 0
     private var sortDescriptors: [NSSortDescriptor]?
     private var selectedPlayerViewModel: PlayerViewModel?
+    private var stackPercentProviderEasing: String?
     
     
     // MARK: - Binds
@@ -158,7 +159,7 @@ class TourneyTableViewModel: NSObject
         
         // Track stack extremes.
         stackLayoutParameters.maximum = NSNumber(value: playerViewModels.reduce(0, { max($0, $1.pokerTracker.latestHandPlayer.stack) }))
-        stackLayoutParameters.minimum = NSNumber(value: playerViewModels.reduce(Double(stackLayoutParameters.maximum), { min($0, $1.pokerTracker.latestHandPlayer.stack) }))
+        stackLayoutParameters.minimum = NSNumber(value: playerViewModels.reduce(Double(truncating: stackLayoutParameters.maximum), { min($0, $1.pokerTracker.latestHandPlayer.stack) }))
         
         // Sort view model using retained sort descriptors (if any).
         sort(using: self.sortDescriptors)
@@ -315,14 +316,35 @@ extension TourneyTableViewModel: NSTableViewDataSource
         
         return cellView
     }
+}
+
+
+// MARK: - Context Menu Events
+
+extension TourneyTableViewModel
+{
     
-    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor])
+    
+    func tableHeaderContextMenu(for column: NSTableColumn) -> NSMenu?
     {
-        // Sort view model using table sort descriptors.
-        sort(using: tableView.sortDescriptors)
-        tableView.reloadData()
+        if (column.identifier.rawValue == "Stack")
+        {
+            return NSMenu(title: "Stack").with(items:
+            [
+                NSMenuItem(title: "linear", action: #selector(menuItemDidClick), keyEquivalent: "").with(target: self),
+                NSMenuItem(title: "easeOut", action: #selector(menuItemDidClick), keyEquivalent: "").with( target: self)
+            ])
+        }
+        
+        return nil
+    }
+    
+    @objc func menuItemDidClick(menuItem: NSMenuItem)
+    {
+        print("menuItemDidClick(\(menuItem.title))")
     }
 }
+
 
 
 // MARK: - TableView Events
@@ -332,7 +354,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
     
     // Plug custom row view.
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView?
-    { return RowView() }
+    { return TourneyTableRowView() }
     
     // Save selection.
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
@@ -347,6 +369,13 @@ extension TourneyTableViewModel: NSTableViewDelegate
         self.selectedPlayerViewModel = playerViewModel
         
         return true
+    }
+    
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor])
+    {
+        // Sort view model using table sort descriptors.
+        sort(using: tableView.sortDescriptors)
+        tableView.reloadData()
     }
     
     public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)

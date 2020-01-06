@@ -702,7 +702,7 @@
             </objects>
             <point key="canvasLocation" x="75.5" y="230"/>
         </scene>
-        <!--Tourney Table View Controller-->
+        <!--Delegate-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TourneyTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
@@ -879,7 +879,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView translatesAutoresizingMaskIntoConstraints="NO" id="l7C-Qz-Vx7" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="243" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="NLE-gz-sfR">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
@@ -1731,9 +1731,12 @@
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <tableHeaderView key="headerView" id="VYx-qS-HlU">
+                                        <tableHeaderView key="headerView" id="VYx-qS-HlU" customClass="TourneyTableHeaderView" customModule="Ranger" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="1406" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="sR8-Yc-12L"/>
+                                            </connections>
                                         </tableHeaderView>
                                     </scrollView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-O1-p9y">

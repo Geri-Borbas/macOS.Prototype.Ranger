@@ -3,19 +3,37 @@
 
 * Doing
 
-    + SharkScope
-        + Clear tables cache / Clear sharkscope cache
-        + Filters
-            + Last one year
-            + Only sit and gos
-            + Only this type of tourney (entrants, stake) 
+    + Quick Features (to right-click context menus)
+        + Copy name / statistics to clipboard
+        + Normalized / Absolute switch for Finishes histogram
+        + Clear tables cache / Clear sharkscope cache for player
+        + Headers switch easing
+        + Slope could be drawn for a distinct small icon (not cover histogram)
+    
+    + Fixes
+        + PFR can be narrower
+        + Move `Count` after `Finishes`
+        + Losing Winning can be narrower
+        + Get session player stats for hero
 
-* Features
+    + Features
+        + Cursor for Finishes (get live tourney data)
+        + Add nationality (flag icon)
+        + Get player stats for hero filtered for villain (clickable)
+        + SharkScope
+            + Filters
+                + Last one year
+                + Only sit and gos
+                + Only this type of tourney (entrants, stake)
+            + Profit graph (?)
+        + ICM Equities
+            + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
+            + Get push / fold equity against villain (for given VPIP / stack / position)
 
-    + SharkScope Profit graph (?)
-    + PokerTracker Session stats / Lifetime stats
-    + ICM Equities
-        + Track Tourney Lobby / Chat Summary (?)
+* 1.5.1
+
+    + Menu item prototypes
+        
 
 * 1.5.0
 

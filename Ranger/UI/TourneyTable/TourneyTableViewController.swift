@@ -10,7 +10,10 @@ import Cocoa
 import CoreGraphics
 
 
-class TourneyTableViewController: NSViewController
+class TourneyTableViewController: NSViewController,
+    
+    TourneyTableHeaderViewDelegate
+    
 {
 
     
@@ -110,6 +113,10 @@ class TourneyTableViewController: NSViewController
         // Fetch SharkScope (gonna push changes back).
         viewModel.fetchSharkScopeStatisticsForPlayer(inRow: playersTableView.clickedRow)
     }
+    
+    func tableHeaderContextMenu(for column: NSTableColumn) -> NSMenu?
+    { return viewModel.tableHeaderContextMenu(for: column) }
+    
     
     // MARK: - Layout
     
