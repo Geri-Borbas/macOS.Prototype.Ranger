@@ -5,16 +5,16 @@
 
     + Next up
         + M-Display
+            + Stack sizes should be linear
         + Hand count (for player statistics)
+        + Add nationality (flag icon) with local time (!)
 
     + Quick Features (to right-click context menus)
+        + Don't switch window if only table changed (within the same tournament)
         + Normalized / Absolute switch for Finishes histogram
-        + Headers switch easing
         + Slope could be drawn for a distinct small icon (not cover histogram)
     
     + Quick Fixes
-        + PFR can be narrower
-        + Move `Count` after `Finishes`
         + Don't count `0` as stack display minimum
         + Losing Winning can be narrower
         + Get session player stats for hero
@@ -22,7 +22,6 @@
     + Features
         + Game distribution in time Graph (scatter)
         + Cursor for Finishes (get live tourney data)
-        + Add nationality (flag icon)
         + Get player stats for hero filtered for villain (clickable)
         + SharkScope
             + Filters
@@ -33,6 +32,12 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.5.5
+
+    + Column order tweaks (`Count` / `Entrants` / `Stake` / `Years` after `Finishes`)
+    + PFR adjustments (color ranges / bar width)
+    + 
 
 * 1.5.4
 
