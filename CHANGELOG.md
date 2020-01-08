@@ -6,7 +6,6 @@
     + Next up
         + M-Display
             + Stack sizes should be linear
-        + Hand count (for player statistics)
         + Add nationality (flag icon) with local time (!)
 
     + Quick Features (to right-click context menus)
@@ -30,6 +29,10 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.5.8
+
+    + Added hand count (for player statistics)
 
 * 1.5.7
 

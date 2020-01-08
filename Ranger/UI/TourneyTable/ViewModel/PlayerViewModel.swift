@@ -132,6 +132,7 @@ extension PlayerViewModel
             "Stack" : TextFieldDoubleData(value: pokerTracker.latestHandPlayer.stack),
             "VPIP" : TextFieldDoubleData(value: pokerTracker.statistics?.VPIP),
             "PFR" : TextFieldDoubleData(value: pokerTracker.statistics?.PFR),
+            "Hands" : TextFieldIntData(value: pokerTracker.statistics?.cnt_hands),
             "Tables" : TextFieldIntData(value: sharkScope.tables),
             "ITM" : TextFieldFloatData(value: sharkScope.statistics?.ITM),
             "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
@@ -187,8 +188,13 @@ extension PlayerViewModel
             ),
             "PFR" :
             (
-            ascending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 < rhs.pokerTracker.statistics?.PFR ?? 0 },
-            descending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 >= rhs.pokerTracker.statistics?.PFR ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 < rhs.pokerTracker.statistics?.PFR ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 >= rhs.pokerTracker.statistics?.PFR ?? 0 }
+            ),
+            "Hands" :
+            (
+                ascending: { lhs, rhs in lhs.pokerTracker.statistics?.cnt_hands ?? 0 < rhs.pokerTracker.statistics?.cnt_hands ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker.statistics?.cnt_hands ?? 0 >= rhs.pokerTracker.statistics?.cnt_hands ?? 0 }
             ),
             "Tables" :
             (
