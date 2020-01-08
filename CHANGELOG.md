@@ -15,7 +15,6 @@
         + Slope could be drawn for a distinct small icon (not cover histogram)
     
     + Quick Fixes
-        + Don't count `0` as stack display minimum
         + Losing Winning can be narrower
         + Get session player stats for hero
 
@@ -32,6 +31,10 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.5.6
+
+    + Don't count `0` as stack display minimum
 
 * 1.5.5
 

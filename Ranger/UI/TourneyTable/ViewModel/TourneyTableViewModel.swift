@@ -158,8 +158,19 @@ class TourneyTableViewModel: NSObject
         { playerViewModels[eachIndex].pokerTracker.update() }
         
         // Track stack extremes.
-        stackLayoutParameters.maximum = NSNumber(value: playerViewModels.reduce(0, { max($0, $1.pokerTracker.latestHandPlayer.stack) }))
-        stackLayoutParameters.minimum = NSNumber(value: playerViewModels.reduce(Double(truncating: stackLayoutParameters.maximum), { min($0, $1.pokerTracker.latestHandPlayer.stack) }))
+        stackLayoutParameters.maximum = NSNumber(value: playerViewModels.reduce(
+            0.0,
+            {
+                if ($1.pokerTracker.latestHandPlayer.stack > 0.0)
+                { return max($0, $1.pokerTracker.latestHandPlayer.stack) }
+                return $0
+            })
+        )
+        stackLayoutParameters.minimum = NSNumber(value: playerViewModels.reduce(
+            Double(truncating: stackLayoutParameters.maximum),
+            { min($0, $1.pokerTracker.latestHandPlayer.stack) })
+            
+        )
         
         // Sort view model using retained sort descriptors (if any).
         sort(using: self.sortDescriptors)
