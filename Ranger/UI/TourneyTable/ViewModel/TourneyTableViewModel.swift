@@ -25,8 +25,8 @@ class TourneyTableViewModel: NSObject
     /// The poker table this instance is tracking.
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
-    private var tickTime = 1.0
-    private var handUpdateTickFrequency = 2
+    private var tickTime = 0.5
+    private var handUpdateTickFrequency = 1
     
     /// View models for players seated at table.
     private var playerViewModels: [PlayerViewModel] = []
@@ -44,6 +44,15 @@ class TourneyTableViewModel: NSObject
     // MARK: - Binds
     
     @IBOutlet weak var stackLayoutParameters: PercentProvider!
+    var orbitCost: Float
+    {
+        // Only if table info is set (and parsed).
+        guard let tableInfo = tableWindowInfo?.tableInfo
+        else { return 0.0 }
+        
+        return Float(tableInfo.smallBlind) + Float(tableInfo.bigBlind) + 9.0 * Float(tableInfo.ante)
+    }
+    
     private var onChange: (() -> Void)?
     
     
@@ -162,18 +171,15 @@ class TourneyTableViewModel: NSObject
         
         // Track stack extremes.
         stackLayoutParameters.maximum = NSNumber(value: playerViewModels.reduce(
-            0.0,
-            {
-                if ($1.pokerTracker.latestHandPlayer.stack > 0.0)
-                { return max($0, $1.pokerTracker.latestHandPlayer.stack) }
-                return $0
-            })
+            Double(truncating: stackLayoutParameters.maximum),
+            { max($0, $1.pokerTracker.latestHandPlayer.stack) })
         )
+        /*
         stackLayoutParameters.minimum = NSNumber(value: playerViewModels.reduce(
             Double(truncating: stackLayoutParameters.maximum),
             { min($0, $1.pokerTracker.latestHandPlayer.stack) })
-            
         )
+        */
         
         // Sort view model using retained sort descriptors (if any).
         sort(using: self.sortDescriptors)

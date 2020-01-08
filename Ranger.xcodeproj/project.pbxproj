@@ -16,6 +16,8 @@
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
 		5518D63723BA8E0500EFFBC0 /* LatestHandPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63623BA8E0500EFFBC0 /* LatestHandPlayer.swift */; };
 		5518D63A23BA951F00EFFBC0 /* LatestHandPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */; };
+		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
+		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
 		5521A554239DD170000D1AD1 /* SharkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A553239DD170000D1AD1 /* SharkScope.swift */; };
 		5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */; };
 		5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */; };
@@ -104,6 +106,8 @@
 		5518D63623BA8E0500EFFBC0 /* LatestHandPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayer.swift; sourceTree = "<group>"; };
 		5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LatestHandPlayerQuery.sql; sourceTree = "<group>"; };
 		5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayerQuery.swift; sourceTree = "<group>"; };
+		551DEE0323C5E3C9006DF95B /* StackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCellView.swift; sourceTree = "<group>"; };
+		551DEE0723C5E477006DF95B /* StackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackBarView.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* SharkScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
@@ -237,6 +241,23 @@
 				5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */,
 			);
 			path = LatestHandPlayer;
+			sourceTree = "<group>";
+		};
+		551DEE0523C5E435006DF95B /* Finishes */ = {
+			isa = PBXGroup;
+			children = (
+				5504226323C16A240040A3DE /* FinishesGraphCellView.swift */,
+			);
+			path = Finishes;
+			sourceTree = "<group>";
+		};
+		551DEE0623C5E43D006DF95B /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				551DEE0323C5E3C9006DF95B /* StackCellView.swift */,
+				551DEE0723C5E477006DF95B /* StackBarView.swift */,
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 		5521A555239DD5C4000D1AD1 /* PokerTracker */ = {
@@ -384,7 +405,8 @@
 				55E7E71823C019D7000388FD /* Data */,
 				55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */,
 				55A9AC5923BE159A00179FA0 /* PlayerViewModelCellView.swift */,
-				5504226323C16A240040A3DE /* FinishesGraphCellView.swift */,
+				551DEE0623C5E43D006DF95B /* Stack */,
+				551DEE0523C5E435006DF95B /* Finishes */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -684,6 +706,7 @@
 				5518D63723BA8E0500EFFBC0 /* LatestHandPlayer.swift in Sources */,
 				554E018A23AA828100CF2971 /* Statistics.swift in Sources */,
 				55B03CD523B104F700F153B5 /* PlayerViewModel.swift in Sources */,
+				551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */,
 				55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */,
 				5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */,
 				55B3CD6123B069CF00DDE6AF /* ApiError.swift in Sources */,
@@ -691,6 +714,7 @@
 				555585DC23A2999500B603C1 /* Metadata.swift in Sources */,
 				55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */,
 				55698B9D23AAE27E0065125C /* ActiveTournaments.swift in Sources */,
+				551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */,
 				55E7E71723C00983000388FD /* TourneyTableRowView.swift in Sources */,
 				55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */,
 				555D217123A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift in Sources */,

@@ -40,6 +40,7 @@ struct TableWindowInfo: Equatable
         let bigBlind: Int
         let ante: Int
         var tableName: String { "\(tournamentNumber) \(tableNumber)" }
+        var orbitCost: Float { Float(smallBlind) + Float(bigBlind) + 9.0 * Float(ante) }
     }
     
     var tableInfo: TableInfo?

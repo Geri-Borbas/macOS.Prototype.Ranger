@@ -5,13 +5,15 @@
 
     + Next up
         + M-Display
-            + Stack sizes should be linear
-        + Add nationality (flag icon) with local time (!)
+            + M-Chunk coloring
+            + Draw consecutive chunk is spacing is too small (aka deep stack)
+            + Effective-M switch to context menu
 
     + Quick Features (to right-click context menus)
         + Don't switch window if only table changed (within the same tournament)
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
+        + Add nationality (flag icon) with local time (!)
     
     + Quick Fixes
         + Losing Winning can be narrower
@@ -29,6 +31,16 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.6.0
+
+    + M-Display
+        + `StackCellView` hooks
+        + `StackBarView` drawing
+
+* 1.5.9
+
+    + Stack size bars now simply linear
 
 * 1.5.8
 

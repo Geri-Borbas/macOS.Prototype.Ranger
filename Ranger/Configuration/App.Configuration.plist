@@ -11,11 +11,11 @@
 		<key>handOffset</key>
 		<integer>135</integer>
 		<key>smallBlind</key>
-		<integer>10</integer>
+		<integer>50</integer>
 		<key>bigBlind</key>
-		<integer>20</integer>
+		<integer>100</integer>
 		<key>ante</key>
-		<integer>3</integer>
+		<integer>13</integer>
 	</dict>
 	<key>autoCloseTableWindow</key>
 	<false/>
