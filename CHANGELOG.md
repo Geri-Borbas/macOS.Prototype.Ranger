@@ -3,14 +3,15 @@
 
 * Doing
 
-    + Quick Features (to right-click context menus)
+    + Next up
         + Don't switch window if only table changed (within the same tournament)
+        + Add nationality (flag icon) with local time (!)
+
+    + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
-        + Add nationality (flag icon) with local time (!)
     
     + Quick Fixes
-        + Lookup stack bar percentage display malfunction
         + Losing Winning can be narrower
 
     + Features
@@ -26,9 +27,10 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
-        + M-Display
-            + May draw consecutive chunk is spacing is too small (aka deep stack)
-            + Effective-M switch to context menu
+
+* 1.6.2
+
+    + Fixed stack bar percentage display (maximum plug)
 
 * 1.6.1
 

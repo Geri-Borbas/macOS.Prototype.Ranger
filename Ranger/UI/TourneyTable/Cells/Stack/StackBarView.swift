@@ -18,10 +18,9 @@ class StackBarView: NSView
     @IBOutlet weak var colorRanges: ColorRanges?
     
     
+    // Plugs.
     var stack: Float = 1500
-    { didSet { self.setNeedsDisplay(self.bounds) } }
     var orbitCost: Float = 57
-    { didSet { self.setNeedsDisplay(self.bounds) } }
     
     
     override func draw(_ dirtyRect: NSRect)
@@ -83,9 +82,30 @@ class StackBarView: NSView
         }
     }
     
-    override func layout()
+    func drawDebugPaths()
     {
-        super.layout()
+        // Checks.
+        guard let percentProvider = percentProvider
+        else { return }
+        
+        NSColor(white: 1.0, alpha: 0.4).setFill()
+        NSBezierPath(
+            roundedRect: self.bounds,
+            xRadius: 2.0,
+            yRadius: 2.0
+        ).fill()
+        
+        NSColor(white: 1.0, alpha: 0.6).setFill()
+        NSBezierPath(
+            roundedRect: CGRect(
+                x: self.bounds.origin.x,
+                y: self.bounds.origin.y,
+                width: self.bounds.width * CGFloat(percentProvider.percent(value: stack)),
+                height:  self.bounds.height
+            ),
+            xRadius: 2.0,
+            yRadius: 2.0
+        ).fill()
     }
     
 }

@@ -171,7 +171,7 @@ class TourneyTableViewModel: NSObject
         
         // Track stack extremes.
         stackPercentProvider.maximum = NSNumber(value: playerViewModels.reduce(
-            Double(truncating: stackPercentProvider.maximum),
+            0.0,
             { max($0, $1.pokerTracker.latestHandPlayer.stack) })
         )
         
