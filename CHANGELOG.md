@@ -5,16 +5,17 @@
 
     + Next up
         + M-Display
+        + Hand count (for player statistics)
 
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
-        + Clear tables cache / Clear sharkscope cache for player
         + Headers switch easing
         + Slope could be drawn for a distinct small icon (not cover histogram)
     
     + Quick Fixes
         + PFR can be narrower
         + Move `Count` after `Finishes`
+        + Don't count `0` as stack display minimum
         + Losing Winning can be narrower
         + Get session player stats for hero
 
@@ -32,6 +33,10 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.5.4
+
+    + Clear tables cache / Clear sharkscope cache for player (at context menu)
 
 * 1.5.3
 

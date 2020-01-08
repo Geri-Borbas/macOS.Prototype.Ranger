@@ -37,7 +37,9 @@ class TourneyTableView: NSTableView
                 action: nil,
                 keyEquivalent: ""
             ),
+            
             NSMenuItem.separator(),
+            
             NSMenuItem(
                 title: "Copy name to clipboard",
                 action: #selector(copyNameToClipboard),
@@ -49,6 +51,25 @@ class TourneyTableView: NSTableView
             NSMenuItem(
                 title: "Copy statistics to clipboard",
                 action: #selector(copyStatisticsToClipboard),
+                keyEquivalent: "")
+                .with(
+                    representedObject: playerViewModel,
+                    target: self
+            ),
+            
+            NSMenuItem.separator(),
+            
+            NSMenuItem(
+                title: "Delete tables cache",
+                action: #selector(deleteTablesCache),
+                keyEquivalent: "")
+                .with(
+                    representedObject: playerViewModel,
+                    target: self
+                ),
+            NSMenuItem(
+                title: "Delete statistics cache",
+                action: #selector(deleteStatisticsCache),
                 keyEquivalent: "")
                 .with(
                     representedObject: playerViewModel,
@@ -77,6 +98,26 @@ class TourneyTableView: NSTableView
         // Copy statistics to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
         NSPasteboard.general.setString(playerViewModel.statisticsSummary, forType: NSPasteboard.PasteboardType.string)
+    }
+
+    @objc func deleteTablesCache(menuItem: NSMenuItem)
+    {
+        // Get model.
+        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        else { return }
+        
+        // Remove file.
+        RequestCache().deleteTablesCache(for: playerViewModel.playerName)
+    }
+
+    @objc func deleteStatisticsCache(menuItem: NSMenuItem)
+    {
+        // Get model.
+        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        else { return }
+        
+        // Remove file.
+        RequestCache().deleteStatisticsCache(for: playerViewModel.playerName)
     }
     
 }

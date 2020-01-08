@@ -13,6 +13,48 @@ class RequestCache
 {
     
     
+    func deleteTablesCache(for playerName: String)
+    {
+        let requestPath = "activeTournaments"
+        let parameters = ["network1" : "PokerStars", "player1" : playerName]
+        
+        // Create (fake) URL Components.
+        var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "sharkscope.com"
+            urlComponents.path = SharkScope.basePath + requestPath
+            urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+    
+        // Resolve file name.
+        guard let cacheFileURL = cacheFileURL(for: urlComponents)
+        else { return }
+        
+        // Create folder (if needed).
+        do { try FileManager.default.removeItem(at: cacheFileURL) }
+        catch { print("Could not remove cache file. \(error)") }
+    }
+    
+    func deleteStatisticsCache(for playerName: String)
+    {
+        let requestPath = "networks/PokerStars/players/\(playerName)"
+        
+        // Create (fake) URL Components.
+        var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "sharkscope.com"
+            urlComponents.path = SharkScope.basePath + requestPath
+            urlComponents.queryItems = []
+    
+        // Resolve file name.
+        guard let cacheFileURL = cacheFileURL(for: urlComponents)
+        else { return }
+        
+        // Create folder (if needed).
+        do { try FileManager.default.removeItem(at: cacheFileURL) }
+        catch { print("Could not remove cache file. \(error)") }
+    }
+    
+    
     func cachedResponse<ResponseType: Decodable>(for urlComponents: URLComponents) -> ResponseType?
     {
         // Resolve file name.
@@ -41,8 +83,6 @@ class RequestCache
         // Resolve Documents directory.
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             else { return nil }
-        
-        
         
         // Parse subfolder (or fallback to no subfolder) without api path components.
         let pathURL = URL(string: urlComponents.percentEncodedPath.replacingOccurrences(of: SharkScope.basePath, with: "")) ?? URL(string: "")!
