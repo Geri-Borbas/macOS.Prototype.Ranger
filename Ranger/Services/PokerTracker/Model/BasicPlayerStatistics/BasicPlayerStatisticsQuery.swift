@@ -17,6 +17,7 @@ struct BasicPlayerStatisticsQuery: Query
     
     
     let playerIDs: [Int]
+    let tourneyNumber: String?
     var string: String
     {
         // Load query file.
@@ -24,18 +25,26 @@ struct BasicPlayerStatisticsQuery: Query
         guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
         else { return "" }
         
-        // Inject parameter.
+        // Inject player ids.
         let stringPlayerIDs = playerIDs.map{ eachPlayerID in String(eachPlayerID) }
         let joinedPlayerIDs = stringPlayerIDs.joined(separator: ",")
         let whereCondition = "player.id_player IN(\(joinedPlayerIDs))"
-        let queryString = queryTemplateString.replacingOccurrences(of: "$_WHERE_CONDITION", with: whereCondition)
+        var queryString = queryTemplateString.replacingOccurrences(of: "$_WHERE_CONDITION", with: whereCondition)
+        
+        // Inject tourney number if any.
+        queryString = queryString
+            .replacingOccurrences(
+                of: "$_TOURNEY_NUMBER",
+                with: tourneyNumber ?? "%"
+            )
         
         return queryString
     }
     
     
-    init(playerIDs: [Int])
+    init(playerIDs: [Int], tourneyNumber: String? = nil)
     {
         self.playerIDs = playerIDs
+        self.tourneyNumber = tourneyNumber
     }
 }

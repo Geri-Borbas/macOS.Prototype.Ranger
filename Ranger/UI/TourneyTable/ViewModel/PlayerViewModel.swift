@@ -34,9 +34,13 @@ struct PlayerViewModel
             self.latestHandPlayer = latestHandPlayer
         }
         
-        public mutating func update()
+        public mutating func updateStatistics(for tourneyNumber: String? = nil)
         {
-            self.statistics = try? service.fetch(BasicPlayerStatisticsQuery(playerIDs: [latestHandPlayer.id_player])).first
+            self.statistics = try? service.fetch(
+                BasicPlayerStatisticsQuery(
+                    playerIDs: [latestHandPlayer.id_player],
+                    tourneyNumber: tourneyNumber
+            )).first
         }
     }
     

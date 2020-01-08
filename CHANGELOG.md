@@ -16,7 +16,6 @@
     
     + Quick Fixes
         + Losing Winning can be narrower
-        + Get session player stats for hero
 
     + Features
         + Game distribution in time Graph (scatter)
@@ -31,6 +30,12 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.5.7
+
+    + Get session player stats only for hero
+        + Added `tourneyNumber` initialization parameter to `BasicPlayerStatistics` / `PlayerViewModel`
+        + Fetch tourney statistics only for hero (`PlayerViewModel.pokerTracker.latestHandPlayer.flg_hero`)
 
 * 1.5.6
 

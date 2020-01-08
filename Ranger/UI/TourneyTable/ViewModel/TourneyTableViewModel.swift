@@ -153,9 +153,12 @@ class TourneyTableViewModel: NSObject
         // And just use the new collection.
         playerViewModels = latestHandPlayerViewModels
         
-        // Get latest PokerTracker statistics.
-        for eachIndex in playerViewModels.indices
-        { playerViewModels[eachIndex].pokerTracker.update() }
+        // Get latest PokerTracker statistics (get session stats for hero).
+        for (eachIndex, eachPlayerViewModel) in playerViewModels.enumerated()
+        {
+            let isHero = eachPlayerViewModel.pokerTracker.latestHandPlayer.flg_hero
+            playerViewModels[eachIndex].pokerTracker.updateStatistics(for: isHero ? tableInfo.tournamentNumber : nil)
+        }
         
         // Track stack extremes.
         stackLayoutParameters.maximum = NSNumber(value: playerViewModels.reduce(
