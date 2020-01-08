@@ -14,11 +14,14 @@ class StackBarView: NSView
 {
 
     
-    @IBOutlet var percentProvider: PercentProvider?
+    @IBOutlet weak var percentProvider: PercentProvider?
+    @IBOutlet weak var colorRanges: ColorRanges?
     
     
     var stack: Float = 1500
+    { didSet { self.setNeedsDisplay(self.bounds) } }
     var orbitCost: Float = 57
+    { didSet { self.setNeedsDisplay(self.bounds) } }
     
     
     override func draw(_ dirtyRect: NSRect)
@@ -34,7 +37,7 @@ class StackBarView: NSView
         let radius: CGFloat =  2.0
         let spacing: CGFloat = radius
         let stackIncrement = orbitCost * 5.0 // Draw 5M chunks
-        while(true)
+        while (true)
         {
             // Get bounds.
             let leftStack = stackCursor
@@ -61,19 +64,28 @@ class StackBarView: NSView
                 width: width,
                 height:  self.bounds.height
             )
+            
+            // Calculate color.
+            let stackM = stack / orbitCost
+            // let rightM = rightStack / orbitCost
 
             // Draw.
             let chunk = NSBezierPath(roundedRect: chunkRect, xRadius: 2.0, yRadius: 2.0)
-            NSColor.white.setFill()
+            (colorRanges?.color(for: stackM) ?? NSColor.white).setFill()
             chunk.fill()
             
             // Step.
             stackCursor = rightStack
             
-            // End. .
+            // End.
             if (stackCursor >= stack)
             { break }
         }
+    }
+    
+    override func layout()
+    {
+        super.layout()
     }
     
 }

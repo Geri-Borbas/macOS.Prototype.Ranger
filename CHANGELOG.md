@@ -3,12 +3,6 @@
 
 * Doing
 
-    + Next up
-        + M-Display
-            + M-Chunk coloring
-            + Draw consecutive chunk is spacing is too small (aka deep stack)
-            + Effective-M switch to context menu
-
     + Quick Features (to right-click context menus)
         + Don't switch window if only table changed (within the same tournament)
         + Normalized / Absolute switch for Finishes histogram
@@ -16,6 +10,7 @@
         + Add nationality (flag icon) with local time (!)
     
     + Quick Fixes
+        + Lookup stack bar percentage display malfunction
         + Losing Winning can be narrower
 
     + Features
@@ -31,6 +26,13 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+        + M-Display
+            + May draw consecutive chunk is spacing is too small (aka deep stack)
+            + Effective-M switch to context menu
+
+* 1.6.1
+
+    + Stack cell designs (colors / chunks / )
 
 * 1.6.0
 

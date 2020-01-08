@@ -711,16 +711,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="20" width="1408" height="280"/>
+                                <rect key="frame" x="20" y="20" width="1408" height="230"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
-                                        <rect key="frame" x="0.0" y="157" width="1408" height="123"/>
+                                        <rect key="frame" x="0.0" y="157" width="1408" height="73"/>
                                         <clipView key="contentView" id="3s2-if-0UA">
-                                            <rect key="frame" x="1" y="0.0" width="1406" height="107"/>
+                                            <rect key="frame" x="1" y="0.0" width="1406" height="57"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq" customClass="TourneyTableView" customModule="Ranger" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1423" height="82"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1423" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="1" height="1"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -728,7 +728,7 @@
                                                     <tableColumns>
                                                         <tableColumn identifier="Seat" width="40" minWidth="40" maxWidth="100" id="bWB-E4-luj">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Seat">
-                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <font key="font" metaFont="label" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -765,7 +765,7 @@
                                                         </tableColumn>
                                                         <tableColumn identifier="Player" width="100" minWidth="100" maxWidth="1000" id="hNh-fL-1Th">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <font key="font" metaFont="label" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -798,7 +798,7 @@
                                                         </tableColumn>
                                                         <tableColumn identifier="Stack" width="130" minWidth="100" maxWidth="1000" id="BuG-wr-mpc">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <font key="font" metaFont="label" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -859,6 +859,7 @@
                                                                                         <constraint firstAttribute="height" constant="4" id="Qww-2C-Jde"/>
                                                                                     </constraints>
                                                                                     <connections>
+                                                                                        <outlet property="colorRanges" destination="8Pq-Gq-beU" id="Jae-cj-RhM"/>
                                                                                         <outlet property="percentProvider" destination="ras-3K-Q2y" id="c4k-cE-ODw"/>
                                                                                     </connections>
                                                                                 </customView>
@@ -883,6 +884,7 @@
                                                                         <constraint firstItem="2X6-WL-6u3" firstAttribute="leading" secondItem="w0g-sY-g4u" secondAttribute="leading" constant="37" id="m9G-a4-EVt"/>
                                                                     </constraints>
                                                                     <connections>
+                                                                        <outlet property="mBar" destination="4e9-Zm-O2x" id="41Y-ml-rkg"/>
                                                                         <outlet property="mTextField" destination="bwz-u5-n4f" id="8Vt-Cc-vOg"/>
                                                                         <outlet property="percentProvider" destination="ras-3K-Q2y" id="F5T-vh-sbn"/>
                                                                         <outlet property="stackBarView" destination="ZqV-zz-hkJ" id="tzl-Gp-Xqu"/>
@@ -1793,7 +1795,7 @@
                                             </subviews>
                                         </clipView>
                                         <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="z33-TF-e0A">
-                                            <rect key="frame" x="1" y="107" width="1406" height="15"/>
+                                            <rect key="frame" x="1" y="57" width="1406" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ctz-tj-roT">
@@ -1902,7 +1904,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="1rj-Mk-7PR" customClass="TourneyTableViewModel" customModule="Ranger" customModuleProvider="target">
                     <connections>
-                        <outlet property="stackLayoutParameters" destination="ras-3K-Q2y" id="fW0-KQ-44P"/>
+                        <outlet property="stackPercentProvider" destination="ras-3K-Q2y" id="fW0-KQ-44P"/>
                     </connections>
                 </customObject>
                 <customObject id="ras-3K-Q2y" userLabel="Stack PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">

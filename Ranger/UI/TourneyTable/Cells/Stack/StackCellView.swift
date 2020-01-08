@@ -14,7 +14,11 @@ class StackCellView: PlayerViewModelCellView
 {
 
     
+    // M.
     @IBOutlet weak var mTextField: NSTextField!
+    @IBOutlet weak var mBar: NSBox!
+    
+    // Stack.
     @IBOutlet weak var stackBarView: StackBarView!
     
     @IBOutlet weak var stackColorRanges: ColorRanges?
@@ -57,6 +61,13 @@ class StackCellView: PlayerViewModelCellView
         
         // Draw stack bar.
         self.stackBarView.setNeedsDisplay(self.stackBarView.bounds)
+        
+        // Layout colors.
+        if let colorRanges = stackColorRanges
+        {
+            textField.textColor = colorRanges.color(for: M).blended(withFraction: 0.2, of: NSColor.clear)
+            mBar.fillColor = colorRanges.color(for: M)
+        }
                 
         // Don't clip text fields.
         textField.wantsLayer = true
