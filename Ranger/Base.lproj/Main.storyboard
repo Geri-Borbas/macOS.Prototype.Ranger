@@ -707,20 +707,20 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TourneyTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1448" height="345"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1448" height="320"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="20" width="1408" height="230"/>
+                                <rect key="frame" x="20" y="20" width="1408" height="280"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
-                                        <rect key="frame" x="0.0" y="157" width="1408" height="73"/>
+                                        <rect key="frame" x="0.0" y="157" width="1408" height="123"/>
                                         <clipView key="contentView" id="3s2-if-0UA">
-                                            <rect key="frame" x="1" y="0.0" width="1406" height="57"/>
+                                            <rect key="frame" x="1" y="0.0" width="1406" height="107"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq" customClass="TourneyTableView" customModule="Ranger" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1423" height="32"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1423" height="82"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="1" height="1"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -728,7 +728,7 @@
                                                     <tableColumns>
                                                         <tableColumn identifier="Seat" width="40" minWidth="40" maxWidth="100" id="bWB-E4-luj">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Seat">
-                                                                <font key="font" metaFont="label" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </tableHeaderCell>
@@ -765,7 +765,7 @@
                                                         </tableColumn>
                                                         <tableColumn identifier="Player" width="100" minWidth="100" maxWidth="1000" id="hNh-fL-1Th">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                                <font key="font" metaFont="label" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -798,7 +798,7 @@
                                                         </tableColumn>
                                                         <tableColumn identifier="Stack" width="130" minWidth="100" maxWidth="1000" id="BuG-wr-mpc">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                                <font key="font" metaFont="label" size="11"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -1029,13 +1029,13 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tz-tO-6SA">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="89" id="aSF-Rq-Zyd">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="(89)" id="aSF-Rq-Zyd">
                                                                                 <font key="font" metaFont="message" size="11"/>
                                                                                 <color key="textColor" white="0.29999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
-                                                                                <outlet property="formatter" destination="pyE-fv-QmI" id="utO-hT-gfW"/>
+                                                                                <outlet property="formatter" destination="93c-Fi-6Se" id="XJf-wX-mIQ"/>
                                                                             </connections>
                                                                         </textField>
                                                                     </subviews>
@@ -1067,7 +1067,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="12" id="Mxu-iU-aeX">
-                                                                                <font key="font" metaFont="systemThin" size="13"/>
+                                                                                <font key="font" metaFont="systemBold"/>
                                                                                 <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
@@ -1354,13 +1354,13 @@
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-sD-fOy">
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="12 456" id="AfW-nV-YHv">
+                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="(12 456)" id="AfW-nV-YHv">
                                                                                 <font key="font" metaFont="message" size="11"/>
                                                                                 <color key="textColor" white="0.29999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
-                                                                                <outlet property="formatter" destination="OLQ-kV-9Os" id="gOd-jg-EQ8"/>
+                                                                                <outlet property="formatter" destination="93c-Fi-6Se" id="bim-qm-BmT"/>
                                                                             </connections>
                                                                         </textField>
                                                                     </subviews>
@@ -1795,7 +1795,7 @@
                                             </subviews>
                                         </clipView>
                                         <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="z33-TF-e0A">
-                                            <rect key="frame" x="1" y="57" width="1406" height="15"/>
+                                            <rect key="frame" x="1" y="107" width="1406" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ctz-tj-roT">
@@ -2154,6 +2154,9 @@
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="OLQ-kV-9Os" userLabel="### ###,### Number Formatter"/>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="pyE-fv-QmI" userLabel="### ### ### Number Formatter">
+                    <integer key="multiplier" value="1"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" positivePrefix="(" positiveSuffix=")" negativePrefix="(" negativeSuffix=")" id="93c-Fi-6Se" userLabel="(### ### ###) Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2" id="fnI-zI-pfV" userLabel="## (x-10000) Number Formatter">

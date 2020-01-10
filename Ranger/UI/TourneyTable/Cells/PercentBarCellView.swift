@@ -60,7 +60,10 @@ class PercentBarCellView: PlayerViewModelCellView
                 
         // Layout bar size.
         if let widthConstraint = barWidthConstraint
-        { widthConstraint.constant = (bar.superview?.frame.width ?? 0) * CGFloat(percent) }
+        {
+            let width = (bar.superview?.frame.width ?? 0) * CGFloat(percent)
+            widthConstraint.constant = max(0, width)
+        }
                 
         // Layout bar color.
         if let colorRanges = barColorRanges

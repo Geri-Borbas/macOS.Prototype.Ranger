@@ -4,9 +4,10 @@
 * Doing
 
     + Next up
+        + Get tournament history (yet request only / perhaps some export)
         + Don't switch window if only table changed (within the same tournament)
         + Add nationality (flag icon) with local time (!)
-
+        
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
@@ -27,6 +28,17 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+        + Regex window title recognition
+
+* 1.6.4
+
+    + Clamped width layout constraint value to 0+
+        + Handle players with empty stats (e.g. "Pop737")
+    + Count values into parenthesis (`Hands` / `Count`)
+    + M-Display
+        + Show each M below 5 M
+    + Window title parsing fix
+        + Enables for "-" in tournament name
 
 * 1.6.2
 

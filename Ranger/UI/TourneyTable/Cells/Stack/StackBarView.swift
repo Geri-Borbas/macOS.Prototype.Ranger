@@ -35,7 +35,9 @@ class StackBarView: NSView
         var stackCursor: Float = 0.0
         let radius: CGFloat =  2.0
         let spacing: CGFloat = radius
-        let stackIncrement = orbitCost * 5.0 // Draw 5M chunks
+        let M: Float = stack / orbitCost
+        let incrementSize: Float = (M > 6.0) ? 5.0 : 1.0
+        let stackIncrement = orbitCost * incrementSize // Draw 5M (or 1M) chunks
         while (true)
         {
             // Get bounds.

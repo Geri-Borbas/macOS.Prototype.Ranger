@@ -53,11 +53,14 @@ struct TableWindowInfo: Equatable
         
         // Only with 4 components.
         let components = name.components(separatedBy: " - ")
-        guard components.count == 4
+        guard components.count == 4 || components.count == 5
         else { return nil }
+        
+        let blindsComponentIndex = components.count - 3
+        let tournamentTableNameComponentIndex = components.count - 2
                 
         // Parse blinds.
-        let blindLevelComponents = components[1].components(separatedBy: " ")
+        let blindLevelComponents = components[blindsComponentIndex].components(separatedBy: " ")
         let blindsComponents = blindLevelComponents[0].components(separatedBy: "/")
         
         smallBlind = Int(blindsComponents[0]) ?? -1
@@ -72,7 +75,7 @@ struct TableWindowInfo: Equatable
         { ante = Int(blindLevelComponents[1].replacingOccurrences(of: "ante ", with: "")) ?? 0 }
         
         // Parse tourney.
-        let tournamentTableNameComponents = components[2].components(separatedBy: " ")
+        let tournamentTableNameComponents = components[tournamentTableNameComponentIndex].components(separatedBy: " ")
         
         // Only with 4 table name components.
         guard tournamentTableNameComponents.count == 4

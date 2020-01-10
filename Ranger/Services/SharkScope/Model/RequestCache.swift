@@ -36,14 +36,16 @@ class RequestCache
     
     func deleteStatisticsCache(for playerName: String)
     {
-        let requestPath = "networks/PokerStars/players/\(playerName)"
+        let network = "PokerStars"
+        let requestPath = "networks/\(network)/players/\(playerName)"
+        let parameters = PlayerSummaryRequest(network: network, player: playerName).parameters
         
         // Create (fake) URL Components.
         var urlComponents = URLComponents()
             urlComponents.scheme = "https"
             urlComponents.host = "sharkscope.com"
             urlComponents.path = SharkScope.basePath + requestPath
-            urlComponents.queryItems = []
+            urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
     
         // Resolve file name.
         guard let cacheFileURL = cacheFileURL(for: urlComponents)
