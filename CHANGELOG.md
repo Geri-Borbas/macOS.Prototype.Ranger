@@ -6,16 +6,13 @@
     + Next up
         + Get tournament history (yet request only / perhaps some export)
         + Don't switch window if only table changed (within the same tournament)
-        + Add nationality (flag icon) with local time (!)
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
-    
-    + Quick Fixes
-        + Losing Winning can be narrower
 
     + Features
+        + Add nationality (flag icon) with local time (!)
         + Game distribution in time Graph (scatter)
         + Cursor for Finishes (get live tourney data)
         + Get player stats for hero filtered for villain (clickable)
@@ -29,6 +26,10 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
         + Regex window title recognition
+
+* 1.6.5
+
+    + Losing / Winning days designed for less significance (narrower / dimmer)
 
 * 1.6.4
 

@@ -706,21 +706,21 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TourneyTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1448" height="320"/>
+                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="1448" height="295"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sU5-ho-3Vw">
-                                <rect key="frame" x="20" y="20" width="1408" height="280"/>
+                                <rect key="frame" x="20" y="20" width="1408" height="255"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMx-ys-oxY">
-                                        <rect key="frame" x="0.0" y="157" width="1408" height="123"/>
+                                        <rect key="frame" x="0.0" y="157" width="1408" height="98"/>
                                         <clipView key="contentView" id="3s2-if-0UA">
-                                            <rect key="frame" x="1" y="0.0" width="1406" height="107"/>
+                                            <rect key="frame" x="1" y="0.0" width="1406" height="97"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq" customClass="TourneyTableView" customModule="Ranger" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1423" height="82"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1406" height="72"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="1" height="1"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1481,7 +1481,7 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="Losing" width="80" minWidth="50" maxWidth="100" id="VWW-CI-BqF">
+                                                        <tableColumn identifier="Losing" width="60" minWidth="60" maxWidth="100" id="VWW-CI-BqF">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Losing">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1496,28 +1496,27 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="90L-30-1ry" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1006" y="0.0" width="80" height="17"/>
+                                                                    <rect key="frame" x="1006" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-QZ-jAj">
-                                                                            <rect key="frame" x="40" y="0.0" width="40" height="17"/>
+                                                                            <rect key="frame" x="20" y="0.0" width="40" height="4"/>
                                                                             <view key="contentView" id="rY2-0c-ZFg">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="4"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             </view>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="height" constant="4" id="9VG-sr-23a"/>
                                                                                 <constraint firstAttribute="width" constant="40" id="Lba-Vc-kal"/>
                                                                             </constraints>
-                                                                            <color key="fillColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="fillColor" red="0.52156490089999996" green="0.52156507969999999" blue="0.52156412600000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </box>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-pJ-M9Y">
-                                                                            <rect key="frame" x="6" y="3" width="34" height="11"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="zN6-Hy-I1F"/>
-                                                                            </constraints>
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="AZb-pJ-M9Y">
+                                                                            <rect key="frame" x="0.0" y="5" width="60" height="11"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="50" usesSingleLineMode="YES" id="Ky1-OJ-JZn">
                                                                                 <font key="font" metaFont="miniSystemBold"/>
-                                                                                <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" red="0.52156862745098043" green="0.52156507969999999" blue="0.52156412600000002" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
@@ -1526,11 +1525,8 @@
                                                                         </textField>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="UZF-QZ-jAj" firstAttribute="top" secondItem="90L-30-1ry" secondAttribute="top" id="Ahy-A4-BjN"/>
-                                                                        <constraint firstItem="UZF-QZ-jAj" firstAttribute="leading" secondItem="AZb-pJ-M9Y" secondAttribute="trailing" constant="2" id="EAh-dR-uKQ"/>
                                                                         <constraint firstItem="UZF-QZ-jAj" firstAttribute="trailing" secondItem="90L-30-1ry" secondAttribute="trailing" id="Peu-Dm-NFV"/>
                                                                         <constraint firstAttribute="bottom" secondItem="UZF-QZ-jAj" secondAttribute="bottom" id="aOq-cV-jUy"/>
-                                                                        <constraint firstItem="AZb-pJ-M9Y" firstAttribute="centerY" secondItem="90L-30-1ry" secondAttribute="centerY" id="dgx-fb-ngi"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="bar" destination="UZF-QZ-jAj" id="WQ6-oO-1mt"/>
@@ -1541,7 +1537,7 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="Winning" width="80" minWidth="50" maxWidth="100" id="p5x-cA-cJe">
+                                                        <tableColumn identifier="Winning" width="60" minWidth="60" maxWidth="100" id="p5x-cA-cJe">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Winning">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1556,28 +1552,27 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="c5m-ev-Mi8" customClass="PercentBarCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1087" y="0.0" width="80" height="17"/>
+                                                                    <rect key="frame" x="1067" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aHL-gI-q1l">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="4"/>
                                                                             <view key="contentView" id="YSz-2M-2LV">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="4"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             </view>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="Q1P-iW-F0C"/>
+                                                                                <constraint firstAttribute="height" constant="4" id="fAT-sB-gI4"/>
                                                                             </constraints>
-                                                                            <color key="fillColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="fillColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </box>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Jsx-JO-w7W">
-                                                                            <rect key="frame" x="40" y="3" width="34" height="11"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="hos-gT-UTa"/>
-                                                                            </constraints>
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="Jsx-JO-w7W">
+                                                                            <rect key="frame" x="0.0" y="5" width="60" height="11"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="50" usesSingleLineMode="YES" id="gG9-7G-F2w">
                                                                                 <font key="font" metaFont="miniSystemBold"/>
-                                                                                <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" white="0.80000000000000004" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
@@ -1586,9 +1581,6 @@
                                                                         </textField>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="Jsx-JO-w7W" firstAttribute="leading" secondItem="aHL-gI-q1l" secondAttribute="trailing" constant="2" id="dIj-x5-Qp2"/>
-                                                                        <constraint firstItem="aHL-gI-q1l" firstAttribute="top" secondItem="c5m-ev-Mi8" secondAttribute="top" id="h35-PJ-ay5"/>
-                                                                        <constraint firstItem="Jsx-JO-w7W" firstAttribute="centerY" secondItem="c5m-ev-Mi8" secondAttribute="centerY" id="k0P-ry-vhN"/>
                                                                         <constraint firstAttribute="bottom" secondItem="aHL-gI-q1l" secondAttribute="bottom" id="tDt-w2-Ln2"/>
                                                                         <constraint firstItem="aHL-gI-q1l" firstAttribute="leading" secondItem="c5m-ev-Mi8" secondAttribute="leading" id="v5j-G3-CuM"/>
                                                                     </constraints>
@@ -1616,7 +1608,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="py3-m2-eTy" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1168" y="0.0" width="60" height="17"/>
+                                                                    <rect key="frame" x="1128" y="0.0" width="60" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1E4-oU-bUj">
@@ -1653,7 +1645,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="drt-ya-61r" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1229" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="1189" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-XX-Air">
@@ -1690,7 +1682,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="2l3-uU-wxW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1280" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="1240" y="0.0" width="50" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hd-at-Yw5">
@@ -1727,7 +1719,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="59i-oi-97B" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1331" y="0.0" width="40" height="17"/>
+                                                                    <rect key="frame" x="1291" y="0.0" width="40" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uK5-Gc-FcV">
@@ -1749,7 +1741,7 @@
                                                                 </tableCellView>
                                                             </prototypeCellViews>
                                                         </tableColumn>
-                                                        <tableColumn identifier="Ability" width="50" minWidth="50" maxWidth="100" id="MzJ-sM-JWF">
+                                                        <tableColumn identifier="Ability" width="73" minWidth="50" maxWidth="100" id="MzJ-sM-JWF">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Ability">
                                                                 <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1764,11 +1756,11 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="59T-6A-mL7" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
-                                                                    <rect key="frame" x="1372" y="0.0" width="50" height="17"/>
+                                                                    <rect key="frame" x="1332" y="0.0" width="73" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-Bm-R8h">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="73" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="56" id="GgL-mb-Rdf">
                                                                                 <font key="font" metaFont="message" size="11"/>
@@ -1794,8 +1786,8 @@
                                                 </tableView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="z33-TF-e0A">
-                                            <rect key="frame" x="1" y="107" width="1406" height="15"/>
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="z33-TF-e0A">
+                                            <rect key="frame" x="1" y="32" width="1406" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ctz-tj-roT">
@@ -1803,7 +1795,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="VYx-qS-HlU" customClass="TourneyTableHeaderView" customModule="Ranger" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="1423" height="25"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1406" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <connections>
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="sR8-Yc-12L"/>
