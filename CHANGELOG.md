@@ -4,8 +4,10 @@
 * Doing
 
     + Next up
+        + `TableWindowInfo`
+            + Regex title recognition (with tests)
+        + Don't switch window if only table changed (within the same tournament)    
         + Get tournament history (yet request only / perhaps some export)
-        + Don't switch window if only table changed (within the same tournament)
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -25,7 +27,13 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
-        + Regex window title recognition
+
+* 1.6.6
+
+    + `TableWindowInfo`
+        + Extracted `TableInfo`
+        + Created tests for various window titles / number formats
+        + Refactored test suites
 
 * 1.6.5
 

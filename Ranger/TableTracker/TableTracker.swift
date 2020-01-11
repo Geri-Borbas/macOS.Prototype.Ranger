@@ -115,7 +115,7 @@ class TableTracker
     {
         // Set either real or simulated (will invoke `didSet`).
         if (App.configuration.isSimulationMode)
-        { firstTableWindowInfo = TableWindowInfo.simulatedTableWindowInfo }
+        { firstTableWindowInfo = App.configuration.simulatedTableWindowInfo }
         
         if (App.configuration.isLiveMode)
         { firstTableWindowInfo = searchFirstTableWindowInfo() }

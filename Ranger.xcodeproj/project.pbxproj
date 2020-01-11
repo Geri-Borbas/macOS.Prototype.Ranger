@@ -47,6 +47,8 @@
 		55840BFA23A9BE5D000B06FF /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BF923A9BE5D000B06FF /* UserInfo.swift */; };
 		55840BFC23A9BF94000B06FF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BFB23A9BF94000B06FF /* Response.swift */; };
 		55840BFF23A9C082000B06FF /* RootResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BFE23A9C082000B06FF /* RootResponse.swift */; };
+		5585E40C23C985A80009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
+		5585E40E23C986930009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		5587DB4423A497740079BB30 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* Player.swift */; };
 		558D35D6239F28F6006C710D /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 558D35D5239F28F6006C710D /* XMLCoder */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
@@ -64,10 +66,11 @@
 		55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */; };
 		55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C18692239583DC0081B6B7 /* Assets.xcassets */; };
 		55C18696239583DD0081B6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C18694239583DD0081B6B7 /* Main.storyboard */; };
-		55C529E723BD3F1500A6975A /* RangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C529E623BD3F1400A6975A /* RangerTests.swift */; };
 		55C8498623A3309F00452F2F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8498523A3309F00452F2F /* Notes.swift */; };
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
 		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
+		55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */; };
+		55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
 		55DB43E523A2DB4D00A7F37F /* RequestCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E423A2DB4D00A7F37F /* RequestCache.swift */; };
 		55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */; };
 		55DB43E923A2E62000A7F37F /* SharkScope.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */; };
@@ -135,6 +138,7 @@
 		55840BF923A9BE5D000B06FF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		55840BFB23A9BF94000B06FF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		55840BFE23A9C082000B06FF /* RootResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootResponse.swift; sourceTree = "<group>"; };
+		5585E40B23C985A80009E98F /* TableInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfo.swift; sourceTree = "<group>"; };
 		5587DB4323A497740079BB30 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		558D35E1239F3C58006C710D /* Metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
 		558D35E4239F42AE006C710D /* PlayerSummary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlayerSummary.json; sourceTree = "<group>"; };
@@ -157,10 +161,12 @@
 		55C18697239583DD0081B6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C18698239583DD0081B6B7 /* Ranger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ranger.entitlements; sourceTree = "<group>"; };
 		55C529E423BD3F1400A6975A /* RangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55C529E623BD3F1400A6975A /* RangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerTests.swift; sourceTree = "<group>"; };
+		55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegressionTests.swift; sourceTree = "<group>"; };
 		55C529E823BD3F1500A6975A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C8498523A3309F00452F2F /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		55D4CADD23BB0394001E07E5 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
+		55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDescriptorPrototypeTests.swift; sourceTree = "<group>"; };
+		55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfoTests.swift; sourceTree = "<group>"; };
 		55DB43E423A2DB4D00A7F37F /* RequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
 		55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.Configuration.swift; sourceTree = "<group>"; };
@@ -416,6 +422,7 @@
 			children = (
 				55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */,
 				55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */,
+				5585E40B23C985A80009E98F /* TableInfo.swift */,
 			);
 			path = TableTracker;
 			sourceTree = "<group>";
@@ -475,7 +482,9 @@
 		55C529E523BD3F1400A6975A /* RangerTests */ = {
 			isa = PBXGroup;
 			children = (
-				55C529E623BD3F1400A6975A /* RangerTests.swift */,
+				55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */,
+				55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */,
+				55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */,
 				55C529E823BD3F1500A6975A /* Info.plist */,
 			);
 			path = RangerTests;
@@ -662,6 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5574DAC823A68E8700569790 /* Request.swift in Sources */,
+				5585E40C23C985A80009E98F /* TableInfo.swift in Sources */,
 				55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */,
@@ -730,8 +740,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C529E723BD3F1500A6975A /* RangerTests.swift in Sources */,
 				5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */,
+				55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */,
+				55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */,
+				5585E40E23C986930009E98F /* TableInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

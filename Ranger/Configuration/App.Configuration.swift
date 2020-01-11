@@ -56,3 +56,21 @@ extension App
         }
     }
 }
+
+
+
+
+
+extension App.Configuration
+{
+    
+    
+    var simulatedTableWindowInfo: TableWindowInfo
+    {
+        TableWindowInfo(
+            name: "$3.50 NL Hold'em [18 Players, Turbo] - \(simulation.smallBlind)/\(simulation.bigBlind) ante \(simulation.ante) - Tournament \(simulation.tournamentNumber) Table 2 - Logged In as Borbas.Geri",
+            number: 0,
+            bounds: CGRect()
+        )
+    }
+}
