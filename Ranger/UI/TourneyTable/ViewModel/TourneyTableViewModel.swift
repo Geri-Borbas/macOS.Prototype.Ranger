@@ -362,10 +362,6 @@ extension TourneyTableViewModel: NSTableViewDelegate
         // Data.
         var playerViewModel = playerViewModels[row]
         let playerName = playerViewModel.pokerTracker.latestHandPlayer.player_name
-        
-        // Copy name to clipboard.
-        NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        NSPasteboard.general.setString(playerName, forType: NSPasteboard.PasteboardType.string)
 
         // Fetch summary.
         // let fetchPlayerName = "Oliana88" // Pro
@@ -395,6 +391,44 @@ extension TourneyTableViewModel: NSTableViewDelegate
                         
                         // Invoke callback.
                         self.onChange?()
+
+                        break
+
+                    case .failure(let error):
+
+                        // Fail silently for now.
+                        print(error)
+
+                    break
+                }
+           })
+    }
+    
+    public func fetchCompletedTournamentsForPlayer(withName playerName: String)
+    {
+        // Lookup player.
+        let firstPlayerViewModel = playerViewModels.filter{ eachPlayerViewModel in eachPlayerViewModel.playerName == playerName }.first
+        
+        // Checks.
+        guard let playerViewModel = firstPlayerViewModel else { return }
+        
+        /// Data.
+        sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:playerViewModel.playerName, amount: 80),
+                         completion:
+            {
+                 (result: Result<CompletedTournaments, RequestError>)in
+                       
+                switch result
+                {
+                    case .success(let response):
+
+                        print(response)
+                        
+                        // Retain.
+                        // playerViewModel.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
+                        
+                        // Invoke callback.
+                        // self.onChange?()
 
                         break
 

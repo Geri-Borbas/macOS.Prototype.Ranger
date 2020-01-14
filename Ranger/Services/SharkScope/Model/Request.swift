@@ -38,6 +38,5 @@ extension Request
         var copy = self
         copy.useCache = false
         return copy
-    }
-    
+    }    
 }

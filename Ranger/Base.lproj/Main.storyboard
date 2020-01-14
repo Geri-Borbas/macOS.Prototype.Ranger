@@ -1779,6 +1779,7 @@
                                             <connections>
                                                 <outlet property="dataSource" destination="1rj-Mk-7PR" id="Myg-8U-DTn"/>
                                                 <outlet property="delegate" destination="1rj-Mk-7PR" id="RXw-Rg-UbB"/>
+                                                <outlet property="tourneyTableViewDelegate" destination="XfG-lQ-9wD" id="Gl4-Gn-JBr"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -2076,7 +2077,7 @@
                             <color key="value" red="0.99610751870000003" green="0.69792670010000002" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_2">
-                            <real key="value" value="-0.0080000000000000002"/>
+                            <real key="value" value="-0.0070000000000000001"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="color_2">
                             <color key="value" red="0.99610751870000003" green="0.98826545480000005" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2088,7 +2089,7 @@
                             <color key="value" red="0.69792670010000002" green="0.99610751870000003" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_4">
-                            <real key="value" value="0.0080000000000000002"/>
+                            <real key="value" value="0.0070000000000000001"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="color_4">
                             <color key="value" red="0.54785913529999997" green="0.99610751870000003" blue="0.69727526309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

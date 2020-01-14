@@ -4,18 +4,16 @@
 * Doing
 
     + Next up
-        + Final table positions column
-        + Finishes color range limits to 70 instead of 80
-        + `TableWindowInfo`
-            + Regex title recognition (with tests)
-        + Don't switch window if only table changed (within the same tournament)    
-        + Get tournament history (yet request only / perhaps some export)
+        + Get tournament history
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
+        + `TableWindowInfo`
+            + Regex title recognition (with tests)
 
     + Features
+        + Final table positions column
         + Add nationality (flag icon) with local time (!)
         + Game distribution in time Graph (scatter)
         + Cursor for Finishes (get live tourney data)
@@ -29,6 +27,16 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.6.9
+
+    + Implemented `CompletedTournamentsRequest` (yet without UI)
+    + Minor fix for window instantiation
+
+* 1.6.8
+
+    + Don't reinstantiate window if only table seating changed (within the same tournament)
+    + Color range tweaks (`Finishes` color range limits to 70 instead of 80)
 
 * 1.6.7
 

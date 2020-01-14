@@ -36,8 +36,14 @@ class App: TableTrackerDelegate
         // Status.
         tablesStatusBarItem.indicateTracking(windowTitle: tableWindowInfo.name)
         
-        // Window.
-        tableWindowController = TourneyTableWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo)
+        let isTourneyTableWindow = tableWindowInfo.tableInfo != nil
+        let isSameTourney = tableWindowController?.tableWindowInfo?.tableInfo?.tournamentNumber == tableWindowInfo.tableInfo?.tournamentNumber
+        
+        // Window (do not create new window on table seating changes).
+        if (isTourneyTableWindow && isSameTourney)
+        { windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: tableWindowInfo) }
+        else
+        { tableWindowController = TourneyTableWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo) }
     }
     
     func windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: TableWindowInfo)

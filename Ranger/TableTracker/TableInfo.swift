@@ -40,20 +40,12 @@ extension TableInfo
         guard components.count == 4 || components.count == 5
         else { return nil }
         
-        print("components: \(components)")
-        
         let blindsComponentIndex = components.count - 3
         let tournamentTableNameComponentIndex = components.count - 2
-                
-        print("blindsComponentIndex: \(blindsComponentIndex)")
-        print("tournamentTableNameComponentIndex: \(tournamentTableNameComponentIndex)")
         
         // Parse blinds.
         let blindLevelComponents = components[blindsComponentIndex].components(separatedBy: " ")
         let blindsComponents = blindLevelComponents[0].components(separatedBy: "/")
-        
-        print("blindLevelComponents: \(blindLevelComponents)")
-        print("blindsComponents: \(blindsComponents)")
         
         // Number formatter for parsing "," thousand separator.
         let formatter = NumberFormatter()
@@ -67,9 +59,6 @@ extension TableInfo
         smallBlind = formatter.number(from: blindsComponents[0])?.intValue ?? -1
         bigBlind = formatter.number(from: blindsComponents[1])?.intValue ?? -1
         
-        print("smallBlind: \(smallBlind)")
-        print("bigBlind: \(bigBlind)")
-        
         // Only numbers.
         guard smallBlind != -1, bigBlind != -1
         else { return nil }
@@ -77,11 +66,10 @@ extension TableInfo
         // Parse ante if any.
         if blindLevelComponents.count > 1
         {
+            // May not believe, but the two kind of space below is different.
             let anteString = blindLevelComponents[1].replacingOccurrences(of: "ante ", with: "")
             ante = formatter.number(from: anteString)?.intValue ?? -1
         }
-        
-        print("ante: \(ante)")
         
         // Parse tourney.
         let tournamentTableNameComponents = components[tournamentTableNameComponentIndex].components(separatedBy: " ")
@@ -92,9 +80,6 @@ extension TableInfo
         
         tournamentNumber = tournamentTableNameComponents[1]
         tableNumber = Int(tournamentTableNameComponents[3]) ?? -1
-        
-        print("tournamentNumber: \(tournamentNumber)")
-        print("tableNumber: \(tableNumber)")
         
         // Only numbers.
         guard NumberFormatter().number(from: tournamentNumber) != nil, tableNumber != -1

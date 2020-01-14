@@ -11,6 +11,9 @@ import Cocoa
 
 class TourneyTableWindowController: NSWindowController
 {
+    
+    
+    public var tableWindowInfo: TableWindowInfo?
         
     
     // MARK: - Lifecycle
@@ -25,6 +28,9 @@ class TourneyTableWindowController: NSWindowController
         // Track table.
         let tourneyTableViewController = tourneyTableWindowController.contentViewController as! TourneyTableViewController
             tourneyTableViewController.track(tableWindowInfo)
+        
+        // Inject reference.
+        tourneyTableWindowController.tableWindowInfo = tableWindowInfo
         
         // Hide buttons.
         if let window = tourneyTableViewController.view.window

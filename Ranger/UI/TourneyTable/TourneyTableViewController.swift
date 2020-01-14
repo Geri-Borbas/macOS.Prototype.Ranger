@@ -12,8 +12,8 @@ import CoreGraphics
 
 class TourneyTableViewController: NSViewController,
     
-    TourneyTableHeaderViewDelegate
-    
+    TourneyTableHeaderViewDelegate,
+    TourneyTableViewDelegate
 {
 
     
@@ -114,6 +114,9 @@ class TourneyTableViewController: NSViewController,
     
     func tableHeaderContextMenu(for column: NSTableColumn) -> NSMenu?
     { return viewModel.tableHeaderContextMenu(for: column) }
+    
+    func fetchCompletedTournementsRequested(for playerName: String)
+    { viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
     
     
     // MARK: - Layout

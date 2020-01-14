@@ -9,9 +9,20 @@
 import Cocoa
 
 
+@objc protocol TourneyTableViewDelegate
+{
+    
+    
+    func fetchCompletedTournementsRequested(for playerName: String)
+}
+
+
 class TourneyTableView: NSTableView
 {
 
+    
+    @IBOutlet var tourneyTableViewDelegate: TourneyTableViewDelegate?
+    
 
     // MARK: - Context menu
     
@@ -37,6 +48,17 @@ class TourneyTableView: NSTableView
                 action: nil,
                 keyEquivalent: ""
             ),
+            
+            NSMenuItem.separator(),
+            
+            NSMenuItem(
+                title: "Fetch Completed Tournaments (25 Search)",
+                action: #selector(fetchCompletedTournaments),
+                keyEquivalent: "")
+                .with(
+                    representedObject: playerViewModel,
+                    target: self
+                ),
             
             NSMenuItem.separator(),
             
@@ -76,6 +98,16 @@ class TourneyTableView: NSTableView
                     target: self
             )
         ])
+    }
+
+    @objc func fetchCompletedTournaments(menuItem: NSMenuItem)
+    {
+        // Get model.
+        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        else { return }
+        
+        // Dispatch request to delegate if any.
+        tourneyTableViewDelegate?.fetchCompletedTournementsRequested(for: playerViewModel.playerName)
     }
 
     @objc func copyNameToClipboard(menuItem: NSMenuItem)
