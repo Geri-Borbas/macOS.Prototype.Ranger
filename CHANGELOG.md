@@ -4,6 +4,8 @@
 * Doing
 
     + Next up
+        + Final table positions column
+        + Finishes color range limits to 70 instead of 80
         + `TableWindowInfo`
             + Regex title recognition (with tests)
         + Don't switch window if only table changed (within the same tournament)    
@@ -27,6 +29,18 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.6.7
+
+    + Layout adjustments
+        + Hid window control buttons
+        + Removed window title
+        + Removed detailed summary
+        + Merged status labels (fixed SharkScope update)
+    + M-Display
+        + M-Count is factoring player count (matched with PokerTracker M formula)
+        + Player count is considering zero stack
+        
 
 * 1.6.6
 

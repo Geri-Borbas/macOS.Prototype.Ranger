@@ -19,11 +19,9 @@ class TourneyTableViewController: NSViewController,
     
     // MARK: - UI
     
-    @IBOutlet weak var blindsLabel: NSTextField!
-    @IBOutlet weak var stacksLabel: NSTextField!
     @IBOutlet weak var playersTableView: NSTableView!
+    @IBOutlet weak var summaryLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
-    @IBOutlet weak var sharkScopeStatusLabel: NSTextField!
     
     
     // MARK: - Model
@@ -41,7 +39,7 @@ class TourneyTableViewController: NSViewController,
         viewModel.fetchSharkScopeStatus
         {
             status in
-            self.sharkScopeStatusLabel.stringValue = status
+            self.statusLabel.stringValue = status
         }
         
         // Double click.
@@ -75,7 +73,7 @@ class TourneyTableViewController: NSViewController,
         else { return }
         
         // Update blinds.
-        window.title = tableWindowInfo.name
+        window.title = ""
         
         // Align.
         window.setFrame(
@@ -123,15 +121,14 @@ class TourneyTableViewController: NSViewController,
     func viewModelDidChange()
     {
         // Summary.
-        let summary = viewModel.summary(with: blindsLabel.font!)
-        blindsLabel.attributedStringValue = summary.blinds
-        stacksLabel.attributedStringValue = summary.stacks
+        let summary = viewModel.summary(with: summaryLabel.font!)
+        summaryLabel.attributedStringValue = summary
         
         // Players.
         playersTableView.reloadData()
         
         // Status.
-        statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed."
+        statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed. \(viewModel.sharkScopeStatus)"
     }
 }
 

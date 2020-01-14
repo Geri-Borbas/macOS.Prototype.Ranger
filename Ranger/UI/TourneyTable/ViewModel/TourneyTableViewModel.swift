@@ -25,7 +25,7 @@ class TourneyTableViewModel: NSObject
     /// The poker table this instance is tracking.
     private var tableWindowInfo: TableWindowInfo?
     private var tickCount: Int = 0
-    private var tickTime = 1.0
+    private var tickTime = 3.0
     private var handUpdateTickFrequency = 1
     
     /// View models for players seated at table.
@@ -39,18 +39,25 @@ class TourneyTableViewModel: NSObject
     private var sortDescriptors: [NSSortDescriptor]?
     private var selectedPlayerViewModel: PlayerViewModel?
     private var stackPercentProviderEasing: String?
+    public var sharkScopeStatus: String
+    { sharkScope.status }
     
     
     // MARK: - Binds
     
     @IBOutlet weak var stackPercentProvider: PercentProvider!
+    var activePlayerCount: Float
+    {
+        // Count players with non-zero stack.
+        playerViewModels.reduce(0.0, { count, eachPlayerViewModel in count + ((eachPlayerViewModel.pokerTracker.latestHandPlayer.stack > 0.0) ? 1 : 0) })
+    }
     var orbitCost: Float
     {
         // Only if table info is set (and parsed).
         guard let tableInfo = tableWindowInfo?.tableInfo
         else { return 0.0 }
         
-        return Float(tableInfo.smallBlind) + Float(tableInfo.bigBlind) + 9.0 * Float(tableInfo.ante)
+        return Float(tableInfo.smallBlind) + Float(tableInfo.bigBlind) + activePlayerCount * Float(tableInfo.ante)
     }
     
     private var onChange: (() -> Void)?
@@ -204,7 +211,7 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Summary Data
     
-    public func summary(with font: NSFont) -> (blinds: NSAttributedString, stacks: NSAttributedString)
+    public func summary(with font: NSFont) -> NSAttributedString
     {
         // Variables.
         var smallBlind:Double = 0
@@ -214,32 +221,19 @@ class TourneyTableViewModel: NSObject
         
         // Check data.
         guard let tableInfo = tableWindowInfo?.tableInfo
-        else
-        {
-            // Empty state.
-            return (
-                NSMutableAttributedString(string: "-"),
-                NSMutableAttributedString(string: "-")
-            )
-        }
+        else { return NSMutableAttributedString(string: "-") }
         
-        // Fetch data from first live table.
+        // Get data from window title.
         smallBlind = Double(tableInfo.smallBlind)
         bigBlind = Double(tableInfo.bigBlind)
         ante = Double(tableInfo.ante)
-        players = Double(playerViewModels.count)
+        players = Double(activePlayerCount)
         
         // Model.
-        let M:Double = smallBlind + bigBlind + 9 * ante
-        let M_5:Double = M * 5
-        let M_10:Double = M * 10
+        let M:Double = smallBlind + bigBlind + players * ante
+        let roundedM = String(format: "%.0f", ceil(M * 100) / 100)
         
-        // View Model.
-        let M_Rounded = String(format: "%.0f", ceil(M * 100) / 100)
-        let M_5_Rounded = String(format: "%.0f", ceil(M_5 * 100) / 100)
-        let M_10_Rounded = String(format: "%.0f", ceil(M_10 * 100) / 100)
-        
-        // Format.
+        // Formats.
         let lightAttribute: [NSAttributedString.Key: Any] = [
             .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.light),
             .foregroundColor : NSColor.systemGray
@@ -249,49 +243,15 @@ class TourneyTableViewModel: NSObject
             .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold)
         ]
         
-        let redAttribute: [NSAttributedString.Key: Any] = [
-            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold),
-            .foregroundColor : NSColor.systemRed
-        ]
+        let summary = NSMutableAttributedString(string: "")
+            summary.append(NSMutableAttributedString(string: String(format: "%.0f/%.0f", smallBlind, bigBlind), attributes:boldAttribute))
+            summary.append(NSMutableAttributedString(string: String(format: " ante %.0f (%.0f players)", ante, players), attributes:lightAttribute))
+            summary.append(NSMutableAttributedString(string: String(format: ", M is %@", roundedM), attributes:lightAttribute))
         
-        let orangeAttribute: [NSAttributedString.Key: Any] = [
-            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold),
-            .foregroundColor : NSColor.systemOrange
-            ]
+        // let sample = "10/20 ante 50 (7 players), M is 275"
         
-        let yellowAttribute: [NSAttributedString.Key: Any] = [
-            .font : NSFont.systemFont(ofSize: font.pointSize, weight: NSFont.Weight.bold),
-            .foregroundColor : NSColor.systemYellow
-            ]
-        
-        let levelString = NSMutableAttributedString(string: "")
-            levelString.append(NSMutableAttributedString(string: String(format: "%.0f/%.0f", smallBlind, bigBlind), attributes:boldAttribute))
-            levelString.append(NSMutableAttributedString(string: String(format: " Ante %.0f (%.0f players)", ante, players), attributes:lightAttribute))
-        
-        let stackString = NSMutableAttributedString(string: "")
-        
-            // M.
-            stackString.append(NSMutableAttributedString(string: "1M ", attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_Rounded), attributes:redAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format: "/ %.0f BB (%.0f hands)", M / bigBlind, players), attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: "\n", attributes:lightAttribute))
-        
-            // 5M.
-            stackString.append(NSMutableAttributedString(string: "5M ", attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_5_Rounded), attributes:orangeAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format: "/ %.0f BB (%.0f hands)", M_5 / bigBlind, 5 * players), attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: "\n", attributes:lightAttribute))
-        
-            // 10M.
-            stackString.append(NSMutableAttributedString(string: "10M ", attributes:lightAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format:"%@ ", M_10_Rounded), attributes:yellowAttribute))
-            stackString.append(NSMutableAttributedString(string: String(format: "/ %.0f BB (%.0f hands)", M_10 / bigBlind, 10 * players), attributes:lightAttribute))
-        
-        // Set.
-        return (
-            levelString,
-            stackString
-        )
+        // Return.
+        return summary
     }
 }
 

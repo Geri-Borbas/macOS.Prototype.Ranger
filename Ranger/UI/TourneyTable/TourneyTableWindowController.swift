@@ -26,6 +26,14 @@ class TourneyTableWindowController: NSWindowController
         let tourneyTableViewController = tourneyTableWindowController.contentViewController as! TourneyTableViewController
             tourneyTableViewController.track(tableWindowInfo)
         
+        // Hide buttons.
+        if let window = tourneyTableViewController.view.window
+        {
+            window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+            window.standardWindowButton(.zoomButton)?.isHidden = true
+            window.standardWindowButton(.closeButton)?.isHidden = true
+        }
+        
         return tourneyTableWindowController
     }
     

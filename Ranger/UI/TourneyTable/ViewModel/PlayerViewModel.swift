@@ -336,7 +336,7 @@ extension PlayerViewModel
                (sharkScope.statistics?.Count ?? 0).formattedWithSeparator,
                
                sharkScope.statistics?.AvROI ?? 0,
-               (sharkScope.statistics?.AvProfit ?? 0).formattedWithSeparator
+               (sharkScope.statistics?.Profit ?? 0).formattedWithSeparator
         )
     }
 }
