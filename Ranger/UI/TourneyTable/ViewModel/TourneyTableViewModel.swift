@@ -29,7 +29,7 @@ class TourneyTableViewModel: NSObject
     private var handUpdateTickFrequency = 1
     
     /// View models for players seated at table.
-    private var playerViewModels: [Model.Player] = []
+    private var players: [Model.Player] = []
     
     
     // MARK: - UI Data
@@ -37,7 +37,7 @@ class TourneyTableViewModel: NSObject
     public var latestProcessedHandNumber: String = ""
     public var latestBigBlind: Int = 0
     private var sortDescriptors: [NSSortDescriptor]?
-    private var selectedPlayerViewModel: Model.Player?
+    private var selectedPlayer: Model.Player?
     private var stackPercentProviderEasing: String?
     public var sharkScopeStatus: String
     { sharkScope.status }
@@ -49,7 +49,7 @@ class TourneyTableViewModel: NSObject
     var activePlayerCount: Float
     {
         // Count players with non-zero stack.
-        playerViewModels.reduce(0.0, { count, eachPlayerViewModel in count + ((eachPlayerViewModel.pokerTracker.latestHandPlayer.stack > 0.0) ? 1 : 0) })
+        players.reduce(0.0, { count, eachPlayer in count + ((eachPlayer.pokerTracker.latestHandPlayer.stack > 0.0) ? 1 : 0) })
     }
     var orbitCost: Float
     {
@@ -156,28 +156,28 @@ class TourneyTableViewModel: NSObject
         }
 
         // Save any SharkScope statistics if any.
-        playerViewModels.forEach
+        players.forEach
         {
-            eachPlayerViewModel in
-            if (latestHandPlayerViewModels.contains(eachPlayerViewModel))
+            eachPlayer in
+            if (latestHandPlayerViewModels.contains(eachPlayer))
             {
-                let index = latestHandPlayerViewModels.firstIndex(of: eachPlayerViewModel)!
-                latestHandPlayerViewModels[index].sharkScope = eachPlayerViewModel.sharkScope
+                let index = latestHandPlayerViewModels.firstIndex(of: eachPlayer)!
+                latestHandPlayerViewModels[index].sharkScope = eachPlayer.sharkScope
             }
         }
         
         // And just use the new collection.
-        playerViewModels = latestHandPlayerViewModels
+        players = latestHandPlayerViewModels
         
         // Get latest PokerTracker statistics (get session stats for hero).
-        for (eachIndex, eachPlayerViewModel) in playerViewModels.enumerated()
+        for (eachIndex, eachPlayer) in players.enumerated()
         {
-            let isHero = eachPlayerViewModel.pokerTracker.latestHandPlayer.flg_hero
-            playerViewModels[eachIndex].pokerTracker.updateStatistics(for: isHero ? tableInfo.tournamentNumber : nil)
+            let isHero = eachPlayer.pokerTracker.latestHandPlayer.flg_hero
+            players[eachIndex].pokerTracker.updateStatistics(for: isHero ? tableInfo.tournamentNumber : nil)
         }
         
         // Track stack extremes.
-        stackPercentProvider.maximum = NSNumber(value: playerViewModels.reduce(
+        stackPercentProvider.maximum = NSNumber(value: players.reduce(
             0.0,
             { max($0, $1.pokerTracker.latestHandPlayer.stack) })
         )
@@ -201,7 +201,7 @@ class TourneyTableViewModel: NSObject
         self.sortDescriptors = sortDescriptors
         
         // Sort in place.
-        playerViewModels = playerViewModels.sorted
+        players = players.sorted
         {
             lhs, rhs -> Bool in
             lhs.isInIncreasingOrder(to: rhs, using: sortDescriptors)
@@ -263,31 +263,31 @@ extension TourneyTableViewModel: NSTableViewDataSource
     
     
     func numberOfRows(in tableView: NSTableView) -> Int
-    { return playerViewModels.count }
+    { return players.count }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
     {
         // Checks.
         guard let column = tableColumn else { return nil }
-        guard playerViewModels.count > row else { return nil }
+        guard players.count > row else { return nil }
         
         // Get data.
-        let playerViewModel = playerViewModels[row]
+        let player = players[row]
         
         // Create / Reuse cell view.
-        guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? PlayerViewModelCellView else { return nil }
+        guard let cellView = tableView.makeView(withIdentifier: (column.identifier), owner: self) as? PlayerCellView else { return nil }
         
         // Apply data.
-        cellView.setup(with: playerViewModel, in: tableColumn)
+        cellView.setup(with: player, in: tableColumn)
         
         // Select row if was selected before.
-        if (self.selectedPlayerViewModel == playerViewModel)
+        if (self.selectedPlayer == player)
         { tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false) }
         
         // Fade if no stack (yet hardcoded).
         if
             let rowView = tableView.rowView(atRow: row, makeIfNecessary: false),
-            playerViewModel.pokerTracker.latestHandPlayer.stack <= 0
+            player.pokerTracker.latestHandPlayer.stack <= 0
         { rowView.alphaValue = 0.4 }
         
         return cellView
@@ -336,13 +336,13 @@ extension TourneyTableViewModel: NSTableViewDelegate
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
     {
         // Checks.
-        guard playerViewModels.count > row else { return false }
+        guard players.count > row else { return false }
         
         // Get data.
-        let playerViewModel = playerViewModels[row]
+        let player = players[row]
         
         // Retain selection.
-        self.selectedPlayerViewModel = playerViewModel
+        self.selectedPlayer = player
         
         return true
     }
@@ -357,11 +357,11 @@ extension TourneyTableViewModel: NSTableViewDelegate
     public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)
     {
         // Checks.
-        guard playerViewModels.count > row else { return }
+        guard players.count > row else { return }
         
         // Data.
-        var playerViewModel = playerViewModels[row]
-        let playerName = playerViewModel.pokerTracker.latestHandPlayer.player_name
+        var player = players[row]
+        let playerName = player.pokerTracker.latestHandPlayer.player_name
 
         // Fetch summary.
         // let fetchPlayerName = "Oliana88" // Pro
@@ -384,10 +384,10 @@ extension TourneyTableViewModel: NSTableViewDelegate
                     case .success(let responses):
 
                         // Retain.
-                        playerViewModel.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
+                        player.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
                         
                         // Write.
-                        self.playerViewModels[row] = playerViewModel
+                        self.players[row] = player
                         
                         // Invoke callback.
                         self.onChange?()
@@ -407,13 +407,13 @@ extension TourneyTableViewModel: NSTableViewDelegate
     public func fetchCompletedTournamentsForPlayer(withName playerName: String)
     {
         // Lookup player.
-        let firstPlayerViewModel = playerViewModels.filter{ eachPlayerViewModel in eachPlayerViewModel.playerName == playerName }.first
+        let firstPlayer = players.filter{ eachPlayer in eachPlayer.playerName == playerName }.first
         
         // Checks.
-        guard let playerViewModel = firstPlayerViewModel else { return }
+        guard let player = firstPlayer else { return }
         
         /// Data.
-        sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:playerViewModel.playerName, amount: 80),
+        sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:player.playerName, amount: 80),
                          completion:
             {
                  (result: Result<CompletedTournaments, RequestError>)in
@@ -425,7 +425,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
                         print(response)
                         
                         // Retain.
-                        // playerViewModel.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
+                        // player.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
                         
                         // Invoke callback.
                         // self.onChange?()

@@ -1,5 +1,5 @@
 //
-//  PlayerViewModelCellView.swift
+//  PlayerCellView.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2020. 01. 02..
@@ -9,23 +9,23 @@
 import Cocoa
 
 
-class PlayerViewModelCellView: NSTableCellView
+class PlayerCellView: NSTableCellView
 {
     
     
     var textFieldData: TextFieldData!
-    var playerViewModel: Model.Player!
+    var player: Model.Player!
     
     
-    func setup(with playerViewModel: Model.Player, in tableColumn: NSTableColumn?)
+    func setup(with player: Model.Player, in tableColumn: NSTableColumn?)
     {
         // Checks.
         guard let column = tableColumn else { return }
         guard let textField = self.textField else { return }
         
         // Retain data.
-        self.playerViewModel = playerViewModel
-        self.textFieldData = playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
+        self.player = player
+        self.textFieldData = player.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
         
         // Apply text.
         textFieldData.apply(to: textField)

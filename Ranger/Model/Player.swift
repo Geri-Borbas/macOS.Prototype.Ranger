@@ -1,5 +1,5 @@
 //
-//  PlayerViewModel.swift
+//  Player.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 23..
