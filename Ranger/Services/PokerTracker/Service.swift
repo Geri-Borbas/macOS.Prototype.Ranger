@@ -12,16 +12,19 @@ import PostgresClientKit
 
 // https://codewinsdotcom.github.io/PostgresClientKit/Docs/API/index.html
 
-enum PokerTrackerError: Error
-{
-    case databaseNotConnected
-    case rowIsMissing
-}
+
 
 
 enum PokerTracker
 {
-
+    
+    
+    enum Error: Swift.Error
+    {
+        case databaseNotConnected
+        case rowIsMissing
+    }
+    
     
     class Service
     {
@@ -64,7 +67,7 @@ enum PokerTracker
         {
             // Only having connection.
             guard let connection = connection else
-            { throw PokerTrackerError.databaseNotConnected }
+            { throw Error.databaseNotConnected }
             
             // Prepare.
             let query = try connection.prepareStatement(text: query.string)
@@ -104,5 +107,4 @@ enum PokerTracker
             return rows
         }
     }
-
 }
