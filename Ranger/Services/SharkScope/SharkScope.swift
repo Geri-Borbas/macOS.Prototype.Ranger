@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import XMLCoder
 
 
 enum RequestError: Error

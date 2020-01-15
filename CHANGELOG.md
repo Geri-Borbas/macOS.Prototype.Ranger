@@ -5,6 +5,7 @@
 
     + Next up
         + Get tournament history
+            + Cache considerations (when using variable Count as a parameter)
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -27,6 +28,10 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.7.0
+
+    + Switched dependency management to CocoaPods (for `YapDatabase`)
 
 * 1.6.9
 

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464F7E3DF46486C0311B58D0 /* Pods_RangerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A1FE24BE9175D78F7E7C19 /* Pods_RangerTests.framework */; };
 		5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226323C16A240040A3DE /* FinishesGraphCellView.swift */; };
 		5504226823C18DAB0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
 		5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
@@ -31,7 +32,6 @@
 		555585DC23A2999500B603C1 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555585DB23A2999500B603C1 /* Metadata.swift */; };
 		555A867923C131B30051D996 /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A867823C131B30051D996 /* GraphData.swift */; };
 		555D217123A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */; };
-		555EA850239D3A62000B5B62 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 555EA84F239D3A62000B5B62 /* PostgresClientKit */; };
 		555EA852239D609E000B5B62 /* PokerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* PokerTracker.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
 		5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5560F04A23BAAEAA008894BD /* App.Configuration.plist */; };
@@ -50,7 +50,6 @@
 		5585E40C23C985A80009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		5585E40E23C986930009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		5587DB4423A497740079BB30 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* Player.swift */; };
-		558D35D6239F28F6006C710D /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 558D35D5239F28F6006C710D /* XMLCoder */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */; };
@@ -87,6 +86,7 @@
 		55EDF3E123CE7930008A42AC /* CompletedTournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */; };
 		55EDF3E223CE7933008A42AC /* CompletedTournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */; };
 		55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */; };
+		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +100,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		037D2414A5ED938AB46C3512 /* Pods-Ranger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.debug.xcconfig"; path = "Target Support Files/Pods-Ranger/Pods-Ranger.debug.xcconfig"; sourceTree = "<group>"; };
+		23A1FE24BE9175D78F7E7C19 /* Pods_RangerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RangerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2432394853E25E6DDA9F060B /* Pods_Ranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5504226323C16A240040A3DE /* FinishesGraphCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishesGraphCellView.swift; sourceTree = "<group>"; };
 		5504226723C18DAB0040A3DE /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableViewModel.swift; sourceTree = "<group>"; };
@@ -184,6 +187,9 @@
 		55ED3CDF23A5543A00754763 /* PlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerQuery.swift; sourceTree = "<group>"; };
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
+		5B55FC0BEB046D6C02A9A8F2 /* Pods-RangerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangerTests.release.xcconfig"; path = "Target Support Files/Pods-RangerTests/Pods-RangerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7305A0A253155C8565C058BE /* Pods-RangerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangerTests.debug.xcconfig"; path = "Target Support Files/Pods-RangerTests/Pods-RangerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.release.xcconfig"; path = "Target Support Files/Pods-Ranger/Pods-Ranger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558D35D6239F28F6006C710D /* XMLCoder in Frameworks */,
-				555EA850239D3A62000B5B62 /* PostgresClientKit in Frameworks */,
+				578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,12 +205,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464F7E3DF46486C0311B58D0 /* Pods_RangerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46AC3995053AB29166F08823 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2432394853E25E6DDA9F060B /* Pods_Ranger.framework */,
+				23A1FE24BE9175D78F7E7C19 /* Pods_RangerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5508E3FE23A4754B00FFB173 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +462,13 @@
 			path = SharkScope;
 			sourceTree = "<group>";
 		};
+		55C0F97623CF4CEE00414046 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		55C18682239583D90081B6B7 = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +476,8 @@
 				55C1868D239583DA0081B6B7 /* Ranger */,
 				55C529E523BD3F1400A6975A /* RangerTests */,
 				55C1868C239583DA0081B6B7 /* Products */,
+				AF9EDFA374391D329008F6DE /* Pods */,
+				46AC3995053AB29166F08823 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -469,6 +493,7 @@
 		55C1868D239583DA0081B6B7 /* Ranger */ = {
 			isa = PBXGroup;
 			children = (
+				55C0F97623CF4CEE00414046 /* New Group */,
 				55C1868E239583DA0081B6B7 /* AppDelegate.swift */,
 				5509C4B823B92CAE00C6608D /* App.swift */,
 				5560F04823BAAEAA008894BD /* Configuration */,
@@ -568,6 +593,17 @@
 			path = CompletedTournaments;
 			sourceTree = "<group>";
 		};
+		AF9EDFA374391D329008F6DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				037D2414A5ED938AB46C3512 /* Pods-Ranger.debug.xcconfig */,
+				FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */,
+				7305A0A253155C8565C058BE /* Pods-RangerTests.debug.xcconfig */,
+				5B55FC0BEB046D6C02A9A8F2 /* Pods-RangerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,19 +611,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C1869B239583DD0081B6B7 /* Build configuration list for PBXNativeTarget "Ranger" */;
 			buildPhases = (
+				535E8130261E435629D03063 /* [CP] Check Pods Manifest.lock */,
 				55C18687239583DA0081B6B7 /* Sources */,
 				55C18688239583DA0081B6B7 /* Frameworks */,
 				55C18689239583DA0081B6B7 /* Resources */,
+				ABE83D7CA07ACB1497BFE652 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Ranger;
-			packageProductDependencies = (
-				555EA84F239D3A62000B5B62 /* PostgresClientKit */,
-				558D35D5239F28F6006C710D /* XMLCoder */,
-			);
 			productName = Ranger;
 			productReference = 55C1868B239583DA0081B6B7 /* Ranger.app */;
 			productType = "com.apple.product-type.application";
@@ -596,6 +630,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C529ED23BD3F1500A6975A /* Build configuration list for PBXNativeTarget "RangerTests" */;
 			buildPhases = (
+				76A6FA94C594651BBDDC9FE8 /* [CP] Check Pods Manifest.lock */,
 				55C529E023BD3F1400A6975A /* Sources */,
 				55C529E123BD3F1400A6975A /* Frameworks */,
 				55C529E223BD3F1400A6975A /* Resources */,
@@ -640,8 +675,6 @@
 			);
 			mainGroup = 55C18682239583D90081B6B7;
 			packageReferences = (
-				555EA84E239D3A62000B5B62 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
-				558D35D4239F28F6006C710D /* XCRemoteSwiftPackageReference "XMLCoder" */,
 			);
 			productRefGroup = 55C1868C239583DA0081B6B7 /* Products */;
 			projectDirPath = "";
@@ -678,6 +711,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		535E8130261E435629D03063 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ranger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76A6FA94C594651BBDDC9FE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RangerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABE83D7CA07ACB1497BFE652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ranger/Pods-Ranger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ranger/Pods-Ranger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ranger/Pods-Ranger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55C18687239583DA0081B6B7 /* Sources */ = {
@@ -902,6 +999,7 @@
 		};
 		55C1869C239583DD0081B6B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 037D2414A5ED938AB46C3512 /* Pods-Ranger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ranger/Ranger.entitlements;
@@ -923,6 +1021,7 @@
 		};
 		55C1869D239583DD0081B6B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ranger/Ranger.entitlements;
@@ -944,6 +1043,7 @@
 		};
 		55C529EB23BD3F1500A6975A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7305A0A253155C8565C058BE /* Pods-RangerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -969,6 +1069,7 @@
 		};
 		55C529EC23BD3F1500A6975A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B55FC0BEB046D6C02A9A8F2 /* Pods-RangerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1022,38 +1123,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		555EA84E239D3A62000B5B62 /* XCRemoteSwiftPackageReference "PostgresClientKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/codewinsdotcom/PostgresClientKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		558D35D4239F28F6006C710D /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MaxDesiatov/XMLCoder.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		555EA84F239D3A62000B5B62 /* PostgresClientKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 555EA84E239D3A62000B5B62 /* XCRemoteSwiftPackageReference "PostgresClientKit" */;
-			productName = PostgresClientKit;
-		};
-		558D35D5239F28F6006C710D /* XMLCoder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 558D35D4239F28F6006C710D /* XCRemoteSwiftPackageReference "XMLCoder" */;
-			productName = XMLCoder;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55C18683239583D90081B6B7 /* Project object */;
 }

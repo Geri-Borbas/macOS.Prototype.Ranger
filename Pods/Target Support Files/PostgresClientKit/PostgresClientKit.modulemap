@@ -1,0 +1,6 @@
+framework module PostgresClientKit {
+  umbrella header "PostgresClientKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
