@@ -23,7 +23,7 @@
 		5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */; };
 		5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */; };
 		5521A55F239DF408000D1AD1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A55E239DF408000D1AD1 /* Entry.swift */; };
-		5521A565239DF933000D1AD1 /* BasicPlayerStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* BasicPlayerStatistics.swift */; };
+		5521A565239DF933000D1AD1 /* PokerTracker.Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */; };
 		5536B0FE23C2BF610067E7F2 /* TourneyTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */; };
 		5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */; };
 		5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */; };
@@ -54,7 +54,7 @@
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */; };
 		559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* PercentProvider.swift */; };
-		55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */; };
+		55A307E1239C8E88008B0EA4 /* StatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */; };
 		55A7FAA823C3CC68007BEA05 /* TourneyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7FAA723C3CC68007BEA05 /* TourneyTableView.swift */; };
 		55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */; };
 		55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */; };
@@ -83,7 +83,7 @@
 		55ED3CD423A54B0C00754763 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD323A54B0C00754763 /* Query.swift */; };
 		55ED3CD623A551E100754763 /* LiveTourneyTableQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD523A551E100754763 /* LiveTourneyTableQuery.swift */; };
 		55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */; };
-		55ED3CDD23A553EC00754763 /* BasicPlayerStatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* BasicPlayerStatisticsQuery.swift */; };
+		55ED3CDD23A553EC00754763 /* StatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */; };
 		55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
 		55EDF3E123CE7930008A42AC /* CompletedTournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */; };
 		55EDF3E223CE7933008A42AC /* CompletedTournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */; };
@@ -122,7 +122,7 @@
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
 		5521A55E239DF408000D1AD1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		5521A564239DF933000D1AD1 /* BasicPlayerStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPlayerStatistics.swift; sourceTree = "<group>"; };
+		5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Statistics.swift; sourceTree = "<group>"; };
 		5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableHeaderView.swift; sourceTree = "<group>"; };
 		5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extensions.swift"; sourceTree = "<group>"; };
 		5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extensions.swift"; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		5592684723A9CA1500045F89 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		559F5F3523BEBA060070F2D6 /* PercentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentProvider.swift; sourceTree = "<group>"; };
-		55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasicPlayerStatisticsQuery.sql; sourceTree = "<group>"; };
+		55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatisticsQuery.sql; sourceTree = "<group>"; };
 		55A7FAA723C3CC68007BEA05 /* TourneyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableView.swift; sourceTree = "<group>"; };
 		55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentBarCellView.swift; sourceTree = "<group>"; };
 		55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCellView.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		55ED3CD323A54B0C00754763 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		55ED3CD523A551E100754763 /* LiveTourneyTableQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTableQuery.swift; sourceTree = "<group>"; };
 		55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayerQuery.swift; sourceTree = "<group>"; };
-		55ED3CDC23A553EC00754763 /* BasicPlayerStatisticsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPlayerStatisticsQuery.swift; sourceTree = "<group>"; };
+		55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsQuery.swift; sourceTree = "<group>"; };
 		55ED3CDF23A5543A00754763 /* PlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerQuery.swift; sourceTree = "<group>"; };
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
@@ -574,9 +574,9 @@
 		55ED3CDB23A553E600754763 /* BasicPlayerStatistics */ = {
 			isa = PBXGroup;
 			children = (
-				5521A564239DF933000D1AD1 /* BasicPlayerStatistics.swift */,
-				55ED3CDC23A553EC00754763 /* BasicPlayerStatisticsQuery.swift */,
-				55A307E0239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql */,
+				5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */,
+				55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */,
+				55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */,
 			);
 			path = BasicPlayerStatistics;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
 				55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */,
 				55DB43E723A2E57C00A7F37F /* SharkScope.Configuration.plist in Resources */,
-				55A307E1239C8E88008B0EA4 /* BasicPlayerStatisticsQuery.sql in Resources */,
+				55A307E1239C8E88008B0EA4 /* StatisticsQuery.sql in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
 			);
@@ -809,10 +809,10 @@
 				55840BF523A9B55D000B06FF /* StringRepresentable.swift in Sources */,
 				55E4D43A23A7FC0F00F33066 /* PlayerSummary.swift in Sources */,
 				55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */,
-				5521A565239DF933000D1AD1 /* BasicPlayerStatistics.swift in Sources */,
+				5521A565239DF933000D1AD1 /* PokerTracker.Statistics.swift in Sources */,
 				5574DACA23A6933F00569790 /* MetadataRequest.swift in Sources */,
 				5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */,
-				55ED3CDD23A553EC00754763 /* BasicPlayerStatisticsQuery.swift in Sources */,
+				55ED3CDD23A553EC00754763 /* StatisticsQuery.swift in Sources */,
 				55DB43E923A2E62000A7F37F /* SharkScope.Configuration.swift in Sources */,
 				55DB43E523A2DB4D00A7F37F /* RequestCache.swift in Sources */,
 				5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */,

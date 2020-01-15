@@ -27,21 +27,21 @@ enum Model
             
             // Data.
             let handPlayer: PokerTracker.HandPlayer
-            var statistics: PokerTracker.BasicPlayerStatistics?
+            var statistics: PokerTracker.Statistics?
             
             // Service.
             private lazy var service: PokerTracker.Service = PokerTracker.Service()
             
             
-            init(with latestHandPlayer: PokerTracker.HandPlayer)
+            init(with handPlayer: PokerTracker.HandPlayer)
             {
-                self.handPlayer = latestHandPlayer
+                self.handPlayer = handPlayer
             }
             
             public mutating func updateStatistics(for tourneyNumber: String? = nil)
             {
                 self.statistics = try? service.fetch(
-                    PokerTracker.BasicPlayerStatisticsQuery(
+                    PokerTracker.StatisticsQuery(
                         playerIDs: [handPlayer.id_player],
                         tourneyNumber: tourneyNumber
                 )).first

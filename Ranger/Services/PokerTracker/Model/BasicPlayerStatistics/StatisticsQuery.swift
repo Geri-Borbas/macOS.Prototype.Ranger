@@ -13,11 +13,11 @@ extension PokerTracker
 {
     
         
-    struct BasicPlayerStatisticsQuery: Query
+    struct StatisticsQuery: Query
     {
         
         
-        typealias EntryType = BasicPlayerStatistics
+        typealias EntryType = Statistics
         
         
         let playerIDs: [Int]
@@ -25,7 +25,7 @@ extension PokerTracker
         var string: String
         {
             // Load query file.
-            let queryFilePath = Bundle.main.path(forResource: "BasicPlayerStatisticsQuery", ofType: "sql")
+            let queryFilePath = Bundle.main.path(forResource: "StatisticsQuery", ofType: "sql")
             guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
             else { return "" }
             

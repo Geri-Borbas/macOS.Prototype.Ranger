@@ -14,7 +14,7 @@ extension PokerTracker
 {
     
     
-    class BasicPlayerStatistics: Entry
+    class Statistics: Entry
     {
         
         
@@ -46,9 +46,9 @@ extension PokerTracker
     }
 }
 
-extension PokerTracker.BasicPlayerStatistics: Equatable
+extension PokerTracker.Statistics: Equatable
 {
-    static func == (lhs: PokerTracker.BasicPlayerStatistics, rhs: PokerTracker.BasicPlayerStatistics) -> Bool
+    static func == (lhs: PokerTracker.Statistics, rhs: PokerTracker.Statistics) -> Bool
     {
         return (
             lhs.id_player == rhs.id_player &&
@@ -59,7 +59,7 @@ extension PokerTracker.BasicPlayerStatistics: Equatable
 }
 
 
-extension PokerTracker.BasicPlayerStatistics: CustomStringConvertible
+extension PokerTracker.Statistics: CustomStringConvertible
 {
     var description: String
     {
