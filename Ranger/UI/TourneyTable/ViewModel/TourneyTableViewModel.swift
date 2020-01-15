@@ -16,7 +16,7 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Services
     
-    private var pokerTracker: PokerTracker = PokerTracker()
+    private var pokerTracker: PT.Service = PT.Service()
     private var sharkScope: SharkScope = SharkScope()
     
     

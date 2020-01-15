@@ -713,7 +713,7 @@
                                 <rect key="frame" x="10" y="61" width="1328" height="203"/>
                                 <clipView key="contentView" id="3s2-if-0UA">
                                     <rect key="frame" x="1" y="0.0" width="1326" height="187"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="VYx-qS-HlU" viewBased="YES" id="cPg-rX-oTq" customClass="TourneyTableView" customModule="Ranger" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="1383" height="162"/>

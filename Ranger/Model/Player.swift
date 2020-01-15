@@ -13,83 +13,83 @@ enum Model
 {
 
 
-public struct Player
-{
-
-    
-    var pokerTracker: PokerTracker
-    var sharkScope: SharkScope
-    
-       
-    struct PokerTracker: Equatable
+    public struct Player
     {
+
+        
+        var pokerTracker: PokerTrackerData
+        var sharkScope: SharkScope
+        
+           
+        struct PokerTrackerData: Equatable
+        {
+            
+            
+            // Data.
+            let latestHandPlayer: LatestHandPlayer
+            var statistics: BasicPlayerStatistics?
+            
+            // Service.
+            private lazy var service: PT.Service = PT.Service()
+            
+            
+            init(with latestHandPlayer: LatestHandPlayer)
+            {
+                self.latestHandPlayer = latestHandPlayer
+            }
+            
+            public mutating func updateStatistics(for tourneyNumber: String? = nil)
+            {
+                self.statistics = try? service.fetch(
+                    BasicPlayerStatisticsQuery(
+                        playerIDs: [latestHandPlayer.id_player],
+                        tourneyNumber: tourneyNumber
+                )).first
+            }
+        }
         
         
-        // Data.
-        let latestHandPlayer: LatestHandPlayer
-        var statistics: BasicPlayerStatistics?
-        
-        // Service.
-        private lazy var service: Ranger.PokerTracker = Ranger.PokerTracker()
+        struct SharkScope: Equatable
+        {
+            
+            
+            let playerName: String
+            var summary: PlayerSummary?
+            var activeTournaments: ActiveTournaments?
+            var tables: Int?
+            var statistics: Statistics? { summary?.Response.PlayerResponse.PlayerView.Player.Statistics }
+            
+            
+            init(with playerName: String)
+            {
+                self.playerName = playerName
+            }
+            
+            public mutating func update(withSummary summary: PlayerSummary, activeTournaments: ActiveTournaments)
+            {
+                self.summary = summary
+                self.activeTournaments = activeTournaments
+                
+                // Count only running (or late registration) tables.
+                self.tables = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments?.Tournament.reduce(0)
+                {
+                    count, eachTournament in
+                    count + (eachTournament.state != "Registering" ? 1 : 0)
+                } ?? 0
+
+                // Logs.
+                if let activeTournaments = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
+                { print(activeTournaments) }
+            }
+        }
         
         
         init(with latestHandPlayer: LatestHandPlayer)
         {
-            self.latestHandPlayer = latestHandPlayer
-        }
-        
-        public mutating func updateStatistics(for tourneyNumber: String? = nil)
-        {
-            self.statistics = try? service.fetch(
-                BasicPlayerStatisticsQuery(
-                    playerIDs: [latestHandPlayer.id_player],
-                    tourneyNumber: tourneyNumber
-            )).first
+            self.pokerTracker = PokerTrackerData(with: latestHandPlayer)
+            self.sharkScope = SharkScope(with: latestHandPlayer.player_name)
         }
     }
-    
-    
-    struct SharkScope: Equatable
-    {
-        
-        
-        let playerName: String
-        var summary: PlayerSummary?
-        var activeTournaments: ActiveTournaments?
-        var tables: Int?
-        var statistics: Statistics? { summary?.Response.PlayerResponse.PlayerView.Player.Statistics }
-        
-        
-        init(with playerName: String)
-        {
-            self.playerName = playerName
-        }
-        
-        public mutating func update(withSummary summary: PlayerSummary, activeTournaments: ActiveTournaments)
-        {
-            self.summary = summary
-            self.activeTournaments = activeTournaments
-            
-            // Count only running (or late registration) tables.
-            self.tables = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments?.Tournament.reduce(0)
-            {
-                count, eachTournament in
-                count + (eachTournament.state != "Registering" ? 1 : 0)
-            } ?? 0
-
-            // Logs.
-            if let activeTournaments = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
-            { print(activeTournaments) }
-        }
-    }
-    
-    
-    init(with latestHandPlayer: LatestHandPlayer)
-    {
-        self.pokerTracker = PokerTracker(with: latestHandPlayer)
-        self.sharkScope = SharkScope(with: latestHandPlayer.player_name)
-    }
-}
 
     
 }
