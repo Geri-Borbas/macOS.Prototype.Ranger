@@ -29,6 +29,10 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
 
+* 1.7.1
+
+    + Renamed `master` to `Development` (builds live there)
+
 * 1.7.0
 
     + Switched dependency management to CocoaPods (for `YapDatabase`)
