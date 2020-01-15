@@ -29,9 +29,9 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
 
-* Feature/Data/Model_Refactor/0.0.0
+* 1.7.1
 
-    + Basic branching
+    + Renamed `master` to `Development` (builds live there)
 
 * 1.7.0
 
