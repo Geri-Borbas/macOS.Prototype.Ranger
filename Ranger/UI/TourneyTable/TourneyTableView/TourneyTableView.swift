@@ -103,7 +103,7 @@ class TourneyTableView: NSTableView
     @objc func fetchCompletedTournaments(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? Player
+        guard let playerViewModel = menuItem.representedObject as? Model.Player
         else { return }
         
         // Dispatch request to delegate if any.
@@ -113,7 +113,7 @@ class TourneyTableView: NSTableView
     @objc func copyNameToClipboard(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? Player
+        guard let playerViewModel = menuItem.representedObject as? Model.Player
         else { return }
         
         // Copy name to clipboard.
@@ -124,7 +124,7 @@ class TourneyTableView: NSTableView
     @objc func copyStatisticsToClipboard(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? Player
+        guard let playerViewModel = menuItem.representedObject as? Model.Player
         else { return }
         
         // Copy statistics to clipboard.
@@ -135,7 +135,7 @@ class TourneyTableView: NSTableView
     @objc func deleteTablesCache(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? Player
+        guard let playerViewModel = menuItem.representedObject as? Model.Player
         else { return }
         
         // Remove file.
@@ -145,7 +145,7 @@ class TourneyTableView: NSTableView
     @objc func deleteStatisticsCache(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? Player
+        guard let playerViewModel = menuItem.representedObject as? Model.Player
         else { return }
         
         // Remove file.

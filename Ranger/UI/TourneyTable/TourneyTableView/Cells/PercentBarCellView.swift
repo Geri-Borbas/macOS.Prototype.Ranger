@@ -22,7 +22,7 @@ class PercentBarCellView: PlayerViewModelCellView
     @IBOutlet weak var percentProvider: PercentProvider?
     
     
-    override func setup(with playerViewModel: Player, in tableColumn: NSTableColumn?)
+    override func setup(with playerViewModel: Model.Player, in tableColumn: NSTableColumn?)
     {
         // Checks.
         guard let column = tableColumn else { return }

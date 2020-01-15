@@ -35,7 +35,7 @@ class StackCellView: PlayerViewModelCellView
         setNeedsDisplay(self.bounds)
     }
     
-    override func setup(with playerViewModel: Player, in tableColumn: NSTableColumn?)
+    override func setup(with playerViewModel: Model.Player, in tableColumn: NSTableColumn?)
     {
         // Checks.
         guard let column = tableColumn else { return }

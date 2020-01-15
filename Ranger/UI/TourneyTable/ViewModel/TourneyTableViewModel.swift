@@ -29,7 +29,7 @@ class TourneyTableViewModel: NSObject
     private var handUpdateTickFrequency = 1
     
     /// View models for players seated at table.
-    private var playerViewModels: [Player] = []
+    private var playerViewModels: [Model.Player] = []
     
     
     // MARK: - UI Data
@@ -37,7 +37,7 @@ class TourneyTableViewModel: NSObject
     public var latestProcessedHandNumber: String = ""
     public var latestBigBlind: Int = 0
     private var sortDescriptors: [NSSortDescriptor]?
-    private var selectedPlayerViewModel: Player?
+    private var selectedPlayerViewModel: Model.Player?
     private var stackPercentProviderEasing: String?
     public var sharkScopeStatus: String
     { sharkScope.status }
@@ -152,7 +152,7 @@ class TourneyTableViewModel: NSObject
         var latestHandPlayerViewModels = latestHandPlayers.map
         {
             eachLatestHandPlayer in
-            Player(with: eachLatestHandPlayer)
+            Model.Player(with: eachLatestHandPlayer)
         }
 
         // Save any SharkScope statistics if any.

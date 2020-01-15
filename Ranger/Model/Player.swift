@@ -9,6 +9,10 @@
 import Foundation
 
 
+enum Model
+{
+
+
 public struct Player
 {
 
@@ -87,20 +91,23 @@ public struct Player
     }
 }
 
+    
+}
+    
 
-extension Player: Equatable
+extension Model.Player: Equatable
 {
     
     
     /// PokerTracker `id_player` makes unique view models (used for manage collections).
-    public static func == (lhs: Player, rhs: Player) -> Bool
+    static func == (lhs: Model.Player, rhs: Model.Player) -> Bool
     { lhs.pokerTracker.latestHandPlayer.id_player == rhs.pokerTracker.latestHandPlayer.id_player }
 }
 
 
 // MARK: - Description
 
-extension Player: CustomStringConvertible
+extension Model.Player: CustomStringConvertible
 {
     
     
@@ -119,7 +126,7 @@ extension Player: CustomStringConvertible
 
 // MARK: - Column Data
 
-extension Player
+extension Model.Player
 {
     
     
@@ -159,17 +166,17 @@ extension Player
 
 // MARK: - Sorting
 
-extension Player
+extension Model.Player
 {
     
     
-    func isInIncreasingOrder(to rhs: Player, using sortDescriptors: [NSSortDescriptor]) -> Bool
+    func isInIncreasingOrder(to rhs: Model.Player, using sortDescriptors: [NSSortDescriptor]) -> Bool
     {
         // Shortcut.
         let lhs = self
         
         // Convert for (hardcoded but) swifty sort descriptors (named order descriptors).
-        let orderDescriptorsForSortDescriptorKeys: [String:(ascending: (Player, Player) -> Bool, descending: (Player, Player) -> Bool)] =
+        let orderDescriptorsForSortDescriptorKeys: [String:(ascending: (Model.Player, Model.Player) -> Bool, descending: (Model.Player, Model.Player) -> Bool)] =
         [
             "Seat" :
             (
@@ -302,7 +309,7 @@ extension Player
 
 // MARK: - Strings
 
-extension Player
+extension Model.Player
 {
     
     
@@ -339,27 +346,4 @@ extension Player
                (sharkScope.statistics?.Profit ?? 0).formattedWithSeparator
         )
     }
-}
-
-
-extension Formatter
-{
-    
-    
-    static let withSeparator: NumberFormatter =
-    {
-        let formatter = NumberFormatter()
-        formatter.groupingSeparator = " "
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
-}
-
-
-extension Numeric
-{
-    
-    
-    var formattedWithSeparator: String
-    { return Formatter.withSeparator.string(for: self) ?? "" }
 }
