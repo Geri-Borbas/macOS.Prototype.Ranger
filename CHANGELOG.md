@@ -29,6 +29,10 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
 
+* Feature/Data/Model_Refactor/0.0.2
+
+    + Renamings (`PlayerViewModel` to `Player`)
+
 * Feature/Data/Model_Refactor/0.0.0 - 0.0.1
 
     + Basic branching

@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct PlayerViewModel
+public struct Player
 {
 
     
@@ -88,23 +88,23 @@ struct PlayerViewModel
 }
 
 
-extension PlayerViewModel: Equatable
+extension Player: Equatable
 {
     
     
     /// PokerTracker `id_player` makes unique view models (used for manage collections).
-    static func == (lhs: PlayerViewModel, rhs: PlayerViewModel) -> Bool
+    public static func == (lhs: Player, rhs: Player) -> Bool
     { lhs.pokerTracker.latestHandPlayer.id_player == rhs.pokerTracker.latestHandPlayer.id_player }
 }
 
 
 // MARK: - Description
 
-extension PlayerViewModel: CustomStringConvertible
+extension Player: CustomStringConvertible
 {
     
     
-    var description: String
+    public var description: String
     {
         String(format:
             "\n%.0f\t%.0f\t%.0f\t%@",
@@ -119,7 +119,7 @@ extension PlayerViewModel: CustomStringConvertible
 
 // MARK: - Column Data
 
-extension PlayerViewModel
+extension Player
 {
     
     
@@ -159,17 +159,17 @@ extension PlayerViewModel
 
 // MARK: - Sorting
 
-extension PlayerViewModel
+extension Player
 {
     
     
-    func isInIncreasingOrder(to rhs: PlayerViewModel, using sortDescriptors: [NSSortDescriptor]) -> Bool
+    func isInIncreasingOrder(to rhs: Player, using sortDescriptors: [NSSortDescriptor]) -> Bool
     {
         // Shortcut.
         let lhs = self
         
         // Convert for (hardcoded but) swifty sort descriptors (named order descriptors).
-        let orderDescriptorsForSortDescriptorKeys: [String:(ascending: (PlayerViewModel, PlayerViewModel) -> Bool, descending: (PlayerViewModel, PlayerViewModel) -> Bool)] =
+        let orderDescriptorsForSortDescriptorKeys: [String:(ascending: (Player, Player) -> Bool, descending: (Player, Player) -> Bool)] =
         [
             "Seat" :
             (
@@ -302,7 +302,7 @@ extension PlayerViewModel
 
 // MARK: - Strings
 
-extension PlayerViewModel
+extension Player
 {
     
     

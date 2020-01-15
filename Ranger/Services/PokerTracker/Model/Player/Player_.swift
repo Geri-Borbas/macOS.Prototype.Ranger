@@ -10,7 +10,7 @@ import Foundation
 import PostgresClientKit
 
 
-class Player: Entry
+class Player_: Entry
 {
     
     
@@ -26,16 +26,16 @@ class Player: Entry
 }
 
 
-extension Player: Equatable
+extension Player_: Equatable
 {
-    static func == (lhs: Player, rhs: Player) -> Bool
+    static func == (lhs: Player_, rhs: Player_) -> Bool
     {
         return lhs.id_player == rhs.id_player
     }
 }
 
 
-extension Player: CustomStringConvertible
+extension Player_: CustomStringConvertible
 {
     var description: String
     {

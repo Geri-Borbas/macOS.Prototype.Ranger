@@ -13,7 +13,7 @@ struct PlayerQuery: Query
 {
     
     
-    typealias EntryType = Player
+    typealias EntryType = Player_
     
     
     let playerIDs: [Int]

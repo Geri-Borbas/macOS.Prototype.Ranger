@@ -14,10 +14,10 @@ class PlayerViewModelCellView: NSTableCellView
     
     
     var textFieldData: TextFieldData!
-    var playerViewModel: PlayerViewModel!
+    var playerViewModel: Player!
     
     
-    func setup(with playerViewModel: PlayerViewModel, in tableColumn: NSTableColumn?)
+    func setup(with playerViewModel: Player, in tableColumn: NSTableColumn?)
     {
         // Checks.
         guard let column = tableColumn else { return }
