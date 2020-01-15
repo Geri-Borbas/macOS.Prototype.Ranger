@@ -1,5 +1,5 @@
 //
-//  LiveTourneyTableQuery.swift
+//  LiveTourneyPlayerQuery.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 14..
@@ -9,13 +9,18 @@
 import Foundation
 
 
-struct LiveTourneyPlayerQuery: Query
+extension PokerTracker
 {
-    
-    
-    typealias EntryType = LiveTourneyPlayer
-    
-    
-    var string: String
-    { return "SELECT * FROM live_tourney_player" }
+        
+        
+    struct LiveTourneyPlayerQuery: Query
+    {
+        
+        
+        typealias EntryType = LiveTourneyPlayer
+        
+        
+        var string: String
+        { return "SELECT * FROM live_tourney_player" }
+    }
 }

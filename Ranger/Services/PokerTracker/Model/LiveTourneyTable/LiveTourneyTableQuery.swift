@@ -9,13 +9,18 @@
 import Foundation
 
 
-struct LiveTourneyTableQuery: Query
+extension PokerTracker
 {
     
-    
-    typealias EntryType = LiveTourneyTable
-    
-    
-    var string: String
-    { return "SELECT * FROM live_tourney_table ORDER BY live_tourney_table.id_live_table ASC" }
+        
+    struct LiveTourneyTableQuery: Query
+    {
+        
+        
+        typealias EntryType = LiveTourneyTable
+        
+        
+        var string: String
+        { return "SELECT * FROM live_tourney_table ORDER BY live_tourney_table.id_live_table ASC" }
+    }
 }

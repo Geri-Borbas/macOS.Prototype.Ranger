@@ -1,5 +1,5 @@
 //
-//  LiveTourneyTableQuery.swift
+//  PlayerQuery.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 14..
@@ -9,24 +9,29 @@
 import Foundation
 
 
-struct PlayerQuery: Query
+extension PokerTracker
 {
     
     
-    typealias EntryType = Player_
-    
-    
-    let playerIDs: [Int]
-    var string: String
+    struct PlayerQuery: Query
     {
-        let stringPlayerIDs = playerIDs.map{ eachPlayerID in String(eachPlayerID) }
-        let joinedPlayerIDs = stringPlayerIDs.joined(separator: ",")
-        return "SELECT player.id_player, player.player_name FROM player WHERE player.id_player IN(\(joinedPlayerIDs))"
-    }
-    
-    
-    init(playerIDs: [Int])
-    {
-        self.playerIDs = playerIDs
+        
+        
+        typealias EntryType = Player
+        
+        
+        let playerIDs: [Int]
+        var string: String
+        {
+            let stringPlayerIDs = playerIDs.map{ eachPlayerID in String(eachPlayerID) }
+            let joinedPlayerIDs = stringPlayerIDs.joined(separator: ",")
+            return "SELECT player.id_player, player.player_name FROM player WHERE player.id_player IN(\(joinedPlayerIDs))"
+        }
+        
+        
+        init(playerIDs: [Int])
+        {
+            self.playerIDs = playerIDs
+        }
     }
 }

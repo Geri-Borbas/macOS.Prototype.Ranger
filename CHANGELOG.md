@@ -29,6 +29,10 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
 
+* Feature/Data/Model_Refactor/0.0.6
+
+    + Namespaced every (!) `PokerTracker` stuff into `PokerTracker` enum
+
 * Feature/Data/Model_Refactor/0.0.5
 
     + Namespaced `PokerTracker` into `PT` enum (soon to be `PokerTracker`)

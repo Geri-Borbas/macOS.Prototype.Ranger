@@ -10,41 +10,45 @@ import Foundation
 import PostgresClientKit
 
 
-class BasicPlayerStatistics: Entry
+extension PokerTracker
 {
     
     
-    let id_player: Int
-    let id_site: Int
-    let str_player_name: String
-    let cnt_vpip: Int
-    let cnt_hands: Int
-    let cnt_walks: Int
-    let cnt_pfr: Int
-    let cnt_pfr_opp: Int
-    
-    // Calculations.
-    var VPIP: Double { Double(cnt_vpip) / Double(cnt_hands - cnt_walks) }
-    var PFR: Double { Double(cnt_pfr) / Double(cnt_pfr_opp) }
-    
-    
-    required init(row: Row) throws
+    class BasicPlayerStatistics: Entry
     {
-        id_player = try row.columns[0].int()
-        id_site = try row.columns[1].int()
-        str_player_name = try row.columns[2].string()
-        cnt_vpip = try row.columns[3].int()
-        cnt_hands = try row.columns[4].int()
-        cnt_walks = try row.columns[5].int()
-        cnt_pfr = try row.columns[6].int()
-        cnt_pfr_opp = try row.columns[7].int()
+        
+        
+        let id_player: Int
+        let id_site: Int
+        let str_player_name: String
+        let cnt_vpip: Int
+        let cnt_hands: Int
+        let cnt_walks: Int
+        let cnt_pfr: Int
+        let cnt_pfr_opp: Int
+        
+        // Calculations.
+        var VPIP: Double { Double(cnt_vpip) / Double(cnt_hands - cnt_walks) }
+        var PFR: Double { Double(cnt_pfr) / Double(cnt_pfr_opp) }
+        
+        
+        required init(row: Row) throws
+        {
+            id_player = try row.columns[0].int()
+            id_site = try row.columns[1].int()
+            str_player_name = try row.columns[2].string()
+            cnt_vpip = try row.columns[3].int()
+            cnt_hands = try row.columns[4].int()
+            cnt_walks = try row.columns[5].int()
+            cnt_pfr = try row.columns[6].int()
+            cnt_pfr_opp = try row.columns[7].int()
+        }
     }
 }
 
-
-extension BasicPlayerStatistics: Equatable
+extension PokerTracker.BasicPlayerStatistics: Equatable
 {
-    static func == (lhs: BasicPlayerStatistics, rhs: BasicPlayerStatistics) -> Bool
+    static func == (lhs: PokerTracker.BasicPlayerStatistics, rhs: PokerTracker.BasicPlayerStatistics) -> Bool
     {
         return (
             lhs.id_player == rhs.id_player &&
@@ -55,7 +59,7 @@ extension BasicPlayerStatistics: Equatable
 }
 
 
-extension BasicPlayerStatistics: CustomStringConvertible
+extension PokerTracker.BasicPlayerStatistics: CustomStringConvertible
 {
     var description: String
     {

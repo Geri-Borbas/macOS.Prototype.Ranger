@@ -26,23 +26,23 @@ enum Model
             
             
             // Data.
-            let latestHandPlayer: LatestHandPlayer
-            var statistics: BasicPlayerStatistics?
+            let handPlayer: PokerTracker.HandPlayer
+            var statistics: PokerTracker.BasicPlayerStatistics?
             
             // Service.
-            private lazy var service: PT.Service = PT.Service()
+            private lazy var service: PokerTracker.Service = PokerTracker.Service()
             
             
-            init(with latestHandPlayer: LatestHandPlayer)
+            init(with latestHandPlayer: PokerTracker.HandPlayer)
             {
-                self.latestHandPlayer = latestHandPlayer
+                self.handPlayer = latestHandPlayer
             }
             
             public mutating func updateStatistics(for tourneyNumber: String? = nil)
             {
                 self.statistics = try? service.fetch(
-                    BasicPlayerStatisticsQuery(
-                        playerIDs: [latestHandPlayer.id_player],
+                    PokerTracker.BasicPlayerStatisticsQuery(
+                        playerIDs: [handPlayer.id_player],
                         tourneyNumber: tourneyNumber
                 )).first
             }
@@ -84,7 +84,7 @@ enum Model
         }
         
         
-        init(with latestHandPlayer: LatestHandPlayer)
+        init(with latestHandPlayer: PokerTracker.HandPlayer)
         {
             self.pokerTracker = PokerTrackerData(with: latestHandPlayer)
             self.sharkScope = SharkScope(with: latestHandPlayer.player_name)
@@ -101,7 +101,7 @@ extension Model.Player: Equatable
     
     /// PokerTracker `id_player` makes unique view models (used for manage collections).
     static func == (lhs: Model.Player, rhs: Model.Player) -> Bool
-    { lhs.pokerTracker.latestHandPlayer.id_player == rhs.pokerTracker.latestHandPlayer.id_player }
+    { lhs.pokerTracker.handPlayer.id_player == rhs.pokerTracker.handPlayer.id_player }
 }
 
 
@@ -115,10 +115,10 @@ extension Model.Player: CustomStringConvertible
     {
         String(format:
             "\n%.0f\t%.0f\t%.0f\t%@",
-            pokerTracker.latestHandPlayer.stack,
+            pokerTracker.handPlayer.stack,
             (pokerTracker.statistics?.VPIP ?? 0) * 100,
             (pokerTracker.statistics?.PFR ?? 0) * 100,
-            pokerTracker.latestHandPlayer.player_name
+            pokerTracker.handPlayer.player_name
         )
     }
 }
@@ -134,9 +134,9 @@ extension Model.Player
     {
         let dictionary: [String:TextFieldData] =
         [
-            "Seat" : TextFieldIntData(value: pokerTracker.latestHandPlayer.seat),
-            "Player" : TextFieldStringData(value: pokerTracker.latestHandPlayer.player_name),
-            "Stack" : TextFieldDoubleData(value: pokerTracker.latestHandPlayer.stack),
+            "Seat" : TextFieldIntData(value: pokerTracker.handPlayer.seat),
+            "Player" : TextFieldStringData(value: pokerTracker.handPlayer.player_name),
+            "Stack" : TextFieldDoubleData(value: pokerTracker.handPlayer.stack),
             "VPIP" : TextFieldDoubleData(value: pokerTracker.statistics?.VPIP),
             "PFR" : TextFieldDoubleData(value: pokerTracker.statistics?.PFR),
             "Hands" : TextFieldIntData(value: pokerTracker.statistics?.cnt_hands),
@@ -180,13 +180,13 @@ extension Model.Player
         [
             "Seat" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.seat < rhs.pokerTracker.latestHandPlayer.seat },
-                descending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.seat >= rhs.pokerTracker.latestHandPlayer.seat }
+                ascending: { lhs, rhs in lhs.pokerTracker.handPlayer.seat < rhs.pokerTracker.handPlayer.seat },
+                descending: { lhs, rhs in lhs.pokerTracker.handPlayer.seat >= rhs.pokerTracker.handPlayer.seat }
             ),
             "Stack" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.stack < rhs.pokerTracker.latestHandPlayer.stack },
-                descending: { lhs, rhs in lhs.pokerTracker.latestHandPlayer.stack >= rhs.pokerTracker.latestHandPlayer.stack }
+                ascending: { lhs, rhs in lhs.pokerTracker.handPlayer.stack < rhs.pokerTracker.handPlayer.stack },
+                descending: { lhs, rhs in lhs.pokerTracker.handPlayer.stack >= rhs.pokerTracker.handPlayer.stack }
             ),
             "VPIP" :
             (
@@ -314,7 +314,7 @@ extension Model.Player
     
     
     var playerName: String
-    { pokerTracker.latestHandPlayer.player_name }
+    { pokerTracker.handPlayer.player_name }
     
     var statisticsSummary: String
     {

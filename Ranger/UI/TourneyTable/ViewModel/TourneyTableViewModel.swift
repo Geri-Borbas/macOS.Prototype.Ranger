@@ -16,7 +16,7 @@ class TourneyTableViewModel: NSObject
     
     // MARK: - Services
     
-    private var pokerTracker: PT.Service = PT.Service()
+    private var pokerTracker: PokerTracker.Service = PokerTracker.Service()
     private var sharkScope: SharkScope = SharkScope()
     
     
@@ -49,7 +49,7 @@ class TourneyTableViewModel: NSObject
     var activePlayerCount: Float
     {
         // Count players with non-zero stack.
-        players.reduce(0.0, { count, eachPlayer in count + ((eachPlayer.pokerTracker.latestHandPlayer.stack > 0.0) ? 1 : 0) })
+        players.reduce(0.0, { count, eachPlayer in count + ((eachPlayer.pokerTracker.handPlayer.stack > 0.0) ? 1 : 0) })
     }
     var orbitCost: Float
     {
@@ -131,7 +131,7 @@ class TourneyTableViewModel: NSObject
             handOffset = max(handOffset, 0)
         
         // Get players of the latest hand tracked by PokerTracker.
-        let latestHandPlayers = try pokerTracker.fetch(LatestHandPlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
+        let latestHandPlayers = try pokerTracker.fetch(PokerTracker.LatestHandPlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
         
         // Only if players any.
         guard let firstPlayer = latestHandPlayers.first
@@ -172,14 +172,14 @@ class TourneyTableViewModel: NSObject
         // Get latest PokerTracker statistics (get session stats for hero).
         for (eachIndex, eachPlayer) in players.enumerated()
         {
-            let isHero = eachPlayer.pokerTracker.latestHandPlayer.flg_hero
+            let isHero = eachPlayer.pokerTracker.handPlayer.flg_hero
             players[eachIndex].pokerTracker.updateStatistics(for: isHero ? tableInfo.tournamentNumber : nil)
         }
         
         // Track stack extremes.
         stackPercentProvider.maximum = NSNumber(value: players.reduce(
             0.0,
-            { max($0, $1.pokerTracker.latestHandPlayer.stack) })
+            { max($0, $1.pokerTracker.handPlayer.stack) })
         )
         
         // REDRAW STACK BAR.
@@ -287,7 +287,7 @@ extension TourneyTableViewModel: NSTableViewDataSource
         // Fade if no stack (yet hardcoded).
         if
             let rowView = tableView.rowView(atRow: row, makeIfNecessary: false),
-            player.pokerTracker.latestHandPlayer.stack <= 0
+            player.pokerTracker.handPlayer.stack <= 0
         { rowView.alphaValue = 0.4 }
         
         return cellView
@@ -361,7 +361,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         
         // Data.
         var player = players[row]
-        let playerName = player.pokerTracker.latestHandPlayer.player_name
+        let playerName = player.pokerTracker.handPlayer.player_name
 
         // Fetch summary.
         // let fetchPlayerName = "Oliana88" // Pro

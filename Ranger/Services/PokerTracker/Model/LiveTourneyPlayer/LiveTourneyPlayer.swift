@@ -1,5 +1,5 @@
 //
-//  LiveTable.swift
+//  LiveTourneyPlayer.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 09..
@@ -9,43 +9,47 @@
 import Foundation
 import PostgresClientKit
 
-
-class LiveTourneyPlayer: Entry
+extension PokerTracker
 {
     
-    
-    let id_player: Int
-    let id_player_real: Int
-    let id_live_table: Int
-    let amt_ante: Double
-    // amt_before
-    let amt_stack: Double
-    // amt_won
-    // amt_won_1
-    // amt_won_2
-    // amt_won_3
-    // amt_won_4
-    // amt_won_5
-    // amt_won_6
-    // amt_won_7
-    // amt_won_8
-    // amt_won_9
-    
-    
-    required init(row: Row) throws
+        
+    class LiveTourneyPlayer: Entry
     {
-        id_player = try row.columns[0].int()
-        id_player_real = try row.columns[1].int()
-        id_live_table = try row.columns[2].int()
-        amt_ante = try row.columns[3].double()
-        amt_stack = try row.columns[5].double()
+        
+        
+        let id_player: Int
+        let id_player_real: Int
+        let id_live_table: Int
+        let amt_ante: Double
+        // amt_before
+        let amt_stack: Double
+        // amt_won
+        // amt_won_1
+        // amt_won_2
+        // amt_won_3
+        // amt_won_4
+        // amt_won_5
+        // amt_won_6
+        // amt_won_7
+        // amt_won_8
+        // amt_won_9
+        
+        
+        required init(row: Row) throws
+        {
+            id_player = try row.columns[0].int()
+            id_player_real = try row.columns[1].int()
+            id_live_table = try row.columns[2].int()
+            amt_ante = try row.columns[3].double()
+            amt_stack = try row.columns[5].double()
+        }
     }
 }
 
 
-extension LiveTourneyPlayer: Equatable
+extension PokerTracker.LiveTourneyPlayer: Equatable
 {
-    static func == (lhs: LiveTourneyPlayer, rhs: LiveTourneyPlayer) -> Bool
+    static func == (lhs: PokerTracker.LiveTourneyPlayer, rhs: PokerTracker.LiveTourneyPlayer) -> Bool
     {
         return (
             lhs.id_player == rhs.id_player &&
@@ -56,7 +60,7 @@ extension LiveTourneyPlayer: Equatable
 }
 
 
-extension LiveTourneyPlayer: CustomStringConvertible
+extension PokerTracker.LiveTourneyPlayer: CustomStringConvertible
 {
     var description: String
     {

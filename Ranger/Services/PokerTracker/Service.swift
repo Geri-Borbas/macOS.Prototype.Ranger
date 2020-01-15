@@ -19,7 +19,7 @@ enum PokerTrackerError: Error
 }
 
 
-enum PT
+enum PokerTracker
 {
 
     

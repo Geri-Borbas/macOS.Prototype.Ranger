@@ -9,39 +9,44 @@
 import Foundation
 
 
-struct LatestHandPlayerQuery: Query
+extension PokerTracker
 {
     
-    
-    typealias EntryType = LatestHandPlayer
-    
-    
-    let tourneyNumber: String
-    let handOffset: Int
-    var string: String
-    {
-        // Load query file.
-        let queryFilePath = Bundle.main.path(forResource: "LatestHandPlayerQuery", ofType: "sql")
-        guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
-        else { return "" }
         
-        // Inject parameter.
-        let queryString = queryTemplateString
-            .replacingOccurrences(
-                of: "$_TOURNEY_NUMBER",
-                with: tourneyNumber)
-            .replacingOccurrences(
-                of: "$_OFFSET",
-                with: String(handOffset)
-        )
-        
-        return queryString
-    }
-    
-    
-    init(tourneyNumber: String, handOffset: Int = 0)
+    struct LatestHandPlayerQuery: Query
     {
-        self.tourneyNumber = tourneyNumber
-        self.handOffset = handOffset
+        
+        
+        typealias EntryType = HandPlayer
+        
+        
+        let tourneyNumber: String
+        let handOffset: Int
+        var string: String
+        {
+            // Load query file.
+            let queryFilePath = Bundle.main.path(forResource: "LatestHandPlayerQuery", ofType: "sql")
+            guard let queryTemplateString = try? String(contentsOfFile: queryFilePath!, encoding: String.Encoding.utf8)
+            else { return "" }
+            
+            // Inject parameter.
+            let queryString = queryTemplateString
+                .replacingOccurrences(
+                    of: "$_TOURNEY_NUMBER",
+                    with: tourneyNumber)
+                .replacingOccurrences(
+                    of: "$_OFFSET",
+                    with: String(handOffset)
+            )
+            
+            return queryString
+        }
+        
+        
+        init(tourneyNumber: String, handOffset: Int = 0)
+        {
+            self.tourneyNumber = tourneyNumber
+            self.handOffset = handOffset
+        }
     }
 }

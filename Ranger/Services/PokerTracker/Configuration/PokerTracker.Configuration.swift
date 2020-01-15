@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension PT
+extension PokerTracker
 {
     
     
