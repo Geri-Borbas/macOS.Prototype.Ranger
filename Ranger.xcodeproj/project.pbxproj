@@ -160,6 +160,7 @@
 		55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCellView.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
 		55B03CD423B104F700F153B5 /* Model.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Player.swift; sourceTree = "<group>"; };
+		55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tournaments.md; sourceTree = "<group>"; };
 		55C1868B239583DA0081B6B7 /* Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C1868E239583DA0081B6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableViewController.swift; sourceTree = "<group>"; };
@@ -456,6 +457,7 @@
 			children = (
 				550E406C23B065E100678BCD /* Error */,
 				5521A553239DD170000D1AD1 /* SharkScope.swift */,
+				55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */,
 				55DB43EA23A2E6ED00A7F37F /* Configuration */,
 				5574DAC623A68DD400569790 /* Model */,
 				558D35E0239F3C45006C710D /* Metadata */,
