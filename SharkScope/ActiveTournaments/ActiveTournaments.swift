@@ -9,57 +9,57 @@
 import Foundation
 
 
-struct ActiveTournaments: RootResponse, Equatable
-{ let Response: ActiveTournamentsResponse }
+public struct ActiveTournaments: RootResponse, Equatable
+{ public let Response: ActiveTournamentsResponse }
 
 
-struct ActiveTournamentsResponse: Response, Equatable
+public struct ActiveTournamentsResponse: Response, Equatable
 {
 
 
-    let metadataHash: String
-    let timestamp: StringFor<Date>
-    let success: StringFor<Bool>
+    public let metadataHash: String
+    public let timestamp: StringFor<Date>
+    public let success: StringFor<Bool>
 
-    let PlayerResponse: PlayerResponse
-    let UserInfo: UserInfo
+    public let PlayerResponse: PlayerResponse
+    public let UserInfo: UserInfo
     
     
-    struct PlayerResponse: Decodable, Equatable
+    public struct PlayerResponse: Decodable, Equatable
     {
 
 
-        let PlayerView: PlayerView
+        public let PlayerView: PlayerView
 
 
-        struct PlayerView: Decodable, Equatable
+        public struct PlayerView: Decodable, Equatable
         {
 
 
-            let Filter: String
-            let Player: Player
+            public let Filter: String
+            public let Player: Player
             
 
-            struct Player: Decodable, Equatable
+            public struct Player: Decodable, Equatable
             {
 
 
-                let country: String
-                let countryName: String
-                let lastActivity: StringFor<Date>
-                let name: String
-                let network: String
-                var ActiveTournaments: ActiveTournaments?
+                public let country: String
+                public let countryName: String
+                public let lastActivity: StringFor<Date>
+                public let name: String
+                public let network: String
+                public var ActiveTournaments: ActiveTournaments?
                 
                 
-                struct ActiveTournaments: Decodable, CustomStringConvertible, Equatable
+                public struct ActiveTournaments: Decodable, CustomStringConvertible, Equatable
                 {
                  
                     
-                    var Tournament: [Tournament]
+                    public var Tournament: [Tournament]
                     
                     
-                    struct Tournament: Decodable, CustomStringConvertible, Equatable
+                    public struct Tournament: Decodable, CustomStringConvertible, Equatable
                     {
                         
 
@@ -67,16 +67,16 @@ struct ActiveTournamentsResponse: Response, Equatable
                         // let rake: StringFor<Float>
                         // let currency: String
                         // let gameClass: String
-                        let id: StringFor<Int>
+                        public let id: StringFor<Int>
                         // let lateRegEndDate: StringFor<Date>
-                        let name: String
-                        let state: String
-                        let totalEntrants: StringFor<Int>
+                        public let name: String
+                        public let state: String
+                        public let totalEntrants: StringFor<Int>
                         // let overlay: String
                         // let lastUpdateTime: StringFor<Date>
                         // let game: String
-                        let stake: StringFor<Float>
-                        let currentEntrants: StringFor<Int>
+                        public let stake: StringFor<Float>
+                        public let currentEntrants: StringFor<Int>
                         // let scheduledStartDate: StringFor<Date>
                         // let flags: String
                         // let structure: String
@@ -84,11 +84,11 @@ struct ActiveTournamentsResponse: Response, Equatable
                         // let playersPerTable: StringFor<Int>
                         
                         
-                        var description: String
+                        public var description: String
                         { return String(format: "%@ - Entrants %d/%d", name, currentEntrants.value, totalEntrants.value) }
                     }
                     
-                    init(from decoder: Decoder) throws
+                    public init(from decoder: Decoder) throws
                     {
                         // Default(ish) implementation.
                         let container = try decoder.container(keyedBy: DynamicCodingKey.self)
@@ -106,7 +106,7 @@ struct ActiveTournamentsResponse: Response, Equatable
                     }
                     
                     
-                    var description: String
+                    public var description: String
                     {
                         return "[\n" + self.Tournament.reduce("")
                         {

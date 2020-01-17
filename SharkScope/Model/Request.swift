@@ -1,5 +1,5 @@
 //
-//  Query.swift
+//  Request.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 14..
@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol Request
+public protocol Request
 {
     
     
@@ -26,14 +26,14 @@ extension Request
 {
 
     
-    func usingCache() -> Self
+    public func usingCache() -> Self
     {
         var copy = self
         copy.useCache = true
         return copy
     }
     
-    func withoutCache() -> Self
+    public func withoutCache() -> Self
     {
         var copy = self
         copy.useCache = false

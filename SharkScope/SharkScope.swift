@@ -7,9 +7,9 @@
 //
 
 import Foundation
+    
 
-
-enum RequestError: Error
+public enum RequestError: Error
 {
     case urlCreationError
     case endpointNotExist
@@ -21,16 +21,20 @@ enum RequestError: Error
     case jsonDecodingError(_: Error)
     case noJSONData
 }
-
-
-class SharkScope
+    
+    
+public struct SharkScope
 {
     
     
     static var errorDomain: String = "SharkScope"
     static var basePath: String = "/api/searcher/"
     static var log: Bool = false
-    public var user: UserInfo?
+    static var user: UserInfo?
+    
+    
+    public init()
+    { }
     
     
     // MARK: - Networking
@@ -170,7 +174,7 @@ class SharkScope
             else { return completion(.failure(RequestError.noJSONData)) }
             
             // Retain latest `UserInfo`.
-            self.user = decodedResponse.Response.UserInfo
+            Self.user = decodedResponse.Response.UserInfo
             
             // Return on the main thread.
             DispatchQueue.main.async()
@@ -183,7 +187,7 @@ class SharkScope
     
     // MARK: - Requests
     
-    func fetch(player playerName: String,
+    public func fetch(player playerName: String,
                completion: @escaping (Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) -> Void)
     {
         let network = "PokerStars"
@@ -241,9 +245,9 @@ class SharkScope
     
     // MARK: - UI
     
-    var status: String
+    public var status: String
     {
-        guard let user = user
+        guard let user = Self.user
         else { return "Not logged in." }
         
         return String(format: "%d search remaining (logged in as %@).", user.RemainingSearches, user.Username)

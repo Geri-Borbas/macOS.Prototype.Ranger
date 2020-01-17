@@ -9,11 +9,14 @@
 import Foundation
 
 
-class RequestCache
+public struct RequestCache
 {
+        
     
+    public init()
+    { }
     
-    func deleteTablesCache(for playerName: String)
+    public func deleteTablesCache(for playerName: String)
     {
         let requestPath = "activeTournaments"
         let parameters = ["network1" : "PokerStars", "player1" : playerName]
@@ -34,7 +37,7 @@ class RequestCache
         catch { print("Could not remove cache file. \(error)") }
     }
     
-    func deleteStatisticsCache(for playerName: String)
+    public func deleteStatisticsCache(for playerName: String)
     {
         let network = "PokerStars"
         let requestPath = "networks/\(network)/players/\(playerName)"
@@ -55,7 +58,6 @@ class RequestCache
         do { try FileManager.default.removeItem(at: cacheFileURL) }
         catch { print("Could not remove cache file. \(error)") }
     }
-    
     
     func cachedResponse<ResponseType: Decodable>(for urlComponents: URLComponents) -> ResponseType?
     {

@@ -13,7 +13,7 @@ extension SharkScope
 {
     
     
-    struct Configuration: Decodable
+    public struct Configuration: Decodable
     {
         
 

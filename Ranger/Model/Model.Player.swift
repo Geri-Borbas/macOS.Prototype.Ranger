@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SharkScope
 
 
 enum Model

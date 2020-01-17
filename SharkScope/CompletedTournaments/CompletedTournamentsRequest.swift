@@ -21,28 +21,29 @@ import Foundation
 /// 1~1000 then order=player,1~2000, etc.).
 ///
 /// Cost 1 Search per 100 tournaments returned.
-struct CompletedTournamentsRequest: Request
+public struct CompletedTournamentsRequest: Request
 {
     
     
-    typealias RootResponseType = CompletedTournaments
+    public typealias RootResponseType = CompletedTournaments
     
     
     let network: String
     let player: String
     let amount: Int
-    var path: String { "networks/\(network)/players/\(player)/completedTournaments" }
-    var parameters: KeyValuePairs<String, String>
+    
+    public var path: String { "networks/\(network)/players/\(player)/completedTournaments" }
+    public var parameters: KeyValuePairs<String, String>
     {
         (amount == 0) ? [:] :
         [
             "order" : "player,1~\(amount)",
         ]
     }
-    var useCache: Bool = true
+    public var useCache: Bool = true
     
     
-    init(network: String, player: String, amount: Int = 0)
+    public init(network: String, player: String, amount: Int = 0)
     {
         self.network = network
         self.player = player

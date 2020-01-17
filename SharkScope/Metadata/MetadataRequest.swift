@@ -15,14 +15,14 @@ import Foundation
 /// response is set to cache on the client. The response header will not
 /// contain an appVersion attribute even if there is a valid application
 /// version.
-struct MetadataRequest: Request
+public struct MetadataRequest: Request
 {
     
     
-    typealias RootResponseType = Metadata
+    public typealias RootResponseType = Metadata
     
     
-    var path: String { "metadata" }
-    var parameters: KeyValuePairs<String, String> { [:] }
-    var useCache: Bool = true
+    public var path: String { "metadata" }
+    public var parameters: KeyValuePairs<String, String> { [:] }
+    public var useCache: Bool = true
 }

@@ -9,46 +9,46 @@
 import Foundation
 
 
-struct CompletedTournaments: RootResponse, Equatable
-{ let Response: CompletedTournamentsResponse }
+public struct CompletedTournaments: RootResponse, Equatable
+{ public let Response: CompletedTournamentsResponse }
 
 
-struct CompletedTournamentsResponse: Response, Equatable
+public struct CompletedTournamentsResponse: Response, Equatable
 {
 
 
-    let metadataHash: String
-    let timestamp: StringFor<Date>
-    let success: StringFor<Bool>
+    public let metadataHash: String
+    public let timestamp: StringFor<Date>
+    public let success: StringFor<Bool>
 
-    let PlayerResponse: PlayerResponse
-    let UserInfo: UserInfo
+    public let PlayerResponse: PlayerResponse
+    public let UserInfo: UserInfo
     
     
-    struct PlayerResponse: Decodable, Equatable
+    public struct PlayerResponse: Decodable, Equatable
     {
 
 
-        let PlayerView: PlayerView
+        public let PlayerView: PlayerView
 
 
-        struct PlayerView: Decodable, Equatable
+        public struct PlayerView: Decodable, Equatable
         {
 
 
-            let Filter: String
-            let Player: Player
+            public let Filter: String
+            public let Player: Player
             
 
-            struct Player: Decodable, Equatable
+            public struct Player: Decodable, Equatable
             {
 
 
-                let country: String
-                let countryName: String
-                let lastActivity: StringFor<Date>
-                let name: String
-                let network: String
+                public let country: String
+                public let countryName: String
+                public let lastActivity: StringFor<Date>
+                public let name: String
+                public let network: String
                 
                 /*
                 var ActiveTournaments: ActiveTournaments?

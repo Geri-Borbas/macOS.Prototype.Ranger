@@ -29,6 +29,10 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
 
+* Feature/Data/Model_Refactor/0.1.0
+
+    + Extracted `SharkScope` into a framework
+
 * Feature/Data/Model_Refactor/0.0.9
 
     + Added notes for getting `tournaments.csv`

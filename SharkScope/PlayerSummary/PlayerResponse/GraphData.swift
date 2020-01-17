@@ -9,35 +9,35 @@
 import Foundation
 
 
-struct GraphData: Decodable, Equatable
+public struct GraphData: Decodable, Equatable
 {
             
     
-    let id: String
-    let dataPoints: [DataPoint]
-    let trendLine: TrendLine
+    public let id: String
+    public let dataPoints: [DataPoint]
+    public let trendLine: TrendLine
     
     
-    struct DataPoint: Decodable, Equatable
+    public struct DataPoint: Decodable, Equatable
     {
         
         
-        let x: Double
-        let y: Double
+        public let x: Double
+        public let y: Double
     }
     
     
-    struct TrendLine: Decodable, Equatable
+    public struct TrendLine: Decodable, Equatable
     {
         
         
-        let slope: Double
-        let offset: Double
-        let max: Double
+        public let slope: Double
+        public let offset: Double
+        public let max: Double
     }
     
     
-    init(from statisticalDataSet: Statistics.StatisticalDataSet?)
+    public init(from statisticalDataSet: Statistics.StatisticalDataSet?)
     {
         // Only if any.
         guard let statisticalDataSet = statisticalDataSet

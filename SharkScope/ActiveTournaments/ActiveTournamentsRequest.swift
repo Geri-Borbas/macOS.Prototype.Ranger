@@ -17,22 +17,23 @@ import Foundation
 /// not blocked are included.
 ///
 /// Cost 1 per player (players inquired within the past 3 hours cost nothing).
-struct ActiveTournamentsRequest: Request
+public struct ActiveTournamentsRequest: Request
 {
     
     
-    typealias RootResponseType = ActiveTournaments
+    public typealias RootResponseType = ActiveTournaments
     
     
     let network: String
     let player: String
-    var path: String { "activeTournaments" }
-    var parameters: KeyValuePairs<String, String>
+    
+    public var path: String { "activeTournaments" }
+    public var parameters: KeyValuePairs<String, String>
     {
         [
             "network1" : network,
             "player1" : player
         ]
     }
-    var useCache: Bool = false
+    public var useCache: Bool = false
 }

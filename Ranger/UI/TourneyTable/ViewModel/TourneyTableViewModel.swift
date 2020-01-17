@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import SharkScope
 
 
 class TourneyTableViewModel: NSObject

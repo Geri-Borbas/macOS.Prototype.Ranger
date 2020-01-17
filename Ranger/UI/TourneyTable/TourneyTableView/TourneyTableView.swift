@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SharkScope
 
 
 @objc protocol TourneyTableViewDelegate

@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol RootResponse: Decodable
+public protocol RootResponse: Decodable
 {
     
     
