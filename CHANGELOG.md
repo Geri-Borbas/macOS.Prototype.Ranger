@@ -29,6 +29,10 @@
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
 
+* 1.8.1
+
+    + Rows with zero stack gets dimmed only when playing (when `Model.Player.PokerTracker.handPlayer` is available)
+
 * 1.8.0
 
     + Merged `Feature/Data/Model_Refactor`

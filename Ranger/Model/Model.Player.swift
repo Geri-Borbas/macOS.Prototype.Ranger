@@ -327,6 +327,9 @@ extension Model.Player
     var isHero: Bool
     { pokerTracker?.handPlayer?.flg_hero ?? false }
     
+    var isPlaying: Bool
+    { pokerTracker?.handPlayer != nil }
+    
     var stack: Double
     { pokerTracker?.handPlayer?.stack ?? 0 }
     

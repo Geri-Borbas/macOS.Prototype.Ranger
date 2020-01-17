@@ -276,6 +276,7 @@ extension TourneyTableViewModel: NSTableViewDataSource
         // Fade if no stack (yet hardcoded).
         if
             let rowView = tableView.rowView(atRow: row, makeIfNecessary: false),
+            player.isPlaying,
             player.stack <= 0
         { rowView.alphaValue = 0.4 }
         
