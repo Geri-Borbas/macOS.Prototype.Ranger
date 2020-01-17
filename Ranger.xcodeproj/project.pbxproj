@@ -352,14 +352,8 @@
 				5521A553239DD170000D1AD1 /* SharkScope.Service.swift */,
 				55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */,
 				552E543E23D164620056B305 /* Info.plist */,
-				550E406C23B065E100678BCD /* Error */,
 				55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */,
 				5574DAC623A68DD400569790 /* Model */,
-				558D35E0239F3C45006C710D /* Metadata */,
-				558D35E3239F4299006C710D /* PlayerSummary */,
-				55698B9923AADFCC0065125C /* ActiveTournaments */,
-				55EDF3DE23CE6AFA008A42AC /* CompletedTournaments */,
-				5592684523A9CA0900045F89 /* Timeline */,
 			);
 			path = SharkScope;
 			sourceTree = "<group>";
@@ -417,6 +411,12 @@
 				55840BF623A9BA0B000B06FF /* StringRepresenting.swift */,
 				555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */,
 				554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */,
+				550E406C23B065E100678BCD /* Error */,
+				558D35E0239F3C45006C710D /* Metadata */,
+				558D35E3239F4299006C710D /* PlayerSummary */,
+				55698B9923AADFCC0065125C /* ActiveTournaments */,
+				55EDF3DE23CE6AFA008A42AC /* CompletedTournaments */,
+				5592684523A9CA0900045F89 /* Timeline */,
 			);
 			path = Model;
 			sourceTree = "<group>";
