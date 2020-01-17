@@ -84,7 +84,6 @@
 		55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */; };
 		55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C18692239583DC0081B6B7 /* Assets.xcassets */; };
 		55C18696239583DD0081B6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C18694239583DD0081B6B7 /* Main.storyboard */; };
-		55C8498623A3309F00452F2F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8498523A3309F00452F2F /* Notes.swift */; };
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
 		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
 		55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */; };
@@ -214,7 +213,6 @@
 		55C529E423BD3F1400A6975A /* RangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegressionTests.swift; sourceTree = "<group>"; };
 		55C529E823BD3F1500A6975A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55C8498523A3309F00452F2F /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		55D4CADD23BB0394001E07E5 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
 		55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDescriptorPrototypeTests.swift; sourceTree = "<group>"; };
 		55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfoTests.swift; sourceTree = "<group>"; };
@@ -567,7 +565,6 @@
 				55C0F97623CF4CEE00414046 /* Model */,
 				5508E3FF23A4756200FFB173 /* UI */,
 				55B9C86823D1863E00B3D116 /* Extensions */,
-				55C8498423A3307D00452F2F /* Notes */,
 				55C18692239583DC0081B6B7 /* Assets.xcassets */,
 				55C18694239583DD0081B6B7 /* Main.storyboard */,
 				55C18697239583DD0081B6B7 /* Info.plist */,
@@ -585,14 +582,6 @@
 				55C529E823BD3F1500A6975A /* Info.plist */,
 			);
 			path = RangerTests;
-			sourceTree = "<group>";
-		};
-		55C8498423A3307D00452F2F /* Notes */ = {
-			isa = PBXGroup;
-			children = (
-				55C8498523A3309F00452F2F /* Notes.swift */,
-			);
-			path = Notes;
 			sourceTree = "<group>";
 		};
 		55E7E71823C019D7000388FD /* Data */ = {
@@ -986,7 +975,6 @@
 				559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */,
 				5508E3FD23A4656000FFB173 /* TourneyTableViewModel.swift in Sources */,
 				55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */,
-				55C8498623A3309F00452F2F /* Notes.swift in Sources */,
 				5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */,
 				5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */,
 				5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */,

@@ -28,9 +28,11 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
-        + ICM Equities
-            + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
-            + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* 1.8.0
+
+    + Merged `Feature/Data/Model_Refactor`
+    + Cleanup
 
 * Feature/Data/Model_Refactor/0.2.0
 
