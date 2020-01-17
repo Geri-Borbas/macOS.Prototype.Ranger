@@ -16,7 +16,7 @@ public struct StatisticsQuery: Query
     public typealias EntryType = Statistics
     
     
-    let playerIDs: [Int]
+    let playerNames: [String]
     let tourneyNumber: String?
     
     public var string: String
@@ -26,10 +26,9 @@ public struct StatisticsQuery: Query
         guard let path = queryFilePath, let queryTemplateString = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
         else { return "" }
         
-        // Inject player ids.
-        let stringPlayerIDs = playerIDs.map{ eachPlayerID in String(eachPlayerID) }
-        let joinedPlayerIDs = stringPlayerIDs.joined(separator: ",")
-        let whereCondition = "player.id_player IN(\(joinedPlayerIDs))"
+        // Inject player names
+        let joinedPlayerNames = playerNames.joined(separator: "', '")
+        let whereCondition = "player.player_name IN('\(joinedPlayerNames)')"
         var queryString = queryTemplateString.replacingOccurrences(of: "$_WHERE_CONDITION", with: whereCondition)
         
         // Inject tourney number if any.
@@ -43,9 +42,9 @@ public struct StatisticsQuery: Query
     }
     
     
-    public init(playerIDs: [Int], tourneyNumber: String? = nil)
+    public init(playerNames: [String], tourneyNumber: String? = nil)
     {
-        self.playerIDs = playerIDs
+        self.playerNames = playerNames
         self.tourneyNumber = tourneyNumber
     }
 }

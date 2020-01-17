@@ -14,5 +14,7 @@
 	<false/>
 	<key>database</key>
 	<string>PT4 DB</string>
+	<key>log</key>
+	<false/>
 </dict>
 </plist>

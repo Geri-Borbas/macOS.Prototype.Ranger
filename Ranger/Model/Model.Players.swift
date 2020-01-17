@@ -41,15 +41,52 @@ extension Model
         }
         
         public static func cachedPlayers() -> [Player]
-        { [] }
+        {
+            // Only if any.
+            guard let cachedFileURLs = RequestCache().cachedFiles(at: "networks/pokerstars/players")
+            else { return [] }
         
-        public static func someAwesomePlayer() -> [Player]
+            // Map names.
+            let cachedPlayerNames = cachedFileURLs.map
+            {
+                eachCachedFileURL in
+                eachCachedFileURL.deletingPathExtension().lastPathComponent
+            }
+            
+            // Create models.
+            let players = cachedPlayerNames.map
+            {
+                eachCachedPlayerName in
+                Model.Player(name: eachCachedPlayerName)
+            }
+            
+            return players
+        }
+        
+        public static func regs() -> [Player]
         {
             return [
                 Model.Player(name: "Borbas.Geri"),
                 Model.Player(name: "rehakzsolt"),
-                Model.Player(name: "Oliana88")
+                Model.Player(name: "Oliana88"),
+                Model.Player(name: "fülemüle"),
+                Model.Player(name: "quAAsar"),
+                Model.Player(name: "wASH1K"),
+                Model.Player(name: "NNiubility"),
+                Model.Player(name: "rybluk"),
+                Model.Player(name: "wttomi"),
+                Model.Player(name: "Tillotam"),
+                Model.Player(name: "Tian You520"),
+                Model.Player(name: "Gugrand"),
+                Model.Player(name: "flokinho86"),
+                Model.Player(name: "federaluiasi"),
+                Model.Player(name: "@rtemur"),
+                Model.Player(name: "LuckyMarat"),
+                Model.Player(name: "AlekseyM1983"),
             ]
+            
+            // let playerName = "g1anfar"
+            // let playerName = "ScauHades"
         }
     }
 }

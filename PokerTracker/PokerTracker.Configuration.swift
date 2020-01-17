@@ -23,6 +23,7 @@ extension Service
         let password: String
         let ssl: Bool
         let database: String
+        let log: Bool
         
         
         static func load() -> Configuration

@@ -50,8 +50,6 @@
 		552E547823D176BF0056B305 /* PokerTracker.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */; };
 		552E547923D176CE0056B305 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A55E239DF408000D1AD1 /* Entry.swift */; };
 		552E547A23D176CE0056B305 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD323A54B0C00754763 /* Query.swift */; };
-		552E547B23D176D20056B305 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
-		552E547C23D176D20056B305 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
 		552E547D23D176D80056B305 /* PokerTracker.Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */; };
 		552E547E23D176D80056B305 /* StatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */; };
 		552E547F23D176D80056B305 /* StatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */; };
@@ -65,6 +63,8 @@
 		5536B0FE23C2BF610067E7F2 /* TourneyTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */; };
 		5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */; };
 		5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */; };
+		553CAE2523D1F30700ED1DA3 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
+		553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
 		5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5560F04A23BAAEAA008894BD /* App.Configuration.plist */; };
 		5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRanges.swift */; };
@@ -302,14 +302,14 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		5518D63523BA8D9300EFFBC0 /* LatestHandPlayer */ = {
+		5518D63523BA8D9300EFFBC0 /* HandPlayer */ = {
 			isa = PBXGroup;
 			children = (
 				5518D63623BA8E0500EFFBC0 /* HandPlayer.swift */,
 				5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */,
 				5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */,
 			);
-			path = LatestHandPlayer;
+			path = HandPlayer;
 			sourceTree = "<group>";
 		};
 		551DEE0523C5E435006DF95B /* Finishes */ = {
@@ -335,10 +335,10 @@
 				5521A55E239DF408000D1AD1 /* Entry.swift */,
 				55ED3CD323A54B0C00754763 /* Query.swift */,
 				55ED3CDE23A5542A00754763 /* Player */,
-				55ED3CDB23A553E600754763 /* BasicPlayerStatistics */,
+				55ED3CDB23A553E600754763 /* Statistics */,
 				55ED3CD823A5538E00754763 /* LiveTourneyPlayer */,
 				55ED3CD723A5537700754763 /* LiveTourneyTable */,
-				5518D63523BA8D9300EFFBC0 /* LatestHandPlayer */,
+				5518D63523BA8D9300EFFBC0 /* HandPlayer */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -623,14 +623,14 @@
 			path = LiveTourneyPlayer;
 			sourceTree = "<group>";
 		};
-		55ED3CDB23A553E600754763 /* BasicPlayerStatistics */ = {
+		55ED3CDB23A553E600754763 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
 				5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */,
 				55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */,
 				55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */,
 			);
-			path = BasicPlayerStatistics;
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		55ED3CDE23A5542A00754763 /* Player */ = {
@@ -953,12 +953,12 @@
 				552E548123D176DF0056B305 /* LiveTourneyPlayerQuery.swift in Sources */,
 				552E547A23D176CE0056B305 /* Query.swift in Sources */,
 				552E548323D176E30056B305 /* LiveTourneyTableQuery.swift in Sources */,
+				553CAE2523D1F30700ED1DA3 /* PokerTracker.Player.swift in Sources */,
 				552E547E23D176D80056B305 /* StatisticsQuery.swift in Sources */,
-				552E547B23D176D20056B305 /* PokerTracker.Player.swift in Sources */,
 				552E547D23D176D80056B305 /* PokerTracker.Statistics.swift in Sources */,
 				552E548223D176E30056B305 /* LiveTourneyTable.swift in Sources */,
 				552E547923D176CE0056B305 /* Entry.swift in Sources */,
-				552E547C23D176D20056B305 /* PlayerQuery.swift in Sources */,
+				553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */,
 				552E548023D176DF0056B305 /* LiveTourneyPlayer.swift in Sources */,
 				552E548523D176E80056B305 /* LatestHandPlayerQuery.swift in Sources */,
 				552E547823D176BF0056B305 /* PokerTracker.Configuration.swift in Sources */,

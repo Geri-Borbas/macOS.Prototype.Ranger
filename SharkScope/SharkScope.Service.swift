@@ -190,13 +190,7 @@ public struct Service
     public func fetch(player playerName: String,
                       completion: @escaping (Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), SharkScope.Error>) -> Void)
     {
-        let network = "PokerStars"
-        // let playerName = "quAAsar"
-        // let playerName = "g1anfar"
-        // let playerName = "Eset93"
-        // let playerName = "ScauHades"
-        // let playerName = "Borbas.Geri"
-        
+        let network = "PokerStars"        
         fetch(PlayerSummaryRequest(network: network, player: playerName), completion:
         {
             result in

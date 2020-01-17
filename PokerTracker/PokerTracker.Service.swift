@@ -45,7 +45,8 @@ public class Service
         connectionConfiguration.credential = .md5Password(password: configuration.password)
         
         // Log.
-        // Postgres.logger.level = .all
+        if (configuration.log)
+        { Postgres.logger.level = .all }
 
         // Connect.
         do

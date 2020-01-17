@@ -150,10 +150,6 @@ class TourneyTableViewModel: NSObject
         // Track.
         latestBigBlind = tableInfo.bigBlind
         latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer.hand_no ?? ""
-
-        print("isNewHand \(isNewHand)")
-        print("isNewBlindLevel \(isNewBlindLevel)")
-        print("isSomethingChanged \(isSomethingChanged)")
         
         // Save any SharkScope statistics if any.
         players.forEach
@@ -242,8 +238,6 @@ class TourneyTableViewModel: NSObject
             summary.append(NSMutableAttributedString(string: String(format: "%.0f/%.0f", smallBlind, bigBlind), attributes:boldAttribute))
             summary.append(NSMutableAttributedString(string: String(format: " ante %.0f (%.0f players)", ante, players), attributes:lightAttribute))
             summary.append(NSMutableAttributedString(string: String(format: ", M is %@", roundedM), attributes:lightAttribute))
-        
-        // let sample = "10/20 ante 50 (7 players), M is 275"
         
         // Return.
         return summary
@@ -358,16 +352,6 @@ extension TourneyTableViewModel: NSTableViewDelegate
         var player = players[row]
 
         // Fetch summary.
-        // let fetchPlayerName = "Oliana88" // Pro
-        // let fetchPlayerName = "quAAsar"
-        // let fetchPlayerName = "rybluk"
-        // let fetchPlayerName = "perst777" // Blocked
-        // let fetchPlayerName = "wASH1K"
-        // let fetchPlayerName = "Taren Tano" // With space
-        // let fetchPlayerName = "Brier Rose" // Full Tilt (Closed)
-        // let fetchPlayerName = "NNiubility"
-        // let fetchPlayerName = "dontumove" // One table
-        // let fetchPlayerName = playerName
         sharkScope.fetch(player: player.name,
                          completion:
             {

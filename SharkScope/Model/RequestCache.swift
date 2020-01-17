@@ -16,49 +16,6 @@ public struct RequestCache
     public init()
     { }
     
-    public func deleteTablesCache(for playerName: String)
-    {
-        let requestPath = "activeTournaments"
-        let parameters = ["network1" : "PokerStars", "player1" : playerName]
-        
-        // Create (fake) URL Components.
-        var urlComponents = URLComponents()
-            urlComponents.scheme = "https"
-            urlComponents.host = "sharkscope.com"
-            urlComponents.path = Service.basePath + requestPath
-            urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
-    
-        // Resolve file name.
-        guard let cacheFileURL = cacheFileURL(for: urlComponents)
-        else { return }
-        
-        // Create folder (if needed).
-        do { try FileManager.default.removeItem(at: cacheFileURL) }
-        catch { print("Could not remove cache file. \(error)") }
-    }
-    
-    public func deleteStatisticsCache(for playerName: String)
-    {
-        let network = "PokerStars"
-        let requestPath = "networks/\(network)/players/\(playerName)"
-        let parameters = PlayerSummaryRequest(network: network, player: playerName).parameters
-        
-        // Create (fake) URL Components.
-        var urlComponents = URLComponents()
-            urlComponents.scheme = "https"
-            urlComponents.host = "sharkscope.com"
-            urlComponents.path = SharkScope.Service.basePath + requestPath
-            urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
-    
-        // Resolve file name.
-        guard let cacheFileURL = cacheFileURL(for: urlComponents)
-        else { return }
-        
-        // Create folder (if needed).
-        do { try FileManager.default.removeItem(at: cacheFileURL) }
-        catch { print("Could not remove cache file. \(error)") }
-    }
-    
     func cachedResponse<ResponseType: Decodable>(for urlComponents: URLComponents) -> ResponseType?
     {
         // Resolve file name.
@@ -118,5 +75,67 @@ public struct RequestCache
         let cacheFileURL = cacheFolderURL.appendingPathComponent(pathURL.lastPathComponent + querySuffix).appendingPathExtension("json")
         
         return cacheFileURL
+    }
+    
+    
+    // MARK: - Public
+    
+    public func deleteTablesCache(for playerName: String)
+    {
+        let requestPath = "activeTournaments"
+        let parameters = ["network1" : "PokerStars", "player1" : playerName]
+        
+        // Create (fake) URL Components.
+        var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "sharkscope.com"
+            urlComponents.path = Service.basePath + requestPath
+            urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+    
+        // Resolve file name.
+        guard let cacheFileURL = cacheFileURL(for: urlComponents)
+        else { return }
+        
+        // Create folder (if needed).
+        do { try FileManager.default.removeItem(at: cacheFileURL) }
+        catch { print("Could not remove cache file. \(error)") }
+    }
+    
+    public func deleteStatisticsCache(for playerName: String)
+    {
+        let network = "PokerStars"
+        let requestPath = "networks/\(network)/players/\(playerName)"
+        let parameters = PlayerSummaryRequest(network: network, player: playerName).parameters
+        
+        // Create (fake) URL Components.
+        var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "sharkscope.com"
+            urlComponents.path = SharkScope.Service.basePath + requestPath
+            urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+    
+        // Resolve file name.
+        guard let cacheFileURL = cacheFileURL(for: urlComponents)
+        else { return }
+        
+        // Create folder (if needed).
+        do { try FileManager.default.removeItem(at: cacheFileURL) }
+        catch { print("Could not remove cache file. \(error)") }
+    }
+    
+    public func cachedFiles(at path: String) -> [URL]?
+    {
+        // Resolve Documents directory.
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else { return [] }
+        
+        // Append path.
+        let cacheFolderURL = documentsDirectory.appendingPathComponent(path, isDirectory: true)
+        
+        var cachedFileURLs: [URL]?
+        do { cachedFileURLs = try FileManager.default.contentsOfDirectory(at: cacheFolderURL, includingPropertiesForKeys: nil) }
+        catch { print(error.localizedDescription) }
+        
+        return cachedFileURLs
     }
 }

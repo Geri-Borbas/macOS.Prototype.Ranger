@@ -46,7 +46,7 @@ enum Model
             {
                 self.statistics = try? service.fetch(
                     PokerTracker.StatisticsQuery(
-                        playerIDs: [handPlayer.id_player],
+                        playerNames: [handPlayer.player_name],
                         tourneyNumber: tourneyNumber
                 )).first
             }
@@ -82,8 +82,8 @@ enum Model
                 } ?? 0
 
                 // Logs.
-                if let activeTournaments = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
-                { print(activeTournaments) }
+                // if let activeTournaments = activeTournaments.Response.PlayerResponse.PlayerView.Player.ActiveTournaments
+                // { print(activeTournaments) }
             }
         }
         
