@@ -51,7 +51,7 @@ class TourneyTableViewModel: NSObject
     var activePlayerCount: Float
     {
         // Count players with non-zero stack.
-        players.reduce(0.0, { count, eachPlayer in count + ((eachPlayer.pokerTracker.handPlayer.stack > 0.0) ? 1 : 0) })
+        players.reduce(0.0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
     }
     var orbitCost: Float
     {
@@ -136,11 +136,11 @@ class TourneyTableViewModel: NSObject
         let latestHandPlayers = try pokerTracker.fetch(PokerTracker.LatestHandPlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
         
         // Only if players any.
-        guard let firstPlayer = latestHandPlayers.first
+        guard let firstHandPlayer = latestHandPlayers.first
         else { return }
         
         // Look for changes.
-        let isNewHand = firstPlayer.hand_no != latestProcessedHandNumber
+        let isNewHand = firstHandPlayer.hand_no != latestProcessedHandNumber
         let isNewBlindLevel = tableInfo.bigBlind != latestBigBlind
         let isSomethingChanged = isNewHand || isNewBlindLevel
         
@@ -148,43 +148,40 @@ class TourneyTableViewModel: NSObject
         guard isSomethingChanged else { return }
         
         // Track.
-        latestProcessedHandNumber = firstPlayer.hand_no
+        latestProcessedHandNumber = firstHandPlayer.hand_no
         
         // Create new view models for latest players.
-        var latestHandPlayerViewModels = latestHandPlayers.map
+        var currentPlayers = latestHandPlayers.map
         {
             eachLatestHandPlayer in
-            Model.Player(with: eachLatestHandPlayer)
+            Model.Player(
+                name: eachLatestHandPlayer.player_name,
+                handPlayer: eachLatestHandPlayer)
         }
 
         // Save any SharkScope statistics if any.
         players.forEach
         {
             eachPlayer in
-            if (latestHandPlayerViewModels.contains(eachPlayer))
+            if (currentPlayers.contains(eachPlayer))
             {
-                let index = latestHandPlayerViewModels.firstIndex(of: eachPlayer)!
-                latestHandPlayerViewModels[index].sharkScope = eachPlayer.sharkScope
+                let index = currentPlayers.firstIndex(of: eachPlayer)!
+                currentPlayers[index].sharkScope = eachPlayer.sharkScope
             }
         }
         
         // And just use the new collection.
-        players = latestHandPlayerViewModels
+        players = currentPlayers
         
         // Get latest PokerTracker statistics (get session stats for hero).
         for (eachIndex, eachPlayer) in players.enumerated()
-        {
-            let isHero = eachPlayer.pokerTracker.handPlayer.flg_hero
-            players[eachIndex].pokerTracker.updateStatistics(for: isHero ? tableInfo.tournamentNumber : nil)
-        }
+        { players[eachIndex].pokerTracker?.updateStatistics(for: eachPlayer.isHero ? tableInfo.tournamentNumber : nil) }
         
         // Track stack extremes.
         stackPercentProvider.maximum = NSNumber(value: players.reduce(
             0.0,
-            { max($0, $1.pokerTracker.handPlayer.stack) })
+            { max($0, $1.stack) })
         )
-        
-        // REDRAW STACK BAR.
         
         // Sort view model using retained sort descriptors (if any).
         sort(using: self.sortDescriptors)
@@ -289,7 +286,7 @@ extension TourneyTableViewModel: NSTableViewDataSource
         // Fade if no stack (yet hardcoded).
         if
             let rowView = tableView.rowView(atRow: row, makeIfNecessary: false),
-            player.pokerTracker.handPlayer.stack <= 0
+            player.stack <= 0
         { rowView.alphaValue = 0.4 }
         
         return cellView
@@ -363,7 +360,6 @@ extension TourneyTableViewModel: NSTableViewDelegate
         
         // Data.
         var player = players[row]
-        let playerName = player.pokerTracker.handPlayer.player_name
 
         // Fetch summary.
         // let fetchPlayerName = "Oliana88" // Pro
@@ -376,7 +372,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         // let fetchPlayerName = "NNiubility"
         // let fetchPlayerName = "dontumove" // One table
         // let fetchPlayerName = playerName
-        sharkScope.fetch(player: playerName,
+        sharkScope.fetch(player: player.name,
                          completion:
             {
                 (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), SharkScope.Error>) in
@@ -409,13 +405,13 @@ extension TourneyTableViewModel: NSTableViewDelegate
     public func fetchCompletedTournamentsForPlayer(withName playerName: String)
     {
         // Lookup player.
-        let firstPlayer = players.filter{ eachPlayer in eachPlayer.playerName == playerName }.first
+        let firstPlayer = players.filter{ eachPlayer in eachPlayer.name == playerName }.first
         
         // Checks.
         guard let player = firstPlayer else { return }
         
         /// Data.
-        sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:player.playerName, amount: 80),
+        sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:player.name, amount: 80),
                          completion:
             {
                  (result: Result<CompletedTournaments, SharkScope.Error>)in

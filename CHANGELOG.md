@@ -29,6 +29,10 @@
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
 
+* Feature/Data/Model_Refactor/0.1.3
+
++ `Model.Player` is initialized with `name` only (`PokerTracker.HandPlayer` is optional)
+
 * Feature/Data/Model_Refactor/0.1.2
 
     + Extracted `PokerTracker` into a framework

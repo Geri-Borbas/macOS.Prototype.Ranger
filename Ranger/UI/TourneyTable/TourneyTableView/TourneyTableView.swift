@@ -42,10 +42,10 @@ class TourneyTableView: NSTableView
         else { return nil }
         
         // Create context menu for row.
-        return NSMenu(title: "Player Context Menu (\(player.playerName))").with(items:
+        return NSMenu(title: "Player Context Menu (\(player.name))").with(items:
         [
             NSMenuItem(
-                title: player.playerName,
+                title: player.name,
                 action: nil,
                 keyEquivalent: ""
             ),
@@ -108,7 +108,7 @@ class TourneyTableView: NSTableView
         else { return }
         
         // Dispatch request to delegate if any.
-        tourneyTableViewDelegate?.fetchCompletedTournementsRequested(for: player.playerName)
+        tourneyTableViewDelegate?.fetchCompletedTournementsRequested(for: player.name)
     }
 
     @objc func copyNameToClipboard(menuItem: NSMenuItem)
@@ -119,7 +119,7 @@ class TourneyTableView: NSTableView
         
         // Copy name to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        NSPasteboard.general.setString(player.playerName, forType: NSPasteboard.PasteboardType.string)
+        NSPasteboard.general.setString(player.name, forType: NSPasteboard.PasteboardType.string)
     }
 
     @objc func copyStatisticsToClipboard(menuItem: NSMenuItem)
@@ -140,7 +140,7 @@ class TourneyTableView: NSTableView
         else { return }
         
         // Remove file.
-        RequestCache().deleteTablesCache(for: player.playerName)
+        RequestCache().deleteTablesCache(for: player.name)
     }
 
     @objc func deleteStatisticsCache(menuItem: NSMenuItem)
@@ -150,7 +150,7 @@ class TourneyTableView: NSTableView
         else { return }
         
         // Remove file.
-        RequestCache().deleteStatisticsCache(for: player.playerName)
+        RequestCache().deleteStatisticsCache(for: player.name)
     }
     
 }

@@ -17,9 +17,11 @@ enum Model
 
     public struct Player
     {
-
         
-        var pokerTracker: PokerTrackerData
+        
+        let name: String
+        
+        var pokerTracker: PokerTrackerData?
         var sharkScope: SharkScopeData
         
            
@@ -86,10 +88,14 @@ enum Model
         }
         
         
-        init(with latestHandPlayer: HandPlayer)
+        init(name: String, handPlayer: HandPlayer? = nil)
         {
-            self.pokerTracker = PokerTrackerData(with: latestHandPlayer)
-            self.sharkScope = SharkScopeData(with: latestHandPlayer.player_name)
+            self.name = name
+            
+            if let handPlayer = handPlayer
+            { self.pokerTracker = PokerTrackerData(with: handPlayer) }
+            
+            self.sharkScope = SharkScopeData(with: name)
         }
     }
 
@@ -103,7 +109,7 @@ extension Model.Player: Equatable
     
     /// PokerTracker `id_player` makes unique view models (used for manage collections).
     static func == (lhs: Model.Player, rhs: Model.Player) -> Bool
-    { lhs.pokerTracker.handPlayer.id_player == rhs.pokerTracker.handPlayer.id_player }
+    { lhs.pokerTracker?.handPlayer.id_player == rhs.pokerTracker?.handPlayer.id_player }
 }
 
 
@@ -117,10 +123,10 @@ extension Model.Player: CustomStringConvertible
     {
         String(format:
             "\n%.0f\t%.0f\t%.0f\t%@",
-            pokerTracker.handPlayer.stack,
-            (pokerTracker.statistics?.VPIP ?? 0) * 100,
-            (pokerTracker.statistics?.PFR ?? 0) * 100,
-            pokerTracker.handPlayer.player_name
+            pokerTracker?.handPlayer.stack ?? 0,
+            (pokerTracker?.statistics?.VPIP ?? 0) * 100,
+            (pokerTracker?.statistics?.PFR ?? 0) * 100,
+            name
         )
     }
 }
@@ -136,12 +142,12 @@ extension Model.Player
     {
         let dictionary: [String:TextFieldData] =
         [
-            "Seat" : TextFieldIntData(value: pokerTracker.handPlayer.seat),
-            "Player" : TextFieldStringData(value: pokerTracker.handPlayer.player_name),
-            "Stack" : TextFieldDoubleData(value: pokerTracker.handPlayer.stack),
-            "VPIP" : TextFieldDoubleData(value: pokerTracker.statistics?.VPIP),
-            "PFR" : TextFieldDoubleData(value: pokerTracker.statistics?.PFR),
-            "Hands" : TextFieldIntData(value: pokerTracker.statistics?.cnt_hands),
+            "Seat" : TextFieldIntData(value: pokerTracker?.handPlayer.seat),
+            "Player" : TextFieldStringData(value: pokerTracker?.handPlayer.player_name),
+            "Stack" : TextFieldDoubleData(value: pokerTracker?.handPlayer.stack),
+            "VPIP" : TextFieldDoubleData(value: pokerTracker?.statistics?.VPIP),
+            "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?.PFR),
+            "Hands" : TextFieldIntData(value: pokerTracker?.statistics?.cnt_hands),
             "Tables" : TextFieldIntData(value: sharkScope.tables),
             "ITM" : TextFieldFloatData(value: sharkScope.statistics?.ITM),
             "Early" : TextFieldFloatData(value: sharkScope.statistics?.FinshesEarly),
@@ -182,28 +188,28 @@ extension Model.Player
         [
             "Seat" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.handPlayer.seat < rhs.pokerTracker.handPlayer.seat },
-                descending: { lhs, rhs in lhs.pokerTracker.handPlayer.seat >= rhs.pokerTracker.handPlayer.seat }
+                ascending: { lhs, rhs in lhs.pokerTracker?.handPlayer.seat ?? 0 < rhs.pokerTracker?.handPlayer.seat ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.handPlayer.seat ?? 0 >= rhs.pokerTracker?.handPlayer.seat ?? 0 }
             ),
             "Stack" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.handPlayer.stack < rhs.pokerTracker.handPlayer.stack },
-                descending: { lhs, rhs in lhs.pokerTracker.handPlayer.stack >= rhs.pokerTracker.handPlayer.stack }
+                ascending: { lhs, rhs in lhs.pokerTracker?.handPlayer.stack ?? 0 < rhs.pokerTracker?.handPlayer.stack ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.handPlayer.stack ?? 0 >= rhs.pokerTracker?.handPlayer.stack ?? 0 }
             ),
             "VPIP" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.statistics?.VPIP ?? 0 < rhs.pokerTracker.statistics?.VPIP ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker.statistics?.VPIP ?? 0 >= rhs.pokerTracker.statistics?.VPIP ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.VPIP ?? 0 < rhs.pokerTracker?.statistics?.VPIP ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.VPIP ?? 0 >= rhs.pokerTracker?.statistics?.VPIP ?? 0 }
             ),
             "PFR" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 < rhs.pokerTracker.statistics?.PFR ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker.statistics?.PFR ?? 0 >= rhs.pokerTracker.statistics?.PFR ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.PFR ?? 0 < rhs.pokerTracker?.statistics?.PFR ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.PFR ?? 0 >= rhs.pokerTracker?.statistics?.PFR ?? 0 }
             ),
             "Hands" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker.statistics?.cnt_hands ?? 0 < rhs.pokerTracker.statistics?.cnt_hands ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker.statistics?.cnt_hands ?? 0 >= rhs.pokerTracker.statistics?.cnt_hands ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.cnt_hands ?? 0 < rhs.pokerTracker?.statistics?.cnt_hands ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.cnt_hands ?? 0 >= rhs.pokerTracker?.statistics?.cnt_hands ?? 0 }
             ),
             "Tables" :
             (
@@ -309,14 +315,17 @@ extension Model.Player
 }
 
 
-// MARK: - Strings
+// MARK: - Shortcuts
 
 extension Model.Player
 {
     
     
-    var playerName: String
-    { pokerTracker.handPlayer.player_name }
+    var isHero: Bool
+    { pokerTracker?.handPlayer.flg_hero ?? false }
+    
+    var stack: Double
+    { pokerTracker?.handPlayer.stack ?? 0 }
     
     var statisticsSummary: String
     {
