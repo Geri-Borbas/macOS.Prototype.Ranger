@@ -264,7 +264,6 @@
 		5508E3FE23A4754B00FFB173 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				55B229BB239E9617003EA63B /* SharkScope */,
 				5521A555239DD5C4000D1AD1 /* PokerTracker */,
 			);
 			path = Services;
@@ -505,13 +504,6 @@
 				5585E40B23C985A80009E98F /* TableInfo.swift */,
 			);
 			path = TableTracker;
-			sourceTree = "<group>";
-		};
-		55B229BB239E9617003EA63B /* SharkScope */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharkScope;
 			sourceTree = "<group>";
 		};
 		55C0F97623CF4CEE00414046 /* Model */ = {

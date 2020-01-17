@@ -7,25 +7,25 @@
 //
 
 import Foundation
-    
-
-public enum RequestError: Error
-{
-    case urlCreationError
-    case endpointNotExist
-    case apiError(_: Error)
-    case responseError
-    case noData
-    case noStringData
-    case jsonSerializationError(_: Error)
-    case jsonDecodingError(_: Error)
-    case noJSONData
-}
-    
+   
     
 public struct SharkScope
 {
+
     
+    public indirect enum Error: Swift.Error
+    {
+        case urlCreationError
+        case endpointNotExist
+        case apiError(_: Swift.Error)
+        case responseError
+        case noData
+        case noStringData
+        case jsonSerializationError(_: Swift.Error)
+        case jsonDecodingError(_: Swift.Error)
+        case noJSONData
+    }
+       
     
     static var errorDomain: String = "SharkScope"
     static var basePath: String = "/api/searcher/"
@@ -40,7 +40,7 @@ public struct SharkScope
     // MARK: - Networking
     
     public func fetch<RequestType: Request>(_ request: RequestType,
-                                            completion: @escaping (Result<RequestType.RootResponseType, RequestError>) -> Void) where RequestType.RootResponseType: RootResponse
+                                            completion: @escaping (Result<RequestType.RootResponseType, SharkScope.Error>) -> Void) where RequestType.RootResponseType: RootResponse
     {
         
         // Create URL Components.
@@ -64,7 +64,7 @@ public struct SharkScope
         
         // Create URL.
         guard let url: URL = urlComponents.url
-        else { return completion(.failure(RequestError.urlCreationError)) }
+        else { return completion(.failure(SharkScope.Error.urlCreationError)) }
         
         // Request.
         var urlRequest = URLRequest(url: url)
@@ -93,19 +93,19 @@ public struct SharkScope
             
             // Only without error.
             if let error = error
-            { return completion(.failure(RequestError.apiError(error))) }
+            { return completion(.failure(SharkScope.Error.apiError(error))) }
                 
             // Only having response.
             guard let response = response as? HTTPURLResponse
-            else { return completion(.failure(RequestError.responseError)) }
+            else { return completion(.failure(SharkScope.Error.responseError)) }
                 
             // Only having data.
             guard let data = data
-            else { return completion(.failure(RequestError.noData)) }
+            else { return completion(.failure(SharkScope.Error.noData)) }
                 
             // Only with string data.
             guard let dataString = String(data: data, encoding: .utf8)
-            else { return completion(.failure(RequestError.noStringData)) }
+            else { return completion(.failure(SharkScope.Error.noStringData)) }
                        
             // Log.
             if (SharkScope.log)
@@ -121,7 +121,7 @@ public struct SharkScope
             {
                 // Return on the main thread.
                 DispatchQueue.main.async()
-                { completion(.failure(RequestError.jsonSerializationError(error))) }
+                { completion(.failure(SharkScope.Error.jsonSerializationError(error))) }
                 
                 return
             }
@@ -142,7 +142,7 @@ public struct SharkScope
             {
                 // Return error on the main thread.
                 DispatchQueue.main.async()
-                { completion(.failure(RequestError.apiError(decodedErrorResponse.NSError(domain: SharkScope.errorDomain)))) }
+                { completion(.failure(SharkScope.Error.apiError(decodedErrorResponse.NSError(domain: SharkScope.errorDomain)))) }
                 return
             }
             
@@ -167,11 +167,11 @@ public struct SharkScope
             var _decodedResponse: RequestType.RootResponseType?
             do
             { _decodedResponse = try decoder.decode(RequestType.RootResponseType.self, from: data) }
-            catch { return completion(.failure(RequestError.jsonDecodingError(error))) }
+            catch { return completion(.failure(SharkScope.Error.jsonDecodingError(error))) }
             
             // Only with JSON data.
             guard let decodedResponse = _decodedResponse
-            else { return completion(.failure(RequestError.noJSONData)) }
+            else { return completion(.failure(SharkScope.Error.noJSONData)) }
             
             // Retain latest `UserInfo`.
             Self.user = decodedResponse.Response.UserInfo
@@ -188,7 +188,7 @@ public struct SharkScope
     // MARK: - Requests
     
     public func fetch(player playerName: String,
-               completion: @escaping (Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) -> Void)
+                      completion: @escaping (Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), SharkScope.Error>) -> Void)
     {
         let network = "PokerStars"
         // let playerName = "quAAsar"

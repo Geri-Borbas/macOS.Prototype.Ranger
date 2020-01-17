@@ -98,7 +98,7 @@ class TourneyTableViewModel: NSObject
         sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
                         completion:
         {
-            (result: Result<Timeline, RequestError>) in
+            (result: Result<Timeline, SharkScope.Error>) in
             switch result
             {
                 case .success(let lastActivity):
@@ -378,7 +378,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         sharkScope.fetch(player: playerName,
                          completion:
             {
-                (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), RequestError>) in
+                (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), SharkScope.Error>) in
                        
                 switch result
                 {
@@ -417,7 +417,7 @@ extension TourneyTableViewModel: NSTableViewDelegate
         sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:player.playerName, amount: 80),
                          completion:
             {
-                 (result: Result<CompletedTournaments, RequestError>)in
+                 (result: Result<CompletedTournaments, SharkScope.Error>)in
                        
                 switch result
                 {
