@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 
-class PercentBarCellView: PlayerViewModelCellView
+class PercentBarCellView: PlayerCellView
 {
 
     
@@ -22,14 +22,14 @@ class PercentBarCellView: PlayerViewModelCellView
     @IBOutlet weak var percentProvider: PercentProvider?
     
     
-    override func setup(with playerViewModel: PlayerViewModel, in tableColumn: NSTableColumn?)
+    override func setup(with player: Model.Player, in tableColumn: NSTableColumn?)
     {
         // Checks.
         guard let column = tableColumn else { return }
         guard let textField = self.textField else { return }
         
         // Retain data.
-        self.textFieldData = playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
+        self.textFieldData = player.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
         
         // Apply text.
         textFieldData.apply(to: textField)

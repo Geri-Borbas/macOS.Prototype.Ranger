@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>host</key>
+	<string>localhost</string>
+	<key>port</key>
+	<integer>5432</integer>
+	<key>user</key>
+	<string>postgres</string>
+	<key>password</key>
+	<string>dbpass</string>
+	<key>ssl</key>
+	<false/>
+	<key>database</key>
+	<string>PT4 DB</string>
+	<key>log</key>
+	<false/>
+</dict>
+</plist>

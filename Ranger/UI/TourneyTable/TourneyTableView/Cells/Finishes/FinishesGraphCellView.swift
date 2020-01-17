@@ -8,9 +8,10 @@
 
 import Foundation
 import SwiftUI
+import SharkScope
 
 
-class FinishesGraphCellView: PlayerViewModelCellView
+class FinishesGraphCellView: PlayerCellView
 {
 
     
@@ -36,16 +37,16 @@ class FinishesGraphCellView: PlayerViewModelCellView
         setNeedsDisplay(self.bounds)
     }
     
-    override func setup(with playerViewModel: PlayerViewModel, in tableColumn: NSTableColumn?)
+    override func setup(with player: Model.Player, in tableColumn: NSTableColumn?)
     {
         // Checks.
         guard let column = tableColumn else { return }
         guard let textField = self.textField else { return }
-        guard let byPositionPercentage = playerViewModel.sharkScope.statistics?.byPositionPercentage else { return }
+        guard let byPositionPercentage = player.sharkScope.statistics?.byPositionPercentage else { return }
         
         // Retain data.
         self.byPositionPercentage = byPositionPercentage
-        self.textFieldData = playerViewModel.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
+        self.textFieldData = player.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
         
         // Apply text.
         textFieldData.apply(to: textField)

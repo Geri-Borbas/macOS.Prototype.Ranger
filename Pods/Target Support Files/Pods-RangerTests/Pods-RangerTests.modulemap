@@ -1,6 +1,0 @@
-framework module Pods_RangerTests {
-  umbrella header "Pods-RangerTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

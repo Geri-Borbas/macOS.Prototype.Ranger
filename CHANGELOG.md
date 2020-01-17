@@ -4,6 +4,9 @@
 * Doing
 
     + Next up
+        + Extract `PlayerTableView` to its own nib
+            + Should be initialized / updated with any `[Player]` collection
+            + Column setup to show / hide columns
         + Get tournament history
             + Cache considerations (when using variable Count as a parameter)
         
@@ -28,6 +31,78 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* Feature/Data/Model_Refactor/0.2.0
+
+    + `Model.Player.PokerTrackerData`
+        + Became optional as well
+        + Initialized with `playerName` as well
+        + `Model.Player` (and corresponding UI) is fully functional with `name` only
+
+* Feature/Data/Model_Refactor/0.1.6
+
+    + `PokerTracker.Statistics` is queried based on `player_name` (instead of `id_player`)
+
+* Feature/Data/Model_Refactor/0.1.5
+
+    + Fixed unnecessary `TourneyTableViewModel` process
+    + Created some basic `Model.Players` list
+
+* Feature/Data/Model_Refactor/0.1.4
+
+    + Fetching `Model.Player` collection(s) is extracted to `Model.Players`
+
+* Feature/Data/Model_Refactor/0.1.3
+
++ `Model.Player` is initialized with `name` only (`PokerTracker.HandPlayer` is optional)
+
+* Feature/Data/Model_Refactor/0.1.2
+
+    + Extracted `PokerTracker` into a framework
+
+* Feature/Data/Model_Refactor/0.1.1
+
+    + Renamed `SharkScope.RequestError` to just `SharkScope.Error`
+
+* Feature/Data/Model_Refactor/0.1.0
+
+    + Extracted `SharkScope` into a framework
+
+* Feature/Data/Model_Refactor/0.0.9
+
+    + Added notes for getting `tournaments.csv`
+
+* Feature/Data/Model_Refactor/0.0.8
+
+    + Moved `PokerTracker.Error` into namespace
+
+* Feature/Data/Model_Refactor/0.0.7
+
+    + Renamings
+
+* Feature/Data/Model_Refactor/0.0.6
+
+    + Namespaced every (!) `PokerTracker` stuff into `PokerTracker` enum
+
+* Feature/Data/Model_Refactor/0.0.5
+
+    + Namespaced `PokerTracker` into `PT` enum (soon to be `PokerTracker`)
+
+* Feature/Data/Model_Refactor/0.0.4
+
+    + Renamed `playerViewModel` uses to `player`
+
+* Feature/Data/Model_Refactor/0.0.3
+
+    + Namespaced `Player` into `Model` enum
+
+* Feature/Data/Model_Refactor/0.0.2
+
+    + Renamings (`PlayerViewModel` to `Player`)
+
+* Feature/Data/Model_Refactor/0.0.0 - 0.0.1
+
+    + Basic branching
 
 * 1.7.1
 

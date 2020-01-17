@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -736,7 +736,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Seat"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="lLX-mA-8SO" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="lLX-mA-8SO" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -772,7 +772,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="IQJ-ox-WLM" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="IQJ-ox-WLM" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="41" y="0.0" width="100" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1019,7 +1019,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Hands"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="NiH-6m-PeX" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="NiH-6m-PeX" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="375" y="0.0" width="40" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1056,7 +1056,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Tables"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="LZP-ln-GKe" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="LZP-ln-GKe" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="416" y="0.0" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1090,7 +1090,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="ITM"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="KvU-kw-sp9" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="KvU-kw-sp9" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="467" y="0.0" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1344,7 +1344,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Count"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="oZf-Xk-Aok" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="oZf-Xk-Aok" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="792" y="0.0" width="60" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1381,7 +1381,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Entrants"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="mom-yd-SdW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="mom-yd-SdW" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="853" y="0.0" width="60" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1418,7 +1418,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Stake"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="IUd-eR-hh2" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="IUd-eR-hh2" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="914" y="0.0" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1455,7 +1455,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Years"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="bp5-Pr-vtn" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="bp5-Pr-vtn" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="965" y="0.0" width="40" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1604,7 +1604,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Profit"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="py3-m2-eTy" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="py3-m2-eTy" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="1128" y="0.0" width="60" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1641,7 +1641,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="ROI"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="drt-ya-61r" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="drt-ya-61r" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="1189" y="0.0" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1678,7 +1678,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Frequency"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="2l3-uU-wxW" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="2l3-uU-wxW" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="1240" y="0.0" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1715,7 +1715,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Games/Day"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="59i-oi-97B" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="59i-oi-97B" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="1291" y="0.0" width="40" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1752,7 +1752,7 @@
                                                     <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="Ability"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="59T-6A-mL7" customClass="PlayerViewModelCellView" customModule="Ranger" customModuleProvider="target">
+                                                        <tableCellView id="59T-6A-mL7" customClass="PlayerCellView" customModule="Ranger" customModuleProvider="target">
                                                             <rect key="frame" x="1332" y="0.0" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>

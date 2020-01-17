@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SharkScope
 
 
 @objc protocol TourneyTableViewDelegate
@@ -33,18 +34,18 @@ class TourneyTableView: NSTableView
         let clickedColumn = self.column(at: clickLocation)
         
         // Get cell.
-        guard let playerViewModelCellView = self.view(atColumn: clickedColumn, row: clickedRow, makeIfNecessary: false) as? PlayerViewModelCellView
+        guard let playerCellView = self.view(atColumn: clickedColumn, row: clickedRow, makeIfNecessary: false) as? PlayerCellView
         else { return nil }
         
         // Get model.
-        guard let playerViewModel = playerViewModelCellView.playerViewModel
+        guard let player = playerCellView.player
         else { return nil }
         
         // Create context menu for row.
-        return NSMenu(title: "Player Context Menu (\(playerViewModel.playerName))").with(items:
+        return NSMenu(title: "Player Context Menu (\(player.name))").with(items:
         [
             NSMenuItem(
-                title: playerViewModel.playerName,
+                title: player.name,
                 action: nil,
                 keyEquivalent: ""
             ),
@@ -56,7 +57,7 @@ class TourneyTableView: NSTableView
                 action: #selector(fetchCompletedTournaments),
                 keyEquivalent: "")
                 .with(
-                    representedObject: playerViewModel,
+                    representedObject: player,
                     target: self
                 ),
             
@@ -67,7 +68,7 @@ class TourneyTableView: NSTableView
                 action: #selector(copyNameToClipboard),
                 keyEquivalent: "")
                 .with(
-                    representedObject: playerViewModel,
+                    representedObject: player,
                     target: self
                 ),
             NSMenuItem(
@@ -75,7 +76,7 @@ class TourneyTableView: NSTableView
                 action: #selector(copyStatisticsToClipboard),
                 keyEquivalent: "")
                 .with(
-                    representedObject: playerViewModel,
+                    representedObject: player,
                     target: self
             ),
             
@@ -86,7 +87,7 @@ class TourneyTableView: NSTableView
                 action: #selector(deleteTablesCache),
                 keyEquivalent: "")
                 .with(
-                    representedObject: playerViewModel,
+                    representedObject: player,
                     target: self
                 ),
             NSMenuItem(
@@ -94,7 +95,7 @@ class TourneyTableView: NSTableView
                 action: #selector(deleteStatisticsCache),
                 keyEquivalent: "")
                 .with(
-                    representedObject: playerViewModel,
+                    representedObject: player,
                     target: self
             )
         ])
@@ -103,53 +104,53 @@ class TourneyTableView: NSTableView
     @objc func fetchCompletedTournaments(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        guard let player = menuItem.representedObject as? Model.Player
         else { return }
         
         // Dispatch request to delegate if any.
-        tourneyTableViewDelegate?.fetchCompletedTournementsRequested(for: playerViewModel.playerName)
+        tourneyTableViewDelegate?.fetchCompletedTournementsRequested(for: player.name)
     }
 
     @objc func copyNameToClipboard(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        guard let player = menuItem.representedObject as? Model.Player
         else { return }
         
         // Copy name to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        NSPasteboard.general.setString(playerViewModel.playerName, forType: NSPasteboard.PasteboardType.string)
+        NSPasteboard.general.setString(player.name, forType: NSPasteboard.PasteboardType.string)
     }
 
     @objc func copyStatisticsToClipboard(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        guard let player = menuItem.representedObject as? Model.Player
         else { return }
         
         // Copy statistics to clipboard.
         NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        NSPasteboard.general.setString(playerViewModel.statisticsSummary, forType: NSPasteboard.PasteboardType.string)
+        NSPasteboard.general.setString(player.statisticsSummary, forType: NSPasteboard.PasteboardType.string)
     }
 
     @objc func deleteTablesCache(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        guard let player = menuItem.representedObject as? Model.Player
         else { return }
         
         // Remove file.
-        RequestCache().deleteTablesCache(for: playerViewModel.playerName)
+        RequestCache().deleteTablesCache(for: player.name)
     }
 
     @objc func deleteStatisticsCache(menuItem: NSMenuItem)
     {
         // Get model.
-        guard let playerViewModel = menuItem.representedObject as? PlayerViewModel
+        guard let player = menuItem.representedObject as? Model.Player
         else { return }
         
         // Remove file.
-        RequestCache().deleteStatisticsCache(for: playerViewModel.playerName)
+        RequestCache().deleteStatisticsCache(for: player.name)
     }
     
 }
