@@ -29,24 +29,28 @@ enum Model
         {
             
             
-            // Data.
-            let handPlayer: HandPlayer
+            let playerName: String
+            
+            var handPlayer: HandPlayer?
             var statistics: PokerTracker.Statistics?
             
             // Service.
             private lazy var service: PokerTracker.Service = PokerTracker.Service()
             
             
-            init(with handPlayer: HandPlayer)
+            init(with playerName: String, handPlayer: HandPlayer? = nil)
             {
-                self.handPlayer = handPlayer
+                self.playerName = playerName
+                
+                if let handPlayer = handPlayer
+                { self.handPlayer = handPlayer }
             }
             
             public mutating func updateStatistics(for tourneyNumber: String? = nil)
             {
                 self.statistics = try? service.fetch(
                     PokerTracker.StatisticsQuery(
-                        playerNames: [handPlayer.player_name],
+                        playerNames: [playerName],
                         tourneyNumber: tourneyNumber
                 )).first
             }
@@ -58,6 +62,7 @@ enum Model
             
             
             let playerName: String
+            
             var summary: PlayerSummary?
             var activeTournaments: ActiveTournaments?
             var tables: Int?
@@ -92,9 +97,7 @@ enum Model
         {
             self.name = name
             
-            if let handPlayer = handPlayer
-            { self.pokerTracker = PokerTrackerData(with: handPlayer) }
-            
+            self.pokerTracker = PokerTrackerData(with: name, handPlayer: handPlayer)
             self.sharkScope = SharkScopeData(with: name)
         }
     }
@@ -109,7 +112,7 @@ extension Model.Player: Equatable
     
     /// PokerTracker `id_player` makes unique view models (used for manage collections).
     static func == (lhs: Model.Player, rhs: Model.Player) -> Bool
-    { lhs.pokerTracker?.handPlayer.id_player == rhs.pokerTracker?.handPlayer.id_player }
+    { lhs.name == rhs.name }
 }
 
 
@@ -123,7 +126,7 @@ extension Model.Player: CustomStringConvertible
     {
         String(format:
             "\n%.0f\t%.0f\t%.0f\t%@",
-            pokerTracker?.handPlayer.stack ?? 0,
+            stack,
             (pokerTracker?.statistics?.VPIP ?? 0) * 100,
             (pokerTracker?.statistics?.PFR ?? 0) * 100,
             name
@@ -142,9 +145,9 @@ extension Model.Player
     {
         let dictionary: [String:TextFieldData] =
         [
-            "Seat" : TextFieldIntData(value: pokerTracker?.handPlayer.seat),
+            "Seat" : TextFieldIntData(value: pokerTracker?.handPlayer?.seat),
             "Player" : TextFieldStringData(value: name),
-            "Stack" : TextFieldDoubleData(value: pokerTracker?.handPlayer.stack),
+            "Stack" : TextFieldDoubleData(value: pokerTracker?.handPlayer?.stack),
             "VPIP" : TextFieldDoubleData(value: pokerTracker?.statistics?.VPIP),
             "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?.PFR),
             "Hands" : TextFieldIntData(value: pokerTracker?.statistics?.cnt_hands),
@@ -188,13 +191,13 @@ extension Model.Player
         [
             "Seat" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker?.handPlayer.seat ?? 0 < rhs.pokerTracker?.handPlayer.seat ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker?.handPlayer.seat ?? 0 >= rhs.pokerTracker?.handPlayer.seat ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.handPlayer?.seat ?? 0 < rhs.pokerTracker?.handPlayer?.seat ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.handPlayer?.seat ?? 0 >= rhs.pokerTracker?.handPlayer?.seat ?? 0 }
             ),
             "Stack" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker?.handPlayer.stack ?? 0 < rhs.pokerTracker?.handPlayer.stack ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker?.handPlayer.stack ?? 0 >= rhs.pokerTracker?.handPlayer.stack ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.handPlayer?.stack ?? 0 < rhs.pokerTracker?.handPlayer?.stack ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.handPlayer?.stack ?? 0 >= rhs.pokerTracker?.handPlayer?.stack ?? 0 }
             ),
             "VPIP" :
             (
@@ -322,10 +325,10 @@ extension Model.Player
     
     
     var isHero: Bool
-    { pokerTracker?.handPlayer.flg_hero ?? false }
+    { pokerTracker?.handPlayer?.flg_hero ?? false }
     
     var stack: Double
-    { pokerTracker?.handPlayer.stack ?? 0 }
+    { pokerTracker?.handPlayer?.stack ?? 0 }
     
     var statisticsSummary: String
     {

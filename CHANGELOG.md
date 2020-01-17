@@ -4,8 +4,9 @@
 * Doing
 
     + Next up
-        + `Model.Player.PokerTrackerData` should be name initialized as well
-            + Refactor `LatestHandPlayers` query to use `player_name` (instead of `id_player`) 
+        + Extract `PlayerTableView` to its own nib
+            + Should be initialized / updated with any `[Player]` collection
+            + Column setup to show / hide columns
         + Get tournament history
             + Cache considerations (when using variable Count as a parameter)
         
@@ -30,6 +31,13 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* Feature/Data/Model_Refactor/0.2.0
+
+    + `Model.Player.PokerTrackerData`
+        + Became optional as well
+        + Initialized with `playerName` as well
+        + `Model.Player` (and corresponding UI) is fully functional with `name` only
 
 * Feature/Data/Model_Refactor/0.1.6
 

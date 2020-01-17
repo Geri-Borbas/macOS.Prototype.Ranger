@@ -140,7 +140,7 @@ class TourneyTableViewModel: NSObject
         else { return }
         
         // Look for changes.
-        let isNewHand = (firstPlayer.pokerTracker?.handPlayer.hand_no ?? "") != latestProcessedHandNumber
+        let isNewHand = (firstPlayer.pokerTracker?.handPlayer?.hand_no ?? "") != latestProcessedHandNumber
         let isNewBlindLevel = tableInfo.bigBlind != latestBigBlind
         let isSomethingChanged = isNewHand || isNewBlindLevel
         
@@ -149,7 +149,7 @@ class TourneyTableViewModel: NSObject
         
         // Track.
         latestBigBlind = tableInfo.bigBlind
-        latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer.hand_no ?? ""
+        latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer?.hand_no ?? ""
         
         // Save any SharkScope statistics if any.
         players.forEach
