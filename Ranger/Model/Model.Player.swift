@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PokerTracker
 import SharkScope
 
 
@@ -19,7 +20,7 @@ enum Model
 
         
         var pokerTracker: PokerTrackerData
-        var sharkScope: SharkScope
+        var sharkScope: SharkScopeData
         
            
         struct PokerTrackerData: Equatable
@@ -27,14 +28,14 @@ enum Model
             
             
             // Data.
-            let handPlayer: PokerTracker.HandPlayer
+            let handPlayer: HandPlayer
             var statistics: PokerTracker.Statistics?
             
             // Service.
             private lazy var service: PokerTracker.Service = PokerTracker.Service()
             
             
-            init(with handPlayer: PokerTracker.HandPlayer)
+            init(with handPlayer: HandPlayer)
             {
                 self.handPlayer = handPlayer
             }
@@ -50,7 +51,7 @@ enum Model
         }
         
         
-        struct SharkScope: Equatable
+        struct SharkScopeData: Equatable
         {
             
             
@@ -58,7 +59,7 @@ enum Model
             var summary: PlayerSummary?
             var activeTournaments: ActiveTournaments?
             var tables: Int?
-            var statistics: Statistics? { summary?.Response.PlayerResponse.PlayerView.Player.Statistics }
+            var statistics: SharkScope.Statistics? { summary?.Response.PlayerResponse.PlayerView.Player.Statistics }
             
             
             init(with playerName: String)
@@ -85,10 +86,10 @@ enum Model
         }
         
         
-        init(with latestHandPlayer: PokerTracker.HandPlayer)
+        init(with latestHandPlayer: HandPlayer)
         {
             self.pokerTracker = PokerTrackerData(with: latestHandPlayer)
-            self.sharkScope = SharkScope(with: latestHandPlayer.player_name)
+            self.sharkScope = SharkScopeData(with: latestHandPlayer.player_name)
         }
     }
 

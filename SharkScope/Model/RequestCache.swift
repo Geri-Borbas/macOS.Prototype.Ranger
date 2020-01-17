@@ -25,7 +25,7 @@ public struct RequestCache
         var urlComponents = URLComponents()
             urlComponents.scheme = "https"
             urlComponents.host = "sharkscope.com"
-            urlComponents.path = SharkScope.basePath + requestPath
+            urlComponents.path = Service.basePath + requestPath
             urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
     
         // Resolve file name.
@@ -47,7 +47,7 @@ public struct RequestCache
         var urlComponents = URLComponents()
             urlComponents.scheme = "https"
             urlComponents.host = "sharkscope.com"
-            urlComponents.path = SharkScope.basePath + requestPath
+            urlComponents.path = SharkScope.Service.basePath + requestPath
             urlComponents.queryItems = parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
     
         // Resolve file name.
@@ -89,7 +89,7 @@ public struct RequestCache
             else { return nil }
         
         // Parse subfolder (or fallback to no subfolder) without api path components.
-        let pathURL = URL(string: urlComponents.percentEncodedPath.replacingOccurrences(of: SharkScope.basePath, with: "")) ?? URL(string: "")!
+        let pathURL = URL(string: urlComponents.percentEncodedPath.replacingOccurrences(of: SharkScope.Service.basePath, with: "")) ?? URL(string: "")!
         let pathFolder = pathURL.deletingLastPathComponent()
         let cacheFolderURL = documentsDirectory.appendingPathComponent(pathFolder.path, isDirectory: true)
         

@@ -18,14 +18,14 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-Ranger.xcscheme</key>
+		<key>Pods-PokerTracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Pods-RangerTests.xcscheme</key>
+		<key>Pods-Ranger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

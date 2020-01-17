@@ -7,25 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		464F7E3DF46486C0311B58D0 /* Pods_RangerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A1FE24BE9175D78F7E7C19 /* Pods_RangerTests.framework */; };
 		5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226323C16A240040A3DE /* FinishesGraphCellView.swift */; };
 		5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
 		5508E3FD23A4656000FFB173 /* TourneyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */; };
-		5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */; };
 		5509C4B723B9254600C6608D /* TablesStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */; };
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
-		5518D63723BA8E0500EFFBC0 /* HandPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63623BA8E0500EFFBC0 /* HandPlayer.swift */; };
-		5518D63A23BA951F00EFFBC0 /* LatestHandPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
-		5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */; };
-		5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */; };
-		5521A55F239DF408000D1AD1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A55E239DF408000D1AD1 /* Entry.swift */; };
-		5521A565239DF933000D1AD1 /* PokerTracker.Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */; };
 		552E543F23D164620056B305 /* SharkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E543D23D164620056B305 /* SharkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		552E544223D164620056B305 /* SharkScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552E543B23D164610056B305 /* SharkScope.framework */; };
 		552E544323D164620056B305 /* SharkScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 552E543B23D164610056B305 /* SharkScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		552E544823D164CF0056B305 /* SharkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A553239DD170000D1AD1 /* SharkScope.swift */; };
+		552E544823D164CF0056B305 /* SharkScope.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A553239DD170000D1AD1 /* SharkScope.Service.swift */; };
 		552E544923D1653F0056B305 /* TimelineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592684623A9CA1500045F89 /* TimelineRequest.swift */; };
 		552E544A23D165440056B305 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592684823A9CA1500045F89 /* Timeline.swift */; };
 		552E544B23D1654E0056B305 /* CompletedTournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */; };
@@ -51,21 +43,37 @@
 		552E546323D165960056B305 /* SharkScope.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */; };
 		552E546423D1660F0056B305 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E406D23B065F600678BCD /* ApiError.swift */; };
 		552E546523D172F80056B305 /* SharkScope.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */; };
+		552E546F23D175DF0056B305 /* PokerTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E546D23D175DF0056B305 /* PokerTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		552E547223D175DF0056B305 /* PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552E546B23D175DF0056B305 /* PokerTracker.framework */; };
+		552E547323D175DF0056B305 /* PokerTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 552E546B23D175DF0056B305 /* PokerTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		552E547723D175FA0056B305 /* PokerTracker.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* PokerTracker.Service.swift */; };
+		552E547823D176BF0056B305 /* PokerTracker.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */; };
+		552E547923D176CE0056B305 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A55E239DF408000D1AD1 /* Entry.swift */; };
+		552E547A23D176CE0056B305 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD323A54B0C00754763 /* Query.swift */; };
+		552E547B23D176D20056B305 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
+		552E547C23D176D20056B305 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
+		552E547D23D176D80056B305 /* PokerTracker.Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */; };
+		552E547E23D176D80056B305 /* StatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */; };
+		552E547F23D176D80056B305 /* StatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */; };
+		552E548023D176DF0056B305 /* LiveTourneyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */; };
+		552E548123D176DF0056B305 /* LiveTourneyPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */; };
+		552E548223D176E30056B305 /* LiveTourneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */; };
+		552E548323D176E30056B305 /* LiveTourneyTableQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD523A551E100754763 /* LiveTourneyTableQuery.swift */; };
+		552E548423D176E80056B305 /* HandPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63623BA8E0500EFFBC0 /* HandPlayer.swift */; };
+		552E548523D176E80056B305 /* LatestHandPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */; };
+		552E548623D176E80056B305 /* LatestHandPlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */; };
 		5536B0FE23C2BF610067E7F2 /* TourneyTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */; };
 		5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */; };
 		5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */; };
-		555EA852239D609E000B5B62 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* Service.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
 		5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5560F04A23BAAEAA008894BD /* App.Configuration.plist */; };
 		5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRanges.swift */; };
 		5585E40C23C985A80009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		5585E40E23C986930009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
-		5587DB4423A497740079BB30 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyTableWindowController.swift */; };
 		559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* PercentProvider.swift */; };
-		55A307E1239C8E88008B0EA4 /* StatisticsQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */; };
 		55A7FAA823C3CC68007BEA05 /* TourneyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7FAA723C3CC68007BEA05 /* TourneyTableView.swift */; };
 		55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */; };
 		55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */; };
@@ -85,13 +93,8 @@
 		55E7E71723C00983000388FD /* TourneyTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71623C00983000388FD /* TourneyTableRowView.swift */; };
 		55E7E71A23C019EE000388FD /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71923C019EE000388FD /* Easing.swift */; };
 		55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
-		55ED3CD423A54B0C00754763 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD323A54B0C00754763 /* Query.swift */; };
-		55ED3CD623A551E100754763 /* LiveTourneyTableQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD523A551E100754763 /* LiveTourneyTableQuery.swift */; };
-		55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD923A5539D00754763 /* LiveTourneyPlayerQuery.swift */; };
-		55ED3CDD23A553EC00754763 /* StatisticsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDC23A553EC00754763 /* StatisticsQuery.swift */; };
-		55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
-		55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */; };
 		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
+		F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 552E543A23D164610056B305;
 			remoteInfo = SharkScope;
+		};
+		552E547023D175DF0056B305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C18683239583D90081B6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 552E546A23D175DF0056B305;
+			remoteInfo = PokerTracker;
 		};
 		55C529E923BD3F1500A6975A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -119,6 +129,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				552E544323D164620056B305 /* SharkScope.framework in Embed Frameworks */,
+				552E547323D175DF0056B305 /* PokerTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,8 +138,8 @@
 
 /* Begin PBXFileReference section */
 		037D2414A5ED938AB46C3512 /* Pods-Ranger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.debug.xcconfig"; path = "Target Support Files/Pods-Ranger/Pods-Ranger.debug.xcconfig"; sourceTree = "<group>"; };
-		23A1FE24BE9175D78F7E7C19 /* Pods_RangerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RangerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2432394853E25E6DDA9F060B /* Pods_Ranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39801C953B85119218CCA0D2 /* Pods-PokerTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTracker.debug.xcconfig"; path = "Target Support Files/Pods-PokerTracker/Pods-PokerTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		5504226323C16A240040A3DE /* FinishesGraphCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishesGraphCellView.swift; sourceTree = "<group>"; };
 		5504226723C18DAB0040A3DE /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		5508E3FC23A4656000FFB173 /* TourneyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableViewModel.swift; sourceTree = "<group>"; };
@@ -142,7 +153,7 @@
 		5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayerQuery.swift; sourceTree = "<group>"; };
 		551DEE0323C5E3C9006DF95B /* StackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCellView.swift; sourceTree = "<group>"; };
 		551DEE0723C5E477006DF95B /* StackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackBarView.swift; sourceTree = "<group>"; };
-		5521A553239DD170000D1AD1 /* SharkScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.swift; sourceTree = "<group>"; };
+		5521A553239DD170000D1AD1 /* SharkScope.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.Service.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
 		5521A55E239DF408000D1AD1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
@@ -150,6 +161,9 @@
 		552E543B23D164610056B305 /* SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		552E543D23D164620056B305 /* SharkScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharkScope.h; sourceTree = "<group>"; };
 		552E543E23D164620056B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552E546B23D175DF0056B305 /* PokerTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PokerTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		552E546D23D175DF0056B305 /* PokerTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokerTracker.h; sourceTree = "<group>"; };
+		552E546E23D175DF0056B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5536B0FD23C2BF610067E7F2 /* TourneyTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyTableHeaderView.swift; sourceTree = "<group>"; };
 		5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extensions.swift"; sourceTree = "<group>"; };
 		5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extensions.swift"; sourceTree = "<group>"; };
@@ -158,7 +172,7 @@
 		555585DB23A2999500B603C1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		555A867823C131B30051D996 /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgerFishKeyDecodingStrategy.swift; sourceTree = "<group>"; usesTabs = 0; };
-		555EA851239D609E000B5B62 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		555EA851239D609E000B5B62 /* PokerTracker.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Service.swift; sourceTree = "<group>"; };
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5560F04923BAAEAA008894BD /* App.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Configuration.swift; sourceTree = "<group>"; };
 		5560F04A23BAAEAA008894BD /* App.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = App.Configuration.plist; sourceTree = "<group>"; };
@@ -219,8 +233,8 @@
 		55ED3CDF23A5543A00754763 /* PlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerQuery.swift; sourceTree = "<group>"; };
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
-		5B55FC0BEB046D6C02A9A8F2 /* Pods-RangerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangerTests.release.xcconfig"; path = "Target Support Files/Pods-RangerTests/Pods-RangerTests.release.xcconfig"; sourceTree = "<group>"; };
-		7305A0A253155C8565C058BE /* Pods-RangerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangerTests.debug.xcconfig"; path = "Target Support Files/Pods-RangerTests/Pods-RangerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9578A0BA2FBB228087C38E1 /* Pods-PokerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTracker.release.xcconfig"; path = "Target Support Files/Pods-PokerTracker/Pods-PokerTracker.release.xcconfig"; sourceTree = "<group>"; };
 		FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.release.xcconfig"; path = "Target Support Files/Pods-Ranger/Pods-Ranger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,11 +246,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		552E546823D175DF0056B305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55C18688239583DA0081B6B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */,
+				552E547223D175DF0056B305 /* PokerTracker.framework in Frameworks */,
 				552E544223D164620056B305 /* SharkScope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,7 +268,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464F7E3DF46486C0311B58D0 /* Pods_RangerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,17 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				2432394853E25E6DDA9F060B /* Pods_Ranger.framework */,
-				23A1FE24BE9175D78F7E7C19 /* Pods_RangerTests.framework */,
+				9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5508E3FE23A4754B00FFB173 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5521A555239DD5C4000D1AD1 /* PokerTracker */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		5508E3FF23A4756200FFB173 /* UI */ = {
@@ -280,15 +294,6 @@
 				55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		5509600123A30A64006358EF /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */,
-				55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		550E406C23B065E100678BCD /* Error */ = {
@@ -326,16 +331,6 @@
 			path = Stack;
 			sourceTree = "<group>";
 		};
-		5521A555239DD5C4000D1AD1 /* PokerTracker */ = {
-			isa = PBXGroup;
-			children = (
-				555EA851239D609E000B5B62 /* Service.swift */,
-				5509600123A30A64006358EF /* Configuration */,
-				5521A562239DF7D6000D1AD1 /* Model */,
-			);
-			path = PokerTracker;
-			sourceTree = "<group>";
-		};
 		5521A562239DF7D6000D1AD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,11 +349,11 @@
 			isa = PBXGroup;
 			children = (
 				552E543D23D164620056B305 /* SharkScope.h */,
+				5521A553239DD170000D1AD1 /* SharkScope.Service.swift */,
+				55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */,
 				552E543E23D164620056B305 /* Info.plist */,
 				550E406C23B065E100678BCD /* Error */,
-				5521A553239DD170000D1AD1 /* SharkScope.swift */,
 				55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */,
-				55DB43EA23A2E6ED00A7F37F /* Configuration */,
 				5574DAC623A68DD400569790 /* Model */,
 				558D35E0239F3C45006C710D /* Metadata */,
 				558D35E3239F4299006C710D /* PlayerSummary */,
@@ -367,6 +362,18 @@
 				5592684523A9CA0900045F89 /* Timeline */,
 			);
 			path = SharkScope;
+			sourceTree = "<group>";
+		};
+		552E546C23D175DF0056B305 /* PokerTracker */ = {
+			isa = PBXGroup;
+			children = (
+				552E546D23D175DF0056B305 /* PokerTracker.h */,
+				555EA851239D609E000B5B62 /* PokerTracker.Service.swift */,
+				55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */,
+				552E546E23D175DF0056B305 /* Info.plist */,
+				5521A562239DF7D6000D1AD1 /* Model */,
+			);
+			path = PokerTracker;
 			sourceTree = "<group>";
 		};
 		554E018823AA826C00CF2971 /* PlayerResponse */ = {
@@ -385,6 +392,7 @@
 				5560F04923BAAEAA008894BD /* App.Configuration.swift */,
 				5560F04A23BAAEAA008894BD /* App.Configuration.plist */,
 				55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */,
+				5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -521,6 +529,7 @@
 				55C1868D239583DA0081B6B7 /* Ranger */,
 				55C529E523BD3F1400A6975A /* RangerTests */,
 				552E543C23D164620056B305 /* SharkScope */,
+				552E546C23D175DF0056B305 /* PokerTracker */,
 				55C1868C239583DA0081B6B7 /* Products */,
 				AF9EDFA374391D329008F6DE /* Pods */,
 				46AC3995053AB29166F08823 /* Frameworks */,
@@ -533,6 +542,7 @@
 				55C1868B239583DA0081B6B7 /* Ranger.app */,
 				55C529E423BD3F1400A6975A /* RangerTests.xctest */,
 				552E543B23D164610056B305 /* SharkScope.framework */,
+				552E546B23D175DF0056B305 /* PokerTracker.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -547,7 +557,6 @@
 				55C0F97623CF4CEE00414046 /* Model */,
 				5508E3FF23A4756200FFB173 /* UI */,
 				55C8498423A3307D00452F2F /* Notes */,
-				5508E3FE23A4754B00FFB173 /* Services */,
 				55C18692239583DC0081B6B7 /* Assets.xcassets */,
 				55C18694239583DD0081B6B7 /* Main.storyboard */,
 				55C18697239583DD0081B6B7 /* Info.plist */,
@@ -573,14 +582,6 @@
 				55C8498523A3309F00452F2F /* Notes.swift */,
 			);
 			path = Notes;
-			sourceTree = "<group>";
-		};
-		55DB43EA23A2E6ED00A7F37F /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		55E7E71823C019D7000388FD /* Data */ = {
@@ -644,8 +645,8 @@
 			children = (
 				037D2414A5ED938AB46C3512 /* Pods-Ranger.debug.xcconfig */,
 				FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */,
-				7305A0A253155C8565C058BE /* Pods-RangerTests.debug.xcconfig */,
-				5B55FC0BEB046D6C02A9A8F2 /* Pods-RangerTests.release.xcconfig */,
+				39801C953B85119218CCA0D2 /* Pods-PokerTracker.debug.xcconfig */,
+				C9578A0BA2FBB228087C38E1 /* Pods-PokerTracker.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -658,6 +659,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				552E543F23D164620056B305 /* SharkScope.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552E546623D175DF0056B305 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552E546F23D175DF0056B305 /* PokerTracker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +691,25 @@
 			productReference = 552E543B23D164610056B305 /* SharkScope.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		552E546A23D175DF0056B305 /* PokerTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 552E547423D175DF0056B305 /* Build configuration list for PBXNativeTarget "PokerTracker" */;
+			buildPhases = (
+				115DF6423944759BFE4740F1 /* [CP] Check Pods Manifest.lock */,
+				552E546623D175DF0056B305 /* Headers */,
+				552E546723D175DF0056B305 /* Sources */,
+				552E546823D175DF0056B305 /* Frameworks */,
+				552E546923D175DF0056B305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PokerTracker;
+			productName = PokerTracker;
+			productReference = 552E546B23D175DF0056B305 /* PokerTracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		55C1868A239583DA0081B6B7 /* Ranger */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C1869B239583DD0081B6B7 /* Build configuration list for PBXNativeTarget "Ranger" */;
@@ -697,6 +725,7 @@
 			);
 			dependencies = (
 				552E544123D164620056B305 /* PBXTargetDependency */,
+				552E547123D175DF0056B305 /* PBXTargetDependency */,
 			);
 			name = Ranger;
 			productName = Ranger;
@@ -707,7 +736,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C529ED23BD3F1500A6975A /* Build configuration list for PBXNativeTarget "RangerTests" */;
 			buildPhases = (
-				76A6FA94C594651BBDDC9FE8 /* [CP] Check Pods Manifest.lock */,
 				55C529E023BD3F1400A6975A /* Sources */,
 				55C529E123BD3F1400A6975A /* Frameworks */,
 				55C529E223BD3F1400A6975A /* Resources */,
@@ -735,6 +763,9 @@
 					552E543A23D164610056B305 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					552E546A23D175DF0056B305 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					55C1868A239583DA0081B6B7 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1130;
@@ -754,8 +785,6 @@
 				Base,
 			);
 			mainGroup = 55C18682239583D90081B6B7;
-			packageReferences = (
-			);
 			productRefGroup = 55C1868C239583DA0081B6B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -763,6 +792,7 @@
 				55C1868A239583DA0081B6B7 /* Ranger */,
 				55C529E323BD3F1400A6975A /* RangerTests */,
 				552E543A23D164610056B305 /* SharkScope */,
+				552E546A23D175DF0056B305 /* PokerTracker */,
 			);
 		};
 /* End PBXProject section */
@@ -775,6 +805,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		552E546923D175DF0056B305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552E548623D176E80056B305 /* LatestHandPlayerQuery.sql in Resources */,
+				552E547F23D176D80056B305 /* StatisticsQuery.sql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55C18689239583DA0081B6B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,8 +823,6 @@
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
-				55F8124823BAE48D005F0EF6 /* LatestHandPlayerQuery.sql in Resources */,
-				55A307E1239C8E88008B0EA4 /* StatisticsQuery.sql in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
 			);
@@ -801,6 +838,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		115DF6423944759BFE4740F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokerTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		535E8130261E435629D03063 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -817,28 +876,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Ranger-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76A6FA94C594651BBDDC9FE8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RangerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -891,9 +928,30 @@
 				552E544B23D1654E0056B305 /* CompletedTournaments.swift in Sources */,
 				552E545123D1655E0056B305 /* Statistics.swift in Sources */,
 				552E545C23D1658C0056B305 /* UserInfo.swift in Sources */,
-				552E544823D164CF0056B305 /* SharkScope.swift in Sources */,
+				552E544823D164CF0056B305 /* SharkScope.Service.swift in Sources */,
 				552E546423D1660F0056B305 /* ApiError.swift in Sources */,
 				552E545D23D1658C0056B305 /* RequestCache.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552E546723D175DF0056B305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552E548423D176E80056B305 /* HandPlayer.swift in Sources */,
+				552E548123D176DF0056B305 /* LiveTourneyPlayerQuery.swift in Sources */,
+				552E547A23D176CE0056B305 /* Query.swift in Sources */,
+				552E548323D176E30056B305 /* LiveTourneyTableQuery.swift in Sources */,
+				552E547E23D176D80056B305 /* StatisticsQuery.swift in Sources */,
+				552E547B23D176D20056B305 /* PokerTracker.Player.swift in Sources */,
+				552E547D23D176D80056B305 /* PokerTracker.Statistics.swift in Sources */,
+				552E548223D176E30056B305 /* LiveTourneyTable.swift in Sources */,
+				552E547923D176CE0056B305 /* Entry.swift in Sources */,
+				552E547C23D176D20056B305 /* PlayerQuery.swift in Sources */,
+				552E548023D176DF0056B305 /* LiveTourneyPlayer.swift in Sources */,
+				552E548523D176E80056B305 /* LatestHandPlayerQuery.swift in Sources */,
+				552E547823D176BF0056B305 /* PokerTracker.Configuration.swift in Sources */,
+				552E547723D175FA0056B305 /* PokerTracker.Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,45 +962,31 @@
 				5585E40C23C985A80009E98F /* TableInfo.swift in Sources */,
 				55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
-				55ED3CE023A5543A00754763 /* PlayerQuery.swift in Sources */,
 				55A7FAA823C3CC68007BEA05 /* TourneyTableView.swift in Sources */,
-				55ED3CD623A551E100754763 /* LiveTourneyTableQuery.swift in Sources */,
 				55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
 				5509C4B723B9254600C6608D /* TablesStatusBarItem.swift in Sources */,
 				55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */,
-				5521A565239DF933000D1AD1 /* PokerTracker.Statistics.swift in Sources */,
-				5521A557239DD5D9000D1AD1 /* LiveTourneyPlayer.swift in Sources */,
-				55ED3CDD23A553EC00754763 /* StatisticsQuery.swift in Sources */,
-				5509600023A30A5C006358EF /* PokerTracker.Configuration.swift in Sources */,
 				55E7E71A23C019EE000388FD /* Easing.swift in Sources */,
-				555EA852239D609E000B5B62 /* Service.swift in Sources */,
 				55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */,
 				559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */,
-				55ED3CD423A54B0C00754763 /* Query.swift in Sources */,
-				5521A55F239DF408000D1AD1 /* Entry.swift in Sources */,
 				5508E3FD23A4656000FFB173 /* TourneyTableViewModel.swift in Sources */,
 				55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */,
 				55C8498623A3309F00452F2F /* Notes.swift in Sources */,
 				5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */,
 				5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */,
 				5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */,
-				5521A559239DE1A5000D1AD1 /* LiveTourneyTable.swift in Sources */,
-				5518D63723BA8E0500EFFBC0 /* HandPlayer.swift in Sources */,
 				55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */,
 				551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */,
-				55ED3CDA23A5539D00754763 /* LiveTourneyPlayerQuery.swift in Sources */,
 				5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */,
 				5536B0FE23C2BF610067E7F2 /* TourneyTableHeaderView.swift in Sources */,
 				55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */,
 				551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */,
 				55E7E71723C00983000388FD /* TourneyTableRowView.swift in Sources */,
 				55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */,
-				5518D63A23BA951F00EFFBC0 /* LatestHandPlayerQuery.swift in Sources */,
 				5590DD8123B98173006BE806 /* TourneyTableWindowController.swift in Sources */,
-				5587DB4423A497740079BB30 /* PokerTracker.Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +1008,11 @@
 			isa = PBXTargetDependency;
 			target = 552E543A23D164610056B305 /* SharkScope */;
 			targetProxy = 552E544023D164620056B305 /* PBXContainerItemProxy */;
+		};
+		552E547123D175DF0056B305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 552E546A23D175DF0056B305 /* PokerTracker */;
+			targetProxy = 552E547023D175DF0056B305 /* PBXContainerItemProxy */;
 		};
 		55C529EA23BD3F1500A6975A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1037,6 +1086,69 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.SharkScope;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		552E547523D175DF0056B305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39801C953B85119218CCA0D2 /* Pods-PokerTracker.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NG36MJV4JP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PokerTracker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.PokerTracker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		552E547623D175DF0056B305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9578A0BA2FBB228087C38E1 /* Pods-PokerTracker.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NG36MJV4JP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PokerTracker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.PokerTracker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1208,7 +1320,6 @@
 		};
 		55C529EB23BD3F1500A6975A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7305A0A253155C8565C058BE /* Pods-RangerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1234,7 +1345,6 @@
 		};
 		55C529EC23BD3F1500A6975A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B55FC0BEB046D6C02A9A8F2 /* Pods-RangerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1265,6 +1375,15 @@
 			buildConfigurations = (
 				552E544523D164620056B305 /* Debug */,
 				552E544623D164620056B305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		552E547423D175DF0056B305 /* Build configuration list for PBXNativeTarget "PokerTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552E547523D175DF0056B305 /* Debug */,
+				552E547623D175DF0056B305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
