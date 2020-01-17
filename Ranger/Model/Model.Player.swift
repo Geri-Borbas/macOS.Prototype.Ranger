@@ -143,7 +143,7 @@ extension Model.Player
         let dictionary: [String:TextFieldData] =
         [
             "Seat" : TextFieldIntData(value: pokerTracker?.handPlayer.seat),
-            "Player" : TextFieldStringData(value: pokerTracker?.handPlayer.player_name),
+            "Player" : TextFieldStringData(value: name),
             "Stack" : TextFieldDoubleData(value: pokerTracker?.handPlayer.stack),
             "VPIP" : TextFieldDoubleData(value: pokerTracker?.statistics?.VPIP),
             "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?.PFR),

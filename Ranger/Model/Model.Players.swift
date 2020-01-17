@@ -39,5 +39,17 @@ extension Model
             
             return players
         }
+        
+        public static func cachedPlayers() -> [Player]
+        { [] }
+        
+        public static func someAwesomePlayer() -> [Player]
+        {
+            return [
+                Model.Player(name: "Borbas.Geri"),
+                Model.Player(name: "rehakzsolt"),
+                Model.Player(name: "Oliana88")
+            ]
+        }
     }
 }

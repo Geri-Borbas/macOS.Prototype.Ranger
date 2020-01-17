@@ -4,6 +4,8 @@
 * Doing
 
     + Next up
+        + `Model.Player.PokerTrackerData` should be name initialized as well
+            + Refactor statistics query to use `player_name` (instead of `id_player`) 
         + Get tournament history
             + Cache considerations (when using variable Count as a parameter)
         
@@ -28,6 +30,11 @@
         + ICM Equities
             + Track Tourney Lobby / Chat Summary / Mini Summary at top right (?)
             + Get push / fold equity against villain (for given VPIP / stack / position)
+
+* Feature/Data/Model_Refactor/0.1.5
+
+    + Fixed unnecessary `TourneyTableViewModel` process
+    + Created some basic `Model.Players` list
 
 * Feature/Data/Model_Refactor/0.1.4
 
