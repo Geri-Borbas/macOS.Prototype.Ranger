@@ -79,6 +79,7 @@
 		55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
 		55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* Model.Player.swift */; };
+		55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9C86623D1857500B3D116 /* Model.Players.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
 		55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyTableViewController.swift */; };
 		55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C18692239583DC0081B6B7 /* Assets.xcassets */; };
@@ -201,6 +202,7 @@
 		55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCellView.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
 		55B03CD423B104F700F153B5 /* Model.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Player.swift; sourceTree = "<group>"; };
+		55B9C86623D1857500B3D116 /* Model.Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Players.swift; sourceTree = "<group>"; };
 		55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tournaments.md; sourceTree = "<group>"; };
 		55C1868B239583DA0081B6B7 /* Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C1868E239583DA0081B6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -288,10 +290,6 @@
 			children = (
 				5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */,
 				5590DD8223B982F6006BE806 /* TourneyTable */,
-				5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */,
-				5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */,
-				55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */,
-				55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -514,10 +512,22 @@
 			path = TableTracker;
 			sourceTree = "<group>";
 		};
+		55B9C86823D1863E00B3D116 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */,
+				5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */,
+				55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */,
+				55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		55C0F97623CF4CEE00414046 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				55B03CD423B104F700F153B5 /* Model.Player.swift */,
+				55B9C86623D1857500B3D116 /* Model.Players.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,6 +566,7 @@
 				55AE8F7D23A5F2DD006BF2B9 /* TableTracker */,
 				55C0F97623CF4CEE00414046 /* Model */,
 				5508E3FF23A4756200FFB173 /* UI */,
+				55B9C86823D1863E00B3D116 /* Extensions */,
 				55C8498423A3307D00452F2F /* Notes */,
 				55C18692239583DC0081B6B7 /* Assets.xcassets */,
 				55C18694239583DD0081B6B7 /* Main.storyboard */,
@@ -959,6 +970,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */,
 				5585E40C23C985A80009E98F /* TableInfo.swift in Sources */,
 				55C18691239583DA0081B6B7 /* TourneyTableViewController.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,

@@ -132,15 +132,15 @@ class TourneyTableViewModel: NSObject
             handOffset -= tickCount / handUpdateTickFrequency
             handOffset = max(handOffset, 0)
         
-        // Get players of the latest hand tracked by PokerTracker.
-        let latestHandPlayers = try pokerTracker.fetch(PokerTracker.LatestHandPlayerQuery(tourneyNumber: tableInfo.tournamentNumber, handOffset: handOffset))
+        // Get players of the latest hand of the tourney tracked by PokerTracker.
+        var currentPlayers = Model.Players.playersOfLatestHand(inTournament: tableInfo.tournamentNumber, handOffset: handOffset)
         
         // Only if players any.
-        guard let firstHandPlayer = latestHandPlayers.first
+        guard let firstPlayer = currentPlayers.first
         else { return }
         
         // Look for changes.
-        let isNewHand = firstHandPlayer.hand_no != latestProcessedHandNumber
+        let isNewHand = firstPlayer.pokerTracker?.handPlayer.hand_no != latestProcessedHandNumber
         let isNewBlindLevel = tableInfo.bigBlind != latestBigBlind
         let isSomethingChanged = isNewHand || isNewBlindLevel
         
@@ -148,16 +148,7 @@ class TourneyTableViewModel: NSObject
         guard isSomethingChanged else { return }
         
         // Track.
-        latestProcessedHandNumber = firstHandPlayer.hand_no
-        
-        // Create new view models for latest players.
-        var currentPlayers = latestHandPlayers.map
-        {
-            eachLatestHandPlayer in
-            Model.Player(
-                name: eachLatestHandPlayer.player_name,
-                handPlayer: eachLatestHandPlayer)
-        }
+        latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer.hand_no ?? ""
 
         // Save any SharkScope statistics if any.
         players.forEach
