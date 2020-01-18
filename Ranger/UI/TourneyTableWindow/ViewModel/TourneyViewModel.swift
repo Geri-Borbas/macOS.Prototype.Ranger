@@ -12,12 +12,43 @@ import PokerTracker
 import SharkScope
 
 
+struct TournamentInfo: Equatable
+{
+    
+    
+    let tournamentNumber: String
+    let tableNumber: Int
+    
+    let smallBlind: Int
+    let bigBlind: Int
+    let ante: Int
+    
+    var players: Int
+    let orbitCost: Float
+    
+    
+    init(with tableInfo: TableInfo, players: Int)
+    {
+        self.tournamentNumber = tableInfo.tournamentNumber
+        self.tableNumber = tableInfo.tableNumber
+        
+        self.smallBlind = tableInfo.smallBlind
+        self.bigBlind = tableInfo.bigBlind
+        self.ante = tableInfo.ante
+        
+        // Calculations.
+        self.players = players
+        self.orbitCost = Float(self.smallBlind) + Float(self.bigBlind) + Float(self.players) * Float(self.ante)
+    }
+}
+
+
 protocol TourneyViewModelDelegate
 {
     
     
-    func tourneyPlayersDidChange(tourneyPlayers: [Model.Player])
-    func tourneyOrbitCostDidChange(orbitCost: Float)
+    func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
+    func tournamentDidChange(tournamentInfo: TournamentInfo)
 }
 
 
@@ -34,20 +65,13 @@ class TourneyViewModel: NSObject
     // MARK: - Data
     
     /// The poker table this instance is tracking.
-    private var tableWindowInfo: TableWindowInfo?
+    private var tournamentInfo: TournamentInfo?
+    
+    // Updates.
     private var tickCount: Int = 0
-    private var tickTime = 10.0
+    private var tickTime = 2.0
     private var handUpdateTickFrequency = 1
     
-    private var activePlayerCount: Int = 0
-    private var orbitCost: Float
-    {
-        // Only if table info is set (and parsed).
-        guard let tableInfo = tableWindowInfo?.tableInfo
-        else { return 0.0 }
-        
-        return Float(tableInfo.smallBlind) + Float(tableInfo.bigBlind) + Float(activePlayerCount) * Float(tableInfo.ante)
-    }
     
     // MARK: - UI Data
     
@@ -65,13 +89,15 @@ class TourneyViewModel: NSObject
     
     public func track(_ tableWindowInfo: TableWindowInfo, delegate: TourneyViewModelDelegate?)
     {
-        // Retain.
-        self.tableWindowInfo = tableWindowInfo
+        // Binds.
         self.delegate = delegate
         
         // Schedule timer.
         Timer.scheduledTimer(withTimeInterval: tickTime, repeats: true)
         { _ in self.tick() }
+        
+        // Get toutnament info.
+        update(with: tableWindowInfo)
         
         // Fire right now.
         self.tick()
@@ -79,16 +105,20 @@ class TourneyViewModel: NSObject
     
     public func update(with tableWindowInfo: TableWindowInfo)
     {
-        // Only if changed.
-        guard self.tableWindowInfo != tableWindowInfo
-        else { return }
-        
-        // Set.
-        self.tableWindowInfo = tableWindowInfo
-        
         // Only if table info is parsed.
         guard let tableInfo = tableWindowInfo.tableInfo
         else { return }
+        
+        // Convert.
+        let players = self.tournamentInfo?.players ?? 0
+        let tournamentInfo = TournamentInfo(with: tableInfo, players: players)
+        
+        // Only if changed.
+        guard self.tournamentInfo != tournamentInfo
+        else { return }
+        
+        // Set.
+        self.tournamentInfo = tournamentInfo
         
         // Look for changes.
         let isNewBlindLevel = tableInfo.bigBlind != latestBigBlind
@@ -100,7 +130,7 @@ class TourneyViewModel: NSObject
         latestBigBlind = tableInfo.bigBlind
         
         // Callback.
-        delegate?.tourneyOrbitCostDidChange(orbitCost: orbitCost)
+        delegate?.tournamentDidChange(tournamentInfo: tournamentInfo)
     }
     
     // MARK: - SharkScope
@@ -136,7 +166,7 @@ class TourneyViewModel: NSObject
     private func processData() throws
     {
         // Only if table info is set (and parsed).
-        guard let tableInfo = tableWindowInfo?.tableInfo
+        guard let tournamentInfo = self.tournamentInfo
         else { return }
         
         // May offset hands in simulation mode.
@@ -145,10 +175,10 @@ class TourneyViewModel: NSObject
             handOffset = max(handOffset, 0)
         
         // Get players of the latest hand of the tourney tracked by PokerTracker.
-        let tourneyPlayers = Model.Players.playersOfLatestHand(inTournament: tableInfo.tournamentNumber, handOffset: handOffset)
+        let tournamentPlayers = Model.Players.playersOfLatestHand(inTournament: tournamentInfo.tournamentNumber, handOffset: handOffset)
         
         // Only if players any.
-        guard let firstPlayer = tourneyPlayers.first
+        guard let firstPlayer = tournamentPlayers.first
         else { return }
         
         // Look for change.
@@ -161,20 +191,20 @@ class TourneyViewModel: NSObject
         latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer?.hand_no ?? ""
         
         // Count players with non-zero stack.
-        let tourneyPlayerCount = tourneyPlayers.reduce(0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
+        let tourneyPlayerCount = tournamentPlayers.reduce(0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
         
         // Look for change.
-        if (tourneyPlayerCount != activePlayerCount)
+        if (tourneyPlayerCount != tournamentInfo.players)
         {
-            // Set.
-            activePlayerCount = tourneyPlayerCount
+            // Track.
+            self.tournamentInfo!.players = tourneyPlayerCount
             
             // Invoke callback.
-            delegate?.tourneyOrbitCostDidChange(orbitCost: orbitCost)
+            delegate?.tournamentDidChange(tournamentInfo: self.tournamentInfo!)
         }
         
         // Invoke callback.
-        delegate?.tourneyPlayersDidChange(tourneyPlayers: tourneyPlayers)
+        delegate?.tournamentPlayersDidChange(tournamentPlayers: tournamentPlayers)
     }
     
     
@@ -189,14 +219,14 @@ class TourneyViewModel: NSObject
         var players:Double = 0
         
         // Check data.
-        guard let tableInfo = tableWindowInfo?.tableInfo
+        guard let tournamentInfo = self.tournamentInfo
         else { return NSMutableAttributedString(string: "-") }
         
         // Get data from window title.
-        smallBlind = Double(tableInfo.smallBlind)
-        bigBlind = Double(tableInfo.bigBlind)
-        ante = Double(tableInfo.ante)
-        players = Double(activePlayerCount)
+        smallBlind = Double(tournamentInfo.smallBlind)
+        bigBlind = Double(tournamentInfo.bigBlind)
+        ante = Double(tournamentInfo.ante)
+        players = Double(tournamentInfo.players)
         
         // Model.
         let M:Double = smallBlind + bigBlind + players * ante

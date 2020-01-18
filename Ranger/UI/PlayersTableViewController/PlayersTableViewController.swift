@@ -12,6 +12,7 @@ import SwiftUI
 
 class PlayersTableViewController: NSViewController,
 
+    PlayersTableViewModelDelegate,
     PlayersTableHeaderViewDelegate,
     PlayersTableViewDelegate
 {
@@ -33,12 +34,18 @@ class PlayersTableViewController: NSViewController,
     {
         super.viewDidLoad()
         
+        // View model hook.
+        viewModel.delegate = self
+        
         // Double click.
         tableView.doubleAction = #selector(tableDidDoubleClick)
     }
     
     public func update(with players: [Model.Player])
-    { viewModel.update(with: players, onChange: viewModelDidChange) }
+    { viewModel.update(with: players) }
+    
+    public func update(with tournamentInfo: TournamentInfo)
+    { viewModel.update(with: tournamentInfo) }
     
     
     // MARK: - Events
@@ -61,7 +68,7 @@ class PlayersTableViewController: NSViewController,
     
     // MARK: - Layout
     
-    func viewModelDidChange()
+    func playersTableDidChange()
     { tableView.reloadData() }
 }
 
@@ -94,7 +101,7 @@ extension PlayersTableViewController: NSTableViewDataSource
         if (viewModel.selectedPlayer == player)
         { tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false) }
         
-        // Fade if no stack (yet hardcoded).
+        // Fade if no stack (yet hardcoded value).
         if
             let rowView = tableView.rowView(atRow: row, makeIfNecessary: false),
             player.isPlaying,
@@ -112,7 +119,7 @@ extension PlayersTableViewController: NSTableViewDelegate
 {
     
     
-    // Plug custom row view.
+    // Plug in custom row view.
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView?
     { return PlayersTableRowView() }
     
@@ -122,11 +129,8 @@ extension PlayersTableViewController: NSTableViewDelegate
         // Checks.
         guard viewModel.players.count > row else { return false }
         
-        // Get data.
-        let player = viewModel.players[row]
-        
         // Retain selection.
-        viewModel.selectedPlayer = player
+        viewModel.selectedPlayer = viewModel.players[row]
         
         return true
     }
@@ -137,6 +141,6 @@ extension PlayersTableViewController: NSTableViewDelegate
         viewModel.sort(using: tableView.sortDescriptors)
         
         // Update table view.
-        viewModelDidChange()
+        tableView.reloadData()
     }
 }

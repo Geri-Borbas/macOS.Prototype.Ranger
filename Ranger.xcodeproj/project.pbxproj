@@ -66,7 +66,6 @@
 		5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */; };
 		553CAE2523D1F30700ED1DA3 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
 		553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
-		554BC02C23D2AA2800AF2D48 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554BC02B23D2AA2800AF2D48 /* Constants.swift */; };
 		555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80923D2428F006142BD /* PlayersTableViewController.swift */; };
 		555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
@@ -172,7 +171,6 @@
 		5536B0FD23C2BF610067E7F2 /* PlayersTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableHeaderView.swift; sourceTree = "<group>"; };
 		5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extensions.swift"; sourceTree = "<group>"; };
 		5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extensions.swift"; sourceTree = "<group>"; };
-		554BC02B23D2AA2800AF2D48 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		554E018923AA828100CF2971 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
 		555585DB23A2999500B603C1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				555AE80923D2428F006142BD /* PlayersTableViewController.swift */,
-				554BC02B23D2AA2800AF2D48 /* Constants.swift */,
 				55E64A8C23D288C800685E02 /* ViewModel */,
 				55A7FAA923C3CC70007BEA05 /* PlayersTableView */,
 			);
@@ -1010,7 +1007,6 @@
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */,
 				55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */,
-				554BC02C23D2AA2800AF2D48 /* Constants.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,

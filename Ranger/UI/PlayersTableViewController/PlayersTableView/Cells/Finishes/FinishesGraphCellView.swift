@@ -98,16 +98,17 @@ class FinishesGraphCellView: PlayerCellView
         
         // Construct.
         let slope = NSBezierPath()
-            slope.move(to: NSPoint.zero)
-            slope.line(to: NSPoint(x: 0, y: CGFloat(left * unitBarHeight)))
-            slope.line(to: NSPoint(x: rect.size.width, y: CGFloat(right * unitBarHeight)))
-            slope.line(to: NSPoint(x: rect.size.width, y: 0))
-            slope.line(to: NSPoint.zero)
+            slope.lineCapStyle = .round
+            slope.lineJoinStyle = .round
+            slope.lineWidth = 1.2
+            slope.move(to: NSPoint(x: 1.2, y: CGFloat(left * unitBarHeight)))
+            slope.line(to: NSPoint(x: rect.size.width - 1.2, y: CGFloat(right * unitBarHeight)))
             slope.close()
+
         
         // Draw.
-        color.setFill()
-        slope.fill()
+        color.setStroke()
+        slope.stroke()
     }
     
     private func drawBars_1(from graphData: GraphData, in rect: CGRect)

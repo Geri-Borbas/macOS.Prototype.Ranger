@@ -40,7 +40,7 @@ class StackCellView: PlayerCellView
         // Checks.
         guard let column = tableColumn else { return }
         guard let textField = self.textField else { return }
-        guard let orbitCost = playersTableViewModel.orbitCost else { return }
+        guard let orbitCost = playersTableViewModel.tournamentInfo?.orbitCost else { return }
         
         // Retain data.
         self.textFieldData = player.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!

@@ -4,8 +4,10 @@
 * Doing
 
     + Next up
-        + Hide `PlayersTableViewController.viewModel`
+        + Create `PlayersTableView` for cached players / player selections
+            + Table auto-layout
         + Get tournament history
+            + SharkScope request / cache cleanup
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -25,6 +27,11 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* Feature/UI/TableView_Refactor/0.2.4
+
+    + ViewModels use delegates for callbacks (distinct Player and Tourney updates)
+    + `Finished` cell drawing tweaks
 
 * Feature/UI/TableView_Refactor/0.2.2
 

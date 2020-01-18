@@ -8,7 +8,6 @@
 
 import Cocoa
 import CoreGraphics
-// import SwiftUI
 
 
 class TourneyViewController: NSViewController,
@@ -56,7 +55,7 @@ class TourneyViewController: NSViewController,
     func track(_ tableWindowInfo: TableWindowInfo)
     {
         // Setup for table info.
-        self.view.window?.title = tableWindowInfo.name
+        self.view.window?.title = ""
         
         // Inject into view model.
         viewModel.track(tableWindowInfo, delegate: self)
@@ -112,14 +111,11 @@ class TourneyViewController: NSViewController,
     
     // MARK: - Tourney Events
     
-    func tourneyPlayersDidChange(tourneyPlayers: [Model.Player])
-    { playersTableViewController.update(with: tourneyPlayers) }
+    func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
+    { playersTableViewController.update(with: tournamentPlayers) }
     
-    func tourneyOrbitCostDidChange(orbitCost: Float)
-    {
-        playersTableViewController.viewModel.orbitCost = orbitCost
-        viewModelDidChange()
-    }
+    func tournamentDidChange(tournamentInfo: TournamentInfo)
+    { playersTableViewController.update(with: tournamentInfo) }
     
     
     // MARK: - Players Table Events

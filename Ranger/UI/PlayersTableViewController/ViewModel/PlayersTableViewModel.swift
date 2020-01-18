@@ -12,6 +12,14 @@ import PokerTracker
 import SharkScope
 
 
+protocol PlayersTableViewModelDelegate
+{
+    
+    
+    func playersTableDidChange()
+}
+
+
 class PlayersTableViewModel: NSObject
 {
  
@@ -38,29 +46,31 @@ class PlayersTableViewModel: NSObject
     /// By setting `stackPercentProvider.maximum`, stack bar sizes can be normalized.
     @IBOutlet weak var stackPercentProvider: PercentProvider!
     
-    /// If `tournamenNumber` is set, only session statistics will be fetches for hero.
-    var tournamentNumber: String?
-    
-    /// If `orbitCost` is set, M-ratio can be calculated for stacks.
-    public var orbitCost: Float?
+    /// If `tournamenNumber` is set, only session statistics will be fetched for hero.
+    var tournamentInfo: TournamentInfo?
     
     public var sharkScopeStatus: String
     { sharkScope.status }
         
-    private var onChange: (() -> Void)?
+    public var delegate: PlayersTableViewModelDelegate?
     
     
-    // MARK: - Lifecycle
+    // MARK: - Updates
     
-    public func update(with players: [Model.Player], onChange: (() -> Void)?)
+    public func update(with tournamentInfo: TournamentInfo)
     {
-        // Retain callback.
-        self.onChange = onChange
+        // Only if changed.
+        guard self.tournamentInfo != tournamentInfo
+        else { return }
         
-        try? update(with: players)
+        // Set.
+        self.tournamentInfo = tournamentInfo
+        
+        // Invoke callback.
+        delegate?.playersTableDidChange()
     }
     
-    private func update(with players: [Model.Player]) throws
+    public func update(with players: [Model.Player])
     {
         // Only if players any.
         guard players.first != nil
@@ -85,7 +95,15 @@ class PlayersTableViewModel: NSObject
         
         // Get latest PokerTracker statistics (get session stats for hero).
         for (eachIndex, eachPlayer) in self.players.enumerated()
-        { self.players[eachIndex].pokerTracker?.updateStatistics(for: eachPlayer.isHero ? tournamentNumber : nil) }
+        {
+            self.players[eachIndex].pokerTracker?.updateStatistics(
+                for: (
+                    eachPlayer.isHero
+                    ? self.tournamentInfo?.tournamentNumber
+                    : nil
+                )
+            )
+        }
         
         // Track stack extremes.
         stackPercentProvider.maximum = NSNumber(value: self.players.reduce(
@@ -97,7 +115,7 @@ class PlayersTableViewModel: NSObject
         sort(using: self.sortDescriptors)
         
         // Invoke callback.
-        onChange?()
+        delegate?.playersTableDidChange()
     }
     
     func sort(using sortDescriptors: [NSSortDescriptor]?)
@@ -176,7 +194,7 @@ extension PlayersTableViewModel
                         self.players[row] = player
                         
                         // Invoke callback.
-                        self.onChange?()
+                        self.delegate?.playersTableDidChange()
 
                         break
 
@@ -209,12 +227,9 @@ extension PlayersTableViewModel
                     case .success(let response):
 
                         print(response)
-                        
-                        // Retain.
-                        // player.sharkScope.update(withSummary: responses.playerSummary, activeTournaments: responses.activeTournaments)
-                        
+                                                
                         // Invoke callback.
-                        // self.onChange?()
+                        self.delegate?.playersTableDidChange()
 
                         break
 

@@ -327,6 +327,7 @@ extension Model.Player
     var isHero: Bool
     { pokerTracker?.handPlayer?.flg_hero ?? false }
     
+    /// True if player has `pokerTracker.handPlayer` populated.
     var isPlaying: Bool
     { pokerTracker?.handPlayer != nil }
     
