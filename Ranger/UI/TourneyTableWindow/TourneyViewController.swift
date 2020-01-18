@@ -113,11 +113,9 @@ class TourneyViewController: NSViewController,
     // MARK: - Tourney Events
     
     func tourneyPlayersDidChange(tourneyPlayers: [Model.Player])
-    {
-        playersTableViewController.update(with: tourneyPlayers)
-    }
+    { playersTableViewController.update(with: tourneyPlayers) }
     
-    func tourneyBlindsDidChange(orbitCost: Float)
+    func tourneyOrbitCostDidChange(orbitCost: Float)
     {
         playersTableViewController.viewModel.orbitCost = orbitCost
         viewModelDidChange()
@@ -142,7 +140,7 @@ class TourneyViewController: NSViewController,
         playersTableViewController.tableView.reloadData()
         
         // Status.
-        statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed. \(viewModel.sharkScopeStatus)"
+        statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed. \(playersTableViewController.viewModel.sharkScopeStatus)"
     }
 }
 

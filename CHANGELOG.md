@@ -4,11 +4,8 @@
 * Doing
 
     + Next up
-        + Extract `PlayerTableView` to its own nib
-            + Should be initialized / updated with any `[Player]` collection
-            + Column setup to show / hide columns
+        + Hide `PlayersTableViewController.viewModel`
         + Get tournament history
-            + Cache considerations (when using variable Count as a parameter)
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -28,6 +25,10 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* Feature/UI/TableView_Refactor/0.2.2
+
+    + Cleaned up `TourneyViewModel`
 
 * Feature/UI/TableView_Refactor/0.1.0 - 0.2.0
 

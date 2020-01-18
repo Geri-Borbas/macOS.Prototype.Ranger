@@ -43,6 +43,9 @@ class PlayersTableViewModel: NSObject
     
     /// If `orbitCost` is set, M-ratio can be calculated for stacks.
     public var orbitCost: Float?
+    
+    public var sharkScopeStatus: String
+    { sharkScope.status }
         
     private var onChange: (() -> Void)?
     
@@ -57,22 +60,25 @@ class PlayersTableViewModel: NSObject
         try? update(with: players)
     }
     
-    private func update(with currentPlayers: [Model.Player]) throws
+    private func update(with players: [Model.Player]) throws
     {
         // Only if players any.
-        guard currentPlayers.first != nil
+        guard players.first != nil
         else { return }
                 
+        // Mutable copy.
+        var currentPlayers = players
+        
         // Save SharkScope statistics if any.
-//        players.forEach
-//        {
-//            eachPlayer in
-//            if (currentPlayers.contains(eachPlayer))
-//            {
-//                let index = currentPlayers.firstIndex(of: eachPlayer)!
-//                currentPlayers[index].sharkScope = eachPlayer.sharkScope
-//            }
-//        }
+        self.players.forEach
+        {
+            eachPlayer in
+            if (currentPlayers.contains(eachPlayer))
+            {
+                let index = currentPlayers.firstIndex(of: eachPlayer)!
+                currentPlayers[index].sharkScope = eachPlayer.sharkScope
+            }
+        }
         
         // Set new data.
         self.players = currentPlayers

@@ -17,7 +17,7 @@ protocol TourneyViewModelDelegate
     
     
     func tourneyPlayersDidChange(tourneyPlayers: [Model.Player])
-    func tourneyBlindsDidChange(orbitCost: Float)
+    func tourneyOrbitCostDidChange(orbitCost: Float)
 }
 
 
@@ -39,37 +39,25 @@ class TourneyViewModel: NSObject
     private var tickTime = 10.0
     private var handUpdateTickFrequency = 1
     
-    /// View models for players seated at table.
-    private var players: [Model.Player] = []
-    
-    
-    // MARK: - UI Data
-    
-    public var latestProcessedHandNumber: String = ""
-    public var latestBigBlind: Int = 0
-    private var sortDescriptors: [NSSortDescriptor]?
-    private var selectedPlayer: Model.Player?
-    private var stackPercentProviderEasing: String?
-    public var sharkScopeStatus: String
-    { sharkScope.status }
-    
-    
-    // MARK: - Binds
-    
-    @IBOutlet weak var stackPercentProvider: PercentProvider!
-    private var activePlayerCount: Float
-    {
-        // Count players with non-zero stack.
-        players.reduce(0.0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
-    }
+    private var activePlayerCount: Int = 0
     private var orbitCost: Float
     {
         // Only if table info is set (and parsed).
         guard let tableInfo = tableWindowInfo?.tableInfo
         else { return 0.0 }
         
-        return Float(tableInfo.smallBlind) + Float(tableInfo.bigBlind) + activePlayerCount * Float(tableInfo.ante)
+        return Float(tableInfo.smallBlind) + Float(tableInfo.bigBlind) + Float(activePlayerCount) * Float(tableInfo.ante)
     }
+    
+    // MARK: - UI Data
+    
+    public var latestProcessedHandNumber: String = ""
+    public var latestBigBlind: Int = 0
+    public var latestTourneyPlayerCount: Int = 0
+    
+    
+    // MARK: - Binds
+    
     var delegate: TourneyViewModelDelegate?
     
     
@@ -84,6 +72,9 @@ class TourneyViewModel: NSObject
         // Schedule timer.
         Timer.scheduledTimer(withTimeInterval: tickTime, repeats: true)
         { _ in self.tick() }
+        
+        // Fire right now.
+        self.tick()
     }
     
     public func update(with tableWindowInfo: TableWindowInfo)
@@ -109,7 +100,7 @@ class TourneyViewModel: NSObject
         latestBigBlind = tableInfo.bigBlind
         
         // Callback.
-        delegate?.tourneyBlindsDidChange(orbitCost: orbitCost)
+        delegate?.tourneyOrbitCostDidChange(orbitCost: orbitCost)
     }
     
     // MARK: - SharkScope
@@ -160,7 +151,7 @@ class TourneyViewModel: NSObject
         guard let firstPlayer = tourneyPlayers.first
         else { return }
         
-        // Look for changes.
+        // Look for change.
         let isNewHand = (firstPlayer.pokerTracker?.handPlayer?.hand_no ?? "") != latestProcessedHandNumber
         
         // Only on new hand.
@@ -168,6 +159,19 @@ class TourneyViewModel: NSObject
         
         // Track.
         latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer?.hand_no ?? ""
+        
+        // Count players with non-zero stack.
+        let tourneyPlayerCount = tourneyPlayers.reduce(0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
+        
+        // Look for change.
+        if (tourneyPlayerCount != activePlayerCount)
+        {
+            // Set.
+            activePlayerCount = tourneyPlayerCount
+            
+            // Invoke callback.
+            delegate?.tourneyOrbitCostDidChange(orbitCost: orbitCost)
+        }
         
         // Invoke callback.
         delegate?.tourneyPlayersDidChange(tourneyPlayers: tourneyPlayers)

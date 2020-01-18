@@ -33,9 +33,6 @@ class PlayersTableViewController: NSViewController,
     {
         super.viewDidLoad()
         
-        // Yay.
-        print("Yay.")
-        
         // Double click.
         tableView.doubleAction = #selector(tableDidDoubleClick)
     }
