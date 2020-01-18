@@ -15,7 +15,7 @@ class FinishesGraphCellView: PlayerCellView
 {
 
     
-    @IBOutlet weak var barColorRanges: ColorRanges?
+    @IBOutlet var barColorRanges: ColorRanges?
     @IBOutlet weak var graphPlaceholderView: NSView!
     
     // Data.

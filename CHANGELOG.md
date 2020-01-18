@@ -29,6 +29,15 @@
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
 
+* Feature/UI/TableView_Refactor/0.1.0 - 0.2.0
+
+    + Extracted `Model.Player` UI to `PlayersTableViewController`
+        + Can be updated with any `[Model.Player]` collection
+        + Extracted model features to `PlayersTableViewModel`
+        + Tournament related features left in `TourneyViewModel`
+    + Rewired IB bindings
+        + Top-level objects are strong referenced in cell prototypes
+
 * 1.8.1
 
     + Rows with zero stack gets dimmed only when playing (when `Model.Player.PokerTracker.handPlayer` is available)

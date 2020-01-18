@@ -16,7 +16,7 @@ class App: TableTrackerDelegate
     
     private var tablesStatusBarItem: TablesStatusBarItem = TablesStatusBarItem()
     private var windowTracker: TableTracker = TableTracker()
-    private var tableWindowController: TourneyTableWindowController?
+    private var tableWindowController: TourneyWindowController?
     
     static var configuration: App.Configuration = App.Configuration.load()
     
@@ -43,7 +43,7 @@ class App: TableTrackerDelegate
         if (isTourneyTableWindow && isSameTourney)
         { windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: tableWindowInfo) }
         else
-        { tableWindowController = TourneyTableWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo) }
+        { tableWindowController = TourneyWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo) }
     }
     
     func windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: TableWindowInfo)

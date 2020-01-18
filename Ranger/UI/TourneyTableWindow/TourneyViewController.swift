@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TourneyViewController.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 02..
@@ -8,25 +8,28 @@
 
 import Cocoa
 import CoreGraphics
+// import SwiftUI
 
 
-class TourneyTableViewController: NSViewController,
+class TourneyViewController: NSViewController,
     
-    TourneyTableHeaderViewDelegate,
-    TourneyTableViewDelegate
+    TourneyViewModelDelegate,
+    PlayersTableViewDelegate
 {
 
     
     // MARK: - UI
     
-    @IBOutlet weak var playersTableView: NSTableView!
+    @IBOutlet weak var playersTablePlaceholderView: NSView!
+    var playersTableViewController: PlayersTableViewController!
+    
     @IBOutlet weak var summaryLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
     
     
     // MARK: - Model
     
-    @IBOutlet weak var viewModel: TourneyTableViewModel!
+    @IBOutlet weak var viewModel: TourneyViewModel!
     
     
     // MARK: - Lifecycle
@@ -42,8 +45,12 @@ class TourneyTableViewController: NSViewController,
             self.statusLabel.stringValue = status
         }
         
-        // Double click.
-        playersTableView.doubleAction = #selector(tableDidDoubleClick)
+        // Instantiate table.
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        playersTableViewController = storyboard.instantiateController(withIdentifier: "PlayersTableViewController") as? PlayersTableViewController
+        
+        // Add to placeholder.
+        playersTablePlaceholderView.addSubview(playersTableViewController.view)
     }
     
     func track(_ tableWindowInfo: TableWindowInfo)
@@ -52,8 +59,7 @@ class TourneyTableViewController: NSViewController,
         self.view.window?.title = tableWindowInfo.name
         
         // Inject into view model.
-        viewModel.track(tableWindowInfo, onChange: viewModelDidChange)
-        
+        viewModel.track(tableWindowInfo, delegate: self)
     }
     
     func update(with tableWindowInfo: TableWindowInfo)
@@ -94,29 +100,34 @@ class TourneyTableViewController: NSViewController,
     }
     
     
-    // MARK: - Events
+    // MARK: - User Events
     
     @IBAction func fetchAllDidClick(_ sender: AnyObject)
     {
         // Fetch SharkScope for all (gonna push changes back each).
-        for eachRow in 0...playersTableView.numberOfRows
-        { viewModel.fetchSharkScopeStatisticsForPlayer(inRow: eachRow) }
+        for eachRow in 0...playersTableViewController.tableView.numberOfRows
+        { playersTableViewController.viewModel.fetchSharkScopeStatisticsForPlayer(inRow: eachRow) }
     }
     
-    @objc func tableDidDoubleClick()
+    
+    // MARK: - Tourney Events
+    
+    func tourneyPlayersDidChange(tourneyPlayers: [Model.Player])
     {
-        // Skip header row double click.
-        guard playersTableView.clickedRow > -1 else { return }
-        
-        // Fetch SharkScope (gonna push changes back).
-        viewModel.fetchSharkScopeStatisticsForPlayer(inRow: playersTableView.clickedRow)
+        playersTableViewController.update(with: tourneyPlayers)
     }
     
-    func tableHeaderContextMenu(for column: NSTableColumn) -> NSMenu?
-    { return viewModel.tableHeaderContextMenu(for: column) }
+    func tourneyBlindsDidChange(orbitCost: Float)
+    {
+        playersTableViewController.viewModel.orbitCost = orbitCost
+        viewModelDidChange()
+    }
+    
+    
+    // MARK: - Players Table Events
     
     func fetchCompletedTournementsRequested(for playerName: String)
-    { viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+    { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
     
     
     // MARK: - Layout
@@ -128,7 +139,7 @@ class TourneyTableViewController: NSViewController,
         summaryLabel.attributedStringValue = summary
         
         // Players.
-        playersTableView.reloadData()
+        playersTableViewController.tableView.reloadData()
         
         // Status.
         statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed. \(viewModel.sharkScopeStatus)"

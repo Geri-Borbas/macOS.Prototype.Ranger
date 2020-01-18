@@ -10,7 +10,7 @@ import Cocoa
 import SharkScope
 
 
-@objc protocol TourneyTableViewDelegate
+@objc protocol PlayersTableViewDelegate
 {
     
     
@@ -18,11 +18,11 @@ import SharkScope
 }
 
 
-class TourneyTableView: NSTableView
+class PlayersTableView: NSTableView
 {
 
     
-    @IBOutlet var tourneyTableViewDelegate: TourneyTableViewDelegate?
+    @IBOutlet var playersTableViewDelegate: PlayersTableViewDelegate?
     
 
     // MARK: - Context menu
@@ -108,7 +108,7 @@ class TourneyTableView: NSTableView
         else { return }
         
         // Dispatch request to delegate if any.
-        tourneyTableViewDelegate?.fetchCompletedTournementsRequested(for: player.name)
+        playersTableViewDelegate?.fetchCompletedTournementsRequested(for: player.name)
     }
 
     @objc func copyNameToClipboard(menuItem: NSMenuItem)

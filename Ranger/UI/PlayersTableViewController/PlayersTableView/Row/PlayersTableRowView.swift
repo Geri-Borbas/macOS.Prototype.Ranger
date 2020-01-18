@@ -9,7 +9,7 @@
 import Cocoa
 
 
-class TourneyTableRowView: NSTableRowView
+class PlayersTableRowView: NSTableRowView
 {
 
     
@@ -33,20 +33,5 @@ class TourneyTableRowView: NSTableRowView
             xRadius: 2,
             yRadius: 2
         ).fill()
-    }
-}
-
-extension NSRect
-{
-    
-    
-    func shorter(by height: CGFloat) -> NSRect
-    {
-        return NSRect(
-            x: self.origin.x,
-            y: self.origin.y,
-            width: self.size.width,
-            height: self.size.height - height
-        )
     }
 }

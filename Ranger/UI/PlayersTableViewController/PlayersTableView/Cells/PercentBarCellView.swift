@@ -16,10 +16,10 @@ class PercentBarCellView: PlayerCellView
     
     @IBOutlet weak var bar: NSBox!
     @IBOutlet weak var barWidthConstraint: NSLayoutConstraint?
-    @IBOutlet weak var barColorRanges: ColorRanges?
-    @IBOutlet weak var textFieldColorRanges: ColorRanges?
     
-    @IBOutlet weak var percentProvider: PercentProvider?
+    @IBOutlet var barColorRanges: ColorRanges?
+    @IBOutlet var textFieldColorRanges: ColorRanges?
+    @IBOutlet var percentProvider: PercentProvider?
     
     
     override func setup(with player: Model.Player, in tableColumn: NSTableColumn?)

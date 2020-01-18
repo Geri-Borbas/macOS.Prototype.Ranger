@@ -21,10 +21,10 @@ class StackCellView: PlayerCellView
     // Stack.
     @IBOutlet weak var stackBarView: StackBarView!
     
-    @IBOutlet weak var stackColorRanges: ColorRanges?
-    @IBOutlet weak var percentProvider: PercentProvider?
+    @IBOutlet var stackColorRanges: ColorRanges?
+    @IBOutlet var percentProvider: PercentProvider?
     
-    @IBOutlet weak var tourneyTableViewModel: TourneyTableViewModel!
+    @IBOutlet weak var playersTableViewModel: PlayersTableViewModel!
     
     
     override func prepareForReuse()
@@ -40,6 +40,7 @@ class StackCellView: PlayerCellView
         // Checks.
         guard let column = tableColumn else { return }
         guard let textField = self.textField else { return }
+        guard let orbitCost = playersTableViewModel.orbitCost else { return }
         
         // Retain data.
         self.textFieldData = player.textFieldDataForColumnIdentifiers[column.identifier.rawValue]!
@@ -49,7 +50,6 @@ class StackCellView: PlayerCellView
         
         // Get value.
         let stack: Float = self.textFieldData.floatValue ?? 0
-        let orbitCost: Float = tourneyTableViewModel.orbitCost
         let M: Float =  stack / orbitCost
         
         // Layout.
@@ -57,7 +57,7 @@ class StackCellView: PlayerCellView
 
         // Dispatch values to stack bar.
         self.stackBarView.stack = textFieldData.floatValue ?? 0.0
-        self.stackBarView.orbitCost = tourneyTableViewModel.orbitCost
+        self.stackBarView.orbitCost = orbitCost
         
         // Draw stack bar.
         self.stackBarView.setNeedsDisplay(self.stackBarView.bounds)

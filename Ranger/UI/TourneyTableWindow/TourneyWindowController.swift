@@ -1,5 +1,5 @@
 //
-//  TourneyTableWindowController.swift
+//  TourneyWindowController.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 30..
@@ -9,7 +9,7 @@
 import Cocoa
 
 
-class TourneyTableWindowController: NSWindowController
+class TourneyWindowController: NSWindowController
 {
     
     
@@ -18,15 +18,15 @@ class TourneyTableWindowController: NSWindowController
     
     // MARK: - Lifecycle
     
-    static func instantiateAndShow(forTableWindowInfo tableWindowInfo: TableWindowInfo) -> TourneyTableWindowController
+    static func instantiateAndShow(forTableWindowInfo tableWindowInfo: TableWindowInfo) -> TourneyWindowController
     {
         // Instantiate a new controller.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let tourneyTableWindowController = storyboard.instantiateController(withIdentifier: "TourneyTableWindow") as! TourneyTableWindowController
+        let tourneyTableWindowController = storyboard.instantiateController(withIdentifier: "TourneyTableWindow") as! TourneyWindowController
             tourneyTableWindowController.showWindow(self)
         
         // Track table.
-        let tourneyTableViewController = tourneyTableWindowController.contentViewController as! TourneyTableViewController
+        let tourneyTableViewController = tourneyTableWindowController.contentViewController as! TourneyViewController
             tourneyTableViewController.track(tableWindowInfo)
         
         // Inject reference.
@@ -45,7 +45,7 @@ class TourneyTableWindowController: NSWindowController
     
     func update(with tableWindowInfo: TableWindowInfo)
     {
-        let tourneyTableViewController = self.contentViewController as! TourneyTableViewController
+        let tourneyTableViewController = self.contentViewController as! TourneyViewController
             tourneyTableViewController.update(with: tableWindowInfo)
     }
 }
