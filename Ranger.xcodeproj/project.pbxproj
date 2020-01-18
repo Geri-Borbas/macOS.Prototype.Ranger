@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226323C16A240040A3DE /* FinishesGraphCellView.swift */; };
 		5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
-		5508E3FD23A4656000FFB173 /* TourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508E3FC23A4656000FFB173 /* TourneyViewModel.swift */; };
-		5509C4B723B9254600C6608D /* TablesStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */; };
+		5508E3FD23A4656000FFB173 /* TournamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508E3FC23A4656000FFB173 /* TournamentViewModel.swift */; };
+		5509C4B723B9254600C6608D /* RangerStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* RangerStatusBarItem.swift */; };
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
 		550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
@@ -75,7 +75,7 @@
 		5585E40E23C986930009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
-		5590DD8123B98173006BE806 /* TourneyWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TourneyWindowController.swift */; };
+		5590DD8123B98173006BE806 /* TournamentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TournamentWindowController.swift */; };
 		559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* PercentProvider.swift */; };
 		55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7FAA723C3CC68007BEA05 /* PlayersTableView.swift */; };
 		55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */; };
@@ -84,7 +84,7 @@
 		55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* Model.Player.swift */; };
 		55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9C86623D1857500B3D116 /* Model.Players.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
-		55C18691239583DA0081B6B7 /* TourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TourneyViewController.swift */; };
+		55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TournamentViewController.swift */; };
 		55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C18692239583DC0081B6B7 /* Assets.xcassets */; };
 		55C18696239583DD0081B6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C18694239583DD0081B6B7 /* Main.storyboard */; };
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
@@ -145,10 +145,10 @@
 		39801C953B85119218CCA0D2 /* Pods-PokerTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTracker.debug.xcconfig"; path = "Target Support Files/Pods-PokerTracker/Pods-PokerTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		5504226323C16A240040A3DE /* FinishesGraphCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishesGraphCellView.swift; sourceTree = "<group>"; };
 		5504226723C18DAB0040A3DE /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
-		5508E3FC23A4656000FFB173 /* TourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyViewModel.swift; sourceTree = "<group>"; };
+		5508E3FC23A4656000FFB173 /* TournamentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewModel.swift; sourceTree = "<group>"; };
 		55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Configuration.swift; sourceTree = "<group>"; };
 		5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PokerTracker.Configuration.plist; sourceTree = "<group>"; };
-		5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesStatusBarItem.swift; sourceTree = "<group>"; };
+		5509C4B623B9254600C6608D /* RangerStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerStatusBarItem.swift; sourceTree = "<group>"; };
 		5509C4B823B92CAE00C6608D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRect+Extensions.swift"; sourceTree = "<group>"; };
 		550E406D23B065F600678BCD /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		5587DB4323A497740079BB30 /* PokerTracker.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Player.swift; sourceTree = "<group>"; };
 		558D35E1239F3C58006C710D /* Metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
 		558D35E4239F42AE006C710D /* PlayerSummary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlayerSummary.json; sourceTree = "<group>"; };
-		5590DD8023B98173006BE806 /* TourneyWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyWindowController.swift; sourceTree = "<group>"; };
+		5590DD8023B98173006BE806 /* TournamentWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentWindowController.swift; sourceTree = "<group>"; };
 		5592684623A9CA1500045F89 /* TimelineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRequest.swift; sourceTree = "<group>"; };
 		5592684723A9CA1500045F89 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tournaments.md; sourceTree = "<group>"; };
 		55C1868B239583DA0081B6B7 /* Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C1868E239583DA0081B6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55C18690239583DA0081B6B7 /* TourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyViewController.swift; sourceTree = "<group>"; };
+		55C18690239583DA0081B6B7 /* TournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
 		55C18692239583DC0081B6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55C18695239583DD0081B6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55C18697239583DD0081B6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -302,9 +302,9 @@
 		5508E3FF23A4756200FFB173 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5509C4B623B9254600C6608D /* TablesStatusBarItem.swift */,
+				55F4B81C23D3B468000953DF /* RangerStatusBarItem */,
 				55078CE523D20D64001174A7 /* PlayersTableViewController */,
-				5590DD8223B982F6006BE806 /* TourneyTableWindow */,
+				5590DD8223B982F6006BE806 /* TournamentTableWindow */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -464,14 +464,14 @@
 			path = PlayerSummary;
 			sourceTree = "<group>";
 		};
-		5590DD8223B982F6006BE806 /* TourneyTableWindow */ = {
+		5590DD8223B982F6006BE806 /* TournamentTableWindow */ = {
 			isa = PBXGroup;
 			children = (
-				5590DD8023B98173006BE806 /* TourneyWindowController.swift */,
-				55C18690239583DA0081B6B7 /* TourneyViewController.swift */,
+				5590DD8023B98173006BE806 /* TournamentWindowController.swift */,
+				55C18690239583DA0081B6B7 /* TournamentViewController.swift */,
 				559646B223BC145700A5207F /* ViewModel */,
 			);
-			path = TourneyTableWindow;
+			path = TournamentTableWindow;
 			sourceTree = "<group>";
 		};
 		5592684523A9CA0900045F89 /* Timeline */ = {
@@ -487,7 +487,7 @@
 		559646B223BC145700A5207F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5508E3FC23A4656000FFB173 /* TourneyViewModel.swift */,
+				5508E3FC23A4656000FFB173 /* TournamentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -679,6 +679,14 @@
 				55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */,
 			);
 			path = CompletedTournaments;
+			sourceTree = "<group>";
+		};
+		55F4B81C23D3B468000953DF /* RangerStatusBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				5509C4B623B9254600C6608D /* RangerStatusBarItem.swift */,
+			);
+			path = RangerStatusBarItem;
 			sourceTree = "<group>";
 		};
 		AF9EDFA374391D329008F6DE /* Pods */ = {
@@ -1002,7 +1010,7 @@
 			files = (
 				55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */,
 				5585E40C23C985A80009E98F /* TableInfo.swift in Sources */,
-				55C18691239583DA0081B6B7 /* TourneyViewController.swift in Sources */,
+				55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */,
 				555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */,
@@ -1010,12 +1018,12 @@
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
-				5509C4B723B9254600C6608D /* TablesStatusBarItem.swift in Sources */,
+				5509C4B723B9254600C6608D /* RangerStatusBarItem.swift in Sources */,
 				55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */,
 				55E7E71A23C019EE000388FD /* Easing.swift in Sources */,
 				55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */,
 				559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */,
-				5508E3FD23A4656000FFB173 /* TourneyViewModel.swift in Sources */,
+				5508E3FD23A4656000FFB173 /* TournamentViewModel.swift in Sources */,
 				55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */,
 				555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */,
 				5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */,
@@ -1030,7 +1038,7 @@
 				551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */,
 				55E7E71723C00983000388FD /* PlayersTableRowView.swift in Sources */,
 				55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */,
-				5590DD8123B98173006BE806 /* TourneyWindowController.swift in Sources */,
+				5590DD8123B98173006BE806 /* TournamentWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

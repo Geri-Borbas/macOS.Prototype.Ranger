@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 
-class TablesStatusBarItem
+class RangerStatusBarItem
 {
     
     

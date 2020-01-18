@@ -43,7 +43,7 @@ struct TournamentInfo: Equatable
 }
 
 
-protocol TourneyViewModelDelegate
+protocol TournamentViewModelDelegate
 {
     
     
@@ -52,7 +52,7 @@ protocol TourneyViewModelDelegate
 }
 
 
-class TourneyViewModel: NSObject
+class TournamentViewModel: NSObject
 {
  
     
@@ -77,17 +77,16 @@ class TourneyViewModel: NSObject
     
     public var latestProcessedHandNumber: String = ""
     public var latestBigBlind: Int = 0
-    public var latestTourneyPlayerCount: Int = 0
     
     
     // MARK: - Binds
     
-    var delegate: TourneyViewModelDelegate?
+    var delegate: TournamentViewModelDelegate?
     
     
     // MARK: - Lifecycle
     
-    public func track(_ tableWindowInfo: TableWindowInfo, delegate: TourneyViewModelDelegate?)
+    public func track(_ tableWindowInfo: TableWindowInfo, delegate: TournamentViewModelDelegate?)
     {
         // Binds.
         self.delegate = delegate
@@ -174,7 +173,7 @@ class TourneyViewModel: NSObject
             handOffset -= tickCount / handUpdateTickFrequency
             handOffset = max(handOffset, 0)
         
-        // Get players of the latest hand of the tourney tracked by PokerTracker.
+        // Get players of the latest hand of the tournament tracked by PokerTracker.
         let tournamentPlayers = Model.Players.playersOfLatestHand(inTournament: tournamentInfo.tournamentNumber, handOffset: handOffset)
         
         // Only if players any.
@@ -191,13 +190,13 @@ class TourneyViewModel: NSObject
         latestProcessedHandNumber = firstPlayer.pokerTracker?.handPlayer?.hand_no ?? ""
         
         // Count players with non-zero stack.
-        let tourneyPlayerCount = tournamentPlayers.reduce(0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
+        let tournamentPlayerCount = tournamentPlayers.reduce(0, { count, eachPlayer in count + ((eachPlayer.stack > 0.0) ? 1 : 0) })
         
         // Look for change.
-        if (tourneyPlayerCount != tournamentInfo.players)
+        if (tournamentPlayerCount != tournamentInfo.players)
         {
             // Track.
-            self.tournamentInfo!.players = tourneyPlayerCount
+            self.tournamentInfo!.players = tournamentPlayerCount
             
             // Invoke callback.
             delegate?.tournamentDidChange(tournamentInfo: self.tournamentInfo!)

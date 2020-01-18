@@ -683,7 +683,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="TourneyTableWindow" id="B8D-0N-5wS" customClass="TourneyWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="TournamentWindowController" id="B8D-0N-5wS" customClass="TournamentWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="75.5" y="230"/>
         </scene>
-        <!--Tourney View Controller-->
+        <!--Tournament View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="TourneyViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="TournamentViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1348" height="274"/>
                         <subviews>
@@ -770,7 +770,7 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="1rj-Mk-7PR" customClass="TourneyViewModel" customModule="Ranger" customModuleProvider="target"/>
+                <customObject id="1rj-Mk-7PR" customClass="TournamentViewModel" customModule="Ranger" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="75" y="716"/>
         </scene>

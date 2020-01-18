@@ -10,9 +10,9 @@ import Cocoa
 import CoreGraphics
 
 
-class TourneyViewController: NSViewController,
+class TournamentViewController: NSViewController,
     
-    TourneyViewModelDelegate,
+    TournamentViewModelDelegate,
     PlayersTableViewDelegate
 {
 
@@ -28,7 +28,7 @@ class TourneyViewController: NSViewController,
     
     // MARK: - Model
     
-    @IBOutlet weak var viewModel: TourneyViewModel!
+    @IBOutlet weak var viewModel: TournamentViewModel!
     
     
     // MARK: - Lifecycle

@@ -28,6 +28,10 @@
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
 
+* Feature/UI/TableView_Refactor/0.2.5
+
+    + Renamed `Tourney` window things to `Tournament`
+
 * Feature/UI/TableView_Refactor/0.2.4
 
     + ViewModels use delegates for callbacks (distinct Player and Tourney updates)
