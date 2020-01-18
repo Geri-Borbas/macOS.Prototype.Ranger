@@ -9,7 +9,7 @@
 import Cocoa
 
 
-@objc protocol TourneyTableHeaderViewDelegate
+@objc protocol PlayersTableHeaderViewDelegate
 {
     
     
@@ -17,11 +17,11 @@ import Cocoa
 }
 
 
-class TourneyTableHeaderView: NSTableHeaderView
+class PlayersTableHeaderView: NSTableHeaderView
 {
     
     
-    @IBOutlet weak var delegate: TourneyTableHeaderViewDelegate?
+    @IBOutlet weak var delegate: PlayersTableHeaderViewDelegate?
     
     
     override func menu(for event: NSEvent) -> NSMenu?

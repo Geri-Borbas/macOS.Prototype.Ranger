@@ -1,5 +1,5 @@
 //
-//  TourneyTableWindowController.swift
+//  TourneyWindowController.swift
 //  Ranger
 //
 //  Created by Geri Borbás on 2019. 12. 30..
@@ -9,7 +9,7 @@
 import Cocoa
 
 
-class TourneyTableWindowController: NSWindowController
+class TournamentWindowController: NSWindowController
 {
     
     
@@ -18,19 +18,19 @@ class TourneyTableWindowController: NSWindowController
     
     // MARK: - Lifecycle
     
-    static func instantiateAndShow(forTableWindowInfo tableWindowInfo: TableWindowInfo) -> TourneyTableWindowController
+    static func instantiateAndShow(forTableWindowInfo tableWindowInfo: TableWindowInfo) -> TournamentWindowController
     {
         // Instantiate a new controller.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        let tourneyTableWindowController = storyboard.instantiateController(withIdentifier: "TourneyTableWindow") as! TourneyTableWindowController
-            tourneyTableWindowController.showWindow(self)
+        let tournamentTableWindowController = storyboard.instantiateController(withIdentifier: "TournamentWindowController") as! TournamentWindowController
+            tournamentTableWindowController.showWindow(self)
         
         // Track table.
-        let tourneyTableViewController = tourneyTableWindowController.contentViewController as! TourneyTableViewController
+        let tourneyTableViewController = tournamentTableWindowController.contentViewController as! TournamentViewController
             tourneyTableViewController.track(tableWindowInfo)
         
         // Inject reference.
-        tourneyTableWindowController.tableWindowInfo = tableWindowInfo
+        tournamentTableWindowController.tableWindowInfo = tableWindowInfo
         
         // Hide buttons.
         if let window = tourneyTableViewController.view.window
@@ -40,12 +40,12 @@ class TourneyTableWindowController: NSWindowController
             window.standardWindowButton(.closeButton)?.isHidden = true
         }
         
-        return tourneyTableWindowController
+        return tournamentTableWindowController
     }
     
     func update(with tableWindowInfo: TableWindowInfo)
     {
-        let tourneyTableViewController = self.contentViewController as! TourneyTableViewController
+        let tourneyTableViewController = self.contentViewController as! TournamentViewController
             tourneyTableViewController.update(with: tableWindowInfo)
     }
 }

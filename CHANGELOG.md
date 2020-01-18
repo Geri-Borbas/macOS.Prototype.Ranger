@@ -4,11 +4,9 @@
 * Doing
 
     + Next up
-        + Extract `PlayerTableView` to its own nib
-            + Should be initialized / updated with any `[Player]` collection
-            + Column setup to show / hide columns
+        + Create `PlayersTableView` for cached players / player selections
         + Get tournament history
-            + Cache considerations (when using variable Count as a parameter)
+            + SharkScope request / cache cleanup
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -28,6 +26,32 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* Feature/UI/TableView_Refactor/0.2.6
+
+    + `PlayersTableViewController` / `TournamentViewController` auto-layout
+
+* Feature/UI/TableView_Refactor/0.2.5
+
+    + Renamed `Tourney` window things to `Tournament`
+
+* Feature/UI/TableView_Refactor/0.2.4
+
+    + ViewModels use delegates for callbacks (distinct Player and Tourney updates)
+    + `Finished` cell drawing tweaks
+
+* Feature/UI/TableView_Refactor/0.2.2
+
+    + Cleaned up `TourneyViewModel`
+
+* Feature/UI/TableView_Refactor/0.1.0 - 0.2.0
+
+    + Extracted `Model.Player` UI to `PlayersTableViewController`
+        + Can be updated with any `[Model.Player]` collection
+        + Extracted model features to `PlayersTableViewModel`
+        + Tournament related features left in `TourneyViewModel`
+    + Rewired IB bindings
+        + Top-level objects are strong referenced in cell prototypes
 
 * 1.8.1
 
