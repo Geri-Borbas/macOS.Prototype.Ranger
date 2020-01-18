@@ -5,7 +5,6 @@
 
     + Next up
         + Create `PlayersTableView` for cached players / player selections
-            + Table auto-layout
         + Get tournament history
             + SharkScope request / cache cleanup
         
@@ -27,6 +26,10 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* Feature/UI/TableView_Refactor/0.2.6
+
+    + `PlayersTableViewController` / `TournamentViewController` auto-layout
 
 * Feature/UI/TableView_Refactor/0.2.5
 

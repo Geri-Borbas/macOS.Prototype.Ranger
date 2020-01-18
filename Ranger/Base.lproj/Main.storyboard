@@ -706,10 +706,10 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TournamentViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1348" height="274"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1348" height="273"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-O1-p9y">
-                                <rect key="frame" x="1232" y="23" width="112" height="32"/>
+                                <rect key="frame" x="1232" y="22" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="BeH-Sg-cgv"/>
                                 </constraints>
@@ -722,7 +722,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-oU-NxL">
-                                <rect key="frame" x="8" y="35" width="158" height="16"/>
+                                <rect key="frame" x="8" y="34" width="158" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Rfn-rd-N5c"/>
                                 </constraints>
@@ -733,7 +733,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-bY-dqi">
-                                <rect key="frame" x="8" y="11" width="41" height="14"/>
+                                <rect key="frame" x="8" y="10" width="41" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="W9O-qj-y7f"/>
                                 </constraints>
@@ -744,16 +744,15 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7nD-OL-3uD">
-                                <rect key="frame" x="10" y="61" width="1328" height="203"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="203" id="GWh-Xd-gQq"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="60" width="1328" height="203"/>
                             </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NrT-oU-NxL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="1Xi-VB-W8u"/>
+                            <constraint firstAttribute="bottom" secondItem="Mbr-bY-dqi" secondAttribute="bottom" constant="10" id="31F-LP-vdY"/>
                             <constraint firstItem="7nD-OL-3uD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="9bg-Uf-gxq"/>
                             <constraint firstAttribute="trailing" secondItem="7nD-OL-3uD" secondAttribute="trailing" constant="10" id="ANQ-eC-xKd"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="273" id="V0R-HC-hF8"/>
                             <constraint firstItem="Mbr-bY-dqi" firstAttribute="top" secondItem="NrT-oU-NxL" secondAttribute="bottom" constant="10" id="d7G-CR-Ggu"/>
                             <constraint firstItem="7nD-OL-3uD" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="eka-jq-S28"/>
                             <constraint firstItem="iS1-O1-p9y" firstAttribute="top" secondItem="7nD-OL-3uD" secondAttribute="bottom" constant="10" id="fgG-DA-ENX"/>
@@ -778,8 +777,9 @@
         <scene sceneID="3FT-MN-FmM">
             <objects>
                 <viewController storyboardIdentifier="PlayersTableViewController" id="m08-kK-jvE" userLabel="PlayersTableViewController" customClass="PlayersTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="WLf-sh-7o3">
+                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" id="WLf-sh-7o3">
                         <rect key="frame" x="0.0" y="0.0" width="1328" height="203"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf3-ah-MyC">
                                 <rect key="frame" x="0.0" y="0.0" width="1328" height="203"/>
@@ -1857,7 +1857,7 @@
                                     </subviews>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="203" id="DM9-Mj-oFE"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="203" id="DM9-Mj-oFE"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="rFg-zo-o30">
                                     <rect key="frame" x="1" y="187" width="1326" height="15"/>
