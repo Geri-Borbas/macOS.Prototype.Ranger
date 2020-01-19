@@ -36,11 +36,21 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
     
     func statusBarItemClicked(menuItem: StatusBarItem.MenuItem)
     {
-        if (menuItem == StatusBarItem.MenuItem.openCachedPlayers)
-        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.cachedPlayers(), hiddenColumnIdentifiers: ["Seat", "Stack"]) }
-        
-        if (menuItem == StatusBarItem.MenuItem.openRegs)
-        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.regs(), hiddenColumnIdentifiers: ["Seat", "Stack"]) }
+        switch menuItem
+        {
+            case StatusBarItem.MenuItem.openCachedPlayers:
+                PlayersWindowController.instantiateAndShow(
+                    withPlayers: Model.Players.cachedPlayers(),
+                    hiddenColumnIdentifiers: ["Seat", "Stack"]
+                )
+            case StatusBarItem.MenuItem.openRegs:
+                PlayersWindowController.instantiateAndShow(
+                    withPlayers: Model.Players.regs(),
+                    hiddenColumnIdentifiers: ["Seat", "Stack"]
+            )
+            default:
+                print("No window controller for menu item \(menuItem.title).")
+        }
     }
     
     

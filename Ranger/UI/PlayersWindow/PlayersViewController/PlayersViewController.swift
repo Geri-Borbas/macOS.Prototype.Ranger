@@ -76,7 +76,7 @@ class PlayersViewController: NSViewController,
     func playersTableDidChange()
     {
         // Status.
-        statusLabel.stringValue = playersTableViewController.viewModel.sharkScopeStatus
+        statusLabel.stringValue = "\(playersTableViewController.viewModel.players.count) players. \(playersTableViewController.viewModel.sharkScopeStatus)"
     }
 }
 

@@ -8,7 +8,6 @@
             + SharkScope request / cache cleanup
         
     + Quick Features (to right-click context menus)
-        + Players should use a shared `PokerTracker.Service()`
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
         + `TableWindowInfo`
@@ -26,6 +25,10 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* 1.8.9
+
+    + Every `Model.Player` use a single shared (static) `PokerTracker.Service()` (no connection overload)
 
 * 1.8.8
 
