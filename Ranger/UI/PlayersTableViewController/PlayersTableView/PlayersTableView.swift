@@ -140,7 +140,7 @@ class PlayersTableView: NSTableView
         else { return }
         
         // Remove file.
-        RequestCache().deleteTablesCache(for: player.name)
+        ApiRequestCache().deleteTablesCache(for: player.name)
     }
 
     @objc func deleteStatisticsCache(menuItem: NSMenuItem)
@@ -150,7 +150,7 @@ class PlayersTableView: NSTableView
         else { return }
         
         // Remove file.
-        RequestCache().deleteStatisticsCache(for: player.name)
+        ApiRequestCache().deleteStatisticsCache(for: player.name)
     }
     
 }

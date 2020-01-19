@@ -43,7 +43,7 @@ extension Model
         public static func cachedPlayers() -> [Player]
         {
             // Only if any.
-            guard let cachedFileURLs = RequestCache().cachedFiles(at: "networks/pokerstars/players")
+            guard let cachedFileURLs = ApiRequestCache().cachedFiles(at: "networks/pokerstars/players")
             else { return [] }
         
             // Map names.

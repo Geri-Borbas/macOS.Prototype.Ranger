@@ -10,14 +10,15 @@ import Foundation
 import SwiftCSV
 
 
-public struct Tournaments: Equatable
+public struct Tournaments: ApiResponse, Equatable
 {
 
     
     let tournaments: [Tournament]
+    let csvStringRepresentation: String
     
     
-    struct Tournament: Equatable
+    struct Tournament: Equatable, Decodable
     {
         
         
@@ -39,6 +40,7 @@ public struct Tournaments: Equatable
         
         init(with row: [String:String])
         {
+            // Column names seem to pick up the whitespace between column names in file (at least using `SwiftCSV`).
             self.Network = Tournament.value(from: row["Network"])
             self.Player = Tournament.value(from: row[" Player"])
             self.GameID = Tournament.value(from: row[" Game ID"])
@@ -76,14 +78,20 @@ public struct Tournaments: Equatable
     }
     
     
-    init(with csvString: String) throws
+    public init(from csvString: String) throws
     {
-        let csv = try CSV(string: csvString)
+        // Retain csv representation.
+        self.csvStringRepresentation = csvString
         
+        // Deserialize csv.
+        let csv = try CSV(string: csvString)
         self.tournaments = csv.namedRows.map
         {
             eachNamedRow in
             Tournament(with: eachNamedRow)
         }
     }
+    
+    public func stringRepresentation(from data: Data) throws -> String
+    { return csvStringRepresentation }
 }

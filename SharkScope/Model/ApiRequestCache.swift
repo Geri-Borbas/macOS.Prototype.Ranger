@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct RequestCache
+public struct ApiRequestCache
 {
         
     
