@@ -26,6 +26,16 @@
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
 
+* Feature/Data/SharkScope/Tournaments/0.1.0
+
+    + Created `Tournaments` model
+        + Added `SharkScope.Request.basePath` / `SharkScope.Request.contentType` (with default values) 
+        + Can be intialized from SharkScope `Tournaments.csv` format
+    + Added `SwiftCSV` to `SharkScope` module
+    + Added `SharkScopeTests` target
+        + Moved `LinearRegression` tests in place
+        + Created tests for CSV parsing
+
 * 1.8.9
 
     + Every `Model.Player` use a single shared (static) `PokerTracker.Service()` (no connection overload)

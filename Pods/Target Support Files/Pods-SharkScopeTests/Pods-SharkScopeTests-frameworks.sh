@@ -161,17 +161,9 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/BlueSSLService/SSLService.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/BlueSocket/Socket.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PostgresClientKit/PostgresClientKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftCSV/SwiftCSV.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/BlueSSLService/SSLService.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/BlueSocket/Socket.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PostgresClientKit/PostgresClientKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftCSV/SwiftCSV.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

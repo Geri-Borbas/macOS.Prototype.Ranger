@@ -5,6 +5,7 @@ PODS:
   - PostgresClientKit (1.1.1):
     - BlueSocket (~> 1.0)
     - BlueSSLService (~> 1.0)
+  - SwiftCSV (0.5.5)
   - YapDatabase (4.0):
     - YapDatabase/Standard (= 4.0)
   - YapDatabase/Standard (4.0):
@@ -114,6 +115,7 @@ PODS:
 
 DEPENDENCIES:
   - PostgresClientKit (~> 1.0)
+  - SwiftCSV (~> 0.5.5)
   - YapDatabase (~> 4.0)
 
 SPEC REPOS:
@@ -121,14 +123,16 @@ SPEC REPOS:
     - BlueSocket
     - BlueSSLService
     - PostgresClientKit
+    - SwiftCSV
     - YapDatabase
 
 SPEC CHECKSUMS:
   BlueSocket: 1acd943acb07b55905291d608649fcfbf8cbd57d
   BlueSSLService: b791a3db95b841973c44870f59bbf94628845b58
   PostgresClientKit: 2137fe1d0f553aca00283474b28816ec88462071
+  SwiftCSV: 13e494244a4a65c3ff71002444491026de625643
   YapDatabase: 260b1b0b3e6ae6775383edc923e19813586615eb
 
-PODFILE CHECKSUM: 661e74a94d7c6febac0e7c152715aad3a8794e3b
+PODFILE CHECKSUM: 89604bff260b7fb86d588bb2f4f0727693777ca2
 
 COCOAPODS: 1.8.4

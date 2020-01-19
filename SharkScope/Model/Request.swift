@@ -9,6 +9,13 @@
 import Foundation
 
 
+public enum ContentType: String
+{
+    case JSON = "application/json"
+    case CSV = "application/csv"
+}
+
+
 public protocol Request
 {
     
@@ -16,8 +23,11 @@ public protocol Request
     associatedtype RootResponseType where RootResponseType: Decodable
     
     
+    var basePath: String { get }
     var path: String { get }
     var parameters: KeyValuePairs<String, String> { get }
+    
+    var contentType: ContentType { get }
     var useCache: Bool { get set }
 }
 
@@ -25,6 +35,12 @@ public protocol Request
 extension Request
 {
 
+    
+    public var basePath: String
+    { SharkScope.Service.basePath }
+
+    public var contentType: ContentType
+    { .JSON }
     
     public func usingCache() -> Self
     {
