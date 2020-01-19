@@ -4,6 +4,7 @@
 * Doing
 
     + Next up
+        + Keyboard shortcuts for status bar items
         + Create `PlayersTableView` for cached players / player selections
         + Get tournament history
             + SharkScope request / cache cleanup
@@ -26,6 +27,12 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* 1.8.5
+
+    + Merged `Feature/UI/TableView_Refactor`
+    + Added `PlayersTableWindowController` for standalon player lists
+    + Added player list menu items for `StatusBarItem`
 
 * Feature/UI/TableView_Refactor/0.2.6
 

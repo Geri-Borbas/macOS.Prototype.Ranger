@@ -10,11 +10,11 @@ import Foundation
 import SwiftUI
 
 
-class App: TableTrackerDelegate
+class App: TableTrackerDelegate, StatusBarItemDelegate
 {
     
     
-    private var tablesStatusBarItem: RangerStatusBarItem = RangerStatusBarItem()
+    private var statusBarItem: StatusBarItem = StatusBarItem()
     private var windowTracker: TableTracker = TableTracker()
     private var tableWindowController: TournamentWindowController?
     
@@ -26,6 +26,17 @@ class App: TableTrackerDelegate
         // Subscribe window updates.
         windowTracker.delegate = self
         windowTracker.start()
+        
+        // Subscribe status bar item updates.
+        statusBarItem.delegate = self
+    }
+    
+    
+    // MARK: - Status Bar Item Events
+    
+    func statusBarItemClicked(title: StatusBarItem.Title)
+    {
+        print("\(title.rawValue) clicked.")
     }
     
     
@@ -34,7 +45,7 @@ class App: TableTrackerDelegate
     func windowTrackerDidStartTrackingTable(tableWindowInfo: TableWindowInfo)
     {
         // Status.
-        tablesStatusBarItem.indicateTracking(windowTitle: tableWindowInfo.name)
+        statusBarItem.indicateTracking(windowTitle: tableWindowInfo.name)
         
         let isTourneyTableWindow = tableWindowInfo.tableInfo != nil
         let isSameTourney = tableWindowController?.tableWindowInfo?.tableInfo?.tournamentNumber == tableWindowInfo.tableInfo?.tournamentNumber
@@ -58,7 +69,7 @@ class App: TableTrackerDelegate
     func windowTrackerDidStopTrackingTable(tableWindowInfo: TableWindowInfo)
     {
         // UI.
-        tablesStatusBarItem.stopIndicateTracking()
+        statusBarItem.stopIndicateTracking()
         
         // Turn back dragging.
         if let tableWindow = tableWindowController?.window

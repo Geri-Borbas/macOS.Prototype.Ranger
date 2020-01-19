@@ -10,11 +10,35 @@ import Foundation
 import SwiftUI
 
 
-class RangerStatusBarItem
+protocol StatusBarItemDelegate
+{
+    
+    
+    func statusBarItemClicked(title: StatusBarItem.Title)
+}
+
+
+extension StatusBarItem
+{
+    
+    
+    enum Title: String
+    {
+        
+        
+        case openCachedPlayers = "Open cached players"
+        case openRegs = "Open regs"
+    }
+}
+
+
+class StatusBarItem
 {
     
     
     let icon: String = "♠️"
+    var delegate: StatusBarItemDelegate?
+    
     
     
     var menu: NSMenu = NSMenu(title: "Table Menu")
@@ -34,20 +58,34 @@ class RangerStatusBarItem
     func indicateTracking(windowTitle: String)
     {
         menu.removeAllItems()
-        addItemForTable(windowTitle)
+        addItem(with: windowTitle)
+        menu.addItem(NSMenuItem.separator())
+        addItem(with: Title.openCachedPlayers)
+        addItem(with: Title.openRegs)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Tracking PokerStarsEU...", action: nil, keyEquivalent: ""))
     }
     
-    func addItemForTable(_ tableWindowTitle: String)
+    func addItem(with title: Title)
     {
-        let tableItem = NSMenuItem(
-            title: tableWindowTitle,
+        let menuItem = NSMenuItem(
+            title: title.rawValue,
             action: #selector(menuItemDidClick),
             keyEquivalent: ""
+        )        
+        menuItem.representedObject = title
+        menuItem.target = self
+        menu.addItem(menuItem)
+    }
+    
+    func addItem(with title: String)
+    {
+        let menuItem = NSMenuItem(
+            title: title,
+            action: nil,
+            keyEquivalent: ""
         )
-        tableItem.target = self
-        menu.addItem(tableItem)
+        menu.addItem(menuItem)
     }
     
     func stopIndicateTracking()
@@ -58,6 +96,10 @@ class RangerStatusBarItem
 
     @objc func menuItemDidClick(menuItem: NSMenuItem)
     {
-        print("\(menuItem.title) clicked.")
+        // Get title.
+        guard let title = menuItem.representedObject as? Title
+        else { return }
+        
+        delegate?.statusBarItemClicked(title: title)
     }
 }
