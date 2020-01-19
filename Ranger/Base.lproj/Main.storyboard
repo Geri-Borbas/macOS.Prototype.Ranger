@@ -687,7 +687,7 @@
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="-69" y="240" width="1011" height="270"/>
+                        <rect key="contentRect" x="-227" y="240" width="1340" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -699,7 +699,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75.5" y="230"/>
+            <point key="canvasLocation" x="75" y="237"/>
         </scene>
         <!--Tournament View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -2187,6 +2187,84 @@
                 </numberFormatter>
             </objects>
             <point key="canvasLocation" x="75" y="1071"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="wkn-fK-kPJ">
+            <objects>
+                <windowController storyboardIdentifier="PlayersWindowController" id="Ky0-Pe-b2v" customClass="PlayersWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="vbn-K7-JOC">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="470" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
+                        <connections>
+                            <outlet property="delegate" destination="Ky0-Pe-b2v" id="ZLP-Nz-qMY"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="kPu-3g-H1v" kind="relationship" relationship="window.shadowedContentViewController" id="bpI-1g-6KZ"/>
+                    </connections>
+                </windowController>
+                <customObject id="L2i-Pu-fJN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1028" y="507"/>
+        </scene>
+        <!--Players View Controller-->
+        <scene sceneID="OSh-5X-meT">
+            <objects>
+                <viewController id="kPu-3g-H1v" customClass="PlayersViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" appearanceType="darkAqua" id="xTS-Cw-y6S">
+                        <rect key="frame" x="0.0" y="0.0" width="481" height="273"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-gQ-JAv">
+                                <rect key="frame" x="365" y="3" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="cYw-CV-ETZ"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Fetch All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fy2-1J-rtL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="fetchAllDidClick:" target="kPu-3g-H1v" id="zHb-Y4-heb"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ZJ-Ds-Q8e">
+                                <rect key="frame" x="8" y="17" width="41" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="zVz-WH-OBe"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="0VD-7p-nEt">
+                                    <font key="font" metaFont="message" size="11"/>
+                                    <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Sb-lD-JGo">
+                                <rect key="frame" x="10" y="41" width="461" height="222"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8Sb-lD-JGo" secondAttribute="trailing" constant="10" id="0vC-dJ-cre"/>
+                            <constraint firstItem="3ZJ-Ds-Q8e" firstAttribute="top" secondItem="8Sb-lD-JGo" secondAttribute="bottom" constant="10" id="Bw5-4F-aUa"/>
+                            <constraint firstItem="Oba-gQ-JAv" firstAttribute="top" secondItem="8Sb-lD-JGo" secondAttribute="bottom" constant="10" id="Eac-hx-wXL"/>
+                            <constraint firstItem="3ZJ-Ds-Q8e" firstAttribute="leading" secondItem="xTS-Cw-y6S" secondAttribute="leading" constant="10" id="Hn3-FN-dFe"/>
+                            <constraint firstItem="8Sb-lD-JGo" firstAttribute="top" secondItem="xTS-Cw-y6S" secondAttribute="top" constant="10" id="INR-Gb-E7Q"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="273" id="gKO-UO-AvC"/>
+                            <constraint firstAttribute="bottom" secondItem="Oba-gQ-JAv" secondAttribute="bottom" constant="10" id="lmV-J1-fmo"/>
+                            <constraint firstAttribute="trailing" secondItem="Oba-gQ-JAv" secondAttribute="trailing" constant="10" id="rF2-YA-1mJ"/>
+                            <constraint firstItem="8Sb-lD-JGo" firstAttribute="leading" secondItem="xTS-Cw-y6S" secondAttribute="leading" constant="10" id="tcq-6Y-515"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playersTablePlaceholderView" destination="8Sb-lD-JGo" id="h5y-Ro-Qvb"/>
+                        <outlet property="statusLabel" destination="3ZJ-Ds-Q8e" id="gaY-w4-MT8"/>
+                    </connections>
+                </viewController>
+                <customObject id="t0J-pK-otz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1027.5" y="973.5"/>
         </scene>
     </scenes>
 </document>

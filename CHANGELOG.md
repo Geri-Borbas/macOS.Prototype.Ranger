@@ -4,12 +4,12 @@
 * Doing
 
     + Next up
-        + Keyboard shortcuts for status bar items
-        + Create `PlayersTableView` for cached players / player selections
+        + Hide `Seat` and `Stack` columns if players not playing
         + Get tournament history
             + SharkScope request / cache cleanup
         
     + Quick Features (to right-click context menus)
+        + Players should use a shared `PokerTracker.Service()`
         + Normalized / Absolute switch for Finishes histogram
         + Slope could be drawn for a distinct small icon (not cover histogram)
         + `TableWindowInfo`
@@ -27,6 +27,10 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* 1.8.7
+
+    + Created windows for player tables (`PlayersWindowController` / `PlayersViewController`)
 
 * 1.8.5
 

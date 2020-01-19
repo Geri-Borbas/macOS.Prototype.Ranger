@@ -10,6 +10,14 @@ import Foundation
 import SwiftUI
 
 
+protocol PlayersTableViewControllerDelegate
+{
+    
+    
+    func playersTableDidChange()
+}
+
+
 class PlayersTableViewController: NSViewController,
 
     PlayersTableViewModelDelegate,
@@ -21,6 +29,7 @@ class PlayersTableViewController: NSViewController,
     // MARK: - UI
     
     @IBOutlet weak var tableView: NSTableView!
+    var delegate: PlayersTableViewControllerDelegate?
     
     
     // MARK: - Model
@@ -69,7 +78,10 @@ class PlayersTableViewController: NSViewController,
     // MARK: - Layout
     
     func playersTableDidChange()
-    { tableView.reloadData() }
+    {
+        tableView.reloadData()
+        delegate?.playersTableDidChange()
+    }
 }
 
 

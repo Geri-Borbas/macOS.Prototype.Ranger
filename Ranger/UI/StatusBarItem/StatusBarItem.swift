@@ -14,7 +14,7 @@ protocol StatusBarItemDelegate
 {
     
     
-    func statusBarItemClicked(title: StatusBarItem.Title)
+    func statusBarItemClicked(menuItem: StatusBarItem.MenuItem)
 }
 
 
@@ -22,12 +22,15 @@ extension StatusBarItem
 {
     
     
-    enum Title: String
+    struct MenuItem: Equatable
     {
         
         
-        case openCachedPlayers = "Open cached players"
-        case openRegs = "Open regs"
+        let title: String
+        
+        
+        static let openCachedPlayers = MenuItem(title: "Open cached players")
+        static let openRegs = MenuItem(title: "Open regs")
     }
 }
 
@@ -58,34 +61,28 @@ class StatusBarItem
     func indicateTracking(windowTitle: String)
     {
         menu.removeAllItems()
-        addItem(with: windowTitle)
+        
+        addItem(with: MenuItem(title: windowTitle))
         menu.addItem(NSMenuItem.separator())
-        addItem(with: Title.openCachedPlayers)
-        addItem(with: Title.openRegs)
+        addItem(with: MenuItem.openCachedPlayers)
+        addItem(with: MenuItem.openRegs)
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Tracking PokerStarsEU...", action: nil, keyEquivalent: ""))
+        addItem(with: MenuItem(title: "Tracking PokerStarsEU..."))
     }
     
-    func addItem(with title: Title)
+    func addItem(with menuItem: MenuItem)
     {
-        let menuItem = NSMenuItem(
-            title: title.rawValue,
+        let item = NSMenuItem(
+            title: menuItem.title,
             action: #selector(menuItemDidClick),
             keyEquivalent: ""
-        )        
-        menuItem.representedObject = title
-        menuItem.target = self
-        menu.addItem(menuItem)
-    }
-    
-    func addItem(with title: String)
-    {
-        let menuItem = NSMenuItem(
-            title: title,
-            action: nil,
-            keyEquivalent: ""
         )
-        menu.addItem(menuItem)
+        
+        // References.
+        item.representedObject = menuItem
+        item.target = self
+        
+        menu.addItem(item)
     }
     
     func stopIndicateTracking()
@@ -94,12 +91,12 @@ class StatusBarItem
         menu.addItem(NSMenuItem(title: "No tables to track", action: nil, keyEquivalent: ""))
     }
 
-    @objc func menuItemDidClick(menuItem: NSMenuItem)
+    @objc func menuItemDidClick(item: NSMenuItem)
     {
         // Get title.
-        guard let title = menuItem.representedObject as? Title
+        guard let menuItem = item.representedObject as? MenuItem
         else { return }
         
-        delegate?.statusBarItemClicked(title: title)
+        delegate?.statusBarItemClicked(menuItem: menuItem)
     }
 }

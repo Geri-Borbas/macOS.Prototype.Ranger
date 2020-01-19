@@ -49,6 +49,7 @@ class TournamentViewController: NSViewController,
         playersTableViewController = storyboard.instantiateController(withIdentifier: "PlayersTableViewController") as? PlayersTableViewController
         
         // Add to placeholder.
+        playersTableViewController.view.frame = playersTablePlaceholderView.bounds
         playersTablePlaceholderView.addSubview(playersTableViewController.view)
     }
     

@@ -34,9 +34,13 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
     
     // MARK: - Status Bar Item Events
     
-    func statusBarItemClicked(title: StatusBarItem.Title)
+    func statusBarItemClicked(menuItem: StatusBarItem.MenuItem)
     {
-        print("\(title.rawValue) clicked.")
+        if (menuItem == StatusBarItem.MenuItem.openCachedPlayers)
+        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.cachedPlayers()) }
+        
+        if (menuItem == StatusBarItem.MenuItem.openRegs)
+        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.regs()) }
     }
     
     
