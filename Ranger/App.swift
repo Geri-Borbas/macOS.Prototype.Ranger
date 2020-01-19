@@ -37,10 +37,10 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
     func statusBarItemClicked(menuItem: StatusBarItem.MenuItem)
     {
         if (menuItem == StatusBarItem.MenuItem.openCachedPlayers)
-        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.cachedPlayers()) }
+        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.cachedPlayers(), hiddenColumnIdentifiers: ["Seat", "Stack"]) }
         
         if (menuItem == StatusBarItem.MenuItem.openRegs)
-        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.regs()) }
+        { PlayersWindowController.instantiateAndShow(withPlayers: Model.Players.regs(), hiddenColumnIdentifiers: ["Seat", "Stack"]) }
     }
     
     

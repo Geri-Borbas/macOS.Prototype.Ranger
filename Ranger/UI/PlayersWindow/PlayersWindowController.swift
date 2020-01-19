@@ -13,7 +13,7 @@ class PlayersWindowController: NSWindowController
 {
         
     
-    static func instantiateAndShow(withPlayers players: [Model.Player])
+    static func instantiateAndShow(withPlayers players: [Model.Player], hiddenColumnIdentifiers: [String]? = nil)
     {
         // Instantiate a new controller.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -25,6 +25,8 @@ class PlayersWindowController: NSWindowController
             playersViewController.update(with: players)
         
         // Hide stack column.
+        if let hiddenColumnIdentifiers = hiddenColumnIdentifiers
+        { playersViewController.hideColumns(columnIdentifiers: hiddenColumnIdentifiers) }
         
         // Hide buttons.
         if let window = playersViewController.view.window

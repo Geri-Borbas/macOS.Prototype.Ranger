@@ -44,6 +44,16 @@ class PlayersViewController: NSViewController,
     public func update(with players: [Model.Player])
     { playersTableViewController.update(with: players) }
     
+    public func hideColumns(columnIdentifiers: [String])
+    {
+        columnIdentifiers.forEach
+        {
+            eachColumnIdentifier in
+            playersTableViewController.tableView.tableColumn(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: eachColumnIdentifier))?.isHidden = true
+        }
+        
+    }
+    
     
     // MARK: - User Events
     

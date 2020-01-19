@@ -10,10 +10,7 @@ import Cocoa
 import CoreGraphics
 
 
-class TournamentViewController: NSViewController,
-    
-    TournamentViewModelDelegate,
-    PlayersTableViewDelegate
+class TournamentViewController: NSViewController
 {
 
     
@@ -47,7 +44,8 @@ class TournamentViewController: NSViewController,
         // Instantiate table.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         playersTableViewController = storyboard.instantiateController(withIdentifier: "PlayersTableViewController") as? PlayersTableViewController
-        
+        playersTableViewController.delegate = self
+                
         // Add to placeholder.
         playersTableViewController.view.frame = playersTablePlaceholderView.bounds
         playersTablePlaceholderView.addSubview(playersTableViewController.view)
@@ -110,24 +108,9 @@ class TournamentViewController: NSViewController,
     }
     
     
-    // MARK: - Tourney Events
-    
-    func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
-    { playersTableViewController.update(with: tournamentPlayers) }
-    
-    func tournamentDidChange(tournamentInfo: TournamentInfo)
-    { playersTableViewController.update(with: tournamentInfo) }
-    
-    
-    // MARK: - Players Table Events
-    
-    func fetchCompletedTournementsRequested(for playerName: String)
-    { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
-    
-    
     // MARK: - Layout
     
-    func viewModelDidChange()
+    func layout()
     {
         // Summary.
         let summary = viewModel.summary(with: summaryLabel.font!)
@@ -141,3 +124,35 @@ class TournamentViewController: NSViewController,
     }
 }
 
+
+// MARK: - Tournament Events
+extension TournamentViewController: TournamentViewModelDelegate
+{
+    
+    
+    func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
+    { playersTableViewController.update(with: tournamentPlayers) }
+    
+    func tournamentDidChange(tournamentInfo: TournamentInfo)
+    { playersTableViewController.update(with: tournamentInfo) }
+}
+
+
+// MARK: - Players Table View Controller Events
+extension TournamentViewController: PlayersTableViewControllerDelegate
+{
+    
+    
+    func playersTableDidChange()
+    { layout() }
+}
+
+
+// MARK: - Players Table View Events
+extension TournamentViewController: PlayersTableViewDelegate
+{
+    
+    
+    func fetchCompletedTournementsRequested(for playerName: String)
+    { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+}

@@ -4,7 +4,6 @@
 * Doing
 
     + Next up
-        + Hide `Seat` and `Stack` columns if players not playing
         + Get tournament history
             + SharkScope request / cache cleanup
         
@@ -27,6 +26,12 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* 1.8.8
+
+    + Hooked up missing delegate binding in `TournamentViewController`
+    + Columns can be hidden when instantiating `PlayersWindowController`
+        + Hide `Seat` and `Stack` columns for player collections
 
 * 1.8.7
 
