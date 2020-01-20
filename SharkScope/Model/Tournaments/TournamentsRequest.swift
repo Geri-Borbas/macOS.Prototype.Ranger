@@ -1,5 +1,5 @@
 //
-//  TournamentsQuery.swift
+//  TournamentsRequest.swift
 //  SharkScope
 //
 //  Created by Geri Borbás on 2020. 01. 19..
@@ -23,9 +23,16 @@ public struct TournamentsRequest: ApiRequest
     
     public var basePath: String { "/poker-statistics/" }
     public var contentType: ContentType { .CSV }
-    public var path: String { "networks/\(network)/players/\(player)/tournaments.csv" }
+    public var path: String { "networks/\(network)/players/\(player)/tournaments" }
     public var parameters: KeyValuePairs<String, String> { [:] }
     public var useCache: Bool = true
+    
+    
+    public init(network: String, player: String)
+    {
+        self.network = network
+        self.player = player
+    }
 }
 
 

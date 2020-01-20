@@ -42,9 +42,10 @@ public struct ApiRequestCache
         // Resolve Documents directory.
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         else { return nil }
-        
+                
         // Append path.
-        let pathURL = URL(string: request.path) ?? URL(string: "")!
+        let path = request.path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let pathURL = URL(string: path) ?? URL(string: "")!
         let pathFolder = pathURL.deletingLastPathComponent()
         let cacheFolderURL = documentsDirectory.appendingPathComponent(pathFolder.path, isDirectory: true)
         

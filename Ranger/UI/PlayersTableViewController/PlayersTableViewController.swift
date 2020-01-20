@@ -21,8 +21,7 @@ protocol PlayersTableViewControllerDelegate
 class PlayersTableViewController: NSViewController,
 
     PlayersTableViewModelDelegate,
-    PlayersTableHeaderViewDelegate,
-    PlayersTableViewDelegate
+    PlayersTableHeaderViewDelegate
 {
     
     
@@ -71,9 +70,6 @@ class PlayersTableViewController: NSViewController,
     func tableHeaderContextMenu(for column: NSTableColumn) -> NSMenu?
     { return viewModel.tableHeaderContextMenu(for: column) }
     
-    func fetchCompletedTournementsRequested(for playerName: String)
-    { viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
-    
     
     // MARK: - Layout
     
@@ -84,8 +80,20 @@ class PlayersTableViewController: NSViewController,
     }
 }
 
+// MARK: - Table View User Events
 
-// MARK: - TableView Data
+extension PlayersTableViewController: PlayersTableViewDelegate
+{
+    
+    
+    func fetchTournementsRequested(for playerName: String)
+    { viewModel.fetchTournamentsForPlayer(withName: playerName) }
+}
+
+
+
+
+// MARK: - Table View Data
 
 extension PlayersTableViewController: NSTableViewDataSource
 {
@@ -125,7 +133,7 @@ extension PlayersTableViewController: NSTableViewDataSource
 }
 
 
-// MARK: - TableView Events
+// MARK: - Table View Events
 
 extension PlayersTableViewController: NSTableViewDelegate
 {

@@ -4,8 +4,6 @@
 * Doing
 
     + Next up
-        + `Tournaments` cache
-            + Test (hopefully without search quota cost due to working cache)
             + Fetch sharkscope status after requests (explicitly in controllers)
                 + A simple authenticated request with error can be sufficient 
         
@@ -27,6 +25,10 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* Feature/Data/SharkScope/Tournaments/0.2.5
+
+    + Hooked up `TournamentsQuery` to UI / fixed cache file name
 
 * Feature/Data/SharkScope/Tournaments/0.2.3
 

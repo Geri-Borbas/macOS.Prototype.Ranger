@@ -37,10 +37,7 @@ public struct Service
     
     // MARK: - Networking
     
-    public func fetch<RequestType: ApiRequest>(
-        _ request: RequestType,
-        completion: @escaping (Result<RequestType.ApiResponseType, SharkScope.Error>) -> Void
-    )
+    public func fetch<RequestType: ApiRequest>(_ request: RequestType, completion: @escaping (Result<RequestType.ApiResponseType, SharkScope.Error>) -> Void)
     {
         // Create URL Components.
         let urlComponents = request.urlComponents

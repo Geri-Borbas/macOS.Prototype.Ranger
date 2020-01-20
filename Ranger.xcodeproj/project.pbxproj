@@ -110,6 +110,7 @@
 		55E7E71723C00983000388FD /* PlayersTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71623C00983000388FD /* PlayersTableRowView.swift */; };
 		55E7E71A23C019EE000388FD /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71923C019EE000388FD /* Easing.swift */; };
 		55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
+		55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
 		F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */; };
 /* End PBXBuildFile section */
@@ -1206,6 +1207,7 @@
 			files = (
 				55A1C2D623D4D90E009C0F12 /* Tournaments.swift in Sources */,
 				55A1C2CC23D4CFB7009C0F12 /* TournamentsTests.swift in Sources */,
+				55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */,
 				55A1C2D423D4D018009C0F12 /* LinearRegressionTests.swift in Sources */,
 				55A1C2D523D4D1AE009C0F12 /* LinearRegression.swift in Sources */,
 			);

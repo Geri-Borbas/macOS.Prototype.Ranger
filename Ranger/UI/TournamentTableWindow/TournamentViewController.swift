@@ -153,6 +153,6 @@ extension TournamentViewController: PlayersTableViewDelegate
 {
     
     
-    func fetchCompletedTournementsRequested(for playerName: String)
+    func fetchTournementsRequested(for playerName: String)
     { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
 }

@@ -83,7 +83,9 @@ extension Model
                 Model.Player(name: "@rtemur"),
                 Model.Player(name: "LuckyMarat"),
                 Model.Player(name: "AlekseyM1983"),
-            ]
+                Model.Player(name: "SpOs Im GoOd"),
+                Model.Player(name: "fülemüle")
+            ].sorted()
             
             // let playerName = "g1anfar"
             // let playerName = "ScauHades"

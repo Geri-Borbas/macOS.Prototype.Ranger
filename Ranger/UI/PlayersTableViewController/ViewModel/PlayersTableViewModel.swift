@@ -164,10 +164,11 @@ extension PlayersTableViewModel
 }
 
 
-// MARK: - SharkScope Events
+// MARK: - SharkScope
 
 extension PlayersTableViewModel
 {
+    
     
     public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)
     {
@@ -178,8 +179,9 @@ extension PlayersTableViewModel
         var player = players[row]
 
         // Fetch summary.
-        sharkScope.fetch(player: player.name,
-                         completion:
+        sharkScope.fetch(
+            player: player.name,
+            completion:
             {
                 (result: Result<(playerSummary: PlayerSummary, activeTournaments: ActiveTournaments), SharkScope.Error>) in
                        
@@ -205,20 +207,45 @@ extension PlayersTableViewModel
 
                     break
                 }
-           })
+           }
+        )
+    }
+        
+    public func fetchTournamentsForPlayer(withName playerName: String)
+    {
+        sharkScope.fetch(
+            TournamentsRequest(network: "PokerStars", player:playerName),
+            completion:
+            {
+                 (result: Result<Tournaments, SharkScope.Error>)in
+                       
+                switch result
+                {
+                    case .success(let response):
+
+                        print(response)
+                                                
+                        // Invoke callback.
+                        self.delegate?.playersTableDidChange()
+
+                        break
+
+                    case .failure(let error):
+
+                        // Fail silently for now.
+                        print(error)
+
+                    break
+                }
+           }
+        )
     }
     
     public func fetchCompletedTournamentsForPlayer(withName playerName: String)
     {
-        // Lookup player.
-        let firstPlayer = players.filter{ eachPlayer in eachPlayer.name == playerName }.first
-        
-        // Checks.
-        guard let player = firstPlayer else { return }
-        
-        /// Data.
-        sharkScope.fetch(CompletedTournamentsRequest(network: "PokerStars", player:player.name, amount: 80),
-                         completion:
+        sharkScope.fetch(
+            CompletedTournamentsRequest(network: "PokerStars", player:playerName, amount: 100),
+            completion:
             {
                  (result: Result<CompletedTournaments, SharkScope.Error>)in
                        
@@ -240,6 +267,7 @@ extension PlayersTableViewModel
 
                     break
                 }
-           })
+           }
+        )
     }
 }

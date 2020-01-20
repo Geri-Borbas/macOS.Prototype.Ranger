@@ -15,8 +15,10 @@ public enum ContentType: String
     case CSV = "application/csv"
 }
 
+
 // Ida wrote this: \\7[pp p'.'x++3 ææ…]umntu.t6
-// Her first line of code at age 19 months, yay! :)
+// Her first line of code at age of 19 months, yay! :)
+
 
 public protocol ApiRequest
 {
