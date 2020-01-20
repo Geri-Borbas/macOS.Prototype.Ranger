@@ -5,8 +5,6 @@
 
     + Next up
         + `Tournaments` cache
-            + Resolve hardcoded base path stripping
-                + Caching could be initialized from `ApiRequest` instead of `UrlCompoments`
             + Test (hopefully without search quota cost due to working cache)
             + Fetch sharkscope status after requests (explicitly in controllers)
                 + A simple authenticated request with error can be sufficient 
@@ -29,6 +27,12 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+
+* Feature/Data/SharkScope/Tournaments/0.2.3
+
+    + Removed hardcoded base path stripping
+        + Removed `SharkScope.Service.basePath`
+        + Caching is initialized from `ApiRequest` instead of `UrlCompoments`
 
 * Feature/Data/SharkScope/Tournaments/0.2.0
 

@@ -486,10 +486,10 @@
 			isa = PBXGroup;
 			children = (
 				5574DAC723A68E8700569790 /* ApiRequest.swift */,
+				55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */,
 				553F11A423D4F100000D4C05 /* ApiResponse.swift */,
 				55840BFD23A9C065000B06FF /* JsonResponse */,
 				55840BF923A9BE5D000B06FF /* UserInfo.swift */,
-				55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */,
 				55840BF423A9B55D000B06FF /* StringRepresentable.swift */,
 				55840BF623A9BA0B000B06FF /* StringRepresenting.swift */,
 				555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */,

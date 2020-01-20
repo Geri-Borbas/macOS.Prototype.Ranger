@@ -28,7 +28,6 @@ public struct Service
        
     
     static var errorDomain: String = "SharkScope"
-    static var basePath: String = "/api/searcher/"
     static var log: Bool = false
     
     
@@ -43,17 +42,12 @@ public struct Service
         completion: @escaping (Result<RequestType.ApiResponseType, SharkScope.Error>) -> Void
     )
     {
-        
         // Create URL Components.
-        var urlComponents = URLComponents()
-            urlComponents.scheme = "https"
-            urlComponents.host = "sharkscope.com"
-            urlComponents.path = Service.basePath + request.path
-            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+        let urlComponents = request.urlComponents
         
         // Lookup cache first.
         let cache = ApiRequestCache()
-        if let cachedResponse: RequestType.ApiResponseType = cache.cachedResponse(for: urlComponents), request.useCache
+        if let cachedResponse: RequestType.ApiResponseType = cache.cachedResponse(for: request), request.useCache
         {
             print("Found file cache, skip request.")
             return completion(.success(cachedResponse))
@@ -126,7 +120,7 @@ public struct Service
             else { return completion(.failure(SharkScope.Error.noDecodedData)) }
             
             // Cache.
-            if let cacheFileURL = cache.cacheFileURL(for: urlComponents)
+            if let cacheFileURL = cache.cacheFileURL(for: request)
             {
                 // Create string representation (pretty JSON or CSV).
                 var stringRepresentation: String?

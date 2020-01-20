@@ -39,10 +39,21 @@ extension ApiRequest
 
     
     public var basePath: String
-    { SharkScope.Service.basePath }
+    { "/api/searcher/" }
 
     public var contentType: ContentType
     { .JSON }
+    
+    public var urlComponents: URLComponents
+    {
+        var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "sharkscope.com"
+            urlComponents.path = self.basePath + self.path
+            urlComponents.queryItems = self.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+        
+        return urlComponents
+    }
     
     public func usingCache() -> Self
     {
