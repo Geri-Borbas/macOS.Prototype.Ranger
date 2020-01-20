@@ -26,6 +26,12 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Window_Tracking/0.0.4
+
+    + Added `TableSimulator`
+        + Simple window simulating PokerStars table window titles
+        + Suitable to test `TableTracker`
+    
 * Feature/UI/Window_Tracking/0.0.2
 
     + Added application menu items

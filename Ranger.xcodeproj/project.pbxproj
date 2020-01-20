@@ -71,6 +71,9 @@
 		553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
 		553F11A523D4F100000D4C05 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F11A423D4F100000D4C05 /* ApiResponse.swift */; };
 		5555825A23D3EEE400465CDE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555825923D3EEE400465CDE /* PlayersViewController.swift */; };
+		5555E09B23D6553200BA0DD5 /* TableSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E09A23D6553200BA0DD5 /* TableSimulator.swift */; };
+		5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E09C23D655C900BA0DD5 /* TableSimulator.Configuration.swift */; };
+		5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E09F23D656EB00BA0DD5 /* SimulatedTableWindowController.swift */; };
 		555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80923D2428F006142BD /* PlayersTableViewController.swift */; };
 		555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
@@ -202,6 +205,11 @@
 		554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
 		5555825923D3EEE400465CDE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		555585DB23A2999500B603C1 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		5555E09A23D6553200BA0DD5 /* TableSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSimulator.swift; sourceTree = "<group>"; };
+		5555E09C23D655C900BA0DD5 /* TableSimulator.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSimulator.Configuration.swift; sourceTree = "<group>"; };
+		5555E09E23D6567700BA0DD5 /* TableSimulator.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TableSimulator.Configuration.plist; sourceTree = "<group>"; };
+		5555E09F23D656EB00BA0DD5 /* SimulatedTableWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedTableWindowController.swift; sourceTree = "<group>"; };
+		5555E0A323D6575200BA0DD5 /* SimulatedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedTableViewController.swift; sourceTree = "<group>"; };
 		555A867823C131B30051D996 /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		555AE80923D2428F006142BD /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewModel.swift; sourceTree = "<group>"; };
@@ -465,11 +473,29 @@
 			path = PlayersViewController;
 			sourceTree = "<group>";
 		};
+		5555E0A123D6572F00BA0DD5 /* SimulatedTableWindow */ = {
+			isa = PBXGroup;
+			children = (
+				5555E09F23D656EB00BA0DD5 /* SimulatedTableWindowController.swift */,
+				5555E0A223D6574500BA0DD5 /* SimulatedTableViewController */,
+			);
+			path = SimulatedTableWindow;
+			sourceTree = "<group>";
+		};
+		5555E0A223D6574500BA0DD5 /* SimulatedTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5555E0A323D6575200BA0DD5 /* SimulatedTableViewController.swift */,
+			);
+			path = SimulatedTableViewController;
+			sourceTree = "<group>";
+		};
 		5560F04823BAAEAA008894BD /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
 				5560F04923BAAEAA008894BD /* App.Configuration.swift */,
 				5560F04A23BAAEAA008894BD /* App.Configuration.plist */,
+				5555E09E23D6567700BA0DD5 /* TableSimulator.Configuration.plist */,
 				55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */,
 				5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */,
 			);
@@ -684,6 +710,7 @@
 				55C1868E239583DA0081B6B7 /* AppDelegate.swift */,
 				5509C4B823B92CAE00C6608D /* App.swift */,
 				5560F04823BAAEAA008894BD /* Configuration */,
+				55FE241523D65470003FB968 /* TableSimulator */,
 				55AE8F7D23A5F2DD006BF2B9 /* TableTracker */,
 				55C0F97623CF4CEE00414046 /* Model */,
 				5508E3FF23A4756200FFB173 /* UI */,
@@ -792,6 +819,16 @@
 				5509C4B623B9254600C6608D /* StatusBarItem.swift */,
 			);
 			path = StatusBarItem;
+			sourceTree = "<group>";
+		};
+		55FE241523D65470003FB968 /* TableSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				5555E09A23D6553200BA0DD5 /* TableSimulator.swift */,
+				5555E09C23D655C900BA0DD5 /* TableSimulator.Configuration.swift */,
+				5555E0A123D6572F00BA0DD5 /* SimulatedTableWindow */,
+			);
+			path = TableSimulator;
 			sourceTree = "<group>";
 		};
 		AF9EDFA374391D329008F6DE /* Pods */ = {
@@ -1231,12 +1268,15 @@
 				55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */,
 				5585E40C23C985A80009E98F /* TableInfo.swift in Sources */,
 				55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */,
+				5555E09B23D6553200BA0DD5 /* TableSimulator.swift in Sources */,
 				555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				55A3A3B723D3CDDA0083EB3D /* PlayersWindowController.swift in Sources */,
 				55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */,
 				55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */,
+				5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
+				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
 				5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */,
