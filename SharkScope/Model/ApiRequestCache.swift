@@ -73,10 +73,10 @@ public struct ApiRequestCache
         if urlComponents.percentEncodedQuery != ""
         { querySuffix = "?" + (urlComponents.percentEncodedQuery ?? "") }
         
-        // Determine extension.
-        var pathExtension: String = "json"
-        if (request.contentType == .CSV)
-        { pathExtension = "csv" }
+        // Determine extension (CSV has the extension already in path).
+        var pathExtension: String = ""
+        if (request.contentType == .JSON)
+        { pathExtension = "json" }
         
         // Assemble file name.
         let cacheFileURL = cacheFolderURL.appendingPathComponent(pathURL.lastPathComponent + querySuffix).appendingPathExtension(pathExtension)

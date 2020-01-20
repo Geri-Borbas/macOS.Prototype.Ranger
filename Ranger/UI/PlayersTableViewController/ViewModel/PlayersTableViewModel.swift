@@ -213,18 +213,32 @@ extension PlayersTableViewModel
         
     public func fetchTournamentsForPlayer(withName playerName: String)
     {
+        // Lookup player.
+        let firstPlayer = players.filter{ eachPlayer in eachPlayer.name == playerName }.first
+        
+        // Checks.
+        guard let player = firstPlayer else { return }
+
+        
         sharkScope.fetch(
             TournamentsRequest(network: "PokerStars", player:playerName),
             completion:
             {
-                 (result: Result<Tournaments, SharkScope.Error>)in
+                 (result: Result<Tournaments, SharkScope.Error>) in
                        
                 switch result
                 {
-                    case .success(let response):
-
-                        print(response)
-                                                
+                    case .success(let tournaments):
+                                       
+                        // Calculations prototype.
+                        let rake = player.sharkScope.statistics?.Rake ?? 0.0
+                        let results = tournaments.tournaments.reduce(0.0){ sum, eachTournament in sum + eachTournament.Result }
+                        let profit = results - rake
+                        
+                        // Log.
+                        print("Tournament count: \(tournaments.tournaments.count)")
+                        print("Profit: \(profit)")
+                        
                         // Invoke callback.
                         self.delegate?.playersTableDidChange()
 
@@ -247,13 +261,11 @@ extension PlayersTableViewModel
             CompletedTournamentsRequest(network: "PokerStars", player:playerName, amount: 100),
             completion:
             {
-                 (result: Result<CompletedTournaments, SharkScope.Error>)in
+                 (result: Result<CompletedTournaments, SharkScope.Error>) in
                        
                 switch result
                 {
-                    case .success(let response):
-
-                        print(response)
+                    case .success(let completedTournaments):
                                                 
                         // Invoke callback.
                         self.delegate?.playersTableDidChange()

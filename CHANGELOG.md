@@ -26,6 +26,12 @@
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
 
+* Feature/Data/SharkScope/Tournaments/0.2.6
+
+    + Added `SharkScope.Configuration.StatisticsPassword` (for `/poker-statistics/` requests)
+    + Fixed `Tournaments` path (added extension)
+    + Some calculation prototype from `Tournaments` data
+
 * Feature/Data/SharkScope/Tournaments/0.2.5
 
     + Hooked up `TournamentsQuery` to UI / fixed cache file name

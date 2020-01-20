@@ -14,28 +14,28 @@ public struct Tournaments: ApiResponse, Equatable
 {
 
     
-    let tournaments: [Tournament]
+    public let tournaments: [Tournament]
     let csvStringRepresentation: String
     
     
-    struct Tournament: Equatable, Decodable
+    public struct Tournament: Equatable, Decodable
     {
         
         
-        let Network: String     // PokerStars
-        let Player: String      // "@rtemur"
-        let GameID: String      // 2783430466
-        let Stake: Float        // 3.19
-        let Date: Date          // 2020-01-15 17:18 (PST finish date)
-        let Entrants: Int       // 45
-        let Rake: Float         // 0.31
-        let Game: String        // H
-        let Structure: String   // No Limit
-        let Speed: String       // Turbo
-        let Result: Float       // -3.19
-        let Position: Int       // 15
-        let Flags: String       // Bounty OnDemand Multi Entry
-        let Currency: String    // USD
+        public let Network: String     // PokerStars
+        public let Player: String      // "@rtemur"
+        public let GameID: String      // 2783430466
+        public let Stake: Float        // 3.19
+        public let Date: Date          // 2020-01-15 17:18 (PST finish date)
+        public let Entrants: Int       // 45
+        public let Rake: Float         // 0.31
+        public let Game: String        // H
+        public let Structure: String   // No Limit
+        public let Speed: String       // Turbo
+        public let Result: Float       // -3.19
+        public let Position: Int       // 15
+        public let Flags: String       // Bounty OnDemand Multi Entry
+        public let Currency: String    // USD
         
         
         init(with row: [String:String])

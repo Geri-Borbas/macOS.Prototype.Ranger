@@ -69,7 +69,6 @@ extension Model
                 Model.Player(name: "Borbas.Geri"),
                 Model.Player(name: "rehakzsolt"),
                 Model.Player(name: "Oliana88"),
-                Model.Player(name: "fülemüle"),
                 Model.Player(name: "quAAsar"),
                 Model.Player(name: "wASH1K"),
                 Model.Player(name: "NNiubility"),

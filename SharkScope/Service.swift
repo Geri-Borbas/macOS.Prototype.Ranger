@@ -65,13 +65,15 @@ public struct Service
         // Load configuration.
         let configuration = Configuration.load()
         
+        // Select password.
+        let password = (request.contentType == .CSV) ? configuration.StatisticsPassword : configuration.Password
+        
         // Headers.
-        urlRequest.setValue(request.contentType.rawValue, forHTTPHeaderField: "Accept")
+        urlRequest.setValue("text/html, application/json, application/csv", forHTTPHeaderField: "Accept")
         urlRequest.setValue(configuration.Username, forHTTPHeaderField: "Username")
-        urlRequest.setValue(configuration.Password, forHTTPHeaderField: "Password")
+        urlRequest.setValue(password, forHTTPHeaderField: "Password")
         urlRequest.setValue(configuration.UserAgent, forHTTPHeaderField: "User-Agent")
 
-                   
         // Log.
         if (Service.log)
         {
