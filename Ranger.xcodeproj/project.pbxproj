@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187F49CD1F3066460F9A3A08 /* Pods_SharkScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C6446E5B7C5CE0E52E5BF9 /* Pods_SharkScope.framework */; };
+		37811D9D4865A34425107ADD /* Pods_SharkScopeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB71FD47BDC1691899D3577 /* Pods_SharkScopeTests.framework */; };
 		5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226323C16A240040A3DE /* FinishesGraphCellView.swift */; };
-		5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
 		5508E3FD23A4656000FFB173 /* TournamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508E3FC23A4656000FFB173 /* TournamentViewModel.swift */; };
 		5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* StatusBarItem.swift */; };
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
 		550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
+		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
+		552B413923D4A13E00A6184F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		552E543F23D164620056B305 /* SharkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E543D23D164620056B305 /* SharkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		552E544223D164620056B305 /* SharkScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552E543B23D164610056B305 /* SharkScope.framework */; };
 		552E544323D164620056B305 /* SharkScope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 552E543B23D164610056B305 /* SharkScope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		552E544823D164CF0056B305 /* SharkScope.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A553239DD170000D1AD1 /* SharkScope.Service.swift */; };
+		552E544823D164CF0056B305 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A553239DD170000D1AD1 /* Service.swift */; };
 		552E544923D1653F0056B305 /* TimelineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592684623A9CA1500045F89 /* TimelineRequest.swift */; };
 		552E544A23D165440056B305 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592684823A9CA1500045F89 /* Timeline.swift */; };
 		552E544B23D1654E0056B305 /* CompletedTournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */; };
@@ -34,21 +37,21 @@
 		552E545823D165820056B305 /* MetadataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574DAC923A6933F00569790 /* MetadataRequest.swift */; };
 		552E545923D1658C0056B305 /* RootResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BFE23A9C082000B06FF /* RootResponse.swift */; };
 		552E545A23D1658C0056B305 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BFB23A9BF94000B06FF /* Response.swift */; };
-		552E545B23D1658C0056B305 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574DAC723A68E8700569790 /* Request.swift */; };
+		552E545B23D1658C0056B305 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5574DAC723A68E8700569790 /* ApiRequest.swift */; };
 		552E545C23D1658C0056B305 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BF923A9BE5D000B06FF /* UserInfo.swift */; };
-		552E545D23D1658C0056B305 /* RequestCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E423A2DB4D00A7F37F /* RequestCache.swift */; };
+		552E545D23D1658C0056B305 /* ApiRequestCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */; };
 		552E545E23D1658C0056B305 /* StringRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BF423A9B55D000B06FF /* StringRepresentable.swift */; };
 		552E545F23D1658C0056B305 /* StringRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55840BF623A9BA0B000B06FF /* StringRepresenting.swift */; };
 		552E546023D1658C0056B305 /* BadgerFishKeyDecodingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */; };
 		552E546123D1658C0056B305 /* DynamicCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */; };
-		552E546323D165960056B305 /* SharkScope.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */; };
+		552E546323D165960056B305 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB43E823A2E62000A7F37F /* Configuration.swift */; };
 		552E546423D1660F0056B305 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E406D23B065F600678BCD /* ApiError.swift */; };
 		552E546523D172F80056B305 /* SharkScope.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */; };
 		552E546F23D175DF0056B305 /* PokerTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E546D23D175DF0056B305 /* PokerTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		552E547223D175DF0056B305 /* PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552E546B23D175DF0056B305 /* PokerTracker.framework */; };
 		552E547323D175DF0056B305 /* PokerTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 552E546B23D175DF0056B305 /* PokerTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		552E547723D175FA0056B305 /* PokerTracker.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* PokerTracker.Service.swift */; };
-		552E547823D176BF0056B305 /* PokerTracker.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */; };
+		552E547723D175FA0056B305 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EA851239D609E000B5B62 /* Service.swift */; };
+		552E547823D176BF0056B305 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55095FFF23A30A5C006358EF /* Configuration.swift */; };
 		552E547923D176CE0056B305 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A55E239DF408000D1AD1 /* Entry.swift */; };
 		552E547A23D176CE0056B305 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CD323A54B0C00754763 /* Query.swift */; };
 		552E547D23D176D80056B305 /* PokerTracker.Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */; };
@@ -66,6 +69,7 @@
 		5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */; };
 		553CAE2523D1F30700ED1DA3 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
 		553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
+		553F11A523D4F100000D4C05 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F11A423D4F100000D4C05 /* ApiResponse.swift */; };
 		5555825A23D3EEE400465CDE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555825923D3EEE400465CDE /* PlayersViewController.swift */; };
 		555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80923D2428F006142BD /* PlayersTableViewController.swift */; };
 		555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */; };
@@ -78,10 +82,18 @@
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		5590DD8123B98173006BE806 /* TournamentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TournamentWindowController.swift */; };
 		559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* PercentProvider.swift */; };
+		55A1C2CC23D4CFB7009C0F12 /* TournamentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1C2CB23D4CFB7009C0F12 /* TournamentsTests.swift */; };
+		55A1C2CE23D4CFB7009C0F12 /* SharkScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552E543B23D164610056B305 /* SharkScope.framework */; };
+		55A1C2D423D4D018009C0F12 /* LinearRegressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */; };
+		55A1C2D523D4D1AE009C0F12 /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504226723C18DAB0040A3DE /* LinearRegression.swift */; };
+		55A1C2D623D4D90E009C0F12 /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
+		55A1C2D823D4D9C8009C0F12 /* Tournaments.csv in Resources */ = {isa = PBXBuildFile; fileRef = 55A1C2D723D4D9C8009C0F12 /* Tournaments.csv */; };
+		55A1C2D923D4D9C8009C0F12 /* Tournaments.csv in Resources */ = {isa = PBXBuildFile; fileRef = 55A1C2D723D4D9C8009C0F12 /* Tournaments.csv */; };
 		55A3A3B723D3CDDA0083EB3D /* PlayersWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3A3B623D3CDDA0083EB3D /* PlayersWindowController.swift */; };
 		55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7FAA723C3CC68007BEA05 /* PlayersTableView.swift */; };
 		55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */; };
 		55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */; };
+		55AD571923D4FA48002A2E22 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD571823D4FA48002A2E22 /* JsonResponse.swift */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
 		55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* Model.Player.swift */; };
 		55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9C86623D1857500B3D116 /* Model.Players.swift */; };
@@ -98,6 +110,7 @@
 		55E7E71723C00983000388FD /* PlayersTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71623C00983000388FD /* PlayersTableRowView.swift */; };
 		55E7E71A23C019EE000388FD /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71923C019EE000388FD /* Easing.swift */; };
 		55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
+		55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
 		F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +129,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 552E546A23D175DF0056B305;
 			remoteInfo = PokerTracker;
+		};
+		55A1C2CF23D4CFB7009C0F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C18683239583D90081B6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 552E543A23D164610056B305;
+			remoteInfo = SharkScope;
 		};
 		55C529E923BD3F1500A6975A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -144,11 +164,12 @@
 /* Begin PBXFileReference section */
 		037D2414A5ED938AB46C3512 /* Pods-Ranger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.debug.xcconfig"; path = "Target Support Files/Pods-Ranger/Pods-Ranger.debug.xcconfig"; sourceTree = "<group>"; };
 		2432394853E25E6DDA9F060B /* Pods_Ranger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CCB80A45F65A84DBE9DFCB /* Pods-SharkScopeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScopeTests.debug.xcconfig"; path = "Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		39801C953B85119218CCA0D2 /* Pods-PokerTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTracker.debug.xcconfig"; path = "Target Support Files/Pods-PokerTracker/Pods-PokerTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		5504226323C16A240040A3DE /* FinishesGraphCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishesGraphCellView.swift; sourceTree = "<group>"; };
 		5504226723C18DAB0040A3DE /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		5508E3FC23A4656000FFB173 /* TournamentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewModel.swift; sourceTree = "<group>"; };
-		55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Configuration.swift; sourceTree = "<group>"; };
+		55095FFF23A30A5C006358EF /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PokerTracker.Configuration.plist; sourceTree = "<group>"; };
 		5509C4B623B9254600C6608D /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
 		5509C4B823B92CAE00C6608D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -159,11 +180,13 @@
 		5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayerQuery.swift; sourceTree = "<group>"; };
 		551DEE0323C5E3C9006DF95B /* StackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCellView.swift; sourceTree = "<group>"; };
 		551DEE0723C5E477006DF95B /* StackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackBarView.swift; sourceTree = "<group>"; };
-		5521A553239DD170000D1AD1 /* SharkScope.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.Service.swift; sourceTree = "<group>"; };
+		5521A553239DD170000D1AD1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
 		5521A55E239DF408000D1AD1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Statistics.swift; sourceTree = "<group>"; };
+		552B413623D4A03100A6184F /* Tournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournaments.swift; sourceTree = "<group>"; };
+		552B413823D4A13E00A6184F /* TournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsRequest.swift; sourceTree = "<group>"; };
 		552E543B23D164610056B305 /* SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		552E543D23D164620056B305 /* SharkScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharkScope.h; sourceTree = "<group>"; };
 		552E543E23D164620056B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,6 +196,7 @@
 		5536B0FD23C2BF610067E7F2 /* PlayersTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableHeaderView.swift; sourceTree = "<group>"; };
 		5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extensions.swift"; sourceTree = "<group>"; };
 		5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extensions.swift"; sourceTree = "<group>"; };
+		553F11A423D4F100000D4C05 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		554E018923AA828100CF2971 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
 		5555825923D3EEE400465CDE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
@@ -181,14 +205,14 @@
 		555AE80923D2428F006142BD /* PlayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewController.swift; sourceTree = "<group>"; };
 		555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewModel.swift; sourceTree = "<group>"; };
 		555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgerFishKeyDecodingStrategy.swift; sourceTree = "<group>"; usesTabs = 0; };
-		555EA851239D609E000B5B62 /* PokerTracker.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Service.swift; sourceTree = "<group>"; };
+		555EA851239D609E000B5B62 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5560F04923BAAEAA008894BD /* App.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Configuration.swift; sourceTree = "<group>"; };
 		5560F04A23BAAEAA008894BD /* App.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = App.Configuration.plist; sourceTree = "<group>"; };
 		5569129523C029D3001DDD05 /* ColorRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRanges.swift; sourceTree = "<group>"; };
 		55698B9A23AAE0020065125C /* ActiveTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournamentsRequest.swift; sourceTree = "<group>"; };
 		55698B9C23AAE27E0065125C /* ActiveTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournaments.swift; sourceTree = "<group>"; };
-		5574DAC723A68E8700569790 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5574DAC723A68E8700569790 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		5574DAC923A6933F00569790 /* MetadataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataRequest.swift; sourceTree = "<group>"; };
 		55840BF423A9B55D000B06FF /* StringRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRepresentable.swift; sourceTree = "<group>"; };
 		55840BF623A9BA0B000B06FF /* StringRepresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRepresenting.swift; sourceTree = "<group>"; };
@@ -204,11 +228,17 @@
 		5592684723A9CA1500045F89 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		559F5F3523BEBA060070F2D6 /* PercentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentProvider.swift; sourceTree = "<group>"; };
+		55A1C2C323D4B415009C0F12 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		55A1C2C923D4CFB7009C0F12 /* SharkScopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharkScopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A1C2CB23D4CFB7009C0F12 /* TournamentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTests.swift; sourceTree = "<group>"; };
+		55A1C2CD23D4CFB7009C0F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A1C2D723D4D9C8009C0F12 /* Tournaments.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tournaments.csv; sourceTree = "<group>"; };
 		55A307E0239C8E88008B0EA4 /* StatisticsQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatisticsQuery.sql; sourceTree = "<group>"; };
 		55A3A3B623D3CDDA0083EB3D /* PlayersWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersWindowController.swift; sourceTree = "<group>"; };
 		55A7FAA723C3CC68007BEA05 /* PlayersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableView.swift; sourceTree = "<group>"; };
 		55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentBarCellView.swift; sourceTree = "<group>"; };
 		55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCellView.swift; sourceTree = "<group>"; };
+		55AD571823D4FA48002A2E22 /* JsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
 		55B03CD423B104F700F153B5 /* Model.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Player.swift; sourceTree = "<group>"; };
 		55B9C86623D1857500B3D116 /* Model.Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Players.swift; sourceTree = "<group>"; };
@@ -226,9 +256,9 @@
 		55D4CADD23BB0394001E07E5 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
 		55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDescriptorPrototypeTests.swift; sourceTree = "<group>"; };
 		55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfoTests.swift; sourceTree = "<group>"; };
-		55DB43E423A2DB4D00A7F37F /* RequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCache.swift; sourceTree = "<group>"; };
+		55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
-		55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharkScope.Configuration.swift; sourceTree = "<group>"; };
+		55DB43E823A2E62000A7F37F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		55E4D43723A7FAD600F33066 /* PlayerSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummaryRequest.swift; sourceTree = "<group>"; };
 		55E4D43923A7FC0F00F33066 /* PlayerSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummary.swift; sourceTree = "<group>"; };
 		55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
@@ -243,7 +273,12 @@
 		55ED3CDF23A5543A00754763 /* PlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerQuery.swift; sourceTree = "<group>"; };
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
+		79F6C99A40025504EB954DBA /* Pods-SharkScopeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScopeTests.release.xcconfig"; path = "Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests.release.xcconfig"; sourceTree = "<group>"; };
+		94C6446E5B7C5CE0E52E5BF9 /* Pods_SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99522483F304541E25BECCCD /* Pods-SharkScope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScope.release.xcconfig"; path = "Target Support Files/Pods-SharkScope/Pods-SharkScope.release.xcconfig"; sourceTree = "<group>"; };
 		9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokerTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB71FD47BDC1691899D3577 /* Pods_SharkScopeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkScopeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BADDCF2A95CA6D5D503337C1 /* Pods-SharkScope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScope.debug.xcconfig"; path = "Target Support Files/Pods-SharkScope/Pods-SharkScope.debug.xcconfig"; sourceTree = "<group>"; };
 		C9578A0BA2FBB228087C38E1 /* Pods-PokerTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTracker.release.xcconfig"; path = "Target Support Files/Pods-PokerTracker/Pods-PokerTracker.release.xcconfig"; sourceTree = "<group>"; };
 		FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.release.xcconfig"; path = "Target Support Files/Pods-Ranger/Pods-Ranger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +288,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187F49CD1F3066460F9A3A08 /* Pods_SharkScope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +297,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A1C2C623D4CFB7009C0F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1C2CE23D4CFB7009C0F12 /* SharkScope.framework in Frameworks */,
+				37811D9D4865A34425107ADD /* Pods_SharkScopeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +334,8 @@
 			children = (
 				2432394853E25E6DDA9F060B /* Pods_Ranger.framework */,
 				9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */,
+				94C6446E5B7C5CE0E52E5BF9 /* Pods_SharkScope.framework */,
+				AEB71FD47BDC1691899D3577 /* Pods_SharkScopeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -363,14 +410,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		552B413523D49FE500A6184F /* Tournaments */ = {
+			isa = PBXGroup;
+			children = (
+				55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */,
+				55A1C2D723D4D9C8009C0F12 /* Tournaments.csv */,
+				552B413623D4A03100A6184F /* Tournaments.swift */,
+				552B413823D4A13E00A6184F /* TournamentsRequest.swift */,
+			);
+			path = Tournaments;
+			sourceTree = "<group>";
+		};
 		552E543C23D164620056B305 /* SharkScope */ = {
 			isa = PBXGroup;
 			children = (
 				552E543D23D164620056B305 /* SharkScope.h */,
-				5521A553239DD170000D1AD1 /* SharkScope.Service.swift */,
-				55DB43E823A2E62000A7F37F /* SharkScope.Configuration.swift */,
+				5521A553239DD170000D1AD1 /* Service.swift */,
+				55DB43E823A2E62000A7F37F /* Configuration.swift */,
 				552E543E23D164620056B305 /* Info.plist */,
-				55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */,
 				5574DAC623A68DD400569790 /* Model */,
 			);
 			path = SharkScope;
@@ -380,8 +437,8 @@
 			isa = PBXGroup;
 			children = (
 				552E546D23D175DF0056B305 /* PokerTracker.h */,
-				555EA851239D609E000B5B62 /* PokerTracker.Service.swift */,
-				55095FFF23A30A5C006358EF /* PokerTracker.Configuration.swift */,
+				555EA851239D609E000B5B62 /* Service.swift */,
+				55095FFF23A30A5C006358EF /* Configuration.swift */,
 				552E546E23D175DF0056B305 /* Info.plist */,
 				5521A562239DF7D6000D1AD1 /* Model */,
 			);
@@ -429,10 +486,11 @@
 		5574DAC623A68DD400569790 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				55840BFD23A9C065000B06FF /* RootResponse */,
-				5574DAC723A68E8700569790 /* Request.swift */,
+				5574DAC723A68E8700569790 /* ApiRequest.swift */,
+				55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */,
+				553F11A423D4F100000D4C05 /* ApiResponse.swift */,
+				55840BFD23A9C065000B06FF /* JsonResponse */,
 				55840BF923A9BE5D000B06FF /* UserInfo.swift */,
-				55DB43E423A2DB4D00A7F37F /* RequestCache.swift */,
 				55840BF423A9B55D000B06FF /* StringRepresentable.swift */,
 				55840BF623A9BA0B000B06FF /* StringRepresenting.swift */,
 				555D217023A84AE6006E7708 /* BadgerFishKeyDecodingStrategy.swift */,
@@ -441,19 +499,21 @@
 				558D35E0239F3C45006C710D /* Metadata */,
 				558D35E3239F4299006C710D /* PlayerSummary */,
 				55698B9923AADFCC0065125C /* ActiveTournaments */,
+				552B413523D49FE500A6184F /* Tournaments */,
 				55EDF3DE23CE6AFA008A42AC /* CompletedTournaments */,
 				5592684523A9CA0900045F89 /* Timeline */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		55840BFD23A9C065000B06FF /* RootResponse */ = {
+		55840BFD23A9C065000B06FF /* JsonResponse */ = {
 			isa = PBXGroup;
 			children = (
+				55AD571823D4FA48002A2E22 /* JsonResponse.swift */,
 				55840BFE23A9C082000B06FF /* RootResponse.swift */,
 				55840BFB23A9BF94000B06FF /* Response.swift */,
 			);
-			path = RootResponse;
+			path = JsonResponse;
 			sourceTree = "<group>";
 		};
 		558D35E0239F3C45006C710D /* Metadata */ = {
@@ -503,6 +563,16 @@
 				5508E3FC23A4656000FFB173 /* TournamentViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55A1C2CA23D4CFB7009C0F12 /* SharkScopeTests */ = {
+			isa = PBXGroup;
+			children = (
+				55A1C2CB23D4CFB7009C0F12 /* TournamentsTests.swift */,
+				55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */,
+				55A1C2CD23D4CFB7009C0F12 /* Info.plist */,
+			);
+			path = SharkScopeTests;
 			sourceTree = "<group>";
 		};
 		55A3A3B523D3CDBA0083EB3D /* PlayersWindow */ = {
@@ -573,9 +643,11 @@
 			isa = PBXGroup;
 			children = (
 				555EA853239D6F19000B5B62 /* CHANGELOG.md */,
+				55A1C2C323D4B415009C0F12 /* Podfile */,
 				55C1868D239583DA0081B6B7 /* Ranger */,
 				55C529E523BD3F1400A6975A /* RangerTests */,
 				552E543C23D164620056B305 /* SharkScope */,
+				55A1C2CA23D4CFB7009C0F12 /* SharkScopeTests */,
 				552E546C23D175DF0056B305 /* PokerTracker */,
 				55C1868C239583DA0081B6B7 /* Products */,
 				AF9EDFA374391D329008F6DE /* Pods */,
@@ -590,6 +662,7 @@
 				55C529E423BD3F1400A6975A /* RangerTests.xctest */,
 				552E543B23D164610056B305 /* SharkScope.framework */,
 				552E546B23D175DF0056B305 /* PokerTracker.framework */,
+				55A1C2C923D4CFB7009C0F12 /* SharkScopeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -615,7 +688,6 @@
 		55C529E523BD3F1400A6975A /* RangerTests */ = {
 			isa = PBXGroup;
 			children = (
-				55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */,
 				55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */,
 				55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */,
 				55C529E823BD3F1500A6975A /* Info.plist */,
@@ -718,6 +790,10 @@
 				FEE49A2E7EE2C90322884755 /* Pods-Ranger.release.xcconfig */,
 				39801C953B85119218CCA0D2 /* Pods-PokerTracker.debug.xcconfig */,
 				C9578A0BA2FBB228087C38E1 /* Pods-PokerTracker.release.xcconfig */,
+				BADDCF2A95CA6D5D503337C1 /* Pods-SharkScope.debug.xcconfig */,
+				99522483F304541E25BECCCD /* Pods-SharkScope.release.xcconfig */,
+				26CCB80A45F65A84DBE9DFCB /* Pods-SharkScopeTests.debug.xcconfig */,
+				79F6C99A40025504EB954DBA /* Pods-SharkScopeTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -748,6 +824,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 552E544423D164620056B305 /* Build configuration list for PBXNativeTarget "SharkScope" */;
 			buildPhases = (
+				93FD8440123CFD035E0DF8CD /* [CP] Check Pods Manifest.lock */,
 				552E543623D164610056B305 /* Headers */,
 				552E543723D164610056B305 /* Sources */,
 				552E543823D164610056B305 /* Frameworks */,
@@ -780,6 +857,26 @@
 			productName = PokerTracker;
 			productReference = 552E546B23D175DF0056B305 /* PokerTracker.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		55A1C2C823D4CFB7009C0F12 /* SharkScopeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55A1C2D323D4CFB7009C0F12 /* Build configuration list for PBXNativeTarget "SharkScopeTests" */;
+			buildPhases = (
+				F175ABF82D099CA2B5D04303 /* [CP] Check Pods Manifest.lock */,
+				55A1C2C523D4CFB7009C0F12 /* Sources */,
+				55A1C2C623D4CFB7009C0F12 /* Frameworks */,
+				55A1C2C723D4CFB7009C0F12 /* Resources */,
+				A1C8485B2AA67EF89589199E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55A1C2D023D4CFB7009C0F12 /* PBXTargetDependency */,
+			);
+			name = SharkScopeTests;
+			productName = SharkScopeTests;
+			productReference = 55A1C2C923D4CFB7009C0F12 /* SharkScopeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		55C1868A239583DA0081B6B7 /* Ranger */ = {
 			isa = PBXNativeTarget;
@@ -837,6 +934,9 @@
 					552E546A23D175DF0056B305 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					55A1C2C823D4CFB7009C0F12 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					55C1868A239583DA0081B6B7 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1130;
@@ -863,6 +963,7 @@
 				55C1868A239583DA0081B6B7 /* Ranger */,
 				55C529E323BD3F1400A6975A /* RangerTests */,
 				552E543A23D164610056B305 /* SharkScope */,
+				55A1C2C823D4CFB7009C0F12 /* SharkScopeTests */,
 				552E546A23D175DF0056B305 /* PokerTracker */,
 			);
 		};
@@ -873,6 +974,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A1C2D823D4D9C8009C0F12 /* Tournaments.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,6 +984,14 @@
 			files = (
 				552E548623D176E80056B305 /* LatestHandPlayerQuery.sql in Resources */,
 				552E547F23D176D80056B305 /* StatisticsQuery.sql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A1C2C723D4CFB7009C0F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1C2D923D4D9C8009C0F12 /* Tournaments.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +1063,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		93FD8440123CFD035E0DF8CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SharkScope-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1C8485B2AA67EF89589199E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ABE83D7CA07ACB1497BFE652 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -970,6 +1119,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ranger/Pods-Ranger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F175ABF82D099CA2B5D04303 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SharkScopeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -982,16 +1153,20 @@
 				552E546123D1658C0056B305 /* DynamicCodingKey.swift in Sources */,
 				552E545023D165570056B305 /* PlayerSummaryRequest.swift in Sources */,
 				552E545F23D1658C0056B305 /* StringRepresenting.swift in Sources */,
+				55AD571923D4FA48002A2E22 /* JsonResponse.swift in Sources */,
 				552E545E23D1658C0056B305 /* StringRepresentable.swift in Sources */,
 				552E544E23D165520056B305 /* ActiveTournamentsRequest.swift in Sources */,
 				552E544C23D1654E0056B305 /* CompletedTournamentsRequest.swift in Sources */,
 				552E545323D1655E0056B305 /* LinearRegression.swift in Sources */,
 				552E546023D1658C0056B305 /* BadgerFishKeyDecodingStrategy.swift in Sources */,
-				552E546323D165960056B305 /* SharkScope.Configuration.swift in Sources */,
+				552E546323D165960056B305 /* Configuration.swift in Sources */,
 				552E545823D165820056B305 /* MetadataRequest.swift in Sources */,
-				552E545B23D1658C0056B305 /* Request.swift in Sources */,
+				552B413723D4A03100A6184F /* Tournaments.swift in Sources */,
+				552E545B23D1658C0056B305 /* ApiRequest.swift in Sources */,
 				552E545923D1658C0056B305 /* RootResponse.swift in Sources */,
+				552B413923D4A13E00A6184F /* TournamentsRequest.swift in Sources */,
 				552E545A23D1658C0056B305 /* Response.swift in Sources */,
+				553F11A523D4F100000D4C05 /* ApiResponse.swift in Sources */,
 				552E545223D1655E0056B305 /* GraphData.swift in Sources */,
 				552E545723D165820056B305 /* Metadata.swift in Sources */,
 				552E544A23D165440056B305 /* Timeline.swift in Sources */,
@@ -999,9 +1174,9 @@
 				552E544B23D1654E0056B305 /* CompletedTournaments.swift in Sources */,
 				552E545123D1655E0056B305 /* Statistics.swift in Sources */,
 				552E545C23D1658C0056B305 /* UserInfo.swift in Sources */,
-				552E544823D164CF0056B305 /* SharkScope.Service.swift in Sources */,
+				552E544823D164CF0056B305 /* Service.swift in Sources */,
 				552E546423D1660F0056B305 /* ApiError.swift in Sources */,
-				552E545D23D1658C0056B305 /* RequestCache.swift in Sources */,
+				552E545D23D1658C0056B305 /* ApiRequestCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,8 +1196,20 @@
 				553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */,
 				552E548023D176DF0056B305 /* LiveTourneyPlayer.swift in Sources */,
 				552E548523D176E80056B305 /* LatestHandPlayerQuery.swift in Sources */,
-				552E547823D176BF0056B305 /* PokerTracker.Configuration.swift in Sources */,
-				552E547723D175FA0056B305 /* PokerTracker.Service.swift in Sources */,
+				552E547823D176BF0056B305 /* Configuration.swift in Sources */,
+				552E547723D175FA0056B305 /* Service.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A1C2C523D4CFB7009C0F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1C2D623D4D90E009C0F12 /* Tournaments.swift in Sources */,
+				55A1C2CC23D4CFB7009C0F12 /* TournamentsTests.swift in Sources */,
+				55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */,
+				55A1C2D423D4D018009C0F12 /* LinearRegressionTests.swift in Sources */,
+				55A1C2D523D4D1AE009C0F12 /* LinearRegression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,7 +1257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5504226923C18E3D0040A3DE /* LinearRegression.swift in Sources */,
 				55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */,
 				55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */,
 				5585E40E23C986930009E98F /* TableInfo.swift in Sources */,
@@ -1089,6 +1275,11 @@
 			isa = PBXTargetDependency;
 			target = 552E546A23D175DF0056B305 /* PokerTracker */;
 			targetProxy = 552E547023D175DF0056B305 /* PBXContainerItemProxy */;
+		};
+		55A1C2D023D4CFB7009C0F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 552E543A23D164610056B305 /* SharkScope */;
+			targetProxy = 55A1C2CF23D4CFB7009C0F12 /* PBXContainerItemProxy */;
 		};
 		55C529EA23BD3F1500A6975A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1111,6 +1302,7 @@
 /* Begin XCBuildConfiguration section */
 		552E544523D164620056B305 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BADDCF2A95CA6D5D503337C1 /* Pods-SharkScope.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1142,6 +1334,7 @@
 		};
 		552E544623D164620056B305 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99522483F304541E25BECCCD /* Pods-SharkScope.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1230,6 +1423,49 @@
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		55A1C2D123D4CFB7009C0F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26CCB80A45F65A84DBE9DFCB /* Pods-SharkScopeTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NG36MJV4JP;
+				INFOPLIST_FILE = SharkScopeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.SharkScopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		55A1C2D223D4CFB7009C0F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79F6C99A40025504EB954DBA /* Pods-SharkScopeTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NG36MJV4JP;
+				INFOPLIST_FILE = SharkScopeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eppz.SharkScopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1460,6 +1696,15 @@
 			buildConfigurations = (
 				552E547523D175DF0056B305 /* Debug */,
 				552E547623D175DF0056B305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55A1C2D323D4CFB7009C0F12 /* Build configuration list for PBXNativeTarget "SharkScopeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55A1C2D123D4CFB7009C0F12 /* Debug */,
+				55A1C2D223D4CFB7009C0F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -15,6 +15,7 @@ public struct Configuration: Decodable
 
     let Username: String
     let Password: String
+    let StatisticsPassword: String
     let UserAgent: String
     
     

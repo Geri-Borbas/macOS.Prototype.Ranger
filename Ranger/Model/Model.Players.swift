@@ -43,7 +43,7 @@ extension Model
         public static func cachedPlayers() -> [Player]
         {
             // Only if any.
-            guard let cachedFileURLs = RequestCache().cachedFiles(at: "networks/pokerstars/players")
+            guard let cachedFileURLs = ApiRequestCache().cachedFiles(at: "networks/pokerstars/players")
             else { return [] }
         
             // Map names.
@@ -69,7 +69,6 @@ extension Model
                 Model.Player(name: "Borbas.Geri"),
                 Model.Player(name: "rehakzsolt"),
                 Model.Player(name: "Oliana88"),
-                Model.Player(name: "fülemüle"),
                 Model.Player(name: "quAAsar"),
                 Model.Player(name: "wASH1K"),
                 Model.Player(name: "NNiubility"),
@@ -83,7 +82,9 @@ extension Model
                 Model.Player(name: "@rtemur"),
                 Model.Player(name: "LuckyMarat"),
                 Model.Player(name: "AlekseyM1983"),
-            ]
+                Model.Player(name: "SpOs Im GoOd"),
+                Model.Player(name: "fülemüle")
+            ].sorted()
             
             // let playerName = "g1anfar"
             // let playerName = "ScauHades"

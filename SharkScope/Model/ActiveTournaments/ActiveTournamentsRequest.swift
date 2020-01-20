@@ -17,11 +17,11 @@ import Foundation
 /// not blocked are included.
 ///
 /// Cost 1 per player (players inquired within the past 3 hours cost nothing).
-public struct ActiveTournamentsRequest: Request
+public struct ActiveTournamentsRequest: ApiRequest
 {
     
     
-    public typealias RootResponseType = ActiveTournaments
+    public typealias ApiResponseType = ActiveTournaments
     
     
     let network: String

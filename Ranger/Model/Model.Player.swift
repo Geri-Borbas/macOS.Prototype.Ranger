@@ -114,6 +114,15 @@ extension Model.Player: Equatable
     static func == (lhs: Model.Player, rhs: Model.Player) -> Bool
     { lhs.name == rhs.name }
 }
+    
+
+extension Model.Player: Comparable
+{
+    
+    
+    static func < (lhs: Model.Player, rhs: Model.Player) -> Bool
+    { lhs.name.lowercased() < rhs.name.lowercased() }
+}
 
 
 // MARK: - Description

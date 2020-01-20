@@ -1,0 +1,6 @@
+framework module Pods_SharkScopeTests {
+  umbrella header "Pods-SharkScopeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

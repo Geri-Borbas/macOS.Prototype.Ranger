@@ -4,8 +4,9 @@
 * Doing
 
     + Next up
-        + Get tournament history
-            + SharkScope request / cache cleanup
+        + Fetch sharkscope status after requests (explicitly in controllers)
+            + A simple authenticated request with error can be sufficient
+        + Add column for view / manage cached content
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -25,6 +26,51 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+            
+* Feature/Data/SharkScope/Tournaments/0.2.7
+
+    + `SharkScope.Service.fetch`
+        + Cache request before decode (`ApiResponse.stringRepresentation` is static)
+        + Fixed "Accept" header (strict `application/json` for JSON requests)
+        
+
+* Feature/Data/SharkScope/Tournaments/0.2.6
+
+    + Added `SharkScope.Configuration.StatisticsPassword` (for `/poker-statistics/` requests)
+    + Fixed `Tournaments` path (added extension)
+    + Some calculation prototype from `Tournaments` data
+
+* Feature/Data/SharkScope/Tournaments/0.2.5
+
+    + Hooked up `TournamentsQuery` to UI / fixed cache file name
+
+* Feature/Data/SharkScope/Tournaments/0.2.3
+
+    + Removed hardcoded base path stripping
+        + Removed `SharkScope.Service.basePath`
+        + Caching is initialized from `ApiRequest` instead of `UrlCompoments`
+
+* Feature/Data/SharkScope/Tournaments/0.2.0
+
+    + SharkScope Request / Response refactor (for supporting CSV responses)
+        + `ApiRequest` now have `basePath` and `contentType`
+        + Created `ApiResponse` as base protocol for every response (for `SharkScope.Service.fetch`)
+            + Can be initialized from string (either JSON or CSV)
+            + Can be represented as string (either beautyfied JSON or CSV)
+        + Removed serialization code from `SharkScope.Service.fetch`
+            + Created `JsonResponse` with default implementations for JSON serialization
+            + Created  `Tournaments` for (the only) CSV serialization
+        + Created `Tournaments` request (yet untested)
+
+* Feature/Data/SharkScope/Tournaments/0.1.0
+
+    + Created `Tournaments` model
+        + Added `SharkScope.Request.basePath` / `SharkScope.Request.contentType` (with default values) 
+        + Can be intialized from SharkScope `Tournaments.csv` format
+    + Added `SwiftCSV` to `SharkScope` module
+    + Added `SharkScopeTests` target
+        + Moved `LinearRegression` tests in place
+        + Created tests for CSV parsing
 
 * 1.8.9
 

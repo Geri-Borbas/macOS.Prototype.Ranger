@@ -21,11 +21,11 @@ import Foundation
 /// 1~1000 then order=player,1~2000, etc.).
 ///
 /// Cost 1 Search per 100 tournaments returned.
-public struct CompletedTournamentsRequest: Request
+public struct CompletedTournamentsRequest: ApiRequest
 {
     
     
-    public typealias RootResponseType = CompletedTournaments
+    public typealias ApiResponseType = CompletedTournaments
     
     
     let network: String

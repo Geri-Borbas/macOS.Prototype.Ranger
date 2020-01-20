@@ -14,7 +14,7 @@ import SharkScope
 {
     
     
-    func fetchCompletedTournementsRequested(for playerName: String)
+    func fetchTournementsRequested(for playerName: String)
 }
 
 
@@ -53,8 +53,8 @@ class PlayersTableView: NSTableView
             NSMenuItem.separator(),
             
             NSMenuItem(
-                title: "Fetch Completed Tournaments (25 Search)",
-                action: #selector(fetchCompletedTournaments),
+                title: "Fetch Tournaments (25 Search)",
+                action: #selector(fetchTournaments),
                 keyEquivalent: "")
                 .with(
                     representedObject: player,
@@ -101,14 +101,14 @@ class PlayersTableView: NSTableView
         ])
     }
 
-    @objc func fetchCompletedTournaments(menuItem: NSMenuItem)
+    @objc func fetchTournaments(menuItem: NSMenuItem)
     {
         // Get model.
         guard let player = menuItem.representedObject as? Model.Player
         else { return }
         
         // Dispatch request to delegate if any.
-        playersTableViewDelegate?.fetchCompletedTournementsRequested(for: player.name)
+        playersTableViewDelegate?.fetchTournementsRequested(for: player.name)
     }
 
     @objc func copyNameToClipboard(menuItem: NSMenuItem)
@@ -140,7 +140,7 @@ class PlayersTableView: NSTableView
         else { return }
         
         // Remove file.
-        RequestCache().deleteTablesCache(for: player.name)
+        ApiRequestCache().deleteTablesCache(for: player.name)
     }
 
     @objc func deleteStatisticsCache(menuItem: NSMenuItem)
@@ -150,7 +150,7 @@ class PlayersTableView: NSTableView
         else { return }
         
         // Remove file.
-        RequestCache().deleteStatisticsCache(for: player.name)
+        ApiRequestCache().deleteStatisticsCache(for: player.name)
     }
     
 }

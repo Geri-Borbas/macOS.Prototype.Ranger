@@ -15,7 +15,8 @@ struct ApiError: RootResponse
     
     let Response: ErrorResponse
     
-    func NSError(domain: String) -> NSError
+    
+    func NSError(domain: String) -> Foundation.NSError
     {
         return Foundation.NSError(
             domain: domain,

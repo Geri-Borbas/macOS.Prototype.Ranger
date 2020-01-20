@@ -13,11 +13,11 @@ import Foundation
 /// Requests player summary information. The response contains basic
 /// information about the user as well as all free statistical
 /// information and a small number of most recent tournament results.
-public struct PlayerSummaryRequest: Request
+public struct PlayerSummaryRequest: ApiRequest
 {
     
     
-    public typealias RootResponseType = PlayerSummary
+    public typealias ApiResponseType = PlayerSummary
     
     
     let network: String

@@ -15,11 +15,11 @@ import Foundation
 /// response is set to cache on the client. The response header will not
 /// contain an appVersion attribute even if there is a valid application
 /// version.
-public struct MetadataRequest: Request
+public struct MetadataRequest: ApiRequest
 {
     
     
-    public typealias RootResponseType = Metadata
+    public typealias ApiResponseType = Metadata
     
     
     public var path: String { "metadata" }

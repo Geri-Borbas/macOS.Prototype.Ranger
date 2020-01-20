@@ -18,8 +18,8 @@ public indirect enum Error: Swift.Error
     case noData
     case noStringData
     case jsonSerializationError(_: Swift.Error)
-    case jsonDecodingError(_: Swift.Error)
-    case noJSONData
+    case decodingError(_: Swift.Error)
+    case noDecodedData
 }
 
 
@@ -28,9 +28,7 @@ public struct Service
        
     
     static var errorDomain: String = "SharkScope"
-    static var basePath: String = "/api/searcher/"
     static var log: Bool = false
-    static var user: UserInfo?
     
     
     public init()
@@ -39,27 +37,21 @@ public struct Service
     
     // MARK: - Networking
     
-    public func fetch<RequestType: Request>(_ request: RequestType,
-                                            completion: @escaping (Result<RequestType.RootResponseType, SharkScope.Error>) -> Void) where RequestType.RootResponseType: RootResponse
+    public func fetch<RequestType: ApiRequest>(_ request: RequestType, completion: @escaping (Result<RequestType.ApiResponseType, SharkScope.Error>) -> Void)
     {
-        
         // Create URL Components.
-        var urlComponents = URLComponents()
-            urlComponents.scheme = "https"
-            urlComponents.host = "sharkscope.com"
-            urlComponents.path = Service.basePath + request.path
-            urlComponents.queryItems = request.parameters.map { eachElement in URLQueryItem(name: eachElement.key, value: eachElement.value) }
+        let urlComponents = request.urlComponents
         
         // Lookup cache first.
-        let cache = RequestCache()
-        if let cachedResponse: RequestType.RootResponseType = cache.cachedResponse(for: urlComponents), request.useCache
+        let cache = ApiRequestCache()
+        if let cachedResponse: RequestType.ApiResponseType = cache.cachedResponse(for: request), request.useCache
         {
-            // print("Found JSON cache, skip request.")
+            print("Found file cache, skip request.")
             return completion(.success(cachedResponse))
         }
         else
         {
-            // print("Don't use JSON cache.")
+            print("Don't use file cache.")
         }
         
         // Create URL.
@@ -73,18 +65,30 @@ public struct Service
         // Load configuration.
         let configuration = Configuration.load()
         
+        // Select password.
+        let password = (request.contentType == .CSV)
+            ? configuration.StatisticsPassword
+            : configuration.Password
+        
+        // Select content type.
+        let contentType = (request.contentType == .CSV)
+            ? "text/html, application/json, application/csv"
+            : "application/json"
+        
         // Headers.
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.setValue(contentType, forHTTPHeaderField: "Accept")
         urlRequest.setValue(configuration.Username, forHTTPHeaderField: "Username")
-        urlRequest.setValue(configuration.Password, forHTTPHeaderField: "Password")
+        urlRequest.setValue(password, forHTTPHeaderField: "Password")
         urlRequest.setValue(configuration.UserAgent, forHTTPHeaderField: "User-Agent")
 
-                   
         // Log.
         if (Service.log)
         {
             print("urlRequest.url: \(urlRequest.url!)")
         }
+        
+
+        print("urlRequest.url: \(urlRequest.url!)")
         
         // Create task.
         let task = URLSession.shared.dataTask(with: urlRequest)
@@ -114,68 +118,29 @@ public struct Service
                 print("dataString: \(dataString)")
             }
             
-            // JSON.
-            var JSON: Dictionary<String, AnyObject> = [:]
-            do { JSON = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, AnyObject> }
-            catch
+            // Cache (before decoding).
+            if let cacheFileURL = cache.cacheFileURL(for: request)
             {
-                // Return on the main thread.
-                DispatchQueue.main.async()
-                { completion(.failure(SharkScope.Error.jsonSerializationError(error))) }
-                
-                return
-            }
-            
-            // Log.
-            if (Service.log)
-            {
-                print("JSON: \(JSON)")
-            }
-            
-            // Create JSON decoder.
-            let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromBadgerFish
-                decoder.dateDecodingStrategy = .millisecondsSince1970
-            
-            // Try to decode error response if any.
-            if let decodedErrorResponse = try? decoder.decode(ApiError.self, from: data)
-            {
-                // Return error on the main thread.
-                DispatchQueue.main.async()
-                { completion(.failure(SharkScope.Error.apiError(decodedErrorResponse.NSError(domain: Service.errorDomain)))) }
-                return
-            }
-            
-            // Cache.
-            if let cacheFileURL = cache.cacheFileURL(for: urlComponents)
-            {
-                // Create pretty JSON.
-                var _JSONdata: Data?
-                do { _JSONdata = try JSONSerialization.data(withJSONObject: JSON, options: [.prettyPrinted]) }
-                catch { print("Could not serialize JSON. \(error)") }
-                
-                // Create String (if any JSON).
-                let JSONdata = _JSONdata ?? Data()
-                let JSONstring = String(data: JSONdata, encoding: String.Encoding.utf8)!
+                // Create string representation (pretty JSON or CSV).
+                var stringRepresentation: String?
+                do { stringRepresentation = try RequestType.ApiResponseType.self.stringRepresentation(from: data) }
+                catch { print("Could not get string representation. \(error)") }
                 
                 // Save.
-                do { try JSONstring.write(to: cacheFileURL, atomically: true, encoding: String.Encoding.utf8) }
+                do { try stringRepresentation?.write(to: cacheFileURL, atomically: true, encoding: String.Encoding.utf8) }
                 catch { print("Could not cahce file. \(error)") }
             }
             
             // Decode.
-            var _decodedResponse: RequestType.RootResponseType?
+            var decodedResponseOrNil: RequestType.ApiResponseType?
             do
-            { _decodedResponse = try decoder.decode(RequestType.RootResponseType.self, from: data) }
-            catch { return completion(.failure(SharkScope.Error.jsonDecodingError(error))) }
+            { decodedResponseOrNil = try RequestType.ApiResponseType.self(from: dataString) }
+            catch { return completion(.failure(SharkScope.Error.decodingError(error))) }
             
-            // Only with JSON data.
-            guard let decodedResponse = _decodedResponse
-            else { return completion(.failure(SharkScope.Error.noJSONData)) }
-            
-            // Retain latest `UserInfo`.
-            Self.user = decodedResponse.Response.UserInfo
-            
+            // Only with decoded data.
+            guard let decodedResponse = decodedResponseOrNil
+            else { return completion(.failure(SharkScope.Error.noDecodedData)) }
+                        
             // Return on the main thread.
             DispatchQueue.main.async()
             { completion(.success(decodedResponse)) }
@@ -240,10 +205,5 @@ public struct Service
     // MARK: - UI
     
     public var status: String
-    {
-        guard let user = Self.user
-        else { return "Not logged in." }
-        
-        return String(format: "%d search remaining (logged in as %@).", user.RemainingSearches, user.Username)
-    }
+    { return "No automatic SharkScope status implemented at the moment." }
 }

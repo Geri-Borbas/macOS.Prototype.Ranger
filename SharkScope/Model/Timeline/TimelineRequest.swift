@@ -11,11 +11,11 @@ import Foundation
 
 /// 3.3.14. TIMELINE
 /// The request retrieves the player’s timeline with all events.
-public struct TimelineRequest: Request
+public struct TimelineRequest: ApiRequest
 {
     
     
-    public typealias RootResponseType = Timeline
+    public typealias ApiResponseType = Timeline
     
     
     let network: String
