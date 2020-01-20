@@ -10,7 +10,8 @@ import Foundation
 import SwiftUI
 
 
-class App: TableTrackerDelegate, StatusBarItemDelegate
+/// The root application controller object.
+class App: NSObject, TableTrackerDelegate, StatusBarItemDelegate
 {
     
     
@@ -32,6 +33,35 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
     }
     
     
+    // MARK: - Menu Events
+    
+    @IBAction func openCachedPlayersDidClick(_ sender: AnyObject)
+    {
+        // Instantiate window.
+        let window = PlayersWindowController.instantiateAndShow(
+            withPlayers: Model.Players.cachedPlayers(),
+            hiddenColumnIdentifiers: ["Seat", "Stack"]
+        )
+        
+        // Add menu item.
+        if let window = window
+        { NSApp.addWindowsItem(window, title: "Cached Players", filename: false) }
+    }
+    
+    @IBAction func openRegsDidClick(_ sender: AnyObject)
+    {
+        // Instantiate window.
+        let window = PlayersWindowController.instantiateAndShow(
+                withPlayers: Model.Players.regs(),
+                hiddenColumnIdentifiers: ["Seat", "Stack"]
+        )
+        
+        // Add menu item.
+        if let window = window
+        { NSApp.addWindowsItem(window, title: "Regs", filename: false) }
+    }
+    
+    
     // MARK: - Status Bar Item Events
     
     func statusBarItemClicked(menuItem: StatusBarItem.MenuItem)
@@ -39,15 +69,9 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
         switch menuItem
         {
             case StatusBarItem.MenuItem.openCachedPlayers:
-                PlayersWindowController.instantiateAndShow(
-                    withPlayers: Model.Players.cachedPlayers(),
-                    hiddenColumnIdentifiers: ["Seat", "Stack"]
-                )
+                print("StatusBarItem.MenuItem.openCachedPlayers")
             case StatusBarItem.MenuItem.openRegs:
-                PlayersWindowController.instantiateAndShow(
-                    withPlayers: Model.Players.regs(),
-                    hiddenColumnIdentifiers: ["Seat", "Stack"]
-            )
+                print("StatusBarItem.MenuItem.openRegs")
             default:
                 print("No window controller for menu item \(menuItem.title).")
         }
@@ -66,9 +90,22 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
         
         // Window (do not create new window on table seating changes).
         if (isTourneyTableWindow && isSameTourney)
-        { windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: tableWindowInfo) }
+        {
+            // Only update.
+            windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: tableWindowInfo)
+        }
         else
-        { tableWindowController = TournamentWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo) }
+        {
+            // Instantiate new tournament window.
+            tableWindowController = TournamentWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo)
+            
+            // Add menu item.
+            if let window = tableWindowController?.window
+            {
+                let menuItemTitle = "Tournament \(tableWindowInfo.tableInfo?.tournamentNumber ?? "(?)") Table \(String(tableWindowInfo.tableInfo?.tableNumber ?? 0))"
+                NSApp.addWindowsItem(window, title: menuItemTitle, filename: false)
+            }
+        }
     }
     
     func windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: TableWindowInfo)
@@ -76,8 +113,15 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
         // Only if any.
         guard let tableWindowController = tableWindowController else { return }
         
-        // Update.
+        // Update tournament window.
         tableWindowController.update(with: tableWindowInfo)
+        
+        // Update menu item.
+        if let window = tableWindowController.window
+        {
+            let menuItemTitle = "Tournament \(tableWindowInfo.tableInfo?.tournamentNumber ?? "(?)") Table \(String(tableWindowInfo.tableInfo?.tableNumber ?? 0))"
+            NSApp.changeWindowsItem(window, title: menuItemTitle, filename: false)
+        }
     }
     
     func windowTrackerDidStopTrackingTable(tableWindowInfo: TableWindowInfo)

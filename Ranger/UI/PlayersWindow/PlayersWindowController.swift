@@ -13,7 +13,7 @@ class PlayersWindowController: NSWindowController
 {
         
     
-    static func instantiateAndShow(withPlayers players: [Model.Player], hiddenColumnIdentifiers: [String]? = nil)
+    static func instantiateAndShow(withPlayers players: [Model.Player], hiddenColumnIdentifiers: [String]? = nil) -> NSWindow?
     {
         // Instantiate a new controller.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -35,5 +35,8 @@ class PlayersWindowController: NSWindowController
             window.standardWindowButton(.zoomButton)?.isHidden = true
             window.standardWindowButton(.closeButton)?.isHidden = true
         }
+        
+        // Return window reference.
+        return playersWindowController.window
     }
 }

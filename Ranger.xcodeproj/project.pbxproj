@@ -230,7 +230,7 @@
 		5592684823A9CA1500045F89 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		559F5F3523BEBA060070F2D6 /* PercentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentProvider.swift; sourceTree = "<group>"; };
 		559FFB4323D5745E002A401B /* CacheCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCellView.swift; sourceTree = "<group>"; };
-		55A1C2C323D4B415009C0F12 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		55A1C2C323D4B415009C0F12 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		55A1C2C923D4CFB7009C0F12 /* SharkScopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharkScopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A1C2CB23D4CFB7009C0F12 /* TournamentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTests.swift; sourceTree = "<group>"; };
 		55A1C2CD23D4CFB7009C0F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };

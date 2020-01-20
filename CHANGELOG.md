@@ -4,15 +4,12 @@
 * Doing
 
     + Next up
+        + Multi-Table
+            + Window Simulator
         + Fetch sharkscope status after requests (explicitly in controllers)
             + A simple authenticated request with error can be sufficient
+        + Aggregate sessions / calculate session stats
         
-    + Quick Features (to right-click context menus)
-        + Normalized / Absolute switch for Finishes histogram
-        + Slope could be drawn for a distinct small icon (not cover histogram)
-        + `TableWindowInfo`
-            + Regex title recognition (with tests)
-
     + Features
         + Final table positions column
         + Add nationality (flag icon) with local time (!)
@@ -25,6 +22,15 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+        + Normalized / Absolute switch for Finishes histogram
+        + `TableWindowInfo`
+            + Regex title recognition (with tests)
+
+* Feature/UI/Window_Tracking/0.0.2
+
+    + Added application menu items
+        + Windows gets added to window menu
+        + `StatusBarItem` is deprecated
 
 * 1.9.1
 

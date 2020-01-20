@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
 {
 
     
-    var app: App = App()
+    @IBOutlet weak var app: App!
     
 
     func applicationDidFinishLaunching(_ notification: Notification)
