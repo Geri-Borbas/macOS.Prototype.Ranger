@@ -17,5 +17,5 @@ public protocol ApiResponse: Decodable
     init(from string: String) throws
     
     /// Response should be represented as string (for disk caching).
-    func stringRepresentation(from data: Data) throws -> String
+    static func stringRepresentation(from data: Data) throws -> String
 }

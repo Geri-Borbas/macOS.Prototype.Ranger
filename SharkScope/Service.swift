@@ -66,10 +66,17 @@ public struct Service
         let configuration = Configuration.load()
         
         // Select password.
-        let password = (request.contentType == .CSV) ? configuration.StatisticsPassword : configuration.Password
+        let password = (request.contentType == .CSV)
+            ? configuration.StatisticsPassword
+            : configuration.Password
+        
+        // Select content type.
+        let contentType = (request.contentType == .CSV)
+            ? "text/html, application/json, application/csv"
+            : "application/json"
         
         // Headers.
-        urlRequest.setValue("text/html, application/json, application/csv", forHTTPHeaderField: "Accept")
+        urlRequest.setValue(contentType, forHTTPHeaderField: "Accept")
         urlRequest.setValue(configuration.Username, forHTTPHeaderField: "Username")
         urlRequest.setValue(password, forHTTPHeaderField: "Password")
         urlRequest.setValue(configuration.UserAgent, forHTTPHeaderField: "User-Agent")
@@ -79,6 +86,9 @@ public struct Service
         {
             print("urlRequest.url: \(urlRequest.url!)")
         }
+        
+
+        print("urlRequest.url: \(urlRequest.url!)")
         
         // Create task.
         let task = URLSession.shared.dataTask(with: urlRequest)
@@ -108,6 +118,19 @@ public struct Service
                 print("dataString: \(dataString)")
             }
             
+            // Cache (before decoding).
+            if let cacheFileURL = cache.cacheFileURL(for: request)
+            {
+                // Create string representation (pretty JSON or CSV).
+                var stringRepresentation: String?
+                do { stringRepresentation = try RequestType.ApiResponseType.self.stringRepresentation(from: data) }
+                catch { print("Could not get string representation. \(error)") }
+                
+                // Save.
+                do { try stringRepresentation?.write(to: cacheFileURL, atomically: true, encoding: String.Encoding.utf8) }
+                catch { print("Could not cahce file. \(error)") }
+            }
+            
             // Decode.
             var decodedResponseOrNil: RequestType.ApiResponseType?
             do
@@ -117,19 +140,6 @@ public struct Service
             // Only with decoded data.
             guard let decodedResponse = decodedResponseOrNil
             else { return completion(.failure(SharkScope.Error.noDecodedData)) }
-            
-            // Cache.
-            if let cacheFileURL = cache.cacheFileURL(for: request)
-            {
-                // Create string representation (pretty JSON or CSV).
-                var stringRepresentation: String?
-                do { stringRepresentation = try decodedResponse.stringRepresentation(from: data) }
-                catch { print("Could not get string representation. \(error)") }
-                
-                // Save.
-                do { try stringRepresentation?.write(to: cacheFileURL, atomically: true, encoding: String.Encoding.utf8) }
-                catch { print("Could not cahce file. \(error)") }
-            }
                         
             // Return on the main thread.
             DispatchQueue.main.async()

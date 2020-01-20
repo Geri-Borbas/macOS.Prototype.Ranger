@@ -15,7 +15,6 @@ public struct Tournaments: ApiResponse, Equatable
 
     
     public let tournaments: [Tournament]
-    let csvStringRepresentation: String
     
     
     public struct Tournament: Equatable, Decodable
@@ -79,10 +78,7 @@ public struct Tournaments: ApiResponse, Equatable
     
     
     public init(from csvString: String) throws
-    {
-        // Retain csv representation.
-        self.csvStringRepresentation = csvString
-        
+    {        
         // Deserialize csv.
         let csv = try CSV(string: csvString)
         self.tournaments = csv.namedRows.map
@@ -92,6 +88,6 @@ public struct Tournaments: ApiResponse, Equatable
         }
     }
     
-    public func stringRepresentation(from data: Data) throws -> String
-    { return csvStringRepresentation }
+    public static func stringRepresentation(from data: Data) throws -> String
+    { return String(decoding: data, as: UTF8.self) }
 }

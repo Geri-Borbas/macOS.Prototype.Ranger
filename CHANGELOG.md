@@ -4,8 +4,9 @@
 * Doing
 
     + Next up
-            + Fetch sharkscope status after requests (explicitly in controllers)
-                + A simple authenticated request with error can be sufficient 
+        + Fetch sharkscope status after requests (explicitly in controllers)
+            + A simple authenticated request with error can be sufficient
+        + Add column for view / manage cached content
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -25,6 +26,13 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+            
+* Feature/Data/SharkScope/Tournaments/0.2.7
+
+    + `SharkScope.Service.fetch`
+        + Cache request before decode (`ApiResponse.stringRepresentation` is static)
+        + Fixed "Accept" header (strict `application/json` for JSON requests)
+        
 
 * Feature/Data/SharkScope/Tournaments/0.2.6
 

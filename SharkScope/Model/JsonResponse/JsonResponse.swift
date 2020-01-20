@@ -34,12 +34,16 @@ extension JsonResponse
         self = try decoder.decode(Self.self, from: jsonData)
     }
     
-    public func stringRepresentation(from data: Data) throws -> String
+    public static func stringRepresentation(from data: Data) throws -> String
     {
         // Decode JSON to generic dictionary.
         var JSON: Dictionary<String, AnyObject> = [:]
         do { JSON = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, AnyObject> }
-        catch { throw SharkScope.Error.jsonSerializationError(error) }
+        catch
+        {
+            print("Could not deserialize JSON. \(error)")
+            return String(decoding: data, as: UTF8.self)
+        }
 
         // Log.
         if (Service.log)
@@ -48,7 +52,11 @@ extension JsonResponse
         // Create pretty JSON from generic dictionary.
         var _JSONdata: Data?
         do { _JSONdata = try JSONSerialization.data(withJSONObject: JSON, options: [.prettyPrinted]) }
-        catch { print("Could not serialize JSON. \(error)") }
+        catch
+        {
+            print("Could not serialize JSON. \(error)")
+            return String(decoding: data, as: UTF8.self)
+        }
         
         // Create String (if any JSON).
         let JSONdata = _JSONdata ?? Data()
