@@ -36,4 +36,11 @@ public struct ActiveTournamentsRequest: ApiRequest
         ]
     }
     public var useCache: Bool = false
+    
+    
+    public init(network: String, player: String)
+    {
+        self.network = network
+        self.player = player
+    }
 }

@@ -66,9 +66,9 @@ extension Model
         public static func regs() -> [Player]
         {
             return [
-                Model.Player(name: "Borbas.Geri"),
+                
+                // Cached Tournaments.
                 Model.Player(name: "rehakzsolt"),
-                Model.Player(name: "Oliana88"),
                 Model.Player(name: "quAAsar"),
                 Model.Player(name: "wASH1K"),
                 Model.Player(name: "NNiubility"),
@@ -83,7 +83,24 @@ extension Model
                 Model.Player(name: "LuckyMarat"),
                 Model.Player(name: "AlekseyM1983"),
                 Model.Player(name: "SpOs Im GoOd"),
-                Model.Player(name: "fülemüle")
+                Model.Player(name: "fülemüle"),
+                Model.Player(name: "B0aR"),
+                Model.Player(name: "Gromobix"),
+                Model.Player(name: "LaPC"),
+                
+                // Empty.
+                Model.Player(name: "Alfa2012"),
+                Model.Player(name: "ShipItSicmik777"),
+                Model.Player(name: "balder24"),
+                
+                // Opted-Out.
+                Model.Player(name: "Oliana88"),
+                Model.Player(name: "wolfeboyocd"),
+                Model.Player(name: "denis1986211"),
+                
+                // And me.
+                Model.Player(name: "Borbas.Geri"),
+                
             ].sorted()
             
             // let playerName = "g1anfar"

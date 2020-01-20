@@ -374,3 +374,20 @@ extension Model.Player
         )
     }
 }
+
+
+// MARK: - Cache
+
+extension Model.Player.SharkScopeData
+{
+    
+    
+    var hasStatisticsCache: Bool
+    { ApiRequestCache().hasCache(for: PlayerSummaryRequest(network: "PokerStars", player: playerName)) }
+    
+    var hasActiveTournamentsCache: Bool
+    { ApiRequestCache().hasCache(for: ActiveTournamentsRequest(network: "PokerStars", player: playerName)) }
+    
+    var hasTournamentsCache: Bool
+    { ApiRequestCache().hasCache(for: TournamentsRequest(network: "PokerStars", player: playerName)) }
+}

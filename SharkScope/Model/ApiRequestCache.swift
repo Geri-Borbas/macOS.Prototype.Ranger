@@ -16,6 +16,19 @@ public struct ApiRequestCache
     public init()
     { }
     
+    
+    
+    public func hasCache<RequestType: ApiRequest>(for request: RequestType) -> Bool
+    {
+        // Resolve file name.
+        guard let cacheFileURL = cacheFileURL(for: request)
+        else { return false }
+        
+        // Lookup.
+        return FileManager.default.fileExists(atPath: cacheFileURL.path)
+    }
+    
+    
     func cachedResponse<RequestType: ApiRequest>(for request: RequestType) -> RequestType.ApiResponseType?
     {
         // Resolve file name.

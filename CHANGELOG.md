@@ -6,7 +6,6 @@
     + Next up
         + Fetch sharkscope status after requests (explicitly in controllers)
             + A simple authenticated request with error can be sufficient
-        + Add column for view / manage cached content
         
     + Quick Features (to right-click context menus)
         + Normalized / Absolute switch for Finishes histogram
@@ -26,7 +25,15 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
-            
+
+* 1.9.1
+
+    + Added `Cache` column to see if there is cache available any
+
+* 1.9.0
+
+    + Every `Model.Player` use a single shared (static) `PokerTracker.Service()` (no connection overload)
+    
 * Feature/Data/SharkScope/Tournaments/0.2.7
 
     + `SharkScope.Service.fetch`

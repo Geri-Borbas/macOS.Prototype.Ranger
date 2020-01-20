@@ -30,4 +30,11 @@ public struct PlayerSummaryRequest: ApiRequest
         (player == "Borbas.Geri") ? [ "filter" : "Date:1Y" ] : [:]
     }
     public var useCache: Bool = true
+    
+    
+    public init(network: String, player: String)
+    {
+        self.network = network
+        self.player = player
+    }
 }

@@ -116,7 +116,7 @@ class FinishesGraphCellView: PlayerCellView
         // Constants.
         let barWidth = rect.size.width / CGFloat(graphData.dataPoints.count)
         let barHeight = rect.size.height
-        let upperBound = graphData.trendLine.max // 3.0
+        let upperBound = graphData.trendLine.max // 1.6
         
         // Draw each bar.
         for (eachIndex, eachDataPoint) in graphData.dataPoints.enumerated()

@@ -42,8 +42,7 @@ class StatusBarItem
     let icon: String = "♠️"
     var delegate: StatusBarItemDelegate?
     
-    
-    
+        
     var menu: NSMenu = NSMenu(title: "Table Menu")
     var statusBarItem: NSStatusItem
     
@@ -70,6 +69,16 @@ class StatusBarItem
         addItem(with: MenuItem(title: "Tracking PokerStarsEU..."))
     }
     
+    func stopIndicateTracking()
+    {
+        menu.removeAllItems()
+        
+        addItem(with: MenuItem.openCachedPlayers)
+        addItem(with: MenuItem.openRegs)
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "No tables to track", action: nil, keyEquivalent: ""))
+    }
+    
     func addItem(with menuItem: MenuItem)
     {
         let item = NSMenuItem(
@@ -83,12 +92,6 @@ class StatusBarItem
         item.target = self
         
         menu.addItem(item)
-    }
-    
-    func stopIndicateTracking()
-    {
-        menu.removeAllItems()
-        menu.addItem(NSMenuItem(title: "No tables to track", action: nil, keyEquivalent: ""))
     }
 
     @objc func menuItemDidClick(item: NSMenuItem)
