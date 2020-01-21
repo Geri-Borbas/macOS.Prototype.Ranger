@@ -45,14 +45,7 @@ public struct Service
         // Lookup cache first.
         let cache = ApiRequestCache()
         if let cachedResponse: RequestType.ApiResponseType = cache.cachedResponse(for: request), request.useCache
-        {
-            print("Found file cache, skip request.")
-            return completion(.success(cachedResponse))
-        }
-        else
-        {
-            print("Don't use file cache.")
-        }
+        { return completion(.success(cachedResponse)) }
         
         // Create URL.
         guard let url: URL = urlComponents.url

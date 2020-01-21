@@ -34,9 +34,6 @@ enum Model
             var handPlayer: HandPlayer?
             var statistics: PokerTracker.Statistics?
             
-            // Service.
-            static var service: PokerTracker.Service = PokerTracker.Service()
-            
             
             init(with playerName: String, handPlayer: HandPlayer? = nil)
             {
@@ -48,7 +45,7 @@ enum Model
             
             public mutating func updateStatistics(for tourneyNumber: String? = nil)
             {
-                self.statistics = try? PokerTrackerData.service.fetch(
+                self.statistics = try? PokerTracker.Service.fetch(
                     PokerTracker.StatisticsQuery(
                         playerNames: [playerName],
                         tourneyNumber: tourneyNumber

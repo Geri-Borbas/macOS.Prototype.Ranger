@@ -15,11 +15,6 @@ class SimulatedTableViewController: NSViewController
 {
 
     
-    // MARK: - Services
-    
-    private var pokerTracker: PokerTracker.Service = PokerTracker.Service()
-
-    
     // MARK: - Data
     
     var tournament: TableSimulator.Configuration.Tournament?
@@ -38,7 +33,7 @@ class SimulatedTableViewController: NSViewController
         guard let tournament = tournament else { return }
         
         // Attempt to get `TourneyHandSummary` collection from PokerTracker.
-        tourneyHandSummaries = try? PokerTracker.Service().fetch(PokerTracker.TourneyHandSummaryQuery(tourneyNumber: tournament.number))
+        tourneyHandSummaries = try? PokerTracker.Service.fetch(PokerTracker.TourneyHandSummaryQuery(tourneyNumber: tournament.number))
         
         // Checks.
         guard let tourneyHandSummaries = tourneyHandSummaries

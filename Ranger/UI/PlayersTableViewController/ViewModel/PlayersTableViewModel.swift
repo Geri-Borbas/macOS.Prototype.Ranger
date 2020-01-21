@@ -26,7 +26,6 @@ class PlayersTableViewModel: NSObject
     
     // MARK: - Services
     
-    private var pokerTracker: PokerTracker.Service = PokerTracker.Service()
     private var sharkScope: SharkScope.Service = SharkScope.Service()
     
     

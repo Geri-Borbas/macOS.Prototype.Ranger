@@ -22,7 +22,7 @@ extension Model
         public static func playersOfLatestHand(inTournament tournamentNumber: String, handOffset: Int = 0) -> [Player]
         {
             // Attempt to get `HandPlayer` collection from PokerTracker.
-            guard let handPlayers = try? PokerTracker.Service().fetch(PokerTracker.LatestHandPlayerQuery(
+            guard let handPlayers = try? PokerTracker.Service.fetch(PokerTracker.LatestHandPlayerQuery(
                 tourneyNumber: tournamentNumber,
                 handOffset: handOffset
             ))
@@ -87,11 +87,10 @@ extension Model
                 Model.Player(name: "B0aR"),
                 Model.Player(name: "Gromobix"),
                 Model.Player(name: "LaPC"),
-                
-                // Empty.
                 Model.Player(name: "Alfa2012"),
                 Model.Player(name: "ShipItSicmik777"),
                 Model.Player(name: "balder24"),
+                Model.Player(name: "moozeev"),
                 
                 // Opted-Out.
                 Model.Player(name: "Oliana88"),

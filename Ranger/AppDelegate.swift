@@ -22,5 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         app.start()
     }
+    
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply
+    {
+        app.stop()
+        return .terminateNow
+    }
 }
 

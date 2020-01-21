@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import PokerTracker
 
 
 /// The root application controller object.
@@ -26,6 +27,11 @@ class App: NSObject, TableTrackerDelegate
         // Subscribe window updates.
         windowTracker.delegate = self
         windowTracker.start()
+    }
+    
+    func stop()
+    {
+        PokerTracker.Service.disconnect()
     }
     
     

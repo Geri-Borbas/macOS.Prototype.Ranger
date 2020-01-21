@@ -24,13 +24,27 @@ public class Service
 {
     
     
+    // MARK: - Singleton
+
+    static let instance = Service()
+    
+    public class func fetch<QueryType: Query>(_ query: QueryType) throws -> [QueryType.EntryType]
+    { return try instance.fetch(query) }
+    
+    public class func disconnect()
+    { return instance.disconnect() }
+    
+    
+    
+    // MARK: - Database
+    
     var connection:Connection?
     
 
-    public init()
+    private init()
     { connect() }
     
-    public func connect()
+    private func connect()
     {
         // Load configuration.
         let configuration = Configuration.load()
@@ -58,7 +72,12 @@ public class Service
         }
     }
     
-    public func fetch<QueryType: Query>(_ query: QueryType) throws -> [QueryType.EntryType]
+    private func disconnect()
+    {
+        connection?.close()
+    }
+    
+    private func fetch<QueryType: Query>(_ query: QueryType) throws -> [QueryType.EntryType]
     {
         // Only having connection.
         guard let connection = connection else

@@ -4,11 +4,10 @@
 * Doing
 
     + Next up
-        + Live Multi-Table test
-        + Review `PokerTracker` database connection count
         + Fetch sharkscope status after requests (explicitly in controllers)
             + A simple authenticated request with error can be sufficient
-        + Aggregate sessions / calculate session stats
+        + UI for Opted-Out SharkScope players
+        + Aggregate `Tournaments` sessions / calculate session stats
         
     + Features
         + Final table positions column
@@ -25,6 +24,13 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* 1.9.2
+
+    + `PokerTracker.Service` became a singleton
+        + Maintains a single connection to the database
+        + Global access
+        + Close connection on quit
 
 * Feature/UI/Window_Tracking/0.1.1
 
