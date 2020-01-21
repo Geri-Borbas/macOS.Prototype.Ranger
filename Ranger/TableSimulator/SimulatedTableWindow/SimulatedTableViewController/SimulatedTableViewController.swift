@@ -14,21 +14,42 @@ class SimulatedTableViewController: NSViewController
 {
 
     
-    // MARK: - Lifecycle
+    var tournamentType: TableSimulator.Configuration.TournamentType?
+    var startDate: Date = Date()
     
-    override func viewDidLoad()
+    
+    override func viewDidAppear()
     {
-        super.viewDidLoad()
+        super.viewDidAppear()
         
-        // Size.
+        // Pick a random tournament type.
+        self.tournamentType = TableSimulator.configuration.tournamentTypes.randomElement()
         
-        // Set title from confing.
+        // Schedule timer.
+        self.startDate = Date()
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true)
+        { _ in self.tick() }
         
-        // Set blind structure from config.
+        // Update right away.
+        self.tick()
+    }
+    
+    func tick()
+    {
+        // Checks.
+        guard let tournamentType = tournamentType else { return }
+     
+        // Create title.
+        let elapsedTime = Date().timeIntervalSince(self.startDate)
+        let title = String(
+            format: "%@ - %@ - Tournament %@ Table 2 - Logged In as Borbas.Geri",
+            tournamentType.name,
+            tournamentType.blindLevel(for: elapsedTime),
+            tournamentType.number
+        )
         
-        // Start timer.
-        
-        // Random table name changing.
+        // Set title.
+        self.view.window?.title = title
     }
 }
 

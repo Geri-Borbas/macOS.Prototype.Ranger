@@ -14,6 +14,8 @@
 		5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* StatusBarItem.swift */; };
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
 		550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */; };
+		551DC0B923D67AEA0030E2B0 /* SimulatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E0A323D6575200BA0DD5 /* SimulatedTableViewController.swift */; };
+		551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5555E09E23D6567700BA0DD5 /* TableSimulator.Configuration.plist */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
 		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
@@ -1049,6 +1051,7 @@
 			files = (
 				5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */,
 				552E546523D172F80056B305 /* SharkScope.Configuration.plist in Resources */,
+				551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */,
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
@@ -1285,6 +1288,7 @@
 				5555825A23D3EEE400465CDE /* PlayersViewController.swift in Sources */,
 				55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */,
 				559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */,
+				551DC0B923D67AEA0030E2B0 /* SimulatedTableViewController.swift in Sources */,
 				5508E3FD23A4656000FFB173 /* TournamentViewModel.swift in Sources */,
 				55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */,
 				555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */,

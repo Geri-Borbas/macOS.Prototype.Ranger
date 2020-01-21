@@ -15,6 +15,9 @@ class TableSimulator: NSObject
 {
                 
     
+    static var configuration: TableSimulator.Configuration = TableSimulator.Configuration.load()
+    
+    
     // MARK: - Menu Events
     
     @IBAction func openSimulatedTableDidClick(_ sender: AnyObject)
@@ -24,6 +27,10 @@ class TableSimulator: NSObject
                 
         // Add menu item.
         if let window = window
-        { NSApp.addWindowsItem(window, title: "Cached Players", filename: false) }
+        {
+            let tournamentType = (window.contentViewController as? SimulatedTableViewController)?.tournamentType
+            let title = String(format: "Simulated Tournament %@", tournamentType?.name ?? "")
+            NSApp.addWindowsItem(window, title: "Cached Players", filename: false)
+        }
     }    
 }

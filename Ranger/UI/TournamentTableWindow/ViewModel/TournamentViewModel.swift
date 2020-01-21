@@ -169,7 +169,7 @@ class TournamentViewModel: NSObject
         else { return }
         
         // May offset hands in simulation mode.
-        var handOffset = App.configuration.isSimulationMode ? App.configuration.simulation.handOffset : 0
+        var handOffset = TableSimulator.configuration.handsPlayedForTournamentNumberIfAny(tournamentNumber: tournamentInfo.tournamentNumber)
             handOffset -= tickCount / handUpdateTickFrequency
             handOffset = max(handOffset, 0)
         

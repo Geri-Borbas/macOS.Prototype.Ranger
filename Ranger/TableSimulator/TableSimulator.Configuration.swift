@@ -17,9 +17,28 @@ extension TableSimulator
     {
         
 
-        var setting: Bool
+        var tournamentTypes: [TournamentType]
                 
-        
+            
+        struct TournamentType: Decodable
+        {
+            
+            
+            let name: String
+            let number: String
+            let handsPlayed: Int
+            let blindLevelTime: Double
+            let blindLevels: [String]
+                                  
+            
+            func blindLevel(for elapsedTime: TimeInterval) -> String
+            {
+                let blindLevel: Double = floor(elapsedTime / blindLevelTime)
+                let blindLevelIndex = Int(min(blindLevel, Double(blindLevels.count - 1)))
+                return blindLevels[blindLevelIndex]
+            }
+        }
+            
         static func load() -> Configuration
         {
             let url = Bundle.main.url(forResource: "TableSimulator.Configuration", withExtension: "plist")!
@@ -27,5 +46,16 @@ extension TableSimulator
             let decoder = PropertyListDecoder()
             return try! decoder.decode(Configuration.self, from: data)
         }
+        
+        func handsPlayedForTournamentNumberIfAny(tournamentNumber: String) -> Int
+        {
+            // Lookup.
+            guard let tournamentType = tournamentTypes.filter({ eachTournamentType in eachTournamentType.number == tournamentNumber }).first
+            else { return 0 }
+            
+            // Return.
+            return tournamentType.handsPlayed
+        }
+        
     }
 }

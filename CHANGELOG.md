@@ -26,6 +26,13 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Window_Tracking/0.0.5
+
+    + Removed simulation related things from `App.Configuration`
+    + Added blind level string to `TableSimulator.Configuration`
+    + `TableTracker` tracks `Ranger` windows as well
+    + `SimulatedTableViewController` now ticks
+
 * Feature/UI/Window_Tracking/0.0.4
 
     + Added `TableSimulator`

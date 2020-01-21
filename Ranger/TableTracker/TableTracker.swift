@@ -49,7 +49,7 @@ class TableTracker
     func start()
     {
         // Invoke Screen Recording Privacy dialog (if not bypassed by simulation mode).
-        if (App.configuration.isLiveMode)
+        if (true)
         { CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution) }
         
         // Kickoff timer.
@@ -94,31 +94,33 @@ class TableTracker
     
     func isLobbyWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool
     {
-        (
-            (windowInfoDictionary["kCGWindowOwnerName"] as? String) == "PokerStarsEU" &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Tournament") ?? false &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Lobby") ?? false
+        let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String
+        let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        
+        return (
+            (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
+            name?.contains("Tournament") ?? false &&
+            name?.contains("Lobby") ?? false
         )
     }
     
     func isTableWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool
     {
-        (
-            (windowInfoDictionary["kCGWindowOwnerName"] as? String) == "PokerStarsEU" &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Tournament") ?? false &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Table") ?? false &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Logged In") ?? false
+        let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String
+        let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        
+        return (
+            (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
+            name?.contains("Tournament") ?? false &&
+            name?.contains("Table") ?? false &&
+            name?.contains("Logged In") ?? false
         )
     }
     
     @objc func tick()
     {
         // Set either real or simulated (will invoke `didSet`).
-        if (App.configuration.isSimulationMode)
-        { firstTableWindowInfo = App.configuration.simulatedTableWindowInfo }
-        
-        if (App.configuration.isLiveMode)
-        { firstTableWindowInfo = searchFirstTableWindowInfo() }
+        firstTableWindowInfo = searchFirstTableWindowInfo()
         
         // Update if any
         if let tableWindowInfo = firstTableWindowInfo
