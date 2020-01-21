@@ -115,6 +115,9 @@ WHERE
   AND (
     $_WHERE_CONDITION
   )
+  AND (
+    tourney_summary.tourney_no LIKE '$_TOURNEY_NUMBER'
+  )
 GROUP BY
   (
     tourney_hand_player_statistics.id_player

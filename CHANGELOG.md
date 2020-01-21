@@ -25,9 +25,13 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 1.9.4
+
+    + Added `tourney_no` check to  `PokerTracker.StatisticsQuery.sql` 
+
 * 1.9.3
     
-    + Updated  `PokerTracker.StatisticsQuery.sql` 
+    + Updated  `PokerTracker.StatisticsQuery.sql`
 
 * 1.9.2
 
