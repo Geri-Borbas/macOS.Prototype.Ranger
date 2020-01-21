@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tournaments</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>$3.50 NL Hold&apos;em [18 Players, Turbo]</string>
+			<key>number</key>
+			<string>2770568108</string>
+			<key>handInterval</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>$3.50 NL Hold&apos;em [18 Players, Turbo]</string>
+			<key>number</key>
+			<string>2785380948</string>
+			<key>handInterval</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>$7.00 NL Hold&apos;em [18 Players, Turbo]</string>
+			<key>number</key>
+			<string>2775976175</string>
+			<key>handInterval</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>$3.50 NL Hold&apos;em [18 Players, Turbo]</string>
+			<key>number</key>
+			<string>2786668130</string>
+			<key>handInterval</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

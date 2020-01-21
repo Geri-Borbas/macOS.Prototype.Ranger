@@ -87,9 +87,6 @@ public struct Service
             print("urlRequest.url: \(urlRequest.url!)")
         }
         
-
-        print("urlRequest.url: \(urlRequest.url!)")
-        
         // Create task.
         let task = URLSession.shared.dataTask(with: urlRequest)
         {

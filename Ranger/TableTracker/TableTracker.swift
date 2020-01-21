@@ -24,23 +24,7 @@ class TableTracker
 {
     
     
-    public var tickCount: Int = 0
-    public var firstTableWindowInfo: TableWindowInfo?
-    {
-        didSet
-        {
-            let newValue = firstTableWindowInfo
-            
-            if (oldValue == newValue)
-            { return }
-            
-            if (oldValue == nil && newValue != nil)
-            { delegate?.windowTrackerDidStartTrackingTable(tableWindowInfo: newValue!) }
-            
-            if (oldValue != nil && newValue == nil)
-            { delegate?.windowTrackerDidStopTrackingTable(tableWindowInfo: oldValue!) }
-        }
-    }
+    var tableWindowInfos: [TableWindowInfo] = []
     weak var delegate: TableTrackerDelegate?
     
     
@@ -49,11 +33,11 @@ class TableTracker
     func start()
     {
         // Invoke Screen Recording Privacy dialog (if not bypassed by simulation mode).
-        if (App.configuration.isLiveMode)
+        if (true)
         { CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution) }
         
         // Kickoff timer.
-        let interval = 1.0 / 60.0
+        let interval = 1.0  / 60.0
         let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
     }
@@ -61,16 +45,16 @@ class TableTracker
     
     // MARK: - Window lookup
     
-    func searchFirstTableWindowInfo() -> TableWindowInfo?
+    func lookupTableWindowInfos() -> [TableWindowInfo]
     {
-        // Get windows.
+        // Get window infos.
         let windowInfoList = CGWindowListCopyWindowInfo(
             CGWindowListOption(arrayLiteral: .excludeDesktopElements, .optionOnScreenOnly),
             kCGNullWindowID
         ) as! [[String:Any]]
         
-        // Filter PokerStars Tournament Table windows.
-        let tourneyWindows = windowInfoList.filter
+        // Filter to table windows.
+        return windowInfoList.filter
         {
             (eachWindowInfo: [String:Any]) in
             isTableWindowInfo(eachWindowInfo)
@@ -83,48 +67,64 @@ class TableTracker
                 number: eachPokerStarsWindowInfo["kCGWindowNumber"] as! Int,
                 bounds: CGRect.init(dictionaryRepresentation:(eachPokerStarsWindowInfo["kCGWindowBounds"] as! CFDictionary)) ?? CGRect()
             )
-        }
-        
-        // Only with Tournament Table Window.
-        guard let firstWindowInfo = tourneyWindows.first
-        else { return nil }
-        
-        return firstWindowInfo
+        }.sorted()
     }
     
     func isLobbyWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool
     {
-        (
-            (windowInfoDictionary["kCGWindowOwnerName"] as? String) == "PokerStarsEU" &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Tournament") ?? false &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Lobby") ?? false
+        let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String
+        let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        
+        return (
+            (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
+            name?.contains("Tournament") ?? false &&
+            name?.contains("Lobby") ?? false
         )
     }
     
     func isTableWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool
     {
-        (
-            (windowInfoDictionary["kCGWindowOwnerName"] as? String) == "PokerStarsEU" &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Tournament") ?? false &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Table") ?? false &&
-            (windowInfoDictionary["kCGWindowName"] as? String)?.contains("Logged In") ?? false
+        let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String
+        let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        
+        return (
+            (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
+            name?.contains("Tournament") ?? false &&
+            name?.contains("Table") ?? false &&
+            name?.contains("Logged In") ?? false
         )
     }
     
     @objc func tick()
     {
-        // Set either real or simulated (will invoke `didSet`).
-        if (App.configuration.isSimulationMode)
-        { firstTableWindowInfo = App.configuration.simulatedTableWindowInfo }
+        // Lookup.
+        let currentTableWindowInfos = lookupTableWindowInfos()
         
-        if (App.configuration.isLiveMode)
-        { firstTableWindowInfo = searchFirstTableWindowInfo() }
-        
-        // Update if any
-        if let tableWindowInfo = firstTableWindowInfo
+        // Report any change.
+        currentTableWindowInfos.difference(from: tableWindowInfos).forEach
         {
-            // Callback.
-            delegate?.windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: tableWindowInfo)
+            eachChange in
+            switch eachChange
+            {
+                case .insert(_, let eachTableWindowInfo, _):
+                    delegate?.windowTrackerDidStartTrackingTable(tableWindowInfo: eachTableWindowInfo)
+                
+                case .remove(_, let eachTableWindowInfo, _):
+                    delegate?.windowTrackerDidStopTrackingTable(tableWindowInfo: eachTableWindowInfo)
+            }
         }
+        
+        // Update if any.
+        tableWindowInfos.forEach
+        {
+            eachTableWindowInfo in
+            if
+                let eachCurrentTableWindowInfo = currentTableWindowInfos.filter({ $0 == eachTableWindowInfo }).first,
+                eachCurrentTableWindowInfo.isUpdated(comparedTo: eachTableWindowInfo)
+            { delegate?.windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: eachCurrentTableWindowInfo) }
+        }
+        
+        // Set.
+        tableWindowInfos = currentTableWindowInfos
     }
 }

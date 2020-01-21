@@ -14,7 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
 {
 
     
-    var app: App = App()
+    @IBOutlet weak var app: App!
+    @IBOutlet weak var tableSimulator: TableSimulator!
     
 
     func applicationDidFinishLaunching(_ notification: Notification)

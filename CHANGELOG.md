@@ -4,15 +4,12 @@
 * Doing
 
     + Next up
+        + Live Multi-Table test
+        + Review `PokerTracker` database connection count
         + Fetch sharkscope status after requests (explicitly in controllers)
             + A simple authenticated request with error can be sufficient
+        + Aggregate sessions / calculate session stats
         
-    + Quick Features (to right-click context menus)
-        + Normalized / Absolute switch for Finishes histogram
-        + Slope could be drawn for a distinct small icon (not cover histogram)
-        + `TableWindowInfo`
-            + Regex title recognition (with tests)
-
     + Features
         + Final table positions column
         + Add nationality (flag icon) with local time (!)
@@ -25,6 +22,55 @@
                 + Only sit and gos
                 + Only this type of tourney (entrants, stake)
             + Profit graph (?)
+        + Normalized / Absolute switch for Finishes histogram
+        + `TableWindowInfo`
+            + Regex title recognition (with tests)
+
+* Feature/UI/Window_Tracking/0.1.1
+
+    + `TableTracker` only delegates updates when window is changed (either `name` or `bounds)
+
+* Feature/UI/Window_Tracking/0.1.0
+
+    + `TableTracker` now maintains a collection of tracked tables
+        + Uses collection diffing to report changes (collection order is independent from window layering)
+        + `TableWindowInfo.Equatable` uses `tournamentNumber` only (!) to consider change
+    + Multi-tabling works nicely (with simulated tables)
+
+* Feature/UI/Window_Tracking/0.0.8
+
+    + Simulated Table resizing
+
+* Feature/UI/Window_Tracking/0.0.7
+
+    + `TableSimulator` uses actual PokerTracker tournament histories
+        + Added `PokerTracked.TourneyHandSummary` (list every hand for a tournament number)
+        + `TableSimulator.Configuration`
+            + Simply uses a tournament `number` and a playback speed (`handInterval`)
+            + Added more `Tourney` from database
+        + `TableSimulator` track active simulated windows
+            + Prevents opening duplicate tournaments
+            + `TournamentViewModel` can ask for `handOffset` if any
+        + `SimulatedTableViewController` gets blind levels from actual PokerTracker hands
+
+* Feature/UI/Window_Tracking/0.0.5
+
+    + Removed simulation related things from `App.Configuration`
+    + Added blind level string to `TableSimulator.Configuration`
+    + `TableTracker` tracks `Ranger` windows as well
+    + `SimulatedTableViewController` now ticks
+
+* Feature/UI/Window_Tracking/0.0.4
+
+    + Added `TableSimulator`
+        + Simple window simulating PokerStars table window titles
+        + Suitable to test `TableTracker`
+    
+* Feature/UI/Window_Tracking/0.0.2
+
+    + Added application menu items
+        + Windows gets added to window menu
+        + `StatusBarItem` is deprecated
 
 * 1.9.1
 

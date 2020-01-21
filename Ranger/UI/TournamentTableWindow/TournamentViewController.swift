@@ -58,6 +58,9 @@ class TournamentViewController: NSViewController
         
         // Inject into view model.
         viewModel.track(tableWindowInfo, delegate: self)
+        
+        // UI.
+        alignWindow(to: tableWindowInfo)
     }
     
     func update(with tableWindowInfo: TableWindowInfo)
@@ -66,8 +69,7 @@ class TournamentViewController: NSViewController
         viewModel.update(with: tableWindowInfo)
         
         // UI.
-        if (App.configuration.isLiveMode)
-        { alignWindow(to: tableWindowInfo) }
+        alignWindow(to: tableWindowInfo)
     }
     
     func alignWindow(to tableWindowInfo: TableWindowInfo)

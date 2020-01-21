@@ -68,9 +68,7 @@ class TournamentViewModel: NSObject
     private var tournamentInfo: TournamentInfo?
     
     // Updates.
-    private var tickCount: Int = 0
-    private var tickTime = 2.0
-    private var handUpdateTickFrequency = 1
+    private var tickTime = 1.0
     
     
     // MARK: - UI Data
@@ -158,7 +156,6 @@ class TournamentViewModel: NSObject
     
     private func tick()
     {
-        tickCount += 1
         try? processData()
     }
     
@@ -168,10 +165,8 @@ class TournamentViewModel: NSObject
         guard let tournamentInfo = self.tournamentInfo
         else { return }
         
-        // May offset hands in simulation mode.
-        var handOffset = App.configuration.isSimulationMode ? App.configuration.simulation.handOffset : 0
-            handOffset -= tickCount / handUpdateTickFrequency
-            handOffset = max(handOffset, 0)
+        // May want to offset hands if tracking simulated table.
+        let handOffset = TableSimulator.handOffsetForTournamentNumberIfAny(tournamentNumber: tournamentInfo.tournamentNumber)
         
         // Get players of the latest hand of the tournament tracked by PokerTracker.
         let tournamentPlayers = Model.Players.playersOfLatestHand(inTournament: tournamentInfo.tournamentNumber, handOffset: handOffset)

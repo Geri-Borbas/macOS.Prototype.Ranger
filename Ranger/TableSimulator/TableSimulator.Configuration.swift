@@ -9,22 +9,29 @@
 import Foundation
 
 
-extension App
+extension TableSimulator
 {
     
     
     struct Configuration: Decodable
     {
         
-        
-        /// Automatically close table window once the tourney is over.
-        /// Opted-out by default, window has to be closed manually.
-        var autoCloseTableWindow: Bool = false
+
+        var tournaments: [Tournament]
                 
-        
+            
+        struct Tournament: Decodable, Equatable
+        {
+            
+            
+            let name: String
+            let number: String
+            let handInterval: Double
+        }
+            
         static func load() -> Configuration
         {
-            let url = Bundle.main.url(forResource: "App.Configuration", withExtension: "plist")!
+            let url = Bundle.main.url(forResource: "TableSimulator.Configuration", withExtension: "plist")!
             let data = try! Data(contentsOf: url)
             let decoder = PropertyListDecoder()
             return try! decoder.decode(Configuration.self, from: data)

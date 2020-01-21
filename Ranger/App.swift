@@ -10,15 +10,15 @@ import Foundation
 import SwiftUI
 
 
-class App: TableTrackerDelegate, StatusBarItemDelegate
+/// The root application controller object.
+class App: NSObject, TableTrackerDelegate
 {
     
     
-    private var statusBarItem: StatusBarItem = StatusBarItem()
-    private var windowTracker: TableTracker = TableTracker()
-    private var tableWindowController: TournamentWindowController?
-    
     static var configuration: App.Configuration = App.Configuration.load()
+    
+    private var windowTracker: TableTracker = TableTracker()
+    private var tournamentWindowControllersForWindowInfos: [TableWindowInfo:TournamentWindowController] = [:]
     
     
     func start()
@@ -26,31 +26,35 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
         // Subscribe window updates.
         windowTracker.delegate = self
         windowTracker.start()
-        
-        // Subscribe status bar item updates.
-        statusBarItem.delegate = self
     }
     
     
-    // MARK: - Status Bar Item Events
+    // MARK: - Menu Events
     
-    func statusBarItemClicked(menuItem: StatusBarItem.MenuItem)
+    @IBAction func openCachedPlayersDidClick(_ sender: AnyObject)
     {
-        switch menuItem
-        {
-            case StatusBarItem.MenuItem.openCachedPlayers:
-                PlayersWindowController.instantiateAndShow(
-                    withPlayers: Model.Players.cachedPlayers(),
-                    hiddenColumnIdentifiers: ["Seat", "Stack"]
-                )
-            case StatusBarItem.MenuItem.openRegs:
-                PlayersWindowController.instantiateAndShow(
-                    withPlayers: Model.Players.regs(),
-                    hiddenColumnIdentifiers: ["Seat", "Stack"]
-            )
-            default:
-                print("No window controller for menu item \(menuItem.title).")
-        }
+        // Instantiate window.
+        let window = PlayersWindowController.instantiateAndShow(
+            withPlayers: Model.Players.cachedPlayers(),
+            hiddenColumnIdentifiers: ["Seat", "Stack"]
+        )
+        
+        // Add menu item.
+        if let window = window
+        { NSApp.addWindowsItem(window, title: "Cached Players", filename: false) }
+    }
+    
+    @IBAction func openRegsDidClick(_ sender: AnyObject)
+    {
+        // Instantiate window.
+        let window = PlayersWindowController.instantiateAndShow(
+                withPlayers: Model.Players.regs(),
+                hiddenColumnIdentifiers: ["Seat", "Stack"]
+        )
+        
+        // Add menu item.
+        if let window = window
+        { NSApp.addWindowsItem(window, title: "Regs", filename: false) }
     }
     
     
@@ -58,40 +62,47 @@ class App: TableTrackerDelegate, StatusBarItemDelegate
     
     func windowTrackerDidStartTrackingTable(tableWindowInfo: TableWindowInfo)
     {
-        // Status.
-        statusBarItem.indicateTracking(windowTitle: tableWindowInfo.name)
+        // Instantiate new tournament window.
+        let tournamentWindowController = TournamentWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo)
         
-        let isTourneyTableWindow = tableWindowInfo.tableInfo != nil
-        let isSameTourney = tableWindowController?.tableWindowInfo?.tableInfo?.tournamentNumber == tableWindowInfo.tableInfo?.tournamentNumber
+        // Collect.
+        tournamentWindowControllersForWindowInfos[tableWindowInfo] = tournamentWindowController
         
-        // Window (do not create new window on table seating changes).
-        if (isTourneyTableWindow && isSameTourney)
-        { windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: tableWindowInfo) }
-        else
-        { tableWindowController = TournamentWindowController.instantiateAndShow(forTableWindowInfo: tableWindowInfo) }
+        // Add menu item.
+        if let window = tournamentWindowController.window
+        {
+            let menuItemTitle = "Tournament \(tableWindowInfo.tableInfo?.tournamentNumber ?? "(?)") Table \(String(tableWindowInfo.tableInfo?.tableNumber ?? 0))"
+            NSApp.addWindowsItem(window, title: menuItemTitle, filename: false)
+        }
     }
     
     func windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: TableWindowInfo)
     {
         // Only if any.
-        guard let tableWindowController = tableWindowController else { return }
+        guard let tournamentWindowController = tournamentWindowControllersForWindowInfos[tableWindowInfo] else { return }
         
-        // Update.
-        tableWindowController.update(with: tableWindowInfo)
+        // Update tournament window.
+        tournamentWindowController.update(with: tableWindowInfo)
+        
+        // Update menu item.
+        if let window = tournamentWindowController.window
+        {
+            let menuItemTitle = "Tournament \(tableWindowInfo.tableInfo?.tournamentNumber ?? "(?)") Table \(String(tableWindowInfo.tableInfo?.tableNumber ?? 0))"
+            NSApp.changeWindowsItem(window, title: menuItemTitle, filename: false)
+        }
     }
     
     func windowTrackerDidStopTrackingTable(tableWindowInfo: TableWindowInfo)
     {
-        // UI.
-        statusBarItem.stopIndicateTracking()
+        // Only if any.
+        guard let tournamentWindowController = tournamentWindowControllersForWindowInfos[tableWindowInfo] else { return }
         
         // Turn back dragging.
-        if let tableWindow = tableWindowController?.window
+        if let tableWindow = tournamentWindowController.window
         { tableWindow.isMovable = true }
         
         // Close window if any (if opted-in).
-        if let tableWindowController = tableWindowController, App.configuration.autoCloseTableWindow
-        { tableWindowController.close() }
+        if App.configuration.autoCloseTableWindow
+        { tournamentWindowController.close() }
     }
-    
 }
