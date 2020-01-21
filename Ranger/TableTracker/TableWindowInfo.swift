@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 
-struct TableWindowInfo: Equatable
+struct TableWindowInfo
 {
     
     
@@ -33,4 +33,39 @@ struct TableWindowInfo: Equatable
     // Parse.
     var tableInfo: TableInfo?
     { TableInfo(name: name) }
+}
+
+
+extension TableWindowInfo: Equatable
+{
+    
+    
+    /// Equality is used for diffing in `TableTracker.tick()`.
+    static func == (lhs: TableWindowInfo, rhs: TableWindowInfo) -> Bool
+    {
+        lhs.tableInfo?.tournamentNumber == rhs.tableInfo?.tournamentNumber
+    }
+}
+
+
+extension TableWindowInfo: Comparable
+{
+    
+    
+    /// Equality is used in sorting at `TableTracker.lookupTableWindowInfos()`.
+    static func < (lhs: TableWindowInfo, rhs: TableWindowInfo) -> Bool
+    {
+        lhs.number < rhs.number
+    }
+}
+
+
+extension TableWindowInfo: Hashable
+{
+
+
+    func hash(into hasher: inout Hasher)
+    {
+        hasher.combine(tableInfo?.tournamentNumber)
+    }
 }

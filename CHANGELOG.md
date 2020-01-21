@@ -5,8 +5,6 @@
 
     + Next up
         + Review `PokerTracker` database connection count
-        + Multi-Table
-            + Window Simulator
         + Fetch sharkscope status after requests (explicitly in controllers)
             + A simple authenticated request with error can be sufficient
         + Aggregate sessions / calculate session stats
@@ -26,6 +24,13 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Window_Tracking/0.1.0
+
+    + `TableTracker` now maintains a collection of tracked tables
+        + Uses collection diffing to report changes (collection order is independent from window layering)
+        + `TableWindowInfo.Equatable` uses `tournamentNumber` only (!) to consider change
+    + Multi-tabling works nicely (with simulated tables)
 
 * Feature/UI/Window_Tracking/0.0.8
 
