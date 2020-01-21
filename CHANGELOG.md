@@ -27,6 +27,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Window_Tracking/0.0.8
+
+    + Simulated Table resizing
+
 * Feature/UI/Window_Tracking/0.0.7
 
     + `TableSimulator` uses actual PokerTracker tournament histories

@@ -171,8 +171,7 @@
                 <windowController storyboardIdentifier="TournamentWindowController" id="B8D-0N-5wS" userLabel="Tournament Window Controller" customClass="TournamentWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="-227" y="240" width="1340" height="270"/>
+                        <rect key="contentRect" x="153" y="322" width="1340" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -223,7 +222,7 @@
                                     <constraint firstAttribute="height" constant="14" id="W9O-qj-y7f"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="menu" size="11"/>
                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -281,7 +280,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="Seat" width="40" minWidth="40" maxWidth="100" id="Ysa-xG-jWO">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Seat">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="menu" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -315,7 +314,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Player" width="100" minWidth="100" maxWidth="1000" id="g8d-rp-OHE">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="menu" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -348,7 +347,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Stack" width="130" minWidth="100" maxWidth="1000" id="wff-xd-lNv">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="menu" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1747,7 +1746,6 @@
                 <windowController storyboardIdentifier="PlayersWindowController" id="Ky0-Pe-b2v" userLabel="Players Window Controller" customClass="PlayersWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="vbn-K7-JOC">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="470" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
                         <connections>
@@ -1825,8 +1823,7 @@
                 <windowController storyboardIdentifier="SimulatedTableWindowController" id="bph-5o-V87" userLabel="Simulated Table Window Controller" customClass="SimulatedTableWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Simulated Table" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" frameAutosaveName="" animationBehavior="default" id="E6i-4u-EeL">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="425" y="470" width="480" height="270"/>
+                        <rect key="contentRect" x="1028" y="877" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
                         <connections>
                             <outlet property="delegate" destination="bph-5o-V87" id="412-be-6RT"/>
@@ -1845,10 +1842,10 @@
             <objects>
                 <viewController id="bwM-mO-WRN" customClass="SimulatedTableViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="Glx-Gr-BcT">
-                        <rect key="frame" x="0.0" y="0.0" width="985" height="679"/>
+                        <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-zD-1wx">
-                                <rect key="frame" x="0.0" y="0.0" width="985" height="679"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-zD-1wx">
+                                <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="g7M-zD-1wx" secondAttribute="height" multiplier="953:657" id="bUN-oW-yBX"/>
                                 </constraints>
@@ -1865,7 +1862,7 @@
                 </viewController>
                 <customObject id="W0B-fB-Wfq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-141.5" y="-1002.5"/>
+            <point key="canvasLocation" x="-249.5" y="-1002.5"/>
         </scene>
     </scenes>
     <resources>
