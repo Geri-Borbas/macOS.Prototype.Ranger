@@ -25,6 +25,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 1.9.3
+    
+    + Updated  `PokerTracker.StatisticsQuery.sql` 
+
 * 1.9.2
 
     + `PokerTracker.Service` became a singleton

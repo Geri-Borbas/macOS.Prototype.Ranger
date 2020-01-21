@@ -92,6 +92,11 @@ extension Model
                 Model.Player(name: "balder24"),
                 Model.Player(name: "moozeev"),
                 
+                // Enpty.
+                Model.Player(name: "g1anfar"),
+                Model.Player(name: "ScauHades"),
+                Model.Player(name: "carlos1020"),
+                
                 // Opted-Out.
                 Model.Player(name: "Oliana88"),
                 Model.Player(name: "wolfeboyocd"),
@@ -101,9 +106,6 @@ extension Model
                 Model.Player(name: "Borbas.Geri"),
                 
             ].sorted()
-            
-            // let playerName = "g1anfar"
-            // let playerName = "ScauHades"
         }
     }
 }

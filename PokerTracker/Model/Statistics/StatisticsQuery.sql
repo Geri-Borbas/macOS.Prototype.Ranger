@@ -1,47 +1,47 @@
 SELECT
   (
     tourney_hand_player_statistics.id_player
-  ) AS "id_player",
-  (player_real.id_site) AS "id_site",
-  (player.player_name) AS "str_player_name",
+  ) as "id_player",
+  (player_real.id_site) as "id_site",
+  (player.player_name) as "str_player_name",
   (
     sum(
       (
-        CASE when(
+        case when(
           tourney_hand_player_statistics.flg_vpip
-        ) THEN 1 ELSE 0 end
+        ) then 1 else 0 end
       )
     )
-  ) AS "cnt_vpip",
+  ) as "cnt_vpip",
   (
     sum(
       (
-        CASE when(
+        case when(
           tourney_hand_player_statistics.id_hand > 0
-        ) THEN 1 ELSE 0 end
+        ) then 1 else 0 end
       )
     )
-  ) AS "cnt_hands",
+  ) as "cnt_hands",
   (
     sum(
       (
-        CASE when(lookup_actions_p.action = '') THEN 1 ELSE 0 end
+        case when(lookup_actions_p.action = '') then 1 else 0 end
       )
     )
-  ) AS "cnt_walks",
+  ) as "cnt_walks",
   (
     sum(
       (
-        CASE when(
+        case when(
           tourney_hand_player_statistics.cnt_p_raise > 0
-        ) THEN 1 ELSE 0 end
+        ) then 1 else 0 end
       )
     )
-  ) AS "cnt_pfr",
+  ) as "cnt_pfr",
   (
     sum(
       (
-        CASE when(
+        case when(
           lookup_actions_p.action LIKE '__%'
           OR (
             lookup_actions_p.action LIKE '_'
@@ -64,18 +64,17 @@ SELECT
               OR tourney_hand_player_statistics.flg_p_4bet_opp
             )
           )
-        ) THEN 1 ELSE 0 end
+        ) then 1 else 0 end
       )
     )
-  ) AS "cnt_pfr_opp"
+  ) as "cnt_pfr_opp"
 FROM
-  tourney_table_type,
-  tourney_summary,
   tourney_hand_player_statistics,
   player player_real,
   player,
   lookup_actions lookup_actions_p,
-  tourney_blinds
+  tourney_blinds,
+  tourney_summary
 WHERE
   (
     player_real.id_player = tourney_hand_player_statistics.id_player_real
@@ -93,20 +92,24 @@ WHERE
     tourney_summary.id_tourney = tourney_hand_player_statistics.id_tourney
   )
   AND (
-    tourney_summary.id_tourney = tourney_hand_player_statistics.id_tourney
-    AND tourney_summary.id_table_type = tourney_table_type.id_table_type
-  )
-  AND (
     (
-      tourney_hand_player_statistics.id_gametype = 1
-    )
-    AND
-    (
-      tourney_summary.tourney_no LIKE '$_TOURNEY_NUMBER'
-    )
-    AND
-    (
-      tourney_table_type.description LIKE 'MTT %'
+      (
+        (
+          (
+            CASE WHEN tourney_summary.currency = 'SEK' THEN (tourney_summary.amt_buyin * 0.15) ELSE (
+              CASE WHEN tourney_summary.currency = 'INR' THEN (
+                tourney_summary.amt_buyin * 0.020
+              ) ELSE (
+                CASE WHEN tourney_summary.currency = 'XSC' THEN 0.0 ELSE (
+                  CASE WHEN tourney_summary.currency = 'PLY' THEN 0.0 ELSE tourney_summary.amt_buyin END
+                ) END
+              ) END
+            ) END
+          ) <= 22.01
+        )
+        AND tourney_summary.id_gametype = 1
+      )
+      OR tourney_summary.id_gametype <> 1
     )
   )
   AND (
