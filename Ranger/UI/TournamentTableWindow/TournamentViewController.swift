@@ -73,7 +73,7 @@ class TournamentViewController: NSViewController
     }
     
     func alignWindow(to tableWindowInfo: TableWindowInfo)
-    {
+    {        
         // Only if any.
         guard let window = self.view.window
         else { return }

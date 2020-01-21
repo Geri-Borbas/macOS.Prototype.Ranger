@@ -37,7 +37,7 @@ class TableTracker
         { CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution) }
         
         // Kickoff timer.
-        let interval = 1.0  / 60.0
+        let interval = 1.0 / 60.0
         let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
     }
@@ -47,7 +47,7 @@ class TableTracker
     
     func lookupTableWindowInfos() -> [TableWindowInfo]
     {
-        // Get window infos.
+        // Get window info list.
         let windowInfoList = CGWindowListCopyWindowInfo(
             CGWindowListOption(arrayLiteral: .excludeDesktopElements, .optionOnScreenOnly),
             kCGNullWindowID
@@ -62,9 +62,18 @@ class TableTracker
         .map
         {
             eachPokerStarsWindowInfo in
-            TableWindowInfo(
+            
+            // Get index in window info list.
+            let eachIndex = windowInfoList.firstIndex
+            {
+                eachWindowInfo in
+                eachWindowInfo["kCGWindowNumber"] as! Int == eachPokerStarsWindowInfo["kCGWindowNumber"] as! Int
+            } ?? -1
+            
+            return TableWindowInfo(
                 name: eachPokerStarsWindowInfo["kCGWindowName"] as! String,
                 number: eachPokerStarsWindowInfo["kCGWindowNumber"] as! Int,
+                index: eachIndex,
                 bounds: CGRect.init(dictionaryRepresentation:(eachPokerStarsWindowInfo["kCGWindowBounds"] as! CFDictionary)) ?? CGRect()
             )
         }.sorted()

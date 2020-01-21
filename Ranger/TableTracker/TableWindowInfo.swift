@@ -17,6 +17,7 @@ struct TableWindowInfo
     // Properties.
     var name: String
     var number: Int
+    var index: Int
     var bounds: CGRect
     
     // UI.
@@ -49,6 +50,7 @@ extension TableWindowInfo
         // Is updated if any of the following is different.
         guard lhs.name == rhs.name else { return true }
         guard lhs.number == rhs.number else { return true }
+        guard lhs.index == rhs.index else { return true }
         guard lhs.bounds == rhs.bounds else { return true }
         
         return false

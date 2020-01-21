@@ -25,6 +25,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 1.9.5
+
+    + `TableTracker` sends update on window order change as well 
+
 * 1.9.4
 
     + Added `tourney_no` check to  `PokerTracker.StatisticsQuery.sql` 
