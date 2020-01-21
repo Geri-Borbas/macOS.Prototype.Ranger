@@ -37,7 +37,7 @@ class TableTracker
         { CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution) }
         
         // Kickoff timer.
-        let interval = 1.0 // 60.0
+        let interval = 1.0  / 60.0
         let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
     }
@@ -104,36 +104,27 @@ class TableTracker
         currentTableWindowInfos.difference(from: tableWindowInfos).forEach
         {
             eachChange in
-            
             switch eachChange
             {
                 case .insert(_, let eachTableWindowInfo, _):
-                    
-                    print(".insert \(eachTableWindowInfo.name)")
-                    
-                    // Callback.
                     delegate?.windowTrackerDidStartTrackingTable(tableWindowInfo: eachTableWindowInfo)
                 
                 case .remove(_, let eachTableWindowInfo, _):
-                
-                    print(".remove \(eachTableWindowInfo.name)")
-                    
-                    // Callback.
                     delegate?.windowTrackerDidStopTrackingTable(tableWindowInfo: eachTableWindowInfo)
             }
         }
-        
-        // Set.
-        tableWindowInfos = currentTableWindowInfos
         
         // Update if any.
         tableWindowInfos.forEach
         {
             eachTableWindowInfo in
-            
-            print("Update \(eachTableWindowInfo.name)")
-            
-            delegate?.windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: eachTableWindowInfo)
+            if
+                let eachCurrentTableWindowInfo = currentTableWindowInfos.filter({ $0 == eachTableWindowInfo }).first,
+                eachCurrentTableWindowInfo.isUpdated(comparedTo: eachTableWindowInfo)
+            { delegate?.windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: eachCurrentTableWindowInfo) }
         }
+        
+        // Set.
+        tableWindowInfos = currentTableWindowInfos
     }
 }

@@ -4,6 +4,7 @@
 * Doing
 
     + Next up
+        + Live Multi-Table test
         + Review `PokerTracker` database connection count
         + Fetch sharkscope status after requests (explicitly in controllers)
             + A simple authenticated request with error can be sufficient
@@ -24,6 +25,10 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Window_Tracking/0.1.1
+
+    + `TableTracker` only delegates updates when window is changed (either `name` or `bounds)
 
 * Feature/UI/Window_Tracking/0.1.0
 

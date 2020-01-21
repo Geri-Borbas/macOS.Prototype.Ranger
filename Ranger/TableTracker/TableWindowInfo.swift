@@ -36,6 +36,26 @@ struct TableWindowInfo
 }
 
 
+extension TableWindowInfo
+{
+    
+    
+    /// Used to determine if any update delegation is needed in `TableTracker.tick()`.
+    func isUpdated(comparedTo rhs: TableWindowInfo) -> Bool
+    {
+        // Shortcut.
+        let lhs = self
+        
+        // Is updated if any of the following is different.
+        guard lhs.name == rhs.name else { return true }
+        guard lhs.number == rhs.number else { return true }
+        guard lhs.bounds == rhs.bounds else { return true }
+        
+        return false
+    }
+}
+
+
 extension TableWindowInfo: Equatable
 {
     
