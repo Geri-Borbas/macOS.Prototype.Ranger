@@ -16,6 +16,9 @@
 		550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */; };
 		551DC0B923D67AEA0030E2B0 /* SimulatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E0A323D6575200BA0DD5 /* SimulatedTableViewController.swift */; };
 		551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5555E09E23D6567700BA0DD5 /* TableSimulator.Configuration.plist */; };
+		551DC0BD23D694A20030E2B0 /* TourneyHandSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DC0BC23D694A20030E2B0 /* TourneyHandSummary.swift */; };
+		551DC0C023D695720030E2B0 /* TourneyHandSummaryQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DC0BF23D695720030E2B0 /* TourneyHandSummaryQuery.swift */; };
+		551DC0C123D6993F0030E2B0 /* TourneyHandSummaryQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
 		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
@@ -184,6 +187,9 @@
 		5518D63623BA8E0500EFFBC0 /* HandPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandPlayer.swift; sourceTree = "<group>"; };
 		5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LatestHandPlayerQuery.sql; sourceTree = "<group>"; };
 		5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayerQuery.swift; sourceTree = "<group>"; };
+		551DC0BC23D694A20030E2B0 /* TourneyHandSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHandSummary.swift; sourceTree = "<group>"; };
+		551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourneyHandSummaryQuery.sql; sourceTree = "<group>"; };
+		551DC0BF23D695720030E2B0 /* TourneyHandSummaryQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHandSummaryQuery.swift; sourceTree = "<group>"; };
 		551DEE0323C5E3C9006DF95B /* StackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCellView.swift; sourceTree = "<group>"; };
 		551DEE0723C5E477006DF95B /* StackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackBarView.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -391,6 +397,16 @@
 			path = HandPlayer;
 			sourceTree = "<group>";
 		};
+		551DC0BB23D6945F0030E2B0 /* TourneyHandSummary */ = {
+			isa = PBXGroup;
+			children = (
+				551DC0BC23D694A20030E2B0 /* TourneyHandSummary.swift */,
+				551DC0BF23D695720030E2B0 /* TourneyHandSummaryQuery.swift */,
+				551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */,
+			);
+			path = TourneyHandSummary;
+			sourceTree = "<group>";
+		};
 		551DEE0523C5E435006DF95B /* Finishes */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +434,7 @@
 				55ED3CD823A5538E00754763 /* LiveTourneyPlayer */,
 				55ED3CD723A5537700754763 /* LiveTourneyTable */,
 				5518D63523BA8D9300EFFBC0 /* HandPlayer */,
+				551DC0BB23D6945F0030E2B0 /* TourneyHandSummary */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1034,6 +1051,7 @@
 			files = (
 				552E548623D176E80056B305 /* LatestHandPlayerQuery.sql in Resources */,
 				552E547F23D176D80056B305 /* StatisticsQuery.sql in Resources */,
+				551DC0C123D6993F0030E2B0 /* TourneyHandSummaryQuery.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,6 +1254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				552E548423D176E80056B305 /* HandPlayer.swift in Sources */,
+				551DC0C023D695720030E2B0 /* TourneyHandSummaryQuery.swift in Sources */,
 				552E548123D176DF0056B305 /* LiveTourneyPlayerQuery.swift in Sources */,
 				552E547A23D176CE0056B305 /* Query.swift in Sources */,
 				552E548323D176E30056B305 /* LiveTourneyTableQuery.swift in Sources */,
@@ -1243,6 +1262,7 @@
 				552E547E23D176D80056B305 /* StatisticsQuery.swift in Sources */,
 				552E547D23D176D80056B305 /* PokerTracker.Statistics.swift in Sources */,
 				552E548223D176E30056B305 /* LiveTourneyTable.swift in Sources */,
+				551DC0BD23D694A20030E2B0 /* TourneyHandSummary.swift in Sources */,
 				552E547923D176CE0056B305 /* Entry.swift in Sources */,
 				553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */,
 				552E548023D176DF0056B305 /* LiveTourneyPlayer.swift in Sources */,

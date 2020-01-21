@@ -17,26 +17,16 @@ extension TableSimulator
     {
         
 
-        var tournamentTypes: [TournamentType]
+        var tournaments: [Tournament]
                 
             
-        struct TournamentType: Decodable
+        struct Tournament: Decodable, Equatable
         {
             
             
             let name: String
             let number: String
-            let handsPlayed: Int
-            let blindLevelTime: Double
-            let blindLevels: [String]
-                                  
-            
-            func blindLevel(for elapsedTime: TimeInterval) -> String
-            {
-                let blindLevel: Double = floor(elapsedTime / blindLevelTime)
-                let blindLevelIndex = Int(min(blindLevel, Double(blindLevels.count - 1)))
-                return blindLevels[blindLevelIndex]
-            }
+            let handInterval: Double
         }
             
         static func load() -> Configuration
@@ -46,16 +36,5 @@ extension TableSimulator
             let decoder = PropertyListDecoder()
             return try! decoder.decode(Configuration.self, from: data)
         }
-        
-        func handsPlayedForTournamentNumberIfAny(tournamentNumber: String) -> Int
-        {
-            // Lookup.
-            guard let tournamentType = tournamentTypes.filter({ eachTournamentType in eachTournamentType.number == tournamentNumber }).first
-            else { return 0 }
-            
-            // Return.
-            return tournamentType.handsPlayed
-        }
-        
     }
 }

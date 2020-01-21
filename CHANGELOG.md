@@ -4,6 +4,7 @@
 * Doing
 
     + Next up
+        + Review `PokerTracker` database connection count
         + Multi-Table
             + Window Simulator
         + Fetch sharkscope status after requests (explicitly in controllers)
@@ -25,6 +26,18 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Window_Tracking/0.0.7
+
+    + `TableSimulator` uses actual PokerTracker tournament histories
+        + Added `PokerTracked.TourneyHandSummary` (list every hand for a tournament number)
+        + `TableSimulator.Configuration`
+            + Simply uses a tournament `number` and a playback speed (`handInterval`)
+            + Added more `Tourney` from database
+        + `TableSimulator` track active simulated windows
+            + Prevents opening duplicate tournaments
+            + `TournamentViewModel` can ask for `handOffset` if any
+        + `SimulatedTableViewController` gets blind levels from actual PokerTracker hands
 
 * Feature/UI/Window_Tracking/0.0.5
 
