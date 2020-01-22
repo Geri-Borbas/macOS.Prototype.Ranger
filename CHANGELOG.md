@@ -4,12 +4,13 @@
 * Doing
 
     + Next up
+        + Download flags
+        + Add Nationality / Local time to right-click context menu
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
         
     + Features
         + Final table positions column
-        + Add nationality (flag icon) with local time (!)
         + Game distribution in time Graph (scatter)
         + Cursor for Finishes (get live tourney data)
         + Get player stats for hero filtered for villain (clickable)
@@ -22,6 +23,11 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* 1.9.9
+
+    + Added `PlayerNameCellView` with nationality (flag icon)
+    + Columns ordering tweaks
 
 * 1.9.8
 

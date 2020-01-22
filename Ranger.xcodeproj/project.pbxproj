@@ -87,6 +87,7 @@
 		5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRanges.swift */; };
 		5575FA1123D7C46300414F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575FA1023D7C46300414F0F /* User.swift */; };
 		5575FA1323D7C46D00414F0F /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575FA1223D7C46D00414F0F /* UserRequest.swift */; };
+		55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55841CC923D90199007BC761 /* PlayerNameCellView.swift */; };
 		5585E40C23C985A80009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		5585E40E23C986930009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
@@ -242,6 +243,7 @@
 		55840BF923A9BE5D000B06FF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		55840BFB23A9BF94000B06FF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		55840BFE23A9C082000B06FF /* RootResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootResponse.swift; sourceTree = "<group>"; };
+		55841CC923D90199007BC761 /* PlayerNameCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameCellView.swift; sourceTree = "<group>"; };
 		5585E40B23C985A80009E98F /* TableInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfo.swift; sourceTree = "<group>"; };
 		5587DB4323A497740079BB30 /* PokerTracker.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Player.swift; sourceTree = "<group>"; };
 		558D35E1239F3C58006C710D /* Metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
@@ -579,6 +581,14 @@
 			path = JsonResponse;
 			sourceTree = "<group>";
 		};
+		55841CC823D90181007BC761 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				55841CC923D90199007BC761 /* PlayerNameCellView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		558D35E0239F3C45006C710D /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +682,7 @@
 				55A9AC5723BE0E4900179FA0 /* PercentBarCellView.swift */,
 				55A9AC5923BE159A00179FA0 /* PlayerCellView.swift */,
 				55E7E71823C019D7000388FD /* Data */,
+				55841CC823D90181007BC761 /* Player */,
 				551DEE0623C5E43D006DF95B /* Stack */,
 				551DEE0523C5E435006DF95B /* Finishes */,
 				559FFB4223D57437002A401B /* Cache */,
@@ -1319,6 +1330,7 @@
 				5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */,
 				5544A6FF23D80C3000ACCC6C /* PlayerNames.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
+				55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */,
 				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
