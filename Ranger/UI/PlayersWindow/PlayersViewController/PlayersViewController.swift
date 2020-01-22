@@ -39,6 +39,9 @@ class PlayersViewController: NSViewController,
         // Add to placeholder.
         playersTableViewController.view.frame = playersTablePlaceholderView.bounds
         playersTablePlaceholderView.addSubview(playersTableViewController.view)
+        
+        // Status.
+        playersTableViewController.viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
     }
     
     public func update(with players: [Model.Player])
@@ -76,7 +79,14 @@ class PlayersViewController: NSViewController,
     func playersTableDidChange()
     {
         // Status.
+        playersTableViewController.viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
+    }
+    
+    func layoutStatus()
+    {
         statusLabel.stringValue = "\(playersTableViewController.viewModel.players.count) players. \(playersTableViewController.viewModel.sharkScopeStatus)"
     }
+    
+    
 }
 

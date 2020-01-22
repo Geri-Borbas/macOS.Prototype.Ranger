@@ -75,6 +75,7 @@
 		553CAE2523D1F30700ED1DA3 /* PokerTracker.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587DB4323A497740079BB30 /* PokerTracker.Player.swift */; };
 		553CAE2623D1F30700ED1DA3 /* PlayerQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED3CDF23A5543A00754763 /* PlayerQuery.swift */; };
 		553F11A523D4F100000D4C05 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553F11A423D4F100000D4C05 /* ApiResponse.swift */; };
+		5544A6FF23D80C3000ACCC6C /* PlayerNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544A6FE23D80C3000ACCC6C /* PlayerNames.swift */; };
 		5555825A23D3EEE400465CDE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555825923D3EEE400465CDE /* PlayersViewController.swift */; };
 		5555E09B23D6553200BA0DD5 /* TableSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E09A23D6553200BA0DD5 /* TableSimulator.swift */; };
 		5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E09C23D655C900BA0DD5 /* TableSimulator.Configuration.swift */; };
@@ -211,6 +212,7 @@
 		5536B0FF23C2D2530067E7F2 /* NSMenu+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extensions.swift"; sourceTree = "<group>"; };
 		5536B10123C2D3140067E7F2 /* NSMenuItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extensions.swift"; sourceTree = "<group>"; };
 		553F11A423D4F100000D4C05 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		5544A6FE23D80C3000ACCC6C /* PlayerNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNames.swift; sourceTree = "<group>"; };
 		554E018923AA828100CF2971 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		554E018B23AAB31900CF2971 /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
 		5555825923D3EEE400465CDE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
@@ -705,6 +707,7 @@
 				55B03CD423B104F700F153B5 /* Model.Player.swift */,
 				55B9C86623D1857500B3D116 /* Model.Players.swift */,
 				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
+				5544A6FE23D80C3000ACCC6C /* PlayerNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1314,6 +1317,7 @@
 				55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */,
 				55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */,
 				5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */,
+				5544A6FF23D80C3000ACCC6C /* PlayerNames.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
 				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,

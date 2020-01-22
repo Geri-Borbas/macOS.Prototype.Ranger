@@ -43,11 +43,46 @@ extension Model
         public static func cachedPlayers() -> [Player]
         {
             // Only if any.
-            guard let cachedFileURLs = ApiRequestCache().cachedFiles(at: "networks/pokerstars/players")
+            guard let cacheFileURLs = ApiRequestCache().cachedFiles(at: "networks/pokerstars/players")
             else { return [] }
+            
+            // Map names.
+            let cachedPlayerNames = cacheFileURLs.map
+            {
+                eachCachedFileURL in
+                eachCachedFileURL.deletingPathExtension().lastPathComponent
+            }
+            
+            // Create models.
+            let players = cachedPlayerNames.map
+            {
+                eachCachedPlayerName in
+                Model.Player(name: eachCachedPlayerName)
+            }
+            
+            return players
+        }
+        
+        public static func optedOutPlayers() -> [Player]
+        {
+            // Only if any.
+            guard let cacheFileURLs = ApiRequestCache().cachedFiles(at: "networks/pokerstars/players")
+            else { return [] }
+
+            let optedOutPlayerCacheFileURLs = cacheFileURLs.filter
+            {
+                eachCacheFileURL in
+                
+                // Read.
+                guard let eachCacheFileContents = try? String(contentsOfFile: eachCacheFileURL.path, encoding: String.Encoding.utf8)
+                else { return false }
+                
+                // Lookup term.
+                return eachCacheFileContents.contains("Player not found or has opted out.")
+            }
         
             // Map names.
-            let cachedPlayerNames = cachedFileURLs.map
+            let cachedPlayerNames = optedOutPlayerCacheFileURLs.map
             {
                 eachCachedFileURL in
                 eachCachedFileURL.deletingPathExtension().lastPathComponent
@@ -64,48 +99,29 @@ extension Model
         }
         
         public static func regs() -> [Player]
+        { return load("Regs") }
+        
+        static func load(_ plistFileName: String) -> [Player]
         {
-            return [
-                
-                // Cached Tournaments.
-                Model.Player(name: "rehakzsolt"),
-                Model.Player(name: "quAAsar"),
-                Model.Player(name: "wASH1K"),
-                Model.Player(name: "NNiubility"),
-                Model.Player(name: "rybluk"),
-                Model.Player(name: "wttomi"),
-                Model.Player(name: "Tillotam"),
-                Model.Player(name: "Tian You520"),
-                Model.Player(name: "Gugrand"),
-                Model.Player(name: "flokinho86"),
-                Model.Player(name: "federaluiasi"),
-                Model.Player(name: "@rtemur"),
-                Model.Player(name: "LuckyMarat"),
-                Model.Player(name: "AlekseyM1983"),
-                Model.Player(name: "SpOs Im GoOd"),
-                Model.Player(name: "fülemüle"),
-                Model.Player(name: "B0aR"),
-                Model.Player(name: "Gromobix"),
-                Model.Player(name: "LaPC"),
-                Model.Player(name: "Alfa2012"),
-                Model.Player(name: "ShipItSicmik777"),
-                Model.Player(name: "balder24"),
-                Model.Player(name: "moozeev"),
-                
-                // Enpty.
-                Model.Player(name: "g1anfar"),
-                Model.Player(name: "ScauHades"),
-                Model.Player(name: "carlos1020"),
-                
-                // Opted-Out.
-                Model.Player(name: "Oliana88"),
-                Model.Player(name: "wolfeboyocd"),
-                Model.Player(name: "denis1986211"),
-                
-                // And me.
-                Model.Player(name: "Borbas.Geri"),
-                
-            ].sorted()
+            // Resolve Documents directory.
+            guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            else { return [] }
+                    
+            // Append path.
+            let plistFileURL = documentsDirectory.appendingPathComponent(plistFileName).appendingPathExtension("plist")
+            
+            // Load and decode.
+            let data = try! Data(contentsOf: plistFileURL)
+            let decoder = PropertyListDecoder()
+            
+            guard let playerNames = try? decoder.decode(Model.PlayerNames.self, from: data)
+            else { return [] }
+            
+            return playerNames.playerNames.map
+            {
+                eachPlayerName in
+                Model.Player(name: eachPlayerName)
+            }
         }
     }
 }

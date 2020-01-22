@@ -23,6 +23,12 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 1.9.8
+
+    + Added `Model.Players.load()` to load player lists from `plist` 
+    + Added some basic `Tournaments` calculations.
+    + SharkScope status in `PlayersViewController`
+
 * 1.9.6
 
     + Created `SharkScope.User` request

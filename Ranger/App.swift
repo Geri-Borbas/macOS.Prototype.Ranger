@@ -63,6 +63,19 @@ class App: NSObject, TableTrackerDelegate
         { NSApp.addWindowsItem(window, title: "Regs", filename: false) }
     }
     
+    @IBAction func openOptedOutPlayersDidClick(_ sender: AnyObject)
+    {
+        // Instantiate window.
+        let window = PlayersWindowController.instantiateAndShow(
+                withPlayers: Model.Players.optedOutPlayers(),
+                hiddenColumnIdentifiers: ["Seat", "Stack"]
+        )
+        
+        // Add menu item.
+        if let window = window
+        { NSApp.addWindowsItem(window, title: "Opted-Out Players", filename: false) }
+    }
+    
     
     // MARK: - Track tables
     

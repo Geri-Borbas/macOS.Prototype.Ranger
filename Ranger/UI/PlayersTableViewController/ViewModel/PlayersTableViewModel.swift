@@ -38,6 +38,7 @@ class PlayersTableViewModel: NSObject
     
     private var sortDescriptors: [NSSortDescriptor]?
     public var selectedPlayer: Model.Player?
+    public var sharkScopeStatus: String = ""
     
     
     // MARK: - Binds
@@ -47,10 +48,7 @@ class PlayersTableViewModel: NSObject
     
     /// If `tournamenNumber` is set, only session statistics will be fetched for hero.
     var tournamentInfo: TournamentInfo?
-    
-    public var sharkScopeStatus: String
-    { sharkScope.status }
-        
+            
     public var delegate: PlayersTableViewModelDelegate?
     
     
@@ -169,6 +167,27 @@ extension PlayersTableViewModel
 {
     
     
+    func fetchSharkScopeStatus(completion: @escaping (_ status: String) -> Void)
+    {
+        // Ping to SharkScope.
+        sharkScope.fetch(UserRequest().withoutCache(),
+                         completion:
+        {
+            (result: Result<User, SharkScope.Error>) in
+            switch result
+            {
+                case .success(let user):
+                    self.sharkScopeStatus = "\(user.Response.UserInfo.Subscriptions.totalSearchesRemaining.value) search remaining (logged in as \(user.Response.UserInfo.Username))."
+                    completion(self.sharkScopeStatus)
+                    break
+                case .failure(let error):
+                    self.sharkScopeStatus = "SharkScope error: \(error)"
+                    completion(self.sharkScopeStatus)
+                    break
+            }
+        })
+    }
+    
     public func fetchSharkScopeStatisticsForPlayer(inRow row: Int)
     {
         // Checks.
@@ -213,12 +232,11 @@ extension PlayersTableViewModel
     public func fetchTournamentsForPlayer(withName playerName: String)
     {
         // Lookup player.
-        let firstPlayer = players.filter{ eachPlayer in eachPlayer.name == playerName }.first
+        // let firstPlayer = players.filter{ eachPlayer in eachPlayer.name == playerName }.first
         
         // Checks.
-        guard let player = firstPlayer else { return }
+        // guard let player = firstPlayer else { return }
 
-        
         sharkScope.fetch(
             TournamentsRequest(network: "PokerStars", player:playerName),
             completion:
@@ -228,15 +246,9 @@ extension PlayersTableViewModel
                 switch result
                 {
                     case .success(let tournaments):
-                                       
-                        // Calculations prototype.
-                        let rake = player.sharkScope.statistics?.Rake ?? 0.0
-                        let results = tournaments.tournaments.reduce(0.0){ sum, eachTournament in sum + eachTournament.Result }
-                        let profit = results - rake
-                        
-                        // Log.
-                        print("Tournament count: \(tournaments.tournaments.count)")
-                        print("Profit: \(profit)")
+                             
+                        // Prototype.
+                        self.aggregate(tournaments: tournaments)
                         
                         // Invoke callback.
                         self.delegate?.playersTableDidChange()
@@ -282,5 +294,20 @@ extension PlayersTableViewModel
                 }
            }
         )
+    }
+        
+    func aggregate(tournaments: Tournaments)
+    {
+        // Calculations prototype.
+        print("Count: \(tournaments.tournaments.count)")
+        
+         let results = tournaments.tournaments.reduce(0.0){ sum, eachTournament in sum + eachTournament.Result }
+         print("Profit: \(results)")
+        
+         let byEntrants: [Int:[Tournaments.Tournament]] = Dictionary(grouping: tournaments.tournaments, by: { $0.Entrants })
+         print("Entrants: \(byEntrants.keys.sorted())")
+        
+         let byBuyIn: [Float:[Tournaments.Tournament]] = Dictionary(grouping: tournaments.tournaments, by: { $0.Stake + $0.Rake })
+         print("Buy-in: \(byBuyIn.keys.sorted())")
     }
 }
