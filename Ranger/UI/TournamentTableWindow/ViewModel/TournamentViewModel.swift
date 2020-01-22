@@ -74,6 +74,7 @@ class TournamentViewModel: NSObject
     
     public var latestProcessedHandNumber: String = ""
     public var latestBigBlind: Int = 0
+    public var sharkScopeStatus: String = ""
     
     
     // MARK: - Binds
@@ -134,17 +135,19 @@ class TournamentViewModel: NSObject
     func fetchSharkScopeStatus(completion: @escaping (_ status: String) -> Void)
     {
         // Ping to SharkScope.
-        sharkScope.fetch(TimelineRequest(network: "PokerStars", player:"Borbas.Geri").withoutCache(),
-                        completion:
+        sharkScope.fetch(UserRequest().withoutCache(),
+                         completion:
         {
-            (result: Result<Timeline, SharkScope.Error>) in
+            (result: Result<User, SharkScope.Error>) in
             switch result
             {
-                case .success(let lastActivity):
-                    completion("\(lastActivity.Response.UserInfo.RemainingSearches) search remaining (logged in as \(lastActivity.Response.UserInfo.Username)).")
+                case .success(let user):
+                    self.sharkScopeStatus = "\(user.Response.UserInfo.Subscriptions.totalSearchesRemaining.value) search remaining (logged in as \(user.Response.UserInfo.Username))."
+                    completion(self.sharkScopeStatus)
                     break
-                case .failure(let error):                    
-                    completion("SharkScope error: \(error)")
+                case .failure(let error):
+                    self.sharkScopeStatus = "SharkScope error: \(error)"
+                    completion(self.sharkScopeStatus)
                     break
             }
         })

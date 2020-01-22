@@ -4,8 +4,6 @@
 * Doing
 
     + Next up
-        + Fetch sharkscope status after requests (explicitly in controllers)
-            + A simple authenticated request with error can be sufficient
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
         
@@ -24,6 +22,11 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* 1.9.6
+
+    + Created `SharkScope.User` request
+    + Fetch Shark Scope status afterΩ requests (explicitly in `TournamentViewController`)
 
 * 1.9.5
 

@@ -34,12 +34,8 @@ class TournamentViewController: NSViewController
     {
         super.viewDidLoad()
         
-        // Fetch SharkScope status at start.
-        viewModel.fetchSharkScopeStatus
-        {
-            status in
-            self.statusLabel.stringValue = status
-        }
+        // Fetch SharkScope status.
+        viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
         
         // Instantiate table.
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -120,9 +116,13 @@ class TournamentViewController: NSViewController
         
         // Players.
         playersTableViewController.tableView.reloadData()
-        
+    }
+    
+    func layoutStatus()
+    {
         // Status.
-        statusLabel.stringValue = "Hand #\(viewModel.latestProcessedHandNumber) processed. \(playersTableViewController.viewModel.sharkScopeStatus)"
+        let pokerTrackerStatus = (viewModel.latestProcessedHandNumber == "") ? "" : "Hand #\(viewModel.latestProcessedHandNumber) processed. "
+        statusLabel.stringValue = "\(pokerTrackerStatus)\(viewModel.sharkScopeStatus)"
     }
 }
 
@@ -146,7 +146,12 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
     
     
     func playersTableDidChange()
-    { layout() }
+    {
+        layout()
+        
+        // Fetch SharkScope status.
+        viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
+    }
 }
 
 

@@ -16,7 +16,7 @@ public struct StringRepresenting<RepresentedType: StringRepresentable>: Decodabl
 {
     
     
-    var value: RepresentedType
+    public var value: RepresentedType
     
     
     public init(from decoder: Decoder) throws
