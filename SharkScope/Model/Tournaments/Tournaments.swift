@@ -17,7 +17,7 @@ public struct Tournaments: ApiResponse, Equatable
     public let tournaments: [Tournament]
     
     
-    public struct Tournament: Equatable, Decodable
+    public struct Tournament: Equatable, Decodable, Comparable
     {
         
         
@@ -74,6 +74,9 @@ public struct Tournaments: ApiResponse, Equatable
             
             return dateFormatter.date(from: string ?? "") ?? Foundation.Date()
         }
+        
+        public static func < (lhs: Tournaments.Tournament, rhs: Tournaments.Tournament) -> Bool
+        { lhs.Date < rhs.Date }
     }
     
     

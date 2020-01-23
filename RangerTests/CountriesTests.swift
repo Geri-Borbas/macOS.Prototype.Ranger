@@ -20,13 +20,6 @@ class CountriesTests: XCTestCase
         return try JSONDecoder().decode(Countries.self, from: data)
     }
     
-    func copy(string: String?)
-    {
-        // Copy to clipboard (for easy inspection).
-        NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        NSPasteboard.general.setString(string ?? "", forType: NSPasteboard.PasteboardType.string)
-    }
-    
     func testDecoding()
     {
         do
@@ -49,7 +42,7 @@ class CountriesTests: XCTestCase
             let encodedString = String(data: encodedData, encoding: .utf8)
             
             // Copy to clipboard (for easy inspection).
-            copy(string: encodedString)
+            encodedString.copyToClipboard()
         }
         catch
         {
@@ -86,7 +79,7 @@ class CountriesTests: XCTestCase
         }
 
         // Copy to clipboard (for easy inspection).
-        copy(string: log)
+        log.copyToClipboard()
         
     }
     

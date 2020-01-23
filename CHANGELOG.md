@@ -22,6 +22,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.0.1
+
+    + Moved `Tournaments` statistics to `RangerTests.TournamentsTests`
+
 * 2.0.0
 
     + Added Local time to country flag tooltip

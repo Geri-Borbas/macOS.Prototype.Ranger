@@ -246,10 +246,7 @@ extension PlayersTableViewModel
                 switch result
                 {
                     case .success(let tournaments):
-                             
-                        // Prototype.
-                        self.aggregate(tournaments: tournaments)
-                        
+                                                     
                         // Invoke callback.
                         self.delegate?.playersTableDidChange()
 
@@ -294,20 +291,5 @@ extension PlayersTableViewModel
                 }
            }
         )
-    }
-        
-    func aggregate(tournaments: Tournaments)
-    {
-        // Calculations prototype.
-        print("Count: \(tournaments.tournaments.count)")
-        
-         let results = tournaments.tournaments.reduce(0.0){ sum, eachTournament in sum + eachTournament.Result }
-         print("Profit: \(results)")
-        
-         let byEntrants: [Int:[Tournaments.Tournament]] = Dictionary(grouping: tournaments.tournaments, by: { $0.Entrants })
-         print("Entrants: \(byEntrants.keys.sorted())")
-        
-         let byBuyIn: [Float:[Tournaments.Tournament]] = Dictionary(grouping: tournaments.tournaments, by: { $0.Stake + $0.Rake })
-         print("Buy-in: \(byBuyIn.keys.sorted())")
     }
 }

@@ -21,6 +21,9 @@
 		551DC0C123D6993F0030E2B0 /* TourneyHandSummaryQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
+		552B105623D966A50077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
+		552B105723D9671E0077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
+		552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105823D96FFC0077D927 /* TournamentsTests.swift */; };
 		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
 		552B413923D4A13E00A6184F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		552E543F23D164620056B305 /* SharkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E543D23D164620056B305 /* SharkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -94,7 +97,6 @@
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
 		558F707823D9295E004DB3F2 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 558F707723D9295E004DB3F2 /* Countries.json */; };
 		558F707A23D92AE4004DB3F2 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707923D92AE4004DB3F2 /* Countries.swift */; };
-		558F707B23D92BBB004DB3F2 /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F17823C8304000FC2B51 /* CountriesTests.swift */; };
 		558F707C23D92C2A004DB3F2 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707923D92AE4004DB3F2 /* Countries.swift */; };
 		558F707D23D92C2C004DB3F2 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 558F707723D9295E004DB3F2 /* Countries.json */; };
 		558F708023D9315D004DB3F2 /* DynamicCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */; };
@@ -123,7 +125,6 @@
 		55C18696239583DD0081B6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C18694239583DD0081B6B7 /* Main.storyboard */; };
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
 		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
-		55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */; };
 		55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
 		55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */; };
 		55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */; };
@@ -208,6 +209,8 @@
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
 		5521A55E239DF408000D1AD1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Statistics.swift; sourceTree = "<group>"; };
+		552B105523D966A50077D927 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		552B105823D96FFC0077D927 /* TournamentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTests.swift; sourceTree = "<group>"; };
 		552B413623D4A03100A6184F /* Tournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournaments.swift; sourceTree = "<group>"; };
 		552B413823D4A13E00A6184F /* TournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsRequest.swift; sourceTree = "<group>"; };
 		552E543B23D164610056B305 /* SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -728,6 +731,7 @@
 				55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */,
 				55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */,
 				550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */,
+				552B105523D966A50077D927 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -797,6 +801,7 @@
 				55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */,
 				55D7F17823C8304000FC2B51 /* CountriesTests.swift */,
 				55C529E823BD3F1500A6975A /* Info.plist */,
+				552B105823D96FFC0077D927 /* TournamentsTests.swift */,
 			);
 			path = RangerTests;
 			sourceTree = "<group>";
@@ -1358,6 +1363,7 @@
 				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
+				552B105623D966A50077D927 /* String+Extensions.swift in Sources */,
 				5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */,
 				55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */,
 				55E7E71A23C019EE000388FD /* Easing.swift in Sources */,
@@ -1390,9 +1396,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */,
-				558F707B23D92BBB004DB3F2 /* CountriesTests.swift in Sources */,
+				552B105723D9671E0077D927 /* String+Extensions.swift in Sources */,
 				558F707C23D92C2A004DB3F2 /* Countries.swift in Sources */,
+				552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */,
 				558F708123D931C0004DB3F2 /* DynamicCodingKey.swift in Sources */,
 				55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */,
 				5585E40E23C986930009E98F /* TableInfo.swift in Sources */,
