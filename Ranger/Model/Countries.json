@@ -1,0 +1,2646 @@
+{
+    "countries": [
+        {
+            "code": "AW",
+            "name": "Aruba",
+            "capital": "Oranjestad",
+            "latitude": 12.5,
+            "longitude": -69.96666666,
+            "timezoneIdentifiers": [
+                "America/Aruba"
+            ]
+        },
+        {
+            "code": "AF",
+            "name": "Afghanistan",
+            "capital": "Kabul",
+            "latitude": 33,
+            "longitude": 65,
+            "timezoneIdentifiers": [
+                "Asia/Kabul"
+            ]
+        },
+        {
+            "code": "AO",
+            "name": "Angola",
+            "capital": "Luanda",
+            "latitude": -12.5,
+            "longitude": 18.5,
+            "timezoneIdentifiers": [
+                "Africa/Luanda"
+            ]
+        },
+        {
+            "code": "AI",
+            "name": "Anguilla",
+            "capital": "The Valley",
+            "latitude": 18.25,
+            "longitude": -63.16666666,
+            "timezoneIdentifiers": [
+                "America/Anguilla"
+            ]
+        },
+        {
+            "code": "AX",
+            "name": "Åland Islands",
+            "capital": "Mariehamn",
+            "latitude": 60.116667,
+            "longitude": 19.9,
+            "timezoneIdentifiers": [
+                "Europe/Mariehamn"
+            ]
+        },
+        {
+            "code": "AL",
+            "name": "Albania",
+            "capital": "Tirana",
+            "latitude": 41,
+            "longitude": 20,
+            "timezoneIdentifiers": [
+                "Europe/Tirane"
+            ]
+        },
+        {
+            "code": "AD",
+            "name": "Andorra",
+            "capital": "Andorra la Vella",
+            "latitude": 42.5,
+            "longitude": 1.5,
+            "timezoneIdentifiers": [
+                "Europe/Andorra"
+            ]
+        },
+        {
+            "code": "AE",
+            "name": "United Arab Emirates",
+            "capital": "Abu Dhabi",
+            "latitude": 24,
+            "longitude": 54,
+            "timezoneIdentifiers": [
+                "Asia/Dubai"
+            ]
+        },
+        {
+            "code": "AR",
+            "name": "Argentina",
+            "capital": "Buenos Aires",
+            "latitude": -34,
+            "longitude": -64,
+            "timezoneIdentifiers": [
+                "America/Argentina/Buenos_Aires",
+                "America/Argentina/Cordoba",
+                "America/Argentina/Salta",
+                "America/Argentina/Jujuy",
+                "America/Argentina/Tucuman",
+                "America/Argentina/Catamarca",
+                "America/Argentina/La_Rioja",
+                "America/Argentina/San_Juan",
+                "America/Argentina/Mendoza",
+                "America/Argentina/San_Luis",
+                "America/Argentina/Rio_Gallegos",
+                "America/Argentina/Ushuaia"
+            ]
+        },
+        {
+            "code": "AM",
+            "name": "Armenia",
+            "capital": "Yerevan",
+            "latitude": 40,
+            "longitude": 45,
+            "timezoneIdentifiers": [
+                "Asia/Yerevan"
+            ]
+        },
+        {
+            "code": "AS",
+            "name": "American Samoa",
+            "capital": "Pago Pago",
+            "latitude": -14.33333333,
+            "longitude": -170,
+            "timezoneIdentifiers": [
+                "Pacific/Pago_Pago"
+            ]
+        },
+        {
+            "code": "AQ",
+            "name": "Antarctica",
+            "latitude": -90,
+            "longitude": 0,
+            "timezoneIdentifiers": [
+                "Antarctica/McMurdo",
+                "Antarctica/Casey",
+                "Antarctica/Davis",
+                "Antarctica/DumontDUrville",
+                "Antarctica/Mawson",
+                "Antarctica/Palmer",
+                "Antarctica/Rothera",
+                "Antarctica/Syowa",
+                "Antarctica/Troll",
+                "Antarctica/Vostok"
+            ]
+        },
+        {
+            "code": "TF",
+            "name": "French Southern and Antarctic Lands",
+            "capital": "Port-aux-Français",
+            "latitude": -49.25,
+            "longitude": 69.167,
+            "timezoneIdentifiers": [
+                "Indian/Kerguelen"
+            ]
+        },
+        {
+            "code": "AG",
+            "name": "Antigua and Barbuda",
+            "capital": "Saint John's",
+            "latitude": 17.05,
+            "longitude": -61.8,
+            "timezoneIdentifiers": [
+                "America/Antigua"
+            ]
+        },
+        {
+            "code": "AU",
+            "name": "Australia",
+            "capital": "Canberra",
+            "latitude": -27,
+            "longitude": 133,
+            "timezoneIdentifiers": [
+                "Australia/Lord_Howe",
+                "Antarctica/Macquarie",
+                "Australia/Hobart",
+                "Australia/Currie",
+                "Australia/Melbourne",
+                "Australia/Sydney",
+                "Australia/Broken_Hill",
+                "Australia/Brisbane",
+                "Australia/Lindeman",
+                "Australia/Adelaide",
+                "Australia/Darwin",
+                "Australia/Perth",
+                "Australia/Eucla"
+            ]
+        },
+        {
+            "code": "AT",
+            "name": "Austria",
+            "capital": "Vienna",
+            "latitude": 47.33333333,
+            "longitude": 13.33333333,
+            "timezoneIdentifiers": [
+                "Europe/Vienna"
+            ]
+        },
+        {
+            "code": "AZ",
+            "name": "Azerbaijan",
+            "capital": "Baku",
+            "latitude": 40.5,
+            "longitude": 47.5,
+            "timezoneIdentifiers": [
+                "Asia/Baku"
+            ]
+        },
+        {
+            "code": "BI",
+            "name": "Burundi",
+            "capital": "Bujumbura",
+            "latitude": -3.5,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Bujumbura"
+            ]
+        },
+        {
+            "code": "BE",
+            "name": "Belgium",
+            "capital": "Brussels",
+            "latitude": 50.83333333,
+            "longitude": 4,
+            "timezoneIdentifiers": [
+                "Europe/Brussels"
+            ]
+        },
+        {
+            "code": "BJ",
+            "name": "Benin",
+            "capital": "Porto-Novo",
+            "latitude": 9.5,
+            "longitude": 2.25,
+            "timezoneIdentifiers": [
+                "Africa/Porto-Novo"
+            ]
+        },
+        {
+            "code": "BF",
+            "name": "Burkina Faso",
+            "capital": "Ouagadougou",
+            "latitude": 13,
+            "longitude": -2,
+            "timezoneIdentifiers": [
+                "Africa/Ouagadougou"
+            ]
+        },
+        {
+            "code": "BD",
+            "name": "Bangladesh",
+            "capital": "Dhaka",
+            "latitude": 24,
+            "longitude": 90,
+            "timezoneIdentifiers": [
+                "Asia/Dhaka"
+            ]
+        },
+        {
+            "code": "BG",
+            "name": "Bulgaria",
+            "capital": "Sofia",
+            "latitude": 43,
+            "longitude": 25,
+            "timezoneIdentifiers": [
+                "Europe/Sofia"
+            ]
+        },
+        {
+            "code": "BH",
+            "name": "Bahrain",
+            "capital": "Manama",
+            "latitude": 26,
+            "longitude": 50.55,
+            "timezoneIdentifiers": [
+                "Asia/Bahrain"
+            ]
+        },
+        {
+            "code": "BS",
+            "name": "Bahamas",
+            "capital": "Nassau",
+            "latitude": 24.25,
+            "longitude": -76,
+            "timezoneIdentifiers": [
+                "America/Nassau"
+            ]
+        },
+        {
+            "code": "BA",
+            "name": "Bosnia and Herzegovina",
+            "capital": "Sarajevo",
+            "latitude": 44,
+            "longitude": 18,
+            "timezoneIdentifiers": [
+                "Europe/Sarajevo"
+            ]
+        },
+        {
+            "code": "BL",
+            "name": "Saint Barthélemy",
+            "capital": "Gustavia",
+            "latitude": 18.5,
+            "longitude": -63.41666666,
+            "timezoneIdentifiers": [
+                "America/St_Barthelemy"
+            ]
+        },
+        {
+            "code": "BY",
+            "name": "Belarus",
+            "capital": "Minsk",
+            "latitude": 53,
+            "longitude": 28,
+            "timezoneIdentifiers": [
+                "Europe/Minsk"
+            ]
+        },
+        {
+            "code": "BZ",
+            "name": "Belize",
+            "capital": "Belmopan",
+            "latitude": 17.25,
+            "longitude": -88.75,
+            "timezoneIdentifiers": [
+                "America/Belize"
+            ]
+        },
+        {
+            "code": "BM",
+            "name": "Bermuda",
+            "capital": "Hamilton",
+            "latitude": 32.33333333,
+            "longitude": -64.75,
+            "timezoneIdentifiers": [
+                "Atlantic/Bermuda"
+            ]
+        },
+        {
+            "code": "BO",
+            "name": "Bolivia",
+            "capital": "Sucre",
+            "latitude": -17,
+            "longitude": -65,
+            "timezoneIdentifiers": [
+                "America/La_Paz"
+            ]
+        },
+        {
+            "code": "BR",
+            "name": "Brazil",
+            "capital": "Brasília",
+            "latitude": -10,
+            "longitude": -55,
+            "timezoneIdentifiers": [
+                "America/Noronha",
+                "America/Belem",
+                "America/Fortaleza",
+                "America/Recife",
+                "America/Araguaina",
+                "America/Maceio",
+                "America/Bahia",
+                "America/Sao_Paulo",
+                "America/Campo_Grande",
+                "America/Cuiaba",
+                "America/Santarem",
+                "America/Porto_Velho",
+                "America/Boa_Vista",
+                "America/Manaus",
+                "America/Eirunepe",
+                "America/Rio_Branco"
+            ]
+        },
+        {
+            "code": "BB",
+            "name": "Barbados",
+            "capital": "Bridgetown",
+            "latitude": 13.16666666,
+            "longitude": -59.53333333,
+            "timezoneIdentifiers": [
+                "America/Barbados"
+            ]
+        },
+        {
+            "code": "BN",
+            "name": "Brunei",
+            "capital": "Bandar Seri Begawan",
+            "latitude": 4.5,
+            "longitude": 114.66666666,
+            "timezoneIdentifiers": [
+                "Asia/Brunei"
+            ]
+        },
+        {
+            "code": "BT",
+            "name": "Bhutan",
+            "capital": "Thimphu",
+            "latitude": 27.5,
+            "longitude": 90.5,
+            "timezoneIdentifiers": [
+                "Asia/Thimphu"
+            ]
+        },
+        {
+            "code": "BV",
+            "name": "Bouvet Island",
+            "latitude": -54.43333333,
+            "longitude": 3.4,
+            "timezoneIdentifiers": [
+                "Europe/Oslo"
+            ]
+        },
+        {
+            "code": "BW",
+            "name": "Botswana",
+            "capital": "Gaborone",
+            "latitude": -22,
+            "longitude": 24,
+            "timezoneIdentifiers": [
+                "Africa/Gaborone"
+            ]
+        },
+        {
+            "code": "CF",
+            "name": "Central African Republic",
+            "capital": "Bangui",
+            "latitude": 7,
+            "longitude": 21,
+            "timezoneIdentifiers": [
+                "Africa/Bangui"
+            ]
+        },
+        {
+            "code": "CA",
+            "name": "Canada",
+            "capital": "Ottawa",
+            "latitude": 60,
+            "longitude": -95,
+            "timezoneIdentifiers": [
+                "America/St_Johns",
+                "America/Halifax",
+                "America/Glace_Bay",
+                "America/Moncton",
+                "America/Goose_Bay",
+                "America/Blanc-Sablon",
+                "America/Toronto",
+                "America/Nipigon",
+                "America/Thunder_Bay",
+                "America/Iqaluit",
+                "America/Pangnirtung",
+                "America/Atikokan",
+                "America/Winnipeg",
+                "America/Rainy_River",
+                "America/Resolute",
+                "America/Rankin_Inlet",
+                "America/Regina",
+                "America/Swift_Current",
+                "America/Edmonton",
+                "America/Cambridge_Bay",
+                "America/Yellowknife",
+                "America/Inuvik",
+                "America/Creston",
+                "America/Dawson_Creek",
+                "America/Fort_Nelson",
+                "America/Vancouver",
+                "America/Whitehorse",
+                "America/Dawson"
+            ]
+        },
+        {
+            "code": "CC",
+            "name": "Cocos (Keeling) Islands",
+            "capital": "West Island",
+            "latitude": -12.5,
+            "longitude": 96.83333333,
+            "timezoneIdentifiers": [
+                "Indian/Cocos"
+            ]
+        },
+        {
+            "code": "CH",
+            "name": "Switzerland",
+            "capital": "Bern",
+            "latitude": 47,
+            "longitude": 8,
+            "timezoneIdentifiers": [
+                "Europe/Zurich"
+            ]
+        },
+        {
+            "code": "CL",
+            "name": "Chile",
+            "capital": "Santiago",
+            "latitude": -30,
+            "longitude": -71,
+            "timezoneIdentifiers": [
+                "America/Santiago",
+                "Pacific/Easter"
+            ]
+        },
+        {
+            "code": "CN",
+            "name": "China",
+            "capital": "Beijing",
+            "latitude": 35,
+            "longitude": 105,
+            "timezoneIdentifiers": [
+                "Asia/Shanghai",
+                "Asia/Urumqi"
+            ]
+        },
+        {
+            "code": "CI",
+            "name": "Ivory Coast",
+            "capital": "Yamoussoukro",
+            "latitude": 8,
+            "longitude": -5,
+            "timezoneIdentifiers": [
+                "Africa/Abidjan"
+            ]
+        },
+        {
+            "code": "CM",
+            "name": "Cameroon",
+            "capital": "Yaoundé",
+            "latitude": 6,
+            "longitude": 12,
+            "timezoneIdentifiers": [
+                "Africa/Douala"
+            ]
+        },
+        {
+            "code": "CD",
+            "name": "DR Congo",
+            "capital": "Kinshasa",
+            "latitude": 0,
+            "longitude": 25,
+            "timezoneIdentifiers": [
+                "Africa/Kinshasa",
+                "Africa/Lubumbashi"
+            ]
+        },
+        {
+            "code": "CG",
+            "name": "Republic of the Congo",
+            "capital": "Brazzaville",
+            "latitude": -1,
+            "longitude": 15,
+            "timezoneIdentifiers": [
+                "Africa/Brazzaville"
+            ]
+        },
+        {
+            "code": "CK",
+            "name": "Cook Islands",
+            "capital": "Avarua",
+            "latitude": -21.23333333,
+            "longitude": -159.76666666,
+            "timezoneIdentifiers": [
+                "Pacific/Rarotonga"
+            ]
+        },
+        {
+            "code": "CO",
+            "name": "Colombia",
+            "capital": "Bogotá",
+            "latitude": 4,
+            "longitude": -72,
+            "timezoneIdentifiers": [
+                "America/Bogota"
+            ]
+        },
+        {
+            "code": "KM",
+            "name": "Comoros",
+            "capital": "Moroni",
+            "latitude": -12.16666666,
+            "longitude": 44.25,
+            "timezoneIdentifiers": [
+                "Indian/Comoro"
+            ]
+        },
+        {
+            "code": "CV",
+            "name": "Cape Verde",
+            "capital": "Praia",
+            "latitude": 16,
+            "longitude": -24,
+            "timezoneIdentifiers": [
+                "Atlantic/Cape_Verde"
+            ]
+        },
+        {
+            "code": "CR",
+            "name": "Costa Rica",
+            "capital": "San José",
+            "latitude": 10,
+            "longitude": -84,
+            "timezoneIdentifiers": [
+                "America/Costa_Rica"
+            ]
+        },
+        {
+            "code": "CU",
+            "name": "Cuba",
+            "capital": "Havana",
+            "latitude": 21.5,
+            "longitude": -80,
+            "timezoneIdentifiers": [
+                "America/Havana"
+            ]
+        },
+        {
+            "code": "CW",
+            "name": "Curaçao",
+            "capital": "Willemstad",
+            "latitude": 12.116667,
+            "longitude": -68.933333,
+            "timezoneIdentifiers": [
+                "America/Curacao"
+            ]
+        },
+        {
+            "code": "CX",
+            "name": "Christmas Island",
+            "capital": "Flying Fish Cove",
+            "latitude": -10.5,
+            "longitude": 105.66666666,
+            "timezoneIdentifiers": [
+                "Indian/Christmas"
+            ]
+        },
+        {
+            "code": "KY",
+            "name": "Cayman Islands",
+            "capital": "George Town",
+            "latitude": 19.5,
+            "longitude": -80.5,
+            "timezoneIdentifiers": [
+                "America/Cayman"
+            ]
+        },
+        {
+            "code": "CY",
+            "name": "Cyprus",
+            "capital": "Nicosia",
+            "latitude": 35,
+            "longitude": 33,
+            "timezoneIdentifiers": [
+                "Asia/Nicosia"
+            ]
+        },
+        {
+            "code": "CZ",
+            "name": "Czech Republic",
+            "capital": "Prague",
+            "latitude": 49.75,
+            "longitude": 15.5,
+            "timezoneIdentifiers": [
+                "Europe/Prague"
+            ]
+        },
+        {
+            "code": "DE",
+            "name": "Germany",
+            "capital": "Berlin",
+            "latitude": 51,
+            "longitude": 9,
+            "timezoneIdentifiers": [
+                "Europe/Berlin",
+                "Europe/Busingen"
+            ]
+        },
+        {
+            "code": "DJ",
+            "name": "Djibouti",
+            "capital": "Djibouti",
+            "latitude": 11.5,
+            "longitude": 43,
+            "timezoneIdentifiers": [
+                "Africa/Djibouti"
+            ]
+        },
+        {
+            "code": "DM",
+            "name": "Dominica",
+            "capital": "Roseau",
+            "latitude": 15.41666666,
+            "longitude": -61.33333333,
+            "timezoneIdentifiers": [
+                "America/Dominica"
+            ]
+        },
+        {
+            "code": "DK",
+            "name": "Denmark",
+            "capital": "Copenhagen",
+            "latitude": 56,
+            "longitude": 10,
+            "timezoneIdentifiers": [
+                "Europe/Copenhagen"
+            ]
+        },
+        {
+            "code": "DO",
+            "name": "Dominican Republic",
+            "capital": "Santo Domingo",
+            "latitude": 19,
+            "longitude": -70.66666666,
+            "timezoneIdentifiers": [
+                "America/Santo_Domingo"
+            ]
+        },
+        {
+            "code": "DZ",
+            "name": "Algeria",
+            "capital": "Algiers",
+            "latitude": 28,
+            "longitude": 3,
+            "timezoneIdentifiers": [
+                "Africa/Algiers"
+            ]
+        },
+        {
+            "code": "EC",
+            "name": "Ecuador",
+            "capital": "Quito",
+            "latitude": -2,
+            "longitude": -77.5,
+            "timezoneIdentifiers": [
+                "America/Guayaquil",
+                "Pacific/Galapagos"
+            ]
+        },
+        {
+            "code": "EG",
+            "name": "Egypt",
+            "capital": "Cairo",
+            "latitude": 27,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Cairo"
+            ]
+        },
+        {
+            "code": "ER",
+            "name": "Eritrea",
+            "capital": "Asmara",
+            "latitude": 15,
+            "longitude": 39,
+            "timezoneIdentifiers": [
+                "Africa/Asmara"
+            ]
+        },
+        {
+            "code": "EH",
+            "name": "Western Sahara",
+            "capital": "El Aaiún",
+            "latitude": 24.5,
+            "longitude": -13,
+            "timezoneIdentifiers": [
+                "Africa/El_Aaiun"
+            ]
+        },
+        {
+            "code": "ES",
+            "name": "Spain",
+            "capital": "Madrid",
+            "latitude": 40,
+            "longitude": -4,
+            "timezoneIdentifiers": [
+                "Europe/Madrid",
+                "Africa/Ceuta",
+                "Atlantic/Canary"
+            ]
+        },
+        {
+            "code": "EE",
+            "name": "Estonia",
+            "capital": "Tallinn",
+            "latitude": 59,
+            "longitude": 26,
+            "timezoneIdentifiers": [
+                "Europe/Tallinn"
+            ]
+        },
+        {
+            "code": "ET",
+            "name": "Ethiopia",
+            "capital": "Addis Ababa",
+            "latitude": 8,
+            "longitude": 38,
+            "timezoneIdentifiers": [
+                "Africa/Addis_Ababa"
+            ]
+        },
+        {
+            "code": "FI",
+            "name": "Finland",
+            "capital": "Helsinki",
+            "latitude": 64,
+            "longitude": 26,
+            "timezoneIdentifiers": [
+                "Europe/Helsinki"
+            ]
+        },
+        {
+            "code": "FJ",
+            "name": "Fiji",
+            "capital": "Suva",
+            "latitude": -18,
+            "longitude": 175,
+            "timezoneIdentifiers": [
+                "Pacific/Fiji"
+            ]
+        },
+        {
+            "code": "FK",
+            "name": "Falkland Islands",
+            "capital": "Stanley",
+            "latitude": -51.75,
+            "longitude": -59,
+            "timezoneIdentifiers": [
+                "Atlantic/Stanley"
+            ]
+        },
+        {
+            "code": "FR",
+            "name": "France",
+            "capital": "Paris",
+            "latitude": 46,
+            "longitude": 2,
+            "timezoneIdentifiers": [
+                "Europe/Paris"
+            ]
+        },
+        {
+            "code": "FO",
+            "name": "Faroe Islands",
+            "capital": "Tórshavn",
+            "latitude": 62,
+            "longitude": -7,
+            "timezoneIdentifiers": [
+                "Atlantic/Faroe"
+            ]
+        },
+        {
+            "code": "FM",
+            "name": "Micronesia",
+            "capital": "Palikir",
+            "latitude": 6.91666666,
+            "longitude": 158.25,
+            "timezoneIdentifiers": [
+                "Pacific/Chuuk",
+                "Pacific/Pohnpei",
+                "Pacific/Kosrae"
+            ]
+        },
+        {
+            "code": "GA",
+            "name": "Gabon",
+            "capital": "Libreville",
+            "latitude": -1,
+            "longitude": 11.75,
+            "timezoneIdentifiers": [
+                "Africa/Libreville"
+            ]
+        },
+        {
+            "code": "GB",
+            "name": "United Kingdom",
+            "capital": "London",
+            "latitude": 54,
+            "longitude": -2,
+            "timezoneIdentifiers": [
+                "Europe/London"
+            ]
+        },
+        {
+            "code": "GE",
+            "name": "Georgia",
+            "capital": "Tbilisi",
+            "latitude": 42,
+            "longitude": 43.5,
+            "timezoneIdentifiers": [
+                "Asia/Tbilisi"
+            ]
+        },
+        {
+            "code": "GG",
+            "name": "Guernsey",
+            "capital": "St. Peter Port",
+            "latitude": 49.46666666,
+            "longitude": -2.58333333,
+            "timezoneIdentifiers": [
+                "Europe/Guernsey"
+            ]
+        },
+        {
+            "code": "GH",
+            "name": "Ghana",
+            "capital": "Accra",
+            "latitude": 8,
+            "longitude": -2,
+            "timezoneIdentifiers": [
+                "Africa/Accra"
+            ]
+        },
+        {
+            "code": "GI",
+            "name": "Gibraltar",
+            "capital": "Gibraltar",
+            "latitude": 36.13333333,
+            "longitude": -5.35,
+            "timezoneIdentifiers": [
+                "Europe/Gibraltar"
+            ]
+        },
+        {
+            "code": "GN",
+            "name": "Guinea",
+            "capital": "Conakry",
+            "latitude": 11,
+            "longitude": -10,
+            "timezoneIdentifiers": [
+                "Africa/Conakry"
+            ]
+        },
+        {
+            "code": "GP",
+            "name": "Guadeloupe",
+            "capital": "Basse-Terre",
+            "latitude": 16.25,
+            "longitude": -61.583333,
+            "timezoneIdentifiers": [
+                "America/Guadeloupe"
+            ]
+        },
+        {
+            "code": "GM",
+            "name": "Gambia",
+            "capital": "Banjul",
+            "latitude": 13.46666666,
+            "longitude": -16.56666666,
+            "timezoneIdentifiers": [
+                "Africa/Banjul"
+            ]
+        },
+        {
+            "code": "GW",
+            "name": "Guinea-Bissau",
+            "capital": "Bissau",
+            "latitude": 12,
+            "longitude": -15,
+            "timezoneIdentifiers": [
+                "Africa/Bissau"
+            ]
+        },
+        {
+            "code": "GQ",
+            "name": "Equatorial Guinea",
+            "capital": "Malabo",
+            "latitude": 2,
+            "longitude": 10,
+            "timezoneIdentifiers": [
+                "Africa/Malabo"
+            ]
+        },
+        {
+            "code": "GR",
+            "name": "Greece",
+            "capital": "Athens",
+            "latitude": 39,
+            "longitude": 22,
+            "timezoneIdentifiers": [
+                "Europe/Athens"
+            ]
+        },
+        {
+            "code": "GD",
+            "name": "Grenada",
+            "capital": "St. George's",
+            "latitude": 12.11666666,
+            "longitude": -61.66666666,
+            "timezoneIdentifiers": [
+                "America/Grenada"
+            ]
+        },
+        {
+            "code": "GL",
+            "name": "Greenland",
+            "capital": "Nuuk",
+            "latitude": 72,
+            "longitude": -40,
+            "timezoneIdentifiers": [
+                "America/Godthab",
+                "America/Danmarkshavn",
+                "America/Scoresbysund",
+                "America/Thule"
+            ]
+        },
+        {
+            "code": "GT",
+            "name": "Guatemala",
+            "capital": "Guatemala City",
+            "latitude": 15.5,
+            "longitude": -90.25,
+            "timezoneIdentifiers": [
+                "America/Guatemala"
+            ]
+        },
+        {
+            "code": "GF",
+            "name": "French Guiana",
+            "capital": "Cayenne",
+            "latitude": 4,
+            "longitude": -53,
+            "timezoneIdentifiers": [
+                "America/Cayenne"
+            ]
+        },
+        {
+            "code": "GU",
+            "name": "Guam",
+            "capital": "Hagåtña",
+            "latitude": 13.46666666,
+            "longitude": 144.78333333,
+            "timezoneIdentifiers": [
+                "Pacific/Guam"
+            ]
+        },
+        {
+            "code": "GY",
+            "name": "Guyana",
+            "capital": "Georgetown",
+            "latitude": 5,
+            "longitude": -59,
+            "timezoneIdentifiers": [
+                "America/Guyana"
+            ]
+        },
+        {
+            "code": "HK",
+            "name": "Hong Kong",
+            "capital": "City of Victoria",
+            "latitude": 22.267,
+            "longitude": 114.188,
+            "timezoneIdentifiers": [
+                "Asia/Hong_Kong"
+            ]
+        },
+        {
+            "code": "HN",
+            "name": "Honduras",
+            "capital": "Tegucigalpa",
+            "latitude": 15,
+            "longitude": -86.5,
+            "timezoneIdentifiers": [
+                "America/Tegucigalpa"
+            ]
+        },
+        {
+            "code": "HR",
+            "name": "Croatia",
+            "capital": "Zagreb",
+            "latitude": 45.16666666,
+            "longitude": 15.5,
+            "timezoneIdentifiers": [
+                "Europe/Zagreb"
+            ]
+        },
+        {
+            "code": "HT",
+            "name": "Haiti",
+            "capital": "Port-au-Prince",
+            "latitude": 19,
+            "longitude": -72.41666666,
+            "timezoneIdentifiers": [
+                "America/Port-au-Prince"
+            ]
+        },
+        {
+            "code": "HU",
+            "name": "Hungary",
+            "capital": "Budapest",
+            "latitude": 47,
+            "longitude": 20,
+            "timezoneIdentifiers": [
+                "Europe/Budapest"
+            ]
+        },
+        {
+            "code": "ID",
+            "name": "Indonesia",
+            "capital": "Jakarta",
+            "latitude": -5,
+            "longitude": 120,
+            "timezoneIdentifiers": [
+                "Asia/Jakarta",
+                "Asia/Pontianak",
+                "Asia/Makassar",
+                "Asia/Jayapura"
+            ]
+        },
+        {
+            "code": "IM",
+            "name": "Isle of Man",
+            "capital": "Douglas",
+            "latitude": 54.25,
+            "longitude": -4.5,
+            "timezoneIdentifiers": [
+                "Europe/Isle_of_Man"
+            ]
+        },
+        {
+            "code": "IN",
+            "name": "India",
+            "capital": "New Delhi",
+            "latitude": 20,
+            "longitude": 77,
+            "timezoneIdentifiers": [
+                "Asia/Kolkata"
+            ]
+        },
+        {
+            "code": "IO",
+            "name": "British Indian Ocean Territory",
+            "capital": "Diego Garcia",
+            "latitude": -6,
+            "longitude": 71.5,
+            "timezoneIdentifiers": [
+                "Indian/Chagos"
+            ]
+        },
+        {
+            "code": "IE",
+            "name": "Ireland",
+            "capital": "Dublin",
+            "latitude": 53,
+            "longitude": -8,
+            "timezoneIdentifiers": [
+                "Europe/Dublin"
+            ]
+        },
+        {
+            "code": "IR",
+            "name": "Iran",
+            "capital": "Tehran",
+            "latitude": 32,
+            "longitude": 53,
+            "timezoneIdentifiers": [
+                "Asia/Tehran"
+            ]
+        },
+        {
+            "code": "IQ",
+            "name": "Iraq",
+            "capital": "Baghdad",
+            "latitude": 33,
+            "longitude": 44,
+            "timezoneIdentifiers": [
+                "Asia/Baghdad"
+            ]
+        },
+        {
+            "code": "IS",
+            "name": "Iceland",
+            "capital": "Reykjavik",
+            "latitude": 65,
+            "longitude": -18,
+            "timezoneIdentifiers": [
+                "Atlantic/Reykjavik"
+            ]
+        },
+        {
+            "code": "IL",
+            "name": "Israel",
+            "capital": "Jerusalem",
+            "latitude": 31.47,
+            "longitude": 35.13,
+            "timezoneIdentifiers": [
+                "Asia/Jerusalem"
+            ]
+        },
+        {
+            "code": "IT",
+            "name": "Italy",
+            "capital": "Rome",
+            "latitude": 42.83333333,
+            "longitude": 12.83333333,
+            "timezoneIdentifiers": [
+                "Europe/Rome"
+            ]
+        },
+        {
+            "code": "JM",
+            "name": "Jamaica",
+            "capital": "Kingston",
+            "latitude": 18.25,
+            "longitude": -77.5,
+            "timezoneIdentifiers": [
+                "America/Jamaica"
+            ]
+        },
+        {
+            "code": "JE",
+            "name": "Jersey",
+            "capital": "Saint Helier",
+            "latitude": 49.25,
+            "longitude": -2.16666666,
+            "timezoneIdentifiers": [
+                "Europe/Jersey"
+            ]
+        },
+        {
+            "code": "JO",
+            "name": "Jordan",
+            "capital": "Amman",
+            "latitude": 31,
+            "longitude": 36,
+            "timezoneIdentifiers": [
+                "Asia/Amman"
+            ]
+        },
+        {
+            "code": "JP",
+            "name": "Japan",
+            "capital": "Tokyo",
+            "latitude": 36,
+            "longitude": 138,
+            "timezoneIdentifiers": [
+                "Asia/Tokyo"
+            ]
+        },
+        {
+            "code": "KZ",
+            "name": "Kazakhstan",
+            "capital": "Astana",
+            "latitude": 48,
+            "longitude": 68,
+            "timezoneIdentifiers": [
+                "Asia/Almaty",
+                "Asia/Qyzylorda",
+                "Asia/Aqtobe",
+                "Asia/Aqtau",
+                "Asia/Oral"
+            ]
+        },
+        {
+            "code": "KE",
+            "name": "Kenya",
+            "capital": "Nairobi",
+            "latitude": 1,
+            "longitude": 38,
+            "timezoneIdentifiers": [
+                "Africa/Nairobi"
+            ]
+        },
+        {
+            "code": "KG",
+            "name": "Kyrgyzstan",
+            "capital": "Bishkek",
+            "latitude": 41,
+            "longitude": 75,
+            "timezoneIdentifiers": [
+                "Asia/Bishkek"
+            ]
+        },
+        {
+            "code": "KH",
+            "name": "Cambodia",
+            "capital": "Phnom Penh",
+            "latitude": 13,
+            "longitude": 105,
+            "timezoneIdentifiers": [
+                "Asia/Phnom_Penh"
+            ]
+        },
+        {
+            "code": "KI",
+            "name": "Kiribati",
+            "capital": "South Tarawa",
+            "latitude": 1.41666666,
+            "longitude": 173,
+            "timezoneIdentifiers": [
+                "Pacific/Tarawa",
+                "Pacific/Enderbury",
+                "Pacific/Kiritimati"
+            ]
+        },
+        {
+            "code": "KN",
+            "name": "Saint Kitts and Nevis",
+            "capital": "Basseterre",
+            "latitude": 17.33333333,
+            "longitude": -62.75,
+            "timezoneIdentifiers": [
+                "America/St_Kitts"
+            ]
+        },
+        {
+            "code": "KR",
+            "name": "South Korea",
+            "capital": "Seoul",
+            "latitude": 37,
+            "longitude": 127.5,
+            "timezoneIdentifiers": [
+                "Asia/Seoul"
+            ]
+        },
+        {
+            "code": "XK",
+            "name": "Kosovo",
+            "capital": "Pristina",
+            "latitude": 42.666667,
+            "longitude": 21.166667,
+            "timezoneIdentifiers": [
+                "Europe/Belgrade"
+            ]
+        },
+        {
+            "code": "KW",
+            "name": "Kuwait",
+            "capital": "Kuwait City",
+            "latitude": 29.5,
+            "longitude": 45.75,
+            "timezoneIdentifiers": [
+                "Asia/Kuwait"
+            ]
+        },
+        {
+            "code": "LA",
+            "name": "Laos",
+            "capital": "Vientiane",
+            "latitude": 18,
+            "longitude": 105,
+            "timezoneIdentifiers": [
+                "Asia/Vientiane"
+            ]
+        },
+        {
+            "code": "LB",
+            "name": "Lebanon",
+            "capital": "Beirut",
+            "latitude": 33.83333333,
+            "longitude": 35.83333333,
+            "timezoneIdentifiers": [
+                "Asia/Beirut"
+            ]
+        },
+        {
+            "code": "LR",
+            "name": "Liberia",
+            "capital": "Monrovia",
+            "latitude": 6.5,
+            "longitude": -9.5,
+            "timezoneIdentifiers": [
+                "Africa/Monrovia"
+            ]
+        },
+        {
+            "code": "LY",
+            "name": "Libya",
+            "capital": "Tripoli",
+            "latitude": 25,
+            "longitude": 17,
+            "timezoneIdentifiers": [
+                "Africa/Tripoli"
+            ]
+        },
+        {
+            "code": "LC",
+            "name": "Saint Lucia",
+            "capital": "Castries",
+            "latitude": 13.88333333,
+            "longitude": -60.96666666,
+            "timezoneIdentifiers": [
+                "America/St_Lucia"
+            ]
+        },
+        {
+            "code": "LI",
+            "name": "Liechtenstein",
+            "capital": "Vaduz",
+            "latitude": 47.26666666,
+            "longitude": 9.53333333,
+            "timezoneIdentifiers": [
+                "Europe/Vaduz"
+            ]
+        },
+        {
+            "code": "LK",
+            "name": "Sri Lanka",
+            "capital": "Colombo",
+            "latitude": 7,
+            "longitude": 81,
+            "timezoneIdentifiers": [
+                "Asia/Colombo"
+            ]
+        },
+        {
+            "code": "LS",
+            "name": "Lesotho",
+            "capital": "Maseru",
+            "latitude": -29.5,
+            "longitude": 28.5,
+            "timezoneIdentifiers": [
+                "Africa/Maseru"
+            ]
+        },
+        {
+            "code": "LT",
+            "name": "Lithuania",
+            "capital": "Vilnius",
+            "latitude": 56,
+            "longitude": 24,
+            "timezoneIdentifiers": [
+                "Europe/Vilnius"
+            ]
+        },
+        {
+            "code": "LU",
+            "name": "Luxembourg",
+            "capital": "Luxembourg",
+            "latitude": 49.75,
+            "longitude": 6.16666666,
+            "timezoneIdentifiers": [
+                "Europe/Luxembourg"
+            ]
+        },
+        {
+            "code": "LV",
+            "name": "Latvia",
+            "capital": "Riga",
+            "latitude": 57,
+            "longitude": 25,
+            "timezoneIdentifiers": [
+                "Europe/Riga"
+            ]
+        },
+        {
+            "code": "MO",
+            "name": "Macau",
+            "latitude": 22.16666666,
+            "longitude": 113.55,
+            "timezoneIdentifiers": [
+                "Asia/Macau"
+            ]
+        },
+        {
+            "code": "MF",
+            "name": "Saint Martin",
+            "capital": "Marigot",
+            "latitude": 18.08333333,
+            "longitude": -63.95,
+            "timezoneIdentifiers": [
+                "America/Marigot"
+            ]
+        },
+        {
+            "code": "MA",
+            "name": "Morocco",
+            "capital": "Rabat",
+            "latitude": 32,
+            "longitude": -5,
+            "timezoneIdentifiers": [
+                "Africa/Casablanca"
+            ]
+        },
+        {
+            "code": "MC",
+            "name": "Monaco",
+            "capital": "Monaco",
+            "latitude": 43.73333333,
+            "longitude": 7.4,
+            "timezoneIdentifiers": [
+                "Europe/Monaco"
+            ]
+        },
+        {
+            "code": "MD",
+            "name": "Moldova",
+            "capital": "Chișinău",
+            "latitude": 47,
+            "longitude": 29,
+            "timezoneIdentifiers": [
+                "Europe/Chisinau"
+            ]
+        },
+        {
+            "code": "MG",
+            "name": "Madagascar",
+            "capital": "Antananarivo",
+            "latitude": -20,
+            "longitude": 47,
+            "timezoneIdentifiers": [
+                "Indian/Antananarivo"
+            ]
+        },
+        {
+            "code": "MV",
+            "name": "Maldives",
+            "capital": "Malé",
+            "latitude": 3.25,
+            "longitude": 73,
+            "timezoneIdentifiers": [
+                "Indian/Maldives"
+            ]
+        },
+        {
+            "code": "MX",
+            "name": "Mexico",
+            "capital": "Mexico City",
+            "latitude": 23,
+            "longitude": -102,
+            "timezoneIdentifiers": [
+                "America/Mexico_City",
+                "America/Cancun",
+                "America/Merida",
+                "America/Monterrey",
+                "America/Matamoros",
+                "America/Mazatlan",
+                "America/Chihuahua",
+                "America/Ojinaga",
+                "America/Hermosillo",
+                "America/Tijuana",
+                "America/Bahia_Banderas"
+            ]
+        },
+        {
+            "code": "MH",
+            "name": "Marshall Islands",
+            "capital": "Majuro",
+            "latitude": 9,
+            "longitude": 168,
+            "timezoneIdentifiers": [
+                "Pacific/Majuro",
+                "Pacific/Kwajalein"
+            ]
+        },
+        {
+            "code": "MK",
+            "name": "Macedonia",
+            "capital": "Skopje",
+            "latitude": 41.83333333,
+            "longitude": 22,
+            "timezoneIdentifiers": [
+                "Europe/Skopje"
+            ]
+        },
+        {
+            "code": "ML",
+            "name": "Mali",
+            "capital": "Bamako",
+            "latitude": 17,
+            "longitude": -4,
+            "timezoneIdentifiers": [
+                "Africa/Bamako"
+            ]
+        },
+        {
+            "code": "MT",
+            "name": "Malta",
+            "capital": "Valletta",
+            "latitude": 35.83333333,
+            "longitude": 14.58333333,
+            "timezoneIdentifiers": [
+                "Europe/Malta"
+            ]
+        },
+        {
+            "code": "MM",
+            "name": "Myanmar",
+            "capital": "Naypyidaw",
+            "latitude": 22,
+            "longitude": 98,
+            "timezoneIdentifiers": [
+                "Asia/Rangoon"
+            ]
+        },
+        {
+            "code": "ME",
+            "name": "Montenegro",
+            "capital": "Podgorica",
+            "latitude": 42.5,
+            "longitude": 19.3,
+            "timezoneIdentifiers": [
+                "Europe/Podgorica"
+            ]
+        },
+        {
+            "code": "MN",
+            "name": "Mongolia",
+            "capital": "Ulan Bator",
+            "latitude": 46,
+            "longitude": 105,
+            "timezoneIdentifiers": [
+                "Asia/Ulaanbaatar",
+                "Asia/Hovd",
+                "Asia/Choibalsan"
+            ]
+        },
+        {
+            "code": "MP",
+            "name": "Northern Mariana Islands",
+            "capital": "Saipan",
+            "latitude": 15.2,
+            "longitude": 145.75,
+            "timezoneIdentifiers": [
+                "Pacific/Saipan"
+            ]
+        },
+        {
+            "code": "MZ",
+            "name": "Mozambique",
+            "capital": "Maputo",
+            "latitude": -18.25,
+            "longitude": 35,
+            "timezoneIdentifiers": [
+                "Africa/Maputo"
+            ]
+        },
+        {
+            "code": "MR",
+            "name": "Mauritania",
+            "capital": "Nouakchott",
+            "latitude": 20,
+            "longitude": -12,
+            "timezoneIdentifiers": [
+                "Africa/Nouakchott"
+            ]
+        },
+        {
+            "code": "MS",
+            "name": "Montserrat",
+            "capital": "Plymouth",
+            "latitude": 16.75,
+            "longitude": -62.2,
+            "timezoneIdentifiers": [
+                "America/Montserrat"
+            ]
+        },
+        {
+            "code": "MQ",
+            "name": "Martinique",
+            "capital": "Fort-de-France",
+            "latitude": 14.666667,
+            "longitude": -61,
+            "timezoneIdentifiers": [
+                "America/Martinique"
+            ]
+        },
+        {
+            "code": "MU",
+            "name": "Mauritius",
+            "capital": "Port Louis",
+            "latitude": -20.28333333,
+            "longitude": 57.55,
+            "timezoneIdentifiers": [
+                "Indian/Mauritius"
+            ]
+        },
+        {
+            "code": "MW",
+            "name": "Malawi",
+            "capital": "Lilongwe",
+            "latitude": -13.5,
+            "longitude": 34,
+            "timezoneIdentifiers": [
+                "Africa/Blantyre"
+            ]
+        },
+        {
+            "code": "MY",
+            "name": "Malaysia",
+            "capital": "Kuala Lumpur",
+            "latitude": 2.5,
+            "longitude": 112.5,
+            "timezoneIdentifiers": [
+                "Asia/Kuala_Lumpur",
+                "Asia/Kuching"
+            ]
+        },
+        {
+            "code": "YT",
+            "name": "Mayotte",
+            "capital": "Mamoudzou",
+            "latitude": -12.83333333,
+            "longitude": 45.16666666,
+            "timezoneIdentifiers": [
+                "Indian/Mayotte"
+            ]
+        },
+        {
+            "code": "NA",
+            "name": "Namibia",
+            "capital": "Windhoek",
+            "latitude": -22,
+            "longitude": 17,
+            "timezoneIdentifiers": [
+                "Africa/Windhoek"
+            ]
+        },
+        {
+            "code": "NC",
+            "name": "New Caledonia",
+            "capital": "Nouméa",
+            "latitude": -21.5,
+            "longitude": 165.5,
+            "timezoneIdentifiers": [
+                "Pacific/Noumea"
+            ]
+        },
+        {
+            "code": "NE",
+            "name": "Niger",
+            "capital": "Niamey",
+            "latitude": 16,
+            "longitude": 8,
+            "timezoneIdentifiers": [
+                "Africa/Niamey"
+            ]
+        },
+        {
+            "code": "NF",
+            "name": "Norfolk Island",
+            "capital": "Kingston",
+            "latitude": -29.03333333,
+            "longitude": 167.95,
+            "timezoneIdentifiers": [
+                "Pacific/Norfolk"
+            ]
+        },
+        {
+            "code": "NG",
+            "name": "Nigeria",
+            "capital": "Abuja",
+            "latitude": 10,
+            "longitude": 8,
+            "timezoneIdentifiers": [
+                "Africa/Lagos"
+            ]
+        },
+        {
+            "code": "NI",
+            "name": "Nicaragua",
+            "capital": "Managua",
+            "latitude": 13,
+            "longitude": -85,
+            "timezoneIdentifiers": [
+                "America/Managua"
+            ]
+        },
+        {
+            "code": "NU",
+            "name": "Niue",
+            "capital": "Alofi",
+            "latitude": -19.03333333,
+            "longitude": -169.86666666,
+            "timezoneIdentifiers": [
+                "Pacific/Niue"
+            ]
+        },
+        {
+            "code": "NL",
+            "name": "Netherlands",
+            "capital": "Amsterdam",
+            "latitude": 52.5,
+            "longitude": 5.75,
+            "timezoneIdentifiers": [
+                "Europe/Amsterdam"
+            ]
+        },
+        {
+            "code": "NO",
+            "name": "Norway",
+            "capital": "Oslo",
+            "latitude": 62,
+            "longitude": 10,
+            "timezoneIdentifiers": [
+                "Europe/Oslo"
+            ]
+        },
+        {
+            "code": "NP",
+            "name": "Nepal",
+            "capital": "Kathmandu",
+            "latitude": 28,
+            "longitude": 84,
+            "timezoneIdentifiers": [
+                "Asia/Kathmandu"
+            ]
+        },
+        {
+            "code": "NR",
+            "name": "Nauru",
+            "capital": "Yaren",
+            "latitude": -0.53333333,
+            "longitude": 166.91666666,
+            "timezoneIdentifiers": [
+                "Pacific/Nauru"
+            ]
+        },
+        {
+            "code": "NZ",
+            "name": "New Zealand",
+            "capital": "Wellington",
+            "latitude": -41,
+            "longitude": 174,
+            "timezoneIdentifiers": [
+                "Pacific/Auckland",
+                "Pacific/Chatham"
+            ]
+        },
+        {
+            "code": "OM",
+            "name": "Oman",
+            "capital": "Muscat",
+            "latitude": 21,
+            "longitude": 57,
+            "timezoneIdentifiers": [
+                "Asia/Muscat"
+            ]
+        },
+        {
+            "code": "PK",
+            "name": "Pakistan",
+            "capital": "Islamabad",
+            "latitude": 30,
+            "longitude": 70,
+            "timezoneIdentifiers": [
+                "Asia/Karachi"
+            ]
+        },
+        {
+            "code": "PA",
+            "name": "Panama",
+            "capital": "Panama City",
+            "latitude": 9,
+            "longitude": -80,
+            "timezoneIdentifiers": [
+                "America/Panama"
+            ]
+        },
+        {
+            "code": "PN",
+            "name": "Pitcairn Islands",
+            "capital": "Adamstown",
+            "latitude": -25.06666666,
+            "longitude": -130.1,
+            "timezoneIdentifiers": [
+                "Pacific/Pitcairn"
+            ]
+        },
+        {
+            "code": "PE",
+            "name": "Peru",
+            "capital": "Lima",
+            "latitude": -10,
+            "longitude": -76,
+            "timezoneIdentifiers": [
+                "America/Lima"
+            ]
+        },
+        {
+            "code": "PH",
+            "name": "Philippines",
+            "capital": "Manila",
+            "latitude": 13,
+            "longitude": 122,
+            "timezoneIdentifiers": [
+                "Asia/Manila"
+            ]
+        },
+        {
+            "code": "PW",
+            "name": "Palau",
+            "capital": "Ngerulmud",
+            "latitude": 7.5,
+            "longitude": 134.5,
+            "timezoneIdentifiers": [
+                "Pacific/Palau"
+            ]
+        },
+        {
+            "code": "PG",
+            "name": "Papua New Guinea",
+            "capital": "Port Moresby",
+            "latitude": -6,
+            "longitude": 147,
+            "timezoneIdentifiers": [
+                "Pacific/Port_Moresby",
+                "Pacific/Bougainville"
+            ]
+        },
+        {
+            "code": "PL",
+            "name": "Poland",
+            "capital": "Warsaw",
+            "latitude": 52,
+            "longitude": 20,
+            "timezoneIdentifiers": [
+                "Europe/Warsaw"
+            ]
+        },
+        {
+            "code": "PR",
+            "name": "Puerto Rico",
+            "capital": "San Juan",
+            "latitude": 18.25,
+            "longitude": -66.5,
+            "timezoneIdentifiers": [
+                "America/Puerto_Rico"
+            ]
+        },
+        {
+            "code": "KP",
+            "name": "North Korea",
+            "capital": "Pyongyang",
+            "latitude": 40,
+            "longitude": 127,
+            "timezoneIdentifiers": [
+                "Asia/Pyongyang"
+            ]
+        },
+        {
+            "code": "PT",
+            "name": "Portugal",
+            "capital": "Lisbon",
+            "latitude": 39.5,
+            "longitude": -8,
+            "timezoneIdentifiers": [
+                "Europe/Lisbon",
+                "Atlantic/Madeira",
+                "Atlantic/Azores"
+            ]
+        },
+        {
+            "code": "PY",
+            "name": "Paraguay",
+            "capital": "Asunción",
+            "latitude": -23,
+            "longitude": -58,
+            "timezoneIdentifiers": [
+                "America/Asuncion"
+            ]
+        },
+        {
+            "code": "PS",
+            "name": "Palestine",
+            "capital": "Ramallah",
+            "latitude": 31.9,
+            "longitude": 35.2,
+            "timezoneIdentifiers": [
+                "Asia/Gaza",
+                "Asia/Hebron"
+            ]
+        },
+        {
+            "code": "PF",
+            "name": "French Polynesia",
+            "capital": "Papeetē",
+            "latitude": -15,
+            "longitude": -140,
+            "timezoneIdentifiers": [
+                "Pacific/Tahiti",
+                "Pacific/Marquesas",
+                "Pacific/Gambier"
+            ]
+        },
+        {
+            "code": "QA",
+            "name": "Qatar",
+            "capital": "Doha",
+            "latitude": 25.5,
+            "longitude": 51.25,
+            "timezoneIdentifiers": [
+                "Asia/Qatar"
+            ]
+        },
+        {
+            "code": "RE",
+            "name": "Réunion",
+            "capital": "Saint-Denis",
+            "latitude": -21.15,
+            "longitude": 55.5,
+            "timezoneIdentifiers": [
+                "Indian/Reunion"
+            ]
+        },
+        {
+            "code": "RO",
+            "name": "Romania",
+            "capital": "Bucharest",
+            "latitude": 46,
+            "longitude": 25,
+            "timezoneIdentifiers": [
+                "Europe/Bucharest"
+            ]
+        },
+        {
+            "code": "RU",
+            "name": "Russia",
+            "capital": "Moscow",
+            "latitude": 60,
+            "longitude": 100,
+            "timezoneIdentifiers": [
+                "Europe/Kaliningrad",
+                "Europe/Moscow",
+                "Europe/Simferopol",
+                "Europe/Volgograd",
+                "Europe/Kirov",
+                "Europe/Astrakhan",
+                "Europe/Samara",
+                "Europe/Ulyanovsk"
+            ],
+            "excludedTimezoneIdentifiers": [
+                "Asia/Yekaterinburg",
+                "Asia/Omsk",
+                "Asia/Novosibirsk",
+                "Asia/Barnaul",
+                "Asia/Tomsk",
+                "Asia/Novokuznetsk",
+                "Asia/Krasnoyarsk",
+                "Asia/Irkutsk",
+                "Asia/Chita",
+                "Asia/Yakutsk",
+                "Asia/Khandyga",
+                "Asia/Vladivostok",
+                "Asia/Ust-Nera",
+                "Asia/Magadan",
+                "Asia/Sakhalin",
+                "Asia/Srednekolymsk",
+                "Asia/Kamchatka",
+                "Asia/Anadyr"
+            ]
+        },
+        {
+            "code": "RW",
+            "name": "Rwanda",
+            "capital": "Kigali",
+            "latitude": -2,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Kigali"
+            ]
+        },
+        {
+            "code": "SA",
+            "name": "Saudi Arabia",
+            "capital": "Riyadh",
+            "latitude": 25,
+            "longitude": 45,
+            "timezoneIdentifiers": [
+                "Asia/Riyadh"
+            ]
+        },
+        {
+            "code": "SD",
+            "name": "Sudan",
+            "capital": "Khartoum",
+            "latitude": 15,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Khartoum"
+            ]
+        },
+        {
+            "code": "SN",
+            "name": "Senegal",
+            "capital": "Dakar",
+            "latitude": 14,
+            "longitude": -14,
+            "timezoneIdentifiers": [
+                "Africa/Dakar"
+            ]
+        },
+        {
+            "code": "SG",
+            "name": "Singapore",
+            "capital": "Singapore",
+            "latitude": 1.36666666,
+            "longitude": 103.8,
+            "timezoneIdentifiers": [
+                "Asia/Singapore"
+            ]
+        },
+        {
+            "code": "GS",
+            "name": "South Georgia",
+            "capital": "King Edward Point",
+            "latitude": -54.5,
+            "longitude": -37,
+            "timezoneIdentifiers": [
+                "Atlantic/South_Georgia"
+            ]
+        },
+        {
+            "code": "SJ",
+            "name": "Svalbard and Jan Mayen",
+            "capital": "Longyearbyen",
+            "latitude": 78,
+            "longitude": 20,
+            "timezoneIdentifiers": [
+                "Arctic/Longyearbyen"
+            ]
+        },
+        {
+            "code": "SB",
+            "name": "Solomon Islands",
+            "capital": "Honiara",
+            "latitude": -8,
+            "longitude": 159,
+            "timezoneIdentifiers": [
+                "Pacific/Guadalcanal"
+            ]
+        },
+        {
+            "code": "SL",
+            "name": "Sierra Leone",
+            "capital": "Freetown",
+            "latitude": 8.5,
+            "longitude": -11.5,
+            "timezoneIdentifiers": [
+                "Africa/Freetown"
+            ]
+        },
+        {
+            "code": "SV",
+            "name": "El Salvador",
+            "capital": "San Salvador",
+            "latitude": 13.83333333,
+            "longitude": -88.91666666,
+            "timezoneIdentifiers": [
+                "America/El_Salvador"
+            ]
+        },
+        {
+            "code": "SM",
+            "name": "San Marino",
+            "capital": "City of San Marino",
+            "latitude": 43.76666666,
+            "longitude": 12.41666666,
+            "timezoneIdentifiers": [
+                "Europe/San_Marino"
+            ]
+        },
+        {
+            "code": "SO",
+            "name": "Somalia",
+            "capital": "Mogadishu",
+            "latitude": 10,
+            "longitude": 49,
+            "timezoneIdentifiers": [
+                "Africa/Mogadishu"
+            ]
+        },
+        {
+            "code": "PM",
+            "name": "Saint Pierre and Miquelon",
+            "capital": "Saint-Pierre",
+            "latitude": 46.83333333,
+            "longitude": -56.33333333,
+            "timezoneIdentifiers": [
+                "America/Miquelon"
+            ]
+        },
+        {
+            "code": "RS",
+            "name": "Serbia",
+            "capital": "Belgrade",
+            "latitude": 44,
+            "longitude": 21,
+            "timezoneIdentifiers": [
+                "Europe/Belgrade"
+            ]
+        },
+        {
+            "code": "SS",
+            "name": "South Sudan",
+            "capital": "Juba",
+            "latitude": 7,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Juba"
+            ]
+        },
+        {
+            "code": "ST",
+            "name": "São Tomé and Príncipe",
+            "capital": "São Tomé",
+            "latitude": 1,
+            "longitude": 7,
+            "timezoneIdentifiers": [
+                "Africa/Sao_Tome"
+            ]
+        },
+        {
+            "code": "SR",
+            "name": "Suriname",
+            "capital": "Paramaribo",
+            "latitude": 4,
+            "longitude": -56,
+            "timezoneIdentifiers": [
+                "America/Paramaribo"
+            ]
+        },
+        {
+            "code": "SK",
+            "name": "Slovakia",
+            "capital": "Bratislava",
+            "latitude": 48.66666666,
+            "longitude": 19.5,
+            "timezoneIdentifiers": [
+                "Europe/Bratislava"
+            ]
+        },
+        {
+            "code": "SI",
+            "name": "Slovenia",
+            "capital": "Ljubljana",
+            "latitude": 46.11666666,
+            "longitude": 14.81666666,
+            "timezoneIdentifiers": [
+                "Europe/Ljubljana"
+            ]
+        },
+        {
+            "code": "SE",
+            "name": "Sweden",
+            "capital": "Stockholm",
+            "latitude": 62,
+            "longitude": 15,
+            "timezoneIdentifiers": [
+                "Europe/Stockholm"
+            ]
+        },
+        {
+            "code": "SZ",
+            "name": "Swaziland",
+            "capital": "Lobamba",
+            "latitude": -26.5,
+            "longitude": 31.5,
+            "timezoneIdentifiers": [
+                "Africa/Mbabane"
+            ]
+        },
+        {
+            "code": "SX",
+            "name": "Sint Maarten",
+            "capital": "Philipsburg",
+            "latitude": 18.033333,
+            "longitude": -63.05,
+            "timezoneIdentifiers": [
+                "America/Lower_Princes"
+            ]
+        },
+        {
+            "code": "SC",
+            "name": "Seychelles",
+            "capital": "Victoria",
+            "latitude": -4.58333333,
+            "longitude": 55.66666666,
+            "timezoneIdentifiers": [
+                "Indian/Mahe"
+            ]
+        },
+        {
+            "code": "SY",
+            "name": "Syria",
+            "capital": "Damascus",
+            "latitude": 35,
+            "longitude": 38,
+            "timezoneIdentifiers": [
+                "Asia/Damascus"
+            ]
+        },
+        {
+            "code": "TC",
+            "name": "Turks and Caicos Islands",
+            "capital": "Cockburn Town",
+            "latitude": 21.75,
+            "longitude": -71.58333333,
+            "timezoneIdentifiers": [
+                "America/Grand_Turk"
+            ]
+        },
+        {
+            "code": "TD",
+            "name": "Chad",
+            "capital": "N'Djamena",
+            "latitude": 15,
+            "longitude": 19,
+            "timezoneIdentifiers": [
+                "Africa/Ndjamena"
+            ]
+        },
+        {
+            "code": "TG",
+            "name": "Togo",
+            "capital": "Lomé",
+            "latitude": 8,
+            "longitude": 1.16666666,
+            "timezoneIdentifiers": [
+                "Africa/Lome"
+            ]
+        },
+        {
+            "code": "TH",
+            "name": "Thailand",
+            "capital": "Bangkok",
+            "latitude": 15,
+            "longitude": 100,
+            "timezoneIdentifiers": [
+                "Asia/Bangkok"
+            ]
+        },
+        {
+            "code": "TJ",
+            "name": "Tajikistan",
+            "capital": "Dushanbe",
+            "latitude": 39,
+            "longitude": 71,
+            "timezoneIdentifiers": [
+                "Asia/Dushanbe"
+            ]
+        },
+        {
+            "code": "TK",
+            "name": "Tokelau",
+            "capital": "Fakaofo",
+            "latitude": -9,
+            "longitude": -172,
+            "timezoneIdentifiers": [
+                "Pacific/Fakaofo"
+            ]
+        },
+        {
+            "code": "TM",
+            "name": "Turkmenistan",
+            "capital": "Ashgabat",
+            "latitude": 40,
+            "longitude": 60,
+            "timezoneIdentifiers": [
+                "Asia/Ashgabat"
+            ]
+        },
+        {
+            "code": "TL",
+            "name": "Timor-Leste",
+            "capital": "Dili",
+            "latitude": -8.83333333,
+            "longitude": 125.91666666,
+            "timezoneIdentifiers": [
+                "Asia/Dili"
+            ]
+        },
+        {
+            "code": "TO",
+            "name": "Tonga",
+            "capital": "Nuku'alofa",
+            "latitude": -20,
+            "longitude": -175,
+            "timezoneIdentifiers": [
+                "Pacific/Tongatapu"
+            ]
+        },
+        {
+            "code": "TT",
+            "name": "Trinidad and Tobago",
+            "capital": "Port of Spain",
+            "latitude": 11,
+            "longitude": -61,
+            "timezoneIdentifiers": [
+                "America/Port_of_Spain"
+            ]
+        },
+        {
+            "code": "TN",
+            "name": "Tunisia",
+            "capital": "Tunis",
+            "latitude": 34,
+            "longitude": 9,
+            "timezoneIdentifiers": [
+                "Africa/Tunis"
+            ]
+        },
+        {
+            "code": "TR",
+            "name": "Turkey",
+            "capital": "Ankara",
+            "latitude": 39,
+            "longitude": 35,
+            "timezoneIdentifiers": [
+                "Europe/Istanbul"
+            ]
+        },
+        {
+            "code": "TV",
+            "name": "Tuvalu",
+            "capital": "Funafuti",
+            "latitude": -8,
+            "longitude": 178,
+            "timezoneIdentifiers": [
+                "Pacific/Funafuti"
+            ]
+        },
+        {
+            "code": "TW",
+            "name": "Taiwan",
+            "capital": "Taipei",
+            "latitude": 23.5,
+            "longitude": 121,
+            "timezoneIdentifiers": [
+                "Asia/Taipei"
+            ]
+        },
+        {
+            "code": "TZ",
+            "name": "Tanzania",
+            "capital": "Dodoma",
+            "latitude": -6,
+            "longitude": 35,
+            "timezoneIdentifiers": [
+                "Africa/Dar_es_Salaam"
+            ]
+        },
+        {
+            "code": "UG",
+            "name": "Uganda",
+            "capital": "Kampala",
+            "latitude": 1,
+            "longitude": 32,
+            "timezoneIdentifiers": [
+                "Africa/Kampala"
+            ]
+        },
+        {
+            "code": "UA",
+            "name": "Ukraine",
+            "capital": "Kiev",
+            "latitude": 49,
+            "longitude": 32,
+            "timezoneIdentifiers": [
+                "Europe/Kiev",
+                "Europe/Uzhgorod",
+                "Europe/Zaporozhye"
+            ]
+        },
+        {
+            "code": "UM",
+            "name": "United States Minor Outlying Islands",
+            "latitude": 19.2911437,
+            "longitude": 166.618332,
+            "timezoneIdentifiers": [
+                "Pacific/Johnston",
+                "Pacific/Midway",
+                "Pacific/Wake"
+            ]
+        },
+        {
+            "code": "UY",
+            "name": "Uruguay",
+            "capital": "Montevideo",
+            "latitude": -33,
+            "longitude": -56,
+            "timezoneIdentifiers": [
+                "America/Montevideo"
+            ]
+        },
+        {
+            "code": "US",
+            "name": "United States",
+            "capital": "Washington D.C.",
+            "latitude": 38,
+            "longitude": -97,
+            "timezoneIdentifiers": [
+                "America/New_York",
+                "America/Detroit",
+                "America/Kentucky/Louisville",
+                "America/Kentucky/Monticello",
+                "America/Indiana/Indianapolis",
+                "America/Indiana/Vincennes",
+                "America/Indiana/Winamac",
+                "America/Indiana/Marengo",
+                "America/Indiana/Petersburg",
+                "America/Indiana/Vevay",
+                "America/Chicago",
+                "America/Indiana/Tell_City",
+                "America/Indiana/Knox",
+                "America/Menominee",
+                "America/North_Dakota/Center",
+                "America/North_Dakota/New_Salem",
+                "America/North_Dakota/Beulah",
+                "America/Denver",
+                "America/Boise",
+                "America/Phoenix",
+                "America/Los_Angeles",
+                "America/Anchorage",
+                "America/Juneau",
+                "America/Sitka",
+                "America/Metlakatla",
+                "America/Yakutat",
+                "America/Nome",
+                "America/Adak",
+                "Pacific/Honolulu"
+            ]
+        },
+        {
+            "code": "UZ",
+            "name": "Uzbekistan",
+            "capital": "Tashkent",
+            "latitude": 41,
+            "longitude": 64,
+            "timezoneIdentifiers": [
+                "Asia/Samarkand",
+                "Asia/Tashkent"
+            ]
+        },
+        {
+            "code": "VA",
+            "name": "Vatican City",
+            "capital": "Vatican City",
+            "latitude": 41.9,
+            "longitude": 12.45,
+            "timezoneIdentifiers": [
+                "Europe/Vatican"
+            ]
+        },
+        {
+            "code": "VC",
+            "name": "Saint Vincent and the Grenadines",
+            "capital": "Kingstown",
+            "latitude": 13.25,
+            "longitude": -61.2,
+            "timezoneIdentifiers": [
+                "America/St_Vincent"
+            ]
+        },
+        {
+            "code": "VE",
+            "name": "Venezuela",
+            "capital": "Caracas",
+            "latitude": 8,
+            "longitude": -66,
+            "timezoneIdentifiers": [
+                "America/Caracas"
+            ]
+        },
+        {
+            "code": "VG",
+            "name": "British Virgin Islands",
+            "capital": "Road Town",
+            "latitude": 18.431383,
+            "longitude": -64.62305,
+            "timezoneIdentifiers": [
+                "America/Tortola"
+            ]
+        },
+        {
+            "code": "VI",
+            "name": "United States Virgin Islands",
+            "capital": "Charlotte Amalie",
+            "latitude": 18.35,
+            "longitude": -64.933333,
+            "timezoneIdentifiers": [
+                "America/St_Thomas"
+            ]
+        },
+        {
+            "code": "VN",
+            "name": "Vietnam",
+            "capital": "Hanoi",
+            "latitude": 16.16666666,
+            "longitude": 107.83333333,
+            "timezoneIdentifiers": [
+                "Asia/Ho_Chi_Minh"
+            ]
+        },
+        {
+            "code": "VU",
+            "name": "Vanuatu",
+            "capital": "Port Vila",
+            "latitude": -16,
+            "longitude": 167,
+            "timezoneIdentifiers": [
+                "Pacific/Efate"
+            ]
+        },
+        {
+            "code": "WF",
+            "name": "Wallis and Futuna",
+            "capital": "Mata-Utu",
+            "latitude": -13.3,
+            "longitude": -176.2,
+            "timezoneIdentifiers": [
+                "Pacific/Wallis"
+            ]
+        },
+        {
+            "code": "WS",
+            "name": "Samoa",
+            "capital": "Apia",
+            "latitude": -13.58333333,
+            "longitude": -172.33333333,
+            "timezoneIdentifiers": [
+                "Pacific/Apia"
+            ]
+        },
+        {
+            "code": "YE",
+            "name": "Yemen",
+            "capital": "Sana'a",
+            "latitude": 15,
+            "longitude": 48,
+            "timezoneIdentifiers": [
+                "Asia/Aden"
+            ]
+        },
+        {
+            "code": "ZA",
+            "name": "South Africa",
+            "capital": "Pretoria",
+            "latitude": -29,
+            "longitude": 24,
+            "timezoneIdentifiers": [
+                "Africa/Johannesburg"
+            ]
+        },
+        {
+            "code": "ZM",
+            "name": "Zambia",
+            "capital": "Lusaka",
+            "latitude": -15,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Lusaka"
+            ]
+        },
+        {
+            "code": "ZW",
+            "name": "Zimbabwe",
+            "capital": "Harare",
+            "latitude": -20,
+            "longitude": 30,
+            "timezoneIdentifiers": [
+                "Africa/Harare"
+            ]
+        }
+    ]
+}

@@ -92,6 +92,13 @@
 		5585E40E23C986930009E98F /* TableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585E40B23C985A80009E98F /* TableInfo.swift */; };
 		558D35E2239F3C58006C710D /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E1239F3C58006C710D /* Metadata.json */; };
 		558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */ = {isa = PBXBuildFile; fileRef = 558D35E4239F42AE006C710D /* PlayerSummary.json */; };
+		558F707823D9295E004DB3F2 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 558F707723D9295E004DB3F2 /* Countries.json */; };
+		558F707A23D92AE4004DB3F2 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707923D92AE4004DB3F2 /* Countries.swift */; };
+		558F707B23D92BBB004DB3F2 /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F17823C8304000FC2B51 /* CountriesTests.swift */; };
+		558F707C23D92C2A004DB3F2 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707923D92AE4004DB3F2 /* Countries.swift */; };
+		558F707D23D92C2C004DB3F2 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 558F707723D9295E004DB3F2 /* Countries.json */; };
+		558F708023D9315D004DB3F2 /* DynamicCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */; };
+		558F708123D931C0004DB3F2 /* DynamicCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */; };
 		5590DD8123B98173006BE806 /* TournamentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5590DD8023B98173006BE806 /* TournamentWindowController.swift */; };
 		559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F5F3523BEBA060070F2D6 /* PercentProvider.swift */; };
 		559FFB4423D5745E002A401B /* CacheCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559FFB4323D5745E002A401B /* CacheCellView.swift */; };
@@ -248,6 +255,9 @@
 		5587DB4323A497740079BB30 /* PokerTracker.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Player.swift; sourceTree = "<group>"; };
 		558D35E1239F3C58006C710D /* Metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
 		558D35E4239F42AE006C710D /* PlayerSummary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlayerSummary.json; sourceTree = "<group>"; };
+		558F707723D9295E004DB3F2 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		558F707923D92AE4004DB3F2 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCodingKey.swift; sourceTree = "<group>"; };
 		5590DD8023B98173006BE806 /* TournamentWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentWindowController.swift; sourceTree = "<group>"; };
 		5592684623A9CA1500045F89 /* TimelineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRequest.swift; sourceTree = "<group>"; };
 		5592684723A9CA1500045F89 /* Timeline.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Timeline.json; sourceTree = "<group>"; };
@@ -280,7 +290,7 @@
 		55C529E623BD3F1400A6975A /* LinearRegressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegressionTests.swift; sourceTree = "<group>"; };
 		55C529E823BD3F1500A6975A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D4CADD23BB0394001E07E5 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
-		55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDescriptorPrototypeTests.swift; sourceTree = "<group>"; };
+		55D7F17823C8304000FC2B51 /* CountriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTests.swift; sourceTree = "<group>"; };
 		55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfoTests.swift; sourceTree = "<group>"; };
 		55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
@@ -719,6 +729,9 @@
 				55B9C86623D1857500B3D116 /* Model.Players.swift */,
 				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
 				5544A6FE23D80C3000ACCC6C /* PlayerNames.swift */,
+				558F707723D9295E004DB3F2 /* Countries.json */,
+				558F707923D92AE4004DB3F2 /* Countries.swift */,
+				558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -774,7 +787,7 @@
 			isa = PBXGroup;
 			children = (
 				55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */,
-				55D7F17823C8304000FC2B51 /* SortDescriptorPrototypeTests.swift */,
+				55D7F17823C8304000FC2B51 /* CountriesTests.swift */,
 				55C529E823BD3F1500A6975A /* Info.plist */,
 			);
 			path = RangerTests;
@@ -1096,6 +1109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */,
+				558F707823D9295E004DB3F2 /* Countries.json in Resources */,
 				552E546523D172F80056B305 /* SharkScope.Configuration.plist in Resources */,
 				551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */,
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
@@ -1110,6 +1124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558F707D23D92C2C004DB3F2 /* Countries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1324,6 +1339,7 @@
 				5555E09B23D6553200BA0DD5 /* TableSimulator.swift in Sources */,
 				555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
+				558F707A23D92AE4004DB3F2 /* Countries.swift in Sources */,
 				55A3A3B723D3CDDA0083EB3D /* PlayersWindowController.swift in Sources */,
 				55A7FAA823C3CC68007BEA05 /* PlayersTableView.swift in Sources */,
 				55A9AC5823BE0E4900179FA0 /* PercentBarCellView.swift in Sources */,
@@ -1350,6 +1366,7 @@
 				55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */,
 				551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */,
 				5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */,
+				558F708023D9315D004DB3F2 /* DynamicCodingKey.swift in Sources */,
 				5536B0FE23C2BF610067E7F2 /* PlayersTableHeaderView.swift in Sources */,
 				550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */,
 				55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */,
@@ -1366,6 +1383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D7F17B23C830CF00FC2B51 /* TableInfoTests.swift in Sources */,
+				558F707B23D92BBB004DB3F2 /* CountriesTests.swift in Sources */,
+				558F707C23D92C2A004DB3F2 /* Countries.swift in Sources */,
+				558F708123D931C0004DB3F2 /* DynamicCodingKey.swift in Sources */,
 				55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */,
 				5585E40E23C986930009E98F /* TableInfo.swift in Sources */,
 			);

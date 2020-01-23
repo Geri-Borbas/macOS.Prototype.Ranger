@@ -337,7 +337,7 @@
                                                                 <imageView toolTip="Russia" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RrI-bt-33h">
                                                                     <rect key="frame" x="2" y="2" width="18" height="12"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="jaB-Ju-Rds"/>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Unknown" id="jaB-Ju-Rds"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="mTM-fd-aAu">
                                                                     <rect key="frame" x="20" y="0.0" width="120" height="17"/>
@@ -1776,11 +1776,11 @@
             <objects>
                 <viewController id="kPu-3g-H1v" customClass="PlayersViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" id="xTS-Cw-y6S">
-                        <rect key="frame" x="0.0" y="0.0" width="481" height="273"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1360" height="800"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-gQ-JAv">
-                                <rect key="frame" x="365" y="3" width="112" height="32"/>
+                                <rect key="frame" x="1244" y="3" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="cYw-CV-ETZ"/>
                                 </constraints>
@@ -1804,7 +1804,7 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Sb-lD-JGo">
-                                <rect key="frame" x="10" y="41" width="461" height="222"/>
+                                <rect key="frame" x="10" y="41" width="1340" height="749"/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -1826,7 +1826,7 @@
                 </viewController>
                 <customObject id="t0J-pK-otz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1027.5" y="973.5"/>
+            <point key="canvasLocation" x="-1473" y="1133"/>
         </scene>
         <!--Simulated Table Window Controller-->
         <scene sceneID="9T1-Cm-6Nw">
@@ -1881,5 +1881,6 @@
         <image name="NSTouchBarHistoryTemplate" width="18" height="30"/>
         <image name="NSTouchBarUserTemplate" width="15" height="30"/>
         <image name="Simulated Tables" width="953" height="657"/>
+        <image name="Unknown" width="30" height="20"/>
     </resources>
 </document>
