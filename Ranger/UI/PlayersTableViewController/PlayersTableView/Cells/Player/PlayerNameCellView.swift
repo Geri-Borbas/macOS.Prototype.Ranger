@@ -62,11 +62,6 @@ class PlayerNameCellView: PlayerCellView
                 countryDateFormatter.timeZone = timezone
             let dateString = countryDateFormatter.string(from: now)
             
-            print(now)
-            print(timezone)
-            print(countryDateFormatter)
-            print(dateString)
-            
             flagImageView.toolTip = "\(countryName) (\(dateString))"
             flagImageView.image = NSImage(named: country.uppercased())
         }

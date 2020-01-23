@@ -492,6 +492,16 @@
 			path = PokerTracker;
 			sourceTree = "<group>";
 		};
+		554D716E23D94DBC00F60D27 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				558F707723D9295E004DB3F2 /* Countries.json */,
+				558F707923D92AE4004DB3F2 /* Countries.swift */,
+				558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
 		554E018823AA826C00CF2971 /* PlayerResponse */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,9 +739,7 @@
 				55B9C86623D1857500B3D116 /* Model.Players.swift */,
 				55D4CADD23BB0394001E07E5 /* TextFieldData.swift */,
 				5544A6FE23D80C3000ACCC6C /* PlayerNames.swift */,
-				558F707723D9295E004DB3F2 /* Countries.json */,
-				558F707923D92AE4004DB3F2 /* Countries.swift */,
-				558F707F23D9315D004DB3F2 /* DynamicCodingKey.swift */,
+				554D716E23D94DBC00F60D27 /* Countries */,
 			);
 			path = Model;
 			sourceTree = "<group>";
