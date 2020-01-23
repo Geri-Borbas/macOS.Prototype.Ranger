@@ -4,8 +4,7 @@
 * Doing
 
     + Next up
-        + Download flags
-        + Add Nationality / Local time to right-click context menu
+        + Add Local time to right-click context menu
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
         
@@ -23,6 +22,11 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* 2.0.0
+
+    + Added `Country Flags` to asset catalog
+    + Minor layout tweaks
 
 * 1.9.9
 

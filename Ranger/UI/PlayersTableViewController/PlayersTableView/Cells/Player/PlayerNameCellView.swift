@@ -40,11 +40,10 @@ class PlayerNameCellView: PlayerCellView
         // Get values.
         if
             let country = player.sharkScope.summary?.Response.PlayerResponse.PlayerView.Player.country,
-            let countryName = player.sharkScope.summary?.Response.PlayerResponse.PlayerView.Player.countryName,
-            let flagURL = URL(string: "https://www.countryflags.io/\(country.lowercased())/flat/64.png")
+            let countryName = player.sharkScope.summary?.Response.PlayerResponse.PlayerView.Player.countryName
         {
             flagImageView.toolTip = countryName
-            flagImageView.image = NSImage(byReferencing: flagURL)
+            flagImageView.image = NSImage(named: country.uppercased())
         }
     }
 }
