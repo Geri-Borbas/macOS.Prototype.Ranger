@@ -99,8 +99,8 @@ class TableTracker
         return (
             (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
             name?.contains("Tournament") ?? false &&
-            name?.contains("Table") ?? false &&
-            name?.contains("Logged In") ?? false
+            name?.contains("Table") ?? false // &&
+            // name?.contains("Logged In") ?? false
         )
     }
     

@@ -35,6 +35,18 @@ class TournamentWindowController: NSWindowController
         // Hide buttons.
         if let window = tourneyTableViewController.view.window
         {
+            // Always on top.
+            window.level = .floating // .statusBar
+            window.titlebarAppearsTransparent = true
+            
+            // Click-through, but titled.
+            window.styleMask = [.borderless, .titled, .closable]
+            
+            // See-trough.
+            window.backgroundColor = NSColor.clear
+            window.isOpaque = false
+         
+            // Hide controls.
             window.standardWindowButton(.miniaturizeButton)?.isHidden = true
             window.standardWindowButton(.zoomButton)?.isHidden = true
             window.standardWindowButton(.closeButton)?.isHidden = true

@@ -16,6 +16,7 @@ class TournamentViewController: NSViewController
     
     // MARK: - UI
     
+    @IBOutlet weak var tableOverlayPlaceholderView: NSView!
     @IBOutlet weak var playersTablePlaceholderView: NSView!
     var playersTableViewController: PlayersTableViewController!
     
@@ -74,21 +75,8 @@ class TournamentViewController: NSViewController
         guard let window = self.view.window
         else { return }
         
-        // Update blinds.
-        window.title = ""
-        
         // Align.
-        window.setFrame(
-            NSRect(
-                x: tableWindowInfo.UIKitBounds.origin.x,
-                y: tableWindowInfo.UIKitBounds.origin.y - window.frame.size.height,
-                width: tableWindowInfo.UIKitBounds.size.width,
-                height: window.frame.size.height
-            ),
-            display: true
-        )
-         
-        // Put above.
+        window.setFrame(tableWindowInfo.UIKitBounds, display: true)
         window.order(NSWindow.OrderingMode.above, relativeTo: tableWindowInfo.number)
         
         // Disable drag.

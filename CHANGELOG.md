@@ -1,3 +1,4 @@
+
 # Changelog
 
 
@@ -21,7 +22,14 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
-            
+
+* Feature/UI/Seat_Tracking/0.2.0
+
+    + Refactored `TournamentWindowController` layout / hieararchy
+        + A borderless / floating window above the entire table window
+        + Created seat assets for layout (and some basic template)
+        + Tracking Observed Table windows as well
+
 * Feature/UI/Seat_Tracking/0.0.1
 
     + Created design files

@@ -168,15 +168,15 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-117"/>
+            <point key="canvasLocation" x="-1059" y="-1179"/>
         </scene>
         <!--Tournament Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="TournamentWindowController" id="B8D-0N-5wS" userLabel="Tournament Window Controller" customClass="TournamentWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
-                        <rect key="contentRect" x="153" y="322" width="1340" height="270"/>
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
+                        <rect key="contentRect" x="149" y="322" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -188,17 +188,145 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="237"/>
+            <point key="canvasLocation" x="-954" y="940"/>
         </scene>
         <!--Tournament View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TournamentViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1348" height="273"/>
+                        <rect key="frame" x="0.0" y="0.0" width="953" height="930"/>
                         <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="gm1-A7-nPp">
+                                <rect key="frame" x="0.0" y="273" width="953" height="657"/>
+                                <subviews>
+                                    <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7H3-LQ-POI" userLabel="Screenshot (hidden)">
+                                        <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Simulated Tables" id="dBL-v9-llM"/>
+                                    </imageView>
+                                    <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="qKg-qG-2BV" userLabel="Seat Layout">
+                                        <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Layout " id="Qv2-gF-zvd"/>
+                                    </imageView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RkI-4d-n9l" userLabel="9">
+                                        <rect key="frame" x="217" y="497" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="sTE-GU-mnW" userLabel="Left Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="Pzp-L9-xbV"/>
+                                                <color key="contentTintColor" red="0.19607843137254902" green="0.84313725490196079" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJS-2f-Sce" userLabel="8">
+                                        <rect key="frame" x="43" y="433" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="1it-aU-A0n" userLabel="Left Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="1UN-zF-Rv6"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mco-vt-a8C" userLabel="7">
+                                        <rect key="frame" x="3" y="303" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="POP-Rq-f4e" userLabel="Left Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="JXl-Tf-JNm"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJ8-qs-uCn" userLabel="6">
+                                        <rect key="frame" x="97" y="168" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="qbQ-6o-HZo" userLabel="Left Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="zdc-Ty-HRm"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6yx-8o-1fx" userLabel="5">
+                                        <rect key="frame" x="373" y="109" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="HbG-0y-syt" userLabel="Left Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="NCK-v9-vz5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-ie-N7C" userLabel="1">
+                                        <rect key="frame" x="526" y="496" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="pwa-7C-3sD" userLabel="Right Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="ocY-HP-ctd"/>
+                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVR-Zz-StI" userLabel="2">
+                                        <rect key="frame" x="700" y="433" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="rfv-Oa-9Wg" userLabel="Right Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="7uo-2x-bOG"/>
+                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCn-5k-laa" userLabel="3">
+                                        <rect key="frame" x="740" y="303" width="210" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="zLp-F0-AEv" userLabel="Right Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="E1b-P0-86l"/>
+                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohg-vR-8GR" userLabel="4">
+                                        <rect key="frame" x="645" y="168" width="211" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" id="agQ-EV-ePb" userLabel="Right Seat Metrics">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="g2Z-ev-sga"/>
+                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gm1-A7-nPp" secondAttribute="height" multiplier="953:657" id="mZK-9a-O8H"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7nD-OL-3uD">
+                                <rect key="frame" x="0.0" y="60" width="953" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="203" id="I6M-EK-MtI"/>
+                                </constraints>
+                            </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-O1-p9y">
-                                <rect key="frame" x="1232" y="22" width="112" height="32"/>
+                                <rect key="frame" x="837" y="22" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="BeH-Sg-cgv"/>
                                 </constraints>
@@ -232,18 +360,18 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7nD-OL-3uD">
-                                <rect key="frame" x="10" y="60" width="1328" height="203"/>
-                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NrT-oU-NxL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="1Xi-VB-W8u"/>
                             <constraint firstAttribute="bottom" secondItem="Mbr-bY-dqi" secondAttribute="bottom" constant="10" id="31F-LP-vdY"/>
-                            <constraint firstItem="7nD-OL-3uD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="9bg-Uf-gxq"/>
-                            <constraint firstAttribute="trailing" secondItem="7nD-OL-3uD" secondAttribute="trailing" constant="10" id="ANQ-eC-xKd"/>
+                            <constraint firstItem="7nD-OL-3uD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9bg-Uf-gxq"/>
+                            <constraint firstAttribute="trailing" secondItem="7nD-OL-3uD" secondAttribute="trailing" id="ANQ-eC-xKd"/>
+                            <constraint firstItem="gm1-A7-nPp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="HBT-gJ-a28"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="273" id="V0R-HC-hF8"/>
+                            <constraint firstItem="gm1-A7-nPp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="aFk-yy-vS2"/>
+                            <constraint firstAttribute="trailing" secondItem="gm1-A7-nPp" secondAttribute="trailing" id="ck9-b9-MyK"/>
                             <constraint firstItem="Mbr-bY-dqi" firstAttribute="top" secondItem="NrT-oU-NxL" secondAttribute="bottom" constant="10" id="d7G-CR-Ggu"/>
-                            <constraint firstItem="7nD-OL-3uD" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="eka-jq-S28"/>
+                            <constraint firstItem="7nD-OL-3uD" firstAttribute="top" secondItem="gm1-A7-nPp" secondAttribute="bottom" id="dUT-uB-uDU"/>
                             <constraint firstItem="iS1-O1-p9y" firstAttribute="top" secondItem="7nD-OL-3uD" secondAttribute="bottom" constant="10" id="fgG-DA-ENX"/>
                             <constraint firstItem="Mbr-bY-dqi" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="kkK-Qk-w4j"/>
                             <constraint firstAttribute="trailing" secondItem="iS1-O1-p9y" secondAttribute="trailing" constant="10" id="lJG-g1-It8"/>
@@ -254,13 +382,14 @@
                         <outlet property="playersTablePlaceholderView" destination="7nD-OL-3uD" id="Ide-W7-ZYF"/>
                         <outlet property="statusLabel" destination="Mbr-bY-dqi" id="eDL-2k-wv5"/>
                         <outlet property="summaryLabel" destination="NrT-oU-NxL" id="JPI-I5-FOt"/>
+                        <outlet property="tableOverlayPlaceholderView" destination="gm1-A7-nPp" id="wcT-vY-u5f"/>
                         <outlet property="viewModel" destination="1rj-Mk-7PR" id="DCk-m6-sYe"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="1rj-Mk-7PR" customClass="TournamentViewModel" customModule="Ranger" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="75" y="716"/>
+            <point key="canvasLocation" x="-75" y="940"/>
         </scene>
         <!--PlayersTableViewController-->
         <scene sceneID="3FT-MN-FmM">
@@ -1749,7 +1878,7 @@
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
             </objects>
-            <point key="canvasLocation" x="177.5" y="1070.5"/>
+            <point key="canvasLocation" x="348" y="1633"/>
         </scene>
         <!--Players Window Controller-->
         <scene sceneID="wkn-fK-kPJ">
@@ -1757,7 +1886,7 @@
                 <windowController storyboardIdentifier="PlayersWindowController" id="Ky0-Pe-b2v" userLabel="Players Window Controller" customClass="PlayersWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="vbn-K7-JOC">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
-                        <rect key="contentRect" x="425" y="470" width="480" height="270"/>
+                        <rect key="contentRect" x="438" y="470" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
                         <connections>
                             <outlet property="delegate" destination="Ky0-Pe-b2v" id="ZLP-Nz-qMY"/>
@@ -1769,7 +1898,7 @@
                 </windowController>
                 <customObject id="L2i-Pu-fJN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1028" y="507"/>
+            <point key="canvasLocation" x="-954" y="-53"/>
         </scene>
         <!--Players View Controller-->
         <scene sceneID="OSh-5X-meT">
@@ -1826,7 +1955,7 @@
                 </viewController>
                 <customObject id="t0J-pK-otz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1473" y="1133"/>
+            <point key="canvasLocation" x="129" y="-53"/>
         </scene>
         <!--Simulated Table Window Controller-->
         <scene sceneID="9T1-Cm-6Nw">
@@ -1846,7 +1975,7 @@
                 </windowController>
                 <customObject id="QUl-0h-S87" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-421"/>
+            <point key="canvasLocation" x="-954" y="-909"/>
         </scene>
         <!--Simulated Table View Controller-->
         <scene sceneID="7ni-gn-8V8">
@@ -1862,36 +1991,6 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Simulated Tables" id="g3y-u8-Bge"/>
                             </imageView>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="23f-se-94Z" userLabel="Seat Layout">
-                                <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Layout" id="l1x-4e-8rm"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="jOx-3K-b0M" userLabel="8">
-                                <rect key="frame" x="43" y="433" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="KYF-Oa-6Vc"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="ZLo-MW-HLk" userLabel="7">
-                                <rect key="frame" x="2" y="303" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="RaV-d7-W9r"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="fR7-5M-gko" userLabel="6">
-                                <rect key="frame" x="96" y="168" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="0Hm-bp-HzG"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="9fv-Xn-nCF" userLabel="5">
-                                <rect key="frame" x="373" y="108" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="0vn-VL-FtP"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="cFM-Ci-OXL" userLabel="9">
-                                <rect key="frame" x="217" y="496" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="IXm-3H-Cmd"/>
-                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="g7M-zD-1wx" secondAttribute="bottom" id="51e-zp-lZl"/>
@@ -1903,15 +2002,16 @@
                 </viewController>
                 <customObject id="W0B-fB-Wfq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249.5" y="-1002.5"/>
+            <point key="canvasLocation" x="-75" y="-909"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSTouchBarBookmarksTemplate" width="22" height="30"/>
         <image name="NSTouchBarHistoryTemplate" width="18" height="30"/>
         <image name="NSTouchBarUserTemplate" width="15" height="30"/>
-        <image name="SeatTracker Seat Layout" width="953" height="657"/>
-        <image name="SeatTracker Seat Metrics" width="210" height="140"/>
+        <image name="SeatTracker Left Seat Metrics " width="210" height="140"/>
+        <image name="SeatTracker Right Seat Metrics " width="210" height="140"/>
+        <image name="SeatTracker Seat Layout " width="953" height="657"/>
         <image name="Simulated Tables" width="953" height="657"/>
         <image name="Unknown" width="30" height="20"/>
     </resources>
