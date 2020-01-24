@@ -24,6 +24,7 @@
 		552B105623D966A50077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
 		552B105723D9671E0077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
 		552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105823D96FFC0077D927 /* TournamentsTests.swift */; };
+		552B1FCE23DAD56C00FC0A88 /* TableOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */; };
 		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
 		552B413923D4A13E00A6184F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		552E543F23D164620056B305 /* SharkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E543D23D164620056B305 /* SharkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -211,6 +212,7 @@
 		5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Statistics.swift; sourceTree = "<group>"; };
 		552B105523D966A50077D927 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		552B105823D96FFC0077D927 /* TournamentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTests.swift; sourceTree = "<group>"; };
+		552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOverlayViewController.swift; sourceTree = "<group>"; };
 		552B413623D4A03100A6184F /* Tournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournaments.swift; sourceTree = "<group>"; };
 		552B413823D4A13E00A6184F /* TournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsRequest.swift; sourceTree = "<group>"; };
 		552E543B23D164610056B305 /* SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -460,6 +462,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		552B1FCC23DAD53500FC0A88 /* TableOverlayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */,
+			);
+			path = TableOverlayViewController;
+			sourceTree = "<group>";
+		};
 		552B413523D49FE500A6184F /* Tournaments */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +648,7 @@
 			children = (
 				5590DD8023B98173006BE806 /* TournamentWindowController.swift */,
 				55C18690239583DA0081B6B7 /* TournamentViewController.swift */,
+				552B1FCC23DAD53500FC0A88 /* TableOverlayViewController */,
 				559646B223BC145700A5207F /* ViewModel */,
 			);
 			path = TournamentTableWindow;
@@ -1362,6 +1373,7 @@
 				55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */,
 				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
+				552B1FCE23DAD56C00FC0A88 /* TableOverlayViewController.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
 				552B105623D966A50077D927 /* String+Extensions.swift in Sources */,
 				5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */,

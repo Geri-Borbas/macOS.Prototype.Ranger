@@ -23,6 +23,11 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.2.5
+
+    + `TableOverlayViewController` added using storyboard `ContentView`
+    + Fixed up layout / resizing
+
 * Feature/UI/Seat_Tracking/0.2.1
 
     + `Table Overlay` view layout is aligned (per pixel level)

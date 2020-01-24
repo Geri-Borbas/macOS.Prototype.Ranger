@@ -18,7 +18,12 @@ class TournamentViewController: NSViewController
     
     @IBOutlet weak var tableOverlayPlaceholderView: NSView!
     @IBOutlet weak var playersTablePlaceholderView: NSView!
+    
     var playersTableViewController: PlayersTableViewController!
+    
+    // Overlay.
+    var tableOverlayViewController: TableOverlayViewController?
+    
     
     @IBOutlet weak var summaryLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -42,10 +47,22 @@ class TournamentViewController: NSViewController
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         playersTableViewController = storyboard.instantiateController(withIdentifier: "PlayersTableViewController") as? PlayersTableViewController
         playersTableViewController.delegate = self
-                
+        
         // Add to placeholder.
         playersTableViewController.view.frame = playersTablePlaceholderView.bounds
         playersTablePlaceholderView.addSubview(playersTableViewController.view)
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?)
+    {
+        switch segue.destinationController
+        {
+            case let aa as TableOverlayViewController:
+                self.tableOverlayViewController = aa
+                aa.say(something: "Malibu.")
+            default:
+                break
+        }
     }
     
     func track(_ tableWindowInfo: TableWindowInfo)
