@@ -19,10 +19,10 @@ class TournamentViewController: NSViewController
     @IBOutlet weak var tableOverlayPlaceholderView: NSView!
     @IBOutlet weak var playersTablePlaceholderView: NSView!
     
-    var playersTableViewController: PlayersTableViewController!
+    weak var playersTableViewController: PlayersTableViewController!
     
     // Overlay.
-    var tableOverlayViewController: TableOverlayViewController?
+    weak var tableOverlayViewController: TableOverlayViewController?
     
     
     @IBOutlet weak var summaryLabel: NSTextField!
@@ -55,11 +55,11 @@ class TournamentViewController: NSViewController
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?)
     {
+        // Wire up child view controller references.
         switch segue.destinationController
         {
-            case let aa as TableOverlayViewController:
-                self.tableOverlayViewController = aa
-                aa.say(something: "Malibu.")
+            case let tableOverlayViewController as TableOverlayViewController:
+                self.tableOverlayViewController = tableOverlayViewController
             default:
                 break
         }

@@ -29,4 +29,16 @@ class TableOverlayViewController: NSViewController
         super.viewDidLoad()
     }
     
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?)
+    {
+        guard
+            let seatViewController = segue.destinationController as? SeatViewController,
+            let sequeIdentifier = segue.identifier,
+            let seat = Int(sequeIdentifier)
+        else { return }
+        
+        // Inject seat index from seque identifier (set in storyboard).
+        seatViewController.seat = seat
+    }
+    
 }

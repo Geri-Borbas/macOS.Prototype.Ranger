@@ -23,6 +23,14 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.2.7
+
+    + Strong typed child view controller referencing upon `TournamentViewController` embed segues
+    + Added `SeatViewController`
+        + `TableOverlayViewController` embed each via storyboard segues (from two prototypes Left and Right)
+        + `seat` index gets injected from `segue.identifier`
+        + `side` gets injected from storyboard "User Defined Runtime Attributes"
+
 * Feature/UI/Seat_Tracking/0.2.5
 
     + `TableOverlayViewController` added using storyboard `ContentView`

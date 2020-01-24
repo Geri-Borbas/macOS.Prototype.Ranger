@@ -119,6 +119,7 @@
 		55AD571923D4FA48002A2E22 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD571823D4FA48002A2E22 /* JsonResponse.swift */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
 		55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* Model.Player.swift */; };
+		55B84F7723DB58210079D94C /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B84F7523DB58210079D94C /* SeatViewController.swift */; };
 		55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9C86623D1857500B3D116 /* Model.Players.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
 		55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TournamentViewController.swift */; };
@@ -282,6 +283,7 @@
 		55AD571823D4FA48002A2E22 /* JsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
 		55B03CD423B104F700F153B5 /* Model.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Player.swift; sourceTree = "<group>"; };
+		55B84F7523DB58210079D94C /* SeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
 		55B9C86623D1857500B3D116 /* Model.Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Players.swift; sourceTree = "<group>"; };
 		55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tournaments.md; sourceTree = "<group>"; };
 		55C1868B239583DA0081B6B7 /* Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -466,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */,
+				55B84F7423DB57F90079D94C /* SeatViewController */,
 			);
 			path = TableOverlayViewController;
 			sourceTree = "<group>";
@@ -732,6 +735,14 @@
 				5585E40B23C985A80009E98F /* TableInfo.swift */,
 			);
 			path = TableTracker;
+			sourceTree = "<group>";
+		};
+		55B84F7423DB57F90079D94C /* SeatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				55B84F7523DB58210079D94C /* SeatViewController.swift */,
+			);
+			path = SeatViewController;
 			sourceTree = "<group>";
 		};
 		55B9C86823D1863E00B3D116 /* Extensions */ = {
@@ -1384,6 +1395,7 @@
 				559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */,
 				551DC0B923D67AEA0030E2B0 /* SimulatedTableViewController.swift in Sources */,
 				5508E3FD23A4656000FFB173 /* TournamentViewModel.swift in Sources */,
+				55B84F7723DB58210079D94C /* SeatViewController.swift in Sources */,
 				55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */,
 				555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */,
 				5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */,

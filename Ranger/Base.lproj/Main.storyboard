@@ -1765,7 +1765,7 @@
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
             </objects>
-            <point key="canvasLocation" x="348" y="1633"/>
+            <point key="canvasLocation" x="348" y="1936"/>
         </scene>
         <!--Players Window Controller-->
         <scene sceneID="wkn-fK-kPJ">
@@ -1917,212 +1917,117 @@
                                         <rect key="frame" x="526" y="497" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="pwa-7C-3sD" userLabel="Right Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-Bu-0m7">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="ocY-HP-ctd"/>
-                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ap0-EU-r3C" userLabel="Circle Background">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="dqN-sr-xCv"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bzp-dQ-ZyC" userLabel="Circle Ring">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="0R9-pQ-vnK"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="1" id="EwL-mI-yoZ"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="hVR-Zz-StI" userLabel="2">
                                         <rect key="frame" x="700" y="433" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="rfv-Oa-9Wg" userLabel="Right Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4u-QP-Ykx">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="7uo-2x-bOG"/>
-                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hTh-dF-SrF" userLabel="Circle Background">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="hgk-xZ-V8m"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sH5-WY-jIE" userLabel="Circle Ring">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="sek-He-6J8"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="2" id="cmy-N6-ekr"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="yCn-5k-laa" userLabel="3">
                                         <rect key="frame" x="740" y="303" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="zLp-F0-AEv" userLabel="Right Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Lr-mfs">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="E1b-P0-86l"/>
-                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nIx-WP-3LW" userLabel="Circle Background">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="hmF-7u-EeY"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Dy-8z-vl5" userLabel="Circle Ring">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="bqH-vB-RLo"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="3" id="qeN-CJ-GM4"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="ohg-vR-8GR" userLabel="4">
                                         <rect key="frame" x="646" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="agQ-EV-ePb" userLabel="Right Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-Jy-ff4">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="g2Z-ev-sga"/>
-                                                <color key="contentTintColor" red="0.1960784314" green="0.84313725490000002" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WFG-9k-1jF" userLabel="Circle Background">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="sGI-bN-ltk"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ck3-er-CBC" userLabel="Circle Ring">
-                                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="ufx-cR-VpD"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="4" id="Jpf-Gd-qs4"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="6yx-8o-1fx" userLabel="5">
                                         <rect key="frame" x="373" y="109" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="HbG-0y-syt" userLabel="Left Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-iC-HoE">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="NCK-v9-vz5"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R7t-QA-mR7" userLabel="Circle Background">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="faQ-yE-8b7"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KQl-hr-RVj" userLabel="Circle Ring">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="C7D-QF-DgW"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="5" id="6u3-dw-fcB"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="MJ8-qs-uCn" userLabel="6">
                                         <rect key="frame" x="97" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="qbQ-6o-HZo" userLabel="Left Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMY-tR-dGo">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="zdc-Ty-HRm"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yvD-bO-c20" userLabel="Circle Background">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="9wn-Ql-DLK"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YWG-5D-q3U" userLabel="Circle Ring">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="j1F-R5-tfj"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="6" id="aoj-hk-HfG"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="Mco-vt-a8C" userLabel="7">
                                         <rect key="frame" x="3" y="303" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="POP-Rq-f4e" userLabel="Left Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRF-13-3eV">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="JXl-Tf-JNm"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="K9t-fb-eb1" userLabel="Circle Background">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="r0n-XW-Eyc"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="UVT-0f-jqi" userLabel="Circle Ring">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="cMW-n6-rPk"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="7" id="xIg-cj-xjL"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="AJS-2f-Sce" userLabel="8">
                                         <rect key="frame" x="43" y="433" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="1it-aU-A0n" userLabel="Left Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-Eg-N1S">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="1UN-zF-Rv6"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RhQ-6R-m7M" userLabel="Circle Background">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="PP0-zX-YyW"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1lG-Hr-Qe7" userLabel="Circle Ring">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="2C3-27-4pn"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="8" id="wQs-2A-zTY"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                     <customView id="RkI-4d-n9l" userLabel="9">
                                         <rect key="frame" x="217" y="497" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="sTE-GU-mnW" userLabel="Left Seat Metrics">
+                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-Ur-xoM">
                                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="Pzp-L9-xbV"/>
-                                                <color key="contentTintColor" red="0.19607843137254902" green="0.84313725490196079" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WPk-0m-WLv" userLabel="Circle Background">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="Yip-Ws-IiN"/>
-                                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </imageView>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uAQ-Ef-Pkg" userLabel="Circle Ring">
-                                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="FGj-FG-Ihm"/>
-                                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                                            </imageView>
+                                                <connections>
+                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="9" id="nhC-YC-biL"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </customView>
                                 </subviews>
@@ -2132,7 +2037,83 @@
                 </viewController>
                 <customObject id="TL9-6g-JvE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="941"/>
+            <point key="canvasLocation" x="1013.5" y="940.5"/>
+        </scene>
+        <!--Left Seat View Controller-->
+        <scene sceneID="oTL-Qo-AK8">
+            <objects>
+                <viewController id="Qfz-ND-uE5" userLabel="Left Seat View Controller" customClass="SeatViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="L4Z-ka-hHi">
+                        <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="HbG-0y-syt" userLabel="Left Seat Metrics">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="NCK-v9-vz5"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R7t-QA-mR7" userLabel="Circle Background">
+                                <rect key="frame" x="120" y="25" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="faQ-yE-8b7"/>
+                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KQl-hr-RVj" userLabel="Circle Ring">
+                                <rect key="frame" x="120" y="25" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="C7D-QF-DgW"/>
+                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="side" value="Right"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="ringImageView" destination="KQl-hr-RVj" id="csk-lU-m1c"/>
+                    </connections>
+                </viewController>
+                <customObject id="cts-lR-h6P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="1624"/>
+        </scene>
+        <!--Right Seat View Controller-->
+        <scene sceneID="ZEJ-fg-1Ra">
+            <objects>
+                <viewController id="nqC-uS-oC9" userLabel="Right Seat View Controller" customClass="SeatViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="zZf-jq-dXV">
+                        <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="mYw-aE-zgr" userLabel="Right Seat Metrics">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="8h9-AK-pPP"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LGX-UW-uwS" userLabel="Circle Background">
+                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="QmC-p7-VoP"/>
+                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2cq-1b-WGL" userLabel="Circle Ring">
+                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="vx2-kc-yvf"/>
+                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="side" value="Left"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="ringImageView" destination="2cq-1b-WGL" id="ZG2-r5-fYH"/>
+                    </connections>
+                </viewController>
+                <customObject id="hl4-uj-0pt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="1624"/>
         </scene>
     </scenes>
     <resources>
@@ -2147,4 +2128,8 @@
         <image name="Simulated Tables" width="953" height="657"/>
         <image name="Unknown" width="30" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cmy-N6-ekr"/>
+        <segue reference="xIg-cj-xjL"/>
+    </inferredMetricsTieBreakers>
 </document>
