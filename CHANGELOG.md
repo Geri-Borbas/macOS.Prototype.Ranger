@@ -21,7 +21,11 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+            
+* Feature/UI/Seat_Tracking/0.0.1
 
+    + Created design files
+    + Added layout assets yet to `SimulatedTable`    
 * 2.0.1
 
     + Moved `Tournaments` statistics to `RangerTests.TournamentsTests`

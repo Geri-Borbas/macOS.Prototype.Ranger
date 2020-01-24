@@ -1855,12 +1855,42 @@
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="Glx-Gr-BcT">
                         <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-zD-1wx">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-zD-1wx" userLabel="Screenshot">
                                 <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="g7M-zD-1wx" secondAttribute="height" multiplier="953:657" id="bUN-oW-yBX"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Simulated Tables" id="g3y-u8-Bge"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="23f-se-94Z" userLabel="Seat Layout">
+                                <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Layout" id="l1x-4e-8rm"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="jOx-3K-b0M" userLabel="8">
+                                <rect key="frame" x="43" y="433" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="KYF-Oa-6Vc"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="ZLo-MW-HLk" userLabel="7">
+                                <rect key="frame" x="2" y="303" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="RaV-d7-W9r"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="fR7-5M-gko" userLabel="6">
+                                <rect key="frame" x="96" y="168" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="0Hm-bp-HzG"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="9fv-Xn-nCF" userLabel="5">
+                                <rect key="frame" x="373" y="108" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="0vn-VL-FtP"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="cFM-Ci-OXL" userLabel="9">
+                                <rect key="frame" x="217" y="496" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Metrics" id="IXm-3H-Cmd"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1880,6 +1910,8 @@
         <image name="NSTouchBarBookmarksTemplate" width="22" height="30"/>
         <image name="NSTouchBarHistoryTemplate" width="18" height="30"/>
         <image name="NSTouchBarUserTemplate" width="15" height="30"/>
+        <image name="SeatTracker Seat Layout" width="953" height="657"/>
+        <image name="SeatTracker Seat Metrics" width="210" height="140"/>
         <image name="Simulated Tables" width="953" height="657"/>
         <image name="Unknown" width="30" height="20"/>
     </resources>
