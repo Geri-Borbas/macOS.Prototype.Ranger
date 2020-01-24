@@ -23,6 +23,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.2.1
+
+    + `Table Overlay` view layout is aligned (per pixel level)
+
 * Feature/UI/Seat_Tracking/0.2.0
 
     + Refactored `TournamentWindowController` layout / hieararchy
