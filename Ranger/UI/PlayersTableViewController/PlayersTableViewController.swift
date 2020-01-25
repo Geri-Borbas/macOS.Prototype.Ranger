@@ -58,11 +58,17 @@ class PlayersTableViewController: NSViewController,
     public func update(with tournamentInfo: TournamentInfo)
     { viewModel.update(with: tournamentInfo) }
     
-    public func selectRow(at seat: Int)
+    public func selectRow(at tableSeat: Int)
     {
-        // Lookup player at given seat.
+        // Determine hero seat if any.
         guard
-            let player = viewModel.players.filter({ eachPlayer in eachPlayer.pokerTracker?.handPlayer?.seat == seat }).first,
+            let hero = viewModel.players.filter({ eachPlayer in eachPlayer.isHero }).first,
+            let heroSeat = hero.pokerTracker?.handPlayer?.seat
+        else { return }
+        
+        // Lookup player at given table seat.
+        guard
+            let player = viewModel.players.filter({ eachPlayer in eachPlayer.screenSeat(heroSittingAt: heroSeat) == tableSeat }).first,
             let row = viewModel.players.firstIndex(of: player)
         else { return }
         

@@ -23,6 +23,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.3.0
+
+    + Created conversion to table seat (considering preferred seat)
+
 * Feature/UI/Seat_Tracking/0.2.9
 
     + Added player model hooks to `TableOverlayViewController`
