@@ -23,6 +23,11 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.3.4
+
+    + `SeatViewController` color codes rings by `Finishes`
+    + Fixed SharkScope data flow into `TableOverlay`  
+
 * Feature/UI/Seat_Tracking/0.3.3
 
     + Created JSON / Asset based `ColorRanges`

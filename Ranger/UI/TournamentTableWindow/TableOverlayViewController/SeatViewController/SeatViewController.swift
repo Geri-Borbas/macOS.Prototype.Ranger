@@ -69,8 +69,13 @@ class SeatViewController: NSViewController
     
     func layout(for player: Model.Player)
     {
-        // Layout.
-        ringButton.contentTintColor = NSColor.systemOrange
+        // Layout color.
+        if let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope
+        { ringButton.contentTintColor = ColorRanges.finishes.color(for: finishes) }
+        else
+        { ringButton.contentTintColor = NSColor.lightGray }
+        
+        // Log.
         ringButton.toolTip = player.name
     }
     

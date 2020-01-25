@@ -125,15 +125,10 @@ extension TournamentViewController: TournamentViewModelDelegate
     
     
     func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
-    {
-        playersTable?.update(with: tournamentPlayers)
-        tableOverlay?.update(with: tournamentPlayers)
-    }
+    { playersTable?.update(with: tournamentPlayers) }
     
     func tournamentDidChange(tournamentInfo: TournamentInfo)
-    {
-        playersTable?.update(with: tournamentInfo)
-    }
+    { playersTable?.update(with: tournamentInfo) }
 }
 
 
@@ -146,6 +141,10 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
     func playersTableDidChange()
     {
         layout()
+        
+        // Update overlay with processed player data.
+        if let players = playersTable?.viewModel.players
+        { tableOverlay?.update(with: players) }
         
         // Fetch SharkScope status.
         viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
