@@ -49,7 +49,7 @@ class PlayersTableViewModel: NSObject
     /// If `tournamenNumber` is set, only session statistics will be fetched for hero.
     var tournamentInfo: TournamentInfo?
             
-    public var delegate: PlayersTableViewModelDelegate?
+    var delegate: PlayersTableViewModelDelegate?
     
     
     // MARK: - Updates

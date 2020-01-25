@@ -16,8 +16,8 @@ class TournamentViewController: NSViewController
     
     // MARK: - UI
     
-    weak var playersTableViewController: PlayersTableViewController?
-    weak var tableOverlayViewController: TableOverlayViewController?
+    weak var playersTable: PlayersTableViewController?
+    weak var tableOverlay: TableOverlayViewController?
     
     @IBOutlet weak var summaryLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -47,15 +47,18 @@ class TournamentViewController: NSViewController
         switch segue.destinationController
         {
             case let playersTableViewController as PlayersTableViewController:
-                self.playersTableViewController = playersTableViewController
-                self.playersTableViewController?.delegate = self
+                self.playersTable = playersTableViewController
+                self.playersTable?.delegate = self
             case let tableOverlayViewController as TableOverlayViewController:
-                self.tableOverlayViewController = tableOverlayViewController
-                // self.tableOverlayViewController?.delegate = self
+                self.tableOverlay = tableOverlayViewController
+                self.tableOverlay?.delegate = self
             default:
                 break
         }
     }
+    
+    
+    // MARK: - Hooks
     
     func update(with tableWindowInfo: TableWindowInfo)
     {
@@ -86,7 +89,7 @@ class TournamentViewController: NSViewController
     @IBAction func fetchAllDidClick(_ sender: AnyObject)
     {
         // Checks.
-        guard let playersTableViewController = self.playersTableViewController else { return }
+        guard let playersTableViewController = self.playersTable else { return }
                 
         // Fetch SharkScope for all (gonna push changes back each).
         for eachRow in 0...playersTableViewController.tableView.numberOfRows
@@ -103,7 +106,7 @@ class TournamentViewController: NSViewController
         summaryLabel.attributedStringValue = summary
         
         // Players.
-        playersTableViewController?.tableView.reloadData()
+        playersTable?.tableView.reloadData()
     }
     
     func layoutStatus()
@@ -116,19 +119,26 @@ class TournamentViewController: NSViewController
 
 
 // MARK: - Tournament Events
+
 extension TournamentViewController: TournamentViewModelDelegate
 {
     
     
     func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
-    { playersTableViewController?.update(with: tournamentPlayers) }
+    {
+        playersTable?.update(with: tournamentPlayers)
+        tableOverlay?.update(with: tournamentPlayers)
+    }
     
     func tournamentDidChange(tournamentInfo: TournamentInfo)
-    { playersTableViewController?.update(with: tournamentInfo) }
+    {
+        playersTable?.update(with: tournamentInfo)
+    }
 }
 
 
 // MARK: - Players Table View Controller Events
+
 extension TournamentViewController: PlayersTableViewControllerDelegate
 {
     
@@ -144,10 +154,22 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
 
 
 // MARK: - Players Table View Events
+
 extension TournamentViewController: PlayersTableViewDelegate
 {
     
     
     func fetchTournementsRequested(for playerName: String)
-    { playersTableViewController?.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+    { playersTable?.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+}
+
+
+// MARK: - Table Overlay Events
+
+extension TournamentViewController: TableOverlayViewControllerDelegate
+{
+    
+    
+    func seatDidClick(seatViewController: SeatViewController)
+    { playersTable?.selectRow(at: seatViewController.seat) }
 }

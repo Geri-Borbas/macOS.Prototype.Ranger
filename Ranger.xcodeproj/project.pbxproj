@@ -397,8 +397,8 @@
 			isa = PBXGroup;
 			children = (
 				55F4B81C23D3B468000953DF /* StatusBarItem */,
-				55078CE523D20D64001174A7 /* PlayersTableViewController */,
 				55A3A3B523D3CDBA0083EB3D /* PlayersWindow */,
+				55078CE523D20D64001174A7 /* PlayersTableViewController */,
 				5590DD8223B982F6006BE806 /* TournamentTableWindow */,
 			);
 			path = UI;

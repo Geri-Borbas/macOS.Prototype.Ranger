@@ -370,6 +370,17 @@ extension Model.Player
                (sharkScope.statistics?.Profit ?? 0).formattedWithSeparator
         )
     }
+    
+    func screenSeat(heroSittingAt heroSeat: Int) -> Int?
+    {
+        // Get seat from PokerTracker hand history.
+        guard let tableSeat = pokerTracker?.handPlayer?.seat
+        else { return nil }
+        
+        // TODO: Convert, test.
+        
+        return tableSeat
+    }
 }
 
 

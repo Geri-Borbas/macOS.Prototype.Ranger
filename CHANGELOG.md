@@ -23,6 +23,15 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.2.9
+
+    + Added player model hooks to `TableOverlayViewController`
+        + `TableOverlayViewController.update(with:)`
+        + `SeatViewController.update(with:)`
+    + Added delegates to receive events from seats
+        + `TableOverlayViewControllerDelegate` / `SeatViewControllerDelegate`
+    + Some renaming
+
 * Feature/UI/Seat_Tracking/0.2.8
 
     + `PlayersTableViewController` is added via content view / embed segue as well

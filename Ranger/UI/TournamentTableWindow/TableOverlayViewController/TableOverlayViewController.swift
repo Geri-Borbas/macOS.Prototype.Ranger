@@ -9,21 +9,27 @@
 import Cocoa
 
 
+protocol TableOverlayViewControllerDelegate
+{
+    
+    
+    func seatDidClick(seatViewController: SeatViewController)
+    // func seatDidClick(containing player: Model.Player)
+}
+
+
 class TableOverlayViewController: NSViewController
 {
 
     
-    @IBOutlet weak var ring_1: NSImageView!
-    @IBOutlet weak var ring_2: NSImageView!
-    @IBOutlet weak var ring_3: NSImageView!
-    @IBOutlet weak var ring_4: NSImageView!
-    @IBOutlet weak var ring_5: NSImageView!
-    @IBOutlet weak var ring_6: NSImageView!
-    @IBOutlet weak var ring_7: NSImageView!
-    @IBOutlet weak var ring_8: NSImageView!
-    @IBOutlet weak var ring_9: NSImageView!
+    var delegate: TableOverlayViewControllerDelegate?
+    
+    /// `SeatViewController` instances indexed by `seat` number (1..9).
+    var seats: [Int:SeatViewController] = [:]
     
     
+    // MARK: - Lifecycle
+     
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -39,6 +45,53 @@ class TableOverlayViewController: NSViewController
         
         // Inject seat index from seque identifier (set in storyboard).
         seatViewController.seat = seat
+        
+        // Wire up callbacks.
+        seatViewController.delegate = self
+        
+        // Collect.
+        seats[seat] = seatViewController
     }
     
+    
+    // MARK: - Hooks
+    
+    func update(with players: [Model.Player])
+    {
+        // Determine hero seat if any.
+        guard
+            let hero = players.filter({ eachPlayer in eachPlayer.isHero }).first,
+            let heroSeat = hero.pokerTracker?.handPlayer?.seat
+        else { return }
+                
+        // Remove every player from seats.
+        seats.values.forEach
+        { eachSeatViewController in eachSeatViewController.update(with: nil) }
+        
+        // Add new players.
+        players.forEach
+        {
+            eachPlayer in
+            
+            // Convert PokerTracker table seat to screen seat.
+            if
+                let eachScreenSeat = eachPlayer.screenSeat(heroSittingAt: heroSeat),
+                let eachSeatViewController = seats[eachScreenSeat]
+            { eachSeatViewController.update(with: eachPlayer) }
+        }
+    }
 }
+
+
+// MARK: - Table Overlay Events
+
+extension TableOverlayViewController: SeatViewControllerDelegate
+{
+    
+    
+    func seatDidClick(seatViewController: SeatViewController)
+    { delegate?.seatDidClick(seatViewController: seatViewController) }
+}
+    
+    
+    

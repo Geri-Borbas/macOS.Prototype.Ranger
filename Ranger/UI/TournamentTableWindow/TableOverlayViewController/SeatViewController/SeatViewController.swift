@@ -9,6 +9,14 @@
 import Cocoa
 
 
+protocol SeatViewControllerDelegate
+{
+    
+    
+    func seatDidClick(seatViewController: SeatViewController)
+}
+
+
 class SeatViewController: NSViewController
 {
 
@@ -20,19 +28,50 @@ class SeatViewController: NSViewController
     @objc dynamic var side: String = ""
 
 
-    @IBOutlet weak var ringImageView: NSImageView!
+    @IBOutlet weak var ringButton: NSButton!
+    var delegate: SeatViewControllerDelegate?
     
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        ringImageView.contentTintColor = (side == "Left") ? NSColor.systemOrange : NSColor.systemYellow
-        print("SeatViewController.viewDidLoad(), seat: \(seat), side: \(side)")
+        layoutEmpty()
     }
     
-    func setup(with player: Model.Player)
+    
+    // MARK: - User Events
+    
+    @IBAction func ringDidClick(_ sender: AnyObject)
+    { delegate?.seatDidClick(seatViewController: self) }
+    
+    
+    // MARK: - Hooks
+    
+    func update(with player: Model.Player?)
     {
+        // Only if any.
+        guard let player = player
+        else { return layoutEmpty() }
         
+        layout(for: player)
+    }
+    
+    
+    // MARK: - Layout
+    
+    func layoutEmpty()
+    {
+        ringButton.contentTintColor = NSColor.darkGray
+        ringButton.toolTip = nil
+    }
+    
+    func layout(for player: Model.Player)
+    {
+        // Layout.
+        ringButton.contentTintColor = NSColor.systemOrange
+        ringButton.toolTip = player.name
     }
     
 }

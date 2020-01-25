@@ -175,7 +175,7 @@
             <objects>
                 <windowController storyboardIdentifier="TournamentWindowController" id="B8D-0N-5wS" userLabel="Tournament Window Controller" customClass="TournamentWindowController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="149" y="322" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
@@ -1810,11 +1810,11 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ZJ-Ds-Q8e">
-                                <rect key="frame" x="8" y="17" width="41" height="14"/>
+                                <rect key="frame" x="8" y="17" width="1234" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="zVz-WH-OBe"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="0VD-7p-nEt">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Status." allowsEditingTextAttributes="YES" id="0VD-7p-nEt">
                                     <font key="font" metaFont="message" size="11"/>
                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1830,6 +1830,7 @@
                             <constraint firstItem="Oba-gQ-JAv" firstAttribute="top" secondItem="8Sb-lD-JGo" secondAttribute="bottom" constant="10" id="Eac-hx-wXL"/>
                             <constraint firstItem="3ZJ-Ds-Q8e" firstAttribute="leading" secondItem="xTS-Cw-y6S" secondAttribute="leading" constant="10" id="Hn3-FN-dFe"/>
                             <constraint firstItem="8Sb-lD-JGo" firstAttribute="top" secondItem="xTS-Cw-y6S" secondAttribute="top" constant="10" id="INR-Gb-E7Q"/>
+                            <constraint firstItem="Oba-gQ-JAv" firstAttribute="leading" secondItem="3ZJ-Ds-Q8e" secondAttribute="trailing" constant="10" id="UGj-fj-oBN"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="273" id="gKO-UO-AvC"/>
                             <constraint firstAttribute="bottom" secondItem="Oba-gQ-JAv" secondAttribute="bottom" constant="10" id="lmV-J1-fmo"/>
                             <constraint firstAttribute="trailing" secondItem="Oba-gQ-JAv" secondAttribute="trailing" constant="10" id="rF2-YA-1mJ"/>
@@ -2059,19 +2060,25 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="faQ-yE-8b7"/>
                                 <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KQl-hr-RVj" userLabel="Circle Ring">
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ip1-dc-zIr">
                                 <rect key="frame" x="120" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="C7D-QF-DgW"/>
-                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                            </imageView>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatTracker Circle Ring " imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xPz-BC-V74">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="ringDidClick:" target="Qfz-ND-uE5" id="4kb-JL-t6E"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Right"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="ringImageView" destination="KQl-hr-RVj" id="csk-lU-m1c"/>
+                        <outlet property="ringButton" destination="ip1-dc-zIr" id="AWN-5a-AYt"/>
                     </connections>
                 </viewController>
                 <customObject id="cts-lR-h6P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2097,19 +2104,25 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="QmC-p7-VoP"/>
                                 <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2cq-1b-WGL" userLabel="Circle Ring">
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Ti-2yb">
                                 <rect key="frame" x="0.0" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Ring " id="vx2-kc-yvf"/>
-                                <color key="contentTintColor" name="selectedTextColor" catalog="System" colorSpace="catalog"/>
-                            </imageView>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatTracker Circle Ring " imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="wUT-ap-4lk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="ringDidClick:" target="nqC-uS-oC9" id="8oK-hW-l2I"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Left"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="ringImageView" destination="2cq-1b-WGL" id="ZG2-r5-fYH"/>
+                        <outlet property="ringButton" destination="Yye-Ti-2yb" id="0Xx-fg-fDj"/>
                     </connections>
                 </viewController>
                 <customObject id="hl4-uj-0pt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
