@@ -27,7 +27,7 @@ class TournamentWindowController: NSWindowController
         
         // Track table.
         let tourneyTableViewController = tournamentTableWindowController.contentViewController as! TournamentViewController
-            tourneyTableViewController.track(tableWindowInfo)
+            tourneyTableViewController.update(with: tableWindowInfo)
         
         // Inject reference.
         tournamentTableWindowController.tableWindowInfo = tableWindowInfo

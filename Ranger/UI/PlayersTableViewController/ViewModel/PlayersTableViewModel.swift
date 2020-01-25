@@ -245,7 +245,7 @@ extension PlayersTableViewModel
                        
                 switch result
                 {
-                    case .success(let tournaments):
+                    case .success(_):
                                                      
                         // Invoke callback.
                         self.delegate?.playersTableDidChange()

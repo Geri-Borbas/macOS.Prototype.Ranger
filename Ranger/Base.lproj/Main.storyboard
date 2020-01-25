@@ -195,10 +195,10 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TournamentViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="darkAqua" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="953" height="930"/>
+                        <rect key="frame" x="0.0" y="0.0" width="953" height="920"/>
                         <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Gou-ub-vKT">
-                                <rect key="frame" x="0.0" y="273" width="953" height="657"/>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Gou-ub-vKT" userLabel="Table Overlay Container View">
+                                <rect key="frame" x="0.0" y="263" width="953" height="657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gou-ub-vKT" secondAttribute="height" multiplier="953:657" id="YJm-3I-m4a"/>
                                 </constraints>
@@ -206,12 +206,15 @@
                                     <segue destination="vyS-Vu-x3X" kind="embed" id="SUI-6r-8zf"/>
                                 </connections>
                             </containerView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7nD-OL-3uD">
-                                <rect key="frame" x="0.0" y="60" width="953" height="213"/>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="XMC-WR-Rmc" userLabel="Players Table Container View">
+                                <rect key="frame" x="0.0" y="60" width="953" height="203"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="203" id="I6M-EK-MtI"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="203" id="Fu9-5W-qDX"/>
                                 </constraints>
-                            </customView>
+                                <connections>
+                                    <segue destination="m08-kK-jvE" kind="embed" id="m7C-8w-CT9"/>
+                                </connections>
+                            </containerView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-O1-p9y">
                                 <rect key="frame" x="837" y="22" width="112" height="32"/>
                                 <constraints>
@@ -252,24 +255,22 @@
                             <constraint firstItem="NrT-oU-NxL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="1Xi-VB-W8u"/>
                             <constraint firstAttribute="trailing" secondItem="Gou-ub-vKT" secondAttribute="trailing" id="2r6-KI-OjK"/>
                             <constraint firstAttribute="bottom" secondItem="Mbr-bY-dqi" secondAttribute="bottom" constant="10" id="31F-LP-vdY"/>
-                            <constraint firstItem="7nD-OL-3uD" firstAttribute="top" secondItem="Gou-ub-vKT" secondAttribute="bottom" id="6xP-C4-OOx"/>
-                            <constraint firstItem="7nD-OL-3uD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9bg-Uf-gxq"/>
-                            <constraint firstAttribute="trailing" secondItem="7nD-OL-3uD" secondAttribute="trailing" id="ANQ-eC-xKd"/>
                             <constraint firstItem="Gou-ub-vKT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="FcU-xn-KOj"/>
+                            <constraint firstItem="NrT-oU-NxL" firstAttribute="top" secondItem="XMC-WR-Rmc" secondAttribute="bottom" constant="10" id="GAa-Ob-oL6"/>
+                            <constraint firstItem="XMC-WR-Rmc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="PMI-r7-a75"/>
                             <constraint firstItem="Gou-ub-vKT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Uyd-zx-kld"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="273" id="V0R-HC-hF8"/>
                             <constraint firstItem="Mbr-bY-dqi" firstAttribute="top" secondItem="NrT-oU-NxL" secondAttribute="bottom" constant="10" id="d7G-CR-Ggu"/>
-                            <constraint firstItem="iS1-O1-p9y" firstAttribute="top" secondItem="7nD-OL-3uD" secondAttribute="bottom" constant="10" id="fgG-DA-ENX"/>
+                            <constraint firstItem="iS1-O1-p9y" firstAttribute="top" secondItem="XMC-WR-Rmc" secondAttribute="bottom" constant="10" id="hDN-KR-jBm"/>
+                            <constraint firstAttribute="trailing" secondItem="XMC-WR-Rmc" secondAttribute="trailing" id="jpL-mU-QO8"/>
                             <constraint firstItem="Mbr-bY-dqi" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="kkK-Qk-w4j"/>
                             <constraint firstAttribute="trailing" secondItem="iS1-O1-p9y" secondAttribute="trailing" constant="10" id="lJG-g1-It8"/>
-                            <constraint firstItem="NrT-oU-NxL" firstAttribute="top" secondItem="7nD-OL-3uD" secondAttribute="bottom" constant="10" id="sUk-qC-Zo0"/>
+                            <constraint firstItem="XMC-WR-Rmc" firstAttribute="top" secondItem="Gou-ub-vKT" secondAttribute="bottom" id="r74-B0-ktt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="playersTablePlaceholderView" destination="7nD-OL-3uD" id="Ide-W7-ZYF"/>
                         <outlet property="statusLabel" destination="Mbr-bY-dqi" id="eDL-2k-wv5"/>
                         <outlet property="summaryLabel" destination="NrT-oU-NxL" id="JPI-I5-FOt"/>
-                        <outlet property="tableOverlayPlaceholderView" destination="gm1-A7-nPp" id="wcT-vY-u5f"/>
                         <outlet property="viewModel" destination="1rj-Mk-7PR" id="DCk-m6-sYe"/>
                     </connections>
                 </viewController>

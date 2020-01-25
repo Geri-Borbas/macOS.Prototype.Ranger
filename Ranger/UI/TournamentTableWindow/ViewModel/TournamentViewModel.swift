@@ -84,17 +84,11 @@ class TournamentViewModel: NSObject
     
     // MARK: - Lifecycle
     
-    public func track(_ tableWindowInfo: TableWindowInfo, delegate: TournamentViewModelDelegate?)
+    override func awakeFromNib()
     {
-        // Binds.
-        self.delegate = delegate
-        
         // Schedule timer.
         Timer.scheduledTimer(withTimeInterval: tickTime, repeats: true)
         { _ in self.tick() }
-        
-        // Get toutnament info.
-        update(with: tableWindowInfo)
         
         // Fire right now.
         self.tick()

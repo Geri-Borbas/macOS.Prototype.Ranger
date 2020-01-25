@@ -16,14 +16,8 @@ class TournamentViewController: NSViewController
     
     // MARK: - UI
     
-    @IBOutlet weak var tableOverlayPlaceholderView: NSView!
-    @IBOutlet weak var playersTablePlaceholderView: NSView!
-    
-    weak var playersTableViewController: PlayersTableViewController!
-    
-    // Overlay.
+    weak var playersTableViewController: PlayersTableViewController?
     weak var tableOverlayViewController: TableOverlayViewController?
-    
     
     @IBOutlet weak var summaryLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -40,17 +34,11 @@ class TournamentViewController: NSViewController
     {
         super.viewDidLoad()
         
+        // View model hook.
+        viewModel.delegate = self
+        
         // Fetch SharkScope status.
         viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
-        
-        // Instantiate table.
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        playersTableViewController = storyboard.instantiateController(withIdentifier: "PlayersTableViewController") as? PlayersTableViewController
-        playersTableViewController.delegate = self
-        
-        // Add to placeholder.
-        playersTableViewController.view.frame = playersTablePlaceholderView.bounds
-        playersTablePlaceholderView.addSubview(playersTableViewController.view)
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?)
@@ -58,23 +46,15 @@ class TournamentViewController: NSViewController
         // Wire up child view controller references.
         switch segue.destinationController
         {
+            case let playersTableViewController as PlayersTableViewController:
+                self.playersTableViewController = playersTableViewController
+                self.playersTableViewController?.delegate = self
             case let tableOverlayViewController as TableOverlayViewController:
                 self.tableOverlayViewController = tableOverlayViewController
+                // self.tableOverlayViewController?.delegate = self
             default:
                 break
         }
-    }
-    
-    func track(_ tableWindowInfo: TableWindowInfo)
-    {
-        // Setup for table info.
-        self.view.window?.title = ""
-        
-        // Inject into view model.
-        viewModel.track(tableWindowInfo, delegate: self)
-        
-        // UI.
-        alignWindow(to: tableWindowInfo)
     }
     
     func update(with tableWindowInfo: TableWindowInfo)
@@ -105,6 +85,9 @@ class TournamentViewController: NSViewController
     
     @IBAction func fetchAllDidClick(_ sender: AnyObject)
     {
+        // Checks.
+        guard let playersTableViewController = self.playersTableViewController else { return }
+                
         // Fetch SharkScope for all (gonna push changes back each).
         for eachRow in 0...playersTableViewController.tableView.numberOfRows
         { playersTableViewController.viewModel.fetchSharkScopeStatisticsForPlayer(inRow: eachRow) }
@@ -120,7 +103,7 @@ class TournamentViewController: NSViewController
         summaryLabel.attributedStringValue = summary
         
         // Players.
-        playersTableViewController.tableView.reloadData()
+        playersTableViewController?.tableView.reloadData()
     }
     
     func layoutStatus()
@@ -138,10 +121,10 @@ extension TournamentViewController: TournamentViewModelDelegate
     
     
     func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
-    { playersTableViewController.update(with: tournamentPlayers) }
+    { playersTableViewController?.update(with: tournamentPlayers) }
     
     func tournamentDidChange(tournamentInfo: TournamentInfo)
-    { playersTableViewController.update(with: tournamentInfo) }
+    { playersTableViewController?.update(with: tournamentInfo) }
 }
 
 
@@ -166,5 +149,5 @@ extension TournamentViewController: PlayersTableViewDelegate
     
     
     func fetchTournementsRequested(for playerName: String)
-    { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+    { playersTableViewController?.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
 }

@@ -23,6 +23,11 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.2.8
+
+    + `PlayersTableViewController` is added via content view / embed segue as well
+    + Removed `TournamentViewController.track()` leaving only `TournamentViewController.update()` to inject table info updates
+
 * Feature/UI/Seat_Tracking/0.2.7
 
     + Strong typed child view controller referencing upon `TournamentViewController` embed segues

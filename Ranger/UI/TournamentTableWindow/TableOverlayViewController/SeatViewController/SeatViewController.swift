@@ -12,14 +12,14 @@ import Cocoa
 class SeatViewController: NSViewController
 {
 
-    
+
     // Injected upon seque from `seque.identifier`
     var seat: Int = 0
     
     // Injected upon load via storyboard value.
     @objc dynamic var side: String = ""
-    
-    
+
+
     @IBOutlet weak var ringImageView: NSImageView!
     
     
