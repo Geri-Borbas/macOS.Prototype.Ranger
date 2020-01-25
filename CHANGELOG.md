@@ -5,6 +5,7 @@
 * Doing
 
     + Next up
+        + Resume normal window layering when table is not focused
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
         
@@ -22,6 +23,11 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Seat_Tracking/0.3.5
+
+    + `TournamentTableWindow.window` is now `NSPanel`
+        + Doesn't steal focus from other processes using `.nonactivatingPanel`
 
 * Feature/UI/Seat_Tracking/0.3.4
 
