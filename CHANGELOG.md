@@ -23,6 +23,14 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.3.3
+
+    + Created JSON / Asset based `ColorRanges`
+        + Storyboard based ranges renamed to `ColorRangeProvider` (with some hardcoded compatibility)
+        + Ranges now delimited with both `min` and `max` values (can provide `nil` for infinity)
+        + Created ranges for `Finished` with more granular limits
+        + Added `ColorRangesTests`
+
 * Feature/UI/Seat_Tracking/0.3.0
 
     + Created conversion to table seat (considering preferred seat)

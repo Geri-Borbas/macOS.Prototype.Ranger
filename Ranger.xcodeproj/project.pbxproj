@@ -21,9 +21,13 @@
 		551DC0C123D6993F0030E2B0 /* TourneyHandSummaryQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
+		551ED9A023DC03AA0009F2D9 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */; };
+		551ED9A223DC05910009F2D9 /* Finishes.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */; };
+		551ED9A323DC06350009F2D9 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */; };
+		551ED9A423DC06380009F2D9 /* Finishes.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */; };
+		551ED9A623DC064A0009F2D9 /* ColorRangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED9A523DC06490009F2D9 /* ColorRangesTests.swift */; };
 		552B105623D966A50077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
 		552B105723D9671E0077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
-		552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105823D96FFC0077D927 /* TournamentsTests.swift */; };
 		552B1FCE23DAD56C00FC0A88 /* TableOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */; };
 		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
 		552B413923D4A13E00A6184F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
@@ -88,7 +92,7 @@
 		555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
 		5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5560F04A23BAAEAA008894BD /* App.Configuration.plist */; };
-		5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRanges.swift */; };
+		5569129623C029D3001DDD05 /* ColorRangeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRangeProvider.swift */; };
 		5575FA1123D7C46300414F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575FA1023D7C46300414F0F /* User.swift */; };
 		5575FA1323D7C46D00414F0F /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575FA1223D7C46D00414F0F /* UserRequest.swift */; };
 		55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55841CC923D90199007BC761 /* PlayerNameCellView.swift */; };
@@ -206,6 +210,9 @@
 		551DC0BF23D695720030E2B0 /* TourneyHandSummaryQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHandSummaryQuery.swift; sourceTree = "<group>"; };
 		551DEE0323C5E3C9006DF95B /* StackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCellView.swift; sourceTree = "<group>"; };
 		551DEE0723C5E477006DF95B /* StackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackBarView.swift; sourceTree = "<group>"; };
+		551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRanges.swift; sourceTree = "<group>"; };
+		551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Finishes.ColorRanges.json; sourceTree = "<group>"; };
+		551ED9A523DC06490009F2D9 /* ColorRangesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRangesTests.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
@@ -244,7 +251,7 @@
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5560F04923BAAEAA008894BD /* App.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Configuration.swift; sourceTree = "<group>"; };
 		5560F04A23BAAEAA008894BD /* App.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = App.Configuration.plist; sourceTree = "<group>"; };
-		5569129523C029D3001DDD05 /* ColorRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRanges.swift; sourceTree = "<group>"; };
+		5569129523C029D3001DDD05 /* ColorRangeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRangeProvider.swift; sourceTree = "<group>"; };
 		55698B9A23AAE0020065125C /* ActiveTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournamentsRequest.swift; sourceTree = "<group>"; };
 		55698B9C23AAE27E0065125C /* ActiveTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournaments.swift; sourceTree = "<group>"; };
 		5574DAC723A68E8700569790 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -396,6 +403,7 @@
 		5508E3FF23A4756200FFB173 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				551ED99E23DC02600009F2D9 /* ColorRanges */,
 				55F4B81C23D3B468000953DF /* StatusBarItem */,
 				55A3A3B523D3CDBA0083EB3D /* PlayersWindow */,
 				55078CE523D20D64001174A7 /* PlayersTableViewController */,
@@ -447,6 +455,15 @@
 				551DEE0723C5E477006DF95B /* StackBarView.swift */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		551ED99E23DC02600009F2D9 /* ColorRanges */ = {
+			isa = PBXGroup;
+			children = (
+				551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */,
+				551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */,
+			);
+			path = ColorRanges;
 			sourceTree = "<group>";
 		};
 		5521A562239DF7D6000D1AD1 /* Model */ = {
@@ -821,6 +838,7 @@
 			isa = PBXGroup;
 			children = (
 				55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */,
+				551ED9A523DC06490009F2D9 /* ColorRangesTests.swift */,
 				55D7F17823C8304000FC2B51 /* CountriesTests.swift */,
 				55C529E823BD3F1500A6975A /* Info.plist */,
 				552B105823D96FFC0077D927 /* TournamentsTests.swift */,
@@ -856,7 +874,7 @@
 			isa = PBXGroup;
 			children = (
 				559F5F3523BEBA060070F2D6 /* PercentProvider.swift */,
-				5569129523C029D3001DDD05 /* ColorRanges.swift */,
+				5569129523C029D3001DDD05 /* ColorRangeProvider.swift */,
 				55E7E71923C019EE000388FD /* Easing.swift */,
 			);
 			path = Data;
@@ -1152,6 +1170,7 @@
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
+				551ED9A223DC05910009F2D9 /* Finishes.ColorRanges.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1160,6 +1179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558F707D23D92C2C004DB3F2 /* Countries.json in Resources */,
+				551ED9A423DC06380009F2D9 /* Finishes.ColorRanges.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1381,6 +1401,7 @@
 				5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */,
 				5544A6FF23D80C3000ACCC6C /* PlayerNames.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
+				551ED9A023DC03AA0009F2D9 /* ColorRanges.swift in Sources */,
 				55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */,
 				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
@@ -1400,7 +1421,7 @@
 				555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */,
 				5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */,
 				5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */,
-				5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */,
+				5569129623C029D3001DDD05 /* ColorRangeProvider.swift in Sources */,
 				55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */,
 				551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */,
 				5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */,
@@ -1422,10 +1443,11 @@
 			files = (
 				552B105723D9671E0077D927 /* String+Extensions.swift in Sources */,
 				558F707C23D92C2A004DB3F2 /* Countries.swift in Sources */,
-				552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */,
 				558F708123D931C0004DB3F2 /* DynamicCodingKey.swift in Sources */,
 				55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */,
 				5585E40E23C986930009E98F /* TableInfo.swift in Sources */,
+				551ED9A623DC064A0009F2D9 /* ColorRangesTests.swift in Sources */,
+				551ED9A323DC06350009F2D9 /* ColorRanges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

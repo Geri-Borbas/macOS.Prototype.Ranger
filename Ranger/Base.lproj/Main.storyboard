@@ -1488,7 +1488,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="IEP-Na-ODW" userLabel="Stack (M) ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                <customObject id="IEP-Na-ODW" userLabel="Stack (M) ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
@@ -1530,7 +1530,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="Cto-j0-9gf" userLabel="VPIP ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                <customObject id="Cto-j0-9gf" userLabel="VPIP ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
@@ -1572,7 +1572,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="yoO-ta-IBB" userLabel="PFR ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                <customObject id="yoO-ta-IBB" userLabel="PFR ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
@@ -1611,7 +1611,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut"/>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="v0I-2p-8Z8" userLabel="Early ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                <customObject id="v0I-2p-8Z8" userLabel="Early ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
@@ -1650,7 +1650,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeIn"/>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="YqM-mO-TY2" userLabel="Field Beaten ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                <customObject id="YqM-mO-TY2" userLabel="Field Beaten ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="40"/>
@@ -1678,8 +1678,9 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="vU7-Bh-INX" userLabel="Finishes ColorRanges" customClass="ColorRanges" customModule="Ranger" customModuleProvider="target">
+                <customObject id="vU7-Bh-INX" userLabel="Finishes ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="JSON" value="Finishes.ColorRanges"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="-1"/>
                         </userDefinedRuntimeAttribute>

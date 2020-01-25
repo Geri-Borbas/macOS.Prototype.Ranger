@@ -1,0 +1,46 @@
+{
+    "name" : "Finishes",
+    "colorRanges" :
+    [
+        {
+            "min" : null,
+            "max" : -0.009,
+            "color" : "violet"
+        },
+        {
+            "min" : -0.009,
+            "max" : -0.007,
+            "color" : "red"
+        },
+        {
+            "min" : -0.007,
+            "max" : -0.005,
+            "color" : "orange"
+        },
+        {
+            "min" : -0.005,
+            "max" : -0.002,
+            "color" : "yellow"
+        },
+        {
+            "min" : -0.002,
+            "max" : 0.000,
+            "color" : "lime"
+        },
+        {
+            "min" : 0.000,
+            "max" : 0.007,
+            "color" : "green"
+        },
+        {
+            "min" : 0.007,
+            "max" : 0.009,
+            "color" : "cyan"
+        },
+        {
+            "min" : 0.009,
+            "max" : null,
+            "color" : "blue"
+        }
+    ]
+}
