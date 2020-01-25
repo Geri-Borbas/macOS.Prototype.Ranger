@@ -2073,12 +2073,37 @@
                                     <action selector="ringDidClick:" target="Qfz-ND-uE5" id="4kb-JL-t6E"/>
                                 </connections>
                             </button>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" id="2QR-99-5eF">
+                                <rect key="frame" x="0.0" y="76" width="126" height="17"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" id="e6o-OF-MIS">
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="U4b-6F-EIh">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="4aV-Ic-H1q">
+                                                <font key="font" metaFont="systemBold"/>
+                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <outlet property="formatter" destination="oSF-8t-p9Q" id="mGv-F7-7f8"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <color key="fillColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </box>
                         </subviews>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Right"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="nameBox" destination="2QR-99-5eF" id="F58-fU-4e7"/>
+                        <outlet property="nameTextField" destination="U4b-6F-EIh" id="Jme-9n-cVS"/>
                         <outlet property="ringButton" destination="ip1-dc-zIr" id="AWN-5a-AYt"/>
                     </connections>
                 </viewController>
@@ -2117,12 +2142,37 @@
                                     <action selector="ringDidClick:" target="nqC-uS-oC9" id="8oK-hW-l2I"/>
                                 </connections>
                             </button>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" id="wSb-ek-M3o">
+                                <rect key="frame" x="84" y="76" width="126" height="17"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" id="xcZ-f1-T8h">
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="e40-SP-uL3">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="s4u-Z5-b2J">
+                                                <font key="font" metaFont="systemBold"/>
+                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <outlet property="formatter" destination="oSF-8t-p9Q" id="YB2-Ar-nTa"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <color key="fillColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </box>
                         </subviews>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Left"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="nameBox" destination="wSb-ek-M3o" id="iAa-aH-zuy"/>
+                        <outlet property="nameTextField" destination="e40-SP-uL3" id="FMR-pf-EA3"/>
                         <outlet property="ringButton" destination="Yye-Ti-2yb" id="0Xx-fg-fDj"/>
                     </connections>
                 </viewController>

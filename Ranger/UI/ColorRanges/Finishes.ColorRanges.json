@@ -9,13 +9,8 @@
         },
         {
             "min" : -0.009,
-            "max" : -0.007,
-            "color" : "red"
-        },
-        {
-            "min" : -0.007,
             "max" : -0.005,
-            "color" : "orange"
+            "color" : "red"
         },
         {
             "min" : -0.005,

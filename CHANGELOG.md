@@ -1,4 +1,3 @@
-
 # Changelog
 
 
@@ -24,6 +23,11 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.3.6
+
+    + Tweaked `Finished` colors
+    + Added `SeatViewController.nameBox` / `SeatViewController.nameTextField` to showcase colors more 
+    
 * Feature/UI/Seat_Tracking/0.3.5
 
     + `TournamentTableWindow.window` is now `NSPanel`

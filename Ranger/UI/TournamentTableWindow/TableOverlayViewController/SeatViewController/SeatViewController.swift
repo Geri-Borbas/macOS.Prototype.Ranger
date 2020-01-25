@@ -29,6 +29,9 @@ class SeatViewController: NSViewController
 
 
     @IBOutlet weak var ringButton: NSButton!
+    @IBOutlet weak var nameBox: NSBox?
+    @IBOutlet weak var nameTextField: NSTextField?
+    
     var delegate: SeatViewControllerDelegate?
     
     
@@ -70,12 +73,16 @@ class SeatViewController: NSViewController
     func layout(for player: Model.Player)
     {
         // Layout color.
+        var finishesColor = NSColor.lightGray
         if let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope
-        { ringButton.contentTintColor = ColorRanges.finishes.color(for: finishes) }
-        else
-        { ringButton.contentTintColor = NSColor.lightGray }
+        { finishesColor = ColorRanges.finishes.color(for: finishes) }
+        
+        // Apply.
+        ringButton.contentTintColor = finishesColor
+        nameBox?.fillColor = finishesColor
         
         // Log.
+        nameTextField?.stringValue = player.name
         ringButton.toolTip = player.name
     }
     
