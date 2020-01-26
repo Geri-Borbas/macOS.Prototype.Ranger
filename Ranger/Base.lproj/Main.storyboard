@@ -1898,141 +1898,82 @@
         <scene sceneID="c5T-9r-fDe">
             <objects>
                 <viewController id="vyS-Vu-x3X" customClass="TableOverlayViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" identifier="Wrapper" id="pku-VW-hho">
+                    <view key="view" identifier="Wrapper" translatesAutoresizingMaskIntoConstraints="NO" id="pku-VW-hho">
                         <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="7H3-LQ-POI" userLabel="Screenshot (hidden)">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-qG-2BV" userLabel="Original Size View">
                                 <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Simulated Tables" id="dBL-v9-llM"/>
-                            </imageView>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="qKg-qG-2BV" userLabel="Seat Layout (hidden)">
-                                <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Seat Layout " id="Qv2-gF-zvd"/>
                             </imageView>
-                            <customView id="gm1-A7-nPp" userLabel="Seats">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-A7-nPp" userLabel="Seats">
                                 <rect key="frame" x="0.0" y="0.0" width="953" height="657"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <customView id="9eq-ie-N7C" userLabel="1">
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-Bu-0m7" userLabel="Seat Container View 1">
                                         <rect key="frame" x="526" y="497" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-Bu-0m7">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="1" id="EwL-mI-yoZ"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="hVR-Zz-StI" userLabel="2">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="ZeY-7F-ws7"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-WC-2ub" userLabel="Seat Container View 2" propertyAccessControl="none">
                                         <rect key="frame" x="700" y="433" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4u-QP-Ykx">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="2" id="cmy-N6-ekr"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="yCn-5k-laa" userLabel="3">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="vsY-KI-ALJ"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Lr-mfs" userLabel="Seat Container View 3">
                                         <rect key="frame" x="740" y="303" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Lr-mfs">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="3" id="qeN-CJ-GM4"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="ohg-vR-8GR" userLabel="4">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="mVO-qb-VJW"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-Jy-ff4" userLabel="Seat Container View 4">
                                         <rect key="frame" x="646" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-Jy-ff4">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="nqC-uS-oC9" kind="embed" identifier="4" id="Jpf-Gd-qs4"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="6yx-8o-1fx" userLabel="5">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="AWu-oC-5f5"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-iC-HoE" userLabel="Seat Container View 5">
                                         <rect key="frame" x="373" y="109" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-iC-HoE">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="5" id="6u3-dw-fcB"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="MJ8-qs-uCn" userLabel="6">
+                                        <connections>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="5" id="oW1-pS-FLM"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMY-tR-dGo" userLabel="Seat Container View 6">
                                         <rect key="frame" x="97" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMY-tR-dGo">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="6" id="aoj-hk-HfG"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="Mco-vt-a8C" userLabel="7">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="b0O-Uz-3nz"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRF-13-3eV" userLabel="Seat Container View 7">
                                         <rect key="frame" x="3" y="303" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRF-13-3eV">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="7" id="xIg-cj-xjL"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="AJS-2f-Sce" userLabel="8">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="4x2-rD-zqg"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-Eg-N1S" userLabel="Seat Container View 8">
                                         <rect key="frame" x="43" y="433" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-Eg-N1S">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="8" id="wQs-2A-zTY"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
-                                    <customView id="RkI-4d-n9l" userLabel="9">
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="iRK-cB-bln"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-Ur-xoM" userLabel="Seat Container View 9">
                                         <rect key="frame" x="217" y="497" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-Ur-xoM">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <connections>
-                                                    <segue destination="Qfz-ND-uE5" kind="embed" identifier="9" id="nhC-YC-biL"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                    </customView>
+                                        <connections>
+                                            <segue destination="0Su-cF-qpi" kind="embed" id="RcC-oj-ruE"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                             </customView>
                         </subviews>
@@ -2046,25 +1987,30 @@
         <scene sceneID="oTL-Qo-AK8">
             <objects>
                 <viewController id="Qfz-ND-uE5" userLabel="Left Seat View Controller" customClass="SeatViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="L4Z-ka-hHi">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="L4Z-ka-hHi" customClass="SeatView" customModule="Ranger" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="HbG-0y-syt" userLabel="Left Seat Metrics">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-0y-syt" userLabel="Left Seat Metrics">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Left Seat Metrics " id="NCK-v9-vz5"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Metrics" id="NCK-v9-vz5"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R7t-QA-mR7" userLabel="Circle Background">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-Pj-ju1" userLabel="Preview">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Preview" id="rI5-XR-m8p"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-QA-mR7" userLabel="Circle Background">
                                 <rect key="frame" x="120" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="faQ-yE-8b7"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Circle.Background" id="faQ-yE-8b7"/>
                                 <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ip1-dc-zIr">
                                 <rect key="frame" x="120" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatTracker Circle Ring " imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xPz-BC-V74">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatViewController.Circle.Ring" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xPz-BC-V74">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -2073,40 +2019,154 @@
                                     <action selector="ringDidClick:" target="Qfz-ND-uE5" id="4kb-JL-t6E"/>
                                 </connections>
                             </button>
-                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" id="2QR-99-5eF">
-                                <rect key="frame" x="0.0" y="76" width="126" height="17"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" id="e6o-OF-MIS">
-                                    <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2th-De-PgR">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Name.Box" id="lTZ-XG-HGR"/>
+                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-6F-EIh">
+                                <rect key="frame" x="30" y="76" width="100" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="4aV-Ic-H1q">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="formatter" destination="Oje-6V-j82" id="on3-9t-DWf"/>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWF-r5-SWD">
+                                <rect key="frame" x="3" y="75" width="27" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="12" usesSingleLineMode="YES" id="7xq-Th-AmD">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-7K-DbD" userLabel="M Hands Text Field">
+                                <rect key="frame" x="1" y="32" width="49" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="60 hand" usesSingleLineMode="YES" id="oSD-Sd-4c9">
+                                    <font key="font" metaFont="system" size="8"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOy-7c-HrK" userLabel="Hands Text Field">
+                                <rect key="frame" x="118" y="54" width="94" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="154" usesSingleLineMode="YES" id="CUq-St-mak">
+                                    <font key="font" metaFont="system" size="8"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="12" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="L4k-td-Qky" userLabel="M Box">
+                                <rect key="frame" x="3" y="44" width="45" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" ambiguous="YES" id="kZh-IS-7wq">
+                                    <rect key="frame" x="0.0" y="0.0" width="45" height="24"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="U4b-6F-EIh">
-                                            <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="4aV-Ic-H1q">
-                                                <font key="font" metaFont="systemBold"/>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MG-iQ-dy7">
+                                            <rect key="frame" x="1" y="3" width="42" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="10🅜" usesSingleLineMode="YES" id="FYo-JE-cR3">
+                                                <font key="font" metaFont="systemBold" size="16"/>
                                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <outlet property="formatter" destination="oSF-8t-p9Q" id="mGv-F7-7f8"/>
+                                                <outlet property="formatter" destination="oSF-8t-p9Q" id="86k-5S-1br"/>
                                             </connections>
                                         </textField>
                                     </subviews>
                                 </view>
-                                <color key="fillColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-jK-mp8" userLabel="VPIP Box">
+                                <rect key="frame" x="120" y="33" width="44" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" ambiguous="YES" id="HpA-21-hWH">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-JT-Xf5">
+                                            <rect key="frame" x="1" y="0.0" width="41" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="24" usesSingleLineMode="YES" id="56r-8K-oBe">
+                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <outlet property="formatter" destination="jec-Cj-sVt" id="ebz-Aa-EOx"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ifj-XY-chy" userLabel="PFR Box">
+                                <rect key="frame" x="166" y="33" width="44" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" ambiguous="YES" id="b7H-DW-QH7">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3V-J8-Mmj">
+                                            <rect key="frame" x="2" y="0.0" width="41" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="16" usesSingleLineMode="YES" id="4l3-Hi-Aie">
+                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <outlet property="formatter" destination="jec-Cj-sVt" id="hnu-vw-EFq"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             </box>
                         </subviews>
+                        <connections>
+                            <outlet property="outlets" destination="9xR-GV-iia" id="F3m-1Y-CT7"/>
+                        </connections>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Right"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="nameBox" destination="2QR-99-5eF" id="F58-fU-4e7"/>
-                        <outlet property="nameTextField" destination="U4b-6F-EIh" id="Jme-9n-cVS"/>
-                        <outlet property="ringButton" destination="ip1-dc-zIr" id="AWN-5a-AYt"/>
+                        <outlet property="outlets" destination="9xR-GV-iia" id="pNb-WV-QIY"/>
                     </connections>
                 </viewController>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="jec-Cj-sVt" userLabel="## (%) (x100) Number Formatter">
+                    <integer key="multiplier" value="100"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="Oje-6V-j82" userLabel="##🅜 Number Formatter">
+                    <integer key="multiplier" value="1"/>
+                </numberFormatter>
+                <customObject id="9xR-GV-iia" customClass="SeatViewOutlets" customModule="Ranger" customModuleProvider="target">
+                    <connections>
+                        <outlet property="handsTextField" destination="gOy-7c-HrK" id="LhW-Ax-jBG"/>
+                        <outlet property="mBox" destination="L4k-td-Qky" id="2Ze-y7-29b"/>
+                        <outlet property="mHandsTextField" destination="RNa-7K-DbD" id="iAr-r2-hA8"/>
+                        <outlet property="mTextField" destination="3MG-iQ-dy7" id="ZF7-Rn-WJR"/>
+                        <outlet property="nameImageView" destination="2th-De-PgR" id="b2p-Jm-u9U"/>
+                        <outlet property="nameTextField" destination="U4b-6F-EIh" id="6oI-PP-tSa"/>
+                        <outlet property="pfrBox" destination="ifj-XY-chy" id="H6e-HF-mg3"/>
+                        <outlet property="pfrTextField" destination="F3V-J8-Mmj" id="3hk-sp-ZSg"/>
+                        <outlet property="ringButton" destination="ip1-dc-zIr" id="17M-sp-sWl"/>
+                        <outlet property="tablesTextField" destination="pWF-r5-SWD" id="F47-we-AKO"/>
+                        <outlet property="vpipBox" destination="Wav-jK-mp8" id="Fbd-RC-Liv"/>
+                        <outlet property="vpipTextField" destination="mWh-JT-Xf5" id="JoI-vJ-ScC"/>
+                    </connections>
+                </customObject>
                 <customObject id="cts-lR-h6P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="843" y="1624"/>
@@ -2115,16 +2175,16 @@
         <scene sceneID="ZEJ-fg-1Ra">
             <objects>
                 <viewController id="nqC-uS-oC9" userLabel="Right Seat View Controller" customClass="SeatViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="zZf-jq-dXV">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="zZf-jq-dXV">
                         <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" id="mYw-aE-zgr" userLabel="Right Seat Metrics">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYw-aE-zgr" userLabel="Right Seat Metrics">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="8h9-AK-pPP"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LGX-UW-uwS" userLabel="Circle Background">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-UW-uwS" userLabel="Circle Background">
                                 <rect key="frame" x="0.0" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="QmC-p7-VoP"/>
@@ -2142,14 +2202,14 @@
                                     <action selector="ringDidClick:" target="nqC-uS-oC9" id="8oK-hW-l2I"/>
                                 </connections>
                             </button>
-                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" id="wSb-ek-M3o">
+                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wSb-ek-M3o">
                                 <rect key="frame" x="84" y="76" width="126" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" id="xcZ-f1-T8h">
+                                <view key="contentView" ambiguous="YES" id="xcZ-f1-T8h">
                                     <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="e40-SP-uL3">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" id="e40-SP-uL3">
                                             <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="s4u-Z5-b2J">
@@ -2171,7 +2231,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Left"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="nameBox" destination="wSb-ek-M3o" id="iAa-aH-zuy"/>
                         <outlet property="nameTextField" destination="e40-SP-uL3" id="FMR-pf-EA3"/>
                         <outlet property="ringButton" destination="Yye-Ti-2yb" id="0Xx-fg-fDj"/>
                     </connections>
@@ -2180,6 +2239,30 @@
             </objects>
             <point key="canvasLocation" x="1217" y="1624"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yGY-er-AkT">
+            <objects>
+                <viewController id="0Su-cF-qpi" sceneMemberID="viewController">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-qh-y67">
+                        <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="miK-ZY-QjD">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" ambiguous="YES" id="C5L-ih-o6x">
+                                    <rect key="frame" x="1" y="1" width="208" height="138"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="fillColor" red="0.54785913529999997" green="0.99610751870000003" blue="0.69727526309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </box>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="7Rz-AH-ciV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="1367"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NSTouchBarBookmarksTemplate" width="22" height="30"/>
@@ -2187,14 +2270,17 @@
         <image name="NSTouchBarUserTemplate" width="15" height="30"/>
         <image name="SeatTracker Circle Background " width="90" height="90"/>
         <image name="SeatTracker Circle Ring " width="90" height="90"/>
-        <image name="SeatTracker Left Seat Metrics " width="210" height="140"/>
         <image name="SeatTracker Right Seat Metrics " width="210" height="140"/>
         <image name="SeatTracker Seat Layout " width="953" height="657"/>
+        <image name="SeatViewController.Circle.Background" width="90" height="90"/>
+        <image name="SeatViewController.Circle.Ring" width="90" height="90"/>
+        <image name="SeatViewController.Metrics" width="210" height="140"/>
+        <image name="SeatViewController.Name.Box" width="210" height="90"/>
+        <image name="SeatViewController.Preview" width="210" height="140"/>
         <image name="Simulated Tables" width="953" height="657"/>
         <image name="Unknown" width="30" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cmy-N6-ekr"/>
-        <segue reference="nhC-YC-biL"/>
+        <segue reference="vsY-KI-ALJ"/>
     </inferredMetricsTieBreakers>
 </document>

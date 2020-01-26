@@ -27,11 +27,10 @@ class SeatViewController: NSViewController
     // Injected upon load via storyboard value.
     @objc dynamic var side: String = ""
 
-
-    @IBOutlet weak var ringButton: NSButton!
-    @IBOutlet weak var nameBox: NSBox?
-    @IBOutlet weak var nameTextField: NSTextField?
-    
+    // UI.
+    @IBOutlet weak var outlets: SeatViewOutlets!
+        
+    // Binds.
     var delegate: SeatViewControllerDelegate?
     
     
@@ -66,30 +65,54 @@ class SeatViewController: NSViewController
     
     func layoutEmpty()
     {
-        ringButton.contentTintColor = NSColor.darkGray
-        ringButton.toolTip = nil
+        // Hide.
+        outlets.nameImageView?.isHidden = true
         
-        nameBox?.isHidden = true
-        nameTextField?.stringValue = ""
+        outlets.ringButton.contentTintColor = NSColor.darkGray
+        outlets.ringButton.toolTip = nil
     }
     
     func layout(for player: Model.Player)
     {
-        // Layout color.
+        // Unhide.
+        outlets.nameImageView?.isHidden = false
+        
+        // Layout finishes color.
         var finishesColor = NSColor.lightGray
         if
             let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope,
             player.stack > 0.0
         { finishesColor = ColorRanges.finishes.color(for: finishes) }
         
-        // Apply.
-        ringButton.contentTintColor = finishesColor
-        nameBox?.isHidden = false
-        nameBox?.fillColor = finishesColor
+        // Apply finishes color.
+        outlets.ringButton.contentTintColor = finishesColor
+        outlets.nameImageView.contentTintColor = finishesColor
         
-        // Log.
-        nameTextField?.stringValue = player.name
-        ringButton.toolTip = player.name
+        // Tables.
+        outlets.tablesTextField.integerValue = Int.random(in: 1...40)
+        
+        // Statistics.
+        outlets.vpipTextField.floatValue = Float.random(in: 0...1)
+        outlets.vpipTextField.toolTip = "\(Int.random(in: 0...100))/\(Int.random(in: 0...100))"
+        outlets.pfrTextField.floatValue = Float.random(in: 0...1)
+        outlets.pfrTextField.toolTip = "\(Int.random(in: 0...100))/\(Int.random(in: 0...100))"
+        outlets.handsTextField.integerValue = Int.random(in: 0...200)
+        
+        // M.
+        outlets.mTextField.integerValue = Int.random(in: 5...50)
+        outlets.mHandsTextField.integerValue = Int.random(in: 0...200)
+        
+        // Set values.
+        outlets.nameTextField.stringValue = player.name
+    }
+    
+    
+    // MARK: - Layout Scale
+    
+    func scale(to scale: CGFloat)
+    {
+        if let seatView = view as? SeatView
+        { seatView.scale(to: scale) }
     }
     
 }

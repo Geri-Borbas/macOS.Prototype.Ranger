@@ -23,6 +23,14 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.4.0
+
+    + `SeatViewController` size layout
+        + Countless trial and error with layout constraints
+        + Container views / `SeatViewController`  use simple autoresizing rules (best fit for proportional scaling)
+        + Created `SeatView` to manage layout size finetunes (corner radiuses / font sizes)
+        + Extracted common outlets to `SeatViewOutles` 
+
 * Feature/UI/Seat_Tracking/0.3.7
 
     + Created / Added `SeatViewController` assets

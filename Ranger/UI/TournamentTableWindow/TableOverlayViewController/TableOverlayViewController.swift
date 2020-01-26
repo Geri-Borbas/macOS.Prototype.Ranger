@@ -80,6 +80,19 @@ class TableOverlayViewController: NSViewController
             { eachSeatViewController.update(with: eachPlayer) }
         }
     }
+    
+    
+    // MARK: - Layout Size
+    
+    override func viewDidLayout()
+    {
+        let scale = CGFloat(view.bounds.size.width / 953.0)
+        
+        // Scale seats.
+        seats.values.forEach
+        { eachSeatViewController in eachSeatViewController.scale(to: scale) }
+    }
+    
 }
 
 
