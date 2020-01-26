@@ -23,6 +23,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.3.7
+
+    + Created / Added `SeatViewController` assets
+
 * Feature/UI/Seat_Tracking/0.3.6
 
     + Tweaked `Finished` colors

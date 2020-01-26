@@ -68,17 +68,23 @@ class SeatViewController: NSViewController
     {
         ringButton.contentTintColor = NSColor.darkGray
         ringButton.toolTip = nil
+        
+        nameBox?.isHidden = true
+        nameTextField?.stringValue = ""
     }
     
     func layout(for player: Model.Player)
     {
         // Layout color.
         var finishesColor = NSColor.lightGray
-        if let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope
+        if
+            let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope,
+            player.stack > 0.0
         { finishesColor = ColorRanges.finishes.color(for: finishes) }
         
         // Apply.
         ringButton.contentTintColor = finishesColor
+        nameBox?.isHidden = false
         nameBox?.fillColor = finishesColor
         
         // Log.
