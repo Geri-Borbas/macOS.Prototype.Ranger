@@ -139,6 +139,7 @@
 		55E7E71723C00983000388FD /* PlayersTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71623C00983000388FD /* PlayersTableRowView.swift */; };
 		55E7E71A23C019EE000388FD /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71923C019EE000388FD /* Easing.swift */; };
 		55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
+		55F2A2BA23DE8B00009700D3 /* NSTextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */; };
 		55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
 		F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */; };
@@ -327,6 +328,7 @@
 		55ED3CDF23A5543A00754763 /* PlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerQuery.swift; sourceTree = "<group>"; };
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
+		55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extensions.swift"; sourceTree = "<group>"; };
 		79F6C99A40025504EB954DBA /* Pods-SharkScopeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScopeTests.release.xcconfig"; path = "Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests.release.xcconfig"; sourceTree = "<group>"; };
 		94C6446E5B7C5CE0E52E5BF9 /* Pods_SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99522483F304541E25BECCCD /* Pods-SharkScope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScope.release.xcconfig"; path = "Target Support Files/Pods-SharkScope/Pods-SharkScope.release.xcconfig"; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 				55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */,
 				550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */,
 				552B105523D966A50077D927 /* String+Extensions.swift */,
+				55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1399,6 +1402,7 @@
 				55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */,
 				5555E09B23D6553200BA0DD5 /* TableSimulator.swift in Sources */,
 				555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */,
+				55F2A2BA23DE8B00009700D3 /* NSTextField+Extensions.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				558F707A23D92AE4004DB3F2 /* Countries.swift in Sources */,
 				55A3A3B723D3CDDA0083EB3D /* PlayersWindowController.swift in Sources */,

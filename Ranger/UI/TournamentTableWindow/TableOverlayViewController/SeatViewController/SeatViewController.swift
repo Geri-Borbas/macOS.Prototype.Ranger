@@ -57,7 +57,10 @@ class SeatViewController: NSViewController
         guard let player = player
         else { return layoutEmpty() }
         
-        layout(for: player)
+        if (player.stack == 0)
+        { layoutZero(for: player) }
+        else
+        { layout(for: player) }
     }
     
     
@@ -65,17 +68,39 @@ class SeatViewController: NSViewController
     
     func layoutEmpty()
     {
-        // Hide.
-        outlets.nameImageView?.isHidden = true
+        // Visibility.
+        outlets.circleBackgroundImageView.isHidden = true
+        outlets.ringButton.isHidden = true
+        outlets.nameImageView.isHidden = true
+        outlets.nameTextField.isHidden = true
+        outlets.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
+    }
+    
+    func layoutZero(for player: Model.Player)
+    {
+        // Visibility.
+        outlets.circleBackgroundImageView.isHidden = false
+        outlets.ringButton.isHidden = false
+        outlets.nameImageView.isHidden = false
+        outlets.nameTextField.isHidden = false
+        outlets.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
         
+        // Apply finishes color.
         outlets.ringButton.contentTintColor = NSColor.darkGray
-        outlets.ringButton.toolTip = nil
+        outlets.nameImageView.contentTintColor = NSColor.darkGray
+        
+        // Set name.
+        outlets.nameTextField.stringValue = player.name
     }
     
     func layout(for player: Model.Player)
     {
-        // Unhide.
-        outlets.nameImageView?.isHidden = false
+        // Visibility.
+        outlets.circleBackgroundImageView.isHidden = false
+        outlets.ringButton.isHidden = false
+        outlets.nameImageView.isHidden = false
+        outlets.nameTextField.isHidden = false
+        outlets.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = false }
         
         // Layout finishes color.
         var finishesColor = NSColor.lightGray
@@ -87,6 +112,9 @@ class SeatViewController: NSViewController
         // Apply finishes color.
         outlets.ringButton.contentTintColor = finishesColor
         outlets.nameImageView.contentTintColor = finishesColor
+        
+        // Set name.
+        outlets.nameTextField.stringValue = player.name
         
         // Tables.
         outlets.tablesTextField.integerValue = Int.random(in: 1...40)
@@ -101,9 +129,6 @@ class SeatViewController: NSViewController
         // M.
         outlets.mTextField.integerValue = Int.random(in: 5...50)
         outlets.mHandsTextField.integerValue = Int.random(in: 0...200)
-        
-        // Set values.
-        outlets.nameTextField.stringValue = player.name
     }
     
     

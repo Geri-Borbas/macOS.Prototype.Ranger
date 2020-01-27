@@ -245,7 +245,7 @@
                                     <constraint firstAttribute="height" constant="14" id="W9O-qj-y7f"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="label" size="11"/>
                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -302,7 +302,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="Seat" width="40" minWidth="40" maxWidth="100" id="Ysa-xG-jWO">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Seat">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -336,7 +336,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Player" width="140" minWidth="100" maxWidth="1000" id="g8d-rp-OHE">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -375,7 +375,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Stack" width="130" minWidth="100" maxWidth="1000" id="wff-xd-lNv">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1915,63 +1915,63 @@
                                         <rect key="frame" x="526" y="497" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="ZeY-7F-ws7"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="1" id="VM1-dE-BHd"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-WC-2ub" userLabel="Seat Container View 2" propertyAccessControl="none">
                                         <rect key="frame" x="700" y="433" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="vsY-KI-ALJ"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="2" id="NKx-Vq-jMU"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Lr-mfs" userLabel="Seat Container View 3">
                                         <rect key="frame" x="740" y="303" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="mVO-qb-VJW"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="3" id="cRY-cS-gkV"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-Jy-ff4" userLabel="Seat Container View 4">
                                         <rect key="frame" x="646" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="AWu-oC-5f5"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="4" id="kzU-vU-kue"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-iC-HoE" userLabel="Seat Container View 5">
                                         <rect key="frame" x="373" y="109" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="5" id="oW1-pS-FLM"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="5" id="efP-Ck-xaA"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMY-tR-dGo" userLabel="Seat Container View 6">
                                         <rect key="frame" x="97" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="b0O-Uz-3nz"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="6" id="a6B-Vd-OPu"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRF-13-3eV" userLabel="Seat Container View 7">
                                         <rect key="frame" x="3" y="303" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="4x2-rD-zqg"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="7" id="nW6-jt-XE9"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-Eg-N1S" userLabel="Seat Container View 8">
                                         <rect key="frame" x="43" y="433" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="iRK-cB-bln"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="8" id="JiI-IH-V0w"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-Ur-xoM" userLabel="Seat Container View 9">
                                         <rect key="frame" x="217" y="497" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="0Su-cF-qpi" kind="embed" id="RcC-oj-ruE"/>
+                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="9" id="ZSD-g4-z12"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -1991,12 +1991,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-0y-syt" userLabel="Left Seat Metrics">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-0y-syt" userLabel="Left Seat Metrics">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Metrics" id="NCK-v9-vz5"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-Pj-ju1" userLabel="Preview">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-Pj-ju1" userLabel="Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Preview" id="rI5-XR-m8p"/>
@@ -2153,6 +2153,7 @@
                 </numberFormatter>
                 <customObject id="9xR-GV-iia" customClass="SeatViewOutlets" customModule="Ranger" customModuleProvider="target">
                     <connections>
+                        <outlet property="circleBackgroundImageView" destination="R7t-QA-mR7" id="mF5-T9-72W"/>
                         <outlet property="handsTextField" destination="gOy-7c-HrK" id="LhW-Ax-jBG"/>
                         <outlet property="mBox" destination="L4k-td-Qky" id="2Ze-y7-29b"/>
                         <outlet property="mHandsTextField" destination="RNa-7K-DbD" id="iAr-r2-hA8"/>
@@ -2281,6 +2282,6 @@
         <image name="Unknown" width="30" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vsY-KI-ALJ"/>
+        <segue reference="ZSD-g4-z12"/>
     </inferredMetricsTieBreakers>
 </document>

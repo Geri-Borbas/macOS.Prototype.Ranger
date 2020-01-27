@@ -14,6 +14,7 @@ class SeatViewOutlets: NSObject
 
     
     // Circle.
+    @IBOutlet weak var circleBackgroundImageView: NSImageView!
     @IBOutlet weak var ringButton: NSButton!
     
     // Names / Tables.
@@ -32,4 +33,19 @@ class SeatViewOutlets: NSObject
     @IBOutlet weak var handsTextField: NSTextField!
     @IBOutlet weak var vpipBox: NSBox!
     @IBOutlet weak var pfrBox: NSBox!
+    
+    
+    // Views can be hid more easily using these collections.
+    lazy var statisticsViews: [NSView] =
+    [
+        tablesTextField,
+        mTextField,
+        mHandsTextField,
+        mBox,
+        vpipTextField,
+        pfrTextField,
+        handsTextField,
+        vpipBox,
+        pfrBox
+    ]
 }

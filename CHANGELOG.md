@@ -23,6 +23,16 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.4.3
+
+    + Window shadow updating
+    + Empty / Zero states for `SeatViewController`
+
+* Feature/UI/Seat_Tracking/0.4.2
+
+    + Created `NSTextField.fontSize` extension
+    + Implemented font scaling in `SeatView`
+
 * Feature/UI/Seat_Tracking/0.4.0
 
     + `SeatViewController` size layout

@@ -46,7 +46,13 @@ class SeatView: NSView
         // Capture font sizes.
         fontSizesForIdentifiers =
         [
-            outlets.nameTextField : 16.0
+            outlets.nameTextField : outlets.nameTextField.fontSize,
+            outlets.tablesTextField : outlets.tablesTextField.fontSize,
+            outlets.mTextField : outlets.mTextField.fontSize,
+            outlets.mHandsTextField : outlets.mHandsTextField.fontSize,
+            outlets.vpipTextField : outlets.vpipTextField.fontSize,
+            outlets.pfrTextField : outlets.pfrTextField.fontSize,
+            outlets.handsTextField : outlets.handsTextField.fontSize
         ]
     }
     
@@ -61,8 +67,18 @@ class SeatView: NSView
     
     func scale(to scale: CGFloat)
     {
+        // Scale corner radiuses.
         outlets.mBox.cornerRadius = capturedCornerRadius(for: outlets.mBox) * scale
         outlets.vpipBox.cornerRadius = capturedCornerRadius(for: outlets.vpipBox) * scale
         outlets.pfrBox.cornerRadius = capturedCornerRadius(for: outlets.pfrBox) * scale
+        
+        // Scale fonts.
+        outlets.nameTextField.fontSize = capturedFontSize(for: outlets.nameTextField) * scale
+        outlets.tablesTextField.fontSize = capturedFontSize(for: outlets.tablesTextField) * scale
+        outlets.mTextField.fontSize = capturedFontSize(for: outlets.mTextField) * scale
+        outlets.mHandsTextField.fontSize = capturedFontSize(for: outlets.mHandsTextField) * scale
+        outlets.vpipTextField.fontSize = capturedFontSize(for: outlets.vpipTextField) * scale
+        outlets.pfrTextField.fontSize = capturedFontSize(for: outlets.pfrTextField) * scale
+        outlets.handsTextField.fontSize = capturedFontSize(for: outlets.handsTextField) * scale
     }
 }

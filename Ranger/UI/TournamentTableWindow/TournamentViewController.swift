@@ -115,6 +115,15 @@ class TournamentViewController: NSViewController
         let pokerTrackerStatus = (viewModel.latestProcessedHandNumber == "") ? "" : "Hand #\(viewModel.latestProcessedHandNumber) processed. "
         statusLabel.stringValue = "\(pokerTrackerStatus)\(viewModel.sharkScopeStatus)"
     }
+    
+    func updateWindowShadow()
+    {
+        // Only if any.
+        guard let window = self.view.window
+        else { return }
+        
+        window.invalidateShadow()
+    }
 }
 
 
@@ -125,10 +134,16 @@ extension TournamentViewController: TournamentViewModelDelegate
     
     
     func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
-    { playersTable?.update(with: tournamentPlayers) }
+    {
+        playersTable?.update(with: tournamentPlayers)
+        updateWindowShadow()
+    }
     
     func tournamentDidChange(tournamentInfo: TournamentInfo)
-    { playersTable?.update(with: tournamentInfo) }
+    {
+        playersTable?.update(with: tournamentInfo)
+        updateWindowShadow()
+    }
 }
 
 
@@ -144,7 +159,10 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
         
         // Update overlay with processed player data.
         if let players = playersTable?.viewModel.players
-        { tableOverlay?.update(with: players) }
+        {
+            tableOverlay?.update(with: players)
+            updateWindowShadow()
+        }
         
         // Fetch SharkScope status.
         viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
