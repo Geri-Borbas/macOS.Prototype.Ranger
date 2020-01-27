@@ -158,9 +158,11 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
         layout()
         
         // Update overlay with processed player data.
-        if let players = playersTable?.viewModel.players
+        if
+            let players = playersTable?.viewModel.players,
+            let tournamentInfo = playersTable?.viewModel.tournamentInfo
         {
-            tableOverlay?.update(with: players)
+            tableOverlay?.update(with: players, tournamentInfo: tournamentInfo)
             updateWindowShadow()
         }
         

@@ -56,7 +56,7 @@ class TableOverlayViewController: NSViewController
     
     // MARK: - Hooks
     
-    func update(with players: [Model.Player])
+    func update(with players: [Model.Player], tournamentInfo: TournamentInfo)
     {
         // Determine hero seat if any.
         guard
@@ -66,7 +66,7 @@ class TableOverlayViewController: NSViewController
                 
         // Remove every player from seats.
         seats.values.forEach
-        { eachSeatViewController in eachSeatViewController.update(with: nil) }
+        { eachSeatViewController in eachSeatViewController.update(with: nil, tournamentInfo: tournamentInfo) }
         
         // Add new players.
         players.forEach
@@ -77,7 +77,7 @@ class TableOverlayViewController: NSViewController
             if
                 let eachScreenSeat = eachPlayer.screenSeat(heroSittingAt: heroSeat),
                 let eachSeatViewController = seats[eachScreenSeat]
-            { eachSeatViewController.update(with: eachPlayer) }
+            { eachSeatViewController.update(with: eachPlayer, tournamentInfo: tournamentInfo) }
         }
     }
     

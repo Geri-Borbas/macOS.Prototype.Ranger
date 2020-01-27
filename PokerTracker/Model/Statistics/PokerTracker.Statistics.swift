@@ -24,6 +24,7 @@ public class Statistics: Entry
     public let cnt_pfr_opp: Int
     
     // Calculations.
+    public var hands: Int { cnt_hands }
     public var VPIP: Double { Double(cnt_vpip) / Double(cnt_hands - cnt_walks) }
     public var PFR: Double { Double(cnt_pfr) / Double(cnt_pfr_opp) }
     

@@ -48,7 +48,7 @@ class SeatViewController: NSViewController
     
     // MARK: - Hooks
     
-    func update(with player: Model.Player?)
+    func update(with player: Model.Player?, tournamentInfo: TournamentInfo)
     {
         // Only if any.
         guard let player = player
@@ -57,7 +57,7 @@ class SeatViewController: NSViewController
         if (player.stack == 0)
         { layoutZero(for: player) }
         else
-        { layout(for: player) }
+        { layout(for: player, tournamentInfo: tournamentInfo) }
     }
     
     
@@ -98,7 +98,7 @@ class SeatViewController: NSViewController
         view.nameTextField.stringValue = player.name
     }
     
-    func layout(for player: Model.Player)
+    func layout(for player: Model.Player, tournamentInfo: TournamentInfo)
     {
         // Cast.
         guard let view = view as? SeatView
@@ -109,7 +109,10 @@ class SeatViewController: NSViewController
         view.ringButton.isHidden = false
         view.nameImageView.isHidden = false
         view.nameTextField.isHidden = false
-        view.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = false }
+        view.statisticsViews.forEach{ $0.isHidden = false }
+        
+        // Set name.
+        view.nameTextField.stringValue = player.name
         
         // Layout finishes color.
         var finishesColor = NSColor.lightGray
@@ -120,30 +123,40 @@ class SeatViewController: NSViewController
         view.ringButton.contentTintColor = finishesColor
         view.nameImageView.contentTintColor = finishesColor
         
-        // Set name.
-        view.nameTextField.stringValue = player.name
-        
         // Tables.
-        view.tablesTextField.integerValue = Int.random(in: 1...40)
+        if let tables = player.sharkScope.tables
+        {
+            view.tablesTextField.isHidden = false
+            view.tablesTextField.integerValue = tables
+        }
+        else
+        { view.tablesTextField.isHidden = true }
         
-        // Statistics.
-        let vpip = Float.random(in: 0...1)
-        let pfr = Float.random(in: 0...1)
-        let m = Float.random(in: 1...180)
-        let hands = Int.random(in: 0...200)
+        // PokerTracker statistics.
+        if let statistics = player.pokerTracker?.statistics
+        {
+            view.pokerTrackerStatisticsViews.forEach{ $0.isHidden = false }
+            
+            // Calculations.
+            let M = Float(player.stack) / tournamentInfo.orbitCost
+            let hands = Int(M * Float(tournamentInfo.players))
         
-        view.layoutVpip(for: vpip)
-        view.layoutPfr(for: pfr)
+            // Preflop.
+            view.layoutVpip(for: Float(statistics.VPIP))
+            view.layoutPfr(for: Float(statistics.PFR))
         
-        // Hand count.
-        view.handsTextField.integerValue = Int.random(in: 0...200)
+            // Hand count.
+            view.handsTextField.integerValue = statistics.hands
         
-        // M.
-        view.mTextField.floatValue = m
-        view.mHandsTextField.integerValue = hands
-        view.mBox.fillColor = ColorRanges.M.color(for: Double(m))
-        view.mHandsTextField.textColor = ColorRanges.M.color(for: Double(m))
-        view.mBox.toolTip = "\(m) M (\(hands) hands)"
+            // M.
+            view.mTextField.floatValue = M
+            view.mHandsTextField.integerValue = hands
+            view.mBox.fillColor = ColorRanges.M.color(for: Double(M))
+            view.mHandsTextField.textColor = ColorRanges.M.color(for: Double(M))
+            view.mBox.toolTip = "\(M) M (\(hands) hands)"
+        }
+        else
+        { view.pokerTrackerStatisticsViews.forEach{ $0.isHidden = true } }
     }
     
     

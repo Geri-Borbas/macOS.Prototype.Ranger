@@ -23,6 +23,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.4.7
+
+    + Wired in `SeatViewController` data hooks
+
 * Feature/UI/Seat_Tracking/0.4.6
 
     + Added `ColorRanges` (M / VPIP / PFR / Stack) with `ColorRangeProvider` compatibility         

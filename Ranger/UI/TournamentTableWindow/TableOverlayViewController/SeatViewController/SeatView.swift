@@ -56,6 +56,18 @@ class SeatView: NSView
         pfrBox
     ]
     
+    lazy var pokerTrackerStatisticsViews: [NSView] =
+    [
+        mTextField,
+        mHandsTextField,
+        mBox,
+        vpipTextField,
+        pfrTextField,
+        handsTextField,
+        vpipBox,
+        pfrBox
+    ]
+    
     // Caches.
     var cornerRadiusesForBoxes: [NSBox:CGFloat] = [:]
     var fontSizesForIdentifiers: [NSTextField:CGFloat] = [:]
