@@ -1490,6 +1490,7 @@
                 </customObject>
                 <customObject id="IEP-Na-ODW" userLabel="Stack (M) ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="JSON" value="M.ColorRanges"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
@@ -1532,6 +1533,7 @@
                 </customObject>
                 <customObject id="Cto-j0-9gf" userLabel="VPIP ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="JSON" value="VPIP.ColorRanges"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
@@ -1574,6 +1576,7 @@
                 </customObject>
                 <customObject id="yoO-ta-IBB" userLabel="PFR ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="JSON" value="PFR.ColorRanges"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="value_1">
                             <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
@@ -1912,21 +1915,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-Bu-0m7" userLabel="Seat Container View 1">
-                                        <rect key="frame" x="526" y="497" width="210" height="140"/>
+                                        <rect key="frame" x="526" y="496" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="1" id="VM1-dE-BHd"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-WC-2ub" userLabel="Seat Container View 2" propertyAccessControl="none">
-                                        <rect key="frame" x="700" y="433" width="210" height="140"/>
+                                        <rect key="frame" x="700" y="432" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="2" id="NKx-Vq-jMU"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Lr-mfs" userLabel="Seat Container View 3">
-                                        <rect key="frame" x="740" y="303" width="210" height="140"/>
+                                        <rect key="frame" x="740" y="302" width="210" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="3" id="cRY-cS-gkV"/>
@@ -1940,7 +1943,7 @@
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-iC-HoE" userLabel="Seat Container View 5">
-                                        <rect key="frame" x="373" y="109" width="210" height="140"/>
+                                        <rect key="frame" x="373" y="108" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="5" id="efP-Ck-xaA"/>
@@ -1954,21 +1957,21 @@
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRF-13-3eV" userLabel="Seat Container View 7">
-                                        <rect key="frame" x="3" y="303" width="210" height="140"/>
+                                        <rect key="frame" x="3" y="302" width="210" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="7" id="nW6-jt-XE9"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-Eg-N1S" userLabel="Seat Container View 8">
-                                        <rect key="frame" x="43" y="433" width="210" height="140"/>
+                                        <rect key="frame" x="43" y="432" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="8" id="JiI-IH-V0w"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA7-Ur-xoM" userLabel="Seat Container View 9">
-                                        <rect key="frame" x="217" y="497" width="210" height="140"/>
+                                        <rect key="frame" x="217" y="496" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Qfz-ND-uE5" kind="embed" identifier="9" id="ZSD-g4-z12"/>
@@ -2012,7 +2015,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWF-r5-SWD">
-                                <rect key="frame" x="3" y="75" width="27" height="17"/>
+                                <rect key="frame" x="3" y="74" width="27" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="12" usesSingleLineMode="YES" id="7xq-Th-AmD">
                                     <font key="font" metaFont="systemBold"/>
@@ -2021,17 +2024,17 @@
                                 </textFieldCell>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-ef-Qdo" userLabel="Circle View">
-                                <rect key="frame" x="120" y="25" width="90" height="90"/>
+                                <rect key="frame" x="120" y="25" width="90" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-QA-mR7" userLabel="Circle Background">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="89"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Circle.Background" id="faQ-yE-8b7"/>
                                         <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ip1-dc-zIr">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="89"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatViewController.Circle.Ring" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xPz-BC-V74">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2137,12 +2140,15 @@
                                 <subviews>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-7K-DbD" userLabel="M Hands Text Field">
                                         <rect key="frame" x="0.0" y="32" width="56" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="60 hand" usesSingleLineMode="YES" id="oSD-Sd-4c9">
                                             <font key="font" metaFont="system" size="8"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
+                                        <connections>
+                                            <outlet property="formatter" destination="dGx-do-Ff6" id="sNN-K1-6Se"/>
+                                        </connections>
                                     </textField>
                                     <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="12" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="L4k-td-Qky" userLabel="M Box">
                                         <rect key="frame" x="3" y="44" width="50" height="24"/>
@@ -2230,6 +2236,9 @@
                 <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="Oje-6V-j82" userLabel="##🅜 Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix=" hand" negativeSuffix=" hand" id="dGx-do-Ff6" userLabel="## hands Number Formatter">
+                    <integer key="multiplier" value="1"/>
+                </numberFormatter>
                 <customObject id="cts-lR-h6P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="843" y="1624"/>
@@ -2248,13 +2257,13 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="8h9-AK-pPP"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-UW-uwS" userLabel="Circle Background">
-                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
+                                <rect key="frame" x="0.0" y="25" width="90" height="89"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="QmC-p7-VoP"/>
                                 <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Ti-2yb">
-                                <rect key="frame" x="0.0" y="25" width="90" height="90"/>
+                                <rect key="frame" x="0.0" y="25" width="90" height="89"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatTracker Circle Ring " imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="wUT-ap-4lk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

@@ -1,0 +1,36 @@
+{
+    "name" : "M",
+    "colorRanges" :
+    [
+        {
+            "min" : null,
+            "max" : 3,
+            "color" : "cyan"
+        },
+        {
+            "min" : 3,
+            "max" : 5,
+            "color" : "green"
+        },
+        {
+            "min" : 5,
+            "max" : 10,
+            "color" : "yellow"
+        },
+        {
+            "min" : 10,
+            "max" : 20,
+            "color" : "orange"
+        },
+        {
+            "min" : 20,
+            "max" : 40,
+            "color" : "red"
+        },
+        {
+            "min" : 40,
+            "max" : null,
+            "color" : "violet"
+        }        
+    ]
+}

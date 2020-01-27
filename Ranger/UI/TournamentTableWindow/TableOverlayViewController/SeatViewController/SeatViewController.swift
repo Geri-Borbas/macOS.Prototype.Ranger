@@ -113,9 +113,7 @@ class SeatViewController: NSViewController
         
         // Layout finishes color.
         var finishesColor = NSColor.lightGray
-        if
-            let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope,
-            player.stack > 0.0
+        if let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope
         { finishesColor = ColorRanges.finishes.color(for: finishes) }
         
         // Apply finishes color.
@@ -131,7 +129,7 @@ class SeatViewController: NSViewController
         // Statistics.
         let vpip = Float.random(in: 0...1)
         let pfr = Float.random(in: 0...1)
-        let m = Int.random(in: 1...180)
+        let m = Float.random(in: 1...180)
         let hands = Int.random(in: 0...200)
         
         view.layoutVpip(for: vpip)
@@ -141,8 +139,10 @@ class SeatViewController: NSViewController
         view.handsTextField.integerValue = Int.random(in: 0...200)
         
         // M.
-        view.mTextField.integerValue = m
+        view.mTextField.floatValue = m
         view.mHandsTextField.integerValue = hands
+        view.mBox.fillColor = ColorRanges.M.color(for: Double(m))
+        view.mHandsTextField.textColor = ColorRanges.M.color(for: Double(m))
         view.mBox.toolTip = "\(m) M (\(hands) hands)"
     }
     

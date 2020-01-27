@@ -133,12 +133,15 @@
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
 		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
 		55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
+		55DDE99623DEAA9C0081E86A /* M.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55DDE99523DEA92C0081E86A /* M.ColorRanges.json */; };
 		55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */; };
 		55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */; };
 		55E7E71723C00983000388FD /* PlayersTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71623C00983000388FD /* PlayersTableRowView.swift */; };
 		55E7E71A23C019EE000388FD /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71923C019EE000388FD /* Easing.swift */; };
 		55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
 		55F2A2BA23DE8B00009700D3 /* NSTextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */; };
+		55F2A2BE23DEA78A009700D3 /* VPIP.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */; };
+		55F2A2BF23DEA78D009700D3 /* PFR.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */; };
 		55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
 		F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */; };
@@ -312,6 +315,7 @@
 		55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
 		55DB43E823A2E62000A7F37F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		55DDE99523DEA92C0081E86A /* M.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = M.ColorRanges.json; sourceTree = "<group>"; };
 		55E4D43723A7FAD600F33066 /* PlayerSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummaryRequest.swift; sourceTree = "<group>"; };
 		55E4D43923A7FC0F00F33066 /* PlayerSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummary.swift; sourceTree = "<group>"; };
 		55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
 		55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extensions.swift"; sourceTree = "<group>"; };
+		55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VPIP.ColorRanges.json; sourceTree = "<group>"; };
+		55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PFR.ColorRanges.json; sourceTree = "<group>"; };
 		79F6C99A40025504EB954DBA /* Pods-SharkScopeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScopeTests.release.xcconfig"; path = "Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests.release.xcconfig"; sourceTree = "<group>"; };
 		94C6446E5B7C5CE0E52E5BF9 /* Pods_SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99522483F304541E25BECCCD /* Pods-SharkScope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScope.release.xcconfig"; path = "Target Support Files/Pods-SharkScope/Pods-SharkScope.release.xcconfig"; sourceTree = "<group>"; };
@@ -465,6 +471,9 @@
 			isa = PBXGroup;
 			children = (
 				551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */,
+				55DDE99523DEA92C0081E86A /* M.ColorRanges.json */,
+				55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */,
+				55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */,
 				551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */,
 			);
 			path = ColorRanges;
@@ -1168,13 +1177,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */,
+				55F2A2BF23DEA78D009700D3 /* PFR.ColorRanges.json in Resources */,
 				558F707823D9295E004DB3F2 /* Countries.json in Resources */,
+				55F2A2BE23DEA78A009700D3 /* VPIP.ColorRanges.json in Resources */,
 				552E546523D172F80056B305 /* SharkScope.Configuration.plist in Resources */,
 				551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */,
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
+				55DDE99623DEAA9C0081E86A /* M.ColorRanges.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
 				551ED9A223DC05910009F2D9 /* Finishes.ColorRanges.json in Resources */,
 			);

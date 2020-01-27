@@ -76,6 +76,9 @@ class SeatView: NSView
         // Size.
         vpipBoxWidthConstraint.constant = vpipView.bounds.size.width * CGFloat(vpipPercentProvider.percent(value: value))
         
+        // Color.
+        vpipBox.fillColor = ColorRanges.VPIP.color(for: Double(value))
+        
         // Text.
         vpipTextField.floatValue = value
         vpipTextField.toolTip = "\(Int.random(in: 0...100))/\(Int.random(in: 0...100))"
@@ -85,6 +88,9 @@ class SeatView: NSView
     {
         // Size.
         pfrBoxWidthConstraint.constant = pfrView.bounds.size.width * CGFloat(pfrPercentProvider.percent(value: value))
+        
+        // Color.
+        pfrBox.fillColor = ColorRanges.PFR.color(for: Double(value))
         
         // Text.
         pfrTextField.floatValue = value

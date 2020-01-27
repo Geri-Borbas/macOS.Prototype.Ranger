@@ -4,7 +4,6 @@
 * Doing
 
     + Next up
-        + Coloring (M / Stats / Table) 
         + Resume normal window layering when table is not focused
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
@@ -24,7 +23,11 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
-* Feature/UI/Seat_Tracking/0.4.5
+* Feature/UI/Seat_Tracking/0.4.6
+
+    + Added `ColorRanges` (M / VPIP / PFR / Stack) with `ColorRangeProvider` compatibility         
+
+* Feature/UI/Seat_Tracking/0.4.5 
 
     + Layout (M / wrappers / Tooltip)
 

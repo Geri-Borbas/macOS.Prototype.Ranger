@@ -49,6 +49,9 @@ extension ColorRanges
 {
     
     
+    static var M: ColorRanges = ColorRanges(named: "M.ColorRanges")!
+    static var VPIP: ColorRanges = ColorRanges(named: "VPIP.ColorRanges")!
+    static var PFR: ColorRanges = ColorRanges(named: "PFR.ColorRanges")!
     static var finishes: ColorRanges = ColorRanges(named: "Finishes.ColorRanges")!
 }
 

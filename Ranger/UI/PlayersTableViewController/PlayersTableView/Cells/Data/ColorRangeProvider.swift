@@ -36,6 +36,12 @@ class ColorRangeProvider: NSObject
             {
                 case "Finishes.ColorRanges":
                     return ColorRanges.finishes.color(for: Double(value))
+                case "VPIP.ColorRanges":
+                    return ColorRanges.VPIP.color(for: Double(value))
+                case "PFR.ColorRanges":
+                    return ColorRanges.PFR.color(for: Double(value))
+                case "M.ColorRanges":
+                    return ColorRanges.M.color(for: Double(value))
                 default:
                     print("\(JSON).json not found.")
             }
