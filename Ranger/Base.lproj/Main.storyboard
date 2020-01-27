@@ -1991,29 +1991,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-0y-syt" userLabel="Left Seat Metrics">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-0y-syt" userLabel="Metrics">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Metrics" id="NCK-v9-vz5"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-QA-mR7" userLabel="Circle Background">
-                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Circle.Background" id="faQ-yE-8b7"/>
-                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ip1-dc-zIr">
-                                <rect key="frame" x="120" y="25" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatViewController.Circle.Ring" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xPz-BC-V74">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <connections>
-                                    <action selector="ringDidClick:" target="Qfz-ND-uE5" id="4kb-JL-t6E"/>
-                                </connections>
-                            </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2th-De-PgR">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2028,9 +2010,6 @@
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <outlet property="formatter" destination="Oje-6V-j82" id="on3-9t-DWf"/>
-                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWF-r5-SWD">
                                 <rect key="frame" x="3" y="75" width="27" height="17"/>
@@ -2041,124 +2020,154 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-7K-DbD" userLabel="M Hands Text Field">
-                                <rect key="frame" x="1" y="32" width="49" height="10"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="60 hand" usesSingleLineMode="YES" id="oSD-Sd-4c9">
-                                    <font key="font" metaFont="system" size="8"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOy-7c-HrK" userLabel="Hands Text Field">
-                                <rect key="frame" x="118" y="54" width="94" height="10"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-ef-Qdo" userLabel="Circle View">
+                                <rect key="frame" x="120" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="154" usesSingleLineMode="YES" id="CUq-St-mak">
-                                    <font key="font" metaFont="system" size="8"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="12" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="L4k-td-Qky" userLabel="M Box">
-                                <rect key="frame" x="3" y="44" width="45" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="kZh-IS-7wq">
-                                    <rect key="frame" x="0.0" y="0.0" width="45" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MG-iQ-dy7">
-                                            <rect key="frame" x="1" y="3" width="42" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="10🅜" usesSingleLineMode="YES" id="FYo-JE-cR3">
-                                                <font key="font" metaFont="systemBold" size="16"/>
-                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <outlet property="formatter" destination="oSF-8t-p9Q" id="86k-5S-1br"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                </view>
-                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            </box>
-                            <customView id="GPq-bG-0Xe" userLabel="VPIP View">
-                                <rect key="frame" x="120" y="33" width="44" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-jK-mp8" userLabel="VPIP Box">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
-                                        <view key="contentView" id="HpA-21-hWH">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-JT-Xf5">
-                                                    <rect key="frame" x="18" y="1" width="25" height="19"/>
-                                                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="right" title="24" usesSingleLineMode="YES" id="56r-8K-oBe">
-                                                        <font key="font" metaFont="systemBold" size="16"/>
-                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <connections>
-                                                        <outlet property="formatter" destination="jec-Cj-sVt" id="ebz-Aa-EOx"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="mWh-JT-Xf5" firstAttribute="centerY" secondItem="HpA-21-hWH" secondAttribute="centerY" id="3gM-LB-Cex"/>
-                                                <constraint firstItem="mWh-JT-Xf5" firstAttribute="trailing" secondItem="HpA-21-hWH" secondAttribute="trailing" multiplier="41:44" id="uk8-Ma-A1I"/>
-                                            </constraints>
-                                        </view>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-QA-mR7" userLabel="Circle Background">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Circle.Background" id="faQ-yE-8b7"/>
+                                        <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ip1-dc-zIr">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatViewController.Circle.Ring" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xPz-BC-V74">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="ringDidClick:" target="Qfz-ND-uE5" id="4kb-JL-t6E"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOy-7c-HrK" userLabel="Hands Text Field">
+                                        <rect key="frame" x="0.0" y="29" width="90" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="154" usesSingleLineMode="YES" id="CUq-St-mak">
+                                            <font key="font" metaFont="system" size="8"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <customView ambiguous="YES" id="GPq-bG-0Xe" userLabel="VPIP View">
+                                        <rect key="frame" x="0.0" y="8" width="44" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-jK-mp8" userLabel="VPIP Box">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                <view key="contentView" id="HpA-21-hWH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-JT-Xf5">
+                                                            <rect key="frame" x="18" y="1" width="25" height="19"/>
+                                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="right" title="24" usesSingleLineMode="YES" id="56r-8K-oBe">
+                                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="formatter" destination="jec-Cj-sVt" id="ebz-Aa-EOx"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="mWh-JT-Xf5" firstAttribute="centerY" secondItem="HpA-21-hWH" secondAttribute="centerY" id="3gM-LB-Cex"/>
+                                                        <constraint firstItem="mWh-JT-Xf5" firstAttribute="trailing" secondItem="HpA-21-hWH" secondAttribute="trailing" multiplier="41:44" id="uk8-Ma-A1I"/>
+                                                    </constraints>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="F3f-wu-A9K"/>
+                                                </constraints>
+                                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            </box>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="F3f-wu-A9K"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wav-jK-mp8" secondAttribute="trailing" id="ZM6-oT-hl0"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wav-jK-mp8" secondAttribute="bottom" id="bRu-0J-5Zf"/>
+                                            <constraint firstItem="Wav-jK-mp8" firstAttribute="top" secondItem="GPq-bG-0Xe" secondAttribute="top" id="oYS-Z6-Mqg"/>
                                         </constraints>
-                                        <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    </box>
+                                    </customView>
+                                    <customView ambiguous="YES" id="b3b-IX-C2J" userLabel="PFR View">
+                                        <rect key="frame" x="46" y="8" width="44" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ifj-XY-chy" userLabel="PFR Box">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                <view key="contentView" id="b7H-DW-QH7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="F3V-J8-Mmj">
+                                                            <rect key="frame" x="1" y="1" width="23" height="19"/>
+                                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="16" usesSingleLineMode="YES" id="4l3-Hi-Aie">
+                                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="formatter" destination="jec-Cj-sVt" id="hnu-vw-EFq"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="F3V-J8-Mmj" firstAttribute="centerY" secondItem="b7H-DW-QH7" secondAttribute="centerY" id="L3z-qu-pXG"/>
+                                                        <constraint firstItem="F3V-J8-Mmj" firstAttribute="leading" secondItem="b7H-DW-QH7" secondAttribute="trailing" multiplier="3:44" id="MWQ-OY-641"/>
+                                                    </constraints>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="dhR-gq-6ZT"/>
+                                                </constraints>
+                                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            </box>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ifj-XY-chy" secondAttribute="bottom" id="IEf-5v-nqx"/>
+                                            <constraint firstItem="ifj-XY-chy" firstAttribute="top" secondItem="b3b-IX-C2J" secondAttribute="top" id="R1F-dJ-y6d"/>
+                                            <constraint firstItem="ifj-XY-chy" firstAttribute="leading" secondItem="b3b-IX-C2J" secondAttribute="leading" id="Ygn-Yo-Rlk"/>
+                                        </constraints>
+                                    </customView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Wav-jK-mp8" secondAttribute="trailing" id="ZM6-oT-hl0"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wav-jK-mp8" secondAttribute="bottom" id="bRu-0J-5Zf"/>
-                                    <constraint firstItem="Wav-jK-mp8" firstAttribute="top" secondItem="GPq-bG-0Xe" secondAttribute="top" id="oYS-Z6-Mqg"/>
-                                </constraints>
                             </customView>
-                            <customView id="b3b-IX-C2J" userLabel="PFR View">
-                                <rect key="frame" x="166" y="33" width="44" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <customView id="YZv-Hf-xhB" userLabel="Stack View">
+                                <rect key="frame" x="0.0" y="0.0" width="56" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ifj-XY-chy" userLabel="PFR Box">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
-                                        <view key="contentView" id="b7H-DW-QH7">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-7K-DbD" userLabel="M Hands Text Field">
+                                        <rect key="frame" x="0.0" y="32" width="56" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="60 hand" usesSingleLineMode="YES" id="oSD-Sd-4c9">
+                                            <font key="font" metaFont="system" size="8"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="12" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="L4k-td-Qky" userLabel="M Box">
+                                        <rect key="frame" x="3" y="44" width="50" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" ambiguous="YES" id="kZh-IS-7wq">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="F3V-J8-Mmj">
-                                                    <rect key="frame" x="1" y="1" width="23" height="19"/>
-                                                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="16" usesSingleLineMode="YES" id="4l3-Hi-Aie">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MG-iQ-dy7">
+                                                    <rect key="frame" x="2" y="2" width="48" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="10🅜" usesSingleLineMode="YES" id="FYo-JE-cR3">
                                                         <font key="font" metaFont="systemBold" size="16"/>
                                                         <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <connections>
-                                                        <outlet property="formatter" destination="jec-Cj-sVt" id="hnu-vw-EFq"/>
+                                                        <outlet property="formatter" destination="Oje-6V-j82" id="EOH-Ws-Jhe"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="F3V-J8-Mmj" firstAttribute="centerY" secondItem="b7H-DW-QH7" secondAttribute="centerY" id="L3z-qu-pXG"/>
-                                                <constraint firstItem="F3V-J8-Mmj" firstAttribute="leading" secondItem="b7H-DW-QH7" secondAttribute="trailing" multiplier="3:44" id="MWQ-OY-641"/>
-                                            </constraints>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="dhR-gq-6ZT"/>
-                                        </constraints>
                                         <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     </box>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="ifj-XY-chy" secondAttribute="bottom" id="IEf-5v-nqx"/>
-                                    <constraint firstItem="ifj-XY-chy" firstAttribute="top" secondItem="b3b-IX-C2J" secondAttribute="top" id="R1F-dJ-y6d"/>
-                                    <constraint firstItem="ifj-XY-chy" firstAttribute="leading" secondItem="b3b-IX-C2J" secondAttribute="leading" id="Ygn-Yo-Rlk"/>
-                                </constraints>
                             </customView>
                         </subviews>
                         <connections>

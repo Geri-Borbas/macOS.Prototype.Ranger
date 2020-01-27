@@ -131,6 +131,8 @@ class SeatViewController: NSViewController
         // Statistics.
         let vpip = Float.random(in: 0...1)
         let pfr = Float.random(in: 0...1)
+        let m = Int.random(in: 1...180)
+        let hands = Int.random(in: 0...200)
         
         view.layoutVpip(for: vpip)
         view.layoutPfr(for: pfr)
@@ -139,8 +141,9 @@ class SeatViewController: NSViewController
         view.handsTextField.integerValue = Int.random(in: 0...200)
         
         // M.
-        view.mTextField.integerValue = Int.random(in: 5...50)
-        view.mHandsTextField.integerValue = Int.random(in: 0...200)
+        view.mTextField.integerValue = m
+        view.mHandsTextField.integerValue = hands
+        view.mBox.toolTip = "\(m) M (\(hands) hands)"
     }
     
     
