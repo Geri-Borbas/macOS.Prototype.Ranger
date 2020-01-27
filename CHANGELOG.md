@@ -1,6 +1,5 @@
 # Changelog
 
-
 * Doing
 
     + Next up
@@ -22,6 +21,10 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Seat_Tracking/0.4.8
+
+    + Created `Right Seat View Controller` (with mirrored assets)
 
 * Feature/UI/Seat_Tracking/0.4.7
 

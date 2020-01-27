@@ -1918,28 +1918,28 @@
                                         <rect key="frame" x="526" y="496" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="1" id="VM1-dE-BHd"/>
+                                            <segue destination="ms5-VF-Cjb" kind="embed" identifier="1" id="NaF-ns-lvA"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ts4-WC-2ub" userLabel="Seat Container View 2" propertyAccessControl="none">
                                         <rect key="frame" x="700" y="432" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="2" id="NKx-Vq-jMU"/>
+                                            <segue destination="ms5-VF-Cjb" kind="embed" identifier="2" id="RqM-FD-U1b"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Lr-mfs" userLabel="Seat Container View 3">
                                         <rect key="frame" x="740" y="302" width="210" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="3" id="cRY-cS-gkV"/>
+                                            <segue destination="ms5-VF-Cjb" kind="embed" identifier="3" id="2MI-Hv-Hr1"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-Jy-ff4" userLabel="Seat Container View 4">
                                         <rect key="frame" x="646" y="168" width="210" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Qfz-ND-uE5" kind="embed" identifier="4" id="kzU-vU-kue"/>
+                                            <segue destination="ms5-VF-Cjb" kind="embed" identifier="4" id="1al-fD-0lX"/>
                                         </connections>
                                     </containerView>
                                     <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-iC-HoE" userLabel="Seat Container View 5">
@@ -2147,7 +2147,7 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                         <connections>
-                                            <outlet property="formatter" destination="dGx-do-Ff6" id="sNN-K1-6Se"/>
+                                            <outlet property="formatter" destination="dGx-do-Ff6" id="5gi-lg-6uP"/>
                                         </connections>
                                     </textField>
                                     <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="12" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="L4k-td-Qky" userLabel="M Box">
@@ -2244,114 +2244,279 @@
             <point key="canvasLocation" x="843" y="1624"/>
         </scene>
         <!--Right Seat View Controller-->
-        <scene sceneID="ZEJ-fg-1Ra">
+        <scene sceneID="jN2-E3-9vb">
             <objects>
-                <viewController id="nqC-uS-oC9" userLabel="Right Seat View Controller" customClass="SeatViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="zZf-jq-dXV">
-                        <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYw-aE-zgr" userLabel="Right Seat Metrics">
-                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Right Seat Metrics " id="8h9-AK-pPP"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-UW-uwS" userLabel="Circle Background">
-                                <rect key="frame" x="0.0" y="25" width="90" height="89"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatTracker Circle Background " id="QmC-p7-VoP"/>
-                                <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Ti-2yb">
-                                <rect key="frame" x="0.0" y="25" width="90" height="89"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatTracker Circle Ring " imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="wUT-ap-4lk">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <connections>
-                                    <action selector="ringDidClick:" target="nqC-uS-oC9" id="8oK-hW-l2I"/>
-                                </connections>
-                            </button>
-                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="2" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wSb-ek-M3o">
-                                <rect key="frame" x="84" y="76" width="126" height="17"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="xcZ-f1-T8h">
-                                    <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" id="e40-SP-uL3">
-                                            <rect key="frame" x="0.0" y="0.0" width="126" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="s4u-Z5-b2J">
-                                                <font key="font" metaFont="systemBold"/>
-                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <outlet property="formatter" destination="oSF-8t-p9Q" id="YB2-Ar-nTa"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                </view>
-                                <color key="fillColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </box>
-                        </subviews>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="side" value="Left"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="nameTextField" destination="e40-SP-uL3" id="FMR-pf-EA3"/>
-                        <outlet property="ringButton" destination="Yye-Ti-2yb" id="0Xx-fg-fDj"/>
-                    </connections>
-                </viewController>
-                <customObject id="hl4-uj-0pt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1217" y="1624"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="yGY-er-AkT">
-            <objects>
-                <viewController id="0Su-cF-qpi" sceneMemberID="viewController">
-                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="U3M-qh-y67">
+                <viewController id="ms5-VF-Cjb" userLabel="Right Seat View Controller" customClass="SeatViewController" customModule="Ranger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="156-QX-LE4" customClass="SeatView" customModule="Ranger" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="miK-ZY-QjD">
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSC-O6-EHf" userLabel="Metrics">
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" ambiguous="YES" id="C5L-ih-o6x">
-                                    <rect key="frame" x="1" y="1" width="208" height="138"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="fillColor" red="0.54785913529999997" green="0.99610751870000003" blue="0.69727526309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </box>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Metrics.Mirrored" id="DGI-qz-xKd"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-2m-cFD">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Name.Box.Mirrored" id="HNe-Om-aHk"/>
+                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Zp-Ma-WWF">
+                                <rect key="frame" x="80" y="76" width="100" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="NiN-k6-mmj">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="km5-5V-jxA">
+                                <rect key="frame" x="180" y="74" width="27" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="12" usesSingleLineMode="YES" id="aAu-cb-f1L">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSR-1b-eqR" userLabel="Circle View">
+                                <rect key="frame" x="0.0" y="25" width="90" height="89"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-vv-4mP" userLabel="Circle Background">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Circle.Background" id="PAt-UH-yHz"/>
+                                        <color key="contentTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jA0-HF-vnP">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="SeatViewController.Circle.Ring" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ENm-yZ-SeA">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="ringDidClick:" target="ms5-VF-Cjb" id="D8C-TP-FNh"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ob-fd-UnH" userLabel="Hands Text Field">
+                                        <rect key="frame" x="0.0" y="29" width="90" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="154" usesSingleLineMode="YES" id="eBm-ja-YHn">
+                                            <font key="font" metaFont="system" size="8"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <customView ambiguous="YES" id="mD9-GC-Sj5" userLabel="VPIP View">
+                                        <rect key="frame" x="0.0" y="8" width="44" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="vk8-s6-B7h" userLabel="VPIP Box">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                <view key="contentView" id="RnT-MV-tYL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="DKD-z6-eDd">
+                                                            <rect key="frame" x="18" y="1" width="25" height="19"/>
+                                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="right" title="24" usesSingleLineMode="YES" id="vXn-Xg-NLj">
+                                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="formatter" destination="17R-vC-vT2" id="6ca-XB-aBa"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="DKD-z6-eDd" firstAttribute="trailing" secondItem="RnT-MV-tYL" secondAttribute="trailing" multiplier="41:44" id="DpP-Vt-3j2"/>
+                                                        <constraint firstItem="DKD-z6-eDd" firstAttribute="centerY" secondItem="RnT-MV-tYL" secondAttribute="centerY" id="aWq-oh-8YR"/>
+                                                    </constraints>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="sbX-PE-HJf"/>
+                                                </constraints>
+                                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            </box>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vk8-s6-B7h" firstAttribute="top" secondItem="mD9-GC-Sj5" secondAttribute="top" id="S3q-9d-nzo"/>
+                                            <constraint firstAttribute="bottom" secondItem="vk8-s6-B7h" secondAttribute="bottom" id="TeP-UC-SAR"/>
+                                            <constraint firstAttribute="trailing" secondItem="vk8-s6-B7h" secondAttribute="trailing" id="nRK-hF-fDR"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView ambiguous="YES" id="9SD-JK-1DL" userLabel="PFR View">
+                                        <rect key="frame" x="46" y="8" width="44" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="l3p-1W-RcS" userLabel="PFR Box">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                <view key="contentView" id="b3H-6o-0lO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NKV-qT-Ava">
+                                                            <rect key="frame" x="1" y="1" width="23" height="19"/>
+                                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="16" usesSingleLineMode="YES" id="kn5-WH-4k8">
+                                                                <font key="font" metaFont="systemBold" size="16"/>
+                                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="formatter" destination="17R-vC-vT2" id="zoP-VN-o9F"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="NKV-qT-Ava" firstAttribute="leading" secondItem="b3H-6o-0lO" secondAttribute="trailing" multiplier="3:44" id="XiW-bx-iph"/>
+                                                        <constraint firstItem="NKV-qT-Ava" firstAttribute="centerY" secondItem="b3H-6o-0lO" secondAttribute="centerY" id="gGa-2E-RVF"/>
+                                                    </constraints>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="c9Q-a0-qce"/>
+                                                </constraints>
+                                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            </box>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="l3p-1W-RcS" firstAttribute="leading" secondItem="9SD-JK-1DL" secondAttribute="leading" id="36z-GW-uIH"/>
+                                            <constraint firstItem="l3p-1W-RcS" firstAttribute="top" secondItem="9SD-JK-1DL" secondAttribute="top" id="OpG-Md-Zgw"/>
+                                            <constraint firstAttribute="bottom" secondItem="l3p-1W-RcS" secondAttribute="bottom" id="SwO-Oh-iNm"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                            </customView>
+                            <customView id="Afr-iG-c9g" userLabel="Stack View">
+                                <rect key="frame" x="154" y="0.0" width="56" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-IR-h8P" userLabel="M Hands Text Field">
+                                        <rect key="frame" x="0.0" y="32" width="56" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="60 hand" usesSingleLineMode="YES" id="9xP-9S-pBA">
+                                            <font key="font" metaFont="system" size="8"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="formatter" destination="kQo-ax-dgq" id="GMO-Ci-6le"/>
+                                        </connections>
+                                    </textField>
+                                    <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="12" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Oys-Gg-Fcm" userLabel="M Box">
+                                        <rect key="frame" x="3" y="44" width="50" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" ambiguous="YES" id="7YE-L3-LEx">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uH-SI-fTc">
+                                                    <rect key="frame" x="2" y="2" width="48" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="10🅜" usesSingleLineMode="YES" id="bp2-bK-R0k">
+                                                        <font key="font" metaFont="systemBold" size="16"/>
+                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <outlet property="formatter" destination="UIF-fm-YzA" id="lxv-WB-AlA"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                        <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    </box>
+                                </subviews>
+                            </customView>
                         </subviews>
+                        <connections>
+                            <outlet property="circleBackgroundImageView" destination="EIv-vv-4mP" id="wcb-gY-spO"/>
+                            <outlet property="handsTextField" destination="6ob-fd-UnH" id="XtH-P5-hah"/>
+                            <outlet property="mBox" destination="Oys-Gg-Fcm" id="CBw-f6-0cV"/>
+                            <outlet property="mHandsTextField" destination="tb1-IR-h8P" id="GPj-Sk-nxo"/>
+                            <outlet property="mTextField" destination="2uH-SI-fTc" id="mCI-tS-xNa"/>
+                            <outlet property="nameImageView" destination="FGe-2m-cFD" id="1Rp-9y-ewH"/>
+                            <outlet property="nameTextField" destination="7Zp-Ma-WWF" id="gak-zE-6Wf"/>
+                            <outlet property="pfrBox" destination="l3p-1W-RcS" id="g0i-11-VGG"/>
+                            <outlet property="pfrBoxWidthConstraint" destination="c9Q-a0-qce" id="13q-Gf-c5e"/>
+                            <outlet property="pfrPercentProvider" destination="nKO-hQ-6xI" id="FVg-3s-8rH"/>
+                            <outlet property="pfrTextField" destination="NKV-qT-Ava" id="jYh-F7-ZFG"/>
+                            <outlet property="pfrView" destination="9SD-JK-1DL" id="eR2-qY-Eny"/>
+                            <outlet property="ringButton" destination="jA0-HF-vnP" id="NIv-Ki-vla"/>
+                            <outlet property="tablesTextField" destination="km5-5V-jxA" id="Mfo-aV-oag"/>
+                            <outlet property="vpipBox" destination="vk8-s6-B7h" id="gqA-6o-JbA"/>
+                            <outlet property="vpipBoxWidthConstraint" destination="sbX-PE-HJf" id="mlU-iO-qFg"/>
+                            <outlet property="vpipPercentProvider" destination="d6o-5B-YYw" id="ofy-cd-lHr"/>
+                            <outlet property="vpipTextField" destination="DKD-z6-eDd" id="KLG-O7-T3t"/>
+                            <outlet property="vpipView" destination="mD9-GC-Sj5" id="m0G-1F-wgx"/>
+                        </connections>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="side" value="Right"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
-                <customObject id="7Rz-AH-ciV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="d6o-5B-YYw" userLabel="VPIP PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.59999999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="17R-vC-vT2" userLabel="## (%) (x100) Number Formatter">
+                    <integer key="multiplier" value="100"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="UIF-fm-YzA" userLabel="##🅜 Number Formatter">
+                    <integer key="multiplier" value="1"/>
+                </numberFormatter>
+                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix=" hand" negativeSuffix=" hand" id="kQo-ax-dgq" userLabel="## hands Number Formatter">
+                    <integer key="multiplier" value="1"/>
+                </numberFormatter>
+                <customObject id="nKO-hQ-6xI" userLabel="PFR PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.59999999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="DMC-3N-oE9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="1367"/>
+            <point key="canvasLocation" x="1164" y="1624"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSTouchBarBookmarksTemplate" width="22" height="30"/>
         <image name="NSTouchBarHistoryTemplate" width="18" height="30"/>
         <image name="NSTouchBarUserTemplate" width="15" height="30"/>
-        <image name="SeatTracker Circle Background " width="90" height="90"/>
-        <image name="SeatTracker Circle Ring " width="90" height="90"/>
-        <image name="SeatTracker Right Seat Metrics " width="210" height="140"/>
         <image name="SeatTracker Seat Layout " width="953" height="657"/>
         <image name="SeatViewController.Circle.Background" width="90" height="90"/>
         <image name="SeatViewController.Circle.Ring" width="90" height="90"/>
         <image name="SeatViewController.Metrics" width="210" height="140"/>
+        <image name="SeatViewController.Metrics.Mirrored" width="210" height="140"/>
         <image name="SeatViewController.Name.Box" width="210" height="90"/>
+        <image name="SeatViewController.Name.Box.Mirrored" width="210" height="90"/>
         <image name="Simulated Tables" width="953" height="657"/>
         <image name="Unknown" width="30" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="1al-fD-0lX"/>
         <segue reference="ZSD-g4-z12"/>
     </inferredMetricsTieBreakers>
 </document>
