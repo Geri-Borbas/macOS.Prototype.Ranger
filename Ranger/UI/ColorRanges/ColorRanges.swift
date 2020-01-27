@@ -25,8 +25,8 @@ struct ColorRanges: Decodable
         let max: Double?
         let color: String
         
-        var minimum: Double { min ?? -Double.infinity }
-        var maximum: Double { max ?? +Double.infinity }
+        var minimum: Double { min ?? Double(Int.min) / 2.0 }
+        var maximum: Double { max ?? Double(Int.max) / 2.0 }
     }
     
     
@@ -53,6 +53,7 @@ extension ColorRanges
     static var VPIP: ColorRanges = ColorRanges(named: "VPIP.ColorRanges")!
     static var PFR: ColorRanges = ColorRanges(named: "PFR.ColorRanges")!
     static var finishes: ColorRanges = ColorRanges(named: "Finishes.ColorRanges")!
+    static var tables: ColorRanges = ColorRanges(named: "Tables.ColorRanges")!
 }
 
 
@@ -60,16 +61,30 @@ extension ColorRanges
 {
     
     
+    func colorName(for value: Int) -> String
+    {
+        colorRanges.reduce(
+            "",
+            {
+                color, eachColorRange in
+                (Int(eachColorRange.minimum) <= value && value <= Int(eachColorRange.maximum)) ? eachColorRange.color : color
+            }
+        )
+    }
+    
     func colorName(for value: Double) -> String
     {
         colorRanges.reduce(
-            "black",
+            "",
             {
                 color, eachColorRange in
                 (eachColorRange.minimum <= value && value < eachColorRange.maximum) ? eachColorRange.color : color
             }
         )
     }
+    
+    func color(for value: Int) -> NSColor
+    { NSColor(named: colorName(for: value)) ?? NSColor.black }
     
     func color(for value: Double) -> NSColor
     { NSColor(named: colorName(for: value)) ?? NSColor.black }

@@ -124,6 +124,7 @@
 		55AD571923D4FA48002A2E22 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD571823D4FA48002A2E22 /* JsonResponse.swift */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
 		55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* Model.Player.swift */; };
+		55B20F4723DF4BAC00EB668E /* Tables.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55B20F4623DF4A8D00EB668E /* Tables.ColorRanges.json */; };
 		55B84F7723DB58210079D94C /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B84F7523DB58210079D94C /* SeatViewController.swift */; };
 		55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9C86623D1857500B3D116 /* Model.Players.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
@@ -296,6 +297,7 @@
 		55AD571823D4FA48002A2E22 /* JsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
 		55B03CD423B104F700F153B5 /* Model.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Player.swift; sourceTree = "<group>"; };
+		55B20F4623DF4A8D00EB668E /* Tables.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tables.ColorRanges.json; sourceTree = "<group>"; };
 		55B84F7523DB58210079D94C /* SeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
 		55B9C86623D1857500B3D116 /* Model.Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Players.swift; sourceTree = "<group>"; };
 		55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tournaments.md; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */,
 				55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */,
 				551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */,
+				55B20F4623DF4A8D00EB668E /* Tables.ColorRanges.json */,
 			);
 			path = ColorRanges;
 			sourceTree = "<group>";
@@ -1189,6 +1192,7 @@
 				55DDE99623DEAA9C0081E86A /* M.ColorRanges.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
 				551ED9A223DC05910009F2D9 /* Finishes.ColorRanges.json in Resources */,
+				55B20F4723DF4BAC00EB668E /* Tables.ColorRanges.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

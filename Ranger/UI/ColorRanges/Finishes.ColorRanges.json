@@ -5,32 +5,32 @@
         {
             "min" : null,
             "max" : -0.009,
-            "color" : "violet"
+            "color" : "Standard violet"
         },
         {
             "min" : -0.009,
             "max" : -0.005,
-            "color" : "red"
+            "color" : "Standard red"
         },
         {
             "min" : -0.005,
             "max" : -0.000,
-            "color" : "yellow"
+            "color" : "Standard yellow"
         },
         {
             "min" : 0.000,
             "max" : 0.007,
-            "color" : "green"
+            "color" : "Standard green"
         },
         {
             "min" : 0.007,
             "max" : 0.009,
-            "color" : "cyan"
+            "color" : "Standard cyan"
         },
         {
             "min" : 0.009,
             "max" : null,
-            "color" : "blue"
+            "color" : "Standard blue"
         }
     ]
 }

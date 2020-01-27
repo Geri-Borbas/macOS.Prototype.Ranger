@@ -5,32 +5,32 @@
         {
             "min" : null,
             "max" : 3,
-            "color" : "cyan"
+            "color" : "Pale cyan"
         },
         {
             "min" : 3,
             "max" : 5,
-            "color" : "green"
+            "color" : "Pale green"
         },
         {
             "min" : 5,
             "max" : 10,
-            "color" : "yellow"
+            "color" : "Pale yellow"
         },
         {
             "min" : 10,
             "max" : 20,
-            "color" : "orange"
+            "color" : "Pale orange"
         },
         {
             "min" : 20,
             "max" : 40,
-            "color" : "red"
+            "color" : "Pale red"
         },
         {
             "min" : 40,
             "max" : null,
-            "color" : "violet"
+            "color" : "Pale violet"
         }        
     ]
 }

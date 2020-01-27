@@ -118,16 +118,17 @@ class SeatViewController: NSViewController
         var finishesColor = NSColor.lightGray
         if let finishes = player.sharkScope.statistics?.byPositionPercentage.trendLine.slope
         { finishesColor = ColorRanges.finishes.color(for: finishes) }
-        
+                
         // Apply finishes color.
         view.ringButton.contentTintColor = finishesColor
-        view.nameImageView.contentTintColor = finishesColor
+        view.nameTextField.textColor = finishesColor
         
         // Tables.
         if let tables = player.sharkScope.tables
         {
             view.tablesTextField.isHidden = false
             view.tablesTextField.integerValue = tables
+            view.tablesTextField.textColor = ColorRanges.tables.color(for: tables)
         }
         else
         { view.tablesTextField.isHidden = true }

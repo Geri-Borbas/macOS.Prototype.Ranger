@@ -2003,14 +2003,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Name.Box" id="lTZ-XG-HGR"/>
-                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="contentTintColor" red="0.19999831909999999" green="0.19999840860000001" blue="0.19999799130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-6F-EIh">
                                 <rect key="frame" x="30" y="76" width="100" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="4aV-Ic-H1q">
                                     <font key="font" metaFont="systemBold"/>
-                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -2260,14 +2260,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Name.Box.Mirrored" id="HNe-Om-aHk"/>
-                                <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="contentTintColor" red="0.19999831909999999" green="0.19999840860000001" blue="0.19999799130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Zp-Ma-WWF">
                                 <rect key="frame" x="80" y="76" width="100" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Player.name" usesSingleLineMode="YES" id="NiN-k6-mmj">
                                     <font key="font" metaFont="systemBold"/>
-                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
