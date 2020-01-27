@@ -26,9 +26,6 @@ class SeatViewController: NSViewController
     
     // Injected upon load via storyboard value.
     @objc dynamic var side: String = ""
-
-    // UI.
-    @IBOutlet weak var outlets: SeatViewOutlets!
         
     // Binds.
     var delegate: SeatViewControllerDelegate?
@@ -68,39 +65,51 @@ class SeatViewController: NSViewController
     
     func layoutEmpty()
     {
+        // Cast.
+        guard let view = view as? SeatView
+        else { return }
+        
         // Visibility.
-        outlets.circleBackgroundImageView.isHidden = true
-        outlets.ringButton.isHidden = true
-        outlets.nameImageView.isHidden = true
-        outlets.nameTextField.isHidden = true
-        outlets.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
+        view.circleBackgroundImageView.isHidden = true
+        view.ringButton.isHidden = true
+        view.nameImageView.isHidden = true
+        view.nameTextField.isHidden = true
+        view.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
     }
     
     func layoutZero(for player: Model.Player)
     {
+        // Cast.
+        guard let view = view as? SeatView
+        else { return }
+        
         // Visibility.
-        outlets.circleBackgroundImageView.isHidden = false
-        outlets.ringButton.isHidden = false
-        outlets.nameImageView.isHidden = false
-        outlets.nameTextField.isHidden = false
-        outlets.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
+        view.circleBackgroundImageView.isHidden = false
+        view.ringButton.isHidden = false
+        view.nameImageView.isHidden = false
+        view.nameTextField.isHidden = false
+        view.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
         
         // Apply finishes color.
-        outlets.ringButton.contentTintColor = NSColor.darkGray
-        outlets.nameImageView.contentTintColor = NSColor.darkGray
+        view.ringButton.contentTintColor = NSColor.darkGray
+        view.nameImageView.contentTintColor = NSColor.darkGray
         
         // Set name.
-        outlets.nameTextField.stringValue = player.name
+        view.nameTextField.stringValue = player.name
     }
     
     func layout(for player: Model.Player)
     {
+        // Cast.
+        guard let view = view as? SeatView
+        else { return }
+        
         // Visibility.
-        outlets.circleBackgroundImageView.isHidden = false
-        outlets.ringButton.isHidden = false
-        outlets.nameImageView.isHidden = false
-        outlets.nameTextField.isHidden = false
-        outlets.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = false }
+        view.circleBackgroundImageView.isHidden = false
+        view.ringButton.isHidden = false
+        view.nameImageView.isHidden = false
+        view.nameTextField.isHidden = false
+        view.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = false }
         
         // Layout finishes color.
         var finishesColor = NSColor.lightGray
@@ -110,25 +119,28 @@ class SeatViewController: NSViewController
         { finishesColor = ColorRanges.finishes.color(for: finishes) }
         
         // Apply finishes color.
-        outlets.ringButton.contentTintColor = finishesColor
-        outlets.nameImageView.contentTintColor = finishesColor
+        view.ringButton.contentTintColor = finishesColor
+        view.nameImageView.contentTintColor = finishesColor
         
         // Set name.
-        outlets.nameTextField.stringValue = player.name
+        view.nameTextField.stringValue = player.name
         
         // Tables.
-        outlets.tablesTextField.integerValue = Int.random(in: 1...40)
+        view.tablesTextField.integerValue = Int.random(in: 1...40)
         
         // Statistics.
-        outlets.vpipTextField.floatValue = Float.random(in: 0...1)
-        outlets.vpipTextField.toolTip = "\(Int.random(in: 0...100))/\(Int.random(in: 0...100))"
-        outlets.pfrTextField.floatValue = Float.random(in: 0...1)
-        outlets.pfrTextField.toolTip = "\(Int.random(in: 0...100))/\(Int.random(in: 0...100))"
-        outlets.handsTextField.integerValue = Int.random(in: 0...200)
+        let vpip = Float.random(in: 0...1)
+        let pfr = Float.random(in: 0...1)
+        
+        view.layoutVpip(for: vpip)
+        view.layoutPfr(for: pfr)
+        
+        // Hand count.
+        view.handsTextField.integerValue = Int.random(in: 0...200)
         
         // M.
-        outlets.mTextField.integerValue = Int.random(in: 5...50)
-        outlets.mHandsTextField.integerValue = Int.random(in: 0...200)
+        view.mTextField.integerValue = Int.random(in: 5...50)
+        view.mHandsTextField.integerValue = Int.random(in: 0...200)
     }
     
     

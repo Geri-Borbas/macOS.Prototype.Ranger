@@ -23,6 +23,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* Feature/UI/Seat_Tracking/0.4.4
+
+    + Created VPIP / PFR Bar sizing (layout constraints)
+
 * Feature/UI/Seat_Tracking/0.4.3
 
     + Window shadow updating

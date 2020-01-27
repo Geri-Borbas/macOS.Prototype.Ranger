@@ -245,7 +245,7 @@
                                     <constraint firstAttribute="height" constant="14" id="W9O-qj-y7f"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="message" size="11"/>
                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -302,7 +302,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="Seat" width="40" minWidth="40" maxWidth="100" id="Ysa-xG-jWO">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Seat">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -336,7 +336,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Player" width="140" minWidth="100" maxWidth="1000" id="g8d-rp-OHE">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -375,7 +375,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Stack" width="130" minWidth="100" maxWidth="1000" id="wff-xd-lNv">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1996,11 +1996,6 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Metrics" id="NCK-v9-vz5"/>
                             </imageView>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-Pj-ju1" userLabel="Preview">
-                                <rect key="frame" x="0.0" y="0.0" width="210" height="140"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SeatViewController.Preview" id="rI5-XR-m8p"/>
-                            </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-QA-mR7" userLabel="Circle Background">
                                 <rect key="frame" x="120" y="25" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -2041,7 +2036,7 @@
                                 <rect key="frame" x="3" y="75" width="27" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="12" usesSingleLineMode="YES" id="7xq-Th-AmD">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -2087,87 +2082,145 @@
                                 </view>
                                 <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             </box>
-                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-jK-mp8" userLabel="VPIP Box">
+                            <customView id="GPq-bG-0Xe" userLabel="VPIP View">
                                 <rect key="frame" x="120" y="33" width="44" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="HpA-21-hWH">
-                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-JT-Xf5">
-                                            <rect key="frame" x="1" y="0.0" width="41" height="20"/>
+                                <subviews>
+                                    <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-jK-mp8" userLabel="VPIP Box">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                        <view key="contentView" id="HpA-21-hWH">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="24" usesSingleLineMode="YES" id="56r-8K-oBe">
-                                                <font key="font" metaFont="systemBold" size="16"/>
-                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <outlet property="formatter" destination="jec-Cj-sVt" id="ebz-Aa-EOx"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                </view>
-                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ifj-XY-chy" userLabel="PFR Box">
+                                            <subviews>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mWh-JT-Xf5">
+                                                    <rect key="frame" x="18" y="1" width="25" height="19"/>
+                                                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="right" title="24" usesSingleLineMode="YES" id="56r-8K-oBe">
+                                                        <font key="font" metaFont="systemBold" size="16"/>
+                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <outlet property="formatter" destination="jec-Cj-sVt" id="ebz-Aa-EOx"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mWh-JT-Xf5" firstAttribute="centerY" secondItem="HpA-21-hWH" secondAttribute="centerY" id="3gM-LB-Cex"/>
+                                                <constraint firstItem="mWh-JT-Xf5" firstAttribute="trailing" secondItem="HpA-21-hWH" secondAttribute="trailing" multiplier="41:44" id="uk8-Ma-A1I"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="F3f-wu-A9K"/>
+                                        </constraints>
+                                        <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    </box>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wav-jK-mp8" secondAttribute="trailing" id="ZM6-oT-hl0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wav-jK-mp8" secondAttribute="bottom" id="bRu-0J-5Zf"/>
+                                    <constraint firstItem="Wav-jK-mp8" firstAttribute="top" secondItem="GPq-bG-0Xe" secondAttribute="top" id="oYS-Z6-Mqg"/>
+                                </constraints>
+                            </customView>
+                            <customView id="b3b-IX-C2J" userLabel="PFR View">
                                 <rect key="frame" x="166" y="33" width="44" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="b7H-DW-QH7">
-                                    <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3V-J8-Mmj">
-                                            <rect key="frame" x="2" y="0.0" width="41" height="20"/>
+                                <subviews>
+                                    <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ifj-XY-chy" userLabel="PFR Box">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                        <view key="contentView" id="b7H-DW-QH7">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="16" usesSingleLineMode="YES" id="4l3-Hi-Aie">
-                                                <font key="font" metaFont="systemBold" size="16"/>
-                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <outlet property="formatter" destination="jec-Cj-sVt" id="hnu-vw-EFq"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                </view>
-                                <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            </box>
+                                            <subviews>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="F3V-J8-Mmj">
+                                                    <rect key="frame" x="1" y="1" width="23" height="19"/>
+                                                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="16" usesSingleLineMode="YES" id="4l3-Hi-Aie">
+                                                        <font key="font" metaFont="systemBold" size="16"/>
+                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <outlet property="formatter" destination="jec-Cj-sVt" id="hnu-vw-EFq"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="F3V-J8-Mmj" firstAttribute="centerY" secondItem="b7H-DW-QH7" secondAttribute="centerY" id="L3z-qu-pXG"/>
+                                                <constraint firstItem="F3V-J8-Mmj" firstAttribute="leading" secondItem="b7H-DW-QH7" secondAttribute="trailing" multiplier="3:44" id="MWQ-OY-641"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="dhR-gq-6ZT"/>
+                                        </constraints>
+                                        <color key="fillColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    </box>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ifj-XY-chy" secondAttribute="bottom" id="IEf-5v-nqx"/>
+                                    <constraint firstItem="ifj-XY-chy" firstAttribute="top" secondItem="b3b-IX-C2J" secondAttribute="top" id="R1F-dJ-y6d"/>
+                                    <constraint firstItem="ifj-XY-chy" firstAttribute="leading" secondItem="b3b-IX-C2J" secondAttribute="leading" id="Ygn-Yo-Rlk"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <connections>
-                            <outlet property="outlets" destination="9xR-GV-iia" id="F3m-1Y-CT7"/>
+                            <outlet property="circleBackgroundImageView" destination="R7t-QA-mR7" id="8e4-cY-lkW"/>
+                            <outlet property="handsTextField" destination="gOy-7c-HrK" id="vhb-6e-jMe"/>
+                            <outlet property="mBox" destination="L4k-td-Qky" id="V88-Gy-p1X"/>
+                            <outlet property="mHandsTextField" destination="RNa-7K-DbD" id="UkW-0l-80p"/>
+                            <outlet property="mTextField" destination="3MG-iQ-dy7" id="xOx-tL-5xF"/>
+                            <outlet property="nameImageView" destination="2th-De-PgR" id="Pdm-ER-grg"/>
+                            <outlet property="nameTextField" destination="U4b-6F-EIh" id="9p4-HP-8TJ"/>
+                            <outlet property="pfrBox" destination="ifj-XY-chy" id="fcm-mK-3dX"/>
+                            <outlet property="pfrBoxWidthConstraint" destination="dhR-gq-6ZT" id="3nA-gq-d9o"/>
+                            <outlet property="pfrPercentProvider" destination="JSP-sE-yc6" id="NZb-DI-ucf"/>
+                            <outlet property="pfrTextField" destination="F3V-J8-Mmj" id="kAy-gK-Wx8"/>
+                            <outlet property="pfrView" destination="b3b-IX-C2J" id="2Ic-rQ-2Iz"/>
+                            <outlet property="ringButton" destination="ip1-dc-zIr" id="pea-6l-yCs"/>
+                            <outlet property="tablesTextField" destination="pWF-r5-SWD" id="jW8-En-KoS"/>
+                            <outlet property="vpipBox" destination="Wav-jK-mp8" id="4z3-Qi-Weo"/>
+                            <outlet property="vpipBoxWidthConstraint" destination="F3f-wu-A9K" id="vqL-kA-YKR"/>
+                            <outlet property="vpipPercentProvider" destination="kxo-Lh-y0m" id="ZZB-2d-8AJ"/>
+                            <outlet property="vpipTextField" destination="mWh-JT-Xf5" id="22K-I1-q8m"/>
+                            <outlet property="vpipView" destination="GPq-bG-0Xe" id="fPl-Qg-FL2"/>
                         </connections>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="side" value="Right"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="outlets" destination="9xR-GV-iia" id="pNb-WV-QIY"/>
-                    </connections>
                 </viewController>
+                <customObject id="JSP-sE-yc6" userLabel="PFR PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.59999999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="kxo-Lh-y0m" userLabel="VPIP PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <real key="value" value="0.10000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.59999999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
                 <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="jec-Cj-sVt" userLabel="## (%) (x100) Number Formatter">
                     <integer key="multiplier" value="100"/>
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="Oje-6V-j82" userLabel="##🅜 Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
-                <customObject id="9xR-GV-iia" customClass="SeatViewOutlets" customModule="Ranger" customModuleProvider="target">
-                    <connections>
-                        <outlet property="circleBackgroundImageView" destination="R7t-QA-mR7" id="mF5-T9-72W"/>
-                        <outlet property="handsTextField" destination="gOy-7c-HrK" id="LhW-Ax-jBG"/>
-                        <outlet property="mBox" destination="L4k-td-Qky" id="2Ze-y7-29b"/>
-                        <outlet property="mHandsTextField" destination="RNa-7K-DbD" id="iAr-r2-hA8"/>
-                        <outlet property="mTextField" destination="3MG-iQ-dy7" id="ZF7-Rn-WJR"/>
-                        <outlet property="nameImageView" destination="2th-De-PgR" id="b2p-Jm-u9U"/>
-                        <outlet property="nameTextField" destination="U4b-6F-EIh" id="6oI-PP-tSa"/>
-                        <outlet property="pfrBox" destination="ifj-XY-chy" id="H6e-HF-mg3"/>
-                        <outlet property="pfrTextField" destination="F3V-J8-Mmj" id="3hk-sp-ZSg"/>
-                        <outlet property="ringButton" destination="ip1-dc-zIr" id="17M-sp-sWl"/>
-                        <outlet property="tablesTextField" destination="pWF-r5-SWD" id="F47-we-AKO"/>
-                        <outlet property="vpipBox" destination="Wav-jK-mp8" id="Fbd-RC-Liv"/>
-                        <outlet property="vpipTextField" destination="mWh-JT-Xf5" id="JoI-vJ-ScC"/>
-                    </connections>
-                </customObject>
                 <customObject id="cts-lR-h6P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="843" y="1624"/>
@@ -2277,7 +2330,6 @@
         <image name="SeatViewController.Circle.Ring" width="90" height="90"/>
         <image name="SeatViewController.Metrics" width="210" height="140"/>
         <image name="SeatViewController.Name.Box" width="210" height="90"/>
-        <image name="SeatViewController.Preview" width="210" height="140"/>
         <image name="Simulated Tables" width="953" height="657"/>
         <image name="Unknown" width="30" height="20"/>
     </resources>

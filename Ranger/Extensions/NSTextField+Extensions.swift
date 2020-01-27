@@ -6,7 +6,7 @@
 //  Copyright © 2020. Geri Borbás. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 
 extension NSTextField
