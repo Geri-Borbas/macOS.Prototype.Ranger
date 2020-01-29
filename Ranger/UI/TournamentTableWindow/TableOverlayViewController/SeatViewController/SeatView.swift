@@ -17,15 +17,13 @@ class SeatView: NSView
     @IBOutlet weak var circleBackgroundImageView: NSImageView!
     @IBOutlet weak var ringButton: NSButton!
     
-    // Names / Tables.
-    @IBOutlet weak var nameTextField: NSTextField!
+    // Tables.
     @IBOutlet weak var tablesTextField: NSTextField!
-    @IBOutlet weak var nameImageView: NSImageView!
+    @IBOutlet weak var tablesBox: NSBox!
     
     // M.
     @IBOutlet weak var mTextField: NSTextField!
-    @IBOutlet weak var mHandsTextField: NSTextField!
-    @IBOutlet weak var mBox: NSBox!
+    @IBOutlet weak var dealTextField: NSTextField!
     
     // Statistics.
     @IBOutlet weak var vpipTextField: NSTextField!
@@ -46,9 +44,9 @@ class SeatView: NSView
     lazy var statisticsViews: [NSView] =
     [
         tablesTextField,
+        tablesBox,
         mTextField,
-        mHandsTextField,
-        mBox,
+        dealTextField,
         vpipTextField,
         pfrTextField,
         handsTextField,
@@ -59,8 +57,7 @@ class SeatView: NSView
     lazy var pokerTrackerStatisticsViews: [NSView] =
     [
         mTextField,
-        mHandsTextField,
-        mBox,
+        dealTextField,
         vpipTextField,
         pfrTextField,
         handsTextField,
@@ -102,7 +99,8 @@ class SeatView: NSView
         pfrBoxWidthConstraint.constant = pfrView.bounds.size.width * CGFloat(pfrPercentProvider.percent(value: value))
         
         // Color.
-        pfrBox.fillColor = ColorRanges.PFR.color(for: Double(value))
+        let color = ColorRanges.PFR.color(for: Double(value))
+        pfrBox.fillColor = color
         
         // Text.
         pfrTextField.floatValue = value
@@ -130,7 +128,7 @@ class SeatView: NSView
         // Capture corner radiuses.
         cornerRadiusesForBoxes =
         [
-            mBox : mBox.cornerRadius,
+            tablesBox : tablesBox.cornerRadius,
             vpipBox : vpipBox.cornerRadius,
             pfrBox : pfrBox.cornerRadius
         ]
@@ -138,10 +136,9 @@ class SeatView: NSView
         // Capture font sizes.
         fontSizesForIdentifiers =
         [
-            nameTextField : nameTextField.fontSize,
             tablesTextField : tablesTextField.fontSize,
             mTextField : mTextField.fontSize,
-            mHandsTextField : mHandsTextField.fontSize,
+            dealTextField : dealTextField.fontSize,
             vpipTextField : vpipTextField.fontSize,
             pfrTextField : pfrTextField.fontSize,
             handsTextField : handsTextField.fontSize
@@ -157,15 +154,14 @@ class SeatView: NSView
     func scale(to scale: CGFloat)
     {
         // Scale corner radiuses.
-        mBox.cornerRadius = capturedCornerRadius(for: mBox) * scale
+        tablesBox.cornerRadius = capturedCornerRadius(for: tablesBox) * scale
         vpipBox.cornerRadius = capturedCornerRadius(for: vpipBox) * scale
         pfrBox.cornerRadius = capturedCornerRadius(for: pfrBox) * scale
         
         // Scale fonts.
-        nameTextField.fontSize = capturedFontSize(for: nameTextField) * scale
         tablesTextField.fontSize = capturedFontSize(for: tablesTextField) * scale
         mTextField.fontSize = capturedFontSize(for: mTextField) * scale
-        mHandsTextField.fontSize = capturedFontSize(for: mHandsTextField) * scale
+        dealTextField.fontSize = capturedFontSize(for: dealTextField) * scale
         vpipTextField.fontSize = capturedFontSize(for: vpipTextField) * scale
         pfrTextField.fontSize = capturedFontSize(for: pfrTextField) * scale
         handsTextField.fontSize = capturedFontSize(for: handsTextField) * scale

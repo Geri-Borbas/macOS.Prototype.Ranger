@@ -5,22 +5,17 @@
         {
             "min" : null,
             "max" : 1,
-            "color" : "Standard blue"
-        },
-        {
-            "min" : 2,
-            "max" : 3,
-            "color" : "Standard cyan"
-        },
-        {
-            "min" : 3,
-            "max" : 5,
             "color" : "Standard green"
         },
         {
-            "min" : 7,
-            "max" : 9,
+            "min" : 2,
+            "max" : 5,
             "color" : "Standard yellow"
+        },
+        {
+            "min" : 6,
+            "max" : 9,
+            "color" : "Standard orange"
         },
         {
             "min" : 10,

@@ -72,8 +72,6 @@ class SeatViewController: NSViewController
         // Visibility.
         view.circleBackgroundImageView.isHidden = true
         view.ringButton.isHidden = true
-        view.nameImageView.isHidden = true
-        view.nameTextField.isHidden = true
         view.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
     }
     
@@ -86,16 +84,10 @@ class SeatViewController: NSViewController
         // Visibility.
         view.circleBackgroundImageView.isHidden = false
         view.ringButton.isHidden = false
-        view.nameImageView.isHidden = false
-        view.nameTextField.isHidden = false
         view.statisticsViews.forEach{ eachStatisticsView in eachStatisticsView.isHidden = true }
         
         // Apply finishes color.
         view.ringButton.contentTintColor = NSColor.darkGray
-        view.nameImageView.contentTintColor = NSColor.darkGray
-        
-        // Set name.
-        view.nameTextField.stringValue = player.name
     }
     
     func layout(for player: Model.Player, tournamentInfo: TournamentInfo)
@@ -107,12 +99,10 @@ class SeatViewController: NSViewController
         // Visibility.
         view.circleBackgroundImageView.isHidden = false
         view.ringButton.isHidden = false
-        view.nameImageView.isHidden = false
-        view.nameTextField.isHidden = false
         view.statisticsViews.forEach{ $0.isHidden = false }
         
         // Set name.
-        view.nameTextField.stringValue = player.name
+        view.ringButton.toolTip = player.name
         
         // Layout finishes color.
         var finishesColor = NSColor.lightGray
@@ -121,14 +111,16 @@ class SeatViewController: NSViewController
                 
         // Apply finishes color.
         view.ringButton.contentTintColor = finishesColor
-        view.nameTextField.textColor = finishesColor
         
         // Tables.
         if let tables = player.sharkScope.tables
         {
             view.tablesTextField.isHidden = false
             view.tablesTextField.integerValue = tables
-            view.tablesTextField.textColor = ColorRanges.tables.color(for: tables)
+            
+            let tablesColor = ColorRanges.tables.color(for: tables)
+            view.tablesTextField.textColor = tablesColor
+            view.tablesBox.borderColor = tablesColor
         }
         else
         { view.tablesTextField.isHidden = true }
@@ -150,11 +142,11 @@ class SeatViewController: NSViewController
             view.handsTextField.integerValue = statistics.hands
         
             // M.
+            let mColor = ColorRanges.M.color(for: Double(M))
             view.mTextField.floatValue = M
-            view.mHandsTextField.integerValue = hands
-            view.mBox.fillColor = ColorRanges.M.color(for: Double(M))
-            view.mHandsTextField.textColor = ColorRanges.M.color(for: Double(M))
-            view.mBox.toolTip = "\(M) M (\(hands) hands)"
+            view.dealTextField.integerValue = hands
+            view.mTextField.textColor = mColor
+            view.dealTextField.textColor = mColor.blended(withFraction: 0.4, of: NSColor.clear) ?? mColor
         }
         else
         { view.pokerTrackerStatisticsViews.forEach{ $0.isHidden = true } }

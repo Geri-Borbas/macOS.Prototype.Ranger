@@ -3,6 +3,7 @@
 * Doing
 
     + Next up
+        + Lookup duplicate windows issue
         + Resume normal window layering when table is not focused
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
@@ -21,6 +22,12 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Seat_Tracking/0.5.2
+
+    + Added `Gray` color range assets
+    + `Ranger` can be opted out easily in table tracker
+    + More `SeatViewController` UI tweaks
 
 * Feature/UI/Seat_Tracking/0.5.0
 

@@ -24,6 +24,13 @@ class TableTracker
 {
     
     
+    let windowOwnerNames: [String] =
+    [
+        // "Ranger",
+        "PokerStarsEU"
+    ]
+    
+    
     var tableWindowInfos: [TableWindowInfo] = []
     weak var delegate: TableTrackerDelegate?
     
@@ -85,7 +92,13 @@ class TableTracker
         let name = (windowInfoDictionary["kCGWindowName"] as? String)
         
         return (
-            (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
+            windowOwnerNames.reduce(
+                false,
+                {
+                    contains, eachOwnerName in
+                    contains || ownerName == eachOwnerName
+                }
+            ) &&
             name?.contains("Tournament") ?? false &&
             name?.contains("Lobby") ?? false
         )
@@ -97,7 +110,13 @@ class TableTracker
         let name = (windowInfoDictionary["kCGWindowName"] as? String)
         
         return (
-            (ownerName == "PokerStarsEU" || ownerName == "Ranger") &&
+            windowOwnerNames.reduce(
+                false,
+                {
+                    contains, eachOwnerName in
+                    contains || ownerName == eachOwnerName
+                }
+            ) &&
             name?.contains("Tournament") ?? false &&
             name?.contains("Table") ?? false &&
             name?.contains("Logged In") ?? false

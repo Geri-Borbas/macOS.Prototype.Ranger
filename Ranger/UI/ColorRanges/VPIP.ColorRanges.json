@@ -14,6 +14,11 @@
         },
         {
             "min" : 0.15,
+            "max" : 0.20,
+            "color" : "Standard orange"
+        },
+        {
+            "min" : 0.20,
             "max" : 0.35,
             "color" : "Standard yellow"
         },
