@@ -24,7 +24,7 @@ class TableTracker
 {
     
     
-    let updatesPerSecond = 1.0 // 60.0
+    let updatesPerSecond = 60.0
     let trackedProcesses: [String] =
     [
         "Ranger",

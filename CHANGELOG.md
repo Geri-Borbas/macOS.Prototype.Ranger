@@ -28,7 +28,12 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
-* Feature/UI/Seat_Tracking/0.5.5
+* 2.2.0
+
+    + Merged `Feature/UI/Table_Overlay`
+    + Minor String extension fix
+
+* Feature/UI/Table_Overlay/0.5.5
 
     `SeatViewOverlay`
         + Clamp width constraints
@@ -38,48 +43,48 @@
         + Resume `.normal` window levels when tables are not active
     + Some convinient String extension
 
-* Feature/UI/Seat_Tracking/0.5.2
+* Feature/UI/Table_Overlay/0.5.2
 
     + Added `Gray` color range assets
     + `Ranger` can be opted out easily in table tracker
     + More `SeatViewController` UI tweaks
 
-* Feature/UI/Seat_Tracking/0.5.0
+* Feature/UI/Table_Overlay/0.5.0
 
     + Color range adjustments / UI refinements
     + Added `Tables.ColorRanges`
 
-* Feature/UI/Seat_Tracking/0.4.8
+* Feature/UI/Table_Overlay/0.4.8
 
     + Created `Right Seat View Controller` (with mirrored assets)
 
-* Feature/UI/Seat_Tracking/0.4.7
+* Feature/UI/Table_Overlay/0.4.7
 
     + Wired in `SeatViewController` data hooks
 
-* Feature/UI/Seat_Tracking/0.4.6
+* Feature/UI/Table_Overlay/0.4.6
 
     + Added `ColorRanges` (M / VPIP / PFR / Stack) with `ColorRangeProvider` compatibility         
 
-* Feature/UI/Seat_Tracking/0.4.5 
+* Feature/UI/Table_Overlay/0.4.5 
 
     + Layout (M / wrappers / Tooltip)
 
-* Feature/UI/Seat_Tracking/0.4.4
+* Feature/UI/Table_Overlay/0.4.4
 
     + Created VPIP / PFR Bar sizing (layout constraints)
 
-* Feature/UI/Seat_Tracking/0.4.3
+* Feature/UI/Table_Overlay/0.4.3
 
     + Window shadow updating
     + Empty / Zero states for `SeatViewController`
 
-* Feature/UI/Seat_Tracking/0.4.2
+* Feature/UI/Table_Overlay/0.4.2
 
     + Created `NSTextField.fontSize` extension
     + Implemented font scaling in `SeatView`
 
-* Feature/UI/Seat_Tracking/0.4.0
+* Feature/UI/Table_Overlay/0.4.0
 
     + `SeatViewController` size layout
         + Countless trial and error with layout constraints
@@ -87,26 +92,26 @@
         + Created `SeatView` to manage layout size finetunes (corner radiuses / font sizes)
         + Extracted common outlets to `SeatViewOutles` 
 
-* Feature/UI/Seat_Tracking/0.3.7
+* Feature/UI/Table_Overlay/0.3.7
 
     + Created / Added `SeatViewController` assets
 
-* Feature/UI/Seat_Tracking/0.3.6
+* Feature/UI/Table_Overlay/0.3.6
 
     + Tweaked `Finished` colors
     + Added `SeatViewController.nameBox` / `SeatViewController.nameTextField` to showcase colors more 
     
-* Feature/UI/Seat_Tracking/0.3.5
+* Feature/UI/Table_Overlay/0.3.5
 
     + `TournamentTableWindow.window` is now `NSPanel`
         + Doesn't steal focus from other processes using `.nonactivatingPanel`
 
-* Feature/UI/Seat_Tracking/0.3.4
+* Feature/UI/Table_Overlay/0.3.4
 
     + `SeatViewController` color codes rings by `Finishes`
     + Fixed SharkScope data flow into `TableOverlay`  
 
-* Feature/UI/Seat_Tracking/0.3.3
+* Feature/UI/Table_Overlay/0.3.3
 
     + Created JSON / Asset based `ColorRanges`
         + Storyboard based ranges renamed to `ColorRangeProvider` (with some hardcoded compatibility)
@@ -114,11 +119,11 @@
         + Created ranges for `Finished` with more granular limits
         + Added `ColorRangesTests`
 
-* Feature/UI/Seat_Tracking/0.3.0
+* Feature/UI/Table_Overlay/0.3.0
 
     + Created conversion to table seat (considering preferred seat)
 
-* Feature/UI/Seat_Tracking/0.2.9
+* Feature/UI/Table_Overlay/0.2.9
 
     + Added player model hooks to `TableOverlayViewController`
         + `TableOverlayViewController.update(with:)`
@@ -127,12 +132,12 @@
         + `TableOverlayViewControllerDelegate` / `SeatViewControllerDelegate`
     + Some renaming
 
-* Feature/UI/Seat_Tracking/0.2.8
+* Feature/UI/Table_Overlay/0.2.8
 
     + `PlayersTableViewController` is added via content view / embed segue as well
     + Removed `TournamentViewController.track()` leaving only `TournamentViewController.update()` to inject table info updates
 
-* Feature/UI/Seat_Tracking/0.2.7
+* Feature/UI/Table_Overlay/0.2.7
 
     + Strong typed child view controller referencing upon `TournamentViewController` embed segues
     + Added `SeatViewController`
@@ -140,26 +145,27 @@
         + `seat` index gets injected from `segue.identifier`
         + `side` gets injected from storyboard "User Defined Runtime Attributes"
 
-* Feature/UI/Seat_Tracking/0.2.5
+* Feature/UI/Table_Overlay/0.2.5
 
     + `TableOverlayViewController` added using storyboard `ContentView`
     + Fixed up layout / resizing
 
-* Feature/UI/Seat_Tracking/0.2.1
+* Feature/UI/Table_Overlay/0.2.1
 
     + `Table Overlay` view layout is aligned (per pixel level)
 
-* Feature/UI/Seat_Tracking/0.2.0
+* Feature/UI/Table_Overlay/0.2.0
 
     + Refactored `TournamentWindowController` layout / hieararchy
         + A borderless / floating window above the entire table window
         + Created seat assets for layout (and some basic template)
         + Tracking Observed Table windows as well
 
-* Feature/UI/Seat_Tracking/0.0.1
+* Feature/UI/Table_Overlay/0.0.1
 
     + Created design files
     + Added layout assets yet to `SimulatedTable`    
+    
 * 2.0.1
 
     + Moved `Tournaments` statistics to `RangerTests.TournamentsTests`

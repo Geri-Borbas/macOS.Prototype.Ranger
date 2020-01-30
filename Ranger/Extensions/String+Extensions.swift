@@ -34,10 +34,10 @@ extension String
     func contains(any strings: [String]) -> Bool
     {
         strings.reduce(
-            true,
+            false,
             {
                 contains, eachString in
-                contains && self.contains(eachString)
+                contains || self.contains(eachString)
             }
         )
     }
