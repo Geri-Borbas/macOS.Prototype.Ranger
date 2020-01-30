@@ -28,7 +28,7 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
-* Feature/UI/Seat_
+* Feature/UI/Seat_Tracking/0.5.5
 
     `SeatViewOverlay`
         + Clamp width constraints
