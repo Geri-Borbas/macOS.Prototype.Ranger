@@ -35,14 +35,11 @@ class TournamentWindowController: NSWindowController
         // Hide buttons.
         if let window = tourneyTableViewController.view.window as? NSPanel
         {
-            // Always on top.
-            window.level = .floating // .statusBar
-            window.titlebarAppearsTransparent = true
-            
-            // Click-through, but titled.
+            // Styles.
             window.styleMask = [.borderless, .titled, .closable, .nonactivatingPanel]
             
             // See-trough.
+            window.titlebarAppearsTransparent = true
             window.backgroundColor = NSColor.clear
             window.isOpaque = false
          
@@ -50,9 +47,6 @@ class TournamentWindowController: NSWindowController
             window.standardWindowButton(.miniaturizeButton)?.isHidden = true
             window.standardWindowButton(.zoomButton)?.isHidden = true
             window.standardWindowButton(.closeButton)?.isHidden = true
-            
-            window.makeKeyAndOrderFront(window)
-            window.orderFrontRegardless()
         }
         
         return tournamentTableWindowController
@@ -61,6 +55,15 @@ class TournamentWindowController: NSWindowController
     func update(with tableWindowInfo: TableWindowInfo)
     {
         let tourneyTableViewController = self.contentViewController as! TournamentViewController
-            tourneyTableViewController.update(with: tableWindowInfo)
+        
+        // Hide buttons.
+        if let window = tourneyTableViewController.view.window as? NSPanel
+        { window.order(NSWindow.OrderingMode.above, relativeTo: tableWindowInfo.number) }
+            
+        // window.makeKeyAndOrderFront(window)
+        // window.orderFrontRegardless()
+        
+        // Update content.
+        tourneyTableViewController.update(with: tableWindowInfo)
     }
 }

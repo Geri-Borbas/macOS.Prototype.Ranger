@@ -23,7 +23,6 @@ class SeatView: NSView
     
     // M.
     @IBOutlet weak var mTextField: NSTextField!
-    @IBOutlet weak var dealTextField: NSTextField!
     
     // Statistics.
     @IBOutlet weak var vpipTextField: NSTextField!
@@ -46,7 +45,6 @@ class SeatView: NSView
         tablesTextField,
         tablesBox,
         mTextField,
-        dealTextField,
         vpipTextField,
         pfrTextField,
         handsTextField,
@@ -57,7 +55,6 @@ class SeatView: NSView
     lazy var pokerTrackerStatisticsViews: [NSView] =
     [
         mTextField,
-        dealTextField,
         vpipTextField,
         pfrTextField,
         handsTextField,
@@ -83,7 +80,14 @@ class SeatView: NSView
     func layoutVpip(for value: Float)
     {
         // Size.
-        vpipBoxWidthConstraint.constant = vpipView.bounds.size.width * CGFloat(vpipPercentProvider.percent(value: value))
+        var width = Float(vpipView.bounds.size.width) * vpipPercentProvider.percent(value: value)
+        
+        // Clamp.
+        if (width.isNaN || width < 0.0) { width = 0.0 }
+        if (width > Float(vpipView.bounds.size.width)) { width = Float(vpipView.bounds.size.width) }
+        
+        // Set.
+        vpipBoxWidthConstraint.constant = CGFloat(width)
         
         // Color.
         vpipBox.fillColor = ColorRanges.VPIP.color(for: Double(value))
@@ -95,8 +99,15 @@ class SeatView: NSView
     
     func layoutPfr(for value: Float)
     {
-        // Size.
-        pfrBoxWidthConstraint.constant = pfrView.bounds.size.width * CGFloat(pfrPercentProvider.percent(value: value))
+         // Size.
+       var width = Float(pfrView.bounds.size.width) * pfrPercentProvider.percent(value: value)
+       
+       // Clamp.
+       if (width.isNaN || width < 0.0) { width = 0.0 }
+       if (width > Float(pfrView.bounds.size.width)) { width = Float(pfrView.bounds.size.width) }
+       
+       // Set.
+       pfrBoxWidthConstraint.constant = CGFloat(width)
         
         // Color.
         let color = ColorRanges.PFR.color(for: Double(value))
@@ -138,7 +149,6 @@ class SeatView: NSView
         [
             tablesTextField : tablesTextField.fontSize,
             mTextField : mTextField.fontSize,
-            dealTextField : dealTextField.fontSize,
             vpipTextField : vpipTextField.fontSize,
             pfrTextField : pfrTextField.fontSize,
             handsTextField : handsTextField.fontSize
@@ -161,7 +171,6 @@ class SeatView: NSView
         // Scale fonts.
         tablesTextField.fontSize = capturedFontSize(for: tablesTextField) * scale
         mTextField.fontSize = capturedFontSize(for: mTextField) * scale
-        dealTextField.fontSize = capturedFontSize(for: dealTextField) * scale
         vpipTextField.fontSize = capturedFontSize(for: vpipTextField) * scale
         pfrTextField.fontSize = capturedFontSize(for: pfrTextField) * scale
         handsTextField.fontSize = capturedFontSize(for: handsTextField) * scale

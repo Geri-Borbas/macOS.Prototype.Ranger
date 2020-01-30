@@ -30,6 +30,9 @@ struct TableWindowInfo
             height: self.bounds.size.height
         )
     }
+    
+    var isMainWindow: Bool
+    { index == 1 }
         
     // Parse.
     var tableInfo: TableInfo?
@@ -65,19 +68,7 @@ extension TableWindowInfo: Equatable
     /// Equality is used for diffing in `TableTracker.tick()`.
     static func == (lhs: TableWindowInfo, rhs: TableWindowInfo) -> Bool
     {
-        lhs.tableInfo?.tournamentNumber == rhs.tableInfo?.tournamentNumber
-    }
-}
-
-
-extension TableWindowInfo: Comparable
-{
-    
-    
-    /// Equality is used in sorting at `TableTracker.lookupTableWindowInfos()`.
-    static func < (lhs: TableWindowInfo, rhs: TableWindowInfo) -> Bool
-    {
-        lhs.number < rhs.number
+        lhs.number == rhs.number
     }
 }
 

@@ -38,6 +38,7 @@ public struct CompletedTournamentsRequest: ApiRequest
         (amount == 0) ? [:] :
         [
             "order" : "player,1~\(amount)",
+            // "filter" : "Date:1274109174~1274130000;Entrants:5~*;Limit:Last,1~100"
         ]
     }
     public var useCache: Bool = true

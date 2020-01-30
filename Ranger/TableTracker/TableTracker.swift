@@ -24,9 +24,10 @@ class TableTracker
 {
     
     
-    let windowOwnerNames: [String] =
+    let updatesPerSecond = 1.0 // 60.0
+    let trackedProcesses: [String] =
     [
-        // "Ranger",
+        "Ranger",
         "PokerStarsEU"
     ]
     
@@ -44,7 +45,7 @@ class TableTracker
         { CGWindowListCreateImage(CGRect.zero, .optionOnScreenOnly, kCGNullWindowID, .nominalResolution) }
         
         // Kickoff timer.
-        let interval = 1.0 / 60.0
+        let interval = 1.0 / updatesPerSecond
         let timer = Timer(timeInterval: interval, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
     }
@@ -83,43 +84,32 @@ class TableTracker
                 index: eachIndex,
                 bounds: CGRect.init(dictionaryRepresentation:(eachPokerStarsWindowInfo["kCGWindowBounds"] as! CFDictionary)) ?? CGRect()
             )
-        }.sorted()
+        }
     }
     
     func isLobbyWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool
     {
-        let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String
-        let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        guard
+            let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String,
+            let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        else { return false }
         
         return (
-            windowOwnerNames.reduce(
-                false,
-                {
-                    contains, eachOwnerName in
-                    contains || ownerName == eachOwnerName
-                }
-            ) &&
-            name?.contains("Tournament") ?? false &&
-            name?.contains("Lobby") ?? false
+            ownerName.contained(in: trackedProcesses) &&
+            name.contains(each: ["Tournament", "Lobby"])
         )
     }
     
     func isTableWindowInfo(_ windowInfoDictionary: [String:Any]) -> Bool
     {
-        let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String
-        let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        guard
+            let ownerName = windowInfoDictionary["kCGWindowOwnerName"] as? String,
+            let name = (windowInfoDictionary["kCGWindowName"] as? String)
+        else { return false }
         
         return (
-            windowOwnerNames.reduce(
-                false,
-                {
-                    contains, eachOwnerName in
-                    contains || ownerName == eachOwnerName
-                }
-            ) &&
-            name?.contains("Tournament") ?? false &&
-            name?.contains("Table") ?? false &&
-            name?.contains("Logged In") ?? false
+            ownerName.contained(in: trackedProcesses) &&
+            name.contains(each: ["Tournament", "Table", "Logged In"])
         )
     }
     
@@ -128,17 +118,29 @@ class TableTracker
         // Lookup.
         let currentTableWindowInfos = lookupTableWindowInfos()
         
-        // Report any change.
-        currentTableWindowInfos.difference(from: tableWindowInfos).forEach
+        // Lookup removals.
+        tableWindowInfos.forEach
         {
-            eachChange in
-            switch eachChange
+            eachTableWindowInfo in
+            guard currentTableWindowInfos.contains(eachTableWindowInfo)
+            else
             {
-                case .insert(_, let eachTableWindowInfo, _):
-                    delegate?.windowTrackerDidStartTrackingTable(tableWindowInfo: eachTableWindowInfo)
-                
-                case .remove(_, let eachTableWindowInfo, _):
-                    delegate?.windowTrackerDidStopTrackingTable(tableWindowInfo: eachTableWindowInfo)
+                // Not contained anymore, tracking stopped.
+                delegate?.windowTrackerDidStopTrackingTable(tableWindowInfo: eachTableWindowInfo)
+                return
+            }
+        }
+        
+        // Lookup insertation.
+        currentTableWindowInfos.forEach
+        {
+            eachCurrentTableWindowInfo in
+            guard tableWindowInfos.contains(eachCurrentTableWindowInfo)
+            else
+            {
+                // Not yet contained, start tracking.
+                delegate?.windowTrackerDidStartTrackingTable(tableWindowInfo: eachCurrentTableWindowInfo)
+                return
             }
         }
         

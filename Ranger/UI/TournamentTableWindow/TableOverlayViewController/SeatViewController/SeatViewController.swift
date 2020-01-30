@@ -123,7 +123,11 @@ class SeatViewController: NSViewController
             view.tablesBox.borderColor = tablesColor
         }
         else
-        { view.tablesTextField.isHidden = true }
+        {
+            view.tablesTextField.isHidden = true
+            view.tablesBox.isHidden = true
+            
+        }
         
         // PokerTracker statistics.
         if let statistics = player.pokerTracker?.statistics
@@ -132,7 +136,6 @@ class SeatViewController: NSViewController
             
             // Calculations.
             let M = Float(player.stack) / tournamentInfo.orbitCost
-            let hands = Int(M * Float(tournamentInfo.players))
         
             // Preflop.
             view.layoutVpip(for: Float(statistics.VPIP))
@@ -144,9 +147,7 @@ class SeatViewController: NSViewController
             // M.
             let mColor = ColorRanges.M.color(for: Double(M))
             view.mTextField.floatValue = M
-            view.dealTextField.integerValue = hands
             view.mTextField.textColor = mColor
-            view.dealTextField.textColor = mColor.blended(withFraction: 0.4, of: NSColor.clear) ?? mColor
         }
         else
         { view.pokerTrackerStatisticsViews.forEach{ $0.isHidden = true } }

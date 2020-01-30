@@ -64,7 +64,7 @@ class TournamentViewModel: NSObject
     // MARK: - Data
     
     /// The poker table this instance is tracking.
-    private var tournamentInfo: TournamentInfo?
+    public var tournamentInfo: TournamentInfo?
     
     // Updates.
     private var tickTime = 1.0

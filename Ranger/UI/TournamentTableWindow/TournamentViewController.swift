@@ -111,9 +111,16 @@ class TournamentViewController: NSViewController
     
     func layoutStatus()
     {
-        // Status.
+        // Window tracking.
+        var windowStatus = ""
+        if let tournamentInfo = viewModel.tournamentInfo
+        { windowStatus = "Tracking tournament \(tournamentInfo.tournamentNumber) table \(tournamentInfo.tableNumber). " }
+        
+        // PokerTracker.
         let pokerTrackerStatus = (viewModel.latestProcessedHandNumber == "") ? "" : "Hand #\(viewModel.latestProcessedHandNumber) processed. "
-        statusLabel.stringValue = "\(pokerTrackerStatus)\(viewModel.sharkScopeStatus)"
+        
+        // Composite (with SharkScope)
+        statusLabel.stringValue = "\(windowStatus)\(pokerTrackerStatus)\(viewModel.sharkScopeStatus)"
     }
     
     func updateWindowShadow()

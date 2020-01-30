@@ -3,8 +3,13 @@
 * Doing
 
     + Next up
-        + Lookup duplicate windows issue
-        + Resume normal window layering when table is not focused
+        + `PlayersTableView` click callback
+        + Start getting `ActiveTournaments` data
+            + Setup basic database for players   
+        + Switch to session statistics
+        + Show my statistics filtered for player         
+        + Get `CompletedTournaments` with limits
+            + Implement latest date of completed tournaments
         + UI for Opted-Out SharkScope players
         + Aggregate `Tournaments` sessions / calculate session stats
         
@@ -22,6 +27,16 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* Feature/UI/Seat_
+
+    `SeatViewOverlay`
+        + Clamp width constraints
+        + Removed remaining hand counter (deal)
+    + Window layering
+        + Refactored window info change tracking (to manual)
+        + Resume `.normal` window levels when tables are not active
+    + Some convinient String extension
 
 * Feature/UI/Seat_Tracking/0.5.2
 
