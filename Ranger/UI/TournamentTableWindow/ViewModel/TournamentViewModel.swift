@@ -64,7 +64,7 @@ class TournamentViewModel: NSObject
     // MARK: - Data
     
     /// The poker table this instance is tracking.
-    private var tournamentInfo: TournamentInfo?
+    public var tournamentInfo: TournamentInfo?
     
     // Updates.
     private var tickTime = 1.0
@@ -84,17 +84,11 @@ class TournamentViewModel: NSObject
     
     // MARK: - Lifecycle
     
-    public func track(_ tableWindowInfo: TableWindowInfo, delegate: TournamentViewModelDelegate?)
+    override func awakeFromNib()
     {
-        // Binds.
-        self.delegate = delegate
-        
         // Schedule timer.
         Timer.scheduledTimer(withTimeInterval: tickTime, repeats: true)
         { _ in self.tick() }
-        
-        // Get toutnament info.
-        update(with: tableWindowInfo)
         
         // Fire right now.
         self.tick()

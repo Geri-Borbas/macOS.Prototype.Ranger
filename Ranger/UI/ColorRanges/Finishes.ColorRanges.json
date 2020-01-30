@@ -1,0 +1,36 @@
+{
+    "name" : "Finishes",
+    "colorRanges" :
+    [
+        {
+            "min" : null,
+            "max" : -0.009,
+            "color" : "Standard violet"
+        },
+        {
+            "min" : -0.009,
+            "max" : -0.005,
+            "color" : "Standard red"
+        },
+        {
+            "min" : -0.005,
+            "max" : -0.000,
+            "color" : "Standard yellow"
+        },
+        {
+            "min" : 0.000,
+            "max" : 0.007,
+            "color" : "Standard green"
+        },
+        {
+            "min" : 0.007,
+            "max" : 0.009,
+            "color" : "Standard cyan"
+        },
+        {
+            "min" : 0.009,
+            "max" : null,
+            "color" : "Standard blue"
+        }
+    ]
+}

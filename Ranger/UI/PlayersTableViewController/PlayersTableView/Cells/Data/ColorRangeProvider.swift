@@ -9,9 +9,11 @@
 import Cocoa
 
 
-class ColorRanges: NSObject
+class ColorRangeProvider: NSObject
 {
     
+    
+    @objc dynamic var JSON: String?
     
     @objc dynamic var value_1: NSNumber = 0.0
     @objc dynamic var color_1: NSColor = NSColor.red
@@ -28,6 +30,23 @@ class ColorRanges: NSObject
     
     func color(for value: Float) -> NSColor
     {
+        if let JSON = JSON
+        {
+            switch JSON
+            {
+                case "Finishes.ColorRanges":
+                    return ColorRanges.finishes.color(for: Double(value))
+                case "VPIP.ColorRanges":
+                    return ColorRanges.VPIP.color(for: Double(value))
+                case "PFR.ColorRanges":
+                    return ColorRanges.PFR.color(for: Double(value))
+                case "M.ColorRanges":
+                    return ColorRanges.M.color(for: Double(value))
+                default:
+                    print("\(JSON).json not found.")
+            }
+        }
+        
         if (value > value_4.floatValue)
         { return color_4 }
         

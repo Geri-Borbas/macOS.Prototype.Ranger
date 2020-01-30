@@ -21,7 +21,7 @@ class StackCellView: PlayerCellView
     // Stack.
     @IBOutlet weak var stackBarView: StackBarView!
     
-    @IBOutlet var stackColorRanges: ColorRanges?
+    @IBOutlet var stackColorRanges: ColorRangeProvider?
     @IBOutlet var percentProvider: PercentProvider?
     
     @IBOutlet weak var playersTableViewModel: PlayersTableViewModel!

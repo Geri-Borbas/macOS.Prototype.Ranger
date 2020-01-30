@@ -14,6 +14,7 @@
 		5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B623B9254600C6608D /* StatusBarItem.swift */; };
 		5509C4B923B92CAE00C6608D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C4B823B92CAE00C6608D /* App.swift */; };
 		550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */; };
+		551C39C823DDFF8400B48A92 /* SeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C39C723DDFF8400B48A92 /* SeatView.swift */; };
 		551DC0B923D67AEA0030E2B0 /* SimulatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555E0A323D6575200BA0DD5 /* SimulatedTableViewController.swift */; };
 		551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5555E09E23D6567700BA0DD5 /* TableSimulator.Configuration.plist */; };
 		551DC0BD23D694A20030E2B0 /* TourneyHandSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DC0BC23D694A20030E2B0 /* TourneyHandSummary.swift */; };
@@ -21,9 +22,14 @@
 		551DC0C123D6993F0030E2B0 /* TourneyHandSummaryQuery.sql in Resources */ = {isa = PBXBuildFile; fileRef = 551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */; };
 		551DEE0423C5E3C9006DF95B /* StackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0323C5E3C9006DF95B /* StackCellView.swift */; };
 		551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DEE0723C5E477006DF95B /* StackBarView.swift */; };
+		551ED9A023DC03AA0009F2D9 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */; };
+		551ED9A223DC05910009F2D9 /* Finishes.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */; };
+		551ED9A323DC06350009F2D9 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */; };
+		551ED9A423DC06380009F2D9 /* Finishes.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */; };
+		551ED9A623DC064A0009F2D9 /* ColorRangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ED9A523DC06490009F2D9 /* ColorRangesTests.swift */; };
 		552B105623D966A50077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
 		552B105723D9671E0077D927 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105523D966A50077D927 /* String+Extensions.swift */; };
-		552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B105823D96FFC0077D927 /* TournamentsTests.swift */; };
+		552B1FCE23DAD56C00FC0A88 /* TableOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */; };
 		552B413723D4A03100A6184F /* Tournaments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413623D4A03100A6184F /* Tournaments.swift */; };
 		552B413923D4A13E00A6184F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		552E543F23D164620056B305 /* SharkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E543D23D164620056B305 /* SharkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,7 +93,7 @@
 		555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555AE80B23D2452A006142BD /* PlayersTableViewModel.swift */; };
 		5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560F04923BAAEAA008894BD /* App.Configuration.swift */; };
 		5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5560F04A23BAAEAA008894BD /* App.Configuration.plist */; };
-		5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRanges.swift */; };
+		5569129623C029D3001DDD05 /* ColorRangeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5569129523C029D3001DDD05 /* ColorRangeProvider.swift */; };
 		5575FA1123D7C46300414F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575FA1023D7C46300414F0F /* User.swift */; };
 		5575FA1323D7C46D00414F0F /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575FA1223D7C46D00414F0F /* UserRequest.swift */; };
 		55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55841CC923D90199007BC761 /* PlayerNameCellView.swift */; };
@@ -118,6 +124,8 @@
 		55AD571923D4FA48002A2E22 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD571823D4FA48002A2E22 /* JsonResponse.swift */; };
 		55AE8F7F23A5F305006BF2B9 /* TableTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */; };
 		55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B03CD423B104F700F153B5 /* Model.Player.swift */; };
+		55B20F4723DF4BAC00EB668E /* Tables.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55B20F4623DF4A8D00EB668E /* Tables.ColorRanges.json */; };
+		55B84F7723DB58210079D94C /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B84F7523DB58210079D94C /* SeatViewController.swift */; };
 		55B9C86723D1857500B3D116 /* Model.Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B9C86623D1857500B3D116 /* Model.Players.swift */; };
 		55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C1868E239583DA0081B6B7 /* AppDelegate.swift */; };
 		55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C18690239583DA0081B6B7 /* TournamentViewController.swift */; };
@@ -126,11 +134,15 @@
 		55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5509600223A30AEB006358EF /* PokerTracker.Configuration.plist */; };
 		55D4CADE23BB0394001E07E5 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4CADD23BB0394001E07E5 /* TextFieldData.swift */; };
 		55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
+		55DDE99623DEAA9C0081E86A /* M.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55DDE99523DEA92C0081E86A /* M.ColorRanges.json */; };
 		55E7B7C923CF8AC900DE58FC /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */; };
 		55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */; };
 		55E7E71723C00983000388FD /* PlayersTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71623C00983000388FD /* PlayersTableRowView.swift */; };
 		55E7E71A23C019EE000388FD /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7E71923C019EE000388FD /* Easing.swift */; };
 		55ECC00E23B9565000E7ECA5 /* TableWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECC00D23B9565000E7ECA5 /* TableWindowInfo.swift */; };
+		55F2A2BA23DE8B00009700D3 /* NSTextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */; };
+		55F2A2BE23DEA78A009700D3 /* VPIP.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */; };
+		55F2A2BF23DEA78D009700D3 /* PFR.ColorRanges.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */; };
 		55F79DBA23D536CE004F7C4F /* TournamentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B413823D4A13E00A6184F /* TournamentsRequest.swift */; };
 		578EFAFF44EADCC28B9F9E5D /* Pods_Ranger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2432394853E25E6DDA9F060B /* Pods_Ranger.framework */; };
 		F006FDBEDBCF958D08262DF4 /* Pods_PokerTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C09908B4FB76B0B858EF789 /* Pods_PokerTracker.framework */; };
@@ -199,11 +211,15 @@
 		5518D63623BA8E0500EFFBC0 /* HandPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandPlayer.swift; sourceTree = "<group>"; };
 		5518D63823BA94C000EFFBC0 /* LatestHandPlayerQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LatestHandPlayerQuery.sql; sourceTree = "<group>"; };
 		5518D63923BA951F00EFFBC0 /* LatestHandPlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestHandPlayerQuery.swift; sourceTree = "<group>"; };
+		551C39C723DDFF8400B48A92 /* SeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatView.swift; sourceTree = "<group>"; };
 		551DC0BC23D694A20030E2B0 /* TourneyHandSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHandSummary.swift; sourceTree = "<group>"; };
 		551DC0BE23D6956C0030E2B0 /* TourneyHandSummaryQuery.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourneyHandSummaryQuery.sql; sourceTree = "<group>"; };
 		551DC0BF23D695720030E2B0 /* TourneyHandSummaryQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHandSummaryQuery.swift; sourceTree = "<group>"; };
 		551DEE0323C5E3C9006DF95B /* StackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCellView.swift; sourceTree = "<group>"; };
 		551DEE0723C5E477006DF95B /* StackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackBarView.swift; sourceTree = "<group>"; };
+		551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRanges.swift; sourceTree = "<group>"; };
+		551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Finishes.ColorRanges.json; sourceTree = "<group>"; };
+		551ED9A523DC06490009F2D9 /* ColorRangesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRangesTests.swift; sourceTree = "<group>"; };
 		5521A553239DD170000D1AD1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5521A556239DD5D9000D1AD1 /* LiveTourneyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyPlayer.swift; sourceTree = "<group>"; };
 		5521A558239DE1A5000D1AD1 /* LiveTourneyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTourneyTable.swift; sourceTree = "<group>"; };
@@ -211,6 +227,7 @@
 		5521A564239DF933000D1AD1 /* PokerTracker.Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerTracker.Statistics.swift; sourceTree = "<group>"; };
 		552B105523D966A50077D927 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		552B105823D96FFC0077D927 /* TournamentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsTests.swift; sourceTree = "<group>"; };
+		552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOverlayViewController.swift; sourceTree = "<group>"; };
 		552B413623D4A03100A6184F /* Tournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournaments.swift; sourceTree = "<group>"; };
 		552B413823D4A13E00A6184F /* TournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsRequest.swift; sourceTree = "<group>"; };
 		552E543B23D164610056B305 /* SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,7 +258,7 @@
 		555EA853239D6F19000B5B62 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5560F04923BAAEAA008894BD /* App.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Configuration.swift; sourceTree = "<group>"; };
 		5560F04A23BAAEAA008894BD /* App.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = App.Configuration.plist; sourceTree = "<group>"; };
-		5569129523C029D3001DDD05 /* ColorRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRanges.swift; sourceTree = "<group>"; };
+		5569129523C029D3001DDD05 /* ColorRangeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRangeProvider.swift; sourceTree = "<group>"; };
 		55698B9A23AAE0020065125C /* ActiveTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournamentsRequest.swift; sourceTree = "<group>"; };
 		55698B9C23AAE27E0065125C /* ActiveTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTournaments.swift; sourceTree = "<group>"; };
 		5574DAC723A68E8700569790 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -280,6 +297,8 @@
 		55AD571823D4FA48002A2E22 /* JsonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
 		55AE8F7E23A5F305006BF2B9 /* TableTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTracker.swift; sourceTree = "<group>"; };
 		55B03CD423B104F700F153B5 /* Model.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Player.swift; sourceTree = "<group>"; };
+		55B20F4623DF4A8D00EB668E /* Tables.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tables.ColorRanges.json; sourceTree = "<group>"; };
+		55B84F7523DB58210079D94C /* SeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
 		55B9C86623D1857500B3D116 /* Model.Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Players.swift; sourceTree = "<group>"; };
 		55BBABD323CFFB9F00CF5EE6 /* Tournaments.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tournaments.md; sourceTree = "<group>"; };
 		55C1868B239583DA0081B6B7 /* Ranger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ranger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +317,7 @@
 		55DB43E423A2DB4D00A7F37F /* ApiRequestCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestCache.swift; sourceTree = "<group>"; };
 		55DB43E623A2E57C00A7F37F /* SharkScope.Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SharkScope.Configuration.plist; sourceTree = "<group>"; };
 		55DB43E823A2E62000A7F37F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		55DDE99523DEA92C0081E86A /* M.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = M.ColorRanges.json; sourceTree = "<group>"; };
 		55E4D43723A7FAD600F33066 /* PlayerSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummaryRequest.swift; sourceTree = "<group>"; };
 		55E4D43923A7FC0F00F33066 /* PlayerSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummary.swift; sourceTree = "<group>"; };
 		55E7B7C823CF8AC900DE58FC /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
@@ -312,6 +332,9 @@
 		55ED3CDF23A5543A00754763 /* PlayerQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerQuery.swift; sourceTree = "<group>"; };
 		55EDF3DF23CE6B2A008A42AC /* CompletedTournamentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournamentsRequest.swift; sourceTree = "<group>"; };
 		55EDF3E023CE6B2A008A42AC /* CompletedTournaments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTournaments.swift; sourceTree = "<group>"; };
+		55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extensions.swift"; sourceTree = "<group>"; };
+		55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VPIP.ColorRanges.json; sourceTree = "<group>"; };
+		55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PFR.ColorRanges.json; sourceTree = "<group>"; };
 		79F6C99A40025504EB954DBA /* Pods-SharkScopeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScopeTests.release.xcconfig"; path = "Target Support Files/Pods-SharkScopeTests/Pods-SharkScopeTests.release.xcconfig"; sourceTree = "<group>"; };
 		94C6446E5B7C5CE0E52E5BF9 /* Pods_SharkScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharkScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99522483F304541E25BECCCD /* Pods-SharkScope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharkScope.release.xcconfig"; path = "Target Support Files/Pods-SharkScope/Pods-SharkScope.release.xcconfig"; sourceTree = "<group>"; };
@@ -392,9 +415,10 @@
 		5508E3FF23A4756200FFB173 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				551ED99E23DC02600009F2D9 /* ColorRanges */,
 				55F4B81C23D3B468000953DF /* StatusBarItem */,
-				55078CE523D20D64001174A7 /* PlayersTableViewController */,
 				55A3A3B523D3CDBA0083EB3D /* PlayersWindow */,
+				55078CE523D20D64001174A7 /* PlayersTableViewController */,
 				5590DD8223B982F6006BE806 /* TournamentTableWindow */,
 			);
 			path = UI;
@@ -445,6 +469,19 @@
 			path = Stack;
 			sourceTree = "<group>";
 		};
+		551ED99E23DC02600009F2D9 /* ColorRanges */ = {
+			isa = PBXGroup;
+			children = (
+				551ED99F23DC03AA0009F2D9 /* ColorRanges.swift */,
+				55DDE99523DEA92C0081E86A /* M.ColorRanges.json */,
+				55F2A2BB23DEA3DD009700D3 /* VPIP.ColorRanges.json */,
+				55F2A2BD23DEA57A009700D3 /* PFR.ColorRanges.json */,
+				551ED9A123DC05910009F2D9 /* Finishes.ColorRanges.json */,
+				55B20F4623DF4A8D00EB668E /* Tables.ColorRanges.json */,
+			);
+			path = ColorRanges;
+			sourceTree = "<group>";
+		};
 		5521A562239DF7D6000D1AD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +495,15 @@
 				551DC0BB23D6945F0030E2B0 /* TourneyHandSummary */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		552B1FCC23DAD53500FC0A88 /* TableOverlayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				552B1FCD23DAD56C00FC0A88 /* TableOverlayViewController.swift */,
+				55B84F7423DB57F90079D94C /* SeatViewController */,
+			);
+			path = TableOverlayViewController;
 			sourceTree = "<group>";
 		};
 		552B413523D49FE500A6184F /* Tournaments */ = {
@@ -638,6 +684,7 @@
 			children = (
 				5590DD8023B98173006BE806 /* TournamentWindowController.swift */,
 				55C18690239583DA0081B6B7 /* TournamentViewController.swift */,
+				552B1FCC23DAD53500FC0A88 /* TableOverlayViewController */,
 				559646B223BC145700A5207F /* ViewModel */,
 			);
 			path = TournamentTableWindow;
@@ -723,6 +770,15 @@
 			path = TableTracker;
 			sourceTree = "<group>";
 		};
+		55B84F7423DB57F90079D94C /* SeatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				551C39C723DDFF8400B48A92 /* SeatView.swift */,
+				55B84F7523DB58210079D94C /* SeatViewController.swift */,
+			);
+			path = SeatViewController;
+			sourceTree = "<group>";
+		};
 		55B9C86823D1863E00B3D116 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +788,7 @@
 				55E7B7CA23CF8AF800DE58FC /* Numeric+Extensions.swift */,
 				550DC6EC23D2874600383F7A /* NSRect+Extensions.swift */,
 				552B105523D966A50077D927 /* String+Extensions.swift */,
+				55F2A2B923DE8B00009700D3 /* NSTextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -799,6 +856,7 @@
 			isa = PBXGroup;
 			children = (
 				55D7F17A23C830CF00FC2B51 /* TableInfoTests.swift */,
+				551ED9A523DC06490009F2D9 /* ColorRangesTests.swift */,
 				55D7F17823C8304000FC2B51 /* CountriesTests.swift */,
 				55C529E823BD3F1500A6975A /* Info.plist */,
 				552B105823D96FFC0077D927 /* TournamentsTests.swift */,
@@ -834,7 +892,7 @@
 			isa = PBXGroup;
 			children = (
 				559F5F3523BEBA060070F2D6 /* PercentProvider.swift */,
-				5569129523C029D3001DDD05 /* ColorRanges.swift */,
+				5569129523C029D3001DDD05 /* ColorRangeProvider.swift */,
 				55E7E71923C019EE000388FD /* Easing.swift */,
 			);
 			path = Data;
@@ -1122,14 +1180,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5560F04C23BAAFA4008894BD /* App.Configuration.plist in Resources */,
+				55F2A2BF23DEA78D009700D3 /* PFR.ColorRanges.json in Resources */,
 				558F707823D9295E004DB3F2 /* Countries.json in Resources */,
+				55F2A2BE23DEA78A009700D3 /* VPIP.ColorRanges.json in Resources */,
 				552E546523D172F80056B305 /* SharkScope.Configuration.plist in Resources */,
 				551DC0BA23D67CAB0030E2B0 /* TableSimulator.Configuration.plist in Resources */,
 				55C18693239583DC0081B6B7 /* Assets.xcassets in Resources */,
 				55C18696239583DD0081B6B7 /* Main.storyboard in Resources */,
 				558D35E5239F42AE006C710D /* PlayerSummary.json in Resources */,
 				558D35E2239F3C58006C710D /* Metadata.json in Resources */,
+				55DDE99623DEAA9C0081E86A /* M.ColorRanges.json in Resources */,
 				55C8498723A3354900452F2F /* PokerTracker.Configuration.plist in Resources */,
+				551ED9A223DC05910009F2D9 /* Finishes.ColorRanges.json in Resources */,
+				55B20F4723DF4BAC00EB668E /* Tables.ColorRanges.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1138,6 +1201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558F707D23D92C2C004DB3F2 /* Countries.json in Resources */,
+				551ED9A423DC06380009F2D9 /* Finishes.ColorRanges.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1351,6 +1415,7 @@
 				55C18691239583DA0081B6B7 /* TournamentViewController.swift in Sources */,
 				5555E09B23D6553200BA0DD5 /* TableSimulator.swift in Sources */,
 				555AE80C23D2452A006142BD /* PlayersTableViewModel.swift in Sources */,
+				55F2A2BA23DE8B00009700D3 /* NSTextField+Extensions.swift in Sources */,
 				5536B10023C2D2530067E7F2 /* NSMenu+Extensions.swift in Sources */,
 				558F707A23D92AE4004DB3F2 /* Countries.swift in Sources */,
 				55A3A3B723D3CDDA0083EB3D /* PlayersWindowController.swift in Sources */,
@@ -1359,9 +1424,11 @@
 				5555E09D23D655C900BA0DD5 /* TableSimulator.Configuration.swift in Sources */,
 				5544A6FF23D80C3000ACCC6C /* PlayerNames.swift in Sources */,
 				55C1868F239583DA0081B6B7 /* AppDelegate.swift in Sources */,
+				551ED9A023DC03AA0009F2D9 /* ColorRanges.swift in Sources */,
 				55841CCA23D90222007BC761 /* PlayerNameCellView.swift in Sources */,
 				5555E0A023D656EB00BA0DD5 /* SimulatedTableWindowController.swift in Sources */,
 				55E7B7CB23CF8AF800DE58FC /* Numeric+Extensions.swift in Sources */,
+				552B1FCE23DAD56C00FC0A88 /* TableOverlayViewController.swift in Sources */,
 				5509C4B923B92CAE00C6608D /* App.swift in Sources */,
 				552B105623D966A50077D927 /* String+Extensions.swift in Sources */,
 				5509C4B723B9254600C6608D /* StatusBarItem.swift in Sources */,
@@ -1372,14 +1439,16 @@
 				559F5F3623BEBA060070F2D6 /* PercentProvider.swift in Sources */,
 				551DC0B923D67AEA0030E2B0 /* SimulatedTableViewController.swift in Sources */,
 				5508E3FD23A4656000FFB173 /* TournamentViewModel.swift in Sources */,
+				55B84F7723DB58210079D94C /* SeatViewController.swift in Sources */,
 				55A9AC5A23BE159A00179FA0 /* PlayerCellView.swift in Sources */,
 				555AE80A23D2428F006142BD /* PlayersTableViewController.swift in Sources */,
 				5536B10223C2D3140067E7F2 /* NSMenuItem+Extensions.swift in Sources */,
 				5504226423C16A240040A3DE /* FinishesGraphCellView.swift in Sources */,
-				5569129623C029D3001DDD05 /* ColorRanges.swift in Sources */,
+				5569129623C029D3001DDD05 /* ColorRangeProvider.swift in Sources */,
 				55B03CD523B104F700F153B5 /* Model.Player.swift in Sources */,
 				551DEE0823C5E477006DF95B /* StackBarView.swift in Sources */,
 				5560F04B23BAAFA1008894BD /* App.Configuration.swift in Sources */,
+				551C39C823DDFF8400B48A92 /* SeatView.swift in Sources */,
 				558F708023D9315D004DB3F2 /* DynamicCodingKey.swift in Sources */,
 				5536B0FE23C2BF610067E7F2 /* PlayersTableHeaderView.swift in Sources */,
 				550DC6ED23D2874600383F7A /* NSRect+Extensions.swift in Sources */,
@@ -1398,10 +1467,11 @@
 			files = (
 				552B105723D9671E0077D927 /* String+Extensions.swift in Sources */,
 				558F707C23D92C2A004DB3F2 /* Countries.swift in Sources */,
-				552B105923D96FFC0077D927 /* TournamentsTests.swift in Sources */,
 				558F708123D931C0004DB3F2 /* DynamicCodingKey.swift in Sources */,
 				55D7F17C23C8312E00FC2B51 /* TableWindowInfo.swift in Sources */,
 				5585E40E23C986930009E98F /* TableInfo.swift in Sources */,
+				551ED9A623DC064A0009F2D9 /* ColorRangesTests.swift in Sources */,
+				551ED9A323DC06350009F2D9 /* ColorRanges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,8 @@ class PercentBarCellView: PlayerCellView
     @IBOutlet weak var bar: NSBox!
     @IBOutlet weak var barWidthConstraint: NSLayoutConstraint?
     
-    @IBOutlet var barColorRanges: ColorRanges?
-    @IBOutlet var textFieldColorRanges: ColorRanges?
+    @IBOutlet var barColorRanges: ColorRangeProvider?
+    @IBOutlet var textFieldColorRanges: ColorRangeProvider?
     @IBOutlet var percentProvider: PercentProvider?
     
     

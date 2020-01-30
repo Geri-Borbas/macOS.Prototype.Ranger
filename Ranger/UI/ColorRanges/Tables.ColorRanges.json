@@ -1,0 +1,31 @@
+{
+    "name" : "Tables",
+    "colorRanges" :
+    [
+        {
+            "min" : null,
+            "max" : 1,
+            "color" : "Standard green"
+        },
+        {
+            "min" : 2,
+            "max" : 5,
+            "color" : "Standard yellow"
+        },
+        {
+            "min" : 6,
+            "max" : 9,
+            "color" : "Standard orange"
+        },
+        {
+            "min" : 10,
+            "max" : 19,
+            "color" : "Standard red"
+        },
+        {
+            "min" : 20,
+            "max" : null,
+            "color" : "Standard violet"
+        }
+    ]
+}

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppKit
 import SwiftUI
 import PokerTracker
 
@@ -97,6 +98,8 @@ class App: NSObject, TableTrackerDelegate
     
     func windowTrackerDidUpdateTableWindowInfo(tableWindowInfo: TableWindowInfo)
     {
+        manageWindowLevels()
+        
         // Only if any.
         guard let tournamentWindowController = tournamentWindowControllersForWindowInfos[tableWindowInfo] else { return }
         
@@ -123,5 +126,21 @@ class App: NSObject, TableTrackerDelegate
         // Close window if any (if opted-in).
         if App.configuration.autoCloseTableWindow
         { tournamentWindowController.close() }
+    }
+    
+    func manageWindowLevels()
+    {
+        // Lookup frontmost app.
+        let identifier = NSWorkspace.shared.frontmostApplication?.bundleIdentifier ?? ""
+        let windowsShouldBeFloating = identifier.contains(any: windowTracker.trackedProcesses)
+        
+        // Put windows above everything if playing (prevents flickering when switching tables),
+        // back to normal hierarchy otherwise (system windows cover overlays again).
+        tournamentWindowControllersForWindowInfos.values.forEach
+        {
+            eachTournamentWindowController in
+            if let eachWindow = eachTournamentWindowController.window
+            { eachWindow.level = windowsShouldBeFloating ? .floating : .normal }
+        }
     }
 }

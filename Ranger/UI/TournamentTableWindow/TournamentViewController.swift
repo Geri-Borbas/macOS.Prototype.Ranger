@@ -16,8 +16,8 @@ class TournamentViewController: NSViewController
     
     // MARK: - UI
     
-    @IBOutlet weak var playersTablePlaceholderView: NSView!
-    var playersTableViewController: PlayersTableViewController!
+    weak var playersTable: PlayersTableViewController?
+    weak var tableOverlay: TableOverlayViewController?
     
     @IBOutlet weak var summaryLabel: NSTextField!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -34,30 +34,31 @@ class TournamentViewController: NSViewController
     {
         super.viewDidLoad()
         
+        // View model hook.
+        viewModel.delegate = self
+        
         // Fetch SharkScope status.
         viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
-        
-        // Instantiate table.
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        playersTableViewController = storyboard.instantiateController(withIdentifier: "PlayersTableViewController") as? PlayersTableViewController
-        playersTableViewController.delegate = self
-                
-        // Add to placeholder.
-        playersTableViewController.view.frame = playersTablePlaceholderView.bounds
-        playersTablePlaceholderView.addSubview(playersTableViewController.view)
     }
     
-    func track(_ tableWindowInfo: TableWindowInfo)
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?)
     {
-        // Setup for table info.
-        self.view.window?.title = ""
-        
-        // Inject into view model.
-        viewModel.track(tableWindowInfo, delegate: self)
-        
-        // UI.
-        alignWindow(to: tableWindowInfo)
+        // Wire up child view controller references.
+        switch segue.destinationController
+        {
+            case let playersTableViewController as PlayersTableViewController:
+                self.playersTable = playersTableViewController
+                self.playersTable?.delegate = self
+            case let tableOverlayViewController as TableOverlayViewController:
+                self.tableOverlay = tableOverlayViewController
+                self.tableOverlay?.delegate = self
+            default:
+                break
+        }
     }
+    
+    
+    // MARK: - Hooks
     
     func update(with tableWindowInfo: TableWindowInfo)
     {
@@ -74,21 +75,8 @@ class TournamentViewController: NSViewController
         guard let window = self.view.window
         else { return }
         
-        // Update blinds.
-        window.title = ""
-        
         // Align.
-        window.setFrame(
-            NSRect(
-                x: tableWindowInfo.UIKitBounds.origin.x,
-                y: tableWindowInfo.UIKitBounds.origin.y - window.frame.size.height,
-                width: tableWindowInfo.UIKitBounds.size.width,
-                height: window.frame.size.height
-            ),
-            display: true
-        )
-         
-        // Put above.
+        window.setFrame(tableWindowInfo.UIKitBounds, display: true)
         window.order(NSWindow.OrderingMode.above, relativeTo: tableWindowInfo.number)
         
         // Disable drag.
@@ -100,6 +88,9 @@ class TournamentViewController: NSViewController
     
     @IBAction func fetchAllDidClick(_ sender: AnyObject)
     {
+        // Checks.
+        guard let playersTableViewController = self.playersTable else { return }
+                
         // Fetch SharkScope for all (gonna push changes back each).
         for eachRow in 0...playersTableViewController.tableView.numberOfRows
         { playersTableViewController.viewModel.fetchSharkScopeStatisticsForPlayer(inRow: eachRow) }
@@ -115,32 +106,56 @@ class TournamentViewController: NSViewController
         summaryLabel.attributedStringValue = summary
         
         // Players.
-        playersTableViewController.tableView.reloadData()
+        playersTable?.tableView.reloadData()
     }
     
     func layoutStatus()
     {
-        // Status.
+        // Window tracking.
+        var windowStatus = ""
+        if let tournamentInfo = viewModel.tournamentInfo
+        { windowStatus = "Tracking tournament \(tournamentInfo.tournamentNumber) table \(tournamentInfo.tableNumber). " }
+        
+        // PokerTracker.
         let pokerTrackerStatus = (viewModel.latestProcessedHandNumber == "") ? "" : "Hand #\(viewModel.latestProcessedHandNumber) processed. "
-        statusLabel.stringValue = "\(pokerTrackerStatus)\(viewModel.sharkScopeStatus)"
+        
+        // Composite (with SharkScope)
+        statusLabel.stringValue = "\(windowStatus)\(pokerTrackerStatus)\(viewModel.sharkScopeStatus)"
+    }
+    
+    func updateWindowShadow()
+    {
+        // Only if any.
+        guard let window = self.view.window
+        else { return }
+        
+        window.invalidateShadow()
     }
 }
 
 
 // MARK: - Tournament Events
+
 extension TournamentViewController: TournamentViewModelDelegate
 {
     
     
     func tournamentPlayersDidChange(tournamentPlayers: [Model.Player])
-    { playersTableViewController.update(with: tournamentPlayers) }
+    {
+        playersTable?.update(with: tournamentPlayers)
+        updateWindowShadow()
+    }
     
     func tournamentDidChange(tournamentInfo: TournamentInfo)
-    { playersTableViewController.update(with: tournamentInfo) }
+    {
+        playersTable?.update(with: tournamentInfo)
+        updateWindowShadow()
+    }
 }
 
 
 // MARK: - Players Table View Controller Events
+
 extension TournamentViewController: PlayersTableViewControllerDelegate
 {
     
@@ -149,6 +164,15 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
     {
         layout()
         
+        // Update overlay with processed player data.
+        if
+            let players = playersTable?.viewModel.players,
+            let tournamentInfo = playersTable?.viewModel.tournamentInfo
+        {
+            tableOverlay?.update(with: players, tournamentInfo: tournamentInfo)
+            updateWindowShadow()
+        }
+        
         // Fetch SharkScope status.
         viewModel.fetchSharkScopeStatus{ _ in self.layoutStatus() }
     }
@@ -156,10 +180,22 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
 
 
 // MARK: - Players Table View Events
+
 extension TournamentViewController: PlayersTableViewDelegate
 {
     
     
     func fetchTournementsRequested(for playerName: String)
-    { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+    { playersTable?.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+}
+
+
+// MARK: - Table Overlay Events
+
+extension TournamentViewController: TableOverlayViewControllerDelegate
+{
+    
+    
+    func seatDidClick(seatViewController: SeatViewController)
+    { playersTable?.selectRow(at: seatViewController.seat) }
 }

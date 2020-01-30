@@ -15,7 +15,7 @@ class StackBarView: NSView
 
     
     @IBOutlet weak var percentProvider: PercentProvider?
-    @IBOutlet weak var colorRanges: ColorRanges?
+    @IBOutlet weak var colorRanges: ColorRangeProvider?
     
     
     // Plugs.

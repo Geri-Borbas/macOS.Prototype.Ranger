@@ -49,11 +49,35 @@ class PlayersTableViewController: NSViewController,
         tableView.doubleAction = #selector(tableDidDoubleClick)
     }
     
+    
+    // MARK: - Hooks
+    
     public func update(with players: [Model.Player])
     { viewModel.update(with: players) }
     
     public func update(with tournamentInfo: TournamentInfo)
     { viewModel.update(with: tournamentInfo) }
+    
+    public func selectRow(at tableSeat: Int)
+    {
+        // Determine hero seat if any.
+        guard
+            let hero = viewModel.players.filter({ eachPlayer in eachPlayer.isHero }).first,
+            let heroSeat = hero.pokerTracker?.handPlayer?.seat
+        else { return }
+        
+        // Lookup player at given table seat.
+        guard
+            let player = viewModel.players.filter({ eachPlayer in eachPlayer.screenSeat(heroSittingAt: heroSeat) == tableSeat }).first,
+            let row = viewModel.players.firstIndex(of: player)
+        else { return }
+        
+        // Select.
+        tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
+        
+        // Retain selection.
+        viewModel.selectedPlayer = player
+    }
     
     
     // MARK: - Events

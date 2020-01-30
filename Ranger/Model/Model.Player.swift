@@ -370,6 +370,29 @@ extension Model.Player
                (sharkScope.statistics?.Profit ?? 0).formattedWithSeparator
         )
     }
+    
+    func screenSeat(heroSittingAt heroSeat: Int) -> Int?
+    {
+        // Get seat from PokerTracker hand history.
+        guard var tableSeat = pokerTracker?.handPlayer?.seat
+        else { return nil }
+        
+        // Yet 9-MAX only.
+        guard 1...9 ~= heroSeat else { return nil }
+        guard 1...9 ~= tableSeat else { return nil }
+        let preferredSeat = 5
+        
+        // Offset.
+        let offset = preferredSeat - heroSeat // 5 - 4 = 1
+        tableSeat += offset // 4 + 1 = 5
+        
+        // Clamp.
+        tableSeat += 9 // put above zero
+        tableSeat %= 9 // put below 9
+        if tableSeat == 0 { tableSeat = 9 } // top up
+        
+        return tableSeat
+    }
 }
 
 
