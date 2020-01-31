@@ -32,7 +32,7 @@ enum Model
             let playerName: String
             
             var handPlayer: HandPlayer?
-            var statistics: PokerTracker.Statistics?
+            var statistics: PokerTracker.DetailedStatistics?
             
             
             init(with playerName: String, handPlayer: HandPlayer? = nil)
@@ -46,7 +46,7 @@ enum Model
             public mutating func updateStatistics(for tourneyNumber: String? = nil)
             {
                 self.statistics = try? PokerTracker.Service.fetch(
-                    PokerTracker.StatisticsQuery(
+                    PokerTracker.DetailedStatisticsQuery(
                         playerNames: [playerName],
                         tourneyNumber: tourneyNumber
                 )).first

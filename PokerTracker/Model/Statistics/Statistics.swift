@@ -31,6 +31,7 @@ public class Statistics: Entry
     
     public required init(row: Row) throws
     {
+        
         id_player = try row.columns[0].int()
         id_site = try row.columns[1].int()
         str_player_name = try row.columns[2].string()

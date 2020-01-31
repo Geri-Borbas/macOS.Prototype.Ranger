@@ -3,7 +3,6 @@
 * Doing
 
     + Next up
-        + `PlayersTableView` click callback
         + Start getting `ActiveTournaments` data
             + Setup basic database for players   
         + Switch to session statistics
@@ -27,6 +26,12 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* 2.2.1
+
+    + `PlayersTableView` click callback
+    + Created `PokerTracker.DetailedStatistics`
+        + Replaced statistics in `Model.Player`
 
 * 2.2.0
 

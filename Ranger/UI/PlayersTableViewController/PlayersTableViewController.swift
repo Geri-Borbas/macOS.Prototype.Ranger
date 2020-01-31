@@ -46,6 +46,7 @@ class PlayersTableViewController: NSViewController,
         viewModel.delegate = self
         
         // Double click.
+        tableView.action = #selector(tableDidClick)
         tableView.doubleAction = #selector(tableDidDoubleClick)
     }
     
@@ -81,6 +82,19 @@ class PlayersTableViewController: NSViewController,
     
     
     // MARK: - Events
+    
+    @objc func tableDidClick()
+    {
+        // Skip header row double click.
+        guard tableView.clickedRow > -1 else { return }
+        guard viewModel.players.count > tableView.clickedRow else { return }
+                
+        // Select row.
+        tableView.selectRowIndexes(IndexSet(integer: tableView.clickedRow), byExtendingSelection: false)
+        
+        // Retain selection.
+        viewModel.selectedPlayer = viewModel.players[tableView.clickedRow]
+    }
     
     @objc func tableDidDoubleClick()
     {
@@ -166,18 +180,6 @@ extension PlayersTableViewController: NSTableViewDelegate
     // Plug in custom row view.
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView?
     { return PlayersTableRowView() }
-    
-    // Save selection.
-    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool
-    {
-        // Checks.
-        guard viewModel.players.count > row else { return false }
-        
-        // Retain selection.
-        viewModel.selectedPlayer = viewModel.players[row]
-        
-        return true
-    }
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor])
     {
