@@ -133,8 +133,8 @@ extension Model.Player: CustomStringConvertible
         String(format:
             "\n%.0f\t%.0f\t%.0f\t%@",
             stack,
-            (pokerTracker?.statistics?._VPIP ?? 0) * 100,
-            (pokerTracker?.statistics?._PFR ?? 0) * 100,
+            (pokerTracker?.statistics?.VPIP.value ?? 0) * 100,
+            (pokerTracker?.statistics?.PFR.value ?? 0) * 100,
             name
         )
     }
@@ -154,8 +154,8 @@ extension Model.Player
             "Seat" : TextFieldIntData(value: pokerTracker?.handPlayer?.seat),
             "Player" : TextFieldStringData(value: name),
             "Stack" : TextFieldDoubleData(value: pokerTracker?.handPlayer?.stack),
-            "VPIP" : TextFieldDoubleData(value: pokerTracker?.statistics?._VPIP),
-            "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?._PFR),
+            "VPIP" : TextFieldDoubleData(value: pokerTracker?.statistics?.VPIP.value),
+            "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?.PFR.value),
             "Hands" : TextFieldIntData(value: pokerTracker?.statistics?.cnt_hands),
             "Tables" : TextFieldIntData(value: sharkScope.tables),
             "ITM" : TextFieldFloatData(value: sharkScope.statistics?.ITM),
@@ -207,13 +207,13 @@ extension Model.Player
             ),
             "VPIP" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?._VPIP ?? 0 < rhs.pokerTracker?.statistics?._VPIP ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker?.statistics?._VPIP ?? 0 >= rhs.pokerTracker?.statistics?._VPIP ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.VPIP.value ?? 0 < rhs.pokerTracker?.statistics?.VPIP.value ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.VPIP.value ?? 0 >= rhs.pokerTracker?.statistics?.VPIP.value ?? 0 }
             ),
             "PFR" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?._PFR ?? 0 < rhs.pokerTracker?.statistics?._PFR ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker?.statistics?._PFR ?? 0 >= rhs.pokerTracker?.statistics?._PFR ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.PFR.value ?? 0 < rhs.pokerTracker?.statistics?.PFR.value ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.PFR.value ?? 0 >= rhs.pokerTracker?.statistics?.PFR.value ?? 0 }
             ),
             "Hands" :
             (

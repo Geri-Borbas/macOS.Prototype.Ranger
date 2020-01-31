@@ -245,7 +245,7 @@
                                     <constraint firstAttribute="height" constant="14" id="W9O-qj-y7f"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status." allowsEditingTextAttributes="YES" id="5KN-yu-jfG">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="label" size="11"/>
                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -302,7 +302,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="Seat" width="40" minWidth="40" maxWidth="100" id="Ysa-xG-jWO">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Seat">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -336,7 +336,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Player" width="140" minWidth="100" maxWidth="1000" id="g8d-rp-OHE">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Player">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -375,7 +375,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Stack" width="130" minWidth="100" maxWidth="1000" id="wff-xd-lNv">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Stack">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -1529,7 +1529,6 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="offset">
                             <real key="value" value="0.45000000000000001"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="log" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </customObject>
                 <customObject id="Cto-j0-9gf" userLabel="VPIP ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">

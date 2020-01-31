@@ -27,6 +27,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.2.4
+
+    + Wrapped statistics into `Statistic` struct (to have count / opportunities information in place)
+
 * 2.2.3
 
     + Changed statistics (`VPIP`/`PFR`) to be in line with PokerTracker statistics definitions (100 multiplier)

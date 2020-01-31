@@ -148,8 +148,8 @@ extension DetailedStatistics: Equatable
     {
         return (
             lhs.id_player == rhs.id_player &&
-            lhs._VPIP == rhs._VPIP &&
-            lhs._PFR == rhs._PFR
+            lhs.VPIP.value == rhs.VPIP.value &&
+            lhs.PFR.value == rhs.PFR.value
         )
     }
 }
@@ -161,7 +161,7 @@ extension DetailedStatistics: CustomStringConvertible
     
     public var description: String
     {
-        return "id_player: \(id_player), id_site: \(id_site), str_player_name: \(str_player_name), cnt_vpip: \(cnt_vpip), cnt_hands: \(cnt_hands), cnt_walks: \(cnt_walks), cnt_pfr: \(cnt_pfr), cnt_pfr_opp: \(cnt_pfr_opp) \n VPIP:\(String(format: "%.2f%%", _VPIP)), PFR:\(String(format: "%.2f%%", _PFR))"
+        return "id_player: \(id_player), id_site: \(id_site), str_player_name: \(str_player_name), cnt_vpip: \(cnt_vpip), cnt_hands: \(cnt_hands), cnt_walks: \(cnt_walks), cnt_pfr: \(cnt_pfr), cnt_pfr_opp: \(cnt_pfr_opp) \n VPIP:\(String(format: "%.2f%%", VPIP.value)), PFR:\(String(format: "%.2f%%", PFR.value))"
     }
 }
 
@@ -172,6 +172,16 @@ extension DetailedStatistics
 {
     
     
+    public struct Statistic
+    {
+        
+        
+        public let value: Double
+        public let count: Int
+        public let opportunities: Int
+    }
+        
+    
     /// Total number of hands played.
     /// Formula: Total Number of Hands Played
     /// Function: cnt_hands
@@ -180,10 +190,24 @@ extension DetailedStatistics
     /// Percentage of the time that a player voluntarily contributed money to the pot, given that he had a chance to do so.
     /// Formula: Number of Times Player Put Money In Pot / (Number of Hands - Number of Walks)
     /// Function: (cnt_vpip / (cnt_hands - cnt_walks)) * 100
-    public var _VPIP: Double { (Double(cnt_vpip) / Double(cnt_hands - cnt_walks)) * 100.0 }
+    public var VPIP: Statistic
+    {
+        Statistic(
+            value: (Double(cnt_vpip) / Double(cnt_hands - cnt_walks)) * 100.0,
+            count: cnt_vpip,
+            opportunities: cnt_hands - cnt_walks
+        )
+    }
     
     /// Percentage of the time that a player put in any raise preflop, given that he had a chance to do so.
     /// Formula: Number of Times Player Raised Preflop / (Number of Hands - Number of Walks)
     /// Function: (cnt_pfr / cnt_pfr_opp) * 100
-    public var _PFR: Double { (Double(cnt_pfr) / Double(cnt_pfr_opp)) * 100.0 }
+    public var PFR: Statistic
+    {
+        Statistic(
+            value: (Double(cnt_pfr) / Double(cnt_pfr_opp)) * 100.0,
+            count: cnt_pfr,
+            opportunities: cnt_pfr_opp
+        )
+    }
 }
