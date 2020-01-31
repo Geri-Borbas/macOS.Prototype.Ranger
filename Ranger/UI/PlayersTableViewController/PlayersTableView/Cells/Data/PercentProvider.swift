@@ -17,9 +17,7 @@ class PercentProvider: NSObject
     @objc dynamic var maximum: NSNumber = 0.0
     @objc dynamic var easing: String = "linear"
     @objc dynamic var offset: NSNumber = 0.0
-    
-    
-    private let log: Bool = false
+    @objc dynamic var log: Bool = false
     
     
     func percent(value: Float) -> Float

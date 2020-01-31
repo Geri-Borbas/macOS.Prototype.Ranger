@@ -138,8 +138,8 @@ class SeatViewController: NSViewController
             let M = Float(player.stack) / tournamentInfo.orbitCost
         
             // Preflop.
-            view.layoutVpip(for: Float(statistics.VPIP))
-            view.layoutPfr(for: Float(statistics.PFR))
+            view.layoutVpip(for: Float(statistics._VPIP))
+            view.layoutPfr(for: Float(statistics._PFR))
         
             // Hand count.
             view.handsTextField.integerValue = statistics.hands

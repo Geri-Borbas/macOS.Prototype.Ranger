@@ -27,6 +27,12 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.2.3
+
+    + Changed statistics (`VPIP`/`PFR`) to be in line with PokerTracker statistics definitions (100 multiplier)
+        + Updated each corresponding `NumberFormatter` / `PercentProvider` / `ColorRanges`
+    + Added documentation to calculations
+
 * 2.2.1
 
     + `PlayersTableView` click callback

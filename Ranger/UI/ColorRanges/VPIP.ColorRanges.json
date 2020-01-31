@@ -4,36 +4,36 @@
     [
         {
             "min" : null,
-            "max" : 0.10,
+            "max" : 10,
             "color" : "Standard violet"
         },
         {
-            "min" : 0.10,
-            "max" : 0.15,
+            "min" : 10,
+            "max" : 15,
             "color" : "Standard red"
         },
         {
-            "min" : 0.15,
-            "max" : 0.20,
+            "min" : 15,
+            "max" : 20,
             "color" : "Standard orange"
         },
         {
-            "min" : 0.20,
-            "max" : 0.35,
+            "min" : 20,
+            "max" : 35,
             "color" : "Standard yellow"
         },
         {
-            "min" : 0.35,
-            "max" : 0.5,
+            "min" : 35,
+            "max" : 50,
             "color" : "Standard green"
         },
         {
-            "min" : 0.5,
-            "max" : 0.8,
+            "min" : 50,
+            "max" : 80,
             "color" : "Standard cyan"
         },
         {
-            "min" : 0.8,
+            "min" : 80,
             "max" : null,
             "color" : "Standard blue"
         }

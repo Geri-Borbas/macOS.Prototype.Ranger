@@ -511,7 +511,7 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <outlet property="formatter" destination="8rO-Fd-Zrj" id="BEY-oz-UJz"/>
+                                                                        <outlet property="formatter" destination="NWt-B6-LGJ" id="Awg-dy-bBN"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -568,7 +568,7 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <outlet property="formatter" destination="8rO-Fd-Zrj" id="j1r-gB-piV"/>
+                                                                        <outlet property="formatter" destination="NWt-B6-LGJ" id="Zbh-ai-J6g"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -1520,53 +1520,30 @@
                 <customObject id="1nu-WM-Hgn" userLabel="VPIP PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <real key="value" value="0.10000000000000001"/>
+                            <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <real key="value" value="0.5"/>
+                            <integer key="value" value="50"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="offset">
                             <real key="value" value="0.45000000000000001"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="log" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </customObject>
                 <customObject id="Cto-j0-9gf" userLabel="VPIP ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="JSON" value="VPIP.ColorRanges"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_1">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_1">
-                            <color key="value" red="0.99610751870000003" green="0.69792670010000002" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_2">
-                            <real key="value" value="0.155"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_2">
-                            <color key="value" red="0.99610751870000003" green="0.98826545480000005" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_3">
-                            <real key="value" value="0.35499999999999998"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_3">
-                            <color key="value" red="0.69792670010000002" green="0.99610751870000003" blue="0.54883629079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_4">
-                            <real key="value" value="0.505"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_4">
-                            <color key="value" red="0.54785913529999997" green="0.99610751870000003" blue="0.69727526309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
                 <customObject id="cze-Ho-ayX" userLabel="PFR PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <real key="value" value="0.10000000000000001"/>
+                            <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <real key="value" value="0.5"/>
+                            <integer key="value" value="50"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="offset">
@@ -1577,30 +1554,6 @@
                 <customObject id="yoO-ta-IBB" userLabel="PFR ColorRanges" customClass="ColorRangeProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="JSON" value="PFR.ColorRanges"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_1">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_1">
-                            <color key="value" red="0.99610751870000003" green="0.69792670010000002" blue="0.54883629079999996" alpha="0.70454302229999999" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_2">
-                            <real key="value" value="0.105"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_2">
-                            <color key="value" red="0.99610751870000003" green="0.98865299819999997" blue="0.54883629079999996" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_3">
-                            <real key="value" value="0.20499999999999999"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_3">
-                            <color key="value" red="0.69792670010000002" green="0.99610751870000003" blue="0.54883629079999996" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value_4">
-                            <real key="value" value="0.35499999999999998"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="color_4">
-                            <color key="value" red="0.54785913529999997" green="0.99610751870000003" blue="0.69727526309999999" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
                 <customObject id="v01-9q-cjY" userLabel="Early / Late PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
@@ -2167,10 +2120,10 @@
                 <customObject id="JSP-sE-yc6" userLabel="PFR PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <real key="value" value="0.10000000000000001"/>
+                            <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <real key="value" value="0.5"/>
+                            <integer key="value" value="50"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="offset">
@@ -2181,10 +2134,10 @@
                 <customObject id="kxo-Lh-y0m" userLabel="VPIP PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <real key="value" value="0.10000000000000001"/>
+                            <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <real key="value" value="0.5"/>
+                            <integer key="value" value="50"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="offset">
@@ -2192,13 +2145,10 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="jec-Cj-sVt" userLabel="## (%) (x100) Number Formatter">
-                    <integer key="multiplier" value="100"/>
-                </numberFormatter>
-                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="Oje-6V-j82" userLabel="##🅜 Number Formatter">
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="jec-Cj-sVt" userLabel="## (%) Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
-                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix=" deal" negativeSuffix=" deal" id="dGx-do-Ff6" userLabel="## deal Number Formatter">
+                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="Oje-6V-j82" userLabel="##🅜 Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
                 <customObject id="cts-lR-h6P" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2386,10 +2336,10 @@
                 <customObject id="d6o-5B-YYw" userLabel="VPIP PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <real key="value" value="0.10000000000000001"/>
+                            <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <real key="value" value="0.5"/>
+                            <integer key="value" value="50"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="offset">
@@ -2397,29 +2347,26 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="17R-vC-vT2" userLabel="## (%) (x100) Number Formatter">
-                    <integer key="multiplier" value="100"/>
+                <customObject id="nKO-hQ-6xI" userLabel="PFR PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="0.59999999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <numberFormatter formatterBehavior="custom10_4" numberStyle="decimal" usesGroupingSeparator="NO" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="17R-vC-vT2" userLabel="## (%) Number Formatter">
+                    <integer key="multiplier" value="1"/>
                 </numberFormatter>
                 <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix="🅜" negativeSuffix="🅜" id="UIF-fm-YzA" userLabel="##🅜 Number Formatter">
                     <integer key="multiplier" value="1"/>
                 </numberFormatter>
-                <numberFormatter formatterBehavior="custom10_4" positiveFormat="#,##0.00" negativeFormat="-#,##0.00" numberStyle="percent" minimumIntegerDigits="1" maximumIntegerDigits="42" decimalSeparator="," groupingSeparator=" " percentSymbol="﹪" positiveSuffix=" deal" negativeSuffix=" deal" id="kQo-ax-dgq" userLabel="## deal Number Formatter">
-                    <integer key="multiplier" value="1"/>
-                </numberFormatter>
-                <customObject id="nKO-hQ-6xI" userLabel="PFR PercentProvider" customClass="PercentProvider" customModule="Ranger" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="minimum">
-                            <real key="value" value="0.10000000000000001"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maximum">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="easing" value="easeOut_2"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
-                            <real key="value" value="0.59999999999999998"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
                 <customObject id="DMC-3N-oE9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1164" y="1624"/>
