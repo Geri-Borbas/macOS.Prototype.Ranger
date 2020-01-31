@@ -134,7 +134,7 @@ extension Model.Player: CustomStringConvertible
             "\n%.0f\t%.0f\t%.0f\t%@",
             stack,
             (pokerTracker?.statistics?.VPIP.value ?? 0) * 100,
-            (pokerTracker?.statistics?.PFR.value ?? 0) * 100,
+            (pokerTracker?.statistics?.aligned.PFR.value ?? 0) * 100,
             name
         )
     }
@@ -155,7 +155,7 @@ extension Model.Player
             "Player" : TextFieldStringData(value: name),
             "Stack" : TextFieldDoubleData(value: pokerTracker?.handPlayer?.stack),
             "VPIP" : TextFieldDoubleData(value: pokerTracker?.statistics?.VPIP.value),
-            "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?.PFR.value),
+            "PFR" : TextFieldDoubleData(value: pokerTracker?.statistics?.aligned.PFR.value),
             "Hands" : TextFieldIntData(value: pokerTracker?.statistics?.cnt_hands),
             "Tables" : TextFieldIntData(value: sharkScope.tables),
             "ITM" : TextFieldFloatData(value: sharkScope.statistics?.ITM),
@@ -212,8 +212,8 @@ extension Model.Player
             ),
             "PFR" :
             (
-                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.PFR.value ?? 0 < rhs.pokerTracker?.statistics?.PFR.value ?? 0 },
-                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.PFR.value ?? 0 >= rhs.pokerTracker?.statistics?.PFR.value ?? 0 }
+                ascending: { lhs, rhs in lhs.pokerTracker?.statistics?.aligned.PFR.value ?? 0 < rhs.pokerTracker?.statistics?.aligned.PFR.value ?? 0 },
+                descending: { lhs, rhs in lhs.pokerTracker?.statistics?.aligned.PFR.value ?? 0 >= rhs.pokerTracker?.statistics?.aligned.PFR.value ?? 0 }
             ),
             "Hands" :
             (

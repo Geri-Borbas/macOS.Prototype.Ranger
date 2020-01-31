@@ -19,4 +19,10 @@ extension NSMenu
         items.forEach{self.addItem($0)}
         return self
     }
+    
+    func with(items: [String]) -> NSMenu
+    {
+        items.forEach{self.addItem(($0 == "-") ? NSMenuItem.separator() : NSMenuItem(title: $0, action: nil, keyEquivalent: ""))}
+        return self
+    }
 }

@@ -27,7 +27,14 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
-* 2.2.4
+* 2.3.0
+
+    + `DetailedStatistics.Statistic`
+        + Created `.Aligned` accessors (to align corresponding statistics)
+        + Added steal statistics
+        + Added right-click context menu to `SeatViewOverlay` to preview detailed statistics
+
+* 2.2.31
 
     + Wrapped statistics into `Statistic` struct (to have count / opportunities information in place)
 

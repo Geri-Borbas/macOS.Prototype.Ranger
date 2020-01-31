@@ -26,6 +26,8 @@ class SeatViewController: NSViewController
     
     // Injected upon load via storyboard value.
     @objc dynamic var side: String = ""
+    
+    var player: Model.Player?
         
     // Binds.
     var delegate: SeatViewControllerDelegate?
@@ -45,6 +47,34 @@ class SeatViewController: NSViewController
     @IBAction func ringDidClick(_ sender: AnyObject)
     { delegate?.seatDidClick(seatViewController: self) }
     
+    override func rightMouseDown(with event: NSEvent)
+    {
+        // Only if any.
+        guard
+            let player = player,
+            let statistics = player.pokerTracker?.statistics
+        else { return }
+        
+        NSMenu.popUpContextMenu(
+            NSMenu().with(items:
+            [
+                player.name,
+                "-",
+                statistics.VPIP.description,
+                statistics.PFR.description,
+                statistics.aligned.PFR.description,
+                "-",
+                statistics.attemptToSteal.description,
+                statistics.foldToSteal.description,
+                statistics.callSteal.description,
+                statistics.raiseSteal.description,
+                statistics.aligned.raiseSteal.description,  
+            ]),
+            with: event,
+            for: self.view
+        )
+    }
+    
     
     // MARK: - Hooks
     
@@ -53,6 +83,9 @@ class SeatViewController: NSViewController
         // Only if any.
         guard let player = player
         else { return layoutEmpty() }
+        
+        // Retain (for context menu).
+        self.player = player
         
         if (player.stack == 0)
         { layoutZero(for: player) }
@@ -139,7 +172,7 @@ class SeatViewController: NSViewController
         
             // Preflop.
             view.layoutVpip(for: Float(statistics.VPIP.value))
-            view.layoutPfr(for: Float(statistics.PFR.value))
+            view.layoutPfr(for: Float(statistics.aligned.PFR.value))
         
             // Hand count.
             view.handsTextField.integerValue = statistics.hands
