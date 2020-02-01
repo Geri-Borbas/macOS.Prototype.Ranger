@@ -27,18 +27,22 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.3.3
+
+    + Added Flop CBet statistics to `DetailedStatistics`
+
 * 2.3.2
 
-    + Added `DetailedStatistics.Statistic.raiseToPreflop3Bet`
+    + Added `DetailedStatistics.raiseToPreflop3Bet`
     + Some remanings
 
 * 2.3.1
 
-    + Added `DetailedStatistics.Statistic._3Bet`, `foldTo3Bet`  
+    + Added `DetailedStatistics._3Bet`, `foldTo3Bet`  
 
 * 2.3.0
 
-    + `DetailedStatistics.Statistic`
+    + `DetailedStatistics`
         + Created `.Aligned` accessors (to align corresponding statistics)
         + Added steal statistics
         + Added right-click context menu to `SeatViewOverlay` to preview detailed statistics

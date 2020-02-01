@@ -74,6 +74,11 @@ class SeatViewController: NSViewController
                 statistics.foldToPreflop3Bet.description,
                 statistics.callPreflop3Bet.description,
                 statistics.raisePreflop3Bet.description,
+                "-",
+                statistics.flopCBet.description,
+                statistics.foldToFlopCBet.description,
+                statistics.callFlopCBet.description,
+                statistics.raiseFlopCBet.description,
             ]),
             with: event,
             for: self.view

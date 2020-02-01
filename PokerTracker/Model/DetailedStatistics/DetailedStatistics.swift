@@ -305,9 +305,64 @@ extension DetailedStatistics
             opportunities: cnt_p_4bet_opp
         )
     }
+    
+    /// Percentage of the time that a player bet the flop given that he had a chance to do so and he made the last raise preflop.
+    /// **Formula:** Number of Times Player Continuation Bet on the Flop / Number of Times Player Could Continuation Bet on the Flop.
+    /// **Function:** `(cnt_f_cbet / cnt_f_cbet_opp) * 100`
+    public var flopCBet: Statistic
+    {
+        Statistic(
+            name: "Flop CBet",
+            value: (Double(cnt_f_cbet) / Double(cnt_f_cbet_opp)) * 100,
+            count: cnt_f_cbet,
+            opportunities: cnt_f_cbet_opp
+        )
+    }
+    
+    /// Percentage of the time that a player folds to a flop bet given that the bettor was the last raiser preflop.
+    /// **Formula:** Number of Times Player Folded to a Continuation Bet on the Flop / Number of Times Player Could Fold to a Continuation Bet on the Flop.
+    /// **Function:** `(cnt_f_cbet_def_action_fold / cnt_f_cbet_def_opp) * 100`
+    public var foldToFlopCBet: Statistic
+    {
+        Statistic(
+            name: "Fold to Flop CBet",
+            value: (Double(cnt_f_cbet_def_action_fold) / Double(cnt_f_cbet_def_opp)) * 100,
+            count: cnt_f_cbet_def_action_fold,
+            opportunities: cnt_f_cbet_def_opp
+        )
+    }
+    
+    /// Percentage of the time that a player called a flop bet given that the betting player had also made the last preflop raise.
+    /// **Formula:** Number of Times Player Called a Continuation Bet on the Flop / Number of Times Player Could Call a Continuation Bet on the Flop.
+    /// **Function:** `(cnt_f_cbet_def_action_call / cnt_f_cbet_def_opp) * 100`
+    public var callFlopCBet: Statistic
+    {
+        Statistic(
+            name: "Call Flop CBet",
+            value: (Double(cnt_f_cbet_def_action_call) / Double(cnt_f_cbet_def_opp)) * 100,
+            count: cnt_f_cbet_def_action_call,
+            opportunities: cnt_f_cbet_def_opp
+        )
+    }
+    
+    /// Percentage of the time that a player raised a flop bet given that the betting player had also made the last preflop raise.
+    /// **Formula:** Number of Times Player Raised a Continuation Bet on the Flop / Number of Times Player Could Raise a Continuation Bet on the Flop.
+    /// **Function:** `(cnt_f_cbet_def_action_raise / cnt_f_cbet_def_opp) * 100`
+    public var raiseFlopCBet: Statistic
+    {
+        Statistic(
+            name: "Raise Flop CBet",
+            value: (Double(cnt_f_cbet_def_action_raise) / Double(cnt_f_cbet_def_opp)) * 100,
+            count: cnt_f_cbet_def_action_raise,
+            opportunities: cnt_f_cbet_def_opp
+        )
+    }
+    
+    
 }
 
 
+// MARK: - Aligned Statistics
 
 extension DetailedStatistics
 {

@@ -39,12 +39,6 @@ public struct DetailedStatisticsQuery: Query
                 with: tourneyNumber ?? "%"
             )
         
-        if (playerNames == ["Borbas.Geri"])
-        {
-            NSPasteboard.general.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-            NSPasteboard.general.setString(queryString, forType: NSPasteboard.PasteboardType.string)
-        }
-        
         return queryString
     }
     
