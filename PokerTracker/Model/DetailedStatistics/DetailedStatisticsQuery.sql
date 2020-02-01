@@ -184,12 +184,11 @@ SELECT
     sum(
       (
         case when(
-          tourney_hand_player_statistics.enum_p_3bet_action = 'R'
-          AND tourney_hand_player_statistics.flg_p_4bet_opp
+          tourney_hand_player_statistics.flg_p_4bet
         ) then 1 else 0 end
       )
     )
-  ) as "cnt_p_raise_3bet",
+  ) as "cnt_p_4bet",
   (
     sum(
       (
@@ -199,24 +198,6 @@ SELECT
       )
     )
   ) as "cnt_p_4bet_opp",
-  (
-    sum(
-      (
-        case when(
-          tourney_hand_player_statistics.flg_p_4bet_opp
-          and (
-            (
-              not tourney_hand_player_statistics.flg_p_3bet_def_opp
-            )
-            OR (
-              tourney_hand_player_statistics.enum_p_3bet_action SIMILAR TO '(C|R)'
-              AND tourney_hand_player_statistics.flg_p_4bet_def_opp
-            )
-          )
-        ) then 1 else 0 end
-      )
-    )
-  ) as "cnt_p_5bet_opp",
   (
     sum(
       (

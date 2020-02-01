@@ -27,6 +27,11 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.3.2
+
+    + Added `DetailedStatistics.Statistic.raiseToPreflop3Bet`
+    + Some remanings
+
 * 2.3.1
 
     + Added `DetailedStatistics.Statistic._3Bet`, `foldTo3Bet`  

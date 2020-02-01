@@ -37,12 +37,13 @@ public class DetailedStatistics: Entry
     // 3Bet.
     public let cnt_p_3bet: Int
     public let cnt_p_3bet_opp: Int
+    
     public let cnt_p_3bet_def_action_fold: Int
     public let cnt_p_3bet_def_opp: Int
     public let cnt_p_3bet_def_action_call: Int
-    public let cnt_p_raise_3bet: Int
+    
+    public let cnt_p_4bet: Int
     public let cnt_p_4bet_opp: Int
-    public let cnt_p_5bet_opp: Int
 
     // Flop.
     public let cnt_f_cbet: Int
@@ -94,31 +95,30 @@ public class DetailedStatistics: Entry
         cnt_p_3bet_def_action_fold = try row.columns[17].int()
         cnt_p_3bet_def_opp = try row.columns[18].int()
         cnt_p_3bet_def_action_call = try row.columns[19].int()
-        cnt_p_raise_3bet = try row.columns[20].int()
+        cnt_p_4bet = try row.columns[20].int()
         cnt_p_4bet_opp = try row.columns[21].int()
-        cnt_p_5bet_opp = try row.columns[22].int()
 
         // Flop.
-        cnt_f_cbet = try row.columns[23].int()
-        cnt_f_cbet_opp = try row.columns[24].int()
-        cnt_f_cbet_def_action_fold = try row.columns[25].int()
-        cnt_f_cbet_def_opp = try row.columns[26].int()
-        cnt_f_cbet_def_action_call = try row.columns[27].int()
-        cnt_f_cbet_def_action_raise = try row.columns[28].int()
+        cnt_f_cbet = try row.columns[22].int()
+        cnt_f_cbet_opp = try row.columns[23].int()
+        cnt_f_cbet_def_action_fold = try row.columns[24].int()
+        cnt_f_cbet_def_opp = try row.columns[25].int()
+        cnt_f_cbet_def_action_call = try row.columns[26].int()
+        cnt_f_cbet_def_action_raise = try row.columns[27].int()
 
         // Turn.
-        cnt_t_cbet = try row.columns[29].int()
-        cnt_t_cbet_opp = try row.columns[30].int()
-        cnt_t_cbet_def_action_fold = try row.columns[31].int()
-        cnt_t_cbet_def_opp = try row.columns[32].int()
-        cnt_t_cbet_def_action_call = try row.columns[33].int()
-        cnt_t_cbet_def_action_raise = try row.columns[34].int()
+        cnt_t_cbet = try row.columns[28].int()
+        cnt_t_cbet_opp = try row.columns[29].int()
+        cnt_t_cbet_def_action_fold = try row.columns[30].int()
+        cnt_t_cbet_def_opp = try row.columns[31].int()
+        cnt_t_cbet_def_action_call = try row.columns[32].int()
+        cnt_t_cbet_def_action_raise = try row.columns[33].int()
 
         // Showdown.
-        cnt_wtsd = try row.columns[35].int()
-        cnt_f_saw = try row.columns[36].int()
-        cnt_wtsd_won = try row.columns[37].int()
-        cnt_f_saw_won = try row.columns[38].int()
+        cnt_wtsd = try row.columns[34].int()
+        cnt_f_saw = try row.columns[35].int()
+        cnt_wtsd_won = try row.columns[36].int()
+        cnt_f_saw_won = try row.columns[37].int()
     }
 }
 
@@ -177,7 +177,7 @@ extension DetailedStatistics
     public var hands: Int { cnt_hands }
     
     /// Percentage of the time that a player voluntarily contributed money to the pot, given that he had a chance to do so.
-    /// **Formula:** Number of Times Player Put Money In Pot / (Number of Hands - Number of Walks)
+    /// **Formula:** Number of Times Player Put Money In Pot / (Number of Hands - Number of Walks).
     /// **Function:** `(cnt_vpip / (cnt_hands - cnt_walks)) * 100`
     public var VPIP: Statistic
     {
@@ -190,7 +190,7 @@ extension DetailedStatistics
     }
     
     /// Percentage of the time that a player put in any raise preflop, given that he had a chance to do so.
-    /// **Formula:** Number of Times Player Raised Preflop / (Number of Hands - Number of Walks)
+    /// **Formula:** Number of Times Player Raised Preflop / (Number of Hands - Number of Walks).
     /// **Function:** `(cnt_pfr / cnt_pfr_opp) * 100`
     public var PFR: Statistic
     {
@@ -216,7 +216,7 @@ extension DetailedStatistics
     }
     
     /// Percentage of the time that a player folded when in a blind and facing an open raise from the cutoff, button, or small blind without any other players being involved.
-    /// **Formula:** Number of Times Player Folded Blind to a Steal / Number of Times Player Could Fold Blind to a Steal
+    /// **Formula:** Number of Times Player Folded Blind to a Steal / Number of Times Player Could Fold Blind to a Steal.
     /// **Function:** `(cnt_steal_def_action_fold / cnt_steal_def_opp) * 100`
     public var foldToSteal: Statistic
     {
@@ -229,7 +229,7 @@ extension DetailedStatistics
     }
     
     /// Percentage of the time that a player called from either blind when facing an open raise from the cutoff, button, or small blind.
-    /// **Formula:** Number of Times Player Called a Steal Attempt / Number of Times Player Could Call a Steal Attempt
+    /// **Formula:** Number of Times Player Called a Steal Attempt / Number of Times Player Could Call a Steal Attempt.
     /// **Function:** `(cnt_steal_def_action_call / cnt_steal_def_opp) * 100`
     public var callSteal: Statistic
     {
@@ -242,12 +242,12 @@ extension DetailedStatistics
     }
     
     /// Percentage of the time that a player 3Bet preflop when in a blind and facing an open raise from the cutoff, button, or small blind.
-    /// **Formula:** Number of Times Player 3Bet When Facing Steal / Number of Times Player Could 3Bet When Facing Steal
+    /// **Formula:** Number of Times Player 3Bet When Facing Steal / Number of Times Player Could 3Bet When Facing Steal.
     /// **Function:** `(cnt_steal_def_action_raise / cnt_steal_def_3bet_opp) * 100`
-    public var reSteal: Statistic
+    public var raiseSteal: Statistic
     {
         Statistic(
-            name: "Re-Steal",
+            name: "Raise Steal",
             value: (Double(cnt_steal_def_action_raise) / Double(cnt_steal_def_3bet_opp)) * 100,
             count: cnt_steal_def_action_raise,
             opportunities: cnt_steal_def_3bet_opp
@@ -255,9 +255,9 @@ extension DetailedStatistics
     }
     
     /// Percentage of the time that a player 3Bet preflop given that he had a chance to do so.
-    /// Formula: Number of 3Bets Preflop / Number of Times Player Could 3Bet Preflop
+    /// Formula: Number of 3Bets Preflop / Number of Times Player Could 3Bet Preflop.
     /// **Function:** `(cnt_p_3bet / cnt_p_3bet_opp) * 100`
-    public var _3Bet: Statistic
+    public var preflop3Bet: Statistic
     {
         Statistic(
             name: "3Bet",
@@ -268,9 +268,9 @@ extension DetailedStatistics
     }
 
     /// Percentage of the time that a player folded to a preflop 3 bet, given that he had a chance to do so regardless of other prior actions.
-    /// **Formula:** Number of Times Player Folded to a 3Bet Preflop / Number of Times Player Could Fold to a 3Bet Preflop
+    /// **Formula:** Number of Times Player Folded to a 3Bet Preflop / Number of Times Player Could Fold to a 3Bet Preflop.
     /// **Function:** `(cnt_p_3bet_def_action_fold / cnt_p_3bet_def_opp) * 100`
-    public var foldTo3Bet: Statistic
+    public var foldToPreflop3Bet: Statistic
     {
         Statistic(
             name: "Fold to 3Bet",
@@ -281,9 +281,9 @@ extension DetailedStatistics
     }
 
     /// Percentage of the time that a player called a preflop 3Bet, given that he had a chance to do so regardless of other prior actions.
-    /// **Formula:** Number of Times Player Called a 3Bet Preflop / Number of Times Player Could Call a 3Bet Preflop
+    /// **Formula:** Number of Times Player Called a 3Bet Preflop / Number of Times Player Could Call a 3Bet Preflop.
     /// **Function:** `(cnt_p_3bet_def_action_call / cnt_p_3bet_def_opp) * 100`
-    public var call3Bet: Statistic
+    public var callPreflop3Bet: Statistic
     {
         Statistic(
             name: "Call 3Bet",
@@ -292,10 +292,19 @@ extension DetailedStatistics
             opportunities: cnt_p_3bet_def_opp
         )
     }
-    
-    // raise3Bet
-    
-    // 
+
+    /// Percentage of the time that a player 4Bet or higher preflop given that he had a chance to do so.
+    /// **Formula:** Number of Times Player 4Bet or Higher Preflop / Number of Times Player Could 4Bet or Higher Preflop.
+    /// **Function:** `(cnt_p_4bet / cnt_p_4bet_opp) * 100`
+    public var raisePreflop3Bet: Statistic
+    {
+        Statistic(
+            name: "Raise 3Bet",
+            value: (Double(cnt_p_4bet) / Double(cnt_p_4bet_opp)) * 100,
+            count: cnt_p_4bet,
+            opportunities: cnt_p_4bet_opp
+        )
+    }
 }
 
 
@@ -316,9 +325,8 @@ extension DetailedStatistics
         let statistics: DetailedStatistics
         
     
-        /// Same as `PFR`, except it uses the same opportunities denominator as `VPIP`,
-        /// so PFR can be safely displayed as the subset of VPIP.
-        /// **Formula:** Number of Times Player Raised Preflop / (Number of Hands - Number of Walks)
+        /// Same as `PFR`, except it uses the same opportunities denominator as `VPIP`.
+        /// **Formula:** Number of Times Player Raised Preflop / (Number of Hands - Number of Walks).
         /// **Function:** `(cnt_pfr / (cnt_hands - cnt_walks)) * 100`
         public var PFR: Statistic
         {
@@ -331,7 +339,7 @@ extension DetailedStatistics
         }
         
         /// Same as `raiseSteal`, except it uses the same opportunities denominator as `foldToSteal`.
-        /// **Formula:** Number of Times Player 3Bet When Facing Steal / Number of Times Player Could 3Bet When Facing Steal
+        /// **Formula:** Number of Times Player 3Bet When Facing Steal / Number of Times Player Could 3Bet When Facing Steal.
         /// **Function:** `(cnt_steal_def_action_raise / cnt_steal_def_opp) * 100`
         public var raiseSteal: Statistic
         {
