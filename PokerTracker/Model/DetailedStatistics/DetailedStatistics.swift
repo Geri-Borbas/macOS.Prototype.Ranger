@@ -208,7 +208,7 @@ extension DetailedStatistics
     public var attemptToSteal: Statistic
     {
         Statistic(
-            name: "Attempt to Steal",
+            name: "Steal · Attempt",
             value: (Double(cnt_steal_att) / Double(cnt_steal_opp)) * 100,
             count: cnt_steal_att,
             opportunities: cnt_steal_opp
@@ -221,7 +221,7 @@ extension DetailedStatistics
     public var foldToSteal: Statistic
     {
         Statistic(
-            name: "Fold to Steal",
+            name: "Steal · Fold",
             value: (Double(cnt_steal_def_action_fold) / Double(cnt_steal_def_opp)) * 100,
             count: cnt_steal_def_action_fold,
             opportunities: cnt_steal_def_opp
@@ -234,7 +234,7 @@ extension DetailedStatistics
     public var callSteal: Statistic
     {
         Statistic(
-            name: "Call Steal",
+            name: "Steal · Call",
             value: (Double(cnt_steal_def_action_call) / Double(cnt_steal_def_opp)) * 100,
             count: cnt_steal_def_action_call,
             opportunities: cnt_steal_def_opp
@@ -247,7 +247,7 @@ extension DetailedStatistics
     public var raiseSteal: Statistic
     {
         Statistic(
-            name: "Raise Steal",
+            name: "Steal · Raise",
             value: (Double(cnt_steal_def_action_raise) / Double(cnt_steal_def_3bet_opp)) * 100,
             count: cnt_steal_def_action_raise,
             opportunities: cnt_steal_def_3bet_opp
@@ -260,7 +260,7 @@ extension DetailedStatistics
     public var preflop3Bet: Statistic
     {
         Statistic(
-            name: "3Bet",
+            name: "3Bet · Attempt",
             value: (Double(cnt_p_3bet) / Double(cnt_p_3bet_opp)) * 100,
             count: cnt_p_3bet,
             opportunities: cnt_p_3bet_opp
@@ -273,7 +273,7 @@ extension DetailedStatistics
     public var foldToPreflop3Bet: Statistic
     {
         Statistic(
-            name: "Fold to 3Bet",
+            name: "3Bet · Fold",
             value: (Double(cnt_p_3bet_def_action_fold) / Double(cnt_p_3bet_def_opp)) * 100,
             count: cnt_p_3bet_def_action_fold,
             opportunities: cnt_p_3bet_def_opp
@@ -286,7 +286,7 @@ extension DetailedStatistics
     public var callPreflop3Bet: Statistic
     {
         Statistic(
-            name: "Call 3Bet",
+            name: "3Bet · Call",
             value: (Double(cnt_p_3bet_def_action_call) / Double(cnt_p_3bet_def_opp)) * 100,
             count: cnt_p_3bet_def_action_call,
             opportunities: cnt_p_3bet_def_opp
@@ -299,7 +299,7 @@ extension DetailedStatistics
     public var raisePreflop3Bet: Statistic
     {
         Statistic(
-            name: "Raise 3Bet",
+            name: "3Bet · Raise",
             value: (Double(cnt_p_4bet) / Double(cnt_p_4bet_opp)) * 100,
             count: cnt_p_4bet,
             opportunities: cnt_p_4bet_opp
@@ -312,7 +312,7 @@ extension DetailedStatistics
     public var flopCBet: Statistic
     {
         Statistic(
-            name: "Flop CBet",
+            name: "Flop CBet · Attempt",
             value: (Double(cnt_f_cbet) / Double(cnt_f_cbet_opp)) * 100,
             count: cnt_f_cbet,
             opportunities: cnt_f_cbet_opp
@@ -325,7 +325,7 @@ extension DetailedStatistics
     public var foldToFlopCBet: Statistic
     {
         Statistic(
-            name: "Fold to Flop CBet",
+            name: "Flop CBet · Fold",
             value: (Double(cnt_f_cbet_def_action_fold) / Double(cnt_f_cbet_def_opp)) * 100,
             count: cnt_f_cbet_def_action_fold,
             opportunities: cnt_f_cbet_def_opp
@@ -338,7 +338,7 @@ extension DetailedStatistics
     public var callFlopCBet: Statistic
     {
         Statistic(
-            name: "Call Flop CBet",
+            name: "Flop CBet · Call",
             value: (Double(cnt_f_cbet_def_action_call) / Double(cnt_f_cbet_def_opp)) * 100,
             count: cnt_f_cbet_def_action_call,
             opportunities: cnt_f_cbet_def_opp
@@ -351,14 +351,64 @@ extension DetailedStatistics
     public var raiseFlopCBet: Statistic
     {
         Statistic(
-            name: "Raise Flop CBet",
+            name: "Flop CBet · Raise",
             value: (Double(cnt_f_cbet_def_action_raise) / Double(cnt_f_cbet_def_opp)) * 100,
             count: cnt_f_cbet_def_action_raise,
             opportunities: cnt_f_cbet_def_opp
         )
     }
     
+    /// Percentage of the time that a player bet the turn given that he continuation bet the flop and had a chance to do so.
+    /// **Formula:** Number of Times Player Continuation Bet on the Turn / Number of Times Player Could Continuation Bet on the Turn.
+    /// **Function:** `(cnt_t_cbet / cnt_t_cbet_opp) * 100`
+    public var turnCBet: Statistic
+    {
+        Statistic(
+            name: "Turn CBet · Attempt",
+            value: (Double(cnt_t_cbet) / Double(cnt_t_cbet_opp)) * 100,
+            count: cnt_t_cbet,
+            opportunities: cnt_t_cbet_opp
+        )
+    }
     
+    /// Percentage of the time that a player folded to a continuation bet on the turn.
+    /// **Formula:** Number of Times Player Folded to a Continuation Bet on the Turn / Number of Times Player Could Fold to a Continuation Bet on the Turn.
+    /// **Function:** `(cnt_t_cbet_def_action_fold / cnt_t_cbet_def_opp) * 100`
+    public var foldToTurnCBet: Statistic
+    {
+        Statistic(
+            name: "Turn CBet · Fold",
+            value: (Double(cnt_t_cbet_def_action_fold) / Double(cnt_t_cbet_def_opp)) * 100,
+            count: cnt_t_cbet_def_action_fold,
+            opportunities: cnt_t_cbet_def_opp
+        )
+    }
+    
+    /// Percentage of the time that a player called a continuation bet on the turn.
+    /// **Formula:** Number of Times Player Called a Continuation Bet on the Turn / Number of Times Player Could Call a Continuation Bet on the Turn.
+    /// **Function:** `(cnt_t_cbet_def_action_call / cnt_t_cbet_def_opp) * 100`
+    public var callTurnCBet: Statistic
+    {
+        Statistic(
+            name: "Turn CBet · Call",
+            value: (Double(cnt_t_cbet_def_action_call) / Double(cnt_t_cbet_def_opp)) * 100,
+            count: cnt_t_cbet_def_action_call,
+            opportunities: cnt_t_cbet_def_opp
+        )
+    }
+    
+    /// Percentage of the time that a player raised a continuation bet on the turn.
+    /// **Formula:** Number of Times Player Raised a Continuation Bet on the Turn / Number of Times Player Could Raise a Continuation Bet on the Turn.
+    /// **Function:** `(cnt_t_cbet_def_action_raise / cnt_t_cbet_def_opp) * 100`
+    public var raiseTurnCBet: Statistic
+    {
+        Statistic(
+            name: "Turn CBet · Raise",
+            value: (Double(cnt_t_cbet_def_action_raise) / Double(cnt_t_cbet_def_opp)) * 100,
+            count: cnt_t_cbet_def_action_raise,
+            opportunities: cnt_t_cbet_def_opp
+        )
+    }
 }
 
 
@@ -381,7 +431,6 @@ extension DetailedStatistics
         
     
         /// Same as `PFR`, except it uses the same opportunities denominator as `VPIP`.
-        /// **Formula:** Number of Times Player Raised Preflop / (Number of Hands - Number of Walks).
         /// **Function:** `(cnt_pfr / (cnt_hands - cnt_walks)) * 100`
         public var PFR: Statistic
         {
@@ -394,15 +443,26 @@ extension DetailedStatistics
         }
         
         /// Same as `raiseSteal`, except it uses the same opportunities denominator as `foldToSteal`.
-        /// **Formula:** Number of Times Player 3Bet When Facing Steal / Number of Times Player Could 3Bet When Facing Steal.
         /// **Function:** `(cnt_steal_def_action_raise / cnt_steal_def_opp) * 100`
         public var raiseSteal: Statistic
         {
             Statistic(
-                name: "Re-Steal (aligned)",
+                name: "Steal · Raise (aligned)",
                 value: (Double(statistics.cnt_steal_def_action_raise) / Double(statistics.cnt_steal_def_opp)) * 100,
                 count: statistics.cnt_steal_def_action_raise,
                 opportunities: statistics.cnt_steal_def_opp
+            )
+        }
+
+        /// Same as `raisePreflop3Bet`, except it uses the same opportunities denominator as `foldToPreflop3Bet`.
+        /// **Function:** `(cnt_p_4bet / cnt_p_3bet_def_opp) * 100`
+        public var raisePreflop3Bet: Statistic
+        {
+            Statistic(
+                name: "3Bet · Raise (aligned)",
+                value: (Double(statistics.cnt_p_4bet) / Double(statistics.cnt_p_3bet_def_opp)) * 100,
+                count: statistics.cnt_p_4bet,
+                opportunities: statistics.cnt_p_3bet_def_opp
             )
         }
     }

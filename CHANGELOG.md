@@ -27,6 +27,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.3.4
+
+    + Added Turn CBet statistics to `DetailedStatistics` / Renamings
+
 * 2.3.3
 
     + Added Flop CBet statistics to `DetailedStatistics`
