@@ -2,11 +2,12 @@
 
 * Doing
 
-    + Next up
+    + Next up 
+        + Context menu additions
+            + Switch to session statistics
+            + Get player stats for hero filtered for villain
         + Start getting `ActiveTournaments` data
-            + Setup basic database for players   
-        + Switch to session statistics
-        + Show my statistics filtered for player         
+            + Setup basic database for players      
         + Get `CompletedTournaments` with limits
             + Implement latest date of completed tournaments
         + UI for Opted-Out SharkScope players
@@ -16,7 +17,6 @@
         + Final table positions column
         + Game distribution in time Graph (scatter)
         + Cursor for Finishes (get live tourney data)
-        + Get player stats for hero filtered for villain (clickable)
         + SharkScope
             + Filters
                 + Last one year
@@ -26,6 +26,10 @@
         + Normalized / Absolute switch for Finishes histogram
         + `TableWindowInfo`
             + Regex title recognition (with tests)
+
+* 2.3.5
+
+    + Added Showdown statistics to `DetailedStatistics`
 
 * 2.3.4
 

@@ -409,6 +409,47 @@ extension DetailedStatistics
             opportunities: cnt_t_cbet_def_opp
         )
     }
+    
+    /// Percentage of the time that a player went to showdown, given that he saw the flop.
+    /// **Formula:** Number of Times Player Went to Showdown / Number of Times Player Saw the Flop.
+    /// **Function:** `(cnt_wtsd / cnt_f_saw) * 100`
+    public var wentToShowdown: Statistic
+    {
+        Statistic(
+            name: "WTSD",
+            value: (Double(cnt_wtsd) / Double(cnt_f_saw)) * 100,
+            count: cnt_wtsd,
+            opportunities: cnt_f_saw
+        )
+    }
+    
+    /// Percentage of the time that a player won some money at showdown, given that he got to showdown.
+    /// **Formula:** Number of Times Player Won Money at Showdown / Number of Times Player Went to Showdown.
+    /// **Function:** `(cnt_wtsd_won / cnt_wtsd) * 100`
+    public var wonAtShowdown: Statistic
+    {
+        Statistic(
+            name: "WSD",
+            value: (Double(cnt_wtsd_won) / Double(cnt_wtsd)) * 100,
+            count: cnt_wtsd_won,
+            opportunities: cnt_wtsd
+        )
+    }
+    
+    /// Percentage of the time that a player won some money in some fashion, given that he saw the flop.
+    /// **Formula:** Number of Times Player Saw the Flop and Won Money / Number of Times Player Saw the Flop.
+    /// **Function:** `(cnt_f_saw_won / cnt_f_saw) * 100`
+    public var wonWhenSawFlop: Statistic
+    {
+        Statistic(
+            name: "WWSF",
+            value: (Double(cnt_f_saw_won) / Double(cnt_f_saw)) * 100,
+            count: cnt_f_saw_won,
+            opportunities: cnt_f_saw
+        )
+    }
+    
+    
 }
 
 

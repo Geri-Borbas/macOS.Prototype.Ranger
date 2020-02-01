@@ -85,6 +85,10 @@ class SeatViewController: NSViewController
                 statistics.foldToTurnCBet.description,
                 statistics.callTurnCBet.description,
                 statistics.raiseTurnCBet.description,
+                "-",
+                statistics.wentToShowdown.description,
+                statistics.wonAtShowdown.description,
+                statistics.wonWhenSawFlop.description,
             ]),
             with: event,
             for: self.view
