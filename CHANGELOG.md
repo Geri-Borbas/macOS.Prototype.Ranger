@@ -27,6 +27,10 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.3.1
+
+    + Added `DetailedStatistics.Statistic._3Bet`, `foldTo3Bet`  
+
 * 2.3.0
 
     + `DetailedStatistics.Statistic`

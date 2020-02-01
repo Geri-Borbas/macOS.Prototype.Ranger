@@ -38,21 +38,12 @@ public class DetailedStatistics: Entry
     public let cnt_p_3bet: Int
     public let cnt_p_3bet_opp: Int
     public let cnt_p_3bet_def_action_fold: Int
-    public let cnt_f_3bet_def_action_fold: Int
-    public let cnt_t_3bet_def_action_fold: Int
-    public let cnt_r_3bet_def_action_fold: Int
     public let cnt_p_3bet_def_opp: Int
-    public let cnt_f_3bet_def_opp: Int
-    public let cnt_t_3bet_def_opp: Int
-    public let cnt_r_3bet_def_opp: Int
     public let cnt_p_3bet_def_action_call: Int
-    public let cnt_f_3bet_def_action_call: Int
-    public let cnt_t_3bet_def_action_call: Int
-    public let cnt_r_3bet_def_action_call: Int
     public let cnt_p_raise_3bet: Int
     public let cnt_p_4bet_opp: Int
     public let cnt_p_5bet_opp: Int
-    
+
     // Flop.
     public let cnt_f_cbet: Int
     public let cnt_f_cbet_opp: Int
@@ -60,7 +51,7 @@ public class DetailedStatistics: Entry
     public let cnt_f_cbet_def_opp: Int
     public let cnt_f_cbet_def_action_call: Int
     public let cnt_f_cbet_def_action_raise: Int
-    
+
     // Turn.
     public let cnt_t_cbet: Int
     public let cnt_t_cbet_opp: Int
@@ -68,7 +59,7 @@ public class DetailedStatistics: Entry
     public let cnt_t_cbet_def_opp: Int
     public let cnt_t_cbet_def_action_call: Int
     public let cnt_t_cbet_def_action_raise: Int
-    
+
     // Showdown.
     public let cnt_wtsd: Int
     public let cnt_f_saw: Int
@@ -101,42 +92,33 @@ public class DetailedStatistics: Entry
         cnt_p_3bet = try row.columns[15].int()
         cnt_p_3bet_opp = try row.columns[16].int()
         cnt_p_3bet_def_action_fold = try row.columns[17].int()
-        cnt_f_3bet_def_action_fold = try row.columns[18].int()
-        cnt_t_3bet_def_action_fold = try row.columns[19].int()
-        cnt_r_3bet_def_action_fold = try row.columns[20].int()
-        cnt_p_3bet_def_opp = try row.columns[21].int()
-        cnt_f_3bet_def_opp = try row.columns[22].int()
-        cnt_t_3bet_def_opp = try row.columns[23].int()
-        cnt_r_3bet_def_opp = try row.columns[24].int()
-        cnt_p_3bet_def_action_call = try row.columns[25].int()
-        cnt_f_3bet_def_action_call = try row.columns[26].int()
-        cnt_t_3bet_def_action_call = try row.columns[27].int()
-        cnt_r_3bet_def_action_call = try row.columns[28].int()
-        cnt_p_raise_3bet = try row.columns[29].int()
-        cnt_p_4bet_opp = try row.columns[30].int()
-        cnt_p_5bet_opp = try row.columns[31].int()
-        
+        cnt_p_3bet_def_opp = try row.columns[18].int()
+        cnt_p_3bet_def_action_call = try row.columns[19].int()
+        cnt_p_raise_3bet = try row.columns[20].int()
+        cnt_p_4bet_opp = try row.columns[21].int()
+        cnt_p_5bet_opp = try row.columns[22].int()
+
         // Flop.
-        cnt_f_cbet = try row.columns[32].int()
-        cnt_f_cbet_opp = try row.columns[33].int()
-        cnt_f_cbet_def_action_fold = try row.columns[34].int()
-        cnt_f_cbet_def_opp = try row.columns[35].int()
-        cnt_f_cbet_def_action_call = try row.columns[36].int()
-        cnt_f_cbet_def_action_raise = try row.columns[37].int()
-        
+        cnt_f_cbet = try row.columns[23].int()
+        cnt_f_cbet_opp = try row.columns[24].int()
+        cnt_f_cbet_def_action_fold = try row.columns[25].int()
+        cnt_f_cbet_def_opp = try row.columns[26].int()
+        cnt_f_cbet_def_action_call = try row.columns[27].int()
+        cnt_f_cbet_def_action_raise = try row.columns[28].int()
+
         // Turn.
-        cnt_t_cbet = try row.columns[38].int()
-        cnt_t_cbet_opp = try row.columns[39].int()
-        cnt_t_cbet_def_action_fold = try row.columns[40].int()
-        cnt_t_cbet_def_opp = try row.columns[41].int()
-        cnt_t_cbet_def_action_call = try row.columns[42].int()
-        cnt_t_cbet_def_action_raise = try row.columns[43].int()
-        
+        cnt_t_cbet = try row.columns[29].int()
+        cnt_t_cbet_opp = try row.columns[30].int()
+        cnt_t_cbet_def_action_fold = try row.columns[31].int()
+        cnt_t_cbet_def_opp = try row.columns[32].int()
+        cnt_t_cbet_def_action_call = try row.columns[33].int()
+        cnt_t_cbet_def_action_raise = try row.columns[34].int()
+
         // Showdown.
-        cnt_wtsd = try row.columns[44].int()
-        cnt_f_saw = try row.columns[45].int()
-        cnt_wtsd_won = try row.columns[46].int()
-        cnt_f_saw_won = try row.columns[47].int()
+        cnt_wtsd = try row.columns[35].int()
+        cnt_f_saw = try row.columns[36].int()
+        cnt_wtsd_won = try row.columns[37].int()
+        cnt_f_saw_won = try row.columns[38].int()
     }
 }
 
@@ -262,7 +244,7 @@ extension DetailedStatistics
     /// Percentage of the time that a player 3Bet preflop when in a blind and facing an open raise from the cutoff, button, or small blind.
     /// **Formula:** Number of Times Player 3Bet When Facing Steal / Number of Times Player Could 3Bet When Facing Steal
     /// **Function:** `(cnt_steal_def_action_raise / cnt_steal_def_3bet_opp) * 100`
-    public var raiseSteal: Statistic
+    public var reSteal: Statistic
     {
         Statistic(
             name: "Re-Steal",
@@ -271,6 +253,49 @@ extension DetailedStatistics
             opportunities: cnt_steal_def_3bet_opp
         )
     }
+    
+    /// Percentage of the time that a player 3Bet preflop given that he had a chance to do so.
+    /// Formula: Number of 3Bets Preflop / Number of Times Player Could 3Bet Preflop
+    /// **Function:** `(cnt_p_3bet / cnt_p_3bet_opp) * 100`
+    public var _3Bet: Statistic
+    {
+        Statistic(
+            name: "3Bet",
+            value: (Double(cnt_p_3bet) / Double(cnt_p_3bet_opp)) * 100,
+            count: cnt_p_3bet,
+            opportunities: cnt_p_3bet_opp
+        )
+    }
+
+    /// Percentage of the time that a player folded to a preflop 3 bet, given that he had a chance to do so regardless of other prior actions.
+    /// **Formula:** Number of Times Player Folded to a 3Bet Preflop / Number of Times Player Could Fold to a 3Bet Preflop
+    /// **Function:** `(cnt_p_3bet_def_action_fold / cnt_p_3bet_def_opp) * 100`
+    public var foldTo3Bet: Statistic
+    {
+        Statistic(
+            name: "Fold to 3Bet",
+            value: (Double(cnt_p_3bet_def_action_fold) / Double(cnt_p_3bet_def_opp)) * 100,
+            count: cnt_p_3bet_def_action_fold,
+            opportunities: cnt_p_3bet_def_opp
+        )
+    }
+
+    /// Percentage of the time that a player called a preflop 3Bet, given that he had a chance to do so regardless of other prior actions.
+    /// **Formula:** Number of Times Player Called a 3Bet Preflop / Number of Times Player Could Call a 3Bet Preflop
+    /// **Function:** `(cnt_p_3bet_def_action_call / cnt_p_3bet_def_opp) * 100`
+    public var call3Bet: Statistic
+    {
+        Statistic(
+            name: "Call 3Bet",
+            value: (Double(cnt_p_3bet_def_action_call) / Double(cnt_p_3bet_def_opp)) * 100,
+            count: cnt_p_3bet_def_action_call,
+            opportunities: cnt_p_3bet_def_opp
+        )
+    }
+    
+    // raise3Bet
+    
+    // 
 }
 
 
