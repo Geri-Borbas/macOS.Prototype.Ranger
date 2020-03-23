@@ -126,9 +126,10 @@ extension PlayersTableViewController: PlayersTableViewDelegate
     
     func fetchTournementsRequested(for playerName: String)
     { viewModel.fetchTournamentsForPlayer(withName: playerName) }
+    
+    func fetchLatestTournementsRequested(for playerName: String, amount: Int)
+    { viewModel.fetchCompletedTournamentsForPlayer(withName: playerName, amount: amount) }
 }
-
-
 
 
 // MARK: - Table View Data

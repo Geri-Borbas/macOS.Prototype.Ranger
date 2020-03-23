@@ -27,6 +27,14 @@
         + `TableWindowInfo`
             + Regex title recognition (with tests)
 
+* 2.3.6
+
+    + Context menu additions (more tournament history)
+        + "Fetch latest 1000 tournaments (10 Search)"
+        + "Fetch latest 15000 tournaments (150 Search)"
+        + `PlayersTableViewController.fetchLatestTournementsRequested(for:amount:)`
+    + Detailed statistics renamings
+
 * 2.3.5
 
     + Added Showdown statistics to `DetailedStatistics`

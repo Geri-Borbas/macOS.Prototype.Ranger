@@ -70,8 +70,8 @@ class PlayersViewController: NSViewController,
     
     // MARK: - Players Table Events
     
-    func fetchCompletedTournementsRequested(for playerName: String)
-    { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
+    // func fetchCompletedTournementsRequested(for playerName: String)
+    // { playersTableViewController.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
     
     
     // MARK: - Layout

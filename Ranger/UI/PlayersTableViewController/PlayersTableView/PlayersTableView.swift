@@ -15,6 +15,7 @@ import SharkScope
     
     
     func fetchTournementsRequested(for playerName: String)
+    func fetchLatestTournementsRequested(for playerName: String, amount: Int)
 }
 
 
@@ -53,13 +54,31 @@ class PlayersTableView: NSTableView
             NSMenuItem.separator(),
             
             NSMenuItem(
-                title: "Fetch Tournaments (25 Search)",
-                action: #selector(fetchTournaments),
+                title: "Fetch tournament history (25 Search)",
+                action: #selector(fetchTournamentHistory),
                 keyEquivalent: "")
                 .with(
                     representedObject: player,
                     target: self
                 ),
+                
+            NSMenuItem(
+                title: "Fetch latest 1000 tournaments (10 Search)",
+                action: #selector(fetchLatestThousandTournaments),
+                keyEquivalent: "")
+                .with(
+                    representedObject: player,
+                    target: self
+                ),
+                    
+                NSMenuItem(
+                    title: "Fetch latest 15000 tournaments (150 Search)",
+                    action: #selector(fetchLatestFifteenThousandTournaments),
+                    keyEquivalent: "")
+                    .with(
+                        representedObject: player,
+                        target: self
+                    ),
             
             NSMenuItem.separator(),
             
@@ -101,7 +120,7 @@ class PlayersTableView: NSTableView
         ])
     }
 
-    @objc func fetchTournaments(menuItem: NSMenuItem)
+    @objc func fetchTournamentHistory(menuItem: NSMenuItem)
     {
         // Get model.
         guard let player = menuItem.representedObject as? Model.Player
@@ -109,6 +128,26 @@ class PlayersTableView: NSTableView
         
         // Dispatch request to delegate if any.
         playersTableViewDelegate?.fetchTournementsRequested(for: player.name)
+    }
+
+    @objc func fetchLatestThousandTournaments(menuItem: NSMenuItem)
+    {
+        // Get model.
+        guard let player = menuItem.representedObject as? Model.Player
+        else { return }
+        
+        // Dispatch request to delegate if any.
+        playersTableViewDelegate?.fetchLatestTournementsRequested(for: player.name, amount: 1000)
+    }
+
+    @objc func fetchLatestFifteenThousandTournaments(menuItem: NSMenuItem)
+    {
+        // Get model.
+        guard let player = menuItem.representedObject as? Model.Player
+        else { return }
+        
+        // Dispatch request to delegate if any.
+        playersTableViewDelegate?.fetchLatestTournementsRequested(for: player.name, amount: 15000)
     }
 
     @objc func copyNameToClipboard(menuItem: NSMenuItem)

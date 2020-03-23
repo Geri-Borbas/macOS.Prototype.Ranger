@@ -416,7 +416,7 @@ extension DetailedStatistics
     public var wentToShowdown: Statistic
     {
         Statistic(
-            name: "WTSD",
+            name: "Showdown | Saw",
             value: (Double(cnt_wtsd) / Double(cnt_f_saw)) * 100,
             count: cnt_wtsd,
             opportunities: cnt_f_saw
@@ -429,7 +429,7 @@ extension DetailedStatistics
     public var wonAtShowdown: Statistic
     {
         Statistic(
-            name: "WSD",
+            name: "Showdown | Won",
             value: (Double(cnt_wtsd_won) / Double(cnt_wtsd)) * 100,
             count: cnt_wtsd_won,
             opportunities: cnt_wtsd
@@ -442,7 +442,7 @@ extension DetailedStatistics
     public var wonWhenSawFlop: Statistic
     {
         Statistic(
-            name: "WWSF",
+            name: "Flop | Won",
             value: (Double(cnt_f_saw_won) / Double(cnt_f_saw)) * 100,
             count: cnt_f_saw_won,
             opportunities: cnt_f_saw

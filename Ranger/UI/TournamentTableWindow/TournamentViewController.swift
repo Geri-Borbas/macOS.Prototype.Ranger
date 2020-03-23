@@ -179,17 +179,6 @@ extension TournamentViewController: PlayersTableViewControllerDelegate
 }
 
 
-// MARK: - Players Table View Events
-
-extension TournamentViewController: PlayersTableViewDelegate
-{
-    
-    
-    func fetchTournementsRequested(for playerName: String)
-    { playersTable?.viewModel.fetchCompletedTournamentsForPlayer(withName: playerName) }
-}
-
-
 // MARK: - Table Overlay Events
 
 extension TournamentViewController: TableOverlayViewControllerDelegate

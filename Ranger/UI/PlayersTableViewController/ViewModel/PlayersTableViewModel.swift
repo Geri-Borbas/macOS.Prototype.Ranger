@@ -263,10 +263,10 @@ extension PlayersTableViewModel
         )
     }
     
-    public func fetchCompletedTournamentsForPlayer(withName playerName: String)
+    public func fetchCompletedTournamentsForPlayer(withName playerName: String, amount: Int)
     {
         sharkScope.fetch(
-            CompletedTournamentsRequest(network: "PokerStars", player:playerName, amount: 100),
+            CompletedTournamentsRequest(network: "PokerStars", player:playerName, amount: amount),
             completion:
             {
                  (result: Result<CompletedTournaments, SharkScope.Error>) in

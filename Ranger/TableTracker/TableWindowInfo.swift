@@ -68,7 +68,7 @@ extension TableWindowInfo: Equatable
     /// Equality is used for diffing in `TableTracker.tick()`.
     static func == (lhs: TableWindowInfo, rhs: TableWindowInfo) -> Bool
     {
-        lhs.number == rhs.number
+        lhs.tableInfo?.tournamentNumber == rhs.tableInfo?.tournamentNumber
     }
 }
 
