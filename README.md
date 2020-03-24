@@ -1,5 +1,5 @@
 <p align="center">
-<img src="Documentation/Ranger.png" width="323" height="79" alt="Ranger">
+<img src="Documentation/Ranger.png" width="323" height="79" alt="Ranger"><br />
 <img src="Documentation/Ranger_Services.png" width="323" height="49" alt="PokerStars, PokerTracker, SharkScope">
 </p align="center">
 
