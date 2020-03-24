@@ -3,7 +3,7 @@
 <img src="Documentation/Ranger_Services.png" width="323" height="49" alt="PokerStars, PokerTracker, SharkScope">
 </p align="center">
 
-**Powerful PokerStars macOS HUD integrating both PokerTracker and SharkScope statistics.** Detects open tables in [PokerStars], fetches corresponding hand history and plaer statistics from [PokerTracker] PostgreSQL database, then it fetches detailed [SharkScope] statistics using JSON REST API. All wrapped up into an actionable live UI, with a precisely aligned HUD.
+**Powerful PokerStars macOS HUD integrating both PokerTracker and SharkScope statistics.** Detects open tables in [PokerStars], fetches corresponding hand history and player statistics from [PokerTracker] PostgreSQL database, then it fetches detailed [SharkScope] statistics using JSON REST API. All wrapped up into an actionable live UI, with a precisely aligned HUD.
 
 <img align="center" src="Documentation/Ranger_Screenshot.png" width="963" height="855">
 
